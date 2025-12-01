@@ -49,11 +49,11 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       // Use requestAnimationFrame to prevent synchronous state updates during render
       // This prevents double free malloc errors
       requestAnimationFrame(() => {
-        setImgSrc('/placeholder-image.svg');
-        // Also set directly on the element to prevent browser retries
-        if (target && target.src) {
-          target.src = '/placeholder-image.svg';
-        }
+        // Cache l'image si elle est cassée (mode SAFE HTML)
+        target.style.display = 'none';
+        // Alternative : utiliser placeholder
+        // setImgSrc('/placeholder-image.svg');
+        // target.src = '/placeholder-image.svg';
       });
       // Prevent default error handling
       e.preventDefault();

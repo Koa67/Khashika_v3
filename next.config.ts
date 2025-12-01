@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true, // KILL SWITCH : Désactive l'optimisation d'images pour éviter les crashes
     remotePatterns: [
       {
         protocol: 'https',

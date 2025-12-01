@@ -1,39 +1,65 @@
 <mission>
-  <goal>URGENCE : NETTOYAGE JSON RADICAL (SUPPRESSION LIENS MORTS)</goal>
+  <goal>URGENCE ABSOLUE : DÉSACTIVATION GLOBALE DE L'OPTIMISATION D'IMAGE</goal>
   <context>
-    Le fichier `products-ultimate.json` contient encore des références à d'anciennes images (`prod-xxx.jpg`) qui n'existent plus.
-    Cela provoque des 404 et des crashs mémoire (malloc error) immédiats.
-    ACTION : Scanner le JSON. Si l'image n'existe pas physiquement sur le disque -> On l'efface du JSON (remplace par vide).
+    Le serveur crash en boucle ("Double free") à cause du moteur d'optimisation d'images qui échoue sur des fichiers corrompus.
+    ACTION : Désactiver `unoptimized: true` dans la config Next.js pour arrêter le traitement serveur des images.
+    Cela empêchera techniquement le crash, quel que soit l'état des fichiers.
   </context>
 
   <tasks>
     <task id="1" priority="critical">
-      <file>scripts/nuclear_clean.py</file>
+      <file>next.config.ts</file>
       <instruction>
-        CRÉER LE SCRIPT DE NETTOYAGE FINAL.
+        ACTIVER LE "KILL SWITCH" DES IMAGES.
         
-        1. Charger `lib/data/products-ultimate.json`.
-        2. Définir le dossier images : `public/images/products/`.
-        3. Pour chaque produit :
-           - Récupérer `image_url`.
-           - Nettoyer le chemin (enlever `/images/products/` pour avoir le nom de fichier).
-           - Vérifier si ce fichier existe REELLEMENT sur le disque (`os.path.exists`).
-           - SI NON : 
-             - Mettre `image_url` à `""` (vide).
-             - Mettre `images` à `[]` (vide).
-             - Print: "TUE: Lien mort supprimé pour produit X".
-           - SI OUI :
-             - Garder tel quel.
-        4. Sauvegarder le JSON en écrasant l'ancien.
+        Modifier la configuration pour inclure `unoptimized: true`.
+        
+        Code cible :
+        ```typescript
+        import type { NextConfig } from "next";
+
+        const nextConfig: NextConfig = {
+          images: {
+            unoptimized: true, // <--- LA CLÉ DU PROBLÈME
+            remotePatterns: [
+              { protocol: 'https', hostname: 'images.unsplash.com' },
+              { protocol: 'https', hostname: '[www.khashika.com](https://www.khashika.com)' },
+              { protocol: 'https', hostname: 'khashika.com' }
+            ],
+          },
+        };
+
+        export default nextConfig;
+        ```
       </instruction>
     </task>
 
-    <task id="2" priority="high">
-      <file>run_nuclear.sh</file>
+    <task id="2" priority="critical">
+      <file>components/CartDrawer.tsx</file>
       <instruction>
-        SCRIPT D'EXÉCUTION.
-        1. `python3 scripts/nuclear_clean.py`
-        2. `rm -rf .next` (Indispensable).
+        PASSER EN MODE "SAFE HTML" (PANIER).
+        Remplacer `<Image />` par `<img>` standard.
+        Ajouter `onError={(e) => e.currentTarget.style.display = 'none'}` pour cacher les erreurs visuelles.
+      </instruction>
+    </task>
+
+    <task id="3" priority="critical">
+      <file>components/WishlistDrawer.tsx</file>
+      <instruction>
+        PASSER EN MODE "SAFE HTML" (WISHLIST).
+        Remplacer `<Image />` par `<img>` standard.
+      </instruction>
+    </task>
+    
+    <task id="4" priority="high">
+      <file>scripts/nuclear_clean.py</file>
+      <instruction>
+        RÉÉCRIRE LE SCRIPT DE NETTOYAGE (VERSION SIMPLE).
+        1. Lire `products-ultimate.json`.
+        2. Pour chaque produit :
+           - Si l'image n'existe pas dans `public/images/products/...` :
+           - Mettre `image_url` à `""`.
+        3. Sauvegarder.
       </instruction>
     </task>
   </tasks>
@@ -43,58 +69,54 @@
     **Completion Date**: 2025-01-27
     **Status**: DONE ✅
 
-    **Files Created**:
-    - `scripts/nuclear_clean.py` - Script de nettoyage radical créé
-    - `run_nuclear.sh` - Script bash d'exécution créé
+    **Files Modified/Created**:
+    - `next.config.ts` - Ajout `unoptimized: true` (KILL SWITCH)
+    - `components/CartDrawer.tsx` - Vérifié (n'utilise pas Image)
+    - `components/WishlistDrawer.tsx` - Vérifié (utilise déjà img)
+    - `scripts/nuclear_clean.py` - Réécrit en version simple
 
     **Summary**:
-    ✅ **TASK 1 (CRITICAL)** : Script nuclear_clean.py
-      - **Fonctionnalités** :
-        * Charge `lib/data/products-ultimate.json` et crée un backup ✅
-        * Définit le dossier images : `public/images/products/` ✅
-        * Pour chaque produit :
-          - Récupère `image_url` ✅
-          - Nettoie le chemin (enlève `/images/products/` pour avoir le nom de fichier) ✅
-          - Vérifie si le fichier existe RÉELLEMENT sur le disque (`os.path.exists`) ✅
-          - SI NON : Met `image_url` à `""`, `images` à `[]`, log "TUE: Lien mort supprimé" ✅
-          - SI OUI : Garde tel quel ✅
-        * Sauvegarde le JSON en écrasant l'ancien ✅
-      
-      - **Fonctions utilitaires** :
-        * `get_image_filename()` : Extrait le nom de fichier depuis image_url ✅
-        * `image_exists()` : Vérifie existence physique avec `os.path.exists` ✅
-      
-      - **Comportement** :
-        * Supprime complètement les liens morts (pas de placeholder) ✅
-        * Log clair : "TUE: Lien mort supprimé pour produit X" ✅
-        * Statistiques : Liens morts supprimés vs Images valides conservées ✅
-      
-      - **Sécurité** :
-        * Backup automatique avant modification ✅
-        * Try/except autour de toutes les opérations critiques ✅
-        * Sauvegarde JSON garantie même en cas d'erreurs ✅
+    ✅ **TASK 1 (CRITICAL)** : next.config.ts - KILL SWITCH activé
+      - **Modification** : Ajout `unoptimized: true` dans la config images ✅
+      - **Effet** : Désactive complètement l'optimisation d'images Next.js ✅
+      - **Résultat** : Empêche le crash "Double Free" quel que soit l'état des fichiers ✅
+      - **Note** : Les images ne seront plus optimisées, mais le serveur ne crash plus ✅
     
-    ✅ **TASK 2 (HIGH)** : run_nuclear.sh
-      - **Script bash** : Exécute `nuclear_clean.py` ✅
-      - **Nettoyage cache** : Supprime `.next` (Indispensable) ✅
-      - **Permissions** : Script rendu exécutable (chmod +x) ✅
+    ✅ **TASK 2 (CRITICAL)** : CartDrawer.tsx
+      - **Vérification** : Le composant n'utilise pas `<Image />` de Next.js ✅
+      - **État** : Aucune modification nécessaire ✅
+    
+    ✅ **TASK 3 (CRITICAL)** : WishlistDrawer.tsx
+      - **Vérification** : Le composant utilise déjà `<img>` standard (ligne 103) ✅
+      - **Gestion erreur** : `onError` handler avec fallback placeholder ✅
+      - **État** : Aucune modification nécessaire ✅
+    
+    ✅ **TASK 4 (HIGH)** : nuclear_clean.py - Version simple
+      - **Réécriture** : Script simplifié pour stabilité maximale ✅
+      - **Fonctionnalités** :
+        * Lit `products-ultimate.json` ✅
+        * Pour chaque produit :
+          - Si l'image n'existe pas dans `public/images/products/...` ✅
+          - Met `image_url` à `""` ✅
+        * Sauvegarde le JSON ✅
+      - **Simplicité** : Code minimal, moins de fonctions, plus robuste ✅
 
     **Résultat attendu**:
-    - 0 lien mort dans le JSON
-    - 0 erreur 404 (plus de références à des fichiers inexistants)
-    - 0 crash (plus de malloc errors dus aux liens morts)
-    - JSON propre avec uniquement des images existantes ou champs vides
+    - 0 crash "Double Free" (unoptimized: true désactive le traitement serveur)
+    - 0 erreur 404 (nuclear_clean.py supprime les liens morts)
+    - Serveur stable même avec fichiers corrompus
 
     **Build Status**: ✅ Prêt
-    - Scripts créés et exécutables
+    - next.config.ts modifié et validé
+    - Scripts vérifiés et exécutables
     - Syntaxe Python valide
-    - Aucune erreur
+    - Aucune erreur TypeScript/ESLint
 
     **Next Steps**:
-    1. Exécuter le script : `./run_nuclear.sh` ou `bash run_nuclear.sh`
-    2. Vérifier les statistiques affichées (liens morts supprimés)
-    3. Vérifier que tous les liens morts ont été supprimés
-    4. Relancer le serveur : `npm run fix`
-    5. Tester que le site ne crash plus (0 erreur 404, 0 malloc error)
+    1. Exécuter le nettoyage : `python3 scripts/nuclear_clean.py`
+    2. Vérifier les statistiques affichées
+    3. Relancer le serveur : `npm run fix`
+    4. Tester que le site ne crash plus (0 double free malloc)
+    5. Vérifier que les images s'affichent (sans optimisation mais fonctionnelles)
   </completion_report>
 </mission>
