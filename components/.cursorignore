@@ -1,0 +1,24 @@
+# Dépendances & Logs
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+npm-debug.log
+yarn-error.log
+*.log
+
+# Build & Dist
+dist
+build
+out
+.next
+.output
+.vercel
+coverage
+
+# Git & Configs lourdes
+.git
+.github
+.idea
+.vscode
+.DS_Store

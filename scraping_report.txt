@@ -1,0 +1,22 @@
+
+======================================================================
+RAPPORT DE SCRAPING KHASHIKA (SELENIUM ULTIME)
+======================================================================
+
+Date: 2025-11-29 02:26:15
+URL source: https://www.khashika.com/eboutique-bijoux-indiens/
+
+STATISTIQUES:
+- Produits trouvés: 726
+- Produits scrapés avec succès: 726
+- Produits avec images: 726
+- Images téléchargées: 23126
+- Erreurs rencontrées: 0
+
+Temps total: 175min 37s
+Vitesse moyenne: 4.1 produits/minute
+
+FICHIERS GÉNÉRÉS:
+- JSON: lib/data/products-scraped.json (726 produits)
+- Images: public/images/products (23126 fichiers)
+

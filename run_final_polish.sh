@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Script de finalisation - Nettoie les images et vide le cache Next.js
+
+set -e  # Arrêter en cas d'erreur
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "🔧 FINALISATION KHASHIKA - NETTOYAGE IMAGES & CACHE"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# 1. Lancer le script Python de nettoyage d'images
+echo "📸 Étape 1/2 : Nettoyage des images manquantes..."
+echo ""
+
+if [ -f "scripts/check_and_clean_images.py" ]; then
+    python3 scripts/check_and_clean_images.py
+    if [ $? -eq 0 ]; then
+        echo ""
+        echo "✅ Nettoyage des images terminé"
+    else
+        echo ""
+        echo "❌ Erreur lors du nettoyage des images"
+        exit 1
+    fi
+else
+    echo "⚠️  Script check_and_clean_images.py non trouvé, étape ignorée"
+fi
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# 2. Supprimer le cache Next.js
+echo "🗑️  Étape 2/2 : Suppression du cache Next.js (.next)..."
+echo ""
+
+if [ -d ".next" ]; then
+    rm -rf .next
+    echo "✅ Cache .next supprimé"
+else
+    echo "ℹ️  Dossier .next n'existe pas (déjà propre)"
+fi
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✅ FINALISATION TERMINÉE"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "💡 Prochaines étapes :"
+echo "   1. Relancer le serveur de développement : npm run dev"
+echo "   2. Vérifier que les images s'affichent correctement"
+echo "   3. Vérifier que les changements CSS sont visibles"
+echo ""
+

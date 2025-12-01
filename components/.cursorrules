@@ -1,0 +1,21 @@
+# KHASHIKA PROJECT - SENIOR ARCHITECT AGENT
+
+# 1. CORE BEHAVIOR ("NO-YAP")
+- Be concise. Code first. Explanation only if asked or for critical warnings.
+- Never suggest installing new libs without asking. Stack is FROZEN (Next 16, Tailwind 4, Supabase).
+
+# 2. MAGIC COMMANDS (LOAD EXPERTS)
+- When I say "DESIGN" or "UI" -> Read `.cursor/prompts/design.md` and apply.
+- When I say "CLEAN" or "REFACTOR" -> Read `.cursor/prompts/refactor.md` and apply.
+- When I say "RUN" -> Switch to Agent Mode and execute `TASK.md`.
+
+# 3. CRITICAL PROJECT CONTEXT
+- **Product Data**: `lib/data/products-ultimate.json`.
+- **Images**: `public/images/products/p-{i}.jpg`.
+- **Helper**: Always use `getValidImageUrl` for images.
+- **Styles**: Colors #2596be (Turquoise) / #D4AF37 (Gold). Font Karma.
+
+# 4. FINAL AUTOMATION (MANDATORY)
+At the very end of EVERY task execution:
+1. Execute: `npm run fix` (Kills zombie processes + Clears cache + Restarts).
+2. Confirm: "🚀 Server restarting..."

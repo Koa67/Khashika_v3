@@ -1,26 +1,112 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* MODE CLAIR : Fond Beige / Texte Noir */
+    --background: 244 234 216; /* #F4EAD8 */
+    --foreground: 26 26 26;    /* #1a1a1a */
+    --card: 255 255 255;       /* Blanc pour les cartes produits */
+    --card-foreground: 26 26 26;
+    --border: 212 175 55;      /* Or #D4AF37 */
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 244, 234, 216; /* Cream #F4EAD8 */
+    --background-end-rgb: 255, 255, 255;
+  }
+  
+  .dark {
+    /* MODE SOMBRE : Fond Bleu Nuit / Texte Beige */
+    --background: 18 26 33;    /* #121A21 */
+    --foreground: 244 234 216; /* #F4EAD8 */
+    --card: 26 35 45;          /* #1a232a - Bleu nuit pour cartes */
+    --card-foreground: 244 234 216;
+    --border: 212 175 55;      /* Or resté identique */
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground;
+  font-family: var(--font-karma), serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ajustement des cartes produits en mode sombre */
+.dark .product-card {
+  background-color: #1a232a;
+  border-color: #2a343d;
+  color: #fff;
+}
+
+/* Reset des liens pour éviter le style bleu par défaut */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Force les cartes produits à respecter la grille */
+.grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Force les images dans les cartes à être contraintes */
+[class*="ProductCard"] img,
+[class*="product-card"] img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sécurité ultime */
+.product-card-img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Cadre Zari - Motif doré UNIQUEMENT sur la bordure (pas de fond) */
+.zari-frame {
+  /* Définit l'espace physique pour la broderie */
+  border-width: 4px !important;
+  border-style: solid !important;
+  border-color: transparent !important;
+  
+  /* Applique le motif */
+  border-image-source: url("data:image/svg+xml,%3Csvg width='24' height='12' viewBox='0 0 24 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,6 C6,0 18,12 24,6 M0,6 C6,12 18,0 24,6' stroke='%23D4AF37' fill='none' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  border-image-slice: 30 !important;
+  border-image-repeat: round !important;
+}
+
+/* Double Bordure Luxe - Compatible avec rounded */
+.border-luxe-solid {
+  border: 1px solid #D4AF37;
+  box-shadow: 0 0 0 3px #F4EAD8, 0 0 0 4px #D4AF37;
+  /* Astuce : Une bordure fine, un espace couleur fond, une 2ème bordure fine */
+}
+
+/* Variante simple si shadow pose problème */
+.border-gold-simple {
+  border: 2px solid #D4AF37;
+}
+
+/* Mise à jour du motif de fond (Ligne unique bas de page) - CONSERVÉ pour Navbar uniquement */
+.bg-pattern-braid-gold {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='12' viewBox='0 0 24 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,6 C6,0 18,12 24,6 M0,6 C6,12 18,0 24,6' stroke='%23D4AF37' fill='none' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  background-size: 24px 12px;
+  padding-bottom: 16px;
+}
+
+/* Ancienne classe - DEPRECATED (remplacée par .zari-frame) */
+.border-braid-gold {
+  border: 3px solid transparent;
+  border-image-source: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,8 C4,0 12,16 16,8 M0,8 C4,16 12,0 16,8' stroke='%23D4AF37' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  border-image-slice: 0 fill;
+  border-image-width: 3px;
+  border-image-repeat: round;
+}
+
+.border-luxe-double {
+  border: 3px double #D4AF37; /* Style Joaillerie Classique */
 }

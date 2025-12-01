@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-29T09:04:05.929397",
+  "products": {
+    "total": 726,
+    "with_main_image": 726,
+    "with_images_array": 726,
+    "without_main_image": []
+  },
+  "images": {
+    "main_images": {
+      "total": 726,
+      "unique": 726,
+      "duplicates": 0
+    },
+    "arrays": {
+      "total_in_arrays": 868,
+      "valid_in_arrays": 868,
+      "invalid_in_arrays": 0,
+      "external_urls": 0
+    },
+    "filesystem": {
+      "total": 726,
+      "referenced": 726,
+      "orphan": 0
+    }
+  },
+  "details": {
+    "products_without_main_image": [],
+    "duplicate_main_images": {},
+    "sample_invalid_images": []
+  }
+}
