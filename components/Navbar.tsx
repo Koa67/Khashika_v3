@@ -1,27 +1,18 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Heart, Search, User, Menu, X } from 'lucide-react';
+import { ShoppingBag, Heart, User, Menu, X } from 'lucide-react';
 import { useCart } from '@/lib/context/CartContext';
 import { useWishlist } from '@/lib/context/WishlistContext';
 import SearchBar from '@/components/ui/SearchBar';
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { getItemCount: getCartCount } = useCart();
-  const { getItemCount: getWishlistCount, toggleWishlist } = useWishlist();
+  const { getItemCount: getWishlistCount } = useWishlist();
 
   const cartCount = getCartCount();
   const wishlistCount = getWishlistCount();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#FDFBF7] transition-all duration-300 pattern-mughal-bottom pb-4">
@@ -76,7 +67,7 @@ export default function Navbar() {
         <Link href="/shop?cat=pierres" className="hover:text-[#D4AF37] transition-colors">UNIVERS DES PIERRES</Link>
         <Link href="/shop?cat=accessoires" className="hover:text-[#D4AF37] transition-colors">ACCESSOIRES</Link>
         <Link href="/cadeaux" className="hover:text-[#D4AF37] transition-colors">CADEAUX</Link>
-        <Link href="/story" className="hover:text-[#D4AF37] transition-colors">L'ESPRIT KHASHIKA</Link>
+        <Link href="/story" className="hover:text-[#D4AF37] transition-colors">L&apos;ESPRIT KHASHIKA</Link>
       </div>
 
       {/* MENU MOBILE (DRAWER) */}
@@ -86,7 +77,7 @@ export default function Navbar() {
           <Link href="/shop?cat=pierres" className="text-lg" onClick={() => setIsMobileMenuOpen(false)}>Pierres</Link>
           <Link href="/shop?cat=accessoires" className="text-lg" onClick={() => setIsMobileMenuOpen(false)}>Accessoires</Link>
           <Link href="/cadeaux" className="text-lg" onClick={() => setIsMobileMenuOpen(false)}>Cadeaux</Link>
-          <Link href="/story" className="text-lg" onClick={() => setIsMobileMenuOpen(false)}>L'Esprit Khashika</Link>
+          <Link href="/story" className="text-lg" onClick={() => setIsMobileMenuOpen(false)}>L&apos;Esprit Khashika</Link>
         </div>
       )}
     </header>

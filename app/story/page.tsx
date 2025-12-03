@@ -1,144 +1,115 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "L&apos;Esprit Khashika - Notre Histoire",
+  description: 'Découvrez l&apos;histoire de Khashika, joaillerie indienne d&apos;exception depuis 1924. Artisanat traditionnel, techniques Kundan et Meenakari.',
+};
 
 export default function StoryPage() {
   return (
-    <div className="min-h-screen bg-[#f4f1eb] py-12 px-4 mt-24">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
+    <div className="min-h-screen bg-background pt-32 pb-20">
+      <div className="container mx-auto px-4 max-w-4xl">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-serif text-[#1a1a1a] mb-6">
-            Notre Histoire
+          <h1 className="font-serif text-5xl text-[#1a1a1a] mb-6">
+            L&apos;Esprit Khashika
           </h1>
-          <p className="text-xl md:text-2xl font-sans text-[#1a1a1a]/70 max-w-3xl mx-auto leading-relaxed">
-            Depuis 1924, Khashika perpétue l'art ancestral de la joaillerie indienne,
-            créant des bijoux uniques qui racontent une histoire millénaire.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Une tradition de joaillerie indienne depuis 1924
           </p>
         </div>
 
-        {/* Layout Alterné - Section 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-serif text-[#2596be] mb-6">
-              L'Artisanat Indien
+        {/* Layout magazine avec typographie Karma */}
+        <article className="prose prose-lg max-w-none">
+          {/* Section 1 */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl text-[#1a1a1a] mb-6">
+              Notre Héritage
             </h2>
-            <div className="space-y-4 font-sans text-lg text-[#1a1a1a]/70 leading-relaxed">
-              <p>
-                Chaque bijou Khashika est le fruit d'un savoir-faire transmis de génération en génération.
-                Nos artisans, basés dans les ateliers traditionnels du Rajasthan, travaillent l'argent massif
-                avec des techniques séculaires : Kundan, Meenakari, et filigrane.
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p className="text-lg">
+                Depuis 1924, Khashika perpétue l&apos;art ancestral de la joaillerie indienne. 
+                Chaque pièce que nous créons porte en elle l&apos;âme de traditions millénaires, 
+                transmises de génération en génération.
               </p>
               <p>
-                Ces techniques, vieilles de plusieurs siècles, permettent de créer des pièces d'une finesse
-                exceptionnelle, où chaque détail compte et où la main de l'artisan se ressent dans chaque courbe.
+                Nos artisans, héritiers de techniques séculaires comme le Kundan et le Meenakari, 
+                façonnent chaque bijou avec une passion qui transcende le temps. L&apos;argent massif, 
+                matière noble par excellence, devient sous leurs mains expertes une œuvre d&apos;art unique.
               </p>
             </div>
-          </div>
-          <div className="order-1 md:order-2 relative aspect-[4/5] rounded-lg overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80"
-              alt="Atelier de joaillerie indienne"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        </div>
+          </section>
 
-        {/* Citation */}
-        <div className="text-center my-24 py-12 border-y border-[#D4AF37]/30">
-          <blockquote className="text-3xl md:text-4xl font-serif italic text-[#D4AF37] max-w-4xl mx-auto leading-relaxed">
-            "Un bijou n'est pas seulement un objet, c'est une émotion portée, une histoire racontée,
-            un héritage préservé."
-          </blockquote>
-          <p className="mt-6 font-sans text-sm text-[#1a1a1a]/60 uppercase tracking-wider">
-            — Maître Artisan Khashika
-          </p>
-        </div>
-
-        {/* Layout Alterné - Section 2 (Inversé) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
-          <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&q=80"
-              alt="Bijoux indiens traditionnels"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl md:text-4xl font-serif text-[#2596be] mb-6">
-              Les Pierres Précieuses
+          {/* Section 2 */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl text-[#1a1a1a] mb-6">
+              L'Art du Kundan
             </h2>
-            <div className="space-y-4 font-sans text-lg text-[#1a1a1a]/70 leading-relaxed">
+            <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Nous sélectionnons nos pierres avec le plus grand soin : turquoise, améthyste, saphir,
-                rubis, labradorite, pierre de lune... Chaque pierre est choisie pour sa beauté naturelle
-                et sa signification symbolique dans la culture indienne.
+                Le Kundan, technique emblématique de la joaillerie moghole, consiste à sertir 
+                des pierres précieuses dans de l&apos;or pur. Chez Khashika, nous adaptons cette 
+                technique ancestrale à l&apos;argent massif, créant des pièces d&apos;une élégance intemporelle.
               </p>
               <p>
-                Les pierres sont montées à la main, selon les techniques traditionnelles, pour créer
-                des bijoux qui ne se démodent jamais et qui portent en eux la magie de l'Inde.
+                Chaque pierre est choisie avec soin : turquoise, lapis-lazuli, cornaline, 
+                autant de gemmes qui racontent une histoire, celle de l&apos;Inde éternelle.
               </p>
             </div>
-          </div>
-        </div>
+          </section>
 
-        {/* Image Pleine Largeur */}
-        <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-24">
-          <Image
-            src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80"
-            alt="Culture indienne et joaillerie"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-
-        {/* Layout Alterné - Section 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-serif text-[#2596be] mb-6">
-              L'Inde et la Culture
+          {/* Section 3 */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl text-[#1a1a1a] mb-6">
+              Le Meenakari : L'Art de l'Émail
             </h2>
-            <div className="space-y-4 font-sans text-lg text-[#1a1a1a]/70 leading-relaxed">
+            <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Khashika puise son inspiration dans la richesse culturelle de l'Inde. Chaque motif,
-                chaque forme, chaque couleur raconte une histoire : celle des temples, des festivals,
-                des traditions ancestrales.
+                Le Meenakari, art de l&apos;émaillage sur métal, apporte à nos créations une palette 
+                de couleurs vibrantes. Les motifs floraux et géométriques, inspirés de l&apos;art 
+                moghol et rajasthani, ornent nos bijoux d&apos;une beauté incomparable.
               </p>
               <p>
-                Nos bijoux sont plus que des accessoires : ce sont des ponts entre deux cultures,
-                des témoignages de beauté intemporelle, des créations qui honorent l'héritage
-                de l'artisanat indien tout en s'inscrivant dans la modernité.
+                Chaque couleur est appliquée à la main, chaque motif dessiné avec précision, 
+                faisant de chaque pièce une œuvre unique, témoin d&apos;un savoir-faire exceptionnel.
               </p>
             </div>
-          </div>
-          <div className="order-1 md:order-2 relative aspect-[4/5] rounded-lg overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80"
-              alt="Temple indien et architecture"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        </div>
+          </section>
 
-        {/* Citation Finale */}
-        <div className="text-center my-24 py-12">
-          <p className="text-2xl md:text-3xl font-serif text-[#1a1a1a] max-w-3xl mx-auto leading-relaxed mb-8">
-            Rejoignez-nous dans cette aventure où tradition et modernité se rencontrent,
-            où chaque bijou devient une pièce unique de votre histoire.
-          </p>
-          <Link
-            href="/shop"
-            className="inline-block bg-[#2596be] text-white font-sans font-semibold py-4 px-8 rounded transition-all hover:bg-[#2596be]/90 hover:scale-105"
-          >
-            Découvrir nos collections
-          </Link>
-        </div>
+          {/* Section 4 */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl text-[#1a1a1a] mb-6">
+              Notre Engagement
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Chez Khashika, nous croyons en un commerce équitable et durable. Nos artisans 
+                sont rémunérés justement, et nous nous engageons à préserver les techniques 
+                traditionnelles tout en innovant pour répondre aux attentes contemporaines.
+              </p>
+              <p>
+                Chaque bijou que vous portez raconte une histoire : celle de l&apos;Inde, de ses 
+                traditions, de ses artisans, et maintenant, la vôtre.
+              </p>
+            </div>
+          </section>
+
+          {/* Call to action */}
+          <div className="bg-[#f4f1eb] rounded-lg p-8 text-center">
+            <h3 className="font-serif text-2xl text-[#1a1a1a] mb-4">
+              Découvrez Nos Créations
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Explorez notre collection de bijoux artisanaux, chacun porteur d'une histoire unique.
+            </p>
+            <a
+              href="/shop"
+              className="inline-block bg-[#2596be] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors"
+            >
+              Voir la Collection
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   );

@@ -82,8 +82,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // JSON-LD Schema.org pour Organization
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Khashika',
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    description: 'Joaillerie Indienne d\'Exception - Bijoux artisanaux en argent massif depuis 1924',
+    foundingDate: '1924',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'FR',
+    },
+    sameAs: [
+      // Ajouter les réseaux sociaux si disponibles
+    ],
+  };
+
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body
         className={`${karma.variable} font-serif antialiased`}
       >
