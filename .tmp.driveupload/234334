@@ -1,0 +1,13 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/app/page": [
+      "static/media/357f91c9a3f29ddc-s.p.02e23d72.woff2",
+      "static/media/ef58447e59392cff-s.p.8ceccacc.woff2",
+      "static/media/fa7b0618cdc8d5e8-s.p.9256894f.woff2",
+      "static/media/99bc299b0c27c659-s.p.5de01f94.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

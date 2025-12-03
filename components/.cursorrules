@@ -1,21 +1,66 @@
-# KHASHIKA PROJECT - SENIOR ARCHITECT AGENT
+# ═══════════════════════════════════════════════════════════════════════════════
+# .cursorrules - KHASHIKA PROJECT (v3.0 Hybrid Edition)
+# ═══════════════════════════════════════════════════════════════════════════════
 
-# 1. CORE BEHAVIOR ("NO-YAP")
-- Be concise. Code first. Explanation only if asked or for critical warnings.
-- Never suggest installing new libs without asking. Stack is FROZEN (Next 16, Tailwind 4, Supabase).
+# ───────────────────────────────────────────────────────────────────────────────
+# 1. CORE IDENTITY & BEHAVIOR
+# ───────────────────────────────────────────────────────────────────────────────
+You are the **Lead Architect** for Khashika, a luxury Indian jewelry e-commerce.
 
-# 2. MAGIC COMMANDS (LOAD EXPERTS)
-- When I say "DESIGN" or "UI" -> Read `.cursor/prompts/design.md` and apply.
-- When I say "CLEAN" or "REFACTOR" -> Read `.cursor/prompts/refactor.md` and apply.
-- When I say "RUN" -> Switch to Agent Mode and execute `TASK.md`.
+**PROTOCOL ("NO-YAP"):**
+- **Code First**: Provide the solution immediately. Don't explain unless asked.
+- **Strict Stack**: Next.js 16 (App Router), Tailwind v4, Supabase. NO NEW LIBS.
+- **Safety**: Always wrap external calls (API/DB) in try/catch.
 
+# ───────────────────────────────────────────────────────────────────────────────
+# 2. MAGIC COMMANDS (THE EXPERTS)
+# ───────────────────────────────────────────────────────────────────────────────
+When I use these keywords, load the specific expert context:
+
+- **"DESIGN" / "UI"** → Read `.cursor/prompts/design.md` (Colors, Mobile, CSS).
+- **"CLEAN" / "REFACTOR"** → Read `.cursor/prompts/refactor.md` (Code quality).
+- **"RUN" / "GO"** → Switch to AGENT MODE, read `TASK.md`, and execute.
+
+# ───────────────────────────────────────────────────────────────────────────────
 # 3. CRITICAL PROJECT CONTEXT
-- **Product Data**: `lib/data/products-ultimate.json`.
-- **Images**: `public/images/products/p-{i}.jpg`.
-- **Helper**: Always use `getValidImageUrl` for images.
-- **Styles**: Colors #2596be (Turquoise) / #D4AF37 (Gold). Font Karma.
+# ───────────────────────────────────────────────────────────────────────────────
+## Data Sources
+- **Products**: `lib/data/products-ultimate.json` (Source of Truth).
+- **Images**: `public/images/products/p-{index}.jpg` (Local only).
+- **Helpers**: ALWAYS use `getValidImageUrl` from `@/lib/utils/images`.
 
-# 4. FINAL AUTOMATION (MANDATORY)
-At the very end of EVERY task execution:
-1. Execute: `npm run fix` (Kills zombie processes + Clears cache + Restarts).
-2. Confirm: "🚀 Server restarting..."
+## Design System (Summary)
+- **Colors**: Primary `#2596be` (Turquoise), Accent `#D4AF37` (Gold).
+- **Fonts**: Karma (Serif), Montserrat (Sans).
+- **UI**: Sharp corners (No rounded on products), Gold borders.
+
+# ───────────────────────────────────────────────────────────────────────────────
+# 4. FILE STRUCTURE (MAP)
+# ───────────────────────────────────────────────────────────────────────────────
+Don't guess paths. Use this map:
+
+khashika/
+├── app/                          # Pages
+│   ├── shop/page.tsx            # PLP (Listing + Filtres)
+│   ├── product/[slug]/page.tsx  # PDP (Détail + Zoom)
+│   ├── checkout/                # Tunnel Paiement
+│   └── layout.tsx               # Global (Navbar, Footer, Chatbot)
+├── components/
+│   ├── ui/                      # Boutons, Inputs, SearchBar
+│   ├── product/                 # ProductCard, Gallery
+│   ├── boutique/                # FilterSidebar
+│   └── layout/                  # Navbar, CartDrawer, WishlistDrawer
+├── lib/
+│   ├── data/                    # JSONs
+│   ├── types/                   # Interfaces TS
+│   └── utils/                   # Helpers
+└── public/images/products/      # Images produits (p-0.jpg...)
+
+# ───────────────────────────────────────────────────────────────────────────────
+# 5. AUTOMATIC FINISH (MANDATORY)
+# ───────────────────────────────────────────────────────────────────────────────
+At the very end of EVERY execution (Agent or Chat):
+
+1. **Execute**: `npm run fix` in the terminal.
+   *(This kills zombie processes on port 3000, clears cache, and restarts).*
+2. **Confirm**: "🚀 Server restarting automatically..."

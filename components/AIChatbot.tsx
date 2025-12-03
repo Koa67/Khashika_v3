@@ -8,97 +8,8 @@ interface Message {
   timestamp: Date;
 }
 
-interface FAQCategory {
-  name: string;
-  patterns: RegExp[];
-  response: string;
-}
-
 const STORAGE_KEY = 'khashika_chat_history';
 
-// FAQ Categories with improved regex matching
-const FAQ_CATEGORIES: FAQCategory[] = [
-  {
-    name: 'livraison',
-    patterns: [
-      /livraison|expédition|délai|reçu|arrivée|colis|transport|frais de port|fdp|shipping|delivery/i,
-      /combien de temps|quand|dans combien|délai/i,
-      /france|international|europe|mondial/i,
-    ],
-    response: "Nos livraisons sont effectuées sous 3 à 5 jours ouvrés en France métropolitaine, et 7 à 14 jours pour l'international. Tous nos colis sont suivis et assurés. Les frais de livraison sont de 5,90€ en France, offerts dès 100€ d'achat.",
-  },
-  {
-    name: 'retours',
-    patterns: [
-      /retour|remboursement|échanger|réclamation|défaut|problème|insatisfait/i,
-      /changer|remplacer|échanger|taille|ne convient pas/i,
-      /garantie|défaut|abîmé|cassé/i,
-    ],
-    response: "Vous disposez de 30 jours pour retourner un article non porté, dans son emballage d'origine. Les retours sont gratuits. Le remboursement est effectué sous 5 à 7 jours ouvrés après réception de l'article. Pour échanger un article, contactez-nous.",
-  },
-  {
-    name: 'paiement',
-    patterns: [
-      /paiement|payer|cb|carte bancaire|paypal|virement|chèque|sécurisé/i,
-      /moyen de paiement|mode de paiement|comment payer/i,
-      /3x|4x|fractionné|crédit|facilité/i,
-    ],
-    response: "Nous acceptons les cartes bancaires (Visa, Mastercard, American Express), PayPal, et les virements bancaires. Tous les paiements sont sécurisés via notre partenaire de confiance. Le paiement en 3x sans frais est disponible dès 100€ d'achat.",
-  },
-  {
-    name: 'garantie',
-    patterns: [
-      /garantie|qualité|authenticité|certificat|garanti|satisfait|remboursement/i,
-      /argent massif|or|pierre|authentique|vrai/i,
-      /qualité|durabilité|résistant|solide/i,
-    ],
-    response: "Tous nos bijoux sont garantis authentiques et certifiés. L'argent est massif 925, l'or est 18 carats. Nous garantissons la qualité de nos pierres précieuses et semi-précieuses. En cas de défaut de fabrication, nous remplaçons ou remboursons sans condition.",
-  },
-  {
-    name: 'contact',
-    patterns: [
-      /contact|téléphone|email|adresse|coordonnées|joindre|appeler|écrire/i,
-      /service client|support|aide|assistance|question/i,
-      /boutique|magasin|physique|visiter/i,
-    ],
-    response: "Vous pouvez nous contacter par email à contact@khashika.fr, par téléphone au 01 23 45 67 89 (lun-ven, 9h-18h), ou via notre formulaire de contact. Notre équipe vous répond sous 24h. Nous sommes également présents sur les réseaux sociaux @khashika.",
-  },
-  {
-    name: 'produits',
-    patterns: [
-      /produit|bijou|collection|modèle|pièce|création|article/i,
-      /bague|collier|bracelet|boucle|pendentif|chaîne/i,
-      /disponible|stock|rupture|taille|dimension/i,
-    ],
-    response: "Notre collection comprend des bagues, colliers, bracelets, boucles d'oreilles et pendentifs en argent massif et or, ornés de pierres précieuses. Chaque pièce est unique et fabriquée à la main par nos artisans en Inde. Consultez notre boutique pour découvrir nos créations.",
-  },
-];
-
-const DEFAULT_RESPONSE = "Je suis l'Ambassadeur Culturel de Khashika. Comment puis-je vous aider ? Je peux répondre à vos questions sur la livraison, les retours, le paiement, la garantie, nos produits, ou vous mettre en contact avec notre équipe.";
-
-/**
- * Find matching FAQ category based on user message
- */
-function findFAQMatch(message: string): string {
-  const normalizedMessage = message.toLowerCase().trim();
-  let bestMatch: FAQCategory | null = null;
-  let highestScore = 0;
-
-  for (const category of FAQ_CATEGORIES) {
-    let score = 0;
-    for (const pattern of category.patterns) {
-      if (pattern.test(normalizedMessage)) {
-        score += 1;
-      }
-    }
-    if (score > highestScore) {
-      highestScore = score;
-      bestMatch = category;
-    }
-  }
-
-  return bestMatch && highestScore > 0 ? bestMatch.response : DEFAULT_RESPONSE;
-}
 
 /**
  * Load messages from localStorage
@@ -158,13 +69,7 @@ export default function AIChatbot() {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Load messages from localStorage on mount
-  useEffect(() => {
-    const stored = loadMessagesFromStorage();
-    if (stored.length > 0) {
-      setMessages(stored);
-    }
-  }, []);
+  // Messages are already loaded in useState initializer
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
@@ -179,7 +84,42 @@ export default function AIChatbot() {
   }, [messages, isTyping]);
 
   /**
-   * Handle message sending with improved FAQ matching
+   * Arbre de décision simple pour les réponses
+   */
+  const getBotResponse = (message: string): string => {
+    const lowerMessage = message.toLowerCase();
+    
+    // Livraison
+    if (lowerMessage.includes('livraison') || lowerMessage.includes('expédition') || lowerMessage.includes('délai')) {
+      return 'Nos livraisons sont effectuées sous 48h via Colissimo. Les frais de livraison sont de 5,90€ en France, offerts dès 100€ d\'achat.';
+    }
+    
+    // Retour
+    if (lowerMessage.includes('retour') || lowerMessage.includes('remboursement') || lowerMessage.includes('échanger')) {
+      return 'Vous avez 30 jours pour changer d\'avis. Les retours sont gratuits et le remboursement est effectué sous 5 à 7 jours ouvrés après réception de l\'article.';
+    }
+    
+    // Taille
+    if (lowerMessage.includes('taille') || lowerMessage.includes('dimension') || lowerMessage.includes('mesure')) {
+      return 'Voici notre guide des tailles : [Lien]. Pour toute question sur les dimensions, n\'hésitez pas à nous contacter.';
+    }
+    
+    // Paiement
+    if (lowerMessage.includes('paiement') || lowerMessage.includes('payer') || lowerMessage.includes('carte')) {
+      return 'Nous acceptons les cartes bancaires (Visa, Mastercard, American Express), PayPal, et les virements bancaires. Tous les paiements sont sécurisés.';
+    }
+    
+    // Garantie
+    if (lowerMessage.includes('garantie') || lowerMessage.includes('défaut') || lowerMessage.includes('problème')) {
+      return 'Tous nos bijoux sont garantis 2 ans contre les défauts de fabrication. En cas de problème, contactez-nous et nous trouverons une solution.';
+    }
+    
+    // Par défaut : transfert à un conseiller
+    return 'Je vais transférer votre demande à un conseiller humain. Un membre de notre équipe vous répondra dans les plus brefs délais.';
+  };
+
+  /**
+   * Handle message sending avec arbre de décision
    */
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isTyping) return;
@@ -198,42 +138,15 @@ export default function AIChatbot() {
     // Simulate typing delay for better UX
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    try {
-      // Try API first, fallback to FAQ matching
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: currentInput }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const botResponse: Message = {
-          text: data.response || findFAQMatch(currentInput),
-          sender: 'bot',
-          timestamp: new Date(),
-        };
-        setMessages((prev) => [...prev, botResponse]);
-      } else {
-        // Fallback to FAQ matching if API fails
-        const botResponse: Message = {
-          text: findFAQMatch(currentInput),
-          sender: 'bot',
-          timestamp: new Date(),
-        };
-        setMessages((prev) => [...prev, botResponse]);
-      }
-    } catch {
-      // Fallback to FAQ matching on error
-      const botResponse: Message = {
-        text: findFAQMatch(currentInput),
-        sender: 'bot',
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, botResponse]);
-    } finally {
-      setIsTyping(false);
-    }
+    // Utiliser l'arbre de décision
+    const botResponse: Message = {
+      text: getBotResponse(currentInput),
+      sender: 'bot',
+      timestamp: new Date(),
+    };
+    
+    setMessages((prev) => [...prev, botResponse]);
+    setIsTyping(false);
   };
 
   /**

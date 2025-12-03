@@ -16,3 +16,6 @@ echo "✅ NETTOYAGE TERMINÉ"
 echo ""
 echo "💡 Prochaine étape : npm run fix"
 
+
+
+

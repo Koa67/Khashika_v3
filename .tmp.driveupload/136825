@@ -1,0 +1,31 @@
+{
+  "products_without_images": 0,
+  "duplicate_images": 0,
+  "orphan_images": 20141,
+  "details": {
+    "products_without_images": [],
+    "duplicate_images": {},
+    "sample_orphan_images": [
+      "sac-soie-et-coton-pratique-usage-facile/image-19.jpg",
+      "boucles-doreilles-argent-arbre-de-vie-onyx-noir/image-21.jpg",
+      "boucles-doreille-oeil-de-protection/image-16.jpg",
+      "bracelet-pierres-de-lave-et-agate/image-29.jpg",
+      "collier-tibetain-en-pierres-de-corail-turquoise-verte-et-lapis-lazuli/image-16.jpg",
+      "bracelet-tibetain-turquoise/image-8.jpg",
+      "collier-tibetain-en-pierres-de-corail-turquoise-verte-et-lapis-lazuli/image-8.jpg",
+      "sac-indien-en-tissus-petits-miroirs/image-27.jpg",
+      "bracelet-pierre-lapis-lazuli-avec-breloque/image-13.jpg",
+      "boucles-doreille-tib\u00e9taines-color\u00e9es/image-17.jpg",
+      "boucles-doreille-argent-avec-pierre-naturelle-lapis-lazuli/image-22.jpg",
+      "pashmina-100-cachemire-bleurouge/image-19.jpg",
+      "bracelet-jade-birmanie/image-13.jpg",
+      "bracelet-en-argent-et-pierre-lapis-lazuli/image-22.jpg",
+      "bague-argent-turquoise-r\u00e9glable/image-4.jpg",
+      "bracelet-jade-birmanie/image-2.jpg",
+      "anneau-ethnique-laiton-et-cuivre/image-31.jpg",
+      "bracelet-en-pierres-aventurine-vert-6mm/image-20.jpg",
+      "boucles-doreilles-argent-jade/image-21.jpg",
+      "bracelet-en-argent-et-5-grandes-pierres-en-citrine/image-7.jpg"
+    ]
+  }
+}

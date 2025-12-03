@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "images:check": "tsx check-images.ts",
+    "images:test": "tsx test-one.ts",
+    "images:fix": "tsx fix-images.ts",
+    "images:fix-test": "tsx fix-images.ts --test"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "@types/node": "^20.10.0",
+    "cheerio": "^1.0.0-rc.12",
+    "tsx": "^4.7.0"
+  }
+}

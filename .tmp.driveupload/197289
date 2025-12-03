@@ -1,0 +1,939 @@
+/*
+ Theme Name:   IDStore Child
+ Description:  IDStore Child Theme
+ Author:       8theme
+ Author URI:   https://www.becaneweb.net
+ Template:     idstore
+ Version:      1.0.0
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  idstore-child
+*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash&subset=latin,latin-ext);
+
+/*
+==========================================
+Général - ombrage safari
+==========================================
+*/
+.boxed .wrapper {
+-webkit-box-shadow:0 1px 6px #666!important;
+}
+
+
+/*
+==========================================
+Header
+==========================================
+*/
+.woocommerce-store-notice.demo_store a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.demo_store {
+font-size: 13px;
+background-color: #d4d4d4;
+border-bottom: 1px solid #000;
+}
+
+.header-area {
+background:url(../../uploads/Indian-background.jpg) repeat-x left bottom;
+}
+
+.cart-summ .total {
+ color:#9dd0ce !important;
+ font-weight: 800 !important;
+}
+
+header h1, .header-top h1 {
+    line-height: 20px;
+    font-size: 16px;
+    text-transform: none;
+    color: #fff;
+    margin-top: 14px;
+    font-weight: 200;
+    border-left: solid 2px #9dd0ce;
+    padding-left: 10px;
+}
+
+header .span5 {
+    width: 230px;
+}
+
+.slogan  {
+    margin-left: -20px !important;
+}
+
+.header-type-default .logo {
+    margin-bottom: 20px;
+}
+
+.header-links {
+margin-top:0;
+}
+
+.header-links > li > a {
+color:#fff;
+}
+
+.header-links > li > a:hover {
+color:#9DD0CE!important;
+}
+
+#top-cart {
+padding:15px 0 0;
+}
+
+#top-cart > a {
+color:#9DD0CE;
+font-size:12px;
+text-transform:uppercase;
+}
+
+#top-cart a > span .amount {
+color:#e7c3c1;
+font-weight:700;
+}
+
+.header-bg,.fixed-header-area {
+border-top:1px solid #0B8A83;
+border-bottom:1px solid #0B8A83;
+}
+
+.header-bg,.fixed-header-area {
+background:#0C8985;
+}
+
+/*
+==========================================
+Menu et fils d'ariane
+==========================================
+*/
+.menu > ul > li > a {
+color:#fff!important;
+text-shadow:0 0 0 #0BBBB1;
+font:13px 'Open Sans',sans-serif!important;
+}
+
+.menu > ul > li > a:hover {
+z-index:1000;
+}
+
+.menu .current-menu-item > a {
+color:#111!important;
+}
+
+.mega-menu > ul > li > ul {
+font-size: 11px !important;
+background: #9dd0ce none repeat scroll 0% 0%;
+color: #000;
+border:solid 1px #048b84 !important;
+}
+
+.back-to {
+display:none;
+}
+
+.breadcrumbs {
+margin-top:0;
+text-align:right;
+background-color:#9DD0CE;
+margin-left:0!important;
+-webkit-border-bottom-right-radius:5px;
+-moz-border-radius-bottomright:5px;
+border-bottom-right-radius:5px;
+}
+
+.woocommerce-breadcrumb {
+color:#FFF;
+font-weight:300;
+font-size:10px;
+}
+
+.breadcrumbs .current {
+color:#FFF;
+font-weight:300;
+font-size:10px;
+}
+
+.delimeter {
+color:#FFF;
+font-weight:300;
+}
+
+#breadcrumb {
+float:right;
+margin-top:-4px;
+}
+
+.fixed-header-area .fixed-header {
+background:url(../../uploads/Indian-background.jpg) repeat-x scroll left top transparent;
+}
+
+.fixed-header-area .menu > ul > li > a {
+padding:20px 7px;
+}
+
+.fixed-header-area div.menu {
+letter-spacing:0;
+}
+
+.fixed-header-area .menu-item a {
+font-size:12px!important;
+}
+
+.fixed-header-area .menu .current-menu-item > a {
+color:#111!important;
+}
+
+/*
+==========================================
+Corps de texte
+==========================================
+*/
+.page-title {
+display:none;
+}
+
+.dropcapperso {
+font:600 40px Open Sans;
+letter-spacing:2px;
+color:#0BBAB0;
+float:left;
+margin:-7px 3px -8px 0;
+}
+
+hr {
+border-color:#D4D4D4;
+}
+
+a {
+color:#0B8A83;
+}
+
+button {
+background-color:#6cb9b5;
+border: none;
+color: #fff;
+padding: 2px 10px;
+cursor:pointer;
+}
+
+
+/*
+==========================================
+Widget
+==========================================
+*/
+.widget-texte {
+color:#4E525C!important;
+padding:13px;
+}
+
+.widget-title {
+color:#888;
+}
+
+#text-19 {
+background:url(../../uploads/fond-boutique-khashika.jpg) repeat-x scroll left top transparent;
+}
+
+.button a {
+color:#FFF!important;
+}
+
+.block-head {
+font-family:'Berkshire Swash', cursive;
+padding:16px 14px;
+text-transform:none;
+background:url(../../uploads/fond-boutique-khashika.jpg) repeat-x scroll left top transparent;
+color:#4E525C;
+text-align:right;
+}
+
+.widget-container .block-content {
+margin-bottom:0;
+padding:0 13px;
+}
+
+.widget_etheme-subcategories {
+margin-top:10px;
+margin-bottom:-50px;
+}
+
+#text-3 {
+margin-bottom:0;
+}
+
+#text-28 {
+margin-bottom:0;
+}
+
+#text-29 {
+margin-bottom:0;
+}
+
+.product_list_widget {
+padding-left:15px;
+font-weight:800;
+}
+
+.widget_shopping_cart .widget-title {
+font-family:'Berkshire Swash', cursive;
+color:#444;
+text-transform:none;
+font-size:22px;
+letter-spacing:0;
+}
+
+#woocommerce_widget_cart-2 {
+background-color:#F2F2F2;
+color:#808080;
+letter-spacing:1px;
+}
+
+ul.product_list_widget li img {
+float:left;
+margin-bottom:5px;
+margin-top:-5px;
+}
+
+ul.product_list_widget li a {
+margin-top:20px;
+}
+
+.total {
+padding-left:15px;
+}
+
+.quantity {
+float:none;
+}
+
+.woocommerce-product-search .screen-reader-text {
+display: none;
+}
+
+input[type="search"] {
+background-color: #9DD0CE;
+border-color: #9DD0CE;
+color: #068a82;
+width: 100%;
+padding: 2px 10px;
+height: 25px;
+}
+
+.woocommerce-product-search input[type="submit"] {
+background-color: #6CB9B5;
+border: medium none;
+color: #FFF;
+padding: 2px 10px;
+cursor:pointer;
+}
+
+.widget_recently_viewed_products h3.widget-title strong{
+font-size: 18px;
+color: #444;
+font-weight: 400;
+}
+
+.widget_recently_viewed_products ul.product_list_widget .widget-image {
+padding: 10px 15px 0 0;
+  width: 95px
+}
+
+.widget_recently_viewed_products ul.product_list_widget li a {
+    font-size: 11px;
+}
+
+.widget_recently_viewed_products ul.product_list_widget .widget-text {
+    padding-top: 5px;
+}
+
+.widget_recently_viewed_products ul.product_list_widget li .amount {
+font-size: 13px;
+float: none;
+display: block;
+}
+
+.widget_recently_viewed_products .widget-title {
+font-family: 'Berkshire Swash', cursive;
+padding: 16px 14px;
+text-transform: none;
+background: url(../../uploads/fond-boutique-khashika.jpg) repeat-x scroll left top transparent;
+color: #4E525C;
+text-align: right;
+font-size: 20px;
+}
+
+/*
+==========================================
+Page accueil
+==========================================
+*/
+/* Slider */
+.galleryTextThumbs .rsThumbs .rsThumb {
+border-bottom:1px solid #0B8A83!important;
+}
+
+.rsDefaultInv .rsThumbs {
+font-size:15px!important;
+color:#0B8A83!important;
+background:none repeat scroll 0 0 #fff!important;
+}
+
+.rsDefaultInv .rsThumb.rsNavSelected {
+background:none repeat scroll 0 0 #D4D4D4!important;
+border-left:3px solid #0BBBB1;
+}
+
+.rsDefaultInv .rsTmb span {
+color:#4F4F59!important;
+font-size:12px!important;
+}
+
+/* Titre sous slider */
+.h1-home{
+margin-top: 20px;
+text-align: center;
+}
+.h1-home h1 {
+font-size: 13px;
+letter-spacing: 3px;
+color: #048b84;
+margin-bottom: 0px;
+}
+.h1-home h2 {
+text-transform: none;
+font-size: 12px;
+letter-spacing: 2px;
+color: #000;
+margin: -3px auto 10px auto;
+}
+
+/* Images catégories principales */
+.effect-1 .mask p a.button {
+margin-top:15px;
+}
+
+.banners_top_row {
+margin-top:30px;
+margin-bottom:-40px!important;
+}
+
+.banner {
+margin-bottom:0!important;
+}
+
+/* Info cadeau promo */
+.accueil-info2 {
+background-color:#F2F2F2;
+height:250px;
+border-bottom:3px #0BBAB0 solid;
+}
+
+.accueil-info2:hover {
+background:none repeat scroll 0 0 #9DD0CE;
+}
+
+.accueil-info1 {
+background-color:#F2F2F2;
+height:250px;
+border-left:3px #0BBAB0 solid;
+}
+
+.accueil-info1:hover {
+background:none repeat scroll 0 0 #9DD0CE;
+}
+
+.cta-block {
+border-left:none;
+background:none repeat scroll 0 0 transparent;
+}
+
+.cta-block:hover {
+background:none repeat scroll 0 0 transparent;
+}
+
+/* Présentation produits */
+.carousel {
+height:100%!important;
+}
+
+.grid_pagination_bottom_block {
+border-bottom:2px solid #BBB;
+}
+
+/*
+==========================================
+Page boutique
+==========================================
+*/
+.grid_slider {
+margin-bottom:20px;
+border-bottom:1px solid #9DD0CE;
+padding-bottom:20px;
+}
+
+.grid_pagination_block {
+border-bottom:0 solid #BBB;
+padding-bottom:0;
+}
+
+.grid_pagination_block .woocommerce-ordering select {
+background-color:#F2F2F2;
+}
+
+.grid_content.with-sidebar-left {
+background:url(../../uploads/fond-boutique-bijoux-principal.png) no-repeat scroll right bottom transparent;
+}
+
+.products_grid .product-grid,.product-slide .product-grid {
+background:none repeat scroll 0 0 #F2F2F2!important;
+}
+
+.button {
+padding:1px 10px 0;
+}
+
+.grid_pagination_block .woocommerce-result-count {
+padding-right:10px;
+float:right;
+}
+
+#product-quantity {
+width:170px;
+}
+
+.grid_pagination_block select, input[type="file"] {
+line-height: 0px;
+}
+
+.grid_pagination_block .woocommerce-ordering select, .grid_pagination_block .woocommerce-ordering select:hover {
+width: 100%;
+}
+
+/*
+==========================================
+Page catégorie
+=====================================
+*/
+.product-category-description {
+font:13px 'Open Sans',sans-serif;
+letter-spacing:1px;
+color:#0B8A83;
+background:url(../../uploads/fond-boutique-bijoux-principal.png) no-repeat scroll right bottom transparent;
+background-color:#F2F2F2;
+border-left:3px solid #0BBAB0;
+padding:20px;
+}
+
+/*
+==========================================
+Page chèque cadeau promo
+==========================================
+*/
+.margin-promo {
+padding-left:3%!important;
+margin-right:5%!important;
+}
+
+/*
+==========================================
+Fiches produits
+=====================================
+*/
+.product_description_mainblock h1 {
+margin-bottom:-30px;
+font-size:22px;
+}
+
+.product_description_mainblock .product_meta .woocommerce-price-suffix {
+float:none;
+}
+
+.entry-title {
+margin:20px 0;
+border-bottom:0 solid #F5F5F5;
+}
+
+.price-block {
+margin-top:10px;
+}
+
+.product-stock {
+border-bottom:1px solid gray;
+margin-bottom:10px!important;
+}
+
+.addto-container {
+width:auto;
+}
+
+.button.big {
+padding:4px 17px;
+margin:10px 0;
+}
+
+.button.big span {
+font-size:14px;
+line-height:3px;
+}
+
+.product_layout_variant2 .product_description_mainblock {
+width:450px;
+padding:0 5% 30px 4%;
+}
+
+#product-page .span3.product_description_banner {
+width: 250px;
+}
+
+#product-page .span4.product_description_mainblock.productcol.summary {
+width: 420px;
+}
+
+/*
+==========================================
+Page autour du bijou
+==========================================
+*/
+.tabs .tab-title,.left-titles a {
+width:170px!important;
+margin-left:0;
+}
+
+.tabs .tab-content {
+border:1px solid #0B8A83;
+max-width:835px;
+float:left;
+}
+
+.tabs .tab-title.opened {
+background:url(https://www.khashika.com/wp-content/themes/images/arrow_down.png) no-repeat scroll 98.5% center #0B8A83;
+color:#fff;
+}
+
+.tabs .tab-title,.tabs .left-titles a {
+float:left;
+}
+
+.widget_special_offers {
+margin-bottom:40px;
+}
+
+.tabs {
+float:left;
+}
+
+/*
+==========================================
+Page CGV - livraison
+==========================================
+*/
+.margin15 {
+margin-left:15%!important;
+}
+
+.margin15 h4 {
+margin-left:-30px;
+letter-spacing:2px;
+}
+
+#primary {
+margin-top:35px;
+}
+
+.star li {
+margin-bottom:-10px;
+}
+
+/*
+==========================================
+Page présentation boutique
+==========================================
+*/
+.margin10 {
+margin-left:8%!important;
+}
+
+.small {
+margin-top:20px!important;
+}
+
+/*
+==========================================
+Page Contact
+==========================================
+*/
+#contact_button {
+margin-bottom:80px;
+}
+
+#contact_button {
+margin-bottom:80px;
+}
+
+/*
+==========================================
+Page Recherche
+==========================================
+*/
+.empty-category-block h2 {
+margin-top:100px!important;
+color:#B14D45!important;
+padding:0 15%;
+}
+
+.empty-category-block {
+border-bottom:1px solid #484C55;
+padding-bottom:80px;
+}
+
+/*
+==========================================
+Page Panier
+==========================================
+*/
+.cart_totals h2 {
+font-weight:800;
+border-bottom:1px solid #F2F2F2;
+}
+
+.order-total {
+background-color:#F2F2F2;
+}
+
+.wc-checkout-totals td {
+padding:10px 5px;
+}
+
+.wc-checkout-totals tr {
+line-height:22px;
+}
+
+.tabs.checkout-accordion .tab-title {
+min-width:100%!important;
+}
+
+.shop_table {
+margin-top:20px;
+margin-bottom:35px;
+}
+
+.shop_table td {
+padding:10px 0;
+}
+
+.lost_password {
+left:0!important;
+}
+
+/*
+==========================================
+Page Check-out
+==========================================
+*/
+.tabs.checkout-accordion:last-child {
+min-width:400px;
+}
+/*
+==========================================
+Page commande validés
+==========================================
+*/
+.tabs.checkout-accordion:last-child {
+min-width:400px;
+}
+
+.order_details {
+margin-bottom:50px;
+}
+
+.customer_details {
+margin-bottom:50px;
+}
+
+
+.checkout-cont {
+background-color:#B14D45 !important;
+padding: 7px 35px !important;
+}
+
+
+/*
+==========================================
+Footer
+==========================================
+*/
+.textwidget p {
+color:#fff;
+text-align:justify;
+line-height: 1.5;
+}
+
+.footer-big-block {
+letter-spacing:0;
+}
+
+.footer-mail:hover i, .footer-rs a i:hover {
+color:#bbb!important;
+}
+
+.footer-home:hover i,.footer-phone:hover i {
+color:#fff!important;
+}
+
+.footer-rs i {
+    float: left;
+    font-size: 33px;
+    color: #fff;
+    margin-right: 20px;
+    margin-top: 21px;
+    width: 40px;
+    height: 40px;
+}
+
+.container_footer_bg a {
+color:#9DD0CE!important;
+font-weight:400;
+}
+
+.footer-hr {
+border-top:0 none!important;
+}
+
+.screen-reader-text{
+color: #9dd0ce;
+margin-top: 10px
+}
+
+#after_footer_menu ul {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+/* Puce du menu footer*/
+#menu-les-collections-footer li {
+list-style-type: none;
+}
+
+#menu-les-collections-footer a {
+background-image:url(../../uploads/fleche-puce-footer.png);
+background-repeat:no-repeat;
+background-position:left 2px;
+padding-left:15px;
+}
+
+#menu-les-collections-footer a:hover {
+background-image:url(../../uploads/fleche-puce-footer.png);
+background-repeat:no-repeat;
+background-position:left -18px;
+padding-left:15px;
+}
+
+.menu .current-menu-item > a {
+padding:0;
+}
+
+.menu .current-menu-item > a:hover {
+padding:0;
+}
+
+.menu-les-collections-container .menu .current-menu-item > a {
+color:#333!important;
+}
+
+/*
+==========================================
+Résolutions
+==========================================
+*/
+
+
+@media screen and (max-width: 978px) {
+
+.header-area {
+background:url(../../uploads/Indian-background.jpg) repeat-x scroll left top #0A8884!important;
+}
+
+.new-royalslider-1 .rsThumbsVer {
+ display:none !important;
+}
+
+.rsOverflow {
+width:100%!important;
+}
+
+.banners_top_row {
+margin-bottom:40px!important;
+}
+
+.effect-1 .mask {
+padding:7px 0;
+}
+
+.accueil-info2 {
+height:300px;
+}
+
+.accueil-info1 {
+height:300px;
+}
+
+.margin15 {
+margin-left:5%!important;
+}
+
+.margin10 {
+margin-left:3%!important;
+}
+
+.tabs.checkout-accordion:last-child {
+min-width:250px!important;
+}
+}
+
+@media screen and (max-width: 480px) {
+
+.royalSlider {
+    display: none !important;
+}
+
+.banner {
+    max-width: 300px !important;
+}
+
+.container {
+    padding: 10px;
+    width: 90%;
+}
+}
+
+@media screen and (max-width: 600px) {
+
+	.banner {
+    max-width: 250px !important;
+}
+
+.container {
+    width: 90%;
+}
+}
+
+@media only screen and (max-width: 478px) {
+
+	.widget-container {
+margin-bottom:20px!important;
+}
+}
+
+@media only screen and (min-width: 1570px) {
+.quantity {
+float:none!important;
+display:inline-block;
+}
+}
