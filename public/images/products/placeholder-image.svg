@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="512" viewBox="0 0 768 512">
+  <!-- Fond avec dégradé subtil -->
+  <defs>
+    <linearGradient id="bg-image" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="border-image" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2596be;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond -->
+  <rect width="768" height="512" fill="url(#bg-image)"/>
+  
+  <!-- Bordure décorative -->
+  <rect x="20" y="20" width="728" height="472" fill="none" stroke="url(#border-image)" stroke-width="2" rx="8"/>
+  
+  <!-- Motif central -->
+  <circle cx="384" cy="220" r="80" fill="none" stroke="#2596be" stroke-width="2" opacity="0.3"/>
+  <circle cx="384" cy="220" r="60" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Icône -->
+  <text x="384" y="240" font-size="64" text-anchor="middle" dominant-baseline="middle">📷</text>
+  
+  <!-- Label catégorie -->
+  <text x="384" y="340" font-family="Georgia, serif" font-size="24" fill="#2596be" text-anchor="middle" font-weight="500">Image à venir</text>
+  
+  <!-- Sous-titre -->
+  <text x="384" y="380" font-family="Arial, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">Image bientôt disponible</text>
+  
+  <!-- Logo Khashika -->
+  <text x="384" y="450" font-family="Georgia, serif" font-size="18" fill="#D4AF37" text-anchor="middle" font-style="italic">Khashika</text>
+</svg>

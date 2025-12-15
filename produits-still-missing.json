@@ -1,0 +1,548 @@
+[
+  {
+    "id": "0614ac08-a2ce-486d-891d-4e4f8fd5db3f",
+    "name": "COLLIER pierres 3mm en moraganite",
+    "slug": "collier-pierres-3mm-en-moraganite",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "7caf8747-9941-4332-984f-77f1494b739f",
+    "name": "Boucle d’oreille argentée avec 2 cercles et pierre de lune",
+    "slug": "boucle-doreille-argentée-avec-2-cercles-et-pierre-de-lune",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "9a45c795-208b-47fc-8bf4-e6b601d41d00",
+    "name": "Foulard  en 100%soie à motifs marron , orange et blanc",
+    "slug": "foulard-en-100soie-à-motifs-marron-orange-et-blanc",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "8bc79358-c4cb-43a8-aa74-2b3f6ab2ff1e",
+    "name": "BRACELET  pierre CORNALIE 10mm avec cordon  réglable",
+    "slug": "bracelet-pierre-cornalie-10mm-avec-cordon-réglable",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5cc4ab43-c856-4b45-aee1-7a61c7359276",
+    "name": "Etole gris/orange à frise matière naturelle et végétale",
+    "slug": "etole-grisorange-à-frise-matière-naturelle-et-végétale",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "ff5aa445-9b27-4b8c-9748-8445bf3f38b7",
+    "name": "Bague fantaisie  ajustable dorée pierre péridot",
+    "slug": "bague-fantaisie-ajustable-dorée-pierre-péridot",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "48738cf4-6d57-4c80-8a25-6b58270d732b",
+    "name": "Bracelet Cinabre, Corde Rouge Tressée",
+    "slug": "bracelet-cinabre-corde-rouge-tressée",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "8729222b-7776-48d6-bb07-a08120f680af",
+    "name": "Bracelet doré en pierre de Jade",
+    "slug": "bracelet-doré-en-pierre-de-jade",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "c851694c-cb72-46e7-a636-7d9bfb52c49e",
+    "name": "Boucles d’oreille tibétaines fantaisie",
+    "slug": "boucles-doreille-tibétaines-fantaisie",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "b504b713-c49d-407b-a8f1-7b821791dc65",
+    "name": "Boucles d’oreilles argent en Pierre de Lune",
+    "slug": "boucles-doreilles-argent-en-pierre-de-lune",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "cec0f2ea-302a-43a2-8ab0-ddcae54b6c20",
+    "name": "BOUCLES D’OREILLES ARGENT pierre en saphir bleu",
+    "slug": "boucles-doreilles-argent-pierre-en-saphir-bleu",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "0fa0e86e-879b-46a7-96fc-9597fbbbdbde",
+    "name": "BOUCLES D’oreilles ARGENT onyx bleu",
+    "slug": "boucles-doreilles-argent-onyx-bleu",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "11d5155c-9ee8-4192-8bbb-fe658e2669e3",
+    "name": "Boucles d’oreille argent 5 pierres en turquoise",
+    "slug": "boucles-doreille-argent-5-pierres-en-turquoise",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "3cbd81a6-09e1-4353-a98e-e8c38aa66f15",
+    "name": "Boucles d’oreilles en Turquoise",
+    "slug": "boucles-doreilles-en-turquoise",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "b0ef0d20-f94a-4e25-8570-4fde230cdb64",
+    "name": "Boucles d’oreille argent AMETHYSTE",
+    "slug": "boucles-doreille-argent-amethyste",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5d119a7b-58db-49db-b1f1-5228c760106f",
+    "name": "Boucles d’oreilles ethniques résine bleu",
+    "slug": "boucles-doreilles-ethniques-résine-bleu",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5cdb5248-97dd-4d56-8fda-c0ae3278be69",
+    "name": "BOUCLES D’OREILLES ethniques en  argent",
+    "slug": "boucles-doreilles-ethniques-en-argent",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "0b36cc68-69e1-4bea-9a9e-8622e109df84",
+    "name": "BOUCLES D’oreilles  ARGENT AVEC PIERRE EN TURQUOISE",
+    "slug": "boucles-doreilles-argent-avec-pierre-en-turquoise",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5e91bfba-49ee-411b-b496-2723e126ffbd",
+    "name": "Porte-clé népalais arbre de vie",
+    "slug": "porte-clé-népalais-arbre-de-vie",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "1ee3d411-f110-407b-a522-b529647473b9",
+    "name": "Porte-clé népalais rond  argenté  et doré",
+    "slug": "porte-clé-népalais-rond-argenté-et-doré",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "8bd16d77-ce0f-4cd2-a2d8-ac11d47de83f",
+    "name": "Porte-clé népalais rond  argenté  et coloré symbole « AUM »",
+    "slug": "porte-clé-népalais-rond-argenté-et-coloré-symbole-aum",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "35f4df2f-5cfe-492e-8f3b-f389c95ffd6e",
+    "name": "Pour cheville cordon bleu  foncé réglable  avec Devel Eyes",
+    "slug": "pour-cheville-cordon-bleu-foncé-réglable-avec-devel-eyes",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "05e7733b-b01a-4f40-9da4-d970ed86bb11",
+    "name": "Pour cheville cordon bleu réglable  avec une tortue",
+    "slug": "pour-cheville-cordon-bleu-réglable-avec-une-tortue",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "db5c9df6-d534-46a8-a07e-63430fb67959",
+    "name": "Bague fantaisie ethnique turquoise et corail",
+    "slug": "bague-fantaisie-ethnique-turquoise-et-corail",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "7e4ba078-f00c-441c-9ee4-e366a4fda2fa",
+    "name": "Bague réglable dorée turquoise",
+    "slug": "bague-réglable-dorée-turquoise",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "9e5d6db4-d8c1-485d-9606-16553eaa24f2",
+    "name": "Boucles d’oreille tibétaines turquoise",
+    "slug": "boucles-doreille-tibétaines-turquoise",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5c61173e-69f6-452a-8fe0-8b0d6fc1535c",
+    "name": "Boucles d’oreilles argent et pierre en cornaline",
+    "slug": "boucles-doreilles-argent-et-pierre-en-cornaline",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "e22c9304-ab01-424e-9c55-4de09ac3b277",
+    "name": "BOUCLES D’OREILLES ARGENT pierre en Pierre de lune",
+    "slug": "boucles-doreilles-argent-pierre-en-pierre-de-lune",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5ac15431-b697-4150-b7af-71d0cf9f80da",
+    "name": "BOUCLES D’OREILLES argent filigrane et Lapis-Lazuli",
+    "slug": "boucles-doreilles-argent-filigrane-et-lapis-lazuli",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "7d36d7d4-1a55-4ee2-b1cc-3ed89429dec3",
+    "name": "Boucles d’oreilles fleur en argent",
+    "slug": "boucles-doreilles-fleur-en-argent",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "c98f4939-97ee-44f5-99e7-ec9c3a08d391",
+    "name": "BRACELET pierre de lave et une perle en argent avec un cordon réglable",
+    "slug": "bracelet-pierre-de-lave-et-une-perle-en-argent-avec-un-cordon-réglable",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "4639fafb-4b17-445a-8682-9b9c81c2bc16",
+    "name": "BRACELET pierres  multistone cordon réglable",
+    "slug": "bracelet-pierres-multistone-cordon-réglable",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "31f76cde-0534-4397-9efc-6dd98005a7fe",
+    "name": "Boucles d’oreille oeil de protection",
+    "slug": "boucles-doreille-oeil-de-protection",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "f0627e92-3a50-4a63-b69d-3ea1a0eaf7c0",
+    "name": "Boucles d’oreille tibétaines rondes  lapis-lazuli",
+    "slug": "boucles-doreille-tibétaines-rondes-lapis-lazuli",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "a744575b-2fac-4441-9b0e-4bb62cc5278d",
+    "name": "Pashmina coton/cachemire orange motif éléphant",
+    "slug": "pashmina-cotoncachemire-orange-motif-éléphant",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "eb4ca2d3-2190-4696-8634-c503de537480",
+    "name": "Bague fleur réglable dorée turquoise",
+    "slug": "bague-fleur-réglable-dorée-turquoise",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "50ddfec6-3420-4933-a35f-656913b3afa0",
+    "name": "Trousse colorée ethnique",
+    "slug": "trousse-colorée-ethnique",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "b6f072f5-5ed1-4f05-965e-2cffda381e95",
+    "name": "Foulard noir et orange à fleurs en coton",
+    "slug": "foulard-noir-et-orange-à-fleurs-en-coton",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "26ae8ad2-25b0-4927-8994-539c169e566e",
+    "name": "Petite boucle d’oreille en argent et pierre améthyste",
+    "slug": "petite-boucle-doreille-en-argent-et-pierre-améthyste",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "ddb5880a-b5fd-4622-b7ad-23990c88c496",
+    "name": "Boucle d’oreille argent rhodochrosite",
+    "slug": "boucle-doreille-argent-rhodochrosite",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "c8daaae2-ea0c-4cde-a6f0-0df9a85a01c9",
+    "name": "Bague  laiton doré réglable  2 boules",
+    "slug": "bague-laiton-doré-réglable-2-boules",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "b7fcdb42-4f64-4187-8d79-baecd92f4a46",
+    "name": "Boucles d’oreilles argentées et pierre lapis-lazuli",
+    "slug": "boucles-doreilles-argentées-et-pierre-lapis-lazuli",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "9178ad90-32bd-4051-8664-7ce29dd1833c",
+    "name": "BOUCLES D’OREILLES ARGENT quartz rose",
+    "slug": "boucles-doreilles-argent-quartz-rose",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5dc71219-6c90-4a83-9ce2-21bde9caf710",
+    "name": "Boucles d’oreilles argent ronde et péridot taillé",
+    "slug": "boucles-doreilles-argent-ronde-et-péridot-taillé",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "98bb5b67-fda2-4afa-a57e-893fc0598b28",
+    "name": "Pashmina 100% cachemire bordeaux",
+    "slug": "pashmina-100-cachemire-bordeaux",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "925af9b0-08c9-4c03-8840-69cd26830a53",
+    "name": "pendentif ARGENT ELEPHANT avec son cordon en cuir noir",
+    "slug": "pendentif-argent-elephant-avec-son-cordon-en-cuir-noir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "082c0c75-c85a-4076-afd7-668b304c81c3",
+    "name": "PENDENTIF ARGENT onyx vert avec son cordon en cuir noir",
+    "slug": "pendentif-argent-onyx-vert-avec-son-cordon-en-cuir-noir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "d97971f5-28db-4761-900a-ffb3308edef0",
+    "name": "grand PENDENTIF ARGENT onyx noir avec cordon cuir noir",
+    "slug": "grand-pendentif-argent-onyx-noir-avec-cordon-cuir-noir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "fd0e64e1-56ad-4d00-8e9d-a08b2a72c7d9",
+    "name": "BOUCLES D’OREILLES ARGENT arbre de vie pierre de lune",
+    "slug": "boucles-doreilles-argent-arbre-de-vie-pierre-de-lune",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "83991f90-f23a-49c9-87f9-7b84c00cf586",
+    "name": "PENDENTIF ARGENT citrine  avec son cordon en cuir noir",
+    "slug": "pendentif-argent-citrine-avec-son-cordon-en-cuir-noir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "314d4806-4821-4ce7-a49c-1c1a3337c523",
+    "name": "BOUCLES D’OREILLES ARGENT filigrane et corail",
+    "slug": "boucles-doreilles-argent-filigrane-et-corail",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "0b009efc-c8fb-4337-9c32-722b615d71a2",
+    "name": "CHAINE DE CHEVILLES perles de couleur cordon réglable",
+    "slug": "chaine-de-chevilles-perles-de-couleur-cordon-réglable",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "41107beb-fa27-4ac7-a35f-f6e657570843",
+    "name": "clous D’OREILLES ARGENT aigue marine",
+    "slug": "clous-doreilles-argent-aigue-marine",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "c7ba0f90-0530-4cb1-95e4-0e7f9172b923",
+    "name": "Collier fantaisie metal  perles argentées et noires",
+    "slug": "collier-fantaisie-metal-perles-argentées-et-noires",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "d68d0127-dc88-445d-a68f-e1391a79b3fa",
+    "name": "Ligne Elephants peints porte bonheur",
+    "slug": "ligne-elephants-peints-porte-bonheur",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "70a3aae0-be26-41b9-9223-1533c8cd3ac8",
+    "name": "BOucles d’oreilles argent et petite  pierre emeraude",
+    "slug": "boucles-doreilles-argent-et-petite-pierre-emeraude",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "72e70851-9c53-4300-842a-6a211405c8a3",
+    "name": "BOUCLES D’OREILLES PIERRE LAPIS-lazilu",
+    "slug": "boucles-doreilles-pierre-lapis-lazilu",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "6685c7c1-e234-4167-8f25-fa693fb46bf7",
+    "name": "SAC SOIE bleu, rouge pour emporter que l’essentiel",
+    "slug": "sac-soie-bleu-rouge-pour-emporter-que-lessentiel",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "bb181fab-3042-4e28-9bdb-a00c4410a569",
+    "name": "SAC SOIE rouge, bleu pour emporter que l’essentie",
+    "slug": "sac-soie-rouge-bleu-pour-emporter-que-lessentie",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "73640374-9a0c-4ce1-ab4a-dca99f0aee0c",
+    "name": "BOUCLES D’OREILLES ARGENT turquoise verte",
+    "slug": "boucles-doreilles-argent-turquoise-verte",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "0165b6fd-6ec2-48fd-b591-4de948415034",
+    "name": "PENDENTIF ARGENT grenat avec son cordon en cuir noir",
+    "slug": "pendentif-argent-grenat-avec-son-cordon-en-cuir-noir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "9aba8b25-d204-417b-a906-2a333856a267",
+    "name": "Chaine dorée élégante se porte seule",
+    "slug": "chaine-dorée-élégante-se-porte-seule",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "c95e7d09-9908-449b-a590-ed56ddb3ec8c",
+    "name": "BOUCLES D’oreilles ARGENT saphir",
+    "slug": "boucles-doreilles-argent-saphir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "692fdadd-3462-4e6c-a4df-6d96a872e7e4",
+    "name": "BOUCLES D’oreilles améthyste",
+    "slug": "boucles-doreilles-améthyste",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "5af5434c-21ae-4a27-a4b5-5ff74308df94",
+    "name": "PORTE-CLÉ NÉPALAIS ROND ARGENTÉ ET COLORÉ SYMBOLE « AUM »",
+    "slug": "porte-clé-népalais-rond-argenté-et-coloré-symbole-aum-",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "38547de9-86ec-4e4f-acab-8736f63b46c2",
+    "name": "GRANDES Boucles d’oreilles argent en Pierre de Lune",
+    "slug": "grandes-boucles-doreilles-argent-en-pierre-de-lune",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "f395fca0-700d-411c-b269-936e4d9e56a7",
+    "name": "BOUCLES D’oreilles dorées AVEC PIERRE EN lapis-lazuli",
+    "slug": "boucles-doreilles-dorées-avec-pierre-en-lapis-lazuli",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "07d67123-7520-4870-ad18-9f564b558a79",
+    "name": "Boucles d’oreilles en Pierre de Lune",
+    "slug": "boucles-doreilles-en-pierre-de-lune",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "b794e585-963e-402a-8d23-c78f6d0177c8",
+    "name": "Boucles d’oreille laiton argenté pierre onyx noir",
+    "slug": "boucles-doreille-laiton-argenté-pierre-onyx-noir",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "e88abfaf-1214-4cc2-ad11-a65268c60542",
+    "name": "collier avec chainette dorée et aqua-marine",
+    "slug": "collier-avec-chainette-dorée-et-aqua-marine",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "f2ec9c0a-160a-48a6-a5d4-2c65ec346989",
+    "name": "BRACELET pierre citrine avec un cordon réglable",
+    "slug": "bracelet-pierre-citrine-avec-un-cordon-réglable",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "c11c757d-890b-4cb2-a3aa-dc8adf4d5844",
+    "name": "marque page en bois décor oiseau",
+    "slug": "marque-page-en-bois-décor-oiseau",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "beb99d5d-750d-4c72-ba31-f9625ecd0857",
+    "name": "Boucle d’oreille 3 créoles et pierre en péridot",
+    "slug": "boucle-doreille-3-créoles-et-pierre-en-péridot",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "115fc0e8-e5dc-4ed9-8693-251d5740bd1e",
+    "name": "Boucles d’oreilles argent et pierre agate verte",
+    "slug": "boucles-doreilles-argent-et-pierre-agate-verte",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "02a7ab90-688e-4565-bae1-c58f65e65276",
+    "name": "Boucles d’oreilles Meenakari noires et rouges",
+    "slug": "boucles-doreilles-meenakari-noires-et-rouges",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "1976a571-2a9a-4399-9309-cdb9c19a004b",
+    "name": "CLOUS D’OREILLES ARGENT lapis-lazuli bijou facile à porter",
+    "slug": "clous-doreilles-argent-lapis-lazuli-bijou-facile-à-porter",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "61668fcc-a368-42b0-91d9-8c0a1f42e9b0",
+    "name": "BOUCLES D’oreilles ARGENT topaze verte",
+    "slug": "boucles-doreilles-argent-topaze-verte",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  },
+  {
+    "id": "23405207-8eeb-4179-94b5-37da0f264287",
+    "name": "Collier fantaisie metal  argenté galet blanc",
+    "slug": "collier-fantaisie-metal-argenté-galet-blanc",
+    "image_url": "/images/products/boucles-doreilles-fantaisie.jpg",
+    "status": "no_image"
+  }
+]

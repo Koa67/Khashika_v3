@@ -1,42 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { loadStripe, StripeElementsOptions } from '@stripe/stripe-js';
-import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useCheckout } from '@/lib/hooks/useCheckout';
+import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { toast } from 'sonner';
 
-// Clé publique Stripe (peut être undefined en dev)
-const stripePromise = process.env.NEXT_PUBLIC_STRIPE_KEY
-  ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY)
-  : null;
+// Clé publique Stripe (doit être dans .env.local)
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
 
 interface StripePaymentProps {
+  amount: number;
   onSuccess: () => void;
-  onError: (error: string) => void;
+  onError: (error: Error) => void;
 }
 
 /**
- * Formulaire de paiement Stripe
- * Mode hybride : Si la clé API est manquante, affiche un mode "Simulation"
+ * Composant de paiement Stripe interne
  */
-function CheckoutForm({ onSuccess, onError }: StripePaymentProps) {
+function CheckoutForm({ amount, onSuccess, onError }: StripePaymentProps) {
   const stripe = useStripe();
   const elements = useElements();
   const [isProcessing, setIsProcessing] = useState(false);
-  const { total } = useCheckout();
-  const isSimulationMode = !process.env.NEXT_PUBLIC_STRIPE_KEY;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (isSimulationMode) {
-      // Mode simulation : simuler un paiement réussi
-      setIsProcessing(true);
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setIsProcessing(false);
-      onSuccess();
-      return;
-    }
 
     if (!stripe || !elements) {
       return;
@@ -45,106 +32,102 @@ function CheckoutForm({ onSuccess, onError }: StripePaymentProps) {
     setIsProcessing(true);
 
     try {
-      const cardElement = elements.getElement(CardElement);
-      if (!cardElement) {
-        throw new Error('Élément de carte introuvable');
-      }
-
-      const { error } = await stripe.createPaymentMethod({
-        type: 'card',
-        card: cardElement,
+      const { error, paymentIntent } = await stripe.confirmPayment({
+        elements,
+        confirmParams: {
+          return_url: `${window.location.origin}/checkout/success`,
+        },
+        redirect: 'if_required',
       });
 
       if (error) {
-        onError(error.message || 'Erreur de paiement');
-        setIsProcessing(false);
-        return;
+        onError(new Error(error.message || 'Erreur de paiement'));
+        toast.error('Erreur de paiement', {
+          description: error.message,
+        });
+      } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+        onSuccess();
+        toast.success('Paiement réussi !');
       }
-
-      // Ici, vous enverriez le paymentMethod.id à votre backend
-      // Pour l'instant, on simule le succès
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      onSuccess();
     } catch (err) {
-      onError(err instanceof Error ? err.message : 'Erreur inconnue');
+      const error = err instanceof Error ? err : new Error('Erreur inconnue');
+      onError(error);
+      toast.error('Une erreur est survenue');
     } finally {
       setIsProcessing(false);
     }
   };
 
-  const cardElementOptions = {
-    style: {
-      base: {
-        fontSize: '16px',
-        color: '#1a1a1a',
-        fontFamily: 'Montserrat, sans-serif',
-        '::placeholder': {
-          color: '#a0a0a0',
-        },
-      },
-      invalid: {
-        color: '#ef4444',
-      },
-    },
-  };
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {isSimulationMode && (
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-          <p className="text-sm text-yellow-800">
-            <strong>Mode Simulation :</strong> La clé API Stripe n&apos;est pas configurée.
-            Le bouton ci-dessous simule un paiement réussi.
-          </p>
-        </div>
-      )}
-
-      {!isSimulationMode && (
-        <div className="border border-gray-300 rounded-lg p-4 bg-white">
-          <CardElement options={cardElementOptions} />
-        </div>
-      )}
-
+      <PaymentElement />
       <button
         type="submit"
-        disabled={isProcessing || !stripe}
+        disabled={!stripe || isProcessing}
         className="w-full bg-[#2596be] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isProcessing
-          ? 'Traitement...'
-          : isSimulationMode
-          ? 'Simuler Paiement Réussi'
-          : `Payer ${total.toFixed(2)} €`}
+        {isProcessing ? 'Traitement...' : `Payer ${amount.toFixed(2)} €`}
       </button>
     </form>
   );
 }
 
-export default function StripePayment({ onSuccess, onError }: StripePaymentProps) {
-  const { total } = useCheckout();
-  const isSimulationMode = !process.env.NEXT_PUBLIC_STRIPE_KEY;
+/**
+ * Composant principal StripePayment
+ * Mode hybride : Si la clé API est manquante, affiche un mode "Simulation"
+ */
+export default function StripePayment({ amount, onSuccess, onError }: StripePaymentProps) {
+  // Vérifier si la clé Stripe est disponible (une seule fois au montage)
+  const hasStripeKey = !!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+  const isSimulationMode = !hasStripeKey;
 
-  // Options Stripe Elements
-  const options: StripeElementsOptions = {
-    mode: 'payment',
-    amount: Math.round(total * 100), // Convertir en centimes
-    currency: 'eur',
-  };
-
-  // Si pas de clé Stripe, afficher directement le formulaire de simulation
+  // Mode Simulation (si clé API manquante)
   if (isSimulationMode) {
     return (
-      <div className="w-full">
-        <CheckoutForm onSuccess={onSuccess} onError={onError} />
+      <div className="border-2 border-dashed border-[#D4AF37] rounded-lg p-6 bg-[#f4f1eb]">
+        <div className="text-center mb-4">
+          <h3 className="font-serif text-xl text-[#1a1a1a] mb-2">
+            Mode Simulation
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">
+            La clé API Stripe n&apos;est pas configurée. Mode simulation activé pour le développement.
+          </p>
+        </div>
+        <button
+          onClick={() => {
+            toast.success('Paiement simulé avec succès !');
+            onSuccess();
+          }}
+          className="w-full bg-[#2596be] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors"
+        >
+          Simuler Paiement Réussi
+        </button>
+        <p className="text-xs text-gray-500 mt-2 text-center">
+          En production, configurez NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY dans .env.local
+        </p>
       </div>
     );
   }
 
-  // Si Stripe est configuré, utiliser Elements
+  // Mode Production (Stripe réel)
+  const options: StripeElementsOptions = {
+    mode: 'payment',
+    amount: Math.round(amount * 100), // Convertir en centimes
+    currency: 'eur',
+    appearance: {
+      theme: 'stripe',
+      variables: {
+        colorPrimary: '#2596be',
+        colorBackground: '#ffffff',
+        colorText: '#1a1a1a',
+        fontFamily: 'system-ui, sans-serif',
+      },
+    },
+  };
+
   return (
     <Elements stripe={stripePromise} options={options}>
-      <CheckoutForm onSuccess={onSuccess} onError={onError} />
+      <CheckoutForm amount={amount} onSuccess={onSuccess} onError={onError} />
     </Elements>
   );
 }
-

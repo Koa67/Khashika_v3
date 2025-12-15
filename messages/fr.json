@@ -1,0 +1,181 @@
+{
+  "common": {
+    "brand": "Khashika",
+    "tagline": "Bijoux de Luxe Artisanaux",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "addToCart": "Ajouter au panier",
+    "viewCart": "Voir le panier",
+    "checkout": "Commander",
+    "continueShopping": "Continuer les achats",
+    "backToHome": "Retour à l'accueil"
+  },
+  "navbar": {
+    "creations": "CRÉATIONS",
+    "stones": "UNIVERS DES PIERRES",
+    "accessories": "ACCESSOIRES",
+    "gifts": "CADEAUX",
+    "spirit": "L'ESPRIT KHASHIKA",
+    "account": "Mon compte",
+    "wishlist": "Liste de souhaits",
+    "cart": "Panier"
+  },
+  "footer": {
+    "about": "Khashika",
+    "description": "Joaillerie Indienne d'Exception depuis 1924. Créations artisanales en argent massif, inspirées de la tradition indienne.",
+    "navigation": "Navigation",
+    "customerService": "Service Client",
+    "contact": "Contact",
+    "creations": "Créations",
+    "stones": "Univers des Pierres",
+    "accessories": "Accessoires",
+    "spirit": "L'Esprit Khashika",
+    "gifts": "Cadeaux",
+    "contactLink": "Contact",
+    "shipping": "Livraison & Retours",
+    "terms": "CGV",
+    "legal": "Mentions Légales",
+    "privacy": "Confidentialité",
+    "copyright": "© {year} Khashika. Tous droits réservés.",
+    "email": "contact@khashika.com",
+    "phone": "+33 1 23 45 67 89",
+    "location": "Paris, France"
+  },
+  "shop": {
+    "title": "Boutique",
+    "filterBy": "Filtrer par",
+    "sortBy": "Trier par",
+    "price": "Prix",
+    "category": "Catégorie",
+    "material": "Matière",
+    "stone": "Pierre",
+    "new": "Nouveautés",
+    "onSale": "En promotion",
+    "noProducts": "Aucun produit trouvé",
+    "viewProduct": "Voir le produit"
+  },
+  "product": {
+    "addToCart": "Ajouter au panier",
+    "addToWishlist": "Ajouter à la liste de souhaits",
+    "removeFromWishlist": "Retirer de la liste de souhaits",
+    "description": "Description",
+    "characteristics": "Caractéristiques",
+    "reviews": "Avis",
+    "writeReview": "Écrire un avis",
+    "price": "Prix",
+    "inStock": "En stock",
+    "outOfStock": "Rupture de stock",
+    "new": "NOUVEAU",
+    "sale": "PROMO"
+  },
+  "checkout": {
+    "title": "Commande",
+    "yourOrder": "Votre commande",
+    "shipping": "Livraison",
+    "freeShipping": "Livraison gratuite",
+    "freeShippingThreshold": "Livraison gratuite à partir de {amount}€",
+    "total": "Total",
+    "subtotal": "Sous-total",
+    "shippingCost": "Frais de livraison",
+    "payment": "Paiement",
+    "orderSummary": "Récapitulatif",
+    "emptyCart": "Votre panier est vide",
+    "emptyCartMessage": "Ajoutez des produits à votre panier pour continuer.",
+    "continueToCheckout": "Continuer vers le paiement",
+    "processing": "Traitement...",
+    "pay": "Payer {amount} €"
+  },
+  "checkoutForm": {
+    "title": "Informations de livraison",
+    "email": "Email",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "address": "Adresse",
+    "city": "Ville",
+    "zipCode": "Code postal",
+    "country": "Pays",
+    "phone": "Téléphone (optionnel)",
+    "required": "Champ requis",
+    "invalidEmail": "Email invalide",
+    "invalidZipCode": "Code postal invalide (5 chiffres)"
+  },
+  "checkoutSuccess": {
+    "title": "Commande Confirmée !",
+    "message": "Merci pour votre achat. Votre commande a été traitée avec succès.",
+    "orderSummary": "Récapitulatif de votre commande",
+    "quantity": "Quantité",
+    "total": "Total",
+    "orderRecorded": "Votre commande a été enregistrée. Vous recevrez un email de confirmation sous peu.",
+    "continueShopping": "Continuer les achats"
+  },
+  "admin": {
+    "title": "Dashboard Admin",
+    "dashboard": "Tableau de bord",
+    "orders": "Commandes",
+    "products": "Produits",
+    "customers": "Clients",
+    "analytics": "Analytiques",
+    "totalRevenue": "Chiffre d'affaire total",
+    "todayOrders": "Commandes du jour",
+    "outOfStock": "Produits en rupture",
+    "recentSignups": "Derniers inscrits",
+    "orderStatus": {
+      "pending": "En attente",
+      "paid": "Payé",
+      "shipped": "Expédié",
+      "delivered": "Livré",
+      "cancelled": "Annulé"
+    },
+    "markAsShipped": "Marquer comme expédié",
+    "viewDetails": "Voir les détails",
+    "orderDetails": "Détails de la commande"
+  },
+  "search": {
+    "placeholder": "Rechercher un produit...",
+    "noResults": "Aucun résultat trouvé",
+    "viewAllResults": "Voir tous les résultats",
+    "results": "Résultats"
+  },
+  "story": {
+    "title": "L'Esprit Khashika",
+    "subtitle": "Une tradition de joaillerie indienne depuis 1924",
+    "heritage": "Notre Héritage",
+    "heritageText1": "Depuis 1924, Khashika perpétue l'art ancestral de la joaillerie indienne. Chaque pièce que nous créons porte en elle l'âme de traditions millénaires, transmises de génération en génération.",
+    "heritageText2": "Nos artisans, héritiers de techniques séculaires comme le Kundan et le Meenakari, façonnent chaque bijou avec une passion qui transcende le temps. L'argent massif, matière noble par excellence, devient sous leurs mains expertes une œuvre d'art unique.",
+    "kundan": "L'Art du Kundan",
+    "kundanText1": "Le Kundan, technique emblématique de la joaillerie moghole, consiste à sertir des pierres précieuses dans de l'or pur. Chez Khashika, nous adaptons cette technique ancestrale à l'argent massif, créant des pièces d'une élégance intemporelle.",
+    "kundanText2": "Chaque pierre est choisie avec soin : turquoise, lapis-lazuli, cornaline, autant de gemmes qui racontent une histoire, celle de l'Inde éternelle.",
+    "meenakari": "Le Meenakari : L'Art de l'Émail",
+    "meenakariText1": "Le Meenakari, art de l'émaillage sur métal, apporte à nos créations une palette de couleurs vibrantes. Les motifs floraux et géométriques, inspirés de l'art moghol et rajasthani, ornent nos bijoux d'une beauté incomparable.",
+    "meenakariText2": "Chaque couleur est appliquée à la main, chaque motif dessiné avec précision, faisant de chaque pièce une œuvre unique, témoin d'un savoir-faire exceptionnel.",
+    "commitment": "Notre Engagement",
+    "commitmentText1": "Chez Khashika, nous croyons en un commerce équitable et durable. Nos artisans sont rémunérés justement, et nous nous engageons à préserver les techniques traditionnelles tout en innovant pour répondre aux attentes contemporaines.",
+    "commitmentText2": "Chaque bijou que vous portez raconte une histoire : celle de l'Inde, de ses traditions, de ses artisans, et maintenant, la vôtre.",
+    "cta": "Découvrez Nos Créations",
+    "ctaText": "Explorez notre collection de bijoux artisanaux, chacun porteur d'une histoire unique.",
+    "ctaButton": "Voir la Collection"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

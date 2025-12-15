@@ -1,0 +1,763 @@
+[
+  {
+    "id": "91f69b1e-0fea-4e0e-86de-4c63d4586fe0",
+    "name": "Bracelet en cuire avec une pierre en turquoise",
+    "slug": "bracelet-en-cuire-avec-une-pierre-en-turquoise",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05580.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "89f52d55-4d2e-4eaa-acf8-c53d9153611a",
+    "name": "BRACELET ARGENT avec des pierres ovales en péridot",
+    "slug": "bracelet-argent-avec-des-pierres-ovales-en-péridot",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "4a82d75d-0084-431a-9ff1-0b8a192a60f5",
+    "name": "BRACELET ARGENT avec des perles rondes",
+    "slug": "bracelet-argent-avec-des-perles-rondes",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "6b6642b2-1542-4121-9dd6-8fcd808baa4b",
+    "name": "bracelet souple en argent avec 5 éléphants",
+    "slug": "bracelet-souple-en-argent-avec-5-éléphants",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05431-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "3b8245df-e918-4bc4-bb97-4c824b8a219e",
+    "name": "BRACELET pierres naturelles   7 chakras",
+    "slug": "bracelet-pierres-naturelles-7-chakras",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04336.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "328f0a57-cd50-4277-a388-3a4e92648897",
+    "name": "BRACELET ARGENTet pierres naturelles aigue-marine",
+    "slug": "bracelet-argentet-pierres-naturelles-aigue-marine",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05165.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "3c5c4dee-0d3e-4518-8cef-87ce6026dcd3",
+    "name": "Bracelet pierre en turquoise sur macramé",
+    "slug": "bracelet-pierre-en-turquoise-sur-macramé",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "df88b15a-c121-4b1e-9a37-5de7c7ff4c37",
+    "name": "bracelet de guerison en pierres naturelles en multi-stones",
+    "slug": "bracelet-de-guerison-en-pierres-naturelles-en-multi-stones",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "ccc0acfd-daa0-4f76-bd60-a646606f7bc1",
+    "name": "BRACELET pierres naturelles obsidienne",
+    "slug": "bracelet-pierres-naturelles-obsidienne",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05232.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "ecd7f650-15b5-41b5-9f30-70fee711ec1c",
+    "name": "BRACELET pierres naturelles JASPE GRIS",
+    "slug": "bracelet-pierres-naturelles-jaspe-gris",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "037206fb-d26e-417c-9153-920585337110",
+    "name": "BRACELET pierres naturelles JASPE",
+    "slug": "bracelet-pierres-naturelles-jaspe",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05123.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "dc569067-f707-447f-b65d-8eea42a4cd5b",
+    "name": "BRACELET pierres naturelles en quartz",
+    "slug": "bracelet-pierres-naturelles-en-quartz",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05216.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "4e432486-e372-4b57-80b5-651158bef8fd",
+    "name": "BRACELET pierres naturelles  dalmatien",
+    "slug": "bracelet-pierres-naturelles-dalmatien",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05126.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "5c425738-9f8b-49d5-98c7-d2955efc5832",
+    "name": "BRACELET pierres naturelles  SABLE BLEU",
+    "slug": "bracelet-pierres-naturelles-sable-bleu",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05117.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "a9814480-4011-45a9-bbda-c7c1d08abfef",
+    "name": "Bracelet fleur de vie en laiton",
+    "slug": "bracelet-fleur-de-vie-en-laiton",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "121b165f-5429-4bce-bb31-61042d9c1c09",
+    "name": "BRACELET pierre MULTI STONE",
+    "slug": "bracelet-pierre-multi-stone",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_036_20250322_124228.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "d4c1118c-a5e8-43af-8c6f-5c65ec58b20f",
+    "name": "Bracelet manchette lamelles argentées",
+    "slug": "bracelet-manchette-lamelles-argentées",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC05103.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "a86aadbf-d186-408b-98d5-e9d8aa904c14",
+    "name": "Bracelet en laiton et des petites pierres naturelles",
+    "slug": "bracelet-en-laiton-et-des-petites-pierres-naturelles",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_023_20250322_124228-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "27ca8b29-f7ff-4434-8c94-4f0d11c68b37",
+    "name": "Bracelet perles argentées et onyx noir",
+    "slug": "bracelet-perles-argentées-et-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04595.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "830c7b75-f159-490f-af6a-0a84f22a37cd",
+    "name": "Bracelet perles argentées fines",
+    "slug": "bracelet-perles-argentées-fines",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "3da517df-ed9b-4665-ae62-89bd30827790",
+    "name": "bracelet pierre en turquoise avec des perles argent",
+    "slug": "bracelet-pierre-en-turquoise-avec-des-perles-argent",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "af65b8e1-a2d0-41c1-bfed-1753e07d327d",
+    "name": "BRACELET pierre turquoise et un arbre de vie",
+    "slug": "bracelet-pierre-turquoise-et-un-arbre-de-vie",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_030_20241104_175427.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "e4af528d-e685-4283-8548-e0b2a7ec9b06",
+    "name": "BRACELET pierres naturelles en jaspe brun",
+    "slug": "bracelet-pierres-naturelles-en-jaspe-brun",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "e1a8d4f0-74f6-45cd-a76a-1f04c48d7de6",
+    "name": "BRACELET pierres naturelles en jade vert",
+    "slug": "bracelet-pierres-naturelles-en-jade-vert",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_037_20241104_175208.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "0afca85c-ffad-4723-9f0f-a2b3ee22e887",
+    "name": "BRACELET pierres naturelles en howlite rouge",
+    "slug": "bracelet-pierres-naturelles-en-howlite-rouge",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "c98e84ba-8a54-4d03-8568-ba430f036977",
+    "name": "BRACELET pierres naturelles en jaspe noir/gris",
+    "slug": "bracelet-pierres-naturelles-en-jaspe-noirgris",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "8c19bc13-8c90-4ea3-b8ff-37218a084725",
+    "name": "BRACELET inscriptions tibétaines et main de fatma",
+    "slug": "bracelet-inscriptions-tibétaines-et-main-de-fatma",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "5eb8327f-d3f9-49bc-a515-96118febb8e6",
+    "name": "BRACELET ARGENT ONYX VERT",
+    "slug": "bracelet-argent-onyx-vert",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/onyx-vert-bracelet.jpg",
+    "status": "fixed"
+  },
+  {
+    "id": "b88110e2-57f3-4a5c-b284-b5ec9602a00a",
+    "name": "bracelet fin et rigide en laiton",
+    "slug": "bracelet-fin-et-rigide-en-laiton",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "6a8d45b1-c272-48c5-80fd-3b5bbd3a5c53",
+    "name": "Bracelet 1 rang pierres Larimar sur fil noir",
+    "slug": "bracelet-1-rang-pierres-larimar-sur-fil-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "31f8a52e-b6fe-441d-8b3a-78e0fe545c8f",
+    "name": "BRACELET pierres naturelles en Lave et Yin Yang",
+    "slug": "bracelet-pierres-naturelles-en-lave-et-yin-yang",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_039_20240806_133823.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "e8a6eac9-4d36-4cf1-afb3-de891dc744be",
+    "name": "BRACELET pierres naturelles en onyx noir 7 chakras",
+    "slug": "bracelet-pierres-naturelles-en-onyx-noir-7-chakras",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "59ab64b2-e9ec-41f7-abe1-4c8dde6477a5",
+    "name": "Bracelet argenté perles noires",
+    "slug": "bracelet-argenté-perles-noires",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "ca7b5fa6-b149-4f19-95f3-37bb15b14d81",
+    "name": "bracelets pierres naturelles AGATE multistone",
+    "slug": "bracelets-pierres-naturelles-agate-multistone",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_038_20240806_131921.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "29b4f654-33f9-4839-91ce-300933419475",
+    "name": "BRACELET en ARGENT et 5 grandes pierres en citrine",
+    "slug": "bracelet-en-argent-et-5-grandes-pierres-en-citrine",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "8e495a90-1ec6-4031-a173-7f99b380f39a",
+    "name": "Bracelet tibétain en perles et pampilles",
+    "slug": "bracelet-tibétain-en-perles-et-pampilles",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "b55a523b-d878-4594-87c7-45cbea4888a5",
+    "name": "bracelet sur fil pierres AMAZONITE et grenat",
+    "slug": "bracelet-sur-fil-pierres-amazonite-et-grenat",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/2811B-43.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "b6200a8b-52c8-47e2-bfe9-0f30d83e30cd",
+    "name": "BRACELET pierres naturelles en TURQUOISE  7 chakras",
+    "slug": "bracelet-pierres-naturelles-en-turquoise-7-chakras",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "f6a77327-1851-46ff-b9af-c519ec44de19",
+    "name": "BRACELET pierres naturelles en AMAZONITE",
+    "slug": "bracelet-pierres-naturelles-en-amazonite",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "bb017d63-9863-4dfa-960f-d25ef0747a8e",
+    "name": "BRACELET en  pierres 6mm EMERAUDE LAVANDE",
+    "slug": "bracelet-en-pierres-6mm-emeraude-lavande",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "f0ebf3bd-2504-4015-8194-70379dc7bed5",
+    "name": "BRACELET en  pierres onyx noir et devel eye",
+    "slug": "bracelet-en-pierres-onyx-noir-et-devel-eye",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04371.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "21129ab7-0e74-42cb-9849-dc49f0539dc9",
+    "name": "BRACELET pierres jaspe rouge et soleil argent",
+    "slug": "bracelet-pierres-jaspe-rouge-et-soleil-argent",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "95626555-990a-4239-a8c8-1b7e934b6979",
+    "name": "BRACELET pierres obsidienne",
+    "slug": "bracelet-pierres-obsidienne",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04052.jpg",
+    "status": "fixed"
+  },
+  {
+    "id": "1eb71cda-eb26-4034-bcf8-83ed4db1fd1a",
+    "name": "BRACELET TIBETAIN argenté AVEC UN PETIT ÉLÉPHANT",
+    "slug": "bracelet-tibetain-argenté-avec-un-petit-éléphant",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "93553ad9-20ec-40e1-9803-60549a9c26c9",
+    "name": "BRACELET pierre AIGUE MARINE 7 chakras",
+    "slug": "bracelet-pierre-aigue-marine-7-chakras",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04157-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "191ee09d-1c9d-4309-a180-92f32450ec5d",
+    "name": "Bracelet tibétain argenté pampilles éléphants",
+    "slug": "bracelet-tibétain-argenté-pampilles-éléphants",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "bec208ef-f08e-4a2d-ac68-7e021ba31e41",
+    "name": "Bracelet tibétain en perles",
+    "slug": "bracelet-tibétain-en-perles",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/IMG_4337-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "38138964-dcbf-4f8d-ab39-f13384123b47",
+    "name": "BRACELET jonc tibétain",
+    "slug": "bracelet-jonc-tibétain",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03844-2.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "ed8ce2b2-2daf-4b7e-bae1-39333e5511b0",
+    "name": "bracelet souple argent « AUM » symbole Indien",
+    "slug": "bracelet-souple-argent-aum-symbole-indien",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "3a4d1aac-5b78-44d8-9aaa-be1d02501d3e",
+    "name": "bracelet rigide argenté",
+    "slug": "bracelet-rigide-argenté",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03425.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "184d7661-5aeb-442d-b7f5-3ca71f1f1985",
+    "name": "Bracelet fin petites pierres tourmaline",
+    "slug": "bracelet-fin-petites-pierres-tourmaline",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "f03a1e84-4913-4b67-9d47-0db2a0fe411c",
+    "name": "BRACELET JONC argente",
+    "slug": "bracelet-jonc-argente",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03840-2.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "44c1863e-3c9e-443b-b69a-7d3514077189",
+    "name": "BRACELET JONC argente  avec 1 pierre onyx noir",
+    "slug": "bracelet-jonc-argente-avec-1-pierre-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "96e0cd11-da6e-44bd-8d4f-561c9d9ca633",
+    "name": "BRACELET pierres onyx noir et hematite",
+    "slug": "bracelet-pierres-onyx-noir-et-hematite",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "bb2198db-e9c6-43dd-9ac3-33dcdd3bb715",
+    "name": "bracelets système solaire 11 planètes",
+    "slug": "bracelets-système-solaire-11-planètes",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "63a3d636-6f6d-47b5-afe3-d51c060f9c2d",
+    "name": "Bracelet cauri et perles turquoises",
+    "slug": "bracelet-cauri-et-perles-turquoises",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "d9c1b0ab-fe88-46d0-8109-09d0f8aff626",
+    "name": "Bracelet argent et émeraude",
+    "slug": "bracelet-argent-et-émeraude",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "5b417682-3020-4450-a251-5ad7eb3113aa",
+    "name": "Bracelet fin argent plume",
+    "slug": "bracelet-fin-argent-plume",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "fb803acb-35c4-4680-b84b-de4c8a0f8c10",
+    "name": "Bracelet de cheville ou de bras perles noires",
+    "slug": "bracelet-de-cheville-ou-de-bras-perles-noires",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04752-Photoroom.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "8d513144-a708-4a20-a965-a7b7adea1379",
+    "name": "BRACELET pierre du soleil",
+    "slug": "bracelet-pierre-du-soleil",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "8c27895a-ea5b-478f-80b8-bbe6a1d6d412",
+    "name": "BRACELET pierres Péridot",
+    "slug": "bracelet-pierres-péridot",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "0b074476-73e3-4a5e-97e6-fea498210c20",
+    "name": "bracelet rigide en laiton",
+    "slug": "bracelet-rigide-en-laiton",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_018_20241104_175831.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "ed377488-a4cb-4833-8daa-5f67f71f0207",
+    "name": "bracelet rigide argenté plume",
+    "slug": "bracelet-rigide-argenté-plume",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03457.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "a1ec7570-bbfe-4184-8457-bc2c67a64a5f",
+    "name": "bracelet souple en argent",
+    "slug": "bracelet-souple-en-argent",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03372.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "58ca1809-7b7a-4a0e-b770-fd878dde1587",
+    "name": "BRACELET jonc réglable",
+    "slug": "bracelet-jonc-réglable",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "da425e30-5c8b-4dc9-97cc-91f468e89fd1",
+    "name": "bracelet  jonc en plaqué argent avec deux rubis indien.",
+    "slug": "bracelet-jonc-en-plaqué-argent-avec-deux-rubis-indien",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03335.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "159718fe-8f99-464d-82cc-f1b699d95ac8",
+    "name": "BRACELET JONC argente  avec 1 pierre rubis indien",
+    "slug": "bracelet-jonc-argente-avec-1-pierre-rubis-indien",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "f5706c6c-df66-46c9-bfd0-f34b97a74150",
+    "name": "bracelet souple argent fin anneau",
+    "slug": "bracelet-souple-argent-fin-anneau",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "0615338c-898f-45bb-9a34-ac7f50c996a3",
+    "name": "bracelet souple argent fin  fleur de vie",
+    "slug": "bracelet-souple-argent-fin-fleur-de-vie",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "a5cf9940-28c4-43b3-8516-70e026085d3d",
+    "name": "BRACELET TIBETAIN  turquoise",
+    "slug": "bracelet-tibetain-turquoise",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03167-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "08ff04d0-f1f7-4b3a-b2e6-f6dd71f15dfb",
+    "name": "BRACELET pierres 7 chakras",
+    "slug": "bracelet-pierres-7-chakras",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03048.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "790ccc99-62b3-4dff-b164-6a69092bf26a",
+    "name": "BRACELET pierre de Lave 7 chakra et bouddha",
+    "slug": "bracelet-pierre-de-lave-7-chakra-et-bouddha",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "05424242-d55b-458f-9713-fc52beac42a9",
+    "name": "BRACELET jade birmanie",
+    "slug": "bracelet-jade-birmanie",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC02645.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "84cfcdc7-12c2-4517-a48d-0a725893ea4a",
+    "name": "BRACELET onyx noir bouddha",
+    "slug": "bracelet-onyx-noir-bouddha",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC02532.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "ef68ed16-f773-40ab-8fa4-d518a4b4880d",
+    "name": "BRACELET ARGENT grenat",
+    "slug": "bracelet-argent-grenat",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "ee69c72a-3d98-46f7-974a-11bebea1318b",
+    "name": "BRACELET ARGENT smoky quartz",
+    "slug": "bracelet-argent-smoky-quartz",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC02361.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "a6ca0022-d64c-46a1-a022-a69e456b8b93",
+    "name": "BRACELET ARGENT onyx noir",
+    "slug": "bracelet-argent-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC02350.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "32815a48-b0c1-48a4-a8db-2b50ef7236f6",
+    "name": "BRACELET ARGENT avec pierre onyx noir",
+    "slug": "bracelet-argent-avec-pierre-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "d63604b8-dd14-4443-9112-367bf63ffd4e",
+    "name": "BRACELET cristal fermoir perle",
+    "slug": "bracelet-cristal-fermoir-perle",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC02395.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "8b7b9efc-a66a-49ab-be94-351cd726965e",
+    "name": "BRACELET pierres de lave et 7 chakras",
+    "slug": "bracelet-pierres-de-lave-et-7-chakras",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03613.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "0c8c1c7f-7515-440c-8cfa-6aa0274a53b8",
+    "name": "BRACELET pierres onyx noir",
+    "slug": "bracelet-pierres-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/tourmaline-noir.jpg",
+    "status": "fixed"
+  },
+  {
+    "id": "74be1491-b836-4bc1-9521-e323032773b1",
+    "name": "bracelet indien jonc bois et peint à la main jaune et rouge",
+    "slug": "bracelet-indien-jonc-bois-et-peint-à-la-main-jaune-et-rouge",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "83f0d94b-92b8-4319-9f62-6f852861bafb",
+    "name": "bracelet indien jonc laiton et peint à la main",
+    "slug": "bracelet-indien-jonc-laiton-et-peint-à-la-main",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/jonc-dore.jpg",
+    "status": "fixed"
+  },
+  {
+    "id": "429e55d4-22a0-4bfe-96d2-e00663f88678",
+    "name": "bracelet souple argent zircon",
+    "slug": "bracelet-souple-argent-zircon",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "5f9291cd-cae9-4b49-81e4-e7495614250e",
+    "name": "bracelet souple argent saphir",
+    "slug": "bracelet-souple-argent-saphir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "adc587f4-0c6c-4b15-9f0d-10390f5d4419",
+    "name": "BRACELET ARGENT calcédoine bleu de belles grandes pierres",
+    "slug": "bracelet-argent-calcédoine-bleu-de-belles-grandes-pierres",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "8b25b638-f2c5-48de-9e85-1ecf10bbf9ce",
+    "name": "BRACELET avec pierre onyx noir",
+    "slug": "bracelet-avec-pierre-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "1707d40e-5501-4efe-9005-3049977367da",
+    "name": "BRACELET ARGENT turquoise",
+    "slug": "bracelet-argent-turquoise",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "50327159-94b0-4ffc-8dfd-b2ad4b2ad0d8",
+    "name": "BRACELET chainette argent et pierre onyx noir",
+    "slug": "bracelet-chainette-argent-et-pierre-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "d4c522e7-f9e3-4a48-a71a-8f53fa1916e7",
+    "name": "BRACELET INDIEN metal argente pierre SAND STONE",
+    "slug": "bracelet-indien-metal-argente-pierre-sand-stone",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "12f369fb-b48c-4664-bd1d-add2b35225e5",
+    "name": "BRACELET INDIEN argenté vraie pierre onyx rouge",
+    "slug": "bracelet-indien-argenté-vraie-pierre-onyx-rouge",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "e660f333-9f9d-4762-9dc5-02a8d8df3aee",
+    "name": "bracelet metal argenté perles vertes",
+    "slug": "bracelet-metal-argenté-perles-vertes",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "dab77a0f-b44b-4d49-b6ed-f07aa19dee69",
+    "name": "Bracelet en HOWLITE",
+    "slug": "bracelet-en-howlite",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/BRPI0023.jpg",
+    "status": "fixed"
+  },
+  {
+    "id": "11731ffd-6936-4215-b754-7a59fbc046dc",
+    "name": "BRACELET pierres naturelles  en JASPE",
+    "slug": "bracelet-pierres-naturelles-en-jaspe",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_035_20241104_175208-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "d1a5c8d7-98d5-40f6-a8ff-0947ebadbc34",
+    "name": "bracelet rigide en laiton grande Onyx noir",
+    "slug": "bracelet-rigide-en-laiton-grande-onyx-noir",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/Photoroom_018_20241104_175831.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "6065dfa9-0aba-46f3-82d0-b983d85a6906",
+    "name": "Bracelet perles (Bois de rose) avec tête de bouddha",
+    "slug": "bracelet-perles-bois-de-rose-avec-tête-de-bouddha",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC04140-1.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "8676079a-0bb5-4bb7-adec-6f20ba1c3c51",
+    "name": "BRACELET ARGENT et pierre turquoise",
+    "slug": "bracelet-argent-et-pierre-turquoise",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "9b3fc739-3d3a-43d1-929d-dd7be7d4ec26",
+    "name": "BRACELET ARGENT et une pierre en smocks quartz",
+    "slug": "bracelet-argent-et-une-pierre-en-smocks-quartz",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/DSC03800.jpeg",
+    "status": "fixed"
+  },
+  {
+    "id": "5c8ea24f-eff7-4ea1-827b-d461cd7427b7",
+    "name": "BRACELET JONC argente  avec 1 pierre turquoise",
+    "slug": "bracelet-jonc-argente-avec-1-pierre-turquoise",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "292fa589-8cc9-42cc-a35d-70d504a4569b",
+    "name": "BRACELET ARGENT MALACHITE",
+    "slug": "bracelet-argent-malachite",
+    "image_url": "/images/products/bracelets.jpeg",
+    "newImage": "https://www.khashika.com/wp-content/uploads/lapis-lazuli-bracelet-argent.jpg",
+    "status": "fixed"
+  },
+  {
+    "id": "4d070858-d499-4452-944f-86a9efca6609",
+    "name": "BRACELET JONC argente réglable style flèches",
+    "slug": "bracelet-jonc-argente-réglable-style-flèches",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  },
+  {
+    "id": "f236ed3b-3bc2-4384-aee5-2f6e0695b397",
+    "name": "BRACELET tibétain argenté pierre turquoise lapis-lazulis",
+    "slug": "bracelet-tibétain-argenté-pierre-turquoise-lapis-lazulis",
+    "image_url": "/images/products/bracelets.jpeg",
+    "status": "not_found"
+  }
+]

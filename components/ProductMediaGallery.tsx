@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Product } from '@/lib/types';
+import { useValidatedImages } from '@/lib/hooks/useValidatedImages';
 
 interface ProductMediaGalleryProps {
   product: Product;
@@ -21,9 +22,22 @@ const getValidImageUrl = (path: string | null | undefined): string => {
 };
 
 export default function ProductMediaGallery({ product }: ProductMediaGalleryProps) {
-  const images = product.images && product.images.length > 0
-    ? product.images
-    : [product.image || product.image_url || '/placeholder-image.svg'];
+  // Collect all possible image sources
+  const allProductImages = [
+    product.image_url,
+    product.image,
+    ...(product.images || []),
+  ].filter(Boolean) as string[];
+  
+  // Use validated images hook to filter out blacklisted images
+  const { validImages: validatedImages } = useValidatedImages(allProductImages, {
+    fallbackImage: '/placeholder-image.svg',
+  });
+  
+  // Fallback to placeholder if no valid images
+  const images = validatedImages.length > 0 
+    ? validatedImages 
+    : ['/placeholder-image.svg'];
   
   const [selectedIndex, setSelectedIndex] = useState(0);
   const validImages = images.map(getValidImageUrl);

@@ -9,11 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#2596be",
+        primary: {
+          DEFAULT: '#2596be',
+          dark: '#1e7a9a',
+          light: '#3ab0d8',
+        },
+        gold: {
+          DEFAULT: '#D4AF37',
+          dark: '#b8962f',
+          light: '#e5c85c',
+        },
         secondary: "#1a1a1a",
         accent: "#D4AF37",
         cream: "#F4EAD8",
         night: "#121A21",
+        coral: '#FF6B6B',
+        emerald: '#50C878',
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
         card: "rgb(var(--card) / <alpha-value>)",

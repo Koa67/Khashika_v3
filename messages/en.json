@@ -1,0 +1,181 @@
+{
+  "common": {
+    "brand": "Khashika",
+    "tagline": "Artisan Luxury Jewelry",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "search": "Search",
+    "addToCart": "Add to cart",
+    "viewCart": "View cart",
+    "checkout": "Checkout",
+    "continueShopping": "Continue shopping",
+    "backToHome": "Back to home"
+  },
+  "navbar": {
+    "creations": "CREATIONS",
+    "stones": "STONE UNIVERSE",
+    "accessories": "ACCESSORIES",
+    "gifts": "GIFTS",
+    "spirit": "THE KHASHIKA SPIRIT",
+    "account": "My account",
+    "wishlist": "Wishlist",
+    "cart": "Cart"
+  },
+  "footer": {
+    "about": "Khashika",
+    "description": "Exceptional Indian Jewelry since 1924. Handcrafted creations in solid silver, inspired by Indian tradition.",
+    "navigation": "Navigation",
+    "customerService": "Customer Service",
+    "contact": "Contact",
+    "creations": "Creations",
+    "stones": "Stone Universe",
+    "accessories": "Accessories",
+    "spirit": "The Khashika Spirit",
+    "gifts": "Gifts",
+    "contactLink": "Contact",
+    "shipping": "Shipping & Returns",
+    "terms": "Terms & Conditions",
+    "legal": "Legal Notice",
+    "privacy": "Privacy",
+    "copyright": "© {year} Khashika. All rights reserved.",
+    "email": "contact@khashika.com",
+    "phone": "+33 1 23 45 67 89",
+    "location": "Paris, France"
+  },
+  "shop": {
+    "title": "Shop",
+    "filterBy": "Filter by",
+    "sortBy": "Sort by",
+    "price": "Price",
+    "category": "Category",
+    "material": "Material",
+    "stone": "Stone",
+    "new": "New",
+    "onSale": "On sale",
+    "noProducts": "No products found",
+    "viewProduct": "View product"
+  },
+  "product": {
+    "addToCart": "Add to cart",
+    "addToWishlist": "Add to wishlist",
+    "removeFromWishlist": "Remove from wishlist",
+    "description": "Description",
+    "characteristics": "Characteristics",
+    "reviews": "Reviews",
+    "writeReview": "Write a review",
+    "price": "Price",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "new": "NEW",
+    "sale": "SALE"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "yourOrder": "Your order",
+    "shipping": "Shipping",
+    "freeShipping": "Free shipping",
+    "freeShippingThreshold": "Free shipping over {amount}€",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shippingCost": "Shipping cost",
+    "payment": "Payment",
+    "orderSummary": "Order summary",
+    "emptyCart": "Your cart is empty",
+    "emptyCartMessage": "Add products to your cart to continue.",
+    "continueToCheckout": "Continue to checkout",
+    "processing": "Processing...",
+    "pay": "Pay {amount} €"
+  },
+  "checkoutForm": {
+    "title": "Shipping information",
+    "email": "Email",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "address": "Address",
+    "city": "City",
+    "zipCode": "Zip code",
+    "country": "Country",
+    "phone": "Phone (optional)",
+    "required": "Required field",
+    "invalidEmail": "Invalid email",
+    "invalidZipCode": "Invalid zip code (5 digits)"
+  },
+  "checkoutSuccess": {
+    "title": "Order Confirmed!",
+    "message": "Thank you for your purchase. Your order has been processed successfully.",
+    "orderSummary": "Your order summary",
+    "quantity": "Quantity",
+    "total": "Total",
+    "orderRecorded": "Your order has been recorded. You will receive a confirmation email shortly.",
+    "continueShopping": "Continue shopping"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "products": "Products",
+    "customers": "Customers",
+    "analytics": "Analytics",
+    "totalRevenue": "Total revenue",
+    "todayOrders": "Today's orders",
+    "outOfStock": "Out of stock products",
+    "recentSignups": "Recent signups",
+    "orderStatus": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "markAsShipped": "Mark as shipped",
+    "viewDetails": "View details",
+    "orderDetails": "Order details"
+  },
+  "search": {
+    "placeholder": "Search for a product...",
+    "noResults": "No results found",
+    "viewAllResults": "View all results",
+    "results": "Results"
+  },
+  "story": {
+    "title": "The Khashika Spirit",
+    "subtitle": "A tradition of Indian jewelry since 1924",
+    "heritage": "Our Heritage",
+    "heritageText1": "Since 1924, Khashika has perpetuated the ancestral art of Indian jewelry. Each piece we create carries within it the soul of millennial traditions, passed down from generation to generation.",
+    "heritageText2": "Our artisans, heirs to age-old techniques such as Kundan and Meenakari, shape each jewel with a passion that transcends time. Solid silver, the noble material par excellence, becomes under their expert hands a unique work of art.",
+    "kundan": "The Art of Kundan",
+    "kundanText1": "Kundan, an emblematic technique of Mughal jewelry, consists of setting precious stones in pure gold. At Khashika, we adapt this ancestral technique to solid silver, creating pieces of timeless elegance.",
+    "kundanText2": "Each stone is carefully chosen: turquoise, lapis lazuli, carnelian, so many gems that tell a story, that of eternal India.",
+    "meenakari": "Meenakari: The Art of Enameling",
+    "meenakariText1": "Meenakari, the art of enameling on metal, brings to our creations a palette of vibrant colors. Floral and geometric motifs, inspired by Mughal and Rajasthani art, adorn our jewelry with incomparable beauty.",
+    "meenakariText2": "Each color is applied by hand, each motif drawn with precision, making each piece a unique work, a witness to exceptional craftsmanship.",
+    "commitment": "Our Commitment",
+    "commitmentText1": "At Khashika, we believe in fair and sustainable trade. Our artisans are fairly compensated, and we are committed to preserving traditional techniques while innovating to meet contemporary expectations.",
+    "commitmentText2": "Each jewel you wear tells a story: that of India, its traditions, its artisans, and now, yours.",
+    "cta": "Discover Our Creations",
+    "ctaText": "Explore our collection of handcrafted jewelry, each carrying a unique story.",
+    "ctaButton": "View Collection"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

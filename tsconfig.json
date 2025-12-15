@@ -30,5 +30,11 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "khashika-filters",
+    "khashika-image-fix",
+    "khashika-images-fix",
+    "_LEGACY_CLONE"
+  ]
 }

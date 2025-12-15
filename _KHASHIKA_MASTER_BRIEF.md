@@ -1,1 +1,1 @@
-/Users/koa/Library/CloudStorage/GoogleDrive-stutz.niko@gmail.com/My Drive/_AI_NEURAL_LINK/_KHASHIKA_MASTER_BRIEF.md
+# Khashika Master Brief

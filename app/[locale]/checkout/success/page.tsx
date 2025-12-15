@@ -1,0 +1,174 @@
+'use client';
+
+import { useEffect, useRef, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import confetti from 'canvas-confetti';
+import { CheckCircle, Package, Home, ShoppingBag } from 'lucide-react';
+import { useCart } from '@/lib/context/CartContext';
+
+/**
+ * Composant interne pour la page de succès
+ */
+function CheckoutSuccessContent() {
+  const searchParams = useSearchParams();
+  const { items, clearCart } = useCart();
+  const hasClearedCartRef = useRef(false);
+
+  // Lancer les confettis au chargement
+  useEffect(() => {
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    const interval = setInterval(() => {
+      if (Date.now() < end) {
+        confetti({
+          particleCount: 3,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: ['#2596be', '#D4AF37', '#FF6B6B'],
+        });
+        confetti({
+          particleCount: 3,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: ['#2596be', '#D4AF37', '#FF6B6B'],
+        });
+      } else {
+        clearInterval(interval);
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Vider le panier une seule fois après confirmation
+  useEffect(() => {
+    if (hasClearedCartRef.current) return;
+
+    const paymentIntentId = searchParams.get('payment_intent');
+    const paymentIntentClientSecret = searchParams.get('payment_intent_client_secret');
+
+    // Si on a une confirmation de paiement Stripe ou si on vient du mode simulation
+    if (paymentIntentId || paymentIntentClientSecret) {
+      clearCart();
+      hasClearedCartRef.current = true;
+    } else if (items.length > 0) {
+      // Mode simulation : vider après un délai
+      const timer = setTimeout(() => {
+        clearCart();
+        hasClearedCartRef.current = true;
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchParams, clearCart, items.length]);
+
+  // Calculer le total de la commande (avant vidage)
+  const orderTotal = items.reduce((sum, item) => {
+    const price = typeof item.product.price === 'number' 
+      ? item.product.price 
+      : parseFloat(String(item.product.price || 0));
+    return sum + price * item.quantity;
+  }, 0);
+
+  return (
+    <div className="min-h-screen bg-background pt-32 pb-20">
+      <div className="container mx-auto px-4 max-w-2xl">
+        {/* Succès Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+            <CheckCircle className="w-12 h-12 text-green-600" />
+          </div>
+          <h1 className="font-serif text-4xl text-[#1a1a1a] mb-4">
+            Commande Confirmée !
+          </h1>
+          <p className="text-lg text-gray-600">
+            Merci pour votre achat. Votre commande a été traitée avec succès.
+          </p>
+        </div>
+
+        {/* Récapitulatif */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 className="font-serif text-2xl text-[#1a1a1a] mb-6 flex items-center gap-2">
+            <Package className="w-6 h-6 text-[#2596be]" />
+            Récapitulatif de votre commande
+          </h2>
+
+          {items.length > 0 ? (
+            <>
+              <div className="space-y-4 mb-6">
+                {items.map((item) => {
+                  const price = typeof item.product.price === 'number' 
+                    ? item.product.price 
+                    : parseFloat(String(item.product.price || 0));
+                  return (
+                    <div key={item.id} className="flex justify-between items-center py-3 border-b border-gray-200">
+                      <div className="flex-1">
+                        <p className="font-medium text-[#1a1a1a]">{item.product.name}</p>
+                        <p className="text-sm text-gray-500">Quantité : {item.quantity}</p>
+                      </div>
+                      <p className="text-[#D4AF37] font-semibold">
+                        {(price * item.quantity).toFixed(2)} €
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="border-t border-gray-200 pt-4">
+                <div className="flex justify-between items-center text-lg font-semibold">
+                  <span className="text-[#1a1a1a]">Total</span>
+                  <span className="text-[#D4AF37]">{orderTotal.toFixed(2)} €</span>
+                </div>
+              </div>
+            </>
+          ) : (
+            <p className="text-gray-600">
+              Votre commande a été enregistrée. Vous recevrez un email de confirmation sous peu.
+            </p>
+          )}
+        </div>
+
+        {/* Actions */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/shop"
+            className="inline-flex items-center justify-center gap-2 bg-[#2596be] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors"
+          >
+            <ShoppingBag className="w-5 h-5" />
+            Continuer les achats
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex items-center justify-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-lg font-medium border-2 border-gray-200 hover:border-[#2596be] transition-colors"
+          >
+            <Home className="w-5 h-5" />
+            Retour à l&apos;accueil
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Page de succès après paiement
+ * - Confettis
+ * - Récapitulatif commande
+ * - Vider le panier uniquement après succès confirmé
+ */
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background pt-32 pb-20 flex items-center justify-center">
+        <div className="text-center">
+          <p className="font-serif text-xl text-[#1a1a1a]">Chargement...</p>
+        </div>
+      </div>
+    }>
+      <CheckoutSuccessContent />
+    </Suspense>
+  );
+}

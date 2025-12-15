@@ -239,3 +239,17 @@ python3 scripts/seed_supabase.py 2>&1 | tee seeding.log
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

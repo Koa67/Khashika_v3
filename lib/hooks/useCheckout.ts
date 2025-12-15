@@ -7,24 +7,24 @@ import { useCart } from '@/lib/context/CartContext';
  * Cerveau financier (Hook)
  * Gère : Sous-total, Shipping (Gratuit > 200€), Total
  * 
- * SÉCURITÉ : Recalcule toujours les totaux côté hook,
- * ne jamais faire confiance au client
+ * SÉCURITÉ : Recalculer toujours les totaux côté client/hook,
+ * ne jamais faire confiance aux données stockées
  */
 export function useCheckout() {
   const { items } = useCart();
 
   const calculations = useMemo(() => {
-    // Recalculer le sous-total depuis les items (sécurité)
+    // Calcul du sous-total (toujours recalculer)
     const subtotal = items.reduce((sum, item) => {
-      const itemPrice = typeof item.product.price === 'number' 
+      const price = typeof item.product.price === 'number' 
         ? item.product.price 
         : parseFloat(String(item.product.price || 0));
-      return sum + itemPrice * item.quantity;
+      return sum + price * item.quantity;
     }, 0);
 
-    // Shipping : Gratuit si sous-total > 200€, sinon 10€
-    const shippingThreshold = 200;
-    const shippingCost = subtotal >= shippingThreshold ? 0 : 10;
+    // Seuil pour livraison gratuite : 200€
+    const FREE_SHIPPING_THRESHOLD = 200;
+    const shippingCost = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : 10;
 
     // Total final
     const total = subtotal + shippingCost;
@@ -33,10 +33,12 @@ export function useCheckout() {
       subtotal: Math.round(subtotal * 100) / 100, // Arrondir à 2 décimales
       shipping: shippingCost,
       total: Math.round(total * 100) / 100,
-      isShippingFree: subtotal >= shippingThreshold,
+      isFreeShipping: subtotal >= FREE_SHIPPING_THRESHOLD,
+      freeShippingRemaining: subtotal < FREE_SHIPPING_THRESHOLD 
+        ? Math.round((FREE_SHIPPING_THRESHOLD - subtotal) * 100) / 100 
+        : 0,
     };
   }, [items]);
 
   return calculations;
 }
-

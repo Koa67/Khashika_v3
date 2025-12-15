@@ -1,37 +1,60 @@
 <mission>
-  <goal>FIX VISUEL : UNIFORMISATION DES IMAGES & CORRECTION CADRAGE</goal>
+  <goal>FIX URGENT : RESTRUCTURATION DES DOSSIERS I18N & NAVBAR</goal>
   <context>
-    Les images récupérées sont de tailles et ratios variés, ce qui casse la grille.
-    Certaines sont des zooms trop gros.
-    ACTION : Forcer un rendu propre via CSS (Object-contain vs Cover) et ajouter un fond neutre.
+    Le serveur tourne, mais les pages (Shop, Admin) sont en 404 car elles ne sont pas dans le dossier [locale].
+    La Navbar a perdu son design Luxe.
+    
+    ACTION : Déplacer physiquement les fichiers et restaurer le composant Navbar.
   </context>
 
   <tasks>
     <task id="1" priority="critical">
-      <file>components/ProductCard.tsx</file>
+      <file>terminal</file>
       <instruction>
-        AMÉLIORER LE RENDU DES IMAGES.
+        RANGER LES PAGES DANS LA STRUCTURE LOCALISÉE.
+        Exécuter ces commandes (Adapter si les dossiers existent déjà) :
         
-        Modifier la balise `<img>` :
-        1. Remplacer `object-cover` par `object-contain` (pour voir le bijou entier) OU garder `object-cover` mais ajouter un padding.
-        -> **CHOIX :** Utiliser `object-cover` mais avec `object-center` strict.
+        # 1. Créer le dossier locale
+        mkdir -p app/[locale]
+
+        # 2. Déplacer les pages principales (Si elles sont à la racine app/)
+        # Le '|| true' évite que le script plante si le fichier est déjà déplacé
+        mv app/page.tsx app/[locale]/page.tsx || true
+        mv app/shop app/[locale]/shop || true
+        mv app/product app/[locale]/product || true
+        mv app/checkout app/[locale]/checkout || true
+        mv app/account app/[locale]/account || true
+        mv app/story app/[locale]/story || true
         
-        2. Ajouter un fond de secours élégant derrière l'image (si elle est transparente ou ne remplit pas tout).
-        -> Classe : `bg-gray-50` ou `bg-[#FDFBF7]`.
-        
-        3. Ajouter une classe de "Fallback" : Si l'image est trop petite, l'afficher en centré sans l'étirer.
+        # 3. Admin (Vérifier emplacement)
+        mv app/admin app/[locale]/admin || true
       </instruction>
     </task>
 
     <task id="2" priority="high">
-      <file>components/boutique/FilterSidebar.tsx</file>
+      <file>components/Navbar.tsx</file>
       <instruction>
-        FIXER LE DESIGN DE LA SIDEBAR.
-        Sur la capture, la sidebar est "brute".
-        1. Ajouter du padding interne (`p-6`).
-        2. Styliser les titres (Catégorie, Matériau) avec la police Serif et couleur Or.
-        3. Styliser les checkboxes (Turquoise au lieu de bleu par défaut).
-        4. Ajouter une ombre portée légère à la colonne pour la détacher.
+        RESTAURER LE DESIGN NAVBAR.
+        - Revenir au layout : Logo Centré, Menu Centré dessous.
+        - Remettre la classe `pattern-mughal-bottom`.
+        - S'assurer que les liens utilisent le `Link` de `navigation.ts` (ou next-intl) pour gérer la langue.
+      </instruction>
+    </task>
+
+    <task id="3" priority="medium">
+      <file>components/product/ProductCard.tsx</file>
+      <instruction>
+        NETTOYER LE CSS DES IMAGES.
+        - Supprimer tout `overlay` ou `opacity` blanc qui traîne sur l'image.
+        - Vérifier que l'image est bien visible (z-index correct).
+      </instruction>
+    </task>
+
+    <task id="4" priority="critical">
+      <file>terminal</file>
+      <instruction>
+        REDÉMARRAGE.
+        1. `npm run fix`
       </instruction>
     </task>
   </tasks>

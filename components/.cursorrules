@@ -1,66 +1,86 @@
-# ═══════════════════════════════════════════════════════════════════════════════
-# .cursorrules - KHASHIKA PROJECT (v3.0 Hybrid Edition)
-# ═══════════════════════════════════════════════════════════════════════════════
+# Khashika - Cursor Rules v4
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 1. CORE IDENTITY & BEHAVIOR
-# ───────────────────────────────────────────────────────────────────────────────
-You are the **Lead Architect** for Khashika, a luxury Indian jewelry e-commerce.
+## Context Priority
+1. _CONTEXT.md (project state)
+2. .cursorrules (coding rules)
+3. @tagged files only
+4. README.md (only if asked about setup)
 
-**PROTOCOL ("NO-YAP"):**
-- **Code First**: Provide the solution immediately. Don't explain unless asked.
-- **Strict Stack**: Next.js 16 (App Router), Tailwind v4, Supabase. NO NEW LIBS.
-- **Safety**: Always wrap external calls (API/DB) in try/catch.
+Never scan folders. Never read untagged JSON.
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 2. MAGIC COMMANDS (THE EXPERTS)
-# ───────────────────────────────────────────────────────────────────────────────
-When I use these keywords, load the specific expert context:
+## Response Protocol
+- Code first, explanations only if asked
+- Diff format for files >100 lines
+- No filler phrases ("Certainly", "Here's", "Let me")
+- No repeating the question
 
-- **"DESIGN" / "UI"** → Read `.cursor/prompts/design.md` (Colors, Mobile, CSS).
-- **"CLEAN" / "REFACTOR"** → Read `.cursor/prompts/refactor.md` (Code quality).
-- **"RUN" / "GO"** → Switch to AGENT MODE, read `TASK.md`, and execute.
+## Tech Constraints
+| Rule | Value |
+|------|-------|
+| Framework | Next.js 16 App Router |
+| Styling | Tailwind v4, no inline |
+| Database | Supabase via @/lib/db/supabase |
+| Icons | lucide-react only |
+| Images | next/image + getValidImageUrl() |
+| New libs | Forbidden without approval |
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 3. CRITICAL PROJECT CONTEXT
-# ───────────────────────────────────────────────────────────────────────────────
-## Data Sources
-- **Products**: `lib/data/products-ultimate.json` (Source of Truth).
-- **Images**: `public/images/products/p-{index}.jpg` (Local only).
-- **Helpers**: ALWAYS use `getValidImageUrl` from `@/lib/utils/images`.
+## File Map
+```
+app/
+  boutique/page.tsx       # Shop listing
+  product/[slug]/page.tsx # Product detail
+  checkout/page.tsx       # Checkout
+  layout.tsx              # Global layout
 
-## Design System (Summary)
-- **Colors**: Primary `#2596be` (Turquoise), Accent `#D4AF37` (Gold).
-- **Fonts**: Karma (Serif), Montserrat (Sans).
-- **UI**: Sharp corners (No rounded on products), Gold borders.
+components/
+  ui/                     # Button, Input, Badge
+  product/                # ProductCard, Grid, Gallery
+  layout/                 # Navbar, Footer, Drawers
+  AIChatbot.tsx          # Chat assistant
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 4. FILE STRUCTURE (MAP)
-# ───────────────────────────────────────────────────────────────────────────────
-Don't guess paths. Use this map:
+lib/
+  data/products-ultimate.json  # Product data
+  types/                  # TypeScript interfaces
+  utils/images.ts         # Image helpers
+  db/supabase.ts         # DB client
+```
 
-khashika/
-├── app/                          # Pages
-│   ├── shop/page.tsx            # PLP (Listing + Filtres)
-│   ├── product/[slug]/page.tsx  # PDP (Détail + Zoom)
-│   ├── checkout/                # Tunnel Paiement
-│   └── layout.tsx               # Global (Navbar, Footer, Chatbot)
-├── components/
-│   ├── ui/                      # Boutons, Inputs, SearchBar
-│   ├── product/                 # ProductCard, Gallery
-│   ├── boutique/                # FilterSidebar
-│   └── layout/                  # Navbar, CartDrawer, WishlistDrawer
-├── lib/
-│   ├── data/                    # JSONs
-│   ├── types/                   # Interfaces TS
-│   └── utils/                   # Helpers
-└── public/images/products/      # Images produits (p-0.jpg...)
+## Commands
+- go/run: Read TASK.md, execute autonomously
+- wtf: Diagnose in 1 sentence, then fix
+- clean: Lint, remove unused imports
+- design: Apply design system from context
+- update: Save progress to _CONTEXT.md
+- ship: Run build, report errors
 
-# ───────────────────────────────────────────────────────────────────────────────
-# 5. AUTOMATIC FINISH (MANDATORY)
-# ───────────────────────────────────────────────────────────────────────────────
-At the very end of EVERY execution (Agent or Chat):
+## Design Quick Reference
+```tsx
+// Colors
+bg-[#2596be] text-[#D4AF37] bg-[#F4EAD8]
 
-1. **Execute**: `npm run fix` in the terminal.
-   *(This kills zombie processes on port 3000, clears cache, and restarts).*
-2. **Confirm**: "🚀 Server restarting automatically..."
+// Golden hover
+hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:border-[#D4AF37]
+
+// Product cards
+rounded-none border border-gray-200
+```
+
+## Error Template
+```tsx
+export async function GET(req: NextRequest) {
+  try {
+    const data = await supabase.from('table').select()
+    return NextResponse.json({ data })
+  } catch (error) {
+    console.error('[ROUTE_NAME]:', error)
+    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+  }
+}
+```
+
+## Pre-Response Check
+- Read _CONTEXT.md?
+- Correct file paths?
+- Using getValidImageUrl()?
+- Code-first response?
+- No new libraries?

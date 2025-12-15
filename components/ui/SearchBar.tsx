@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
 import { Search, X } from 'lucide-react';
 import { useSearch } from '@/lib/hooks/useSearch';

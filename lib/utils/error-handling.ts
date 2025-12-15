@@ -1,12 +1,15 @@
 /**
- * Gestionnaire d'erreurs centralisé pour l'application Khashika
- * Protocole WAR MACHINE : Sécurité et robustesse
+ * Gestionnaire d'erreurs centralisé
+ * Protocole GOD OF WAR : Tolérance zéro pour l'erreur
  */
 
+/**
+ * Classe d'erreur personnalisée pour l'application
+ */
 export class AppError extends Error {
   constructor(
     message: string,
-    public code?: string,
+    public code: string,
     public statusCode: number = 500,
     public isOperational: boolean = true
   ) {
@@ -16,122 +19,104 @@ export class AppError extends Error {
   }
 }
 
-export class ValidationError extends AppError {
-  constructor(message: string, public fields?: Record<string, string[]>) {
-    super(message, 'VALIDATION_ERROR', 400);
-    this.name = 'ValidationError';
-  }
-}
-
-export class NotFoundError extends AppError {
-  constructor(resource: string) {
-    super(`${resource} introuvable`, 'NOT_FOUND', 404);
-    this.name = 'NotFoundError';
-  }
-}
-
-export class UnauthorizedError extends AppError {
-  constructor(message: string = 'Non autorisé') {
-    super(message, 'UNAUTHORIZED', 401);
-    this.name = 'UnauthorizedError';
-  }
+/**
+ * Types d'erreurs
+ */
+export enum ErrorCode {
+  VALIDATION_ERROR = 'VALIDATION_ERROR',
+  NOT_FOUND = 'NOT_FOUND',
+  UNAUTHORIZED = 'UNAUTHORIZED',
+  FORBIDDEN = 'FORBIDDEN',
+  INTERNAL_ERROR = 'INTERNAL_ERROR',
+  NETWORK_ERROR = 'NETWORK_ERROR',
+  PAYMENT_ERROR = 'PAYMENT_ERROR',
 }
 
 /**
- * Gère les erreurs de manière centralisée
+ * Gestionnaire d'erreurs centralisé
  * - En Prod : Log discret + Toast générique
  * - En Dev : Log complet console
  * - Ne JAMAIS exposer de stack trace à l'utilisateur
  */
-export function handleError(error: unknown): {
-  message: string;
-  code?: string;
-  statusCode: number;
-} {
+export function handleError(error: unknown, context?: string): AppError {
   const isDev = process.env.NODE_ENV === 'development';
-  const isProd = process.env.NODE_ENV === 'production';
-
-  // Log complet en développement
-  if (isDev) {
-    console.error('🔴 [ERROR HANDLER]', {
-      error,
-      message: error instanceof Error ? error.message : 'Erreur inconnue',
-      stack: error instanceof Error ? error.stack : undefined,
-      name: error instanceof Error ? error.name : undefined,
-    });
-  }
-
-  // Log discret en production (sans stack trace)
-  if (isProd && error instanceof Error) {
-    console.error('🔴 [ERROR]', {
-      message: error.message,
-      code: error instanceof AppError ? error.code : 'UNKNOWN_ERROR',
-      name: error.name,
-      // Stack trace JAMAIS exposé en production
-    });
-  }
-
-  // Gestion des erreurs connues
+  
+  // Si c'est déjà une AppError, on la retourne
   if (error instanceof AppError) {
-    return {
-      message: error.message,
-      code: error.code,
-      statusCode: error.statusCode,
-    };
+    if (isDev) {
+      console.error(`[AppError] ${context || 'Unknown'}:`, {
+        message: error.message,
+        code: error.code,
+        statusCode: error.statusCode,
+        stack: error.stack,
+      });
+    } else {
+      console.error(`[AppError] ${context || 'Unknown'}:`, {
+        message: error.message,
+        code: error.code,
+        statusCode: error.statusCode,
+      });
+    }
+    return error;
   }
 
-  // Gestion des erreurs Zod
-  if (error && typeof error === 'object' && 'issues' in error) {
-    const zodError = error as { issues: Array<{ path: string[]; message: string }> };
-    const fields: Record<string, string[]> = {};
-    
-    zodError.issues.forEach((issue) => {
-      const field = issue.path.join('.');
-      if (!fields[field]) {
-        fields[field] = [];
-      }
-      fields[field].push(issue.message);
-    });
+  // Si c'est une Error standard
+  if (error instanceof Error) {
+    const appError = new AppError(
+      isDev ? error.message : 'Une erreur est survenue',
+      ErrorCode.INTERNAL_ERROR,
+      500,
+      false
+    );
 
-    return {
-      message: 'Erreur de validation',
-      code: 'VALIDATION_ERROR',
-      statusCode: 400,
-    };
+    if (isDev) {
+      console.error(`[Error] ${context || 'Unknown'}:`, {
+        message: error.message,
+        stack: error.stack,
+        name: error.name,
+      });
+    } else {
+      console.error(`[Error] ${context || 'Unknown'}:`, {
+        message: 'Internal error (details hidden in production)',
+      });
+    }
+
+    return appError;
   }
 
-  // Erreur générique (ne JAMAIS exposer les détails)
-  return {
-    message: isProd ? 'Une erreur est survenue' : error instanceof Error ? error.message : 'Erreur inconnue',
-    code: 'INTERNAL_ERROR',
-    statusCode: 500,
-  };
+  // Erreur inconnue
+  const appError = new AppError(
+    isDev ? String(error) : 'Une erreur inattendue est survenue',
+    ErrorCode.INTERNAL_ERROR,
+    500,
+    false
+  );
+
+  if (isDev) {
+    console.error(`[Unknown Error] ${context || 'Unknown'}:`, error);
+  } else {
+    console.error(`[Unknown Error] ${context || 'Unknown'}:`, 'Unknown error (details hidden)');
+  }
+
+  return appError;
 }
 
 /**
- * Wrapper pour les fonctions async avec gestion d'erreur automatique
+ * Helper pour créer des erreurs typées
  */
-export async function safeAsync<T>(
-  fn: () => Promise<T>,
-  fallback?: T
-): Promise<T | undefined> {
-  try {
-    return await fn();
-  } catch (error) {
-    handleError(error);
-    return fallback;
-  }
+export function createError(
+  message: string,
+  code: ErrorCode,
+  statusCode: number = 500
+): AppError {
+  return new AppError(message, code, statusCode, true);
 }
 
 /**
- * Wrapper pour les fonctions sync avec gestion d'erreur automatique
+ * Helper pour valider et throw une erreur si nécessaire
  */
-export function safeSync<T>(fn: () => T, fallback?: T): T | undefined {
-  try {
-    return fn();
-  } catch (error) {
-    handleError(error);
-    return fallback;
+export function assert(condition: boolean, message: string, code: ErrorCode = ErrorCode.VALIDATION_ERROR): asserts condition {
+  if (!condition) {
+    throw createError(message, code, 400);
   }
 }
-

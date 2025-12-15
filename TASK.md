@@ -1,222 +1,368 @@
-<mission>
-  <goal>OPTIMISATION PERFORMANCE : PAGINATION PAGE SHOP</goal>
-  <context>
-    La page /shop charge actuellement TOUS les produits (25k+) d'un coup, causant des problèmes de performance majeurs.
-    Implémentation d'une pagination côté serveur avec 24 produits par page pour améliorer les performances.
-  </context>
+# PROMPT CURSOR - 5 Corrections Navbar Search Bar
 
-  <tasks>
-    <task id="1" priority="critical" status="completed">
-      <file>lib/data/products-loader.ts</file>
-      <instruction>
-        Ajouter fonction getPaginatedProducts avec support filtres (query, category) et pagination.
-      </instruction>
-    </task>
+## 🎯 CONTEXTE
+Applique ces 5 corrections dans l'ordre sur le fichier `components/Navbar.tsx`.
 
-    <task id="2" priority="critical" status="completed">
-      <file>app/shop/page.tsx</file>
-      <instruction>
-        Remplacer getAllProducts() par getPaginatedProducts() avec paramètre page depuis searchParams.
-      </instruction>
-    </task>
+---
 
-    <task id="3" priority="high" status="completed">
-      <file>components/ui/Pagination.tsx</file>
-      <instruction>
-        Créer composant Pagination avec navigation entre pages, ellipsis, et préservation des query params.
-      </instruction>
-    </task>
-  </tasks>
+## 🔧 FIX #1: Dropdown Position (Sous l'Icône au lieu du Centre)
 
-  <completion_report>
-    **Completed by**: AI Agent
-    **Completion Date**: 2025-01-27
-    **Status**: DONE ✅
+### Étape 1.1: Ajouter les Refs et States
 
-    **Files Modified**:
-    - `lib/data/products-loader.ts` - Ajout fonction getPaginatedProducts()
-    - `app/shop/page.tsx` - Implémentation pagination (24 produits/page)
-    - `components/ui/Pagination.tsx` - Nouveau composant de navigation
+**CHERCHER** (début du composant, après les imports):
+```tsx
+export default function Navbar() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [query, setQuery] = useState('');
+```
 
-    **Summary**:
-    ✅ **TASK 1 (CRITICAL)** : Fonction pagination dans products-loader.ts
-      - Création interface PaginatedProducts avec métadonnées (currentPage, totalPages, totalProducts)
-      - Fonction getPaginatedProducts() avec support filtres (query, category)
-      - Pagination côté serveur avec slice() pour limiter les produits chargés
-      - 24 produits par page par défaut (configurable)
-    
-    ✅ **TASK 2 (CRITICAL)** : Mise à jour page shop avec pagination
-      - Remplacement getAllProducts() par getPaginatedProducts()
-      - Lecture paramètre ?page=X depuis searchParams
-      - Préservation des filtres (query, category) dans la pagination
-      - Affichage message de résultats avec totalProducts
-    
-    ✅ **TASK 3 (HIGH)** : Composant Pagination
-      - Navigation avec boutons Précédent/Suivant
-      - Affichage intelligent des numéros de page (ellipsis si > 7 pages)
-      - Préservation des query params (q, category) lors de la navigation
-      - Style cohérent avec le design system (primary, border, hover)
-      - Accessibilité (aria-label, aria-current)
+**AJOUTER** juste après:
+```tsx
+const router = useRouter();  // Ajouter l'import: import { useRouter } from 'next/navigation';
+const searchContainerRef = useRef<HTMLDivElement>(null);
+const [dropdownLeft, setDropdownLeft] = useState(0);
 
-    **Performance Improvements**:
-    - Avant: Chargement de 25k+ produits → ~500ms-1s de chargement initial
-    - Après: Chargement de 24 produits par page → ~50-100ms de chargement initial
-    - Réduction de ~90% du temps de chargement initial
-    - Réduction de la taille du bundle HTML généré
+useEffect(() => {
+  if (searchContainerRef.current && isSearchOpen) {
+    const rect = searchContainerRef.current.getBoundingClientRect();
+    setDropdownLeft(rect.left);
+  }
+}, [isSearchOpen]);
+```
 
-    **Build Status**: ✅ Compilé avec succès
-    - Page /shop maintenant dynamique (ƒ) car utilise searchParams
-    - Aucune erreur TypeScript
-    - Aucune erreur ESLint
+### Étape 1.2: Ajouter la Ref au Conteneur
 
-    **Next Steps**:
-    1. Tester la pagination en dev: `npm run dev`
-    2. Vérifier que les filtres (query, category) fonctionnent avec la pagination
-    3. Tester la navigation entre les pages
-    4. Vérifier les performances (temps de chargement réduit)
-  </completion_report>
-</mission>
+**CHERCHER** (ligne ~75):
+```tsx
+<div 
+  className="relative group flex items-center gap-2 px-4 min-w-[220px]"
+  onMouseEnter={...}
+```
 
-<mission>
-  <goal>FINITIONS UI/UX : NAVBAR LUXE ET HERO PAGE D'ACCUEIL</goal>
-  <context>
-    L'utilisateur souhaite :
-    1.  Aérer la barre de navigation en augmentant le padding vertical.
-    2.  Repositionner le menu principal (et ses dropdowns) en dessous du logo, à la manière des sites de luxe.
-    3.  Intégrer une nouvelle image Hero sur la page d'accueil avec une mise en page professionnelle et luxueuse.
-  </context>
+**MODIFIER** pour ajouter la ref:
+```tsx
+<div 
+  ref={searchContainerRef}
+  className="relative group flex items-center gap-2 px-4 min-w-[220px]"
+  onMouseEnter={...}
+```
 
-  <tasks>
-    <task id="1" priority="critical">
-      <file>components/Navbar.tsx</file>
-      <instruction>
-        RESTRUCTURATION ET AUGMENTATION DU PADDING DE LA NAVBAR.
-        
-        1.  **Augmenter le padding vertical :** Remplacer la classe de hauteur fixe (ex: `h-32`) par un padding vertical généreux, par exemple `py-8` ou `py-12`, pour donner un aspect plus aéré.
-        2.  **Restructurer pour le menu en dessous du logo :**
-            * Créer un conteneur principal pour la navbar (peut déjà exister, ex: `nav` ou `header`).
-            * Dans ce conteneur, placer la partie supérieure avec : le bouton de menu mobile à gauche (si présent), le logo "Khashika" centré, et les icônes (Recherche, User, Wishlist, Panier, ThemeToggle) à droite.
-            * En dessous de cette partie supérieure, créer une nouvelle ligne (`div` ou `nav` supplémentaire, visible sur desktop `hidden md:flex justify-center`) pour le menu de navigation principal (`<ul>` avec les liens et les dropdowns : "BOUTIQUE", "BIJOUX ARGENT", etc.).
-        3.  **Adapter les dropdowns :** S'assurer que les menus déroulants s'ouvrent correctement en dessous des liens de navigation, sans chevaucher le logo ou les autres éléments. Les classes CSS des dropdowns devront être ajustées pour cette nouvelle disposition (ex: positionnement absolu par rapport à leur élément parent dans la nouvelle ligne de menu).
-      </instruction>
-    </task>
+### Étape 1.3: Changer Position du Dropdown
 
-    <task id="2" priority="critical">
-      <file>components/Hero.tsx</file> <instruction>
-        INTÉGRATION DU NOUVEAU HERO LUXUEUX SUR LA PAGE D'ACCUEIL.
-        
-        1.  **Remplacer l'image :** Utiliser l'image fournie (`image_4.png`) comme image principale de la section Hero.
-        2.  **Mise en page luxueuse :**
-            * Utiliser le composant `Image` de Next.js pour une image optimisée, en pleine largeur (`w-full`) et avec une hauteur conséquente (ex: `h-[80vh]` ou `h-screen`), avec `object-cover`.
-            * Ajouter un overlay sombre (ex: `bg-black/40` ou `bg-gradient-to-t from-black/60 to-transparent`) sur l'image pour améliorer la lisibilité du texte.
-            * Centrer le contenu texte et le bouton sur l'image.
-        3.  **Contenu texte :**
-            * Titre principal : "Khashika" (ou un titre accrocheur comme "L'Élégance Indienne").
-            * Sous-titre : "Bijoux d'Inde et ethniques, accessoires de mode." (ou le texte présent sur l'image).
-            * Bouton d'appel à l'action : "DÉCOUVRIR LA COLLECTION" (ou "EXPLORER").
-        4.  **Style du texte et bouton :** Utiliser les polices (Serif pour le titre, Sans-serif pour le reste), les couleurs (texte clair, bouton avec couleur d'accentuation et survol) et les tailles définies dans le thème pour un rendu cohérent et luxueux.
-      </instruction>
-    </task>
-  </tasks>
+**CHERCHER** (ligne ~135):
+```tsx
+<div className="fixed top-[72px] left-1/2 -translate-x-1/2 w-96 bg-white ...">
+```
 
-  <completion_report>
-    **Completed by**: AI Agent
-    **Completion Date**: 2024-12-19
-    **Status**: DONE ✅
+**REMPLACER** par:
+```tsx
+<div 
+  className="fixed top-[72px] w-96 bg-white ... z-[9999]"
+  style={{ left: `${dropdownLeft}px` }}
+>
+```
 
-    **Files Modified**:
-    - `components/Navbar.tsx` - Restructurée avec menu en dessous du logo et padding vertical augmenté
-    - `components/Hero.tsx` - Nouveau composant Hero luxueux créé
-    - `app/page.tsx` - Mis à jour pour utiliser le nouveau Hero
+**FAIRE LA MÊME CHOSE** pour le dropdown "no results" (ligne ~192).
 
-    **Summary**:
-    ✅ **TASK 1 (CRITICAL)** : Restructuration et augmentation du padding de la Navbar dans `components/Navbar.tsx`
-      - **Padding Vertical** :
-        * Remplacé `h-32` par `py-8` sur le conteneur principal ✅
-        * Structure en deux lignes : supérieure (burger/logo/icônes) et inférieure (menu desktop) ✅
-      
-      - **Ligne Supérieure** :
-        * Burger mobile à gauche (visible uniquement sur mobile) ✅
-        * Logo centré avec `absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2` ✅
-        * Logo taille ajustée : `h-20` (au lieu de `h-32`) pour s'adapter au nouveau padding ✅
-        * Icônes à droite : Recherche, ThemeToggle, User, Wishlist, Panier ✅
-      
-      - **Ligne Inférieure (Menu Desktop)** :
-        * Nouveau `<nav>` avec `hidden lg:flex justify-center items-center py-4` ✅
-        * Menu centré horizontalement avec `<ul className="flex items-center gap-8">` ✅
-        * Tous les items du menu (BOUTIQUE, BIJOUX ARGENT, etc.) dans cette ligne ✅
-      
-      - **Dropdowns Adaptés** :
-        * Mega menu BOUTIQUE : `left-1/2 -translate-x-1/2` pour centrage, `w-screen max-w-[1440px]` pour pleine largeur ✅
-        * Autres dropdowns : `left-1/2 -translate-x-1/2` pour centrage sous chaque item ✅
-        * Ajout de `mt-2` pour espacement entre le lien et le dropdown ✅
-        * Tous les dropdowns s'ouvrent correctement en dessous des liens sans chevaucher le logo ✅
-      
-      - **Spacer** :
-        * Hauteur dynamique : `h-40 lg:h-32` pour compenser la nouvelle structure (plus haute sur mobile) ✅
-        * Mobile menu overlay : `top-40` au lieu de `top-32` ✅
+---
 
-    ✅ **TASK 2 (CRITICAL)** : Intégration du nouveau Hero luxueux dans `components/Hero.tsx`
-      - **Création du Composant** :
-        * Nouveau fichier `components/Hero.tsx` créé ✅
-        * Composant client avec `'use client'` ✅
-      
-      - **Image Hero** :
-        * Utilise `/images/image_4.png` comme image principale ✅
-        * Composant `Image` de Next.js avec `fill` et `object-cover` ✅
-        * Hauteur : `h-[80vh] min-h-[600px]` pour une hauteur conséquente ✅
-        * Fallback : `onError` pour utiliser `/images/hero-background.jpg` si `image_4.png` n'existe pas ✅
-        * `priority` activé pour chargement prioritaire ✅
-      
-      - **Overlay Sombre** :
-        * Gradient : `bg-gradient-to-t from-black/60 via-black/40 to-transparent` ✅
-        * Améliore la lisibilité du texte sur l'image ✅
-      
-      - **Contenu Texte** :
-        * Titre : "Khashika" en `font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white` ✅
-        * Sous-titre : "Bijoux d'Inde et ethniques, accessoires de mode." en `font-sans text-xl md:text-2xl lg:text-3xl text-white/90` ✅
-        * Bouton CTA : "DÉCOUVRIR LA COLLECTION" avec style luxueux ✅
-      
-      - **Style du Bouton** :
-        * Couleur : `bg-[#2596be]` (turquoise) avec `hover:bg-[#1a1a1a]` ✅
-        * Typographie : `font-serif text-lg md:text-xl font-bold uppercase tracking-widest` ✅
-        * Effets : `shadow-lg hover:shadow-xl transform hover:scale-105` ✅
-        * Transition : `transition-colors duration-300` et `transition-transform` ✅
-      
-      - **Intégration dans page.tsx** :
-        * Import mis à jour : `HeroSection` → `Hero` ✅
-        * Utilisation du nouveau composant ✅
+## 🔧 FIX #2: Border Animée - Réduire de 25%
 
-    **Issues Encountered**:
-    1. **Image image_4.png non trouvée** : L'image `image_4.png` n'existe pas dans le dossier `public/images/`
-       - **Solution** : Ajouté un fallback `onError` qui utilise `/images/hero-background.jpg` si l'image n'existe pas. L'utilisateur pourra ajouter `image_4.png` dans `public/images/` plus tard.
-    2. **Hauteur du spacer** : La nouvelle structure de la Navbar est plus haute (deux lignes au lieu d'une)
-       - **Solution** : Ajusté le spacer à `h-40 lg:h-32` pour compenser la hauteur supplémentaire sur mobile, et `h-32` sur desktop où le menu est en dessous
-    3. **Positionnement du mega menu BOUTIQUE** : Le mega menu doit être centré mais avec une largeur maximale
-       - **Solution** : Utilisé `left-1/2 -translate-x-1/2` pour centrage, `w-screen` pour pleine largeur, et `max-w-[1440px]` pour limiter la largeur
+### Étape 2.1: Restructurer le Conteneur
 
-    **Next Steps**:
-    1. Ajouter l'image Hero :
-       - Placer `image_4.png` dans le dossier `public/images/`
-       - Si l'image n'est pas disponible, le fallback utilisera `hero-background.jpg`
-    2. Tester la nouvelle Navbar :
-       - Relancer le serveur : `npm run dev`
-       - Vérifier que le logo est centré en haut
-       - Vérifier que le menu desktop est bien en dessous du logo (visible uniquement sur desktop)
-       - Vérifier que les dropdowns s'ouvrent correctement sous chaque item de menu
-       - Vérifier que le mega menu BOUTIQUE est centré et ne chevauche pas le logo
-       - Tester sur mobile : vérifier que le menu mobile fonctionne toujours
-    3. Tester le Hero :
-       - Vérifier que l'image s'affiche correctement (ou le fallback si `image_4.png` n'existe pas)
-       - Vérifier que le texte est lisible avec l'overlay sombre
-       - Vérifier que le bouton CTA est cliquable et redirige vers `/shop`
-       - Tester la responsivité : vérifier que le texte s'adapte bien sur mobile, tablette et desktop
-    4. Ajustements finaux :
-       - Si nécessaire, ajuster les tailles de police ou les espacements
-       - Vérifier que le Hero s'intègre bien avec le reste de la page
+**CHERCHER** (ligne ~75):
+```tsx
+<div 
+  ref={searchContainerRef}
+  className="relative group flex items-center gap-2 px-4 min-w-[220px] border-b border-transparent transition-colors duration-300 hover:border-black"
+  onMouseEnter={...}
+  onMouseLeave={...}
+>
+  <button>
+    <FaSearch />
+  </button>
+  <input ... />
+</div>
+```
 
-    **Build Status**: ✅ Compilé avec succès
-    **Linter Status**: ✅ Aucune erreur
-    **TypeScript Status**: ✅ Compilation réussie
-  </completion_report>
-</mission>
+**REMPLACER** par cette structure à double wrapper:
+```tsx
+<div 
+  ref={searchContainerRef}
+  className="relative group min-w-[220px] px-4"
+  onMouseEnter={...}
+  onMouseLeave={...}
+>
+  <div 
+    className="flex items-center gap-2 w-[165px] border-b border-transparent transition-colors duration-300"
+    style={{
+      borderBottomColor: isSearchOpen ? '#000' : 'transparent'
+    }}
+  >
+    <button>
+      <FaSearch />
+    </button>
+    <input ... />
+  </div>
+</div>
+```
+
+**EXPLICATION:**
+- Conteneur extérieur: `min-w-[220px]` (zone hover) + pas de border
+- Wrapper intérieur: `w-[165px]` (75% de 220px) + border animée
+
+---
+
+## 🔧 FIX #3: Text Highlighting en Turquoise
+
+### Étape 3.1: Ajouter la Fonction Utilitaire
+
+**AJOUTER** au début du fichier, après les imports et avant le composant:
+```tsx
+const highlightMatch = (text: string, query: string) => {
+  if (!query.trim()) return text;
+  
+  const regex = new RegExp(`(${query})`, 'gi');
+  const parts = text.split(regex);
+  
+  return parts.map((part, index) => {
+    if (part.toLowerCase() === query.toLowerCase()) {
+      return (
+        <span 
+          key={index} 
+          className="text-[#2596be] font-semibold"
+        >
+          {part}
+        </span>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+};
+```
+
+### Étape 3.2: Utiliser dans le Dropdown
+
+**CHERCHER** (dans le dropdown results, ligne ~140):
+```tsx
+<p className="text-sm font-medium text-gray-900">
+  {result.name}
+</p>
+```
+
+**REMPLACER** par:
+```tsx
+<p className="text-sm font-medium text-gray-900">
+  {highlightMatch(result.name, query)}
+</p>
+```
+
+**OPTIONNEL:** Si vous avez d'autres champs texte (description, tags), appliquez aussi:
+```tsx
+{result.description && (
+  <p className="text-xs text-gray-500 mt-1">
+    {highlightMatch(result.description, query)}
+  </p>
+)}
+```
+
+---
+
+## 🔧 FIX #4: Enter Key → Navigation
+
+### Étape 4.1: Ajouter le Handler
+
+**AJOUTER** dans le composant (après les autres fonctions):
+```tsx
+const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  if (e.key === 'Enter' && query.trim()) {
+    setIsSearchOpen(false);
+    router.push(`/search?q=${encodeURIComponent(query)}`);
+  } else if (e.key === 'Escape') {
+    setIsSearchOpen(false);
+    setQuery('');
+  }
+};
+```
+
+### Étape 4.2: Ajouter au Input
+
+**CHERCHER** (ligne ~110):
+```tsx
+<input
+  type="text"
+  ...
+  onChange={handleSearchChange}
+  onFocus={() => setIsSearchOpen(true)}
+  onBlur={() => ...}
+  className="..."
+/>
+```
+
+**AJOUTER** `onKeyDown={handleKeyDown}`:
+```tsx
+<input
+  type="text"
+  ...
+  onChange={handleSearchChange}
+  onKeyDown={handleKeyDown}  ← AJOUTER
+  onFocus={() => setIsSearchOpen(true)}
+  onBlur={() => ...}
+  className="..."
+/>
+```
+
+---
+
+## 🔧 FIX #5: Header Sticky
+
+**CHERCHER** (ligne ~64):
+```tsx
+<header className="... bg-[#FDFBF7] ... overflow-visible">
+```
+
+**VÉRIFIER** que ces classes sont présentes:
+- `sticky`
+- `top-0`
+- `z-50` (ou z-[100])
+
+**SI MANQUANTES**, ajouter:
+```tsx
+<header className="sticky top-0 z-50 bg-[#FDFBF7] ... overflow-visible">
+```
+
+---
+
+## ✅ CHECKLIST DE VALIDATION
+
+Après toutes les modifications:
+
+### Code:
+- [ ] `searchContainerRef` ref ajoutée
+- [ ] `dropdownLeft` state ajouté
+- [ ] `useEffect` pour calculer position ajouté
+- [ ] Dropdown a `style={{ left: '${dropdownLeft}px' }}`
+- [ ] Structure double wrapper pour border (extérieur 220px, intérieur 165px)
+- [ ] Fonction `highlightMatch()` créée
+- [ ] `highlightMatch()` utilisée dans les résultats
+- [ ] `handleKeyDown` handler créé
+- [ ] Input a `onKeyDown={handleKeyDown}`
+- [ ] Header a `sticky top-0 z-50`
+
+### Imports nécessaires:
+```tsx
+import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { FaSearch } from 'react-icons/fa';
+```
+
+---
+
+## 📊 RÉSUMÉ DES MODIFICATIONS PAR LIGNE
+
+| Fix | Ligne | Élément | Action |
+|-----|-------|---------|--------|
+| #1 | ~10 | Début composant | Ajouter refs + states + useEffect |
+| #1 | ~75 | Search container | Ajouter `ref={searchContainerRef}` |
+| #1 | ~135, ~192 | Dropdowns | Ajouter `style={{ left: '${dropdownLeft}px' }}` |
+| #2 | ~75 | Search container | Double wrapper (extérieur + intérieur) |
+| #3 | ~5 | Avant composant | Ajouter fonction `highlightMatch()` |
+| #3 | ~140 | Result item | Utiliser `highlightMatch(result.name, query)` |
+| #4 | ~30 | Dans composant | Ajouter fonction `handleKeyDown` |
+| #4 | ~110 | Input | Ajouter `onKeyDown={handleKeyDown}` |
+| #5 | ~64 | Header | Vérifier/ajouter `sticky top-0 z-50` |
+
+---
+
+## 🎬 COMMANDES FINALES
+
+```bash
+# 1. Vérifier que toutes les modifications sont appliquées
+git diff components/Navbar.tsx
+
+# 2. Le serveur dev rebuild automatiquement
+# Attendre "✓ Compiled"
+
+# 3. Dans le navigateur
+Ctrl+Shift+R (ou Cmd+Shift+R sur Mac)
+
+# 4. Tester les 5 fixes:
+# - Dropdown apparaît sous l'icône (pas au centre)
+# - Border animée fait 165px (pas 220px)
+# - Lettres matchantes surlignées en turquoise
+# - Enter → Navigation vers /search?q=...
+# - Header reste visible en scrollant
+```
+
+---
+
+## 💡 NOTES IMPORTANTES
+
+### Fix #1 (Position Dropdown)
+Si `top-[72px]` n'est pas la bonne hauteur, ajustez selon votre header.
+
+### Fix #2 (Border Width)
+Si 165px ne vous plaît pas:
+- 50% de 220px = 110px → `w-[110px]`
+- 80% de 220px = 176px → `w-[176px]`
+
+### Fix #4 (Navigation)
+Adaptez l'URL selon votre structure:
+- `/search?q=...` pour page search dédiée
+- `/products?search=...` pour filtrer products
+
+### Fix #5 (Sticky)
+Si le sticky ne fonctionne pas, vérifiez qu'aucun parent n'a `overflow-hidden`.
+
+---
+
+## 🚨 SI PROBLÈME
+
+**Dropdown pas aligné:**
+```tsx
+// Debug: afficher la valeur calculée
+console.log('Dropdown left:', dropdownLeft);
+
+// Ou utiliser absolute si fixed pose problème:
+className="absolute top-full left-0 mt-2 w-96 ..."
+```
+
+**Highlighting ne fonctionne pas:**
+```tsx
+// Vérifier que query est bien passé
+console.log('Query:', query);
+console.log('Result name:', result.name);
+```
+
+**Enter key ne déclenche pas:**
+```tsx
+// Ajouter un log pour debug
+const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  console.log('Key pressed:', e.key);
+  // ...
+};
+```
+
+---
+
+## 📤 FORMAT DE RÉPONSE ATTENDU
+
+```
+✅ TOUTES LES MODIFICATIONS APPLIQUÉES
+
+Fichier: components/Navbar.tsx
+
+Fixes appliqués:
+1. Dropdown position dynamique ✓ (refs + useEffect ajoutés)
+2. Border width réduite à 165px ✓ (double wrapper)
+3. Text highlighting en turquoise ✓ (fonction + utilisation)
+4. Enter key navigation ✓ (handler ajouté)
+5. Header sticky ✓ (classes vérifiées)
+
+Imports ajoutés:
+- useRouter from 'next/navigation'
+- useRef, useEffect from 'react'
+
+DIFF PRINCIPAL:
+[Montrer les changements clés]
+```

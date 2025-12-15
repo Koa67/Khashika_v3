@@ -1,0 +1,108 @@
+================================================================================
+                    AUDIT KHASHIKA - RÉCONCILIATION IMAGES
+                          Date : 2025-12-11
+================================================================================
+
+1. DOSSIER _LEGACY_CLONE
+================================================================================
+   Status         : EXISTE ✓
+   Chemin         : /Users/koa/khashika/_LEGACY_CLONE/
+
+   Fichiers HTML  : 39 828 fichiers (récursif)
+
+   Sous-dossiers principaux (dans www.khashika.com/) :
+   ├── autour-du-bijou-indien/
+   ├── bijou-indien-pas-cher-cheque-cadeau/
+   ├── categorie-produit/
+   ├── cgv-mentions-legales/
+   ├── commande/
+   ├── comments/
+   ├── contact-eboutique-khashika/
+   ├── eboutique-bijoux-indiens/
+   ├── eboutique-khashika-bijou-indien-traditionnel-artisanal-pieces-souvent-uniques/
+   ├── eboutique-khashika-bijou-indien/
+   ├── entretien-bijoux-argent-pierre/
+   ├── entretien-pashminas-foulards/
+   ├── etiquette-produit/
+   ├── feed/
+   ├── livraison-bijou-accessoire-mode/
+   ├── mon-compte/
+   ├── panier/
+   ├── plan-du-site/
+   ├── politique-de-confidentialite/
+   ├── politique-de-cookies-ue/
+   ├── produit/                          ← Contient les pages produits HTML
+   ├── register/
+   ├── wp-content/                       ← Assets originaux WordPress
+   ├── wp-includes/
+   └── wp-json/
+
+2. FICHIER products-ultimate.json
+================================================================================
+   Chemin         : lib/data/products-ultimate.json
+   Taille         : ~817 KB
+
+   Nombre total de produits : 656 produits
+
+   STRUCTURE D'UN PRODUIT (champs disponibles) :
+   {
+     "id"          : "prod-{slug-du-produit}"           (string)
+     "name"        : "Nom du produit"                   (string)
+     "slug"        : "slug-du-produit"                  (string)
+     "title"       : "Titre du produit"                 (string)
+     "price"       : 0                                  (number) ⚠️ Actuellement à 0
+     "description" : "<html>..."                        (string HTML)
+     "category"    : "Bijoux argent"                    (string)
+     "sku"         : "UGS :XXXX0000"                    (string)
+     "inStock"     : true                               (boolean)
+     "isNew"       : true                               (boolean)
+     "isOnSale"    : true                               (boolean)
+     "attributes"  : {}                                 (object, vide)
+     "source_url"  : "https://www.khashika.com/..."     (string URL originale)
+     "images"      : ["/images/products/xxx.jpg", ...]  (array de strings)
+     "image"       : "/images/products/xxx.jpg"         (string, image principale)
+     "image_url"   : "/images/products/xxx.jpg"         (string, doublon de image)
+   }
+
+3. DOSSIER public/images/products/
+================================================================================
+   Chemin         : public/images/products/
+
+   Nombre total   : 785 éléments (incluant sous-dossiers backups)
+
+   Pattern de nommage observé :
+   ├── Noms descriptifs kebab-case : "pierre-de-lune.jpg", "boucles-doreilles.jpeg"
+   ├── Extensions                  : .jpg, .jpeg
+   ├── Noms de pierres             : agate.jpg, amethyste.jpg, citrine.jpg, etc.
+   ├── Noms de catégories          : boucles-doreilles.jpeg, bracelets.jpeg, etc.
+   ├── Noms de produits longs      : grande-bague-argent-ajustable-turquoise/
+   └── Dossiers spéciaux           : backup_before_flatten/, backups/
+
+   Exemples de fichiers :
+   - agate.jpg
+   - amethyste.jpg
+   - boucles-doreilles-fantaisie.jpg
+   - boucles-doreilles.jpeg
+   - bracelets.jpeg
+   - pierre-de-lune.jpg
+   - grandes-boucles-doreilles-argent-avec-un-rubis-indien-facetté/
+
+4. PROBLÈMES POTENTIELS IDENTIFIÉS
+================================================================================
+   ⚠️  PRIX À ZÉRO       : Tous les produits ont price: 0
+   ⚠️  DESCRIPTIONS      : Contiennent du HTML de cookies (placeholder)
+   ⚠️  IMAGES GÉNÉRIQUES : Plusieurs produits utilisent les mêmes images
+                          (ex: boucles-doreilles-fantaisie.jpg réutilisé)
+   ⚠️  DOSSIERS IMBRIQUÉS: Certaines images sont dans des sous-dossiers
+   ⚠️  BACKUPS PRÉSENTS  : backup_before_flatten/ et backups/ à nettoyer
+
+5. RECOMMANDATIONS POUR RÉCONCILIATION
+================================================================================
+   1. Extraire les vraies images depuis _LEGACY_CLONE/www.khashika.com/wp-content/
+   2. Associer chaque produit à ses images réelles via source_url
+   3. Nettoyer les dossiers backups après réconciliation
+   4. Extraire les vrais prix et descriptions du HTML legacy
+
+================================================================================
+                           FIN DU RAPPORT D'AUDIT
+================================================================================

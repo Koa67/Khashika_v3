@@ -10,7 +10,7 @@ interface PageTransitionProps {
 
 /**
  * Système de transition "liquide" entre les pages
- * Utilise framer-motion pour des transitions douces (Opacité/Y)
+ * Utilise framer-motion pour des transitions douces
  */
 export default function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
@@ -24,7 +24,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
         exit={{ opacity: 0, y: -20 }}
         transition={{
           duration: 0.3,
-          ease: [0.22, 1, 0.36, 1], // Easing personnalisé pour un effet "liquide"
+          ease: [0.22, 1, 0.36, 1], // Custom easing pour fluidité
         }}
       >
         {children}
@@ -32,4 +32,3 @@ export default function PageTransition({ children }: PageTransitionProps) {
     </AnimatePresence>
   );
 }
-

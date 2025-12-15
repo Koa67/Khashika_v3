@@ -1,11 +1,13 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Heart } from 'lucide-react';
 import { Product } from '@/lib/types';
 import { getValidImageUrl } from '@/lib/utils/images';
 import { useWishlist } from '@/lib/context/WishlistContext';
+import { useValidatedImages } from '@/lib/hooks/useValidatedImages';
 
 interface ProductCardProps {
   product: Product;
@@ -15,13 +17,19 @@ interface ProductCardProps {
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const { isInWishlist, toggleWishlist } = useWishlist();
   const [isAnimating, setIsAnimating] = useState(false);
-  const [imgSrc, setImgSrc] = useState<string>(() => {
-    const rawUrl = product.image_url || product.images?.[0] || product.image;
-    // getValidImageUrl now handles prod- pattern detection internally
-    return getValidImageUrl(rawUrl);
+  
+  // Use validated images hook to filter out blacklisted images (must be before early return)
+  const allProductImages = product ? [
+    product.image_url,
+    product.image,
+    ...(product.images || []),
+  ].filter(Boolean) as string[] : [];
+  
+  const { mainImage } = useValidatedImages(allProductImages, {
+    fallbackImage: '/placeholder-image.svg',
   });
-  // Track if we've already tried to load this image to prevent infinite loops
-  const [hasErrored, setHasErrored] = useState(false);
+  
+  const imageUrl = getValidImageUrl(mainImage || '/placeholder-image.svg');
   
   if (!product) return null;
   
@@ -38,41 +46,20 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
     setTimeout(() => setIsAnimating(false), 200);
   };
 
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    // Prevent infinite loops by checking if we've already errored
-    if (hasErrored) return;
-    
-    const target = e.currentTarget;
-    // Only handle error if not already placeholder
-    if (target.src && !target.src.includes('placeholder-image.svg')) {
-      setHasErrored(true);
-      // Use requestAnimationFrame to prevent synchronous state updates during render
-      // This prevents double free malloc errors
-      requestAnimationFrame(() => {
-        // Cache l'image si elle est cassée (mode SAFE HTML)
-        target.style.display = 'none';
-        // Alternative : utiliser placeholder
-        // setImgSrc('/placeholder-image.svg');
-        // target.src = '/placeholder-image.svg';
-      });
-      // Prevent default error handling
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  };
-
   return (
-    <div className="group flex flex-col h-full bg-white border border-gray-100 hover:border-[#D4AF37] hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.3)] transition-all duration-500 rounded-none overflow-hidden relative">
-      {/* Zone Image - Full Bleed Carré */}
+    <div className="golden-glow-card h-full flex flex-col bg-white overflow-hidden relative">
+      {/* Zone Image - Full Bleed */}
       <Link 
         href={`/product/${product.slug}`}
-        className="relative w-full aspect-square bg-white overflow-hidden"
+        className="relative w-full aspect-[3/2] overflow-hidden"
       >
-        <img
-          src={imgSrc}
+        <Image
+          src={imageUrl}
           alt={product.name || 'Bijou Khashika'}
-          className="w-full h-full object-cover object-center group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
-          onError={handleImageError}
+          fill
+          className="object-cover w-full h-full transition-transform duration-700 hover:scale-105 hover:brightness-105"
+          sizes="(max-width: 768px) 50vw, 33vw"
+          priority={priority}
         />
         
         {/* Bouton Cœur Wishlist */}

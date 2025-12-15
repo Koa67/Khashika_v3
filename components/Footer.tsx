@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import { ThemeToggle } from './ui/ThemeToggle';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Footer() {
   return (
@@ -136,6 +137,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Khashika. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             <ThemeToggle />
           </div>
         </div>

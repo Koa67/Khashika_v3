@@ -3,13 +3,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { Product } from '@/lib/types';
-import productsData from '@/lib/data/products-full.json';
-
-// Extraire le tableau de produits depuis le JSON
-const getProductsArray = (): Product[] => {
-  const data = productsData as { products?: Product[] } | Product[];
-  return Array.isArray(data) ? data : (data.products || []);
-};
 
 interface SearchResult {
   products: Product[];
@@ -23,14 +16,38 @@ export function useSearch() {
 
   // Charger tous les produits une seule fois au montage
   useEffect(() => {
-    // Simuler un léger délai pour l'UX
-    const timer = setTimeout(() => {
-      const products = getProductsArray();
-      setAllProducts(products);
-      setIsLoading(false);
-    }, 100);
+    // Charger dynamiquement via API ou fallback
+    const loadProducts = async () => {
+      try {
+        // Essayer de charger via l'API
+        const response = await fetch('/api/products');
+        if (response.ok) {
+          const data = await response.json();
+          const products = Array.isArray(data) ? data : (data.products || []);
+          setAllProducts(products);
+        } else {
+          // Fallback: charger le JSON statique
+          const { getAllProducts } = await import('@/lib/data/products-loader');
+          const products = await getAllProducts();
+          setAllProducts(products);
+        }
+      } catch (error) {
+        console.error('Erreur chargement produits pour recherche:', error);
+        // Fallback ultime
+        try {
+          const { getAllProducts } = await import('@/lib/data/products-loader');
+          const products = await getAllProducts();
+          setAllProducts(products);
+        } catch (fallbackError) {
+          console.error('Erreur fallback:', fallbackError);
+          setAllProducts([]);
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-    return () => clearTimeout(timer);
+    loadProducts();
   }, []);
 
   // Configurer Fuse.js avec les poids et includeMatches

@@ -1,24 +1,46 @@
-# Dépendances & Logs
-node_modules
+# Build & Runtime
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+.vercel/
+coverage/
+
+# Version Control
+.git/
+
+# Assets (binary, unreadable)
+public/images/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
+*.svg
+*.mp4
+*.mp3
+*.woff
+*.woff2
+
+# Data Files (reference with @file if needed)
+lib/data/*.json
+*.csv
+*.pdf
+*.xlsx
+
+# Lock & Logs
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-npm-debug.log
-yarn-error.log
 *.log
 
-# Build & Dist
-dist
-build
-out
-.next
-.output
-.vercel
-coverage
+# Legacy
+_LEGACY_CLONE/
+*.bak
 
-# Git & Configs lourdes
-.git
-.github
-.idea
-.vscode
+# System
 .DS_Store
+.vscode/settings.json
+*.swp

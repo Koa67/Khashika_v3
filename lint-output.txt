@@ -1,0 +1,367 @@
+
+> khashika@0.1.0 lint
+> eslint
+
+
+/Users/koa/khashika/app/[locale]/admin/layout.tsx
+  13:9  warning  'refreshToken' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/app/[locale]/checkout/page.tsx
+  252:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/koa/khashika/app/[locale]/story/page.tsx
+  105:13  error  Do not use an `<a>` element to navigate to `/shop/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+  105:13  error  Do not use an `<a>` element to navigate to `/shop/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+/Users/koa/khashika/components/CartSummary.tsx
+  36:33  error  React Hook "useValidatedImages" cannot be called inside a callback. React Hooks must be called in a React function component or a custom React Hook function  react-hooks/rules-of-hooks
+
+/Users/koa/khashika/components/LanguageSwitcher.tsx
+  6:10  warning  'routing' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/components/Navbar.tsx
+  109:6   warning  React Hook useEffect has a missing dependency: 'setQuery'. Either include it or remove the dependency array                                                                                                                                                                              react-hooks/exhaustive-deps
+  227:31  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/koa/khashika/components/Navigation/NavigationMenu.tsx
+  387:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/koa/khashika/components/Navigation/NavigationMenu.tsx:387:5
+  385 |
+  386 |   useEffect(() => {
+> 387 |     setMobileMenuOpen(false);
+      |     ^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  388 |   }, []);
+  389 |
+  390 |   useEffect(() => {  react-hooks/set-state-in-effect
+
+/Users/koa/khashika/components/ProductCard.tsx
+  43:25  error  React Hook "useValidatedImages" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+/Users/koa/khashika/components/boutique/ProductCard.tsx
+  28:25  error  React Hook "useValidatedImages" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+/Users/koa/khashika/components/boutique/ShopClient.tsx
+    3:42  warning  'useEffect' is defined but never used                            @typescript-eslint/no-unused-vars
+    5:32  warning  'ChevronDown' is defined but never used                          @typescript-eslint/no-unused-vars
+  452:28  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/koa/khashika/components/checkout/StripePayment.tsx
+  3:20  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/components/filters/FilterModal.tsx
+  71:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/koa/khashika/components/filters/FilterModal.tsx:71:7
+  69 |   useEffect(() => {
+  70 |     if (isOpen) {
+> 71 |       setCurrentSection('main');
+     |       ^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  72 |     }
+  73 |   }, [isOpen]);
+  74 |     react-hooks/set-state-in-effect
+
+/Users/koa/khashika/components/filters/FilterSidebar.tsx
+  12:23  warning  'ChevronUp' is defined but never used  @typescript-eslint/no-unused-vars
+  12:34  warning  'X' is defined but never used          @typescript-eslint/no-unused-vars
+  86:3   warning  'id' is defined but never used         @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/components/filters/FilterStates.tsx
+  140:15  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  141:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/koa/khashika/components/filters/FilterUI.tsx
+  39:15  error  'chipColor' is never reassigned. Use 'const' instead      prefer-const
+  40:15  error  'chipTextColor' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/koa/khashika/components/filters/StoneFilter.tsx
+  213:41  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  213:55  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/koa/khashika/components/filters/useFilters.ts
+  143:38  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-explicit-any
+  144:9   warning  'router' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+  145:9   warning  'searchParams' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  268:29  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/Users/koa/khashika/components/filters/useFilters.ts:268:29
+  266 |     }
+  267 |     if (filters.availability.newArrivals) {
+> 268 |       const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
+      |                             ^^^^^^^^^^ Cannot call impure function
+  269 |       result = result.filter(p => new Date(p.createdAt).getTime() > thirtyDaysAgo);
+  270 |     }
+  271 |     if (filters.availability.onSale) {  react-hooks/purity
+
+/Users/koa/khashika/components/layout/CartDrawer.tsx
+  40:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/koa/khashika/components/layout/WishlistDrawer.tsx
+  38:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/koa/khashika/components/product/ProductImageGallery.tsx
+    3:28  warning  'useEffect' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   63:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+   83:9   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  112:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/koa/khashika/components/ui/JewelrySearch.tsx
+    8:8   warning  'Fuse' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   33:37  warning  'suggestions' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   74:11  error    Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+/Users/koa/khashika/components/ui/JewelrySearch.tsx:74:11
+  72 |           // Utiliser window.location pour éviter les problèmes de navigation Next.js
+  73 |           setIsOpen(false);
+> 74 |           window.location.href = `/shop?q=${encodeURIComponent(query)}`;
+     |           ^^^^^^^^^^^^^^^ value cannot be modified
+  75 |         }
+  76 |       } catch (error) {
+  77 |         console.error('Error handling Enter key:', error);  react-hooks/immutability
+   82:13  error    Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+/Users/koa/khashika/components/ui/JewelrySearch.tsx:82:13
+  80 |           try {
+  81 |             setIsOpen(false);
+> 82 |             window.location.href = `/shop?q=${encodeURIComponent(query)}`;
+     |             ^^^^^^^^^^^^^^^ value cannot be modified
+  83 |           } catch (e) {
+  84 |             console.error('Window location also failed:', e);
+  85 |             // Dernier recours: router.push                             react-hooks/immutability
+  118:9   warning  'handleSuggestionClick' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  307:29  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                          @next/next/no-img-element
+
+/Users/koa/khashika/components/ui/SearchBar.tsx
+  82:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/khashika-filters/app/boutique/page.tsx
+  10:27  warning  'useMemo' is defined but never used   @typescript-eslint/no-unused-vars
+  10:36  warning  'Suspense' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/khashika-filters/components/filters/FilterModal.tsx
+  71:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/koa/khashika/khashika-filters/components/filters/FilterModal.tsx:71:7
+  69 |   useEffect(() => {
+  70 |     if (isOpen) {
+> 71 |       setCurrentSection('main');
+     |       ^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  72 |     }
+  73 |   }, [isOpen]);
+  74 |     react-hooks/set-state-in-effect
+
+/Users/koa/khashika/khashika-filters/components/filters/FilterSidebar.tsx
+  12:23  warning  'ChevronUp' is defined but never used  @typescript-eslint/no-unused-vars
+  12:34  warning  'X' is defined but never used          @typescript-eslint/no-unused-vars
+  86:3   warning  'id' is defined but never used         @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/khashika-filters/components/filters/FilterStates.tsx
+  140:15  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  141:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/koa/khashika/khashika-filters/components/filters/FilterUI.tsx
+  39:15  error  'chipColor' is never reassigned. Use 'const' instead      prefer-const
+  40:15  error  'chipTextColor' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/koa/khashika/khashika-filters/components/filters/StoneFilter.tsx
+  213:41  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  213:55  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/koa/khashika/khashika-filters/components/filters/useFilters.ts
+  143:38  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+  144:9   warning  'router' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  145:9   warning  'searchParams' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+  268:29  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/Users/koa/khashika/khashika-filters/components/filters/useFilters.ts:268:29
+  266 |     }
+  267 |     if (filters.availability.newArrivals) {
+> 268 |       const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
+      |                             ^^^^^^^^^^ Cannot call impure function
+  269 |       result = result.filter(p => new Date(p.createdAt).getTime() > thirtyDaysAgo);
+  270 |     }
+  271 |     if (filters.availability.onSale) {  react-hooks/purity
+
+/Users/koa/khashika/khashika-image-fix/extract-images-bulletproof.ts
+  258:41  warning  'productName' is defined but never used   @typescript-eslint/no-unused-vars
+  387:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/khashika-image-fix/sync-supabase.ts
+  16:13  warning  'path' is defined but never used          @typescript-eslint/no-unused-vars
+  20:3   error    A `require()` style import is forbidden   @typescript-eslint/no-require-imports
+  21:10  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  36:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  69:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/khashika-image-fix/update-json.ts
+  32:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/lib/ai/ai.ts
+  73:3  warning  '_systemPrompt' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/lib/context/CartContext.tsx
+  30:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/koa/khashika/lib/context/CartContext.tsx:30:9
+  28 |       if (stored) {
+  29 |         const parsed = JSON.parse(stored);
+> 30 |         setItems(parsed);
+     |         ^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |       }
+  32 |     } catch (e) {
+  33 |       console.warn('Erreur chargement panier localStorage:', e);  react-hooks/set-state-in-effect
+
+/Users/koa/khashika/lib/context/WishlistContext.tsx
+  30:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/koa/khashika/lib/context/WishlistContext.tsx:30:9
+  28 |       if (stored) {
+  29 |         const parsed = JSON.parse(stored);
+> 30 |         setItems(parsed);
+     |         ^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |       }
+  32 |     } catch (e) {
+  33 |       console.warn('Erreur chargement wishlist localStorage:', e);  react-hooks/set-state-in-effect
+
+/Users/koa/khashika/lib/data/products-loader.ts
+  12:13  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:12  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  33:32  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/lib/emails/templates.tsx
+  11:3  warning  'Img' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/lib/imageAssociation.ts
+  283:1  warning  Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+/Users/koa/khashika/scripts/analyzeRemainingProducts.ts
+  12:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  13:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  15:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  16:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  17:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  18:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  19:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  22:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:13  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  40:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  55:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  55:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  66:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  67:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/applyCorrection.ts
+  15:11  warning  'SupabaseProduct' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/scripts/cleanupDatabase.ts
+  104:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/deploy.ts
+  64:9   warning  'seedOutput' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  70:17  error    Unexpected any. Specify a different type         @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/extract-prices.ts
+   52:50  error    Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+   70:14  warning  'e' is defined but never used                         @typescript-eslint/no-unused-vars
+  210:9   warning  'priceByKeywords' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  240:14  warning  'e' is defined but never used                         @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/scripts/fetchImagesFromWordPress.ts
+   61:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  163:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  177:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  213:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/findDuplicateImages.ts
+  20:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  34:15  warning  '_' is defined but never used             @typescript-eslint/no-unused-vars
+  52:50  warning  '_' is defined but never used             @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/scripts/fixAllCategoryImages.ts
+  125:7   error  'products' is never reassigned. Use 'const' instead  prefer-const
+  130:18  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/fixAllDuplicateImages.ts
+  57:36  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  66:15  warning  'img' is defined but never used           @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/scripts/fixBouclesFantaisie.ts
+   97:7   error  'toProcess' is never reassigned. Use 'const' instead  prefer-const
+  105:18  error  Unexpected any. Specify a different type              @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/fixBraceletsImages.ts
+  100:7   error  'productList' is never reassigned. Use 'const' instead  prefer-const
+  105:18  error  Unexpected any. Specify a different type                @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/fixSpecificProducts.ts
+  92:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/fixWithSlugVariations.ts
+  128:14  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  152:7   error  'products' is never reassigned. Use 'const' instead  prefer-const
+  156:23  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  157:24  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/ice_age.ts
+  25:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  86:12  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+/Users/koa/khashika/scripts/migrate.ts
+   24:16  warning  'executeSQL' is defined but never used     @typescript-eslint/no-unused-vars
+   78:11  warning  'sql' is assigned a value but never used   @typescript-eslint/no-unused-vars
+   86:17  warning  'data' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   99:17  warning  'data' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  114:21  error    Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+
+/Users/koa/khashika/scripts/normalizeProductNames.ts
+  25:10  warning  'capitalizeWord' is defined but never used          @typescript-eslint/no-unused-vars
+  44:7   error    'cleaned' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/koa/khashika/scripts/reformat-images.ts
+  54:7  error  'skipped' is never reassigned. Use 'const' instead  prefer-const
+
+✖ 130 problems (79 errors, 51 warnings)
+  10 errors and 0 warnings potentially fixable with the `--fix` option.
+
