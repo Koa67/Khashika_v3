@@ -14,40 +14,50 @@ export function useSearch() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Charger tous les produits une seule fois au montage
+  // Charger tous les produits une seule fois au montage via API uniquement
   useEffect(() => {
-    // Charger dynamiquement via API ou fallback
+    const controller = new AbortController();
+    let alive = true;
+
     const loadProducts = async () => {
       try {
-        // Essayer de charger via l'API
-        const response = await fetch('/api/products');
-        if (response.ok) {
-          const data = await response.json();
-          const products = Array.isArray(data) ? data : (data.products || []);
-          setAllProducts(products);
-        } else {
-          // Fallback: charger le JSON statique
-          const { getAllProducts } = await import('@/lib/data/products-loader');
-          const products = await getAllProducts();
+        const response = await fetch('/api/products', {
+          signal: controller.signal,
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to fetch products: ${response.status}`);
+        }
+        
+        const json = await response.json();
+        // Handle API response format: { success: true, data: [...] }
+        const products = Array.isArray(json) 
+          ? json 
+          : (json.data || json.products || []);
+        
+        if (alive) {
           setAllProducts(products);
         }
-      } catch (error) {
-        console.error('Erreur chargement produits pour recherche:', error);
-        // Fallback ultime
-        try {
-          const { getAllProducts } = await import('@/lib/data/products-loader');
-          const products = await getAllProducts();
-          setAllProducts(products);
-        } catch (fallbackError) {
-          console.error('Erreur fallback:', fallbackError);
-          setAllProducts([]);
+      } catch (error: any) {
+        if (error?.name !== 'AbortError') {
+          console.error('Erreur chargement produits pour recherche:', error);
+          if (alive) {
+            setAllProducts([]);
+          }
         }
       } finally {
-        setIsLoading(false);
+        if (alive) {
+          setIsLoading(false);
+        }
       }
     };
 
     loadProducts();
+
+    return () => {
+      alive = false;
+      controller.abort();
+    };
   }, []);
 
   // Configurer Fuse.js avec les poids et includeMatches

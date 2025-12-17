@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { Product } from '../types';
 import { getAllProducts as getAllProductsFromLoader, getProductBySlugFromJSON } from '../data/products-loader';
 

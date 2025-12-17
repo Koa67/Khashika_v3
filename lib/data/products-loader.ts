@@ -1,8 +1,12 @@
+import 'server-only';
+
+import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
+import path from 'node:path';
+
 import productsData from './products-full.json';
 import { Product } from '@/lib/types';
 import { slugify } from '@/lib/utils/slugify';
-import fs from 'fs';
-import path from 'path';
 
 /**
  * Charge les produits depuis products-ultimate.json (priorité) ou products-full.json (fallback)
@@ -13,8 +17,8 @@ export async function getAllProducts(): Promise<Product[]> {
   
   try {
     const ultimatePath = path.join(process.cwd(), 'lib/data/products-ultimate.json');
-    if (fs.existsSync(ultimatePath)) {
-      const fileContent = fs.readFileSync(ultimatePath, 'utf-8');
+    if (fsSync.existsSync(ultimatePath)) {
+      const fileContent = await fs.readFile(ultimatePath, 'utf-8');
       data = JSON.parse(fileContent);
       console.log('✅ Utilisation de products-ultimate.json (catalogue migré)');
     }
@@ -192,4 +196,3 @@ export async function getPaginatedProducts(
     productsPerPage,
   };
 }
-
