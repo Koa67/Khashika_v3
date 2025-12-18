@@ -15,16 +15,37 @@ export async function getAllProducts(): Promise<Product[]> {
   // Essayer d'abord products-ultimate.json (données migrées complètes)
   let data: any = null;
   
-  try {
-    const ultimatePath = path.join(process.cwd(), 'lib/data/products-ultimate.json');
-    if (fsSync.existsSync(ultimatePath)) {
-      const fileContent = await fs.readFile(ultimatePath, 'utf-8');
-      data = JSON.parse(fileContent);
-      console.log('✅ Utilisation de products-ultimate.json (catalogue migré)');
+    // Priority order:
+  // 1) env-selected catalog file (default: products-ultimate-MERGED.json)
+  // 2) products-ultimate.json
+  // 3) products-full.json (fallback)
+  const preferred = process.env.KHASHIKA_CATALOG_FILE?.trim() || 'products-ultimate-MERGED.json';
+
+  const candidates = [
+    { file: preferred, label: `✅ Utilisation de ${preferred} (env/default)` },
+    { file: 'products-ultimate.json', label: '✅ Utilisation de products-ultimate.json (catalogue migré)' },
+    { file: 'products-full.json', label: '✅ Utilisation de products-full.json (fallback)' },
+  ];
+
+  for (const c of candidates) {
+    try {
+      const p = path.join(process.cwd(), 'lib/data', c.file);
+      if (fsSync.existsSync(p)) {
+        const fileContent = await fs.readFile(p, 'utf-8');
+        data = JSON.parse(fileContent);
+        console.log(c.label);
+        break;
+      }
+    } catch (e) {
+      // try next candidate
     }
-  } catch (e) {
-    console.warn('⚠️ products-ultimate.json introuvable, utilisation du fallback');
   }
+
+  if (!data) {
+    console.error('❌ Aucun catalogue produit trouvé (MERGED/ultimate/full).');
+    return [];
+  }
+
   
   // Fallback vers products-full.json si ultimate n'existe pas
   if (!data) {

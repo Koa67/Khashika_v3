@@ -1,0 +1,10 @@
+KHASHIKA MERGE REPORT (v2)
+VIVANT count: 728
+DEAD   count: 656
+
+Matches: slug=718 name=0 title=0 fuzzy=0
+Unmatched vivant: 10
+Dead collisions (non-unique keys): 8
+Image fields copied: 2154
+
+Output: lib/data/products-ultimate-MERGED.json

@@ -1,0 +1,8 @@
+KHASHIKA PRICE SCRAPE REPORT
+Mode: FULL
+Input products: 728
+Updated prices: 670
+Missing source_url: 10
+Fetch failures: 47
+Parse failures: 1
+Output: lib/data/products-ultimate-FINAL.json
