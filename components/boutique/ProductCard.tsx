@@ -4,9 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Link } from '@/navigation';
 import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
 import { getValidImageUrl } from '@/lib/utils/images';
 import { Product } from '@/lib/types';
 import { useValidatedImages } from '@/lib/hooks/useValidatedImages';
+import { useWishlist } from '@/lib/context/WishlistContext';
 
 interface ProductCardProps {
   product: Product;
@@ -15,6 +17,8 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const [isImageLoading, setIsImageLoading] = useState(true);
+  const { isInWishlist, toggleWishlist } = useWishlist();
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // Use validated images hook to filter out blacklisted images (must be before early return)
   const allProductImages = product ? [
@@ -32,9 +36,19 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
   if (!product) return null;
 
+  const isWishlisted = isInWishlist(product.id);
+
   // Format price
   const price = typeof product.price === 'number' ? product.price : parseFloat(String(product.price || 0));
   const displayPrice = price > 0 ? `${price.toFixed(2)} €` : 'Prix sur demande';
+
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsAnimating(true);
+    toggleWishlist(product);
+    setTimeout(() => setIsAnimating(false), 200);
+  };
 
   return (
     <Link 
@@ -68,6 +82,25 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               onLoad={() => setIsImageLoading(false)}
             />
           </motion.div>
+          
+          {/* Bouton Cœur Wishlist */}
+          <button
+            onClick={handleWishlistClick}
+            className={`absolute top-3 right-3 z-20 flex items-center justify-center transition-all duration-200 ${
+              isAnimating ? 'active:scale-125' : 'scale-100'
+            } hover:scale-110`}
+            aria-label={isWishlisted ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+          >
+            <Heart
+              size={20}
+              strokeWidth={1.5}
+              className={`transition-colors duration-200 ${
+                isWishlisted
+                  ? 'fill-[#E0115F] text-[#E0115F] drop-shadow-sm'
+                  : 'text-white fill-none hover:text-[#E0115F] drop-shadow-md'
+              }`}
+            />
+          </button>
         </div>
         
         {/* Info section */}
