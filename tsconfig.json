@@ -35,6 +35,7 @@
     "khashika-filters",
     "khashika-image-fix",
     "khashika-images-fix",
-    "_LEGACY_CLONE"
+    "_LEGACY_CLONE",
+    "_tools/_scratch"
   ]
 }
