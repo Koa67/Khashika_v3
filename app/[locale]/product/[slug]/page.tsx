@@ -5,6 +5,19 @@ import ProductMediaGallery from '@/components/ProductMediaGallery';
 import ProductConversionModule from '@/components/ProductConversionModule';
 import ProductInfoTabs from '@/components/ProductInfoTabs';
 
+function safeDecodeSlug(slug: string): string {
+  try {
+    return decodeURIComponent(slug);
+  } catch {
+    return slug;
+  }
+}
+
+// Normalise sans enlever les accents (corrige les différences NFC/NFD)
+function normalizeSlug(slug: string): string {
+  return safeDecodeSlug(slug).normalize('NFC').toLowerCase();
+}
+
 interface ProductPageProps {
   params: Promise<{
     slug: string;
@@ -15,7 +28,9 @@ export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const wanted = normalizeSlug(slug);
+
+  const product = await getProductBySlug(wanted);
 
   if (!product) {
     return {
@@ -23,29 +38,30 @@ export async function generateMetadata({
     };
   }
 
-  const imageUrl = (product.images && product.images.length > 0 && product.images[0])
-    ? product.images[0]
-    : (product.image || '/placeholder-image.svg');
+  const title = product.title || product.name || 'Produit';
+  const description =
+    typeof product.description === 'string'
+      ? product.description.replace(/<[^>]*>/g, '').substring(0, 160)
+      : 'Bijou artisanal indien';
+
+  const imageUrl =
+    product.images && product.images.length > 0 && product.images[0]
+      ? product.images[0]
+      : product.image || '/placeholder-image.svg';
 
   return {
-    title: `${product.title || product.name} | Khashika – Bijoux de Luxe`,
-    description: typeof product.description === 'string' 
-      ? product.description.replace(/<[^>]*>/g, '').substring(0, 160)
-      : 'Bijou artisanal indien',
+    title: `${title} | Khashika – Bijoux de Luxe`,
+    description,
     openGraph: {
-      title: `${product.title || product.name} | Khashika`,
-      description: typeof product.description === 'string' 
-        ? product.description.replace(/<[^>]*>/g, '').substring(0, 160)
-        : 'Bijou artisanal indien',
+      title: `${title} | Khashika`,
+      description,
       images: [imageUrl],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.title || product.name} | Khashika`,
-      description: typeof product.description === 'string' 
-        ? product.description.replace(/<[^>]*>/g, '').substring(0, 160)
-        : 'Bijou artisanal indien',
+      title: `${title} | Khashika`,
+      description,
     },
     alternates: {
       canonical: `/product/${product.slug}`,
@@ -55,7 +71,10 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const wanted = normalizeSlug(slug);
+
+  const product = await getProductBySlug(wanted);
+
 
   if (!product) {
     notFound();
