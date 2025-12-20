@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "if lsof -ti:3000 >/dev/null 2>&1; then kill -9 $(lsof -ti:3000); fi; if lsof -ti:3001 >/dev/null 2>&1; then kill -9 $(lsof -ti:3001); fi; rm -f .next/dev/lock; next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --no-error-on-unmatched-pattern --ignore-pattern '_tools/**' --ignore-pattern 'khashika-filters/**' --ignore-pattern 'khashika-image-fix/**' .",
