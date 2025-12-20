@@ -20,6 +20,45 @@ function extractProductsFromCatalog(input: unknown): Product[] | null {
 
   return null;
 }
+function isSupabaseCatalogHealthy(products: Product[]): boolean {
+  const n = products.length;
+  if (n < 5) return false;
+
+  let zeroPrice = 0;
+  let missingImage = 0;
+  let badDescription = 0;
+
+  for (const p of products) {
+    // Prix
+    if (typeof p.price !== 'number' || p.price <= 0) zeroPrice++;
+
+    // Image (on accepte image OU image_url)
+    const img = (p.image || p.image_url) ?? '';
+    if (typeof img !== 'string' || img.trim() === '') missingImage++;
+
+    // Description (on rejette aussi les placeholders type “cmplz…”)
+    const desc = p.description ?? '';
+    if (typeof desc !== 'string' || desc.trim() === '') {
+      badDescription++;
+    } else {
+      const d = desc.toLowerCase();
+      if (d.includes('cmplz') || d.includes('cookie') || d.includes('consent')) {
+        badDescription++;
+      }
+    }
+  }
+
+  const zeroPriceRate = zeroPrice / n;
+  const missingImageRate = missingImage / n;
+  const badDescRate = badDescription / n;
+
+  // Seuils conservateurs (à ajuster si besoin)
+  if (zeroPriceRate > 0.6) return false;
+  if (missingImageRate > 0.5) return false;
+  if (badDescRate > 0.6) return false;
+
+  return true;
+}
 
 /**
  * Tente de charger les produits depuis Supabase.
@@ -66,8 +105,16 @@ export async function getAllProducts(): Promise<Product[]> {
   // 0) Essayer Supabase en premier
   const supabaseProducts = await tryLoadProductsFromSupabase();
   if (supabaseProducts) {
-    rawCatalog = supabaseProducts;
+    if (isSupabaseCatalogHealthy(supabaseProducts)) {
+      rawCatalog = supabaseProducts;
+      console.log(`✅ Supabase catalog accepté (${supabaseProducts.length})`);
+    } else {
+      console.warn(
+        `⚠️ Supabase catalog incomplet (${supabaseProducts.length}) → fallback JSON`
+      );
+    }
   }
+
 
   // 1) Fallback JSON (comme avant)
   if (!rawCatalog) {
