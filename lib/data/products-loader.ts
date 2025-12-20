@@ -9,6 +9,13 @@ import { Product } from '@/lib/types';
 import { slugify } from '@/lib/utils/slugify';
 import { createClient } from '@supabase/supabase-js';
 
+let __productsCache: { at: number; data: Product[] } | null = null;
+
+function getProductsCacheTtlMs(): number {
+  // Dev: court (itérations), Prod: plus long
+  return process.env.NODE_ENV === 'production' ? 5 * 60_000 : 30_000;
+}
+
 function extractProductsFromCatalog(input: unknown): Product[] | null {
   if (Array.isArray(input)) return input as Product[];
 
@@ -20,6 +27,7 @@ function extractProductsFromCatalog(input: unknown): Product[] | null {
 
   return null;
 }
+
 function isSupabaseCatalogHealthy(products: Product[]): boolean {
   const n = products.length;
   if (n < 5) return false;
@@ -85,7 +93,11 @@ async function tryLoadProductsFromSupabase(): Promise<Product[] | null> {
   });
 
   try {
-    const { data, error } = await supabase.from('products').select('*');
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .limit(5000);
+
     if (error || !data) return null;
     return data as unknown as Product[];
   } catch {
@@ -100,6 +112,11 @@ async function tryLoadProductsFromSupabase(): Promise<Product[] | null> {
  * 3) products-full.json (fallback)
  */
 export async function getAllProducts(): Promise<Product[]> {
+  const ttl = getProductsCacheTtlMs();
+  if (__productsCache && Date.now() - __productsCache.at < ttl) {
+    return __productsCache.data;
+  }
+
   let rawCatalog: unknown = null;
 
   // 0) Essayer Supabase en premier
@@ -114,7 +131,6 @@ export async function getAllProducts(): Promise<Product[]> {
       );
     }
   }
-
 
   // 1) Fallback JSON (comme avant)
   if (!rawCatalog) {
@@ -164,7 +180,15 @@ export async function getAllProducts(): Promise<Product[]> {
     return [];
   }
 
-  return productsArray.map((p) => {
+  const out = productsArray.map((p) => {
+    const cleanedCategory = (() => {
+      const c = typeof p.category === 'string' ? p.category.trim() : '';
+      if (!c) return '';
+      const lower = c.toLowerCase();
+      if (lower.includes('retour page précédente')) return '';
+      return c;
+    })();
+
     // Helper pour obtenir une image valide ou placeholder
     const getValidImage = (img: string | undefined | null): string => {
       if (!img || typeof img !== 'string' || img.trim() === '') {
@@ -175,10 +199,7 @@ export async function getAllProducts(): Promise<Product[]> {
         return '/placeholder-image.svg';
       }
       // Si l'image référence product_*.jpg qui n'existe pas, utiliser placeholder
-      if (
-        img.includes('product_') &&
-        img.match(/product_\d+\.(jpg|jpeg|png)/i)
-      ) {
+      if (img.includes('product_') && img.match(/product_\d+\.(jpg|jpeg|png)/i)) {
         return '/placeholder-image.svg';
       }
       // Si l'image référence prod-*.jpg/jpeg qui n'existe probablement pas, utiliser placeholder
@@ -188,9 +209,7 @@ export async function getAllProducts(): Promise<Product[]> {
       // Gérer les chemins _raw_assets
       if (img.includes('_raw_assets')) {
         const filename = img.split('/').pop()?.replace(/%20/g, '_');
-        return filename
-          ? `/images/products/${filename}`
-          : '/placeholder-image.svg';
+        return filename ? `/images/products/${filename}` : '/placeholder-image.svg';
       }
       // Sinon, utiliser l'image telle quelle
       return img.startsWith('/') ? img : `/images/products/${img}`;
@@ -198,15 +217,13 @@ export async function getAllProducts(): Promise<Product[]> {
 
     // Extraire les images valides
     const validImage = getValidImage(p.image || p.image_url);
-    let validImages: string[] = [];
 
+    let validImages: string[] = [];
     if (p.images && Array.isArray(p.images) && p.images.length > 0) {
-      // Filtrer et valider toutes les images du tableau
       validImages = p.images
         .map((img: string) => getValidImage(img))
         .filter((img: string) => img !== '/placeholder-image.svg');
 
-      // Si aucune image valide trouvée, utiliser l'image principale ou placeholder
       if (validImages.length === 0) {
         validImages =
           validImage !== '/placeholder-image.svg'
@@ -214,37 +231,35 @@ export async function getAllProducts(): Promise<Product[]> {
             : ['/placeholder-image.svg'];
       }
     } else {
-      // Pas de tableau images, utiliser l'image principale
       validImages =
         validImage !== '/placeholder-image.svg'
           ? [validImage]
           : ['/placeholder-image.svg'];
     }
 
+    const baseName = (p.name || p.title || '').trim() || 'product';
+
     const normalized = {
       ...p,
-      id: p.id || slugify(p.name),
-      slug: p.slug || slugify(p.name),
+
+      id: p.id || slugify(baseName),
+      slug: p.slug || slugify(baseName),
+
+      category: cleanedCategory,
+
       image_url: validImage,
       image: validImage,
       images: validImages.length > 0 ? validImages : ['/placeholder-image.svg'],
-      attributes:
-        p.attributes ||
-        (p.stone || p.material
-          ? {
-              stone: p.stone,
-              material: p.material,
-            }
-          : undefined),
 
-      material: p.material || p.attributes?.material,
-      stone: p.stone || p.attributes?.stone,
       price:
         typeof p.price === 'number' ? p.price : parseFloat(String(p.price || 0)),
     } satisfies Product;
 
     return normalized;
   });
+
+  __productsCache = { at: Date.now(), data: out };
+  return out;
 }
 
 /**
@@ -256,22 +271,23 @@ export async function searchProducts(query: string): Promise<Product[]> {
 
   const lowerQuery = query.toLowerCase().trim();
 
-  // Filtrage strict mais intelligent
   return allProducts.filter((p) => {
-    const nameMatch = p.name?.toLowerCase().includes(lowerQuery) || false;
-    const categoryMatch =
-      p.category?.toLowerCase().includes(lowerQuery) || false;
-    const descMatch =
-      p.description &&
-      typeof p.description === 'string' &&
-      p.description.toLowerCase().includes(lowerQuery);
+    const nameMatch = (p.name || '').toLowerCase().includes(lowerQuery);
+    const categoryMatch = (p.category || '').toLowerCase().includes(lowerQuery);
 
-    return nameMatch || categoryMatch || descMatch;
+    const desc = p.description;
+    const descMatch =
+      typeof desc === 'string' && desc.toLowerCase().includes(lowerQuery);
+
+    const materialMatch = (p.material || '').toLowerCase().includes(lowerQuery);
+    const stoneMatch = (p.stone || '').toLowerCase().includes(lowerQuery);
+
+    return nameMatch || categoryMatch || descMatch || materialMatch || stoneMatch;
   });
 }
 
 /**
- * Récupère un produit par son slug depuis products-ultimate.json (ou fallback)
+ * Récupère un produit par son slug depuis le catalogue (ou fallback)
  */
 export async function getProductBySlugFromJSON(
   slug: string
@@ -279,11 +295,11 @@ export async function getProductBySlugFromJSON(
   const products = await getAllProducts();
   const normalizedSlug = slugify(slug);
 
-  // 1. Match exact
+  // 1) Match exact
   let product = products.find((p) => p.slug === normalizedSlug);
   if (product) return product;
 
-  // 2. Match approximatif
+  // 2) Match approximatif
   product = products.find((p) => slugify(p.name).includes(normalizedSlug));
   return product || null;
 }
@@ -309,7 +325,6 @@ export async function getPaginatedProducts(
 ): Promise<PaginatedProducts> {
   let allProducts: Product[];
 
-  // Appliquer les filtres
   if (filters?.query) {
     allProducts = await searchProducts(filters.query);
   } else if (filters?.category) {
