@@ -14,6 +14,9 @@
   "scripts": {
     "dev": "next dev",
     "dev:clean": "if lsof -ti:3000 >/dev/null 2>&1; then kill -9 $(lsof -ti:3000); fi; if lsof -ti:3001 >/dev/null 2>&1; then kill -9 $(lsof -ti:3001); fi; rm -f .next/dev/lock; next dev",
+    "dev:clean:next": "for p in 3000 3001; do for pid in $(lsof -tiTCP:$p -sTCP:LISTEN 2>/dev/null); do cmd=$(ps -p $pid -o command= 2>/dev/null || true); echo \"$cmd\" | grep -Eiq 'next dev|next-server|turbopack' && kill -9 $pid || true; done; done; rm -f .next/dev/lock; next dev",
+    "dev:doctor": "echo '=== PORTS ==='; echo '3000:'; lsof -nP -iTCP:3000 -sTCP:LISTEN || true; echo '3001:'; lsof -nP -iTCP:3001 -sTCP:LISTEN || true; echo; echo '=== LOCK ==='; ls -la .next/dev/lock 2>/dev/null || echo 'no lock'; echo; echo '=== NEXT PROCESSES ==='; ps aux | grep -E 'next dev|next-server|turbopack' | grep -v grep || true; echo; echo '=== ENV (presence only, loads .env.local if present) ==='; node -e \"try{require('dotenv').config({path:'.env.local'});}catch{}; const ks=['NEXT_PUBLIC_SUPABASE_URL','NEXT_PUBLIC_SUPABASE_ANON_KEY','SUPABASE_URL','SUPABASE_SERVICE_ROLE_KEY','KHASHIKA_CATALOG_FILE']; for (const k of ks) console.log(k+': '+(process.env[k]?'SET':'MISSING'));\"",
+    "git:diff": "git --no-pager diff",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --no-error-on-unmatched-pattern --ignore-pattern '_tools/**' --ignore-pattern 'khashika-filters/**' --ignore-pattern 'khashika-image-fix/**' .",
