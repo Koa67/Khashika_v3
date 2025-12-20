@@ -15,7 +15,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
-    const query = searchParams.get('q');
+    const query = (searchParams.get('query') ?? searchParams.get('q') ?? '').trim();
 
     if (!query || query.length < 2) {
       return NextResponse.json({ results: [] }, { status: 200 });
@@ -74,12 +74,39 @@ export async function GET(request: NextRequest) {
         )
         .limit(10);
 
-      if (productsError) {
-        return NextResponse.json(
-          { error: 'Erreur de recherche' },
-          { status: 500 }
-        );
-      }
+        if (productsError) {
+          // Fallback ultime: recherche locale (JSON via products-loader) au lieu de 500
+          const { getAllProducts } = await import('@/lib/data/products-loader');
+          const products = await getAllProducts();
+  
+          const searchTerm = query.toLowerCase();
+          const results = products
+            .filter((product) => {
+              const searchableText = [
+                product.name,
+                product.description,
+                product.category,
+                product.material,
+                product.stone,
+              ]
+                .filter(Boolean)
+                .join(' ')
+                .toLowerCase();
+              return searchableText.includes(searchTerm);
+            })
+            .slice(0, 10)
+            .map((product) => ({
+              id: product.id,
+              name: product.name,
+              slug: product.slug,
+              price: product.price,
+              image: product.image_url || product.image,
+              category: product.category,
+            }));
+  
+          return NextResponse.json({ results }, { status: 200 });
+        }
+  
 
       return NextResponse.json(
         {
