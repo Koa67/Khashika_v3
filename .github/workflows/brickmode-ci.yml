@@ -10,10 +10,13 @@ concurrency:
   group: brickmode-ci-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   ci:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
 
     env:
       CI: true
@@ -31,19 +34,38 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install system tools (rg/jq)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ripgrep jq
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "pnpm"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: "9"
 
+      - name: Get pnpm store path
+        id: pnpm-store
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-store.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Ensure scripts executable
+        run: chmod +x ./scripts/guard-cursor-config.sh
 
       - name: BRICKMODE guard (cursor config must be stable)
         run: ./scripts/guard-cursor-config.sh
