@@ -32,17 +32,11 @@ export async function GET(request: NextRequest) {
 
       const results = products
         .filter((product) => {
-<<<<<<< Updated upstream
           const p = product as unknown as { title?: string };
           const searchableText = norm(
             [
               product.name,
               p.title,
-=======
-          const searchableText = norm(
-            [
-              product.name,
->>>>>>> Stashed changes
               product.description,
               product.category,
               product.material,
@@ -55,18 +49,11 @@ export async function GET(request: NextRequest) {
         })
         .slice(0, 10)
         .map((product) => {
-<<<<<<< Updated upstream
           const p = product as unknown as { title?: string };
           const img = product.image_url || product.image;
           return {
             id: product.id,
             name: product.name || p.title,
-=======
-          const img = product.image_url || product.image;
-          return {
-            id: product.id,
-            name: product.name,
->>>>>>> Stashed changes
             slug: product.slug,
             price: product.price,
             image_url: img,
@@ -97,7 +84,7 @@ export async function GET(request: NextRequest) {
 
       const { data: products, error: productsError } = await supabase
         .from('products')
-        .select('id, name, slug, price, image_url, category')
+        .select('id, name, slug, price, image_url, image, category')
         .or(
           `name.ilike.%${query}%,description.ilike.%${query}%,category.ilike.%${query}%,material.ilike.%${query}%`
         )
@@ -107,7 +94,6 @@ export async function GET(request: NextRequest) {
         return await searchLocal();
       }
 
-<<<<<<< Updated upstream
       const results = (products || []).map((p) => {
         // keep image fallback consistent with local search
         // (some rows may have image but not image_url)
@@ -126,17 +112,6 @@ export async function GET(request: NextRequest) {
       if (results.length === 0) {
         return await searchLocal();
       }
-=======
-      const results = (products || []).map((p) => ({
-        id: p.id,
-        name: p.name,
-        slug: p.slug,
-        price: p.price,
-        image_url: p.image_url,
-        image: p.image_url,
-        category: p.category,
-      }));
->>>>>>> Stashed changes
 
       return NextResponse.json({ count: results.length, results }, { status: 200 });
     }
