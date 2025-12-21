@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { Search, X } from 'lucide-react';
 import { useSearch } from '@/lib/hooks/useSearch';
 import { Product } from '@/lib/types';
-import Fuse from 'fuse.js';
 
 // Fonction pour valider et nettoyer les URLs d'images
 const getValidImageUrl = (url: string | undefined | null): string => {
@@ -30,7 +29,7 @@ const getValidImageUrl = (url: string | undefined | null): string => {
 
 export default function JewelrySearch() {
   const router = useRouter();
-  const { query, setQuery, results, suggestions, isLoading, fuseInstance } = useSearch();
+  const { query, setQuery, results, isLoading, fuseInstance } = useSearch();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -108,23 +107,6 @@ export default function JewelrySearch() {
       // Fallback: utiliser router si window.location échoue
       try {
         router.push(`/product/${product.slug}`);
-      } catch (e) {
-        console.error('Router push also failed:', e);
-      }
-    }
-  };
-
-  const handleSuggestionClick = (category: string) => {
-    try {
-      setIsOpen(false);
-      setQuery('');
-      // Use window.location.assign instead of assignment
-      window.location.assign(`/shop?category=${encodeURIComponent(category)}`);
-    } catch (error) {
-      console.error('Error navigating to category:', error);
-      // Fallback: utiliser router si window.location échoue
-      try {
-        router.push(`/shop?category=${encodeURIComponent(category)}`);
       } catch (e) {
         console.error('Router push also failed:', e);
       }

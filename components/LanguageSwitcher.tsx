@@ -3,7 +3,6 @@
 import { usePathname, useRouter } from '@/navigation';
 import { Globe } from 'lucide-react';
 import { useState } from 'react';
-import { routing } from '@/navigation';
 
 /**
  * SÉLECTEUR DE LANGUE

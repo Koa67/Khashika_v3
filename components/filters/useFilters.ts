@@ -5,7 +5,6 @@
 // ============================================================================
 
 import { useState, useCallback, useMemo, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
 import { Product } from '@/lib/types';
 
 // Types pour les filtres
@@ -142,9 +141,6 @@ export const FILTER_CONFIG = {
 
 // Hook principal
 export function useFilters(products: Product[]) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  
   // État des filtres
   const [filters, setFilters] = useState<FilterState>(() => {
     // Restaurer depuis URL ou localStorage

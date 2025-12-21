@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Filter, X, RotateCcw, ChevronDown } from 'lucide-react';
+import { Filter, X, RotateCcw } from 'lucide-react';
 import { Product } from '@/lib/types';
 import ProductGrid from './ProductGrid';
 import { FilterState, INITIAL_FILTERS, FILTER_CONFIG, SortOption } from '@/lib/types/filters';

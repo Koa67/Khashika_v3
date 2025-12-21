@@ -9,7 +9,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, X, RotateCcw } from 'lucide-react';
+import { ChevronDown, RotateCcw } from 'lucide-react';
 import { FILTER_CONFIG, FilterState, FilterCounts } from './useFilters';
 import PriceRangeSlider from './PriceRangeSlider';
 import StoneFilter from './StoneFilter';
@@ -83,7 +83,6 @@ function FilterAccordion({
 
 // Checkbox stylisée
 function FilterCheckbox({
-  id,
   label,
   checked,
   onChange,
@@ -91,7 +90,6 @@ function FilterCheckbox({
   disabled = false,
   icon,
 }: {
-  id: string;
   label: string;
   checked: boolean;
   onChange: () => void;
@@ -264,7 +262,6 @@ export default function FilterSidebar({
               {FILTER_CONFIG.materials.map((material) => (
                 <FilterCheckbox
                   key={material.id}
-                  id={material.id}
                   label={material.label}
                   icon={material.icon}
                   checked={filters.materials.includes(material.id)}
@@ -353,7 +350,6 @@ export default function FilterSidebar({
               {FILTER_CONFIG.origins.map((origin) => (
                 <FilterCheckbox
                   key={origin.id}
-                  id={origin.id}
                   label={origin.label}
                   icon={origin.flag}
                   checked={filters.origins.includes(origin.id)}

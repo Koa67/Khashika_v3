@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Product } from '@/lib/types';
 import { getValidImageUrl } from '@/lib/utils/images';
 

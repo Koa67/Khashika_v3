@@ -10,7 +10,6 @@ export default async function AdminLayout({
   // Récupérer les cookies pour l'authentification
   const cookieStore = await cookies();
   const accessToken = cookieStore.get('sb-access-token')?.value;
-  const refreshToken = cookieStore.get('sb-refresh-token')?.value;
 
   // Si pas de token, rediriger vers login
   if (!accessToken) {

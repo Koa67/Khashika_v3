@@ -70,7 +70,9 @@ export const conversationTopics = {
  */
 export async function simulateAIResponse(
   userMessage: string,
-  _systemPrompt: string = KHASHIKA_SYSTEM_PROMPT // Préparé pour intégration IA future
+  // Préparé pour intégration IA future
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _systemPrompt: string = KHASHIKA_SYSTEM_PROMPT
 ): Promise<ChatResponse> {
   const normalizedMessage = userMessage.toLowerCase().trim();
 
