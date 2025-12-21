@@ -106,7 +106,7 @@ export default function Navbar() {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [isSearchOpen]);
+  }, [isSearchOpen, setQuery]);
 
   // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -224,6 +224,7 @@ export default function Navbar() {
                           >
                             {/* Image */}
                             <div className="relative w-12 h-12 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
                                 src={getValidImageUrl(product.image_url || product.image)}
                                 alt={product.name || 'Bijou'}

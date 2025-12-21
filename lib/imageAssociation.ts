@@ -280,7 +280,7 @@ export function associateProductImages(
   };
 }
 
-export default {
+const imageAssociation = {
   isImageBlacklisted,
   isFromValidProductSource,
   validateProductImage,
@@ -288,6 +288,8 @@ export default {
   BLACKLISTED_IMAGE_SOURCES,
   VALID_PRODUCT_IMAGE_SOURCES,
 };
+
+export default imageAssociation;
 
 
 

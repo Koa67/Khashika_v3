@@ -37,6 +37,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
       {/* Image */}
       {mainImage && (
         <div className="flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={mainImage} 
             alt={product.name || 'Produit'} 

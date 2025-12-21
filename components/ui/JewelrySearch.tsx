@@ -285,6 +285,7 @@ export default function JewelrySearch() {
                         >
                           {/* Image - MODE SAFE : <img> standard au lieu de <Image /> Next.js */}
                           <div className="relative w-16 h-16 rounded-md border border-border overflow-hidden flex-shrink-0 bg-card">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={imageUrl}
                               alt={product.name}

@@ -249,6 +249,7 @@ export default function CheckoutPage() {
               <div className="space-y-4 mb-6">
                 {items.map((item) => (
                   <div key={item.id} className="flex gap-4">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={getValidImageUrl(item.product.image_url || item.product.image)}
                       alt={item.product.name}

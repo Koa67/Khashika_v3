@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable @next/next/no-img-element */
+
 import { useState, useRef } from 'react';
 import { Product } from '@/lib/types';
 import { getValidImageUrl } from '@/lib/utils/images';
