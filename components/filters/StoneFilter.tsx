@@ -210,7 +210,7 @@ export default function StoneFilter({
       {/* État vide */}
       {filteredStones.length === 0 && (
         <div className="text-center py-4 text-gray-500 text-sm">
-          Aucune pierre ne correspond à "{searchQuery}"
+          Aucune pierre ne correspond à &quot;{searchQuery}&quot;
         </div>
       )}
       

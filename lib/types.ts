@@ -57,6 +57,16 @@ export interface Product {
   isNew?: boolean;
   /** Indique si le produit est en promotion */
   isOnSale?: boolean;
+  /** Indique si le produit est en stock */
+  inStock?: boolean;
+  /** Quantité en stock */
+  stock?: number;
+  /** Date de création du produit */
+  createdAt?: string;
+  /** Prix soldé */
+  salePrice?: number;
+  /** Pourcentage de réduction */
+  discount?: number;
   /** Caractéristiques détaillées du produit */
   characteristics?: ProductCharacteristics;
   /** Attributs spécifiques du produit (Pierre, Matière, Dimensions, Origine) */

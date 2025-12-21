@@ -384,10 +384,6 @@ export const NavigationMenu: React.FC = () => {
   };
 
   useEffect(() => {
-    setMobileMenuOpen(false);
-  }, []);
-
-  useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {

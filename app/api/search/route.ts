@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const query = (searchParams.get('query') ?? searchParams.get('q') ?? '').trim();
 
     if (!query || query.length < 2) {
-      return NextResponse.json({ results: [] }, { status: 200 });
+      return NextResponse.json({ count: 0, results: [] }, { status: 200 });
     }
 
     // Si Supabase n'est pas configuré, retourner des résultats mock
@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
       // Fallback : recherche simple dans les données mock
       const { getAllProducts } = await import('@/lib/data/products-loader');
       const products = await getAllProducts();
-      
+
       const searchTerm = query.toLowerCase();
       const results = products
         .filter((product) => {
@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
           category: product.category,
         }));
 
-      return NextResponse.json({ results }, { status: 200 });
+      return NextResponse.json({ count: results.length, results }, { status: 200 });
     }
 
     // Recherche Full Text Search avec Supabase
@@ -74,76 +74,57 @@ export async function GET(request: NextRequest) {
         )
         .limit(10);
 
-        if (productsError) {
-          // Fallback ultime: recherche locale (JSON via products-loader) au lieu de 500
-          const { getAllProducts } = await import('@/lib/data/products-loader');
-          const products = await getAllProducts();
-  
-          const searchTerm = query.toLowerCase();
-          const results = products
-            .filter((product) => {
-              const searchableText = [
-                product.name,
-                product.description,
-                product.category,
-                product.material,
-                product.stone,
-              ]
-                .filter(Boolean)
-                .join(' ')
-                .toLowerCase();
-              return searchableText.includes(searchTerm);
-            })
-            .slice(0, 10)
-            .map((product) => ({
-              id: product.id,
-              name: product.name,
-              slug: product.slug,
-              price: product.price,
-              image: product.image_url || product.image,
-              category: product.category,
-            }));
-  
-          return NextResponse.json({ results }, { status: 200 });
-        }
-  
+      if (productsError) {
+        // Fallback ultime: recherche locale (JSON via products-loader) au lieu de 500
+        const { getAllProducts } = await import('@/lib/data/products-loader');
+        const productsLocal = await getAllProducts();
 
-      return NextResponse.json(
-        {
-          results: (products || []).map((p) => ({
-            id: p.id,
-            name: p.name,
-            slug: p.slug,
-            price: p.price,
-            image: p.image_url || p.image,
-            category: p.category,
-          })),
-        },
-        { status: 200 }
-      );
+        const searchTerm = query.toLowerCase();
+        const results = productsLocal
+          .filter((product) => {
+            const searchableText = [
+              product.name,
+              product.description,
+              product.category,
+              product.material,
+              product.stone,
+            ]
+              .filter(Boolean)
+              .join(' ')
+              .toLowerCase();
+            return searchableText.includes(searchTerm);
+          })
+          .slice(0, 10)
+          .map((product) => ({
+            id: product.id,
+            name: product.name,
+            slug: product.slug,
+            price: product.price,
+            image: product.image_url || product.image,
+            category: product.category,
+          }));
+
+        return NextResponse.json({ count: results.length, results }, { status: 200 });
+      }
+
+      const results = (products || []).map((p) => ({
+        id: p.id,
+        name: p.name,
+        slug: p.slug,
+        price: p.price,
+        image: p.image_url || p.image,
+        category: p.category,
+      }));
+
+      return NextResponse.json({ count: results.length, results }, { status: 200 });
     }
 
-    return NextResponse.json({ results: data || [] }, { status: 200 });
+    return NextResponse.json(
+      { count: (data || []).length, results: data || [] },
+      { status: 200 }
+    );
   } catch (error) {
     console.error('Search API error:', error);
-    return NextResponse.json(
-      { error: 'Erreur serveur' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 });
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

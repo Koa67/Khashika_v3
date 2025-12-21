@@ -82,3 +82,15 @@ DONE WHEN: <3–6 acceptance checkboxes>
 ### Routes snapshot (source of truth for paths)
 - docs/routes.snapshot.txt
 
+### Terminal batching rule
+- If commands can run together, output ONE multi-line bash block.
+- Split blocks only when a check/stop/choice is needed.
+- Never include explanations inside bash blocks.
+
+## CI Gates (must pass before merge)
+- pnpm lint
+- pnpm build
+- pnpm test:e2e --grep checkout (minimum when touching checkout)
+
+## Decision Log (date - decision - why)
+- YYYY-MM-DD: BRICKMODE introduced (Patch/Plan modes, guard hook) — prevent repo drift & reduce regressions

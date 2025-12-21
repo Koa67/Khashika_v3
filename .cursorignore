@@ -44,3 +44,7 @@ _LEGACY_CLONE/
 .DS_Store
 .vscode/settings.json
 *.swp
+# BRICKMODE: ignore shadow symlinks (edit root only)
+components/.cursorrules
+components/.cursorignore
+scripts/_CONTEXT.md

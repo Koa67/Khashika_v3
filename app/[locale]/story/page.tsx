@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "L&apos;Esprit Khashika - Notre Histoire",
@@ -102,12 +103,12 @@ export default function StoryPage() {
             <p className="text-gray-700 mb-6">
               Explorez notre collection de bijoux artisanaux, chacun porteur d&apos;une histoire unique.
             </p>
-            <a
+            <Link
               href="/shop"
               className="inline-block bg-[#2596be] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors"
             >
               Voir la Collection
-            </a>
+            </Link>
           </div>
         </article>
       </div>

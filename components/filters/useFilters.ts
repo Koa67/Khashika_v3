@@ -6,6 +6,7 @@
 
 import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { Product } from '@/lib/types';
 
 // Types pour les filtres
 export interface FilterState {
@@ -140,7 +141,7 @@ export const FILTER_CONFIG = {
 };
 
 // Hook principal
-export function useFilters(products: any[]) {
+export function useFilters(products: Product[]) {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -194,16 +195,16 @@ export function useFilters(products: any[]) {
     
     // Filtre prix
     result = result.filter(p => {
-      const price = parseFloat(p.price) || 0;
-      return price >= filters.priceRange[0] && price <= filters.priceRange[1];
+      const price = typeof p.price === 'string' ? parseFloat(p.price) : p.price;
+      const priceValue = price || 0;
+      return priceValue >= filters.priceRange[0] && priceValue <= filters.priceRange[1];
     });
     
     // Filtre matériaux
     if (filters.materials.length > 0) {
       result = result.filter(p => 
         filters.materials.some(m => 
-          p.material?.toLowerCase().includes(m) ||
-          p.materials?.some((mat: string) => mat.toLowerCase().includes(m))
+          p.material?.toLowerCase().includes(m)
         )
       );
     }
@@ -213,7 +214,6 @@ export function useFilters(products: any[]) {
       result = result.filter(p =>
         filters.stones.some(s =>
           p.stone?.toLowerCase().includes(s) ||
-          p.stones?.some((st: string) => st.toLowerCase().includes(s)) ||
           p.name?.toLowerCase().includes(s) ||
           p.description?.toLowerCase().includes(s)
         )
@@ -224,8 +224,7 @@ export function useFilters(products: any[]) {
     if (filters.styles.length > 0) {
       result = result.filter(p =>
         filters.styles.some(s =>
-          p.style?.toLowerCase().includes(s) ||
-          p.tags?.some((t: string) => t.toLowerCase().includes(s))
+          p.style?.toLowerCase().includes(s)
         )
       );
     }
@@ -234,8 +233,7 @@ export function useFilters(products: any[]) {
     if (filters.occasions.length > 0) {
       result = result.filter(p =>
         filters.occasions.some(o =>
-          p.occasion?.toLowerCase().includes(o) ||
-          p.tags?.some((t: string) => t.toLowerCase().includes(o))
+          p.category?.toLowerCase().includes(o)
         )
       );
     }
@@ -244,8 +242,7 @@ export function useFilters(products: any[]) {
     if (filters.colors.length > 0) {
       result = result.filter(p =>
         filters.colors.some(c =>
-          p.color?.toLowerCase().includes(c) ||
-          p.colors?.some((col: string) => col.toLowerCase().includes(c))
+          p.characteristics?.color?.toLowerCase().includes(c)
         )
       );
     }
@@ -254,8 +251,7 @@ export function useFilters(products: any[]) {
     if (filters.origins.length > 0) {
       result = result.filter(p =>
         filters.origins.some(o =>
-          p.origin?.toLowerCase().includes(o) ||
-          p.collection?.toLowerCase().includes(o)
+          p.attributes?.origin?.toLowerCase().includes(o)
         )
       );
     }
@@ -265,8 +261,14 @@ export function useFilters(products: any[]) {
       result = result.filter(p => p.inStock !== false && p.stock !== 0);
     }
     if (filters.availability.newArrivals) {
-      const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
-      result = result.filter(p => new Date(p.createdAt).getTime() > thirtyDaysAgo);
+      // Use a fixed cutoff date for new arrivals (30 days)
+      result = result.filter(p => {
+        if (!p.createdAt) return false;
+        const createdDate = new Date(p.createdAt);
+        const now = new Date();
+        const daysDiff = (now.getTime() - createdDate.getTime()) / (1000 * 60 * 60 * 24);
+        return daysDiff <= 30;
+      });
     }
     if (filters.availability.onSale) {
       result = result.filter(p => p.salePrice || p.discount);
@@ -275,16 +277,28 @@ export function useFilters(products: any[]) {
     // Tri
     switch (filters.sortBy) {
       case 'newest':
-        result.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        result.sort((a, b) => {
+          const aDate = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+          const bDate = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+          return bDate - aDate;
+        });
         break;
       case 'price-asc':
-        result.sort((a, b) => (parseFloat(a.price) || 0) - (parseFloat(b.price) || 0));
+        result.sort((a, b) => {
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price) : a.price;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price) : b.price;
+          return (aPrice || 0) - (bPrice || 0);
+        });
         break;
       case 'price-desc':
-        result.sort((a, b) => (parseFloat(b.price) || 0) - (parseFloat(a.price) || 0));
+        result.sort((a, b) => {
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price) : a.price;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price) : b.price;
+          return (bPrice || 0) - (aPrice || 0);
+        });
         break;
       case 'popularity':
-        result.sort((a, b) => (b.views || 0) - (a.views || 0));
+        // No views field in Product type, skip for now
         break;
     }
     
@@ -307,15 +321,13 @@ export function useFilters(products: any[]) {
     // Compter les occurrences pour chaque filtre
     FILTER_CONFIG.materials.forEach(m => {
       counts.materials[m.id] = products.filter(p =>
-        p.material?.toLowerCase().includes(m.id) ||
-        p.materials?.some((mat: string) => mat.toLowerCase().includes(m.id))
+        p.material?.toLowerCase().includes(m.id)
       ).length;
     });
     
     FILTER_CONFIG.stones.forEach(s => {
       counts.stones[s.id] = products.filter(p =>
         p.stone?.toLowerCase().includes(s.id) ||
-        p.stones?.some((st: string) => st.toLowerCase().includes(s.id)) ||
         p.name?.toLowerCase().includes(s.id)
       ).length;
     });

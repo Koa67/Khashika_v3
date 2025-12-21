@@ -18,33 +18,25 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 const CART_STORAGE_KEY = 'khashika_cart';
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  // Charger le panier depuis localStorage au montage
-  useEffect(() => {
+  const [items, setItems] = useState<CartItem[]>(() => {
+    if (typeof window === 'undefined') return [];
     try {
       const stored = localStorage.getItem(CART_STORAGE_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        setItems(parsed);
-      }
+      return stored ? JSON.parse(stored) : [];
     } catch (e) {
       console.warn('Erreur chargement panier localStorage:', e);
+      return [];
     }
-    setIsHydrated(true);
-  }, []);
+  });
 
   // Sauvegarder dans localStorage à chaque changement
   useEffect(() => {
-    if (isHydrated) {
-      try {
-        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-      } catch (e) {
-        console.warn('Erreur sauvegarde panier localStorage:', e);
-      }
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    } catch (e) {
+      console.warn('Erreur sauvegarde panier localStorage:', e);
     }
-  }, [items, isHydrated]);
+  }, [items]);
 
   const addItem = (product: Product, quantity: number = 1) => {
     setItems((prev) => {

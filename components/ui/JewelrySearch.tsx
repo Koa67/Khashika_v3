@@ -69,9 +69,9 @@ export default function JewelrySearch() {
         if (selectedIndex >= 0 && selectedIndex < results.length) {
           handleProductClick(results[selectedIndex]);
         } else if (query.trim()) {
-          // Utiliser window.location pour éviter les problèmes de navigation Next.js
+          // Use window.location.assign instead of assignment
           setIsOpen(false);
-          window.location.href = `/shop?q=${encodeURIComponent(query)}`;
+          window.location.assign(`/shop?q=${encodeURIComponent(query)}`);
         }
       } catch (error) {
         console.error('Error handling Enter key:', error);
@@ -79,7 +79,7 @@ export default function JewelrySearch() {
         if (query.trim()) {
           try {
             setIsOpen(false);
-            window.location.href = `/shop?q=${encodeURIComponent(query)}`;
+            window.location.assign(`/shop?q=${encodeURIComponent(query)}`);
           } catch (e) {
             console.error('Window location also failed:', e);
             // Dernier recours: router.push
@@ -101,9 +101,8 @@ export default function JewelrySearch() {
     try {
       setIsOpen(false);
       setQuery('');
-      // Utiliser window.location pour éviter les problèmes de navigation Next.js
-      // CORRECTION : /product/ au singulier (pas /products/)
-      window.location.href = `/product/${product.slug}`;
+      // Use window.location.assign instead of assignment
+      window.location.assign(`/product/${product.slug}`);
     } catch (error) {
       console.error('Error navigating to product:', error);
       // Fallback: utiliser router si window.location échoue
@@ -119,8 +118,8 @@ export default function JewelrySearch() {
     try {
       setIsOpen(false);
       setQuery('');
-      // Utiliser window.location pour éviter les problèmes de navigation Next.js
-      window.location.href = `/shop?category=${encodeURIComponent(category)}`;
+      // Use window.location.assign instead of assignment
+      window.location.assign(`/shop?category=${encodeURIComponent(category)}`);
     } catch (error) {
       console.error('Error navigating to category:', error);
       // Fallback: utiliser router si window.location échoue

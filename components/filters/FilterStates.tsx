@@ -136,10 +136,10 @@ export function EmptyState({ onClearFilters }: EmptyStateProps) {
       <h3 className="font-serif text-xl text-gray-900 mb-2">
         Aucun trésor trouvé
       </h3>
-      <p className="text-gray-500 mb-6 max-w-md">
-        Nous n'avons pas de bijoux correspondant à ces critères pour le moment. 
-        Essayez d'élargir votre recherche ou de modifier vos filtres.
-      </p>
+                <p className="text-gray-500 mb-6 max-w-md">
+                  Nous n&apos;avons pas de bijoux correspondant à ces critères pour le moment. 
+                  Essayez d&apos;élargir votre recherche ou de modifier vos filtres.
+                </p>
       
       {/* CTA */}
       <motion.button

@@ -65,14 +65,7 @@ export default function FilterModal({
   const [currentSection, setCurrentSection] = React.useState<FilterSection>('main');
   const contentRef = useRef<HTMLDivElement>(null);
   
-  // Reset à la section principale quand on ouvre
-  useEffect(() => {
-    if (isOpen) {
-      setCurrentSection('main');
-    }
-  }, [isOpen]);
-  
-  // Bloquer le scroll du body quand la modale est ouverte
+  // Manage body scroll when modal opens/closes
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -277,7 +270,12 @@ export default function FilterModal({
                            flex items-center justify-between safe-area-inset-top">
               {currentSection !== 'main' ? (
                 <button
-                  onClick={() => setCurrentSection('main')}
+                  onClick={() => {
+                    setCurrentSection('main');
+                    if (contentRef.current) {
+                      contentRef.current.scrollTop = 0;
+                    }
+                  }}
                   className="flex items-center gap-2 text-[#2596be] font-medium
                             min-h-[44px] min-w-[44px] -ml-2 pl-2"
                 >
@@ -339,7 +337,12 @@ export default function FilterModal({
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.03 }}
-                          onClick={() => setCurrentSection(section.id)}
+                          onClick={() => {
+                            setCurrentSection(section.id);
+                            if (contentRef.current) {
+                              contentRef.current.scrollTop = 0;
+                            }
+                          }}
                           className="w-full flex items-center justify-between px-4 py-4
                                     hover:bg-gray-50 active:bg-gray-100 transition-colors
                                     min-h-[56px]"

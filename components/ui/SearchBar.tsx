@@ -79,7 +79,7 @@ export default function SearchBar() {
           className="absolute top-full left-0 mt-2 w-96 bg-white dark:bg-[#121A21] rounded-lg shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden z-[9999]"
         >
           <ul>
-            {results.map((product: any) => (
+            {results.map((product) => (
               <li key={product.id} className="border-b border-gray-50 last:border-0">
                 <Link 
                   href={`/product/${product.slug || product.id}`}

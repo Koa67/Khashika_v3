@@ -449,7 +449,7 @@ export default function ShopClient({ initialProducts }: ShopClientProps) {
                 </div>
                 <h3 className="font-serif text-xl mb-2">Aucun trésor trouvé</h3>
                 <p className="text-foreground/60 mb-6">
-                  Essayez d'élargir votre recherche ou de modifier vos filtres.
+                  Essayez d&apos;élargir votre recherche ou de modifier vos filtres.
                 </p>
                 <button
                   onClick={handleClearAll}

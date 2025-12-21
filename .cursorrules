@@ -14,11 +14,19 @@ Never scan folders. Never read untagged JSON.
 - No filler phrases ("Certainly", "Here's", "Let me")
 - No repeating the question
 
+## BRICKMODE Gate (mandatory)
+Before writing any patch:
+- Require the user request to include the 8-line Patch Request Template (MODE/GOAL/SCOPE/FILES/CONSTRAINTS/ASSUMPTIONS/TESTS/DONE WHEN).
+- Refuse to modify any file not listed in FILES (opened/tagged).
+- If MODE: PATCH → output diff-only + mandatory tests + rollback.
+- If MODE: PLAN → allow options/architecture, no patch unless asked.
+
+
 ## Tech Constraints
 | Rule | Value |
 |------|-------|
 | Framework | Next.js 16 App Router |
-| Styling | Tailwind v3.4.x (current), no inline |
+| Styling | Tailwind v4, no inline |
 | Database | Supabase via @/lib/db/supabase |
 | Icons | lucide-react only |
 | Images | next/image + getValidImageUrl() |
@@ -90,3 +98,4 @@ export async function GET(req: NextRequest) {
 - BASH BLOCK GROUPING:
   If multiple bash commands can be pasted and executed together safely, output them in ONE bash block (multiple lines).
   Split into multiple bash blocks only when a verification/stop/choice is needed.
+- Paths with brackets must be quoted (ex: 'app/[locale]/...')

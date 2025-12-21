@@ -36,8 +36,8 @@ export function ActiveFilterChips({
       <AnimatePresence mode="popLayout">
         {activeFilters.map((filter, index) => {
           // Trouver la couleur/icône associée
-          let chipColor = 'bg-gray-100';
-          let chipTextColor = 'text-gray-700';
+          const chipColor = 'bg-gray-100';
+          const chipTextColor = 'text-gray-700';
           let icon: React.ReactNode = null;
           
           if (filter.key === 'stones') {

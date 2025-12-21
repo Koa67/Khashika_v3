@@ -18,33 +18,25 @@ const WishlistContext = createContext<WishlistContextType | undefined>(undefined
 const WISHLIST_STORAGE_KEY = 'khashika-wishlist';
 
 export function WishlistProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<Product[]>([]);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  // Charger la wishlist depuis localStorage au montage
-  useEffect(() => {
+  const [items, setItems] = useState<Product[]>(() => {
+    if (typeof window === 'undefined') return [];
     try {
       const stored = localStorage.getItem(WISHLIST_STORAGE_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        setItems(parsed);
-      }
+      return stored ? JSON.parse(stored) : [];
     } catch (e) {
       console.warn('Erreur chargement wishlist localStorage:', e);
+      return [];
     }
-    setIsHydrated(true);
-  }, []);
+  });
 
   // Sauvegarder dans localStorage à chaque changement
   useEffect(() => {
-    if (isHydrated) {
-      try {
-        localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(items));
-      } catch (e) {
-        console.warn('Erreur sauvegarde wishlist localStorage:', e);
-      }
+    try {
+      localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(items));
+    } catch (e) {
+      console.warn('Erreur sauvegarde wishlist localStorage:', e);
     }
-  }, [items, isHydrated]);
+  }, [items]);
 
   const addToWishlist = (product: Product) => {
     setItems((prev) => {

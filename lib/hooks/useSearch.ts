@@ -38,8 +38,8 @@ export function useSearch() {
         if (alive) {
           setAllProducts(products);
         }
-      } catch (error: any) {
-        if (error?.name !== 'AbortError') {
+      } catch (error) {
+        if (error instanceof Error && error.name !== 'AbortError') {
           console.error('Erreur chargement produits pour recherche:', error);
           if (alive) {
             setAllProducts([]);
