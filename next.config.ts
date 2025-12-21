@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig: NextConfig = {
   images: {
+    qualities: [75, 100],
     unoptimized: true, // KILL SWITCH : Désactive l'optimisation d'images pour éviter les crashes
     remotePatterns: [
       {
