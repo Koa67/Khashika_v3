@@ -9,7 +9,7 @@
 
 ## Stack (immutable)
 - Next.js 16 (App Router)
-- Tailwind CSS v4
+- Tailwind CSS v3.4.x (current)
 - Supabase
 - TypeScript strict
 - lucide-react icons
@@ -53,3 +53,32 @@ Text:       #1a1a1a (dark)
 - 12/12: Image sync fixed (90% products)
 - 12/12: Golden Glow design implemented
 - 12/11: Navigation redesign complete
+
+## BRICKMODE — Patch Request Template (mandatory)
+Copy/paste this at the top of every request:
+
+MODE: PLAN | PATCH
+GOAL: <objective in 1 sentence>
+SCOPE: <paths/folders impacted>
+FILES: <opened/tagged files in Cursor>
+CONSTRAINTS: <no new libs? perf? style rules?>
+ASSUMPTIONS: <allowed assumptions if info missing>
+TESTS I CAN RUN: <pnpm lint / pnpm build / pnpm test:e2e --grep checkout ...>
+DONE WHEN: <3–6 acceptance checkboxes>
+
+## Definition of Done (DoD)
+### Boutique (filters / scroll)
+- Filters reflected in URL query params
+- Never render all products at once
+- Pagination/cursor stable
+- Infinite scroll only with fallback "Load more"
+
+### Checkout (Stripe)
+- Secrets server-only
+- Webhook signature verified
+- Payment confirmed only via webhook
+- E2E checkout passes
+
+### Routes snapshot (source of truth for paths)
+- docs/routes.snapshot.txt
+

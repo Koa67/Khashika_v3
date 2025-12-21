@@ -18,7 +18,7 @@ Never scan folders. Never read untagged JSON.
 | Rule | Value |
 |------|-------|
 | Framework | Next.js 16 App Router |
-| Styling | Tailwind v4, no inline |
+| Styling | Tailwind v3.4.x (current), no inline |
 | Database | Supabase via @/lib/db/supabase |
 | Icons | lucide-react only |
 | Images | next/image + getValidImageUrl() |
@@ -84,3 +84,9 @@ export async function GET(req: NextRequest) {
 - Using getValidImageUrl()?
 - Code-first response?
 - No new libraries?
+
+## Terminal Output Rules (BRICKMODE)
+- Never put explanations inside bash blocks.
+- BASH BLOCK GROUPING:
+  If multiple bash commands can be pasted and executed together safely, output them in ONE bash block (multiple lines).
+  Split into multiple bash blocks only when a verification/stop/choice is needed.
