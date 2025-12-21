@@ -4,3 +4,4 @@ export default async function AccountPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   redirect(`/${locale}/login`);
 }
+
