@@ -94,3 +94,6 @@ DONE WHEN: <3–6 acceptance checkboxes>
 
 ## Decision Log (date - decision - why)
 - YYYY-MM-DD: BRICKMODE introduced (Patch/Plan modes, guard hook) — prevent repo drift & reduce regressions
+
+## E2E Policy (BRICKMODE)
+- Checkout E2E is required only when Stripe env is configured (CI/staging). Locally it may be skipped if keys are missing.
