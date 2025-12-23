@@ -99,3 +99,20 @@ export async function GET(req: NextRequest) {
   If multiple bash commands can be pasted and executed together safely, output them in ONE bash block (multiple lines).
   Split into multiple bash blocks only when a verification/stop/choice is needed.
 - Paths with brackets must be quoted (ex: 'app/[locale]/...')
+
+## ANTI-DEBUG-LOOPS Gate (mandatory)
+- NO BLUFF: If evidence is missing (logs/output/file content), write "UNKNOWN" and request exactly ONE command or ONE missing file/tag.
+- ONE-ITERATION RULE: One patch per reply. No multiple alternative patches in the same response.
+- CHANGE BUDGET (unless explicitly overridden):
+  - Max 2 files touched
+  - Max 40 lines changed total
+  - No refactor/renames/formatting-only changes
+- VERIFY OR STOP:
+  - Every PATCH reply MUST include:
+    1) Diff-only patch
+    2) ONE verification command
+    3) Expected result (exact error disappears / exact string / exact behavior)
+    4) Rollback command
+- FAIL LOOP BREAKER:
+  - After 2 consecutive FAIL (symptom unchanged or new error), STOP patching.
+  - Switch to ESCALATE mode: minimal repro OR git bisect OR revert to last green.

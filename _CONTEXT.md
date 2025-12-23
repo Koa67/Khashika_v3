@@ -1,3 +1,4 @@
+# bash +
 # KHASHIKA - Project Context
 > Source of truth. Cursor reads this FIRST.
 
@@ -54,17 +55,75 @@ Text:       #1a1a1a (dark)
 - 12/12: Golden Glow design implemented
 - 12/11: Navigation redesign complete
 
+## DEBUG_SHIELD 🐞 — Anti-Loop Protocol (mandatory when debugging)
+This exists to kill infinite debug loops. Evidence only. No vibes.
+
+### Core Rules (fail-closed)
+- NO BLUFF:
+  - If evidence is missing (logs/output/file content), answer UNKNOWN.
+  - Request exactly ONE command OR ONE missing file/tag (not 10 questions).
+- ONE-ITERATION:
+  - One patch per reply. No multiple alternative patches in a single response.
+- ONE-VERIFY:
+  - Every patch must include exactly ONE verification command + expected outcome.
+- VERDICT REQUIRED:
+  - Every iteration ends with: PASS | FAIL — unchanged | FAIL — changed | BLOCKED
+- CHANGE BUDGET (unless explicitly overridden in CONSTRAINTS):
+  - Max 2 files touched
+  - Max 40 lines changed total
+  - No refactor, no renames, no formatting-only changes
+  - No new deps, no new files (unless explicitly approved)
+- STOP-LOSS:
+  - If ITERATION >= 3 → MODE must be PLAN (ESCALATE). Stop patching.
+  - If 2 consecutive FAIL → ESCALATE. Stop patching.
+
+### ESCALATE Menu (choose ONE, do not mix)
+A) Minimal Repro: isolate the smallest route/component that reproduces
+B) Revert/Stash: return to last known good state
+C) Git Bisect: locate the first bad commit
+D) UI Isolation: strip overlays/positioning/z-index, reintroduce one by one
+E) Data Fixture: replace remote data with a 3-item fixture to compare behavior
+
+### Required Evidence on FAIL (paste raw)
+- Command run + full output (no summaries)
+- Symptom: unchanged or changed (and how)
+- If UI: DOM probe output is required (screenshot optional)
+
+### Flag-specific Probes (required when relevant)
+- UI/CSS (need TWO probes minimum):
+  - Probe 1: computed z-index/position/pointer-events for broken element + nearest overlay
+  - Probe 2: bounding rect + stacking context hint (ancestor with position/transform/filter)
+- DATA:
+  - Prove the runtime data source (local JSON vs Supabase vs API route)
+  - Paste 3 sample items (id/slug/price) from runtime output
+- PERF:
+  - Provide a before/after metric (build time, route load, action duration)
+- AUTH/SEC:
+  - State risk + mitigation (no secrets client-side, webhook verification, etc.)
+- I/O:
+  - Define error behavior (retry/fail-fast/user message) and never log secrets
+
 ## BRICKMODE — Patch Request Template (mandatory)
 Copy/paste this at the top of every request:
 
 MODE: PLAN | PATCH
+ITERATION: 1
+LAST VERDICT: N/A (first run) | PASS | FAIL — unchanged | FAIL — changed | BLOCKED
 GOAL: <objective in 1 sentence>
 SCOPE: <paths/folders impacted>
 FILES: <opened/tagged files in Cursor>
-CONSTRAINTS: <no new libs? perf? style rules?>
+CONSTRAINTS: <no new libs? perf? style rules? allow >2 files? allow >40 lines?>
 ASSUMPTIONS: <allowed assumptions if info missing>
 TESTS I CAN RUN: <pnpm lint / pnpm build / pnpm test:e2e --grep checkout ...>
 DONE WHEN: <3–6 acceptance checkboxes>
+
+## FAIL REPORT (paste this after every verification)
+ITÉRATION: <number>
+VERDICT: PASS | FAIL — unchanged | FAIL — changed | BLOCKED
+VERIFY COMMAND:
+RAW OUTPUT:
+WHAT CHANGED:
+NEXT ACTION: PATCH (only if iteration <3 and not 2x FAIL) | ESCALATE (A/B/C/D/E)
 
 ## Definition of Done (DoD)
 ### Boutique (filters / scroll)
