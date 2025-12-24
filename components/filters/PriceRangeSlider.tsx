@@ -137,10 +137,10 @@ export default function PriceRangeSlider({
       </div>
       
       {/* Slider track */}
-      <div className="pt-2 pb-4">
+      <div className="pt-4 pb-6 overflow-visible">
         <div
           ref={trackRef}
-          className="relative h-2 bg-gray-200 rounded-full cursor-pointer"
+          className="relative h-2 bg-gray-200 rounded-full cursor-pointer overflow-visible"
           onClick={(e) => {
             if (!trackRef.current) return;
             const rect = trackRef.current.getBoundingClientRect();

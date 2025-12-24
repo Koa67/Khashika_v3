@@ -38,9 +38,11 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
   const isWishlisted = isInWishlist(product.id);
 
-  // Format price
+  // Format price - integers display without decimals
   const price = typeof product.price === 'number' ? product.price : parseFloat(String(product.price || 0));
-  const displayPrice = price > 0 ? `${price.toFixed(2)} €` : 'Prix sur demande';
+  const displayPrice = price > 0 
+    ? (Number.isInteger(price) ? `${price} €` : `${price.toFixed(2)} €`)
+    : 'Prix sur demande';
 
   const handleWishlistClick = (e: React.MouseEvent) => {
     e.preventDefault();

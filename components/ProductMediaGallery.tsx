@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Product } from '@/lib/types';
 import { useValidatedImages } from '@/lib/hooks/useValidatedImages';
+import ProductZoom from '@/components/product/ProductZoom';
 
 interface ProductMediaGalleryProps {
   product: Product;
@@ -22,15 +23,18 @@ const getValidImageUrl = (path: string | null | undefined): string => {
 };
 
 export default function ProductMediaGallery({ product }: ProductMediaGalleryProps) {
-  // Collect all possible image sources
+  // Collect all possible image sources and deduplicate
   const allProductImages = [
     product.image_url,
     product.image,
     ...(product.images || []),
   ].filter(Boolean) as string[];
   
+  // Deduplicate by normalized URL
+  const uniqueImages = [...new Set(allProductImages.map(img => getValidImageUrl(img)))];
+  
   // Use validated images hook to filter out blacklisted images
-  const { validImages: validatedImages } = useValidatedImages(allProductImages, {
+  const { validImages: validatedImages } = useValidatedImages(uniqueImages, {
     fallbackImage: '/placeholder-image.svg',
   });
   
@@ -40,23 +44,20 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
     : ['/placeholder-image.svg'];
   
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const validImages = images.map(getValidImageUrl);
+  // Images already normalized, no need to re-process
+  const validImages = images;
 
   return (
     <div>
-      {/* Desktop: Stack vertical d'images grandes */}
+      {/* Desktop: Stack vertical d'images avec zoom lens */}
       <div className="hidden lg:block space-y-6">
         {validImages.map((imageUrl, index) => (
-          <div key={index} className="relative w-full aspect-[4/5] overflow-hidden rounded-sm bg-[#f4f1eb]">
-            <Image
-              src={imageUrl}
-              alt={`${product.title || product.name} - Image ${index + 1}`}
-              fill
-              className="object-cover w-full h-full"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority={index === 0}
-            />
-          </div>
+          <ProductZoom
+            key={index}
+            imageUrl={imageUrl}
+            alt={`${product.title || product.name} - Image ${index + 1}`}
+            priority={index === 0}
+          />
         ))}
       </div>
 
