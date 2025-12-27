@@ -25,7 +25,7 @@ export default function PriceRangeSlider({
   value,
   onChange,
   currency = '€',
-  step = 5,
+  step = 1,
 }: PriceRangeSliderProps) {
   const [localMin, setLocalMin] = useState(value[0]);
   const [localMax, setLocalMax] = useState(value[1]);
@@ -85,29 +85,30 @@ export default function PriceRangeSlider({
     }
   }, [isDragging, handleMouseMove, handleMouseUp]);
   
-  // Saisie manuelle
-  const handleInputChange = (type: 'min' | 'max', inputValue: string) => {
-    const numValue = parseInt(inputValue) || 0;
-    
-    if (type === 'min') {
-      const newMin = Math.max(min, Math.min(numValue, localMax - step));
-      setLocalMin(newMin);
-      onChange([newMin, localMax]);
+  // Presets rapides - adaptés à la plage 1-50€
+  const getPresets = () => {
+    if (max <= 50) {
+      // Plage petite (1-50€) - segments clairs
+      return [
+        { label: 'Tous', value: [min, max] as [number, number] },
+        { label: '< 10€', value: [min, Math.min(10, max)] as [number, number] },
+        { label: '10-25€', value: [Math.max(min, 10), Math.min(25, max)] as [number, number] },
+        { label: '25-40€', value: [Math.max(min, 25), Math.min(40, max)] as [number, number] },
+        { label: '> 40€', value: [Math.max(min, 40), max] as [number, number] },
+      ];
     } else {
-      const newMax = Math.min(max, Math.max(numValue, localMin + step));
-      setLocalMax(newMax);
-      onChange([localMin, newMax]);
+      // Plage plus large (fallback)
+      const quarter = Math.round(max / 4);
+      const half = Math.round(max / 2);
+      return [
+        { label: 'Tous', value: [min, max] as [number, number] },
+        { label: `< ${quarter}€`, value: [min, quarter] as [number, number] },
+        { label: `${quarter}-${half}€`, value: [quarter, half] as [number, number] },
+        { label: `> ${half}€`, value: [half, max] as [number, number] },
+      ];
     }
   };
-  
-  // Presets rapides
-  const presets = [
-    { label: 'Tous', value: [min, max] as [number, number] },
-    { label: '< 50€', value: [min, 50] as [number, number] },
-    { label: '50-100€', value: [50, 100] as [number, number] },
-    { label: '100-200€', value: [100, 200] as [number, number] },
-    { label: '> 200€', value: [200, max] as [number, number] },
-  ];
+  const presets = getPresets();
   
   const isPresetActive = (preset: [number, number]) =>
     localMin === preset[0] && localMax === preset[1];
@@ -125,10 +126,10 @@ export default function PriceRangeSlider({
               setLocalMax(preset.value[1]);
               onChange(preset.value);
             }}
-            className={`px-2.5 py-1 text-xs rounded-full transition-all duration-200 border
+            className={`px-2.5 py-1 text-xs rounded-none transition-all duration-200 border
                        ${isPresetActive(preset.value)
-                         ? 'bg-[#2596be] text-white border-[#2596be]'
-                         : 'bg-gray-50 text-gray-600 border-gray-200 hover:border-[#2596be]/50'
+                         ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
+                         : 'bg-[#FDFBF7] text-gray-600 border-[#D4AF37]/30 hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]'
                        }`}
           >
             {preset.label}
@@ -140,7 +141,7 @@ export default function PriceRangeSlider({
       <div className="pt-4 pb-6 overflow-visible">
         <div
           ref={trackRef}
-          className="relative h-2 bg-gray-200 rounded-full cursor-pointer overflow-visible"
+          className="relative h-2 bg-gray-200 rounded-none cursor-pointer overflow-visible"
           onClick={(e) => {
             if (!trackRef.current) return;
             const rect = trackRef.current.getBoundingClientRect();
@@ -164,7 +165,7 @@ export default function PriceRangeSlider({
         >
           {/* Range actif */}
           <motion.div
-            className="absolute h-full bg-gradient-to-r from-[#2596be] to-[#40c4ff] rounded-full"
+            className="absolute h-full bg-gradient-to-r from-[#D4AF37] to-[#E8C547] rounded-none"
             style={{
               left: `${minPercent}%`,
               width: `${maxPercent - minPercent}%`,
@@ -175,11 +176,11 @@ export default function PriceRangeSlider({
           {/* Thumb Min */}
           <motion.div
             className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 
-                       bg-white rounded-full shadow-lg border-2 cursor-grab
+                       bg-white rounded-none shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'min' 
-                         ? 'border-[#2596be] shadow-[#2596be]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-gray-300 hover:border-[#2596be]'}`}
+                         ? 'border-[#D4AF37] shadow-[#D4AF37]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-[#D4AF37]/30 hover:border-[#D4AF37]'}`}
             style={{ left: `${minPercent}%` }}
             onMouseDown={handleMouseDown('min')}
             whileHover={{ scale: 1.1 }}
@@ -190,7 +191,7 @@ export default function PriceRangeSlider({
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: isDragging === 'min' ? 1 : 0, y: isDragging === 'min' ? -8 : 5 }}
               className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 
-                         bg-gray-900 text-white text-xs rounded whitespace-nowrap"
+                         bg-gray-900 text-white text-xs rounded-none whitespace-nowrap"
             >
               {localMin}{currency}
             </motion.div>
@@ -199,7 +200,7 @@ export default function PriceRangeSlider({
           {/* Thumb Max */}
           <motion.div
             className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 
-                       bg-white rounded-full shadow-lg border-2 cursor-grab
+                       bg-white rounded-none shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'max' 
                          ? 'border-[#2596be] shadow-[#2596be]/30 shadow-lg scale-110 cursor-grabbing' 
@@ -213,7 +214,7 @@ export default function PriceRangeSlider({
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: isDragging === 'max' ? 1 : 0, y: isDragging === 'max' ? -8 : 5 }}
               className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 
-                         bg-gray-900 text-white text-xs rounded whitespace-nowrap"
+                         bg-gray-900 text-white text-xs rounded-none whitespace-nowrap"
             >
               {localMax}{currency}
             </motion.div>
@@ -221,60 +222,13 @@ export default function PriceRangeSlider({
         </div>
       </div>
       
-      {/* Inputs manuels */}
-      <div className="flex items-center gap-3">
-        <div className="flex-1">
-          <label className="text-xs text-gray-500 mb-1 block">Min</label>
-          <div className="relative">
-            <input
-              type="number"
-              value={localMin}
-              onChange={(e) => handleInputChange('min', e.target.value)}
-              min={min}
-              max={localMax - step}
-              step={step}
-              className="w-full px-3 py-2 pr-7 text-sm border border-gray-200 rounded-lg
-                        focus:outline-none focus:border-[#2596be] focus:ring-1 focus:ring-[#2596be]/20
-                        transition-all duration-200"
-            />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
-              {currency}
-            </span>
-          </div>
-        </div>
-        
-        <div className="flex items-center justify-center w-6 pt-5">
-          <div className="w-4 h-px bg-gray-300" />
-        </div>
-        
-        <div className="flex-1">
-          <label className="text-xs text-gray-500 mb-1 block">Max</label>
-          <div className="relative">
-            <input
-              type="number"
-              value={localMax}
-              onChange={(e) => handleInputChange('max', e.target.value)}
-              min={localMin + step}
-              max={max}
-              step={step}
-              className="w-full px-3 py-2 pr-7 text-sm border border-gray-200 rounded-lg
-                        focus:outline-none focus:border-[#2596be] focus:ring-1 focus:ring-[#2596be]/20
-                        transition-all duration-200"
-            />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
-              {currency}
-            </span>
-          </div>
-        </div>
-      </div>
-      
       {/* Indicateur visuel de la plage */}
       <div className="flex items-center justify-between text-xs text-gray-400">
         <span>{min}{currency}</span>
-        <span className="text-[#2596be] font-medium">
+        <span className="text-[#D4AF37] font-medium">
           {localMin}{currency} – {localMax}{currency}
         </span>
-        <span>{max}{currency}+</span>
+        <span>{max}{currency}</span>
       </div>
       
     </div>

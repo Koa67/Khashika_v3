@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Link } from '@/navigation';
-import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import { getValidImageUrl } from '@/lib/utils/images';
 import { Product } from '@/lib/types';
@@ -58,7 +57,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       className="group block w-full h-full"
     >
       {/* Card container */}
-      <div className="golden-glow-card h-full flex flex-col bg-white overflow-hidden relative">
+      <div className="golden-glow-card h-full flex flex-col bg-[#FDFBF7] overflow-hidden relative">
         {/* Image zone with hover effect */}
         <div className="relative aspect-[3/2] w-full overflow-hidden">
           {/* Skeleton Loader pendant le chargement */}
@@ -66,12 +65,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             <div className="absolute inset-0 bg-gray-200 animate-pulse" />
           )}
           
-          {/* Image with Framer Motion hover zoom */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="relative w-full h-full"
-          >
+          {/* Image */}
+          <div className="relative w-full h-full">
             <Image
               src={imageUrl}
               alt={product.name || 'Bijou Khashika'}
@@ -83,7 +78,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               priority={priority}
               onLoad={() => setIsImageLoading(false)}
             />
-          </motion.div>
+          </div>
           
           {/* Bouton Cœur Wishlist */}
           <button
@@ -106,7 +101,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </div>
         
         {/* Info section */}
-        <div className="p-3 bg-white flex-1 flex flex-col">
+        <div className="p-3 bg-[#FDFBF7] flex-1 flex flex-col">
           {/* Category */}
           {product.category && (
             <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
@@ -115,7 +110,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           )}
           
           {/* Product name */}
-          <h3 className="font-serif text-base text-[#1a1a1a] line-clamp-2 mb-2 min-h-[2.5rem]">
+          <h3 className="font-serif text-sm text-[#1a1a1a] mb-2 min-h-[4rem]">
             {product.name}
           </h3>
           

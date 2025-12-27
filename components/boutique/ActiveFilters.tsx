@@ -28,11 +28,41 @@ export default function ActiveFilters({
           <button
             key={m}
             onClick={() => onToggle('materials', m)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-card rounded-full text-sm group"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm group hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
           >
             <span>{mat?.icon}</span>
             <span>{mat?.label}</span>
-            <X className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
+            <X className="w-3.5 h-3.5 text-[#D4AF37] opacity-50 group-hover:opacity-100" />
+          </button>
+        );
+      })}
+      
+      {/* Types (Bijoux) */}
+      {filters.types.map(t => {
+        const type = FILTER_CONFIG.types.find(x => x.id === t);
+        return (
+          <button
+            key={t}
+            onClick={() => onToggle('types', t)}
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm group hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
+          >
+            <span>{type?.label}</span>
+            <X className="w-3.5 h-3.5 text-[#D4AF37] opacity-50 group-hover:opacity-100" />
+          </button>
+        );
+      })}
+      
+      {/* Accessories */}
+      {filters.accessories.map(a => {
+        const acc = FILTER_CONFIG.accessories.find(x => x.id === a);
+        return (
+          <button
+            key={a}
+            onClick={() => onToggle('accessories', a)}
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm group hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
+          >
+            <span>{acc?.label}</span>
+            <X className="w-3.5 h-3.5 text-[#D4AF37] opacity-50 group-hover:opacity-100" />
           </button>
         );
       })}
@@ -43,11 +73,11 @@ export default function ActiveFilters({
           <button
             key={s}
             onClick={() => onToggle('stones', s)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-card rounded-full text-sm group"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm group hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
           >
-            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: stone?.color }} />
+            <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone?.color }} />
             <span>{stone?.label}</span>
-            <X className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
+            <X className="w-3.5 h-3.5 text-[#D4AF37] opacity-50 group-hover:opacity-100" />
           </button>
         );
       })}
@@ -58,11 +88,11 @@ export default function ActiveFilters({
           <button
             key={o}
             onClick={() => onToggle('occasions', o)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-card rounded-full text-sm group"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm group hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
           >
             <span>{occ?.emoji}</span>
             <span>{occ?.label}</span>
-            <X className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
+            <X className="w-3.5 h-3.5 text-[#D4AF37] opacity-50 group-hover:opacity-100" />
           </button>
         );
       })}
@@ -70,7 +100,7 @@ export default function ActiveFilters({
       {activeCount > 1 && (
         <button
           onClick={onClearAll}
-          className="flex items-center gap-1 px-2.5 py-1 text-sm text-primary hover:underline"
+          className="flex items-center gap-1 text-sm text-[#E07A5F] hover:text-[#C44536] transition font-medium"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           Tout effacer

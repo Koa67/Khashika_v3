@@ -8,15 +8,10 @@ export function useShopFilters(products: Product[]) {
   const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Calculate price range from products
+  // Price range fixed to 1-50€
   const priceRange = useMemo(() => {
-    const prices = products.map(p => p.price).filter(p => p > 0);
-    if (prices.length === 0) return { min: 0, max: 500 };
-    return {
-      min: Math.floor(Math.min(...prices)),
-      max: Math.ceil(Math.max(...prices)),
-    };
-  }, [products]);
+    return { min: 1, max: 50 };
+  }, []);
 
   // Filter products
   const filteredProducts = useMemo(() => {
@@ -32,6 +27,39 @@ export function useShopFilters(products: Product[]) {
       p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1]
     );
 
+    // Types + Accessories filter (UNION/OR between them, AND with other filters)
+    const hasTypeFilter = filters.types.length > 0;
+    const hasAccessoryFilter = filters.accessories.length > 0;
+    
+    if (hasTypeFilter || hasAccessoryFilter) {
+      result = result.filter(p => {
+        const searchText = `${p.name || ''} ${p.description || ''} ${p.category || ''}`.toLowerCase();
+        
+        // Check if matches any type
+        const matchesType = hasTypeFilter && filters.types.some(typeId => {
+          const typeConfig = FILTER_CONFIG.types.find(t => t.id === typeId);
+          if (!typeConfig) return false;
+          return typeConfig.searchTerms.some(term => {
+            const regex = new RegExp('\\b' + term + '\\b', 'i');
+            return regex.test(searchText);
+          });
+        });
+        
+        // Check if matches any accessory
+        const matchesAccessory = hasAccessoryFilter && filters.accessories.some(accId => {
+          const accConfig = FILTER_CONFIG.accessories.find(a => a.id === accId);
+          if (!accConfig) return false;
+          return accConfig.searchTerms.some(term => {
+            const regex = new RegExp('\\b' + term + '\\b', 'i');
+            return regex.test(searchText);
+          });
+        });
+        
+        // UNION: pass if matches type OR accessory
+        return matchesType || matchesAccessory;
+      });
+    }
+
     // Material filter - use word boundary matching to avoid false positives
     if (filters.materials.length > 0) {
       result = result.filter(p => {
@@ -39,7 +67,7 @@ export function useShopFilters(products: Product[]) {
         return filters.materials.some(m => {
           const term = m.replace('-', ' ').trim();
           // Use word boundary regex for accurate matching
-          const regex = new RegExp(`\\b${term}\\b`, 'i');
+          const regex = new RegExp('\\b' + term + '\\b', 'i');
           return regex.test(searchText);
         });
       });
@@ -51,7 +79,7 @@ export function useShopFilters(products: Product[]) {
         const searchText = `${p.name || ''} ${p.description || ''} ${p.stone || ''}`.toLowerCase();
         return filters.stones.some(s => {
           const term = s.replace('-', ' ');
-          const regex = new RegExp(`\\b${term}\\b`, 'i');
+          const regex = new RegExp('\\b' + term + '\\b', 'i');
           return regex.test(searchText);
         });
       });
@@ -104,11 +132,13 @@ export function useShopFilters(products: Product[]) {
       materials: {} as Record<string, number>,
       stones: {} as Record<string, number>,
       styles: {} as Record<string, number>,
+      types: {} as Record<string, number>,
+      accessories: {} as Record<string, number>,
     };
 
     FILTER_CONFIG.materials.forEach(m => {
       const term = m.id.replace('-', ' ').trim();
-      const regex = new RegExp(`\\b${term}\\b`, 'i');
+      const regex = new RegExp('\\b' + term + '\\b', 'i');
       counts.materials[m.id] = products.filter(p => {
         const searchText = `${p.name || ''} ${p.description || ''} ${p.material || ''}`.toLowerCase();
         return regex.test(searchText);
@@ -117,10 +147,30 @@ export function useShopFilters(products: Product[]) {
 
     FILTER_CONFIG.stones.forEach(s => {
       const term = s.id.replace('-', ' ');
-      const regex = new RegExp(`\\b${term}\\b`, 'i');
+      const regex = new RegExp('\\b' + term + '\\b', 'i');
       counts.stones[s.id] = products.filter(p => {
         const searchText = `${p.name || ''} ${p.description || ''} ${p.stone || ''}`.toLowerCase();
         return regex.test(searchText);
+      }).length;
+    });
+
+    FILTER_CONFIG.types.forEach(t => {
+      counts.types[t.id] = products.filter(p => {
+        const searchText = `${p.name || ''} ${p.description || ''} ${p.category || ''}`.toLowerCase();
+        return t.searchTerms.some(term => {
+          const regex = new RegExp('\\b' + term + '\\b', 'i');
+          return regex.test(searchText);
+        });
+      }).length;
+    });
+
+    FILTER_CONFIG.accessories.forEach(a => {
+      counts.accessories[a.id] = products.filter(p => {
+        const searchText = `${p.name || ''} ${p.description || ''} ${p.category || ''}`.toLowerCase();
+        return a.searchTerms.some(term => {
+          const regex = new RegExp('\\b' + term + '\\b', 'i');
+          return regex.test(searchText);
+        });
       }).length;
     });
 
@@ -135,6 +185,8 @@ export function useShopFilters(products: Product[]) {
     if (filters.stones.length) count += filters.stones.length;
     if (filters.styles.length) count += filters.styles.length;
     if (filters.occasions.length) count += filters.occasions.length;
+    if (filters.types.length) count += filters.types.length;
+    if (filters.accessories.length) count += filters.accessories.length;
     if (filters.priceRange[0] > priceRange.min || filters.priceRange[1] < priceRange.max) count++;
     if (filters.availability.inStock) count++;
     if (filters.availability.newArrivals) count++;

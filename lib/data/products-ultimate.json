@@ -20,7 +20,7 @@
   },
   {
     "id": "prod-1",
-    "name": "BRACELET INDIEN  pierre LABRADORITE",
+    "name": "Bracelet indien pierre labradorite",
     "slug": "bracelet-indien-pierre-labradorite",
     "title": "BRACELET INDIEN  pierre LABRADORITE",
     "price": 22,
@@ -39,7 +39,7 @@
   },
   {
     "id": "prod-2",
-    "name": "BRACELET pierres naturelles obsidienne",
+    "name": "Bracelet pierres naturelles obsidienne",
     "slug": "bracelet-pierres-naturelles-obsidienne",
     "title": "BRACELET pierres naturelles obsidienne",
     "price": 12,
@@ -58,7 +58,7 @@
   },
   {
     "id": "prod-3",
-    "name": "bracelet rigide en laiton",
+    "name": "Bracelet rigide en laiton",
     "slug": "bracelet-rigide-en-laiton",
     "title": "bracelet rigide en laiton",
     "price": 10,
@@ -77,7 +77,7 @@
   },
   {
     "id": "prod-4",
-    "name": "Collier Tibetain en  Turquoise  et  corail",
+    "name": "Collier tibetain en turquoise et corail",
     "slug": "collier-tibetain-en-turquoise-et-corail",
     "title": "Collier Tibetain en  Turquoise  et  corail",
     "price": 19,
@@ -115,7 +115,7 @@
   },
   {
     "id": "prod-6",
-    "name": "PENDENTIF ARGENT « AUM » sYMBOLE indien",
+    "name": "Pendentif argent « aum » symbole indien",
     "slug": "pendentif-argent-aum-symbole-indien",
     "title": "PENDENTIF ARGENT « AUM » sYMBOLE indien",
     "price": 10,
@@ -134,7 +134,7 @@
   },
   {
     "id": "prod-7",
-    "name": "BRACELET pierres naturelles  dalmatien",
+    "name": "Bracelet pierres naturelles dalmatien",
     "slug": "bracelet-pierres-naturelles-dalmatien",
     "title": "BRACELET pierres naturelles  dalmatien",
     "price": 10,
@@ -153,7 +153,7 @@
   },
   {
     "id": "prod-8",
-    "name": "BRACELET pierres naturelles JASPE GRIS",
+    "name": "Bracelet pierres naturelles jaspe gris",
     "slug": "bracelet-pierres-naturelles-jaspe-gris",
     "title": "BRACELET pierres naturelles JASPE GRIS",
     "price": 10,
@@ -210,7 +210,7 @@
   },
   {
     "id": "prod-11",
-    "name": "Bracelet pierre en Pierre de lune sur macramé",
+    "name": "Bracelet pierre en pierre de lune sur macramé",
     "slug": "bracelet-pierre-en-pierre-de-lune-sur-macramé",
     "title": "Bracelet pierre en Pierre de lune sur macramé",
     "price": 14,
@@ -229,7 +229,7 @@
   },
   {
     "id": "prod-12",
-    "name": "BRACELET chainette argent et pierre pierre de lune",
+    "name": "Bracelet chainette argent et pierre pierre de lune",
     "slug": "bracelet-chainette-argent-et-pierre-pierre-de-lune",
     "title": "BRACELET chainette argent et pierre pierre de lune",
     "price": 24,
@@ -247,27 +247,8 @@
     "inStock": true
   },
   {
-    "id": "prod-13",
-    "name": "Bague réglable argent pierre en améthyste",
-    "slug": "bague-réglable-argent-pierre-en-améthyste",
-    "title": "Bague réglable argent pierre en améthyste",
-    "price": 974,
-    "description": "Bague en argent torsadéavec une pierre enAMETHYSTE",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products_reconciled/bague-réglable-argent-pierre-en-améthyste.jpeg",
-    "image": "/images/products_reconciled/bague-réglable-argent-pierre-en-améthyste.jpeg",
-    "isOnSale": true,
-    "isNew": false,
-    "images": [
-      "/images/products_reconciled/bague-réglable-argent-pierre-en-améthyste.jpeg"
-    ],
-    "sku": "UGS :BAAP0030",
-    "source_url": "https://www.khashika.com/produit/bague-en-argent-torsade-avec-une-pierre-en-amethyste-cest-une-bague-fine-et-discrete-facile-a-porter-avec-tout-seule-ou-accompagne-dautres-bagues-fines/",
-    "inStock": true
-  },
-  {
     "id": "prod-14",
-    "name": "COLLIER METAL ARGENTE  RAS DU COU",
+    "name": "Collier metal argente ras du cou",
     "slug": "collier-metal-argente-ras-du-cou",
     "title": "COLLIER METAL ARGENTE  RAS DU COU",
     "price": 30,
@@ -305,7 +286,7 @@
   },
   {
     "id": "prod-16",
-    "name": "BRACELET ARGENT et pierre turquoise",
+    "name": "Bracelet argent et pierre turquoise",
     "slug": "bracelet-argent-et-pierre-turquoise",
     "title": "BRACELET ARGENT et pierre turquoise",
     "price": 9,
@@ -324,7 +305,7 @@
   },
   {
     "id": "prod-17",
-    "name": "COLLIER pierres agate mousse, oeil du tigre pierre Dzi tibetaine",
+    "name": "Collier pierres agate mousse, oeil du tigre pierre dzi tibetaine",
     "slug": "collier-pierres-agate-mousse-oeil-du-tigre-pierre-dzi-tibetaine",
     "title": "COLLIER pierres agate mousse, oeil du tigre pierre Dzi tibetaine",
     "price": 32,
@@ -381,7 +362,7 @@
   },
   {
     "id": "prod-20",
-    "name": "COLLIER ARGENT GRENAT",
+    "name": "Collier argent grenat",
     "slug": "collier-argent-grenat",
     "title": "COLLIER ARGENT GRENAT",
     "price": 24,
@@ -400,7 +381,7 @@
   },
   {
     "id": "prod-21",
-    "name": "bracelet indien jonc laiton et peint à la main",
+    "name": "Bracelet indien jonc laiton et peint à la main",
     "slug": "bracelet-indien-jonc-laiton-et-peint-à-la-main",
     "title": "bracelet indien jonc laiton et peint à la main",
     "price": 19,
@@ -419,7 +400,7 @@
   },
   {
     "id": "prod-22",
-    "name": "GRANDES Boucles d’oreilles argent avec un rubis indien facetté",
+    "name": "Grandes boucles d’oreilles argent avec un rubis indien facetté",
     "slug": "grandes-boucles-doreilles-argent-avec-un-rubis-indien-facetté",
     "title": "GRANDES Boucles d’oreilles argent avec un rubis indien facetté",
     "price": 29,
@@ -438,7 +419,7 @@
   },
   {
     "id": "prod-23",
-    "name": "Collier Tibétain avec des perles taillées et pierres turquoise et améthyste",
+    "name": "Collier tibétain avec des perles taillées et pierres turquoise et améthyste",
     "slug": "collier-tibétain-avec-des-perles-taillées-et-pierres-turquoise-et-améthyste",
     "title": "Collier Tibétain avec des perles taillées et pierres turquoise et améthyste",
     "price": 36,
@@ -457,7 +438,7 @@
   },
   {
     "id": "prod-24",
-    "name": "Collier Tibetain en Turquoise et lapis-lazuli avec des perles taillées",
+    "name": "Collier tibetain en turquoise et lapis-lazuli avec des perles taillées",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli-avec-des-perles-taillées",
     "title": "Collier Tibetain en Turquoise et lapis-lazuli avec des perles taillées",
     "price": 36,
@@ -495,7 +476,7 @@
   },
   {
     "id": "prod-26",
-    "name": "Collier fantaisie metal  perles argentées et noires",
+    "name": "Collier fantaisie metal perles argentées et noires",
     "slug": "collier-fantaisie-metal-perles-argentées-et-noires",
     "title": "Collier fantaisie metal  perles argentées et noires",
     "price": 8,
@@ -514,7 +495,7 @@
   },
   {
     "id": "prod-27",
-    "name": "BRACELET pierre agate blanc",
+    "name": "Bracelet pierre agate blanc",
     "slug": "bracelet-pierre-agate-blanc",
     "title": "BRACELET pierre agate blanc",
     "price": 14,
@@ -533,7 +514,7 @@
   },
   {
     "id": "prod-28",
-    "name": "BRACELET pierres naturelles en lapis-lazuli bleu fonce",
+    "name": "Bracelet pierres naturelles en lapis-lazuli bleu fonce",
     "slug": "bracelet-pierres-naturelles-en-lapis-lazuli-bleu-fonce",
     "title": "BRACELET pierres naturelles en lapis-lazuli bleu fonce",
     "price": 12,
@@ -571,7 +552,7 @@
   },
   {
     "id": "prod-30",
-    "name": "Grande Bague en argent Argent ajustable sertie d’une pierre en onyx vert",
+    "name": "Grande bague en argent argent ajustable sertie d’une pierre en onyx vert",
     "slug": "grande-bague-en-argent-argent-ajustable-sertie-dune-pierre-en-onyx-vert",
     "title": "Grande Bague en argent Argent ajustable sertie d’une pierre en onyx vert",
     "price": 36,
@@ -666,7 +647,7 @@
   },
   {
     "id": "prod-35",
-    "name": "Collier fantaisie metal  argenté galet blanc",
+    "name": "Collier fantaisie metal argenté galet blanc",
     "slug": "collier-fantaisie-metal-argenté-galet-blanc",
     "title": "Collier fantaisie metal  argenté galet blanc",
     "price": 6,
@@ -685,7 +666,7 @@
   },
   {
     "id": "prod-36",
-    "name": "BRACELET pierres jaspe rouge et soleil argent",
+    "name": "Bracelet pierres jaspe rouge et soleil argent",
     "slug": "bracelet-pierres-jaspe-rouge-et-soleil-argent",
     "title": "BRACELET pierres jaspe rouge et soleil argent",
     "price": 16,
@@ -723,7 +704,7 @@
   },
   {
     "id": "prod-38",
-    "name": "COLLIER pierres 6mm en quartz rose",
+    "name": "Collier pierres 6mm en quartz rose",
     "slug": "collier-pierres-6mm-en-quartz-rose",
     "title": "COLLIER pierres 6mm en quartz rose",
     "price": 12,
@@ -742,7 +723,7 @@
   },
   {
     "id": "prod-39",
-    "name": "Collier Tibetain Turquoise et Corail Lapis-lazuli",
+    "name": "Collier tibetain turquoise et corail lapis-lazuli",
     "slug": "collier-tibetain-turquoise-et-corail-lapis-lazuli",
     "title": "Collier Tibetain Turquoise et Corail Lapis-lazuli",
     "price": 32,
@@ -799,7 +780,7 @@
   },
   {
     "id": "prod-42",
-    "name": "Bague De Manchette en Argent Sterling 925 Incrustée De Pierre De Lune",
+    "name": "Bague de manchette en argent sterling 925 incrustée de pierre de lune",
     "slug": "bague-de-manchette-en-argent-sterling-925-incrustée-de-pierre-de-lune",
     "title": "Bague De Manchette en Argent Sterling 925 Incrustée De Pierre De Lune",
     "price": 8,
@@ -818,7 +799,7 @@
   },
   {
     "id": "prod-43",
-    "name": "COLLIER pierres de lapis-lazuli fermoire doré",
+    "name": "Collier pierres de lapis-lazuli fermoire doré",
     "slug": "collier-pierres-de-lapis-lazuli-fermoire-doré",
     "title": "COLLIER pierres de lapis-lazuli fermoire doré",
     "price": 20,
@@ -837,7 +818,7 @@
   },
   {
     "id": "prod-44",
-    "name": "ELEGANT COLLIER ARGENT ET GLASS STONE CRISTAL",
+    "name": "Elegant collier argent et glass stone cristal",
     "slug": "elegant-collier-argent-et-glass-stone-cristal",
     "title": "ELEGANT COLLIER ARGENT ET GLASS STONE CRISTAL",
     "price": 4,
@@ -856,7 +837,7 @@
   },
   {
     "id": "prod-45",
-    "name": "BRACELET pierres naturelles  quartz rose fraise",
+    "name": "Bracelet pierres naturelles quartz rose fraise",
     "slug": "bracelet-pierres-naturelles-quartz-rose-fraise",
     "title": "BRACELET pierres naturelles  quartz rose fraise",
     "price": 12,
@@ -913,7 +894,7 @@
   },
   {
     "id": "prod-48",
-    "name": "BRACELET pierres naturelles  7 chakras",
+    "name": "Bracelet pierres naturelles 7 chakras",
     "slug": "bracelet-pierres-naturelles-7-chakras",
     "title": "BRACELET pierres naturelles  7 chakras",
     "price": 16,
@@ -932,7 +913,7 @@
   },
   {
     "id": "prod-49",
-    "name": "CLOUS D’OREILLES ARGENT lapis-lazuli bijou facile à porter",
+    "name": "Clous d’oreilles argent lapis-lazuli bijou facile à porter",
     "slug": "clous-doreilles-argent-lapis-lazuli-bijou-facile-à-porter",
     "title": "CLOUS D’OREILLES ARGENT lapis-lazuli bijou facile à porter",
     "price": 12,
@@ -951,7 +932,7 @@
   },
   {
     "id": "prod-50",
-    "name": "BRACELET en  pierres 6mm EMERAUDE LAVANDE",
+    "name": "Bracelet en pierres 6mm emeraude lavande",
     "slug": "bracelet-en-pierres-6mm-emeraude-lavande",
     "title": "BRACELET en  pierres 6mm EMERAUDE LAVANDE",
     "price": 10,
@@ -970,7 +951,7 @@
   },
   {
     "id": "prod-51",
-    "name": "BRACELET pierre AGATE VERTE et un COEUR",
+    "name": "Bracelet pierre agate verte et un coeur",
     "slug": "bracelet-pierre-agate-verte-et-un-coeur",
     "title": "BRACELET pierre AGATE VERTE et un COEUR",
     "price": 18,
@@ -989,7 +970,7 @@
   },
   {
     "id": "prod-52",
-    "name": "ETOLE BLEUE ET JAUNE",
+    "name": "Etole bleue et jaune",
     "slug": "etole-bleue-et-jaune",
     "title": "ETOLE BLEUE ET JAUNE",
     "price": 25,
@@ -1008,7 +989,7 @@
   },
   {
     "id": "prod-53",
-    "name": "PASHMINA cachemire ET SOIE vert motifs éléphant",
+    "name": "Pashmina cachemire et soie vert motifs éléphant",
     "slug": "pashmina-cachemire-et-soie-vert-motifs-éléphant",
     "title": "PASHMINA cachemire ET SOIE vert motifs éléphant",
     "price": 24,
@@ -1027,7 +1008,7 @@
   },
   {
     "id": "prod-54",
-    "name": "CHAINE DE CHEVILLES argentée coeur",
+    "name": "Chaine de chevilles argentée coeur",
     "slug": "chaine-de-chevilles-argentée-coeur",
     "title": "CHAINE DE CHEVILLES argentée coeur",
     "price": 8,
@@ -1046,7 +1027,7 @@
   },
   {
     "id": "prod-55",
-    "name": "Bague Argent avec une pierre ovale pierre de lune",
+    "name": "Bague argent avec une pierre ovale pierre de lune",
     "slug": "bague-argent-avec-une-pierre-ovale-pierre-de-lune",
     "title": "Bague Argent avec une pierre ovale pierre de lune",
     "price": 16,
@@ -1103,7 +1084,7 @@
   },
   {
     "id": "prod-58",
-    "name": "Créoles ARGENT",
+    "name": "Créoles argent",
     "slug": "créoles-argent",
     "title": "Créoles ARGENT",
     "price": 19,
@@ -1122,7 +1103,7 @@
   },
   {
     "id": "prod-59",
-    "name": "Collier Tibetain en  pierres de Turquoise corail  et Lapis-lazuli",
+    "name": "Collier tibetain en pierres de turquoise corail et lapis-lazuli",
     "slug": "collier-tibetain-en-pierres-de-turquoise-corail-et-lapis-lazuli",
     "title": "Collier Tibetain en  pierres de Turquoise corail  et Lapis-lazuli",
     "price": 19,
@@ -1141,7 +1122,7 @@
   },
   {
     "id": "prod-60",
-    "name": "foulard 100% coton rouge et motifs",
+    "name": "Foulard 100% coton rouge et motifs",
     "slug": "foulard-100-coton-rouge-et-motifs",
     "title": "foulard 100% coton rouge et motifs",
     "price": 8,
@@ -1160,7 +1141,7 @@
   },
   {
     "id": "prod-61",
-    "name": "Bague Argent AMETHYSTE",
+    "name": "Bague argent amethyste",
     "slug": "bague-argent-amethyste",
     "title": "Bague Argent AMETHYSTE",
     "price": 19,
@@ -1179,7 +1160,7 @@
   },
   {
     "id": "prod-62",
-    "name": "BRACELET pierres naturelles en AGATE multi stone",
+    "name": "Bracelet pierres naturelles en agate multi stone",
     "slug": "bracelet-pierres-naturelles-en-agate-multi-stone",
     "title": "BRACELET pierres naturelles en AGATE multi stone",
     "price": 12,
@@ -1198,7 +1179,7 @@
   },
   {
     "id": "prod-63",
-    "name": "BRACELET pierres naturelles amethyste",
+    "name": "Bracelet pierres naturelles amethyste",
     "slug": "bracelet-pierres-naturelles-amethyste",
     "title": "BRACELET pierres naturelles amethyste",
     "price": 12,
@@ -1236,7 +1217,7 @@
   },
   {
     "id": "prod-65",
-    "name": "bracelet souple argent « AUM » symbole Indien",
+    "name": "Bracelet souple argent « aum » symbole indien",
     "slug": "bracelet-souple-argent-aum-symbole-indien",
     "title": "bracelet souple argent « AUM » symbole Indien",
     "price": 32,
@@ -1255,7 +1236,7 @@
   },
   {
     "id": "prod-66",
-    "name": "Bague Argent pierre onyx noir",
+    "name": "Bague argent pierre onyx noir",
     "slug": "bague-argent-pierre-onyx-noir",
     "title": "Bague Argent pierre onyx noir",
     "price": 34,
@@ -1274,7 +1255,7 @@
   },
   {
     "id": "prod-67",
-    "name": "PENDENTIF ARGENT « AUM » SYMBOLE indien",
+    "name": "Pendentif argent « aum » symbole indien",
     "slug": "pendentif-argent-aum-symbole-indien",
     "title": "PENDENTIF ARGENT « AUM » SYMBOLE indien",
     "price": 10,
@@ -1293,7 +1274,7 @@
   },
   {
     "id": "prod-68",
-    "name": "BRACELET pierres naturelles en TURQUOISE  7 chakras",
+    "name": "Bracelet pierres naturelles en turquoise 7 chakras",
     "slug": "bracelet-pierres-naturelles-en-turquoise-7-chakras",
     "title": "BRACELET pierres naturelles en TURQUOISE  7 chakras",
     "price": 16,
@@ -1312,7 +1293,7 @@
   },
   {
     "id": "prod-69",
-    "name": "BRACELET jade birmanie",
+    "name": "Bracelet jade birmanie",
     "slug": "bracelet-jade-birmanie",
     "title": "BRACELET jade birmanie",
     "price": 16,
@@ -1331,7 +1312,7 @@
   },
   {
     "id": "prod-70",
-    "name": "BRACELET TIBETAIN  en lapis-lazuli  et corail",
+    "name": "Bracelet tibetain en lapis-lazuli et corail",
     "slug": "bracelet-tibetain-en-lapis-lazuli-et-corail",
     "title": "BRACELET TIBETAIN  en lapis-lazuli  et corail",
     "price": 29,
@@ -1350,7 +1331,7 @@
   },
   {
     "id": "prod-71",
-    "name": "BRACELET TIBETAIN argenté PERLES CORAIL ET TURQUOISE",
+    "name": "Bracelet tibetain argenté perles corail et turquoise",
     "slug": "bracelet-tibetain-argenté-perles-corail-et-turquoise",
     "title": "BRACELET TIBETAIN argenté PERLES CORAIL ET TURQUOISE",
     "price": 14,
@@ -1369,7 +1350,7 @@
   },
   {
     "id": "prod-72",
-    "name": "Porte-clé népalais rond  argenté  et coloré symbole « AUM »",
+    "name": "Porte-clé népalais rond argenté et coloré symbole « aum »",
     "slug": "porte-clé-népalais-rond-argenté-et-coloré-symbole-aum",
     "title": "Porte-clé népalais rond  argenté  et coloré symbole « AUM »",
     "price": 8,
@@ -1388,7 +1369,7 @@
   },
   {
     "id": "prod-73",
-    "name": "BRACELET ARGENT calcédoine bleu de belles grandes pierres",
+    "name": "Bracelet argent calcédoine bleu de belles grandes pierres",
     "slug": "bracelet-argent-calcédoine-bleu-de-belles-grandes-pierres",
     "title": "BRACELET ARGENT calcédoine bleu de belles grandes pierres",
     "price": 41,
@@ -1407,7 +1388,7 @@
   },
   {
     "id": "prod-74",
-    "name": "BOUCLES D’OREILLES ARGENT arbre de vie pierre de lune",
+    "name": "Boucles d’oreilles argent arbre de vie pierre de lune",
     "slug": "boucles-doreilles-argent-arbre-de-vie-pierre-de-lune",
     "title": "BOUCLES D’OREILLES ARGENT arbre de vie pierre de lune",
     "price": 10,
@@ -1426,7 +1407,7 @@
   },
   {
     "id": "prod-75",
-    "name": "Collier Tibetain en turquoise et  lapis-lazuli et une perle taillée",
+    "name": "Collier tibetain en turquoise et lapis-lazuli et une perle taillée",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli-et-une-perle-taillée",
     "title": "Collier Tibetain en turquoise et  lapis-lazuli et une perle taillée",
     "price": 19,
@@ -1445,7 +1426,7 @@
   },
   {
     "id": "prod-76",
-    "name": "Bracelet pierre en Oeil du tigre sur macramé",
+    "name": "Bracelet pierre en oeil du tigre sur macramé",
     "slug": "bracelet-pierre-en-oeil-du-tigre-sur-macramé",
     "title": "Bracelet pierre en Oeil du tigre sur macramé",
     "price": 14,
@@ -1464,7 +1445,7 @@
   },
   {
     "id": "prod-77",
-    "name": "bracelet indien jonc laiton et peint à la main",
+    "name": "Bracelet indien jonc laiton et peint à la main",
     "slug": "bracelet-indien-jonc-laiton-et-peint-à-la-main",
     "title": "bracelet indien jonc laiton et peint à la main",
     "price": 19,
@@ -1483,7 +1464,7 @@
   },
   {
     "id": "prod-78",
-    "name": "BOUCLES D’OREILLES ARGENT ELEPHANT pierre de lune",
+    "name": "Boucles d’oreilles argent elephant pierre de lune",
     "slug": "boucles-doreilles-argent-elephant-pierre-de-lune",
     "title": "BOUCLES D’OREILLES ARGENT ELEPHANT pierre de lune",
     "price": 24,
@@ -1502,7 +1483,7 @@
   },
   {
     "id": "prod-79",
-    "name": "POCHETTE EN COTON",
+    "name": "Pochette en coton",
     "slug": "pochette-en-coton",
     "title": "POCHETTE EN COTON",
     "price": 17,
@@ -1521,7 +1502,7 @@
   },
   {
     "id": "prod-80",
-    "name": "PENDENTIF ARGENT « AUM » sYMBOLE indien et onyx vert  avec son cordon en cuir noir",
+    "name": "Pendentif argent « aum » symbole indien et onyx vert avec son cordon en cuir noir",
     "slug": "pendentif-argent-aum-symbole-indien-et-onyx-vert-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT « AUM » sYMBOLE indien et onyx vert  avec son cordon en cuir noir",
     "price": 12,
@@ -1559,7 +1540,7 @@
   },
   {
     "id": "prod-82",
-    "name": "BRACELET pierres naturelles en jaspe noir/gris",
+    "name": "Bracelet pierres naturelles en jaspe noir/gris",
     "slug": "bracelet-pierres-naturelles-en-jaspe-noirgris",
     "title": "BRACELET pierres naturelles en jaspe noir/gris",
     "price": 12,
@@ -1578,7 +1559,7 @@
   },
   {
     "id": "prod-83",
-    "name": "BRACELET pierres naturelles en quartz rose clair",
+    "name": "Bracelet pierres naturelles en quartz rose clair",
     "slug": "bracelet-pierres-naturelles-en-quartz-rose-clair",
     "title": "BRACELET pierres naturelles en quartz rose clair",
     "price": 12,
@@ -1597,7 +1578,7 @@
   },
   {
     "id": "prod-84",
-    "name": "BRACELET pierres naturelles aventurine",
+    "name": "Bracelet pierres naturelles aventurine",
     "slug": "bracelet-pierres-naturelles-aventurine",
     "title": "BRACELET pierres naturelles aventurine",
     "price": 12,
@@ -1635,7 +1616,7 @@
   },
   {
     "id": "prod-86",
-    "name": "BRACELET ARGENT pierres naturelles Lapis-lazuli",
+    "name": "Bracelet argent pierres naturelles lapis-lazuli",
     "slug": "bracelet-argent-pierres-naturelles-lapis-lazuli",
     "title": "BRACELET ARGENT pierres naturelles Lapis-lazuli",
     "price": 34,
@@ -1654,7 +1635,7 @@
   },
   {
     "id": "prod-87",
-    "name": "Collier Tibétain avec des perles taillées et pierres turquoise et cornaline",
+    "name": "Collier tibétain avec des perles taillées et pierres turquoise et cornaline",
     "slug": "collier-tibétain-avec-des-perles-taillées-et-pierres-turquoise-et-cornaline",
     "title": "Collier Tibétain avec des perles taillées et pierres turquoise et cornaline",
     "price": 4,
@@ -1724,7 +1705,7 @@
   },
   {
     "id": "prod-91",
-    "name": "Foulard  en 100%soie à motifs vert , bleu et fuchsia",
+    "name": "Foulard en 100%soie à motifs vert , bleu et fuchsia",
     "slug": "foulard-en-100soie-à-motifs-vert-bleu-et-fuchsia",
     "title": "Foulard  en 100%soie à motifs vert , bleu et fuchsia",
     "price": 18,
@@ -1762,7 +1743,7 @@
   },
   {
     "id": "prod-93",
-    "name": "BRACELET pierres naturelles en AGATE BLEU LAGON avec un Eléphant",
+    "name": "Bracelet pierres naturelles en agate bleu lagon avec un eléphant",
     "slug": "bracelet-pierres-naturelles-en-agate-bleu-lagon-avec-un-eléphant",
     "title": "BRACELET pierres naturelles en AGATE BLEU LAGON avec un Eléphant",
     "price": 16,
@@ -1781,7 +1762,7 @@
   },
   {
     "id": "prod-94",
-    "name": "BOUCLES D’oreilles ARGENT turquoise",
+    "name": "Boucles d’oreilles argent turquoise",
     "slug": "boucles-doreilles-argent-turquoise",
     "title": "BOUCLES D’oreilles ARGENT turquoise",
     "price": 10,
@@ -1800,7 +1781,7 @@
   },
   {
     "id": "prod-95",
-    "name": "PENDENTIF ARGENT grenat avec son cordon en cuir noir",
+    "name": "Pendentif argent grenat avec son cordon en cuir noir",
     "slug": "pendentif-argent-grenat-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT grenat avec son cordon en cuir noir",
     "price": 26,
@@ -1876,7 +1857,7 @@
   },
   {
     "id": "prod-99",
-    "name": "BRACELET ARGENT et pierre corail",
+    "name": "Bracelet argent et pierre corail",
     "slug": "bracelet-argent-et-pierre-corail",
     "title": "BRACELET ARGENT et pierre corail",
     "price": 9,
@@ -1895,7 +1876,7 @@
   },
   {
     "id": "prod-100",
-    "name": "BRACELET  fin argenté avec du corail",
+    "name": "Bracelet fin argenté avec du corail",
     "slug": "bracelet-fin-argenté-avec-du-corail",
     "title": "BRACELET  fin argenté avec du corail",
     "price": 9,
@@ -1914,7 +1895,7 @@
   },
   {
     "id": "prod-101",
-    "name": "Boucles d’oreille argent avec pierre naturelle LAPIS-LAZULI",
+    "name": "Boucles d’oreille argent avec pierre naturelle lapis-lazuli",
     "slug": "boucles-doreille-argent-avec-pierre-naturelle-lapis-lazuli",
     "title": "Boucles d’oreille argent avec pierre naturelle LAPIS-LAZULI",
     "price": 26,
@@ -1933,7 +1914,7 @@
   },
   {
     "id": "prod-102",
-    "name": "BRACELET ARGENT lapis-lazuli",
+    "name": "Bracelet argent lapis-lazuli",
     "slug": "bracelet-argent-lapis-lazuli",
     "title": "BRACELET ARGENT lapis-lazuli",
     "price": 39,
@@ -1952,7 +1933,7 @@
   },
   {
     "id": "prod-103",
-    "name": "GRANDES Boucles d’oreilles argent en Pierre de Lune",
+    "name": "Grandes boucles d’oreilles argent en pierre de lune",
     "slug": "grandes-boucles-doreilles-argent-en-pierre-de-lune",
     "title": "GRANDES Boucles d’oreilles argent en Pierre de Lune",
     "price": 29,
@@ -1971,7 +1952,7 @@
   },
   {
     "id": "prod-104",
-    "name": "Collier Tibetain en corail  et  lapis-lazuli et une perle taillée",
+    "name": "Collier tibetain en corail et lapis-lazuli et une perle taillée",
     "slug": "collier-tibetain-en-corail-et-lapis-lazuli-et-une-perle-taillée",
     "title": "Collier Tibetain en corail  et  lapis-lazuli et une perle taillée",
     "price": 19,
@@ -1990,7 +1971,7 @@
   },
   {
     "id": "prod-105",
-    "name": "COLLIER ARGENT pierre de lune",
+    "name": "Collier argent pierre de lune",
     "slug": "collier-argent-pierre-de-lune",
     "title": "COLLIER ARGENT pierre de lune",
     "price": 4,
@@ -2009,7 +1990,7 @@
   },
   {
     "id": "prod-106",
-    "name": "BRACELET pierre citrine avec un cordon réglable",
+    "name": "Bracelet pierre citrine avec un cordon réglable",
     "slug": "bracelet-pierre-citrine-avec-un-cordon-réglable",
     "title": "BRACELET pierre citrine avec un cordon réglable",
     "price": 16,
@@ -2047,7 +2028,7 @@
   },
   {
     "id": "prod-108",
-    "name": "BRACELET pierre triple protection obsidienne/hematite/oeil du tigre 10mm",
+    "name": "Bracelet pierre triple protection obsidienne/hematite/oeil du tigre 10mm",
     "slug": "bracelet-pierre-triple-protection-obsidiennehematiteoeil-du-tigre-10mm",
     "title": "BRACELET pierre triple protection obsidienne/hematite/oeil du tigre 10mm",
     "price": 17,
@@ -2066,7 +2047,7 @@
   },
   {
     "id": "prod-109",
-    "name": "Bague élastique avec perles 3mm Energie",
+    "name": "Bague élastique avec perles 3mm energie",
     "slug": "bague-élastique-avec-perles-3mm-energie",
     "title": "Bague élastique avec perles 3mm Energie",
     "price": 4,
@@ -2085,7 +2066,7 @@
   },
   {
     "id": "prod-110",
-    "name": "BRACELET ARGENT ONYX VERT",
+    "name": "Bracelet argent onyx vert",
     "slug": "bracelet-argent-onyx-vert",
     "title": "BRACELET ARGENT ONYX VERT",
     "price": 39,
@@ -2142,7 +2123,7 @@
   },
   {
     "id": "prod-113",
-    "name": "Collier Tibetain en  pierres de  corail  et Lapis-lazuli et turquoise",
+    "name": "Collier tibetain en pierres de corail et lapis-lazuli et turquoise",
     "slug": "collier-tibetain-en-pierres-de-corail-et-lapis-lazuli-et-turquoise",
     "title": "Collier Tibetain en  pierres de  corail  et Lapis-lazuli et turquoise",
     "price": 19,
@@ -2161,7 +2142,7 @@
   },
   {
     "id": "prod-114",
-    "name": "BRACELET ARGENT avec de grandes pierres ovales en pierre de lune",
+    "name": "Bracelet argent avec de grandes pierres ovales en pierre de lune",
     "slug": "bracelet-argent-avec-de-grandes-pierres-ovales-en-pierre-de-lune",
     "title": "BRACELET ARGENT avec de grandes pierres ovales en pierre de lune",
     "price": 34,
@@ -2180,7 +2161,7 @@
   },
   {
     "id": "prod-115",
-    "name": "BOUCLES D’OREILLES ARGENT grenat",
+    "name": "Boucles d’oreilles argent grenat",
     "slug": "boucles-doreilles-argent-grenat",
     "title": "BOUCLES D’OREILLES ARGENT grenat",
     "price": 10,
@@ -2218,7 +2199,7 @@
   },
   {
     "id": "prod-117",
-    "name": "PENDENTIF ARGENT onyx vert avec son cordon en cuir noir",
+    "name": "Pendentif argent onyx vert avec son cordon en cuir noir",
     "slug": "pendentif-argent-onyx-vert-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT onyx vert avec son cordon en cuir noir",
     "price": 10,
@@ -2237,7 +2218,7 @@
   },
   {
     "id": "prod-118",
-    "name": "COLLIER pierres 6mm en amazonite",
+    "name": "Collier pierres 6mm en amazonite",
     "slug": "collier-pierres-6mm-en-amazonite",
     "title": "COLLIER pierres 6mm en amazonite",
     "price": 12,
@@ -2332,7 +2313,7 @@
   },
   {
     "id": "prod-123",
-    "name": "Collier Tibetain en turquoise avec un pendentif tibétain",
+    "name": "Collier tibetain en turquoise avec un pendentif tibétain",
     "slug": "collier-tibetain-en-turquoise-avec-un-pendentif-tibétain",
     "title": "Collier Tibetain en turquoise avec un pendentif tibétain",
     "price": 29,
@@ -2370,7 +2351,7 @@
   },
   {
     "id": "prod-125",
-    "name": "BOUCLES D’oreilles dorées AVEC PIERRE EN lapis-lazuli",
+    "name": "Boucles d’oreilles dorées avec pierre en lapis-lazuli",
     "slug": "boucles-doreilles-dorées-avec-pierre-en-lapis-lazuli",
     "title": "BOUCLES D’oreilles dorées AVEC PIERRE EN lapis-lazuli",
     "price": 24,
@@ -2389,7 +2370,7 @@
   },
   {
     "id": "prod-126",
-    "name": "Chouchou cheveux rose et marron  à motifs",
+    "name": "Chouchou cheveux rose et marron à motifs",
     "slug": "chouchou-cheveux-rose-et-marron-à-motifs",
     "title": "Chouchou cheveux rose et marron  à motifs",
     "price": 9,
@@ -2408,7 +2389,7 @@
   },
   {
     "id": "prod-127",
-    "name": "BOUCLES D’OREILLES dorées pierre ONACRE",
+    "name": "Boucles d’oreilles dorées pierre onacre",
     "slug": "boucles-doreilles-dorées-pierre-onacre",
     "title": "BOUCLES D’OREILLES dorées pierre ONACRE",
     "price": 8,
@@ -2427,7 +2408,7 @@
   },
   {
     "id": "prod-128",
-    "name": "BRACELET ARGENT smoky quartz",
+    "name": "Bracelet argent smoky quartz",
     "slug": "bracelet-argent-smoky-quartz",
     "title": "BRACELET ARGENT smoky quartz",
     "price": 9,
@@ -2446,7 +2427,7 @@
   },
   {
     "id": "prod-129",
-    "name": "PENDENTIF ARGENT lapis-lazuli",
+    "name": "Pendentif argent lapis-lazuli",
     "slug": "pendentif-argent-lapis-lazuli",
     "title": "PENDENTIF ARGENT lapis-lazuli",
     "price": 1,
@@ -2465,7 +2446,7 @@
   },
   {
     "id": "prod-130",
-    "name": "COLLIER pierres Rhyotique",
+    "name": "Collier pierres rhyotique",
     "slug": "collier-pierres-rhyotique",
     "title": "COLLIER pierres Rhyotique",
     "price": 19,
@@ -2484,7 +2465,7 @@
   },
   {
     "id": "prod-131",
-    "name": "bracelet metal argenté perles vertes",
+    "name": "Bracelet metal argenté perles vertes",
     "slug": "bracelet-metal-argenté-perles-vertes",
     "title": "bracelet metal argenté perles vertes",
     "price": 6,
@@ -2503,7 +2484,7 @@
   },
   {
     "id": "prod-132",
-    "name": "BOUCLES D’OREILLES ARGENT lapis-lazuli",
+    "name": "Boucles d’oreilles argent lapis-lazuli",
     "slug": "boucles-doreilles-argent-lapis-lazuli",
     "title": "BOUCLES D’OREILLES ARGENT lapis-lazuli",
     "price": 14,
@@ -2522,7 +2503,7 @@
   },
   {
     "id": "prod-133",
-    "name": "Pashmina  cachemire/soie noir/rouge/blanc",
+    "name": "Pashmina cachemire/soie noir/rouge/blanc",
     "slug": "pashmina-cachemiresoie-noirrougeblanc",
     "title": "Pashmina  cachemire/soie noir/rouge/blanc",
     "price": 14,
@@ -2541,7 +2522,7 @@
   },
   {
     "id": "prod-134",
-    "name": "BOUCLES d’oreilles argent pierre améthyste facettée",
+    "name": "Boucles d’oreilles argent pierre améthyste facettée",
     "slug": "boucles-doreilles-argent-pierre-améthyste-facettée",
     "title": "BOUCLES d’oreilles argent pierre améthyste facettée",
     "price": 30,
@@ -2560,7 +2541,7 @@
   },
   {
     "id": "prod-135",
-    "name": "BRACELET ARGENT cornaline oeil du tigre onyx quartz",
+    "name": "Bracelet argent cornaline oeil du tigre onyx quartz",
     "slug": "bracelet-argent-cornaline-oeil-du-tigre-onyx-quartz",
     "title": "BRACELET ARGENT cornaline oeil du tigre onyx quartz",
     "price": 15,
@@ -2579,7 +2560,7 @@
   },
   {
     "id": "prod-136",
-    "name": "Collier Tibetain en Lapis-lazuli Turquoise  et  corail avec un pendentif",
+    "name": "Collier tibetain en lapis-lazuli turquoise et corail avec un pendentif",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-et-corail-avec-un-pendentif",
     "title": "Collier Tibetain en Lapis-lazuli Turquoise  et  corail avec un pendentif",
     "price": 29,
@@ -2617,7 +2598,7 @@
   },
   {
     "id": "prod-138",
-    "name": "BRACELET ARGENT et pierres cornaline",
+    "name": "Bracelet argent et pierres cornaline",
     "slug": "bracelet-argent-et-pierres-cornaline",
     "title": "BRACELET ARGENT et pierres cornaline",
     "price": 20,
@@ -2636,7 +2617,7 @@
   },
   {
     "id": "prod-139",
-    "name": "BRACELET  pierre agate rose avec cordon  réglable",
+    "name": "Bracelet pierre agate rose avec cordon réglable",
     "slug": "bracelet-pierre-agate-rose-avec-cordon-réglable",
     "title": "BRACELET  pierre agate rose avec cordon  réglable",
     "price": 18,
@@ -2655,7 +2636,7 @@
   },
   {
     "id": "prod-140",
-    "name": "Foulard  en 100%soie à motifs marron , orange et blanc",
+    "name": "Foulard en 100%soie à motifs marron , orange et blanc",
     "slug": "foulard-en-100soie-à-motifs-marron-orange-et-blanc",
     "title": "Foulard  en 100%soie à motifs marron , orange et blanc",
     "price": 18,
@@ -2674,7 +2655,7 @@
   },
   {
     "id": "prod-141",
-    "name": "bracelet de guerison en pierres naturelles en agate orange",
+    "name": "Bracelet de guerison en pierres naturelles en agate orange",
     "slug": "bracelet-de-guerison-en-pierres-naturelles-en-agate-orange",
     "title": "bracelet de guerison en pierres naturelles en agate orange",
     "price": 12,
@@ -2693,7 +2674,7 @@
   },
   {
     "id": "prod-142",
-    "name": "BRACELET ARGENT avec des  pierres rondes en cornaline",
+    "name": "Bracelet argent avec des pierres rondes en cornaline",
     "slug": "bracelet-argent-avec-des-pierres-rondes-en-cornaline",
     "title": "BRACELET ARGENT avec des  pierres rondes en cornaline",
     "price": 28,
@@ -2712,7 +2693,7 @@
   },
   {
     "id": "prod-143",
-    "name": "BOUCLES D’oreilles ARGENT TOpaze",
+    "name": "Boucles d’oreilles argent topaze",
     "slug": "boucles-doreilles-argent-topaze",
     "title": "BOUCLES D’oreilles ARGENT TOpaze",
     "price": 10,
@@ -2731,7 +2712,7 @@
   },
   {
     "id": "prod-144",
-    "name": "Boucles d’oreille en ARGENT et pierre véritable en amethyste",
+    "name": "Boucles d’oreille en argent et pierre véritable en amethyste",
     "slug": "boucles-doreille-en-argent-et-pierre-véritable-en-amethyste",
     "title": "Boucles d’oreille en ARGENT et pierre véritable en amethyste",
     "price": 32,
@@ -2772,7 +2753,7 @@
   },
   {
     "id": "prod-146",
-    "name": "BRACELET pierres hematite jade agate et citrine",
+    "name": "Bracelet pierres hematite jade agate et citrine",
     "slug": "bracelet-pierres-hematite-jade-agate-et-citrine",
     "title": "BRACELET pierres hematite jade agate et citrine",
     "price": 14,
@@ -2791,7 +2772,7 @@
   },
   {
     "id": "prod-147",
-    "name": "BRACELET en  pierres aventurine vert 6mm",
+    "name": "Bracelet en pierres aventurine vert 6mm",
     "slug": "bracelet-en-pierres-aventurine-vert-6mm",
     "title": "BRACELET en  pierres aventurine vert 6mm",
     "price": 10,
@@ -2810,7 +2791,7 @@
   },
   {
     "id": "prod-148",
-    "name": "COLLIER pierres 6mm en turquoise",
+    "name": "Collier pierres 6mm en turquoise",
     "slug": "collier-pierres-6mm-en-turquoise",
     "title": "COLLIER pierres 6mm en turquoise",
     "price": 10,
@@ -2829,7 +2810,7 @@
   },
   {
     "id": "prod-149",
-    "name": "Bague Argent  MALACHIQUE",
+    "name": "Bague argent malachique",
     "slug": "bague-argent-malachique",
     "title": "Bague Argent  MALACHIQUE",
     "price": 20,
@@ -2848,7 +2829,7 @@
   },
   {
     "id": "prod-150",
-    "name": "Collier Tibetain pierres turquoise/corail et un pendentif",
+    "name": "Collier tibetain pierres turquoise/corail et un pendentif",
     "slug": "collier-tibetain-pierres-turquoisecorail-et-un-pendentif",
     "title": "Collier Tibetain pierres turquoise/corail et un pendentif",
     "price": 29,
@@ -2886,7 +2867,7 @@
   },
   {
     "id": "prod-152",
-    "name": "BRACELET pierres naturelles   7 chakras",
+    "name": "Bracelet pierres naturelles 7 chakras",
     "slug": "bracelet-pierres-naturelles-7-chakras",
     "title": "BRACELET pierres naturelles   7 chakras",
     "price": 16,
@@ -2905,7 +2886,7 @@
   },
   {
     "id": "prod-153",
-    "name": "BRACELET jonc doré réglable corail",
+    "name": "Bracelet jonc doré réglable corail",
     "slug": "bracelet-jonc-doré-réglable-corail",
     "title": "BRACELET jonc doré réglable corail",
     "price": 14,
@@ -2924,7 +2905,7 @@
   },
   {
     "id": "prod-154",
-    "name": "pendentif ARGENT « Om »",
+    "name": "Pendentif argent « om »",
     "slug": "pendentif-argent-om",
     "title": "pendentif ARGENT « Om »",
     "price": 14,
@@ -2962,7 +2943,7 @@
   },
   {
     "id": "prod-156",
-    "name": "BRACELET en pierres améthyste",
+    "name": "Bracelet en pierres améthyste",
     "slug": "bracelet-en-pierres-améthyste",
     "title": "BRACELET en pierres améthyste",
     "price": 10,
@@ -2981,7 +2962,7 @@
   },
   {
     "id": "prod-157",
-    "name": "Bague Argent turquoise réglable",
+    "name": "Bague argent turquoise réglable",
     "slug": "bague-argent-turquoise-réglable",
     "title": "Bague Argent turquoise réglable",
     "price": 14,
@@ -3000,7 +2981,7 @@
   },
   {
     "id": "prod-158",
-    "name": "CHAINE DE CHEVILLES ARGENT pampilles perles de couleur",
+    "name": "Chaine de chevilles argent pampilles perles de couleur",
     "slug": "chaine-de-chevilles-argent-pampilles-perles-de-couleur",
     "title": "CHAINE DE CHEVILLES ARGENT pampilles perles de couleur",
     "price": 32,
@@ -3019,7 +3000,7 @@
   },
   {
     "id": "prod-159",
-    "name": "collier indien en bois brun et naturel",
+    "name": "Collier indien en bois brun et naturel",
     "slug": "collier-indien-en-bois-brun-et-naturel",
     "title": "collier indien en bois brun et naturel",
     "price": 3,
@@ -3057,7 +3038,7 @@
   },
   {
     "id": "prod-161",
-    "name": "COLLIER ARGENT avec pendentif en calcédoine bleu foncé",
+    "name": "Collier argent avec pendentif en calcédoine bleu foncé",
     "slug": "collier-argent-avec-pendentif-en-calcédoine-bleu-foncé",
     "title": "COLLIER ARGENT avec pendentif en calcédoine bleu foncé",
     "price": 18,
@@ -3114,7 +3095,7 @@
   },
   {
     "id": "prod-164",
-    "name": "BOUCLES D’oreilles ARGENT grenat",
+    "name": "Boucles d’oreilles argent grenat",
     "slug": "boucles-doreilles-argent-grenat",
     "title": "BOUCLES D’oreilles ARGENT grenat",
     "price": 10,
@@ -3133,7 +3114,7 @@
   },
   {
     "id": "prod-165",
-    "name": "Bague Argent  pierre de lune",
+    "name": "Bague argent pierre de lune",
     "slug": "bague-argent-pierre-de-lune",
     "title": "Bague Argent  pierre de lune",
     "price": 25,
@@ -3171,7 +3152,7 @@
   },
   {
     "id": "prod-167",
-    "name": "BRACELET pierres onyx noir et hematite",
+    "name": "Bracelet pierres onyx noir et hematite",
     "slug": "bracelet-pierres-onyx-noir-et-hematite",
     "title": "BRACELET pierres onyx noir et hematite",
     "price": 8,
@@ -3190,7 +3171,7 @@
   },
   {
     "id": "prod-168",
-    "name": "Boucles d’oreilles en Turquoise",
+    "name": "Boucles d’oreilles en turquoise",
     "slug": "boucles-doreilles-en-turquoise",
     "title": "Boucles d’oreilles en Turquoise",
     "price": 20,
@@ -3209,7 +3190,7 @@
   },
   {
     "id": "prod-169",
-    "name": "GRANDES Boucles d’oreilles argent en Pierre de Lune",
+    "name": "Grandes boucles d’oreilles argent en pierre de lune",
     "slug": "grandes-boucles-doreilles-argent-en-pierre-de-lune",
     "title": "GRANDES Boucles d’oreilles argent en Pierre de Lune",
     "price": 29,
@@ -3323,7 +3304,7 @@
   },
   {
     "id": "prod-175",
-    "name": "BOUCLES D’oreilles ARGENT CITRINE",
+    "name": "Boucles d’oreilles argent citrine",
     "slug": "boucles-doreilles-argent-citrine",
     "title": "BOUCLES D’oreilles ARGENT CITRINE",
     "price": 15,
@@ -3361,7 +3342,7 @@
   },
   {
     "id": "prod-177",
-    "name": "BRACELET ARGENT AMETHYSTE",
+    "name": "Bracelet argent amethyste",
     "slug": "bracelet-argent-amethyste",
     "title": "BRACELET ARGENT AMETHYSTE",
     "price": 28,
@@ -3380,7 +3361,7 @@
   },
   {
     "id": "prod-178",
-    "name": "BOUCLES D’OREILLES ARGENT filigrane et lapis-lazuli",
+    "name": "Boucles d’oreilles argent filigrane et lapis-lazuli",
     "slug": "boucles-doreilles-argent-filigrane-et-lapis-lazuli",
     "title": "BOUCLES D’OREILLES ARGENT filigrane et lapis-lazuli",
     "price": 29,
@@ -3399,7 +3380,7 @@
   },
   {
     "id": "prod-179",
-    "name": "Boucles d’oreilles en Pierre de Lune",
+    "name": "Boucles d’oreilles en pierre de lune",
     "slug": "boucles-doreilles-en-pierre-de-lune",
     "title": "Boucles d’oreilles en Pierre de Lune",
     "price": 20,
@@ -3418,7 +3399,7 @@
   },
   {
     "id": "prod-180",
-    "name": "BRACELET pierre oeil du tigre",
+    "name": "Bracelet pierre oeil du tigre",
     "slug": "bracelet-pierre-oeil-du-tigre",
     "title": "BRACELET pierre oeil du tigre",
     "price": 16,
@@ -3437,7 +3418,7 @@
   },
   {
     "id": "prod-181",
-    "name": "Collier Mala tibétain opale  pierre 8 mm",
+    "name": "Collier mala tibétain opale pierre 8 mm",
     "slug": "collier-mala-tibétain-opale-pierre-8-mm",
     "title": "Collier Mala tibétain opale  pierre 8 mm",
     "price": 34,
@@ -3456,7 +3437,7 @@
   },
   {
     "id": "prod-182",
-    "name": "BRACELET pierres naturelles en agate",
+    "name": "Bracelet pierres naturelles en agate",
     "slug": "bracelet-pierres-naturelles-en-agate",
     "title": "BRACELET pierres naturelles en agate",
     "price": 12,
@@ -3475,7 +3456,7 @@
   },
   {
     "id": "prod-183",
-    "name": "clous D’OREILLES ARGENT aigue marine",
+    "name": "Clous d’oreilles argent aigue marine",
     "slug": "clous-doreilles-argent-aigue-marine",
     "title": "clous D’OREILLES ARGENT aigue marine",
     "price": 27,
@@ -3513,7 +3494,7 @@
   },
   {
     "id": "prod-185",
-    "name": "PENDENTIF ARGENT lapis-lazuli non poli avec son cordon en cuir noir",
+    "name": "Pendentif argent lapis-lazuli non poli avec son cordon en cuir noir",
     "slug": "pendentif-argent-lapis-lazuli-non-poli-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT lapis-lazuli non poli avec son cordon en cuir noir",
     "price": 12,
@@ -3532,7 +3513,7 @@
   },
   {
     "id": "prod-186",
-    "name": "BRACELET pierre triple protection obsidienne/hematite/oeil du tigre  signe AUM",
+    "name": "Bracelet pierre triple protection obsidienne/hematite/oeil du tigre signe aum",
     "slug": "bracelet-pierre-triple-protection-obsidiennehematiteoeil-du-tigre-signe-aum",
     "title": "BRACELET pierre triple protection obsidienne/hematite/oeil du tigre  signe AUM",
     "price": 18,
@@ -3551,7 +3532,7 @@
   },
   {
     "id": "prod-187",
-    "name": "BRACELET pierres naturelles  7 chakras",
+    "name": "Bracelet pierres naturelles 7 chakras",
     "slug": "bracelet-pierres-naturelles-7-chakras",
     "title": "BRACELET pierres naturelles  7 chakras",
     "price": 16,
@@ -3570,7 +3551,7 @@
   },
   {
     "id": "prod-188",
-    "name": "BOUCLES D’OREILLES ARGENT pierre en saphir bleu",
+    "name": "Boucles d’oreilles argent pierre en saphir bleu",
     "slug": "boucles-doreilles-argent-pierre-en-saphir-bleu",
     "title": "BOUCLES D’OREILLES ARGENT pierre en saphir bleu",
     "price": 24,
@@ -3589,7 +3570,7 @@
   },
   {
     "id": "prod-189",
-    "name": "Collier Tibetain en  Turquoise  et  Lapis-lazuli",
+    "name": "Collier tibetain en turquoise et lapis-lazuli",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli",
     "title": "Collier Tibetain en  Turquoise  et  Lapis-lazuli",
     "price": 19,
@@ -3608,7 +3589,7 @@
   },
   {
     "id": "prod-190",
-    "name": "CREOLES EN LAITON",
+    "name": "Creoles en laiton",
     "slug": "creoles-en-laiton",
     "title": "CREOLES EN LAITON",
     "price": 14,
@@ -3646,7 +3627,7 @@
   },
   {
     "id": "prod-192",
-    "name": "POCHETTE EN COTON blanc et motifs de couleur",
+    "name": "Pochette en coton blanc et motifs de couleur",
     "slug": "pochette-en-coton-blanc-et-motifs-de-couleur",
     "title": "POCHETTE EN COTON blanc et motifs de couleur",
     "price": 15,
@@ -3741,7 +3722,7 @@
   },
   {
     "id": "prod-197",
-    "name": "BRACELET pierres naturelles en AGATE ROSE avec un COEUR",
+    "name": "Bracelet pierres naturelles en agate rose avec un coeur",
     "slug": "bracelet-pierres-naturelles-en-agate-rose-avec-un-coeur",
     "title": "BRACELET pierres naturelles en AGATE ROSE avec un COEUR",
     "price": 16,
@@ -3760,7 +3741,7 @@
   },
   {
     "id": "prod-198",
-    "name": "Bague Argent Onyx noir",
+    "name": "Bague argent onyx noir",
     "slug": "bague-argent-onyx-noir",
     "title": "Bague Argent Onyx noir",
     "price": 34,
@@ -3779,7 +3760,7 @@
   },
   {
     "id": "prod-199",
-    "name": "BRACELET pierres grandes pierres labradorite avec cordon réglable",
+    "name": "Bracelet pierres grandes pierres labradorite avec cordon réglable",
     "slug": "bracelet-pierres-grandes-pierres-labradorite-avec-cordon-réglable",
     "title": "BRACELET pierres grandes pierres labradorite avec cordon réglable",
     "price": 22,
@@ -3798,7 +3779,7 @@
   },
   {
     "id": "prod-200",
-    "name": "BRACELET pierres naturelles en Lave et Yin Yang",
+    "name": "Bracelet pierres naturelles en lave et yin yang",
     "slug": "bracelet-pierres-naturelles-en-lave-et-yin-yang",
     "title": "BRACELET pierres naturelles en Lave et Yin Yang",
     "price": 16,
@@ -3836,7 +3817,7 @@
   },
   {
     "id": "prod-202",
-    "name": "BOUCLES D’OREILLES ARGENT AMETHYSTE",
+    "name": "Boucles d’oreilles argent amethyste",
     "slug": "boucles-doreilles-argent-amethyste",
     "title": "BOUCLES D’OREILLES ARGENT AMETHYSTE",
     "price": 23,
@@ -3893,7 +3874,7 @@
   },
   {
     "id": "prod-205",
-    "name": "BRACELET ARGENTet pierres naturelles aigue-marine",
+    "name": "Bracelet argentet pierres naturelles aigue-marine",
     "slug": "bracelet-argentet-pierres-naturelles-aigue-marine",
     "title": "BRACELET ARGENTet pierres naturelles aigue-marine",
     "price": 32,
@@ -3912,7 +3893,7 @@
   },
   {
     "id": "prod-206",
-    "name": "Collier Tibétain Nalo Dzi fantaisie",
+    "name": "Collier tibétain nalo dzi fantaisie",
     "slug": "collier-tibétain-nalo-dzi-fantaisie",
     "title": "Collier Tibétain Nalo Dzi fantaisie",
     "price": 10,
@@ -3931,7 +3912,7 @@
   },
   {
     "id": "prod-207",
-    "name": "bracelet rigide en laiton grande pierre de lune",
+    "name": "Bracelet rigide en laiton grande pierre de lune",
     "slug": "bracelet-rigide-en-laiton-grande-pierre-de-lune",
     "title": "bracelet rigide en laiton grande pierre de lune",
     "price": 16,
@@ -3969,7 +3950,7 @@
   },
   {
     "id": "prod-209",
-    "name": "BRACELET inscriptions tibétaines et main de fatma",
+    "name": "Bracelet inscriptions tibétaines et main de fatma",
     "slug": "bracelet-inscriptions-tibétaines-et-main-de-fatma",
     "title": "BRACELET inscriptions tibétaines et main de fatma",
     "price": 15,
@@ -3988,7 +3969,7 @@
   },
   {
     "id": "prod-210",
-    "name": "Bague  laiton doré réglable  2 boules",
+    "name": "Bague laiton doré réglable 2 boules",
     "slug": "bague-laiton-doré-réglable-2-boules",
     "title": "Bague  laiton doré réglable  2 boules",
     "price": 12,
@@ -4007,7 +3988,7 @@
   },
   {
     "id": "prod-211",
-    "name": "COLLIER pierres Oeil du tigre grande pierre",
+    "name": "Collier pierres oeil du tigre grande pierre",
     "slug": "collier-pierres-oeil-du-tigre-grande-pierre",
     "title": "COLLIER pierres Oeil du tigre grande pierre",
     "price": 24,
@@ -4045,7 +4026,7 @@
   },
   {
     "id": "prod-213",
-    "name": "Bague triangle Argent  avec une pierre ovale pierre de lune",
+    "name": "Bague triangle argent avec une pierre ovale pierre de lune",
     "slug": "bague-triangle-argent-avec-une-pierre-ovale-pierre-de-lune",
     "title": "Bague triangle Argent  avec une pierre ovale pierre de lune",
     "price": 16,
@@ -4064,7 +4045,7 @@
   },
   {
     "id": "prod-214",
-    "name": "BRACELET chainette DORÉE et pierre de JADE",
+    "name": "Bracelet chainette dorée et pierre de jade",
     "slug": "bracelet-chainette-dorée-et-pierre-de-jade",
     "title": "BRACELET chainette DORÉE et pierre de JADE",
     "price": 21,
@@ -4083,7 +4064,7 @@
   },
   {
     "id": "prod-215",
-    "name": "grand COLLIER ARGENT ONYX NOIR",
+    "name": "Grand collier argent onyx noir",
     "slug": "grand-collier-argent-onyx-noir",
     "title": "grand COLLIER ARGENT ONYX NOIR",
     "price": 46,
@@ -4102,7 +4083,7 @@
   },
   {
     "id": "prod-216",
-    "name": "BRACELET pierres naturelles en agate NUANCE BLEUE",
+    "name": "Bracelet pierres naturelles en agate nuance bleue",
     "slug": "bracelet-pierres-naturelles-en-agate-nuance-bleue",
     "title": "BRACELET pierres naturelles en agate NUANCE BLEUE",
     "price": 12,
@@ -4121,7 +4102,7 @@
   },
   {
     "id": "prod-217",
-    "name": "BRACELET pierres naturelles  agate vert",
+    "name": "Bracelet pierres naturelles agate vert",
     "slug": "bracelet-pierres-naturelles-agate-vert",
     "title": "BRACELET pierres naturelles  agate vert",
     "price": 12,
@@ -4140,7 +4121,7 @@
   },
   {
     "id": "prod-218",
-    "name": "Grandes Créoles -bouddha en argent",
+    "name": "Grandes créoles -bouddha en argent",
     "slug": "grandes-créoles-bouddha-en-argent",
     "title": "Grandes Créoles -bouddha en argent",
     "price": 28,
@@ -4159,7 +4140,7 @@
   },
   {
     "id": "prod-219",
-    "name": "SAC SOIE ET COTON usage facile",
+    "name": "Sac soie et coton usage facile",
     "slug": "sac-soie-et-coton-usage-facile",
     "title": "SAC SOIE ET COTON usage facile",
     "price": 15,
@@ -4178,7 +4159,7 @@
   },
   {
     "id": "prod-220",
-    "name": "BRACELET TIBETAIN  en lapis-lazuli",
+    "name": "Bracelet tibetain en lapis-lazuli",
     "slug": "bracelet-tibetain-en-lapis-lazuli",
     "title": "BRACELET TIBETAIN  en lapis-lazuli",
     "price": 29,
@@ -4197,7 +4178,7 @@
   },
   {
     "id": "prod-221",
-    "name": "BRACELET cristal  pierre de lune  et une perle fantaisie blanche",
+    "name": "Bracelet cristal pierre de lune et une perle fantaisie blanche",
     "slug": "bracelet-cristal-pierre-de-lune-et-une-perle-fantaisie-blanche",
     "title": "BRACELET cristal  pierre de lune  et une perle fantaisie blanche",
     "price": 22,
@@ -4216,7 +4197,7 @@
   },
   {
     "id": "prod-222",
-    "name": "BRACELET pierres PIerre de Lune/Améthyste/Ambre",
+    "name": "Bracelet pierres pierre de lune/améthyste/ambre",
     "slug": "bracelet-pierres-pierre-de-luneaméthysteambre",
     "title": "BRACELET pierres PIerre de Lune/Améthyste/Ambre",
     "price": 14,
@@ -4235,7 +4216,7 @@
   },
   {
     "id": "prod-223",
-    "name": "Collier Tibétain avec des perles taillées et pierres turquoise et oeil du tigre",
+    "name": "Collier tibétain avec des perles taillées et pierres turquoise et oeil du tigre",
     "slug": "collier-tibétain-avec-des-perles-taillées-et-pierres-turquoise-et-oeil-du-tigre",
     "title": "Collier Tibétain avec des perles taillées et pierres turquoise et oeil du tigre",
     "price": 36,
@@ -4254,7 +4235,7 @@
   },
   {
     "id": "prod-224",
-    "name": "BRACELET pierres naturelles en AGATE BLEU LAGON avec un coeur",
+    "name": "Bracelet pierres naturelles en agate bleu lagon avec un coeur",
     "slug": "bracelet-pierres-naturelles-en-agate-bleu-lagon-avec-un-coeur",
     "title": "BRACELET pierres naturelles en AGATE BLEU LAGON avec un coeur",
     "price": 16,
@@ -4273,7 +4254,7 @@
   },
   {
     "id": "prod-225",
-    "name": "CREOLES EN LAITON",
+    "name": "Creoles en laiton",
     "slug": "creoles-en-laiton",
     "title": "CREOLES EN LAITON",
     "price": 14,
@@ -4292,7 +4273,7 @@
   },
   {
     "id": "prod-226",
-    "name": "BRACELET en  pierres agate blanc ET dEVIL EYE et étoile argent",
+    "name": "Bracelet en pierres agate blanc et devil eye et étoile argent",
     "slug": "bracelet-en-pierres-agate-blanc-et-devil-eye-et-étoile-argent",
     "title": "BRACELET en  pierres agate blanc ET dEVIL EYE et étoile argent",
     "price": 16,
@@ -4311,7 +4292,7 @@
   },
   {
     "id": "prod-227",
-    "name": "BRACELET pierres grandes pierres topaze jaune avec cordon  réglable",
+    "name": "Bracelet pierres grandes pierres topaze jaune avec cordon réglable",
     "slug": "bracelet-pierres-grandes-pierres-topaze-jaune-avec-cordon-réglable",
     "title": "BRACELET pierres grandes pierres topaze jaune avec cordon  réglable",
     "price": 22,
@@ -4330,7 +4311,7 @@
   },
   {
     "id": "prod-228",
-    "name": "Bague Argent TURQUOISE",
+    "name": "Bague argent turquoise",
     "slug": "bague-argent-turquoise",
     "title": "Bague Argent TURQUOISE",
     "price": 26,
@@ -4349,7 +4330,7 @@
   },
   {
     "id": "prod-229",
-    "name": "Bague Argent PIERRE DE LUNE",
+    "name": "Bague argent pierre de lune",
     "slug": "bague-argent-pierre-de-lune",
     "title": "Bague Argent PIERRE DE LUNE",
     "price": 25,
@@ -4368,7 +4349,7 @@
   },
   {
     "id": "prod-230",
-    "name": "Bracelet perles (Bois de rose) avec tête de bouddha",
+    "name": "Bracelet perles (bois de rose) avec tête de bouddha",
     "slug": "bracelet-perles-bois-de-rose-avec-tête-de-bouddha",
     "title": "Bracelet perles (Bois de rose) avec tête de bouddha",
     "price": 16,
@@ -4387,7 +4368,7 @@
   },
   {
     "id": "prod-231",
-    "name": "Bague Argent sobre avec une pierre ovale onyx noir",
+    "name": "Bague argent sobre avec une pierre ovale onyx noir",
     "slug": "bague-argent-sobre-avec-une-pierre-ovale-onyx-noir",
     "title": "Bague Argent sobre avec une pierre ovale onyx noir",
     "price": 17,
@@ -4406,7 +4387,7 @@
   },
   {
     "id": "prod-232",
-    "name": "BRACELET pierres naturelles labradorite et hematite",
+    "name": "Bracelet pierres naturelles labradorite et hematite",
     "slug": "bracelet-pierres-naturelles-labradorite-et-hematite",
     "title": "BRACELET pierres naturelles labradorite et hematite",
     "price": 12,
@@ -4425,7 +4406,7 @@
   },
   {
     "id": "prod-234",
-    "name": "PENDENTIF ARGENT lapis-lazuli  avec son cordon en cuir noir",
+    "name": "Pendentif argent lapis-lazuli avec son cordon en cuir noir",
     "slug": "pendentif-argent-lapis-lazuli-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT lapis-lazuli  avec son cordon en cuir noir",
     "price": 9,
@@ -4463,7 +4444,7 @@
   },
   {
     "id": "prod-236",
-    "name": "collier argent et pierres ONYX BLEU",
+    "name": "Collier argent et pierres onyx bleu",
     "slug": "collier-argent-et-pierres-onyx-bleu",
     "title": "collier argent et pierres ONYX BLEU",
     "price": 38,
@@ -4520,7 +4501,7 @@
   },
   {
     "id": "prod-239",
-    "name": "BRACELET cristal fermoir perle",
+    "name": "Bracelet cristal fermoir perle",
     "slug": "bracelet-cristal-fermoir-perle",
     "title": "BRACELET cristal fermoir perle",
     "price": 19,
@@ -4539,7 +4520,7 @@
   },
   {
     "id": "prod-240",
-    "name": "BRACELET pierres naturelles en agate bleu clair",
+    "name": "Bracelet pierres naturelles en agate bleu clair",
     "slug": "bracelet-pierres-naturelles-en-agate-bleu-clair",
     "title": "BRACELET pierres naturelles en agate bleu clair",
     "price": 13,
@@ -4577,7 +4558,7 @@
   },
   {
     "id": "prod-242",
-    "name": "bracelet indien jonc laiton et peint à la main",
+    "name": "Bracelet indien jonc laiton et peint à la main",
     "slug": "bracelet-indien-jonc-laiton-et-peint-à-la-main",
     "title": "bracelet indien jonc laiton et peint à la main",
     "price": 19,
@@ -4596,7 +4577,7 @@
   },
   {
     "id": "prod-243",
-    "name": "bracelet de guerison en pierres naturelles en multi-stones",
+    "name": "Bracelet de guerison en pierres naturelles en multi-stones",
     "slug": "bracelet-de-guerison-en-pierres-naturelles-en-multi-stones",
     "title": "bracelet de guerison en pierres naturelles en multi-stones",
     "price": 12,
@@ -4672,7 +4653,7 @@
   },
   {
     "id": "prod-247",
-    "name": "BRACELET pierres pierre de lune avec tête de bouddha",
+    "name": "Bracelet pierres pierre de lune avec tête de bouddha",
     "slug": "bracelet-pierres-pierre-de-lune-avec-tête-de-bouddha",
     "title": "BRACELET pierres pierre de lune avec tête de bouddha",
     "price": 16,
@@ -4691,7 +4672,7 @@
   },
   {
     "id": "prod-248",
-    "name": "BOUCLES D’OREILLES ARGENT filigrane et corail",
+    "name": "Boucles d’oreilles argent filigrane et corail",
     "slug": "boucles-doreilles-argent-filigrane-et-corail",
     "title": "BOUCLES D’OREILLES ARGENT filigrane et corail",
     "price": 28,
@@ -4710,7 +4691,7 @@
   },
   {
     "id": "prod-249",
-    "name": "Bague élastique avec perles 3mm Grenat",
+    "name": "Bague élastique avec perles 3mm grenat",
     "slug": "bague-élastique-avec-perles-3mm-grenat",
     "title": "Bague élastique avec perles 3mm Grenat",
     "price": 4,
@@ -4748,7 +4729,7 @@
   },
   {
     "id": "prod-251",
-    "name": "bracelet indien fantaisie",
+    "name": "Bracelet indien fantaisie",
     "slug": "bracelet-indien-fantaisie",
     "title": "bracelet indien fantaisie",
     "price": 7,
@@ -4786,7 +4767,7 @@
   },
   {
     "id": "prod-253",
-    "name": "BRACELET MALA pierre CORNALINE pierre de lune",
+    "name": "Bracelet mala pierre cornaline pierre de lune",
     "slug": "bracelet-mala-pierre-cornaline-pierre-de-lune",
     "title": "BRACELET MALA pierre CORNALINE pierre de lune",
     "price": 16,
@@ -4843,7 +4824,7 @@
   },
   {
     "id": "prod-256",
-    "name": "COLLIER pierres en OEIL DU TIGRE",
+    "name": "Collier pierres en oeil du tigre",
     "slug": "collier-pierres-en-oeil-du-tigre",
     "title": "COLLIER pierres en OEIL DU TIGRE",
     "price": 28,
@@ -4900,7 +4881,7 @@
   },
   {
     "id": "prod-259",
-    "name": "BRACELET JONC argente réglable style flèches",
+    "name": "Bracelet jonc argente réglable style flèches",
     "slug": "bracelet-jonc-argente-réglable-style-flèches",
     "title": "BRACELET JONC argente réglable style flèches",
     "price": 10,
@@ -4919,7 +4900,7 @@
   },
   {
     "id": "prod-260",
-    "name": "BRACELET pierres naturelles en jaspe brun",
+    "name": "Bracelet pierres naturelles en jaspe brun",
     "slug": "bracelet-pierres-naturelles-en-jaspe-brun",
     "title": "BRACELET pierres naturelles en jaspe brun",
     "price": 12,
@@ -4957,7 +4938,7 @@
   },
   {
     "id": "prod-262",
-    "name": "PENDENTIF oval en ARGENT  martelé",
+    "name": "Pendentif oval en argent martelé",
     "slug": "pendentif-oval-en-argent-martelé",
     "title": "PENDENTIF oval en ARGENT  martelé",
     "price": 22,
@@ -4976,7 +4957,7 @@
   },
   {
     "id": "prod-263",
-    "name": "Collier Mala tibétain pierre de lune  pierre 8 mm",
+    "name": "Collier mala tibétain pierre de lune pierre 8 mm",
     "slug": "collier-mala-tibétain-pierre-de-lune-pierre-8-mm",
     "title": "Collier Mala tibétain pierre de lune  pierre 8 mm",
     "price": 34,
@@ -4995,7 +4976,7 @@
   },
   {
     "id": "prod-264",
-    "name": "BOUCLES D’OREILLES ARGENT pierre en Pierre de lune",
+    "name": "Boucles d’oreilles argent pierre en pierre de lune",
     "slug": "boucles-doreilles-argent-pierre-en-pierre-de-lune",
     "title": "BOUCLES D’OREILLES ARGENT pierre en Pierre de lune",
     "price": 11,
@@ -5014,7 +4995,7 @@
   },
   {
     "id": "prod-265",
-    "name": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE typique",
+    "name": "Boucles d’oreilles argent pierre de lune typique",
     "slug": "boucles-doreilles-argent-pierre-de-lune-typique",
     "title": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE typique",
     "price": 10,
@@ -5033,7 +5014,7 @@
   },
   {
     "id": "prod-266",
-    "name": "BRACELET pierre de lave et une perle en argent avec un cordon réglable",
+    "name": "Bracelet pierre de lave et une perle en argent avec un cordon réglable",
     "slug": "bracelet-pierre-de-lave-et-une-perle-en-argent-avec-un-cordon-réglable",
     "title": "BRACELET pierre de lave et une perle en argent avec un cordon réglable",
     "price": 16,
@@ -5052,7 +5033,7 @@
   },
   {
     "id": "prod-267",
-    "name": "Foulard  en 100%soie à motifs beige et orange",
+    "name": "Foulard en 100%soie à motifs beige et orange",
     "slug": "foulard-en-100soie-à-motifs-beige-et-orange",
     "title": "Foulard  en 100%soie à motifs beige et orange",
     "price": 18,
@@ -5071,7 +5052,7 @@
   },
   {
     "id": "prod-268",
-    "name": "BOUCLES D’OREILLES FLEUR DE VIE EN ARGENT",
+    "name": "Boucles d’oreilles fleur de vie en argent",
     "slug": "boucles-doreilles-fleur-de-vie-en-argent",
     "title": "BOUCLES D’OREILLES FLEUR DE VIE EN ARGENT",
     "price": 18,
@@ -5090,7 +5071,7 @@
   },
   {
     "id": "prod-269",
-    "name": "PENDENTIF ARGENT cornaline",
+    "name": "Pendentif argent cornaline",
     "slug": "pendentif-argent-cornaline",
     "title": "PENDENTIF ARGENT cornaline",
     "price": 9,
@@ -5109,7 +5090,7 @@
   },
   {
     "id": "prod-270",
-    "name": "CHAINE DE CHEVILLES fine argentée mat doubles mailles",
+    "name": "Chaine de chevilles fine argentée mat doubles mailles",
     "slug": "chaine-de-chevilles-fine-argentée-mat-doubles-mailles",
     "title": "CHAINE DE CHEVILLES fine argentée mat doubles mailles",
     "price": 8,
@@ -5128,7 +5109,7 @@
   },
   {
     "id": "prod-271",
-    "name": "BOUCLES D’OREILLES ARGENT filigrane et PIERRE DE LUNE",
+    "name": "Boucles d’oreilles argent filigrane et pierre de lune",
     "slug": "boucles-doreilles-argent-filigrane-et-pierre-de-lune",
     "title": "BOUCLES D’OREILLES ARGENT filigrane et PIERRE DE LUNE",
     "price": 11,
@@ -5147,7 +5128,7 @@
   },
   {
     "id": "prod-272",
-    "name": "BRACELET pierres agate bleu fonce",
+    "name": "Bracelet pierres agate bleu fonce",
     "slug": "bracelet-pierres-agate-bleu-fonce",
     "title": "BRACELET pierres agate bleu fonce",
     "price": 12,
@@ -5166,7 +5147,7 @@
   },
   {
     "id": "prod-273",
-    "name": "BRACELET pierres naturelles en AMETHYSTE",
+    "name": "Bracelet pierres naturelles en amethyste",
     "slug": "bracelet-pierres-naturelles-en-amethyste",
     "title": "BRACELET pierres naturelles en AMETHYSTE",
     "price": 12,
@@ -5185,7 +5166,7 @@
   },
   {
     "id": "prod-274",
-    "name": "Collier Mala tibétain howlite avec 108 perles en pierres naturelles 6mm",
+    "name": "Collier mala tibétain howlite avec 108 perles en pierres naturelles 6mm",
     "slug": "collier-mala-tibétain-howlite-avec-108-perles-en-pierres-naturelles-6mm",
     "title": "Collier Mala tibétain howlite avec 108 perles en pierres naturelles 6mm",
     "price": 26,
@@ -5204,7 +5185,7 @@
   },
   {
     "id": "prod-275",
-    "name": "Bracelet en HOWLITE",
+    "name": "Bracelet en howlite",
     "slug": "bracelet-en-howlite",
     "title": "Bracelet en HOWLITE",
     "price": 15,
@@ -5223,7 +5204,7 @@
   },
   {
     "id": "prod-276",
-    "name": "POCHETTE EN SOIE",
+    "name": "Pochette en soie",
     "slug": "pochette-en-soie",
     "title": "POCHETTE EN SOIE",
     "price": 7,
@@ -5261,7 +5242,7 @@
   },
   {
     "id": "prod-278",
-    "name": "BRACELET jonc doré réglable corail",
+    "name": "Bracelet jonc doré réglable corail",
     "slug": "bracelet-jonc-doré-réglable-corail",
     "title": "BRACELET jonc doré réglable corail",
     "price": 14,
@@ -5280,7 +5261,7 @@
   },
   {
     "id": "prod-279",
-    "name": "COLLIER pierres Onyx noir",
+    "name": "Collier pierres onyx noir",
     "slug": "collier-pierres-onyx-noir",
     "title": "COLLIER pierres Onyx noir",
     "price": 24,
@@ -5299,7 +5280,7 @@
   },
   {
     "id": "prod-280",
-    "name": "COLLIER pierres 3mm en howlite",
+    "name": "Collier pierres 3mm en howlite",
     "slug": "collier-pierres-3mm-en-howlite",
     "title": "COLLIER pierres 3mm en howlite",
     "price": 9,
@@ -5318,7 +5299,7 @@
   },
   {
     "id": "prod-281",
-    "name": "Boucles d’oreille tibétaines OVALES en turquoise",
+    "name": "Boucles d’oreille tibétaines ovales en turquoise",
     "slug": "boucles-doreille-tibétaines-ovales-en-turquoise",
     "title": "Boucles d’oreille tibétaines OVALES en turquoise",
     "price": 10,
@@ -5356,7 +5337,7 @@
   },
   {
     "id": "prod-283",
-    "name": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE typique",
+    "name": "Boucles d’oreilles argent pierre de lune typique",
     "slug": "boucles-doreilles-argent-pierre-de-lune-typique",
     "title": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE typique",
     "price": 10,
@@ -5375,7 +5356,7 @@
   },
   {
     "id": "prod-284",
-    "name": "BRACELET en ARGENT et 5 grandes pierres en citrine",
+    "name": "Bracelet en argent et 5 grandes pierres en citrine",
     "slug": "bracelet-en-argent-et-5-grandes-pierres-en-citrine",
     "title": "BRACELET en ARGENT et 5 grandes pierres en citrine",
     "price": 3,
@@ -5394,7 +5375,7 @@
   },
   {
     "id": "prod-285",
-    "name": "ELEGANT COLLIER ARGENT ET GLASS STONE BLEU",
+    "name": "Elegant collier argent et glass stone bleu",
     "slug": "elegant-collier-argent-et-glass-stone-bleu",
     "title": "ELEGANT COLLIER ARGENT ET GLASS STONE BLEU",
     "price": 4,
@@ -5413,7 +5394,7 @@
   },
   {
     "id": "prod-286",
-    "name": "BRACELET pierres naturelles  SABLE BLEU",
+    "name": "Bracelet pierres naturelles sable bleu",
     "slug": "bracelet-pierres-naturelles-sable-bleu",
     "title": "BRACELET pierres naturelles  SABLE BLEU",
     "price": 12,
@@ -5432,7 +5413,7 @@
   },
   {
     "id": "prod-287",
-    "name": "BRACELET ARGENT AMETHYSTE",
+    "name": "Bracelet argent amethyste",
     "slug": "bracelet-argent-amethyste",
     "title": "BRACELET ARGENT AMETHYSTE",
     "price": 28,
@@ -5451,7 +5432,7 @@
   },
   {
     "id": "prod-288",
-    "name": "bracelet en pierres naturelles en cornaline",
+    "name": "Bracelet en pierres naturelles en cornaline",
     "slug": "bracelet-en-pierres-naturelles-en-cornaline",
     "title": "bracelet en pierres naturelles en cornaline",
     "price": 12,
@@ -5470,7 +5451,7 @@
   },
   {
     "id": "prod-289",
-    "name": "BRACELET pierres naturelles en jade vert",
+    "name": "Bracelet pierres naturelles en jade vert",
     "slug": "bracelet-pierres-naturelles-en-jade-vert",
     "title": "BRACELET pierres naturelles en jade vert",
     "price": 12,
@@ -5489,7 +5470,7 @@
   },
   {
     "id": "prod-290",
-    "name": "Collier Pendentif En Perles de Bois Longue Chaîne de Chandail Boho Sculpté",
+    "name": "Collier pendentif en perles de bois longue chaîne de chandail boho sculpté",
     "slug": "collier-pendentif-en-perles-de-bois-longue-chaîne-de-chandail-boho-sculpté",
     "title": "Collier Pendentif En Perles de Bois Longue Chaîne de Chandail Boho Sculpté",
     "price": 18,
@@ -5508,7 +5489,7 @@
   },
   {
     "id": "prod-291",
-    "name": "petit carnet avec feuilles de papier recyclées",
+    "name": "Petit carnet avec feuilles de papier recyclées",
     "slug": "petit-carnet-avec-feuilles-de-papier-recyclées",
     "title": "petit carnet avec feuilles de papier recyclées",
     "price": 3,
@@ -5527,7 +5508,7 @@
   },
   {
     "id": "prod-292",
-    "name": "BOUCLES D’OREILLES ARGENT turquoise verte",
+    "name": "Boucles d’oreilles argent turquoise verte",
     "slug": "boucles-doreilles-argent-turquoise-verte",
     "title": "BOUCLES D’OREILLES ARGENT turquoise verte",
     "price": 20,
@@ -5565,7 +5546,7 @@
   },
   {
     "id": "prod-294",
-    "name": "collier jade de Birmanie",
+    "name": "Collier jade de birmanie",
     "slug": "collier-jade-de-birmanie",
     "title": "collier jade de Birmanie",
     "price": 25,
@@ -5584,7 +5565,7 @@
   },
   {
     "id": "prod-295",
-    "name": "CREOLES  EN LAITON et pierre lapis-lazuli",
+    "name": "Creoles en laiton et pierre lapis-lazuli",
     "slug": "creoles-en-laiton-et-pierre-lapis-lazuli",
     "title": "CREOLES  EN LAITON et pierre lapis-lazuli",
     "price": 17,
@@ -5603,7 +5584,7 @@
   },
   {
     "id": "prod-296",
-    "name": "COLLIER ARGENT sautoir avec pierre calcédoine",
+    "name": "Collier argent sautoir avec pierre calcédoine",
     "slug": "collier-argent-sautoir-avec-pierre-calcédoine",
     "title": "COLLIER ARGENT sautoir avec pierre calcédoine",
     "price": 34,
@@ -5622,7 +5603,7 @@
   },
   {
     "id": "prod-297",
-    "name": "BRACELET TIBETAIN  en turquoise et corail",
+    "name": "Bracelet tibetain en turquoise et corail",
     "slug": "bracelet-tibetain-en-turquoise-et-corail",
     "title": "BRACELET TIBETAIN  en turquoise et corail",
     "price": 27,
@@ -5641,7 +5622,7 @@
   },
   {
     "id": "prod-298",
-    "name": "BRACELET pierres naturelles en LAPIS-LAZuli avec un ange",
+    "name": "Bracelet pierres naturelles en lapis-lazuli avec un ange",
     "slug": "bracelet-pierres-naturelles-en-lapis-lazuli-avec-un-ange",
     "title": "BRACELET pierres naturelles en LAPIS-LAZuli avec un ange",
     "price": 16,
@@ -5660,7 +5641,7 @@
   },
   {
     "id": "prod-299",
-    "name": "Collier Mala tibétain pierres naturelles turquoise oeil du tigre lapis-lazuli",
+    "name": "Collier mala tibétain pierres naturelles turquoise oeil du tigre lapis-lazuli",
     "slug": "collier-mala-tibétain-pierres-naturelles-turquoise-oeil-du-tigre-lapis-lazuli",
     "title": "Collier Mala tibétain pierres naturelles turquoise oeil du tigre lapis-lazuli",
     "price": 36,
@@ -5717,7 +5698,7 @@
   },
   {
     "id": "prod-302",
-    "name": "collier jade de Birmanie",
+    "name": "Collier jade de birmanie",
     "slug": "collier-jade-de-birmanie",
     "title": "collier jade de Birmanie",
     "price": 25,
@@ -5736,7 +5717,7 @@
   },
   {
     "id": "prod-303",
-    "name": "collier indien en bois naturel",
+    "name": "Collier indien en bois naturel",
     "slug": "collier-indien-en-bois-naturel",
     "title": "collier indien en bois naturel",
     "price": 3,
@@ -5755,7 +5736,7 @@
   },
   {
     "id": "prod-304",
-    "name": "BRACELET ARGENT LAPIS-LAZULI",
+    "name": "Bracelet argent lapis-lazuli",
     "slug": "bracelet-argent-lapis-lazuli",
     "title": "BRACELET ARGENT LAPIS-LAZULI",
     "price": 39,
@@ -5774,7 +5755,7 @@
   },
   {
     "id": "prod-305",
-    "name": "Joli Collier Tibetain Turquoise et Corail",
+    "name": "Joli collier tibetain turquoise et corail",
     "slug": "joli-collier-tibetain-turquoise-et-corail",
     "title": "Joli Collier Tibetain Turquoise et Corail",
     "price": 36,
@@ -5812,7 +5793,7 @@
   },
   {
     "id": "prod-307",
-    "name": "Pour cheville cordon bleu réglable  avec une tortue",
+    "name": "Pour cheville cordon bleu réglable avec une tortue",
     "slug": "pour-cheville-cordon-bleu-réglable-avec-une-tortue",
     "title": "Pour cheville cordon bleu réglable  avec une tortue",
     "price": 4,
@@ -5831,7 +5812,7 @@
   },
   {
     "id": "prod-308",
-    "name": "COLLIER pierres Jaspe",
+    "name": "Collier pierres jaspe",
     "slug": "collier-pierres-jaspe",
     "title": "COLLIER pierres Jaspe",
     "price": 18,
@@ -5850,7 +5831,7 @@
   },
   {
     "id": "prod-309",
-    "name": "BOUCLES D’oreilles  ARGENT AVEC PIERRE EN TURQUOISE",
+    "name": "Boucles d’oreilles argent avec pierre en turquoise",
     "slug": "boucles-doreilles-argent-avec-pierre-en-turquoise",
     "title": "BOUCLES D’oreilles  ARGENT AVEC PIERRE EN TURQUOISE",
     "price": 28,
@@ -5869,7 +5850,7 @@
   },
   {
     "id": "prod-310",
-    "name": "Collier Mala tibétain pierres naturelles aigue-marine avec 108 perles",
+    "name": "Collier mala tibétain pierres naturelles aigue-marine avec 108 perles",
     "slug": "collier-mala-tibétain-pierres-naturelles-aigue-marine-avec-108-perles",
     "title": "Collier Mala tibétain pierres naturelles aigue-marine avec 108 perles",
     "price": 36,
@@ -5888,7 +5869,7 @@
   },
   {
     "id": "prod-311",
-    "name": "BRACELET pierre de Lave 7 chakra et bouddha",
+    "name": "Bracelet pierre de lave 7 chakra et bouddha",
     "slug": "bracelet-pierre-de-lave-7-chakra-et-bouddha",
     "title": "BRACELET pierre de Lave 7 chakra et bouddha",
     "price": 18,
@@ -5945,7 +5926,7 @@
   },
   {
     "id": "prod-314",
-    "name": "Foulard  en 100%soie à motifs orange et fuchsia",
+    "name": "Foulard en 100%soie à motifs orange et fuchsia",
     "slug": "foulard-en-100soie-à-motifs-orange-et-fuchsia",
     "title": "Foulard  en 100%soie à motifs orange et fuchsia",
     "price": 18,
@@ -5964,7 +5945,7 @@
   },
   {
     "id": "prod-315",
-    "name": "COLLIER ARGENT amazonite",
+    "name": "Collier argent amazonite",
     "slug": "collier-argent-amazonite",
     "title": "COLLIER ARGENT amazonite",
     "price": 27,
@@ -6002,7 +5983,7 @@
   },
   {
     "id": "prod-317",
-    "name": "PENDENTIF ARGENT « AUM » SYMBOLE indien",
+    "name": "Pendentif argent « aum » symbole indien",
     "slug": "pendentif-argent-aum-symbole-indien",
     "title": "PENDENTIF ARGENT « AUM » SYMBOLE indien",
     "price": 10,
@@ -6020,27 +6001,8 @@
     "inStock": true
   },
   {
-    "id": "prod-318",
-    "name": "COLLIER pierres 6mm en cornaline",
-    "slug": "collier-pierres-6mm-en-cornaline",
-    "title": "COLLIER pierres 6mm en cornaline",
-    "price": 148,
-    "description": "La topaze est de couleur bleu translucide. C’est une pierre semi précieuse.Les bijoux et colliers en pierres sont importés d’Inde",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products_reconciled/collier-pierres-6mm-en-cornaline.jpeg",
-    "image": "/images/products_reconciled/collier-pierres-6mm-en-cornaline.jpeg",
-    "isOnSale": true,
-    "isNew": false,
-    "images": [
-      "/images/products_reconciled/collier-pierres-6mm-en-cornaline.jpeg"
-    ],
-    "sku": "est une pierre naturelle semi précieuse.",
-    "source_url": "https://www.khashika.com/produit/collier-pierres-6mm-en-cornaline/",
-    "inStock": true
-  },
-  {
     "id": "prod-319",
-    "name": "PENDENTIF ARGENT pierre aventurine",
+    "name": "Pendentif argent pierre aventurine",
     "slug": "pendentif-argent-pierre-aventurine",
     "title": "PENDENTIF ARGENT pierre aventurine",
     "price": 29,
@@ -6059,7 +6021,7 @@
   },
   {
     "id": "prod-320",
-    "name": "PENDENTIF ARGENT et pierre oeil du tigre",
+    "name": "Pendentif argent et pierre oeil du tigre",
     "slug": "pendentif-argent-et-pierre-oeil-du-tigre",
     "title": "PENDENTIF ARGENT et pierre oeil du tigre",
     "price": 14,
@@ -6078,7 +6040,7 @@
   },
   {
     "id": "prod-321",
-    "name": "PENDENTIF ARGENT  malachite",
+    "name": "Pendentif argent malachite",
     "slug": "pendentif-argent-malachite",
     "title": "PENDENTIF ARGENT  malachite",
     "price": 17,
@@ -6097,7 +6059,7 @@
   },
   {
     "id": "prod-322",
-    "name": "Boucles d’oreille argent avec pierre naturelle LAPIS-LAZULI",
+    "name": "Boucles d’oreille argent avec pierre naturelle lapis-lazuli",
     "slug": "boucles-doreille-argent-avec-pierre-naturelle-lapis-lazuli",
     "title": "Boucles d’oreille argent avec pierre naturelle LAPIS-LAZULI",
     "price": 26,
@@ -6116,7 +6078,7 @@
   },
   {
     "id": "prod-323",
-    "name": "BRACELET pierre MULTI STONE",
+    "name": "Bracelet pierre multi stone",
     "slug": "bracelet-pierre-multi-stone",
     "title": "BRACELET pierre MULTI STONE",
     "price": 10,
@@ -6154,7 +6116,7 @@
   },
   {
     "id": "prod-325",
-    "name": "COLLIER ARGENT SMOKY TOPAZE",
+    "name": "Collier argent smoky topaze",
     "slug": "collier-argent-smoky-topaze",
     "title": "COLLIER ARGENT SMOKY TOPAZE",
     "price": 16,
@@ -6192,7 +6154,7 @@
   },
   {
     "id": "prod-327",
-    "name": "BRACELET pierres naturelles JASPE",
+    "name": "Bracelet pierres naturelles jaspe",
     "slug": "bracelet-pierres-naturelles-jaspe",
     "title": "BRACELET pierres naturelles JASPE",
     "price": 12,
@@ -6211,7 +6173,7 @@
   },
   {
     "id": "prod-328",
-    "name": "BRACELET pierres de LAVE et AGATE",
+    "name": "Bracelet pierres de lave et agate",
     "slug": "bracelet-pierres-de-lave-et-agate",
     "title": "BRACELET pierres de LAVE et AGATE",
     "price": 14,
@@ -6230,7 +6192,7 @@
   },
   {
     "id": "prod-329",
-    "name": "bracelet souple argent zircon",
+    "name": "Bracelet souple argent zircon",
     "slug": "bracelet-souple-argent-zircon",
     "title": "bracelet souple argent zircon",
     "price": 26,
@@ -6249,7 +6211,7 @@
   },
   {
     "id": "prod-330",
-    "name": "BRACELET jonc tibétain",
+    "name": "Bracelet jonc tibétain",
     "slug": "bracelet-jonc-tibétain",
     "title": "BRACELET jonc tibétain",
     "price": 14,
@@ -6268,7 +6230,7 @@
   },
   {
     "id": "prod-331",
-    "name": "Pashmina SOIE/CACHEMIRE vert foncé",
+    "name": "Pashmina soie/cachemire vert foncé",
     "slug": "pashmina-soiecachemire-vert-foncé",
     "title": "Pashmina SOIE/CACHEMIRE vert foncé",
     "price": 7,
@@ -6300,7 +6262,7 @@
   },
   {
     "id": "prod-333",
-    "name": "Bague Argent ajustable sobre avec une pierre ronde onyx vert",
+    "name": "Bague argent ajustable sobre avec une pierre ronde onyx vert",
     "slug": "bague-argent-ajustable-sobre-avec-une-pierre-ronde-onyx-vert",
     "title": "Bague Argent ajustable sobre avec une pierre ronde onyx vert",
     "price": 14,
@@ -6319,7 +6281,7 @@
   },
   {
     "id": "prod-334",
-    "name": "PENDENTIF ARGENT citrine  avec son cordon en cuir noir",
+    "name": "Pendentif argent citrine avec son cordon en cuir noir",
     "slug": "pendentif-argent-citrine-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT citrine  avec son cordon en cuir noir",
     "price": 30,
@@ -6395,7 +6357,7 @@
   },
   {
     "id": "prod-338",
-    "name": "Collier Tibetain en Lapis-lazuli Turquoise  corail",
+    "name": "Collier tibetain en lapis-lazuli turquoise corail",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-corail",
     "title": "Collier Tibetain en Lapis-lazuli Turquoise  corail",
     "price": 19,
@@ -6414,7 +6376,7 @@
   },
   {
     "id": "prod-339",
-    "name": "BOUCLES D’oreilles dorées AVEC PIERRE EN lapis-lazuli",
+    "name": "Boucles d’oreilles dorées avec pierre en lapis-lazuli",
     "slug": "boucles-doreilles-dorées-avec-pierre-en-lapis-lazuli",
     "title": "BOUCLES D’oreilles dorées AVEC PIERRE EN lapis-lazuli",
     "price": 24,
@@ -6433,7 +6395,7 @@
   },
   {
     "id": "prod-340",
-    "name": "Créoles ARGENT",
+    "name": "Créoles argent",
     "slug": "créoles-argent",
     "title": "Créoles ARGENT",
     "price": 19,
@@ -6452,7 +6414,7 @@
   },
   {
     "id": "prod-341",
-    "name": "BOucles d’oreilles argent et petite  pierre emeraude",
+    "name": "Boucles d’oreilles argent et petite pierre emeraude",
     "slug": "boucles-doreilles-argent-et-petite-pierre-emeraude",
     "title": "BOucles d’oreilles argent et petite  pierre emeraude",
     "price": 32,
@@ -6490,7 +6452,7 @@
   },
   {
     "id": "prod-343",
-    "name": "BOUCLES D’oreilles dorées AVEC PIERRE EN ONYX NOIR",
+    "name": "Boucles d’oreilles dorées avec pierre en onyx noir",
     "slug": "boucles-doreilles-dorées-avec-pierre-en-onyx-noir",
     "title": "BOUCLES D’oreilles dorées AVEC PIERRE EN ONYX NOIR",
     "price": 14,
@@ -6528,7 +6490,7 @@
   },
   {
     "id": "prod-345",
-    "name": "COLLIER ARGENT AMBRE",
+    "name": "Collier argent ambre",
     "slug": "collier-argent-ambre",
     "title": "COLLIER ARGENT AMBRE",
     "price": 24,
@@ -6547,7 +6509,7 @@
   },
   {
     "id": "prod-346",
-    "name": "CHAINE EN ARGENT 52 cm",
+    "name": "Chaine en argent 52 cm",
     "slug": "chaine-en-argent-52-cm",
     "title": "CHAINE EN ARGENT 52 cm",
     "price": 9,
@@ -6566,7 +6528,7 @@
   },
   {
     "id": "prod-347",
-    "name": "BRACELET ARGENT oeil du tigre",
+    "name": "Bracelet argent oeil du tigre",
     "slug": "bracelet-argent-oeil-du-tigre",
     "title": "BRACELET ARGENT oeil du tigre",
     "price": 25,
@@ -6585,7 +6547,7 @@
   },
   {
     "id": "prod-348",
-    "name": "marque page en bois décor oiseau",
+    "name": "Marque page en bois décor oiseau",
     "slug": "marque-page-en-bois-décor-oiseau",
     "title": "marque page en bois décor oiseau",
     "price": 3,
@@ -6604,7 +6566,7 @@
   },
   {
     "id": "prod-349",
-    "name": "BOUCLES D’oreilles ARGENT JADE",
+    "name": "Boucles d’oreilles argent jade",
     "slug": "boucles-doreilles-argent-jade",
     "title": "BOUCLES D’oreilles ARGENT JADE",
     "price": 5,
@@ -6623,7 +6585,7 @@
   },
   {
     "id": "prod-350",
-    "name": "Collier Tibetain en  pierres de  corail, turquoise verte  et Lapis-lazuli",
+    "name": "Collier tibetain en pierres de corail, turquoise verte et lapis-lazuli",
     "slug": "collier-tibetain-en-pierres-de-corail-turquoise-verte-et-lapis-lazuli",
     "title": "Collier Tibetain en  pierres de  corail, turquoise verte  et Lapis-lazuli",
     "price": 26,
@@ -6642,7 +6604,7 @@
   },
   {
     "id": "prod-351",
-    "name": "BOUCLES D’oreilles améthyste",
+    "name": "Boucles d’oreilles améthyste",
     "slug": "boucles-doreilles-améthyste",
     "title": "BOUCLES D’oreilles améthyste",
     "price": 12,
@@ -6661,7 +6623,7 @@
   },
   {
     "id": "prod-352",
-    "name": "BRACELET pierres agate jaune cordon réglable",
+    "name": "Bracelet pierres agate jaune cordon réglable",
     "slug": "bracelet-pierres-agate-jaune-cordon-réglable",
     "title": "BRACELET pierres agate jaune cordon réglable",
     "price": 18,
@@ -6680,7 +6642,7 @@
   },
   {
     "id": "prod-353",
-    "name": "BRACELET fantaisie PORTE BONHEUR",
+    "name": "Bracelet fantaisie porte bonheur",
     "slug": "bracelet-fantaisie-porte-bonheur",
     "title": "BRACELET fantaisie PORTE BONHEUR",
     "price": 8,
@@ -6699,7 +6661,7 @@
   },
   {
     "id": "prod-354",
-    "name": "SAC SOIE bleu, rouge pour emporter que l’essentiel",
+    "name": "Sac soie bleu, rouge pour emporter que l’essentiel",
     "slug": "sac-soie-bleu-rouge-pour-emporter-que-lessentiel",
     "title": "SAC SOIE bleu, rouge pour emporter que l’essentiel",
     "price": 18,
@@ -6721,7 +6683,7 @@
   },
   {
     "id": "prod-355",
-    "name": "BRACELET ARGENT et une pierre en smocks quartz",
+    "name": "Bracelet argent et une pierre en smocks quartz",
     "slug": "bracelet-argent-et-une-pierre-en-smocks-quartz",
     "title": "BRACELET ARGENT et une pierre en smocks quartz",
     "price": 14,
@@ -6740,7 +6702,7 @@
   },
   {
     "id": "prod-356",
-    "name": "bracelet indien jonc bois et peint à la main jaune et rouge",
+    "name": "Bracelet indien jonc bois et peint à la main jaune et rouge",
     "slug": "bracelet-indien-jonc-bois-et-peint-à-la-main-jaune-et-rouge",
     "title": "bracelet indien jonc bois et peint à la main jaune et rouge",
     "price": 17,
@@ -6797,7 +6759,7 @@
   },
   {
     "id": "prod-359",
-    "name": "BRACELET ARGENT onyx vert",
+    "name": "Bracelet argent onyx vert",
     "slug": "bracelet-argent-onyx-vert",
     "title": "BRACELET ARGENT onyx vert",
     "price": 39,
@@ -6816,7 +6778,7 @@
   },
   {
     "id": "prod-360",
-    "name": "BRACELET ARGENT turquoise",
+    "name": "Bracelet argent turquoise",
     "slug": "bracelet-argent-turquoise",
     "title": "BRACELET ARGENT turquoise",
     "price": 42,
@@ -6835,7 +6797,7 @@
   },
   {
     "id": "prod-361",
-    "name": "BRACELET pierre agate verte avec nuance avec cordon de réglage",
+    "name": "Bracelet pierre agate verte avec nuance avec cordon de réglage",
     "slug": "bracelet-pierre-agate-verte-avec-nuance-avec-cordon-de-réglage",
     "title": "BRACELET pierre agate verte avec nuance avec cordon de réglage",
     "price": 16,
@@ -6854,7 +6816,7 @@
   },
   {
     "id": "prod-362",
-    "name": "Bague Argent et 3 belles pierres en lapis-lazuli",
+    "name": "Bague argent et 3 belles pierres en lapis-lazuli",
     "slug": "bague-argent-et-3-belles-pierres-en-lapis-lazuli",
     "title": "Bague Argent et 3 belles pierres en lapis-lazuli",
     "price": 29,
@@ -6873,7 +6835,7 @@
   },
   {
     "id": "prod-363",
-    "name": "collier indien en bois NOIR",
+    "name": "Collier indien en bois noir",
     "slug": "collier-indien-en-bois-noir",
     "title": "collier indien en bois NOIR",
     "price": 3,
@@ -6892,7 +6854,7 @@
   },
   {
     "id": "prod-364",
-    "name": "PENDENTIF ARGENT FILIGRANE améthyste",
+    "name": "Pendentif argent filigrane améthyste",
     "slug": "pendentif-argent-filigrane-améthyste",
     "title": "PENDENTIF ARGENT FILIGRANE améthyste",
     "price": 34,
@@ -6911,7 +6873,7 @@
   },
   {
     "id": "prod-365",
-    "name": "Bague Argent LAPIS-LAZULI",
+    "name": "Bague argent lapis-lazuli",
     "slug": "bague-argent-lapis-lazuli",
     "title": "Bague Argent LAPIS-LAZULI",
     "price": 22,
@@ -6930,7 +6892,7 @@
   },
   {
     "id": "prod-366",
-    "name": "BRACELET pierres naturelles en AGATE BLEU ET BLANC",
+    "name": "Bracelet pierres naturelles en agate bleu et blanc",
     "slug": "bracelet-pierres-naturelles-en-agate-bleu-et-blanc",
     "title": "BRACELET pierres naturelles en AGATE BLEU ET BLANC",
     "price": 12,
@@ -6949,7 +6911,7 @@
   },
   {
     "id": "prod-367",
-    "name": "BRACELET ARGENT en pierre lapis-lazuli",
+    "name": "Bracelet argent en pierre lapis-lazuli",
     "slug": "bracelet-argent-en-pierre-lapis-lazuli",
     "title": "BRACELET ARGENT en pierre lapis-lazuli",
     "price": 3,
@@ -6981,7 +6943,7 @@
   },
   {
     "id": "prod-369",
-    "name": "petites créoles argent grenat",
+    "name": "Petites créoles argent grenat",
     "slug": "petites-créoles-argent-grenat",
     "title": "petites créoles argent grenat",
     "price": 14,
@@ -7000,7 +6962,7 @@
   },
   {
     "id": "prod-370",
-    "name": "BRACELET en argent et pierre lapis-lazuli",
+    "name": "Bracelet en argent et pierre lapis-lazuli",
     "slug": "bracelet-en-argent-et-pierre-lapis-lazuli",
     "title": "BRACELET en argent et pierre lapis-lazuli",
     "price": 32,
@@ -7019,7 +6981,7 @@
   },
   {
     "id": "prod-371",
-    "name": "SAC SOIE rouge, bleu pour emporter que l’essentie",
+    "name": "Sac soie rouge, bleu pour emporter que l’essentie",
     "slug": "sac-soie-rouge-bleu-pour-emporter-que-lessentie",
     "title": "SAC SOIE rouge, bleu pour emporter que l’essentie",
     "price": 14,
@@ -7038,7 +7000,7 @@
   },
   {
     "id": "prod-372",
-    "name": "BRACELET pierres naturelles en pierre de lune et agate",
+    "name": "Bracelet pierres naturelles en pierre de lune et agate",
     "slug": "bracelet-pierres-naturelles-en-pierre-de-lune-et-agate",
     "title": "BRACELET pierres naturelles en pierre de lune et agate",
     "price": 12,
@@ -7076,7 +7038,7 @@
   },
   {
     "id": "prod-374",
-    "name": "BRACELET pierres naturelles en jaspe",
+    "name": "Bracelet pierres naturelles en jaspe",
     "slug": "bracelet-pierres-naturelles-en-jaspe",
     "title": "BRACELET pierres naturelles en jaspe",
     "price": 12,
@@ -7095,7 +7057,7 @@
   },
   {
     "id": "prod-375",
-    "name": "BRACELET tibétain argenté pierre turquoise lapis-lazulis",
+    "name": "Bracelet tibétain argenté pierre turquoise lapis-lazulis",
     "slug": "bracelet-tibétain-argenté-pierre-turquoise-lapis-lazulis",
     "title": "BRACELET tibétain argenté pierre turquoise lapis-lazulis",
     "price": 14,
@@ -7114,7 +7076,7 @@
   },
   {
     "id": "prod-376",
-    "name": "BRACELET JONC argente  avec 1 pierre onyx noir",
+    "name": "Bracelet jonc argente avec 1 pierre onyx noir",
     "slug": "bracelet-jonc-argente-avec-1-pierre-onyx-noir",
     "title": "BRACELET JONC argente  avec 1 pierre onyx noir",
     "price": 16,
@@ -7133,7 +7095,7 @@
   },
   {
     "id": "prod-377",
-    "name": "BOUCLES D’OREILLES PIERRE LAPIS-lazilu",
+    "name": "Boucles d’oreilles pierre lapis-lazilu",
     "slug": "boucles-doreilles-pierre-lapis-lazilu",
     "title": "BOUCLES D’OREILLES PIERRE LAPIS-lazilu",
     "price": 16,
@@ -7152,7 +7114,7 @@
   },
   {
     "id": "prod-378",
-    "name": "BRACELET pierres 7 chakras",
+    "name": "Bracelet pierres 7 chakras",
     "slug": "bracelet-pierres-7-chakras",
     "title": "BRACELET pierres 7 chakras",
     "price": 19,
@@ -7190,7 +7152,7 @@
   },
   {
     "id": "prod-380",
-    "name": "BRACELET ARGENT onyx vert",
+    "name": "Bracelet argent onyx vert",
     "slug": "bracelet-argent-onyx-vert",
     "title": "BRACELET ARGENT onyx vert",
     "price": 39,
@@ -7209,7 +7171,7 @@
   },
   {
     "id": "prod-381",
-    "name": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE",
+    "name": "Boucles d’oreilles argent pierre de lune",
     "slug": "boucles-doreilles-argent-pierre-de-lune",
     "title": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE",
     "price": 10,
@@ -7228,7 +7190,7 @@
   },
   {
     "id": "prod-382",
-    "name": "Belle bague fine en  Argent et  peridot",
+    "name": "Belle bague fine en argent et peridot",
     "slug": "belle-bague-fine-en-argent-et-peridot",
     "title": "Belle bague fine en  Argent et  peridot",
     "price": 17,
@@ -7247,7 +7209,7 @@
   },
   {
     "id": "prod-383",
-    "name": "BOUCLES D’OREILLES ARGENT CORNALINE",
+    "name": "Boucles d’oreilles argent cornaline",
     "slug": "boucles-doreilles-argent-cornaline",
     "title": "BOUCLES D’OREILLES ARGENT CORNALINE",
     "price": 16,
@@ -7266,7 +7228,7 @@
   },
   {
     "id": "prod-384",
-    "name": "Collier Mala tibétain Améthyste",
+    "name": "Collier mala tibétain améthyste",
     "slug": "collier-mala-tibétain-améthyste",
     "title": "Collier Mala tibétain Améthyste",
     "price": 38,
@@ -7285,7 +7247,7 @@
   },
   {
     "id": "prod-385",
-    "name": "collier ras du cou pierres malachite",
+    "name": "Collier ras du cou pierres malachite",
     "slug": "collier-ras-du-cou-pierres-malachite",
     "title": "collier ras du cou pierres malachite",
     "price": 8,
@@ -7304,7 +7266,7 @@
   },
   {
     "id": "prod-386",
-    "name": "CHAINE DE CHEVILLES argentée perles de turquoise",
+    "name": "Chaine de chevilles argentée perles de turquoise",
     "slug": "chaine-de-chevilles-argentée-perles-de-turquoise",
     "title": "CHAINE DE CHEVILLES argentée perles de turquoise",
     "price": 8,
@@ -7323,7 +7285,7 @@
   },
   {
     "id": "prod-387",
-    "name": "BRACELET ARGENT grandes pierres en cornaline",
+    "name": "Bracelet argent grandes pierres en cornaline",
     "slug": "bracelet-argent-grandes-pierres-en-cornaline",
     "title": "BRACELET ARGENT grandes pierres en cornaline",
     "price": 42,
@@ -7380,7 +7342,7 @@
   },
   {
     "id": "prod-390",
-    "name": "BRACELET pierres naturelles en AGATE blanc/rose",
+    "name": "Bracelet pierres naturelles en agate blanc/rose",
     "slug": "bracelet-pierres-naturelles-en-agate-blancrose",
     "title": "BRACELET pierres naturelles en AGATE blanc/rose",
     "price": 12,
@@ -7399,7 +7361,7 @@
   },
   {
     "id": "prod-391",
-    "name": "CHAINE DE CHEVILLES argentée perles de couleur et ponpon",
+    "name": "Chaine de chevilles argentée perles de couleur et ponpon",
     "slug": "chaine-de-chevilles-argentée-perles-de-couleur-et-ponpon",
     "title": "CHAINE DE CHEVILLES argentée perles de couleur et ponpon",
     "price": 8,
@@ -7456,7 +7418,7 @@
   },
   {
     "id": "prod-394",
-    "name": "COLLIER pierres 3mm en rhodonite",
+    "name": "Collier pierres 3mm en rhodonite",
     "slug": "collier-pierres-3mm-en-rhodonite",
     "title": "COLLIER pierres 3mm en rhodonite",
     "price": 9,
@@ -7494,7 +7456,7 @@
   },
   {
     "id": "prod-396",
-    "name": "BRACELET ARGENT MALACHITE",
+    "name": "Bracelet argent malachite",
     "slug": "bracelet-argent-malachite",
     "title": "BRACELET ARGENT MALACHITE",
     "price": 32,
@@ -7513,7 +7475,7 @@
   },
   {
     "id": "prod-397",
-    "name": "BOUCLES D’OREILLES fantaisie  noir et blanc",
+    "name": "Boucles d’oreilles fantaisie noir et blanc",
     "slug": "boucles-doreilles-fantaisie-noir-et-blanc",
     "title": "BOUCLES D’OREILLES fantaisie  noir et blanc",
     "price": 4,
@@ -7532,7 +7494,7 @@
   },
   {
     "id": "prod-398",
-    "name": "BOUCLES D’oreilles ARGENT turquoise",
+    "name": "Boucles d’oreilles argent turquoise",
     "slug": "boucles-doreilles-argent-turquoise",
     "title": "BOUCLES D’oreilles ARGENT turquoise",
     "price": 10,
@@ -7551,7 +7513,7 @@
   },
   {
     "id": "prod-399",
-    "name": "BRACELET avec pierre onyx noir",
+    "name": "Bracelet avec pierre onyx noir",
     "slug": "bracelet-avec-pierre-onyx-noir",
     "title": "BRACELET avec pierre onyx noir",
     "price": 16,
@@ -7570,7 +7532,7 @@
   },
   {
     "id": "prod-400",
-    "name": "BOUCLES D’oreilles ARGENT TOPAZE SMOKY",
+    "name": "Boucles d’oreilles argent topaze smoky",
     "slug": "boucles-doreilles-argent-topaze-smoky",
     "title": "BOUCLES D’oreilles ARGENT TOPAZE SMOKY",
     "price": 17,
@@ -7608,7 +7570,7 @@
   },
   {
     "id": "prod-402",
-    "name": "POCHETTE EN COTON noir et blanc",
+    "name": "Pochette en coton noir et blanc",
     "slug": "pochette-en-coton-noir-et-blanc",
     "title": "POCHETTE EN COTON noir et blanc",
     "price": 15,
@@ -7627,7 +7589,7 @@
   },
   {
     "id": "prod-403",
-    "name": "BRACELET pierres naturelles en howlite rouge",
+    "name": "Bracelet pierres naturelles en howlite rouge",
     "slug": "bracelet-pierres-naturelles-en-howlite-rouge",
     "title": "BRACELET pierres naturelles en howlite rouge",
     "price": 5,
@@ -7646,7 +7608,7 @@
   },
   {
     "id": "prod-404",
-    "name": "Collier Tibétain Nalo Dzi fantaisie",
+    "name": "Collier tibétain nalo dzi fantaisie",
     "slug": "collier-tibétain-nalo-dzi-fantaisie",
     "title": "Collier Tibétain Nalo Dzi fantaisie",
     "price": 10,
@@ -7684,7 +7646,7 @@
   },
   {
     "id": "prod-406",
-    "name": "Pashmina 100% CACHEMIRE vert/blanc avec des motifs",
+    "name": "Pashmina 100% cachemire vert/blanc avec des motifs",
     "slug": "pashmina-100-cachemire-vertblanc-avec-des-motifs",
     "title": "Pashmina 100% CACHEMIRE vert/blanc avec des motifs",
     "price": 20,
@@ -7722,7 +7684,7 @@
   },
   {
     "id": "prod-408",
-    "name": "Boucles d’oreilles Meenakari noires et rouges",
+    "name": "Boucles d’oreilles meenakari noires et rouges",
     "slug": "boucles-doreilles-meenakari-noires-et-rouges",
     "title": "Boucles d’oreilles Meenakari noires et rouges",
     "price": 9,
@@ -7760,7 +7722,7 @@
   },
   {
     "id": "prod-410",
-    "name": "Collier Tibétain avec des perles taillées et pierres turquoise et quartz rose",
+    "name": "Collier tibétain avec des perles taillées et pierres turquoise et quartz rose",
     "slug": "collier-tibétain-avec-des-perles-taillées-et-pierres-turquoise-et-quartz-rose",
     "title": "Collier Tibétain avec des perles taillées et pierres turquoise et quartz rose",
     "price": 36,
@@ -7779,7 +7741,7 @@
   },
   {
     "id": "prod-411",
-    "name": "BRACELET pierres naturelles  en JASPE",
+    "name": "Bracelet pierres naturelles en jaspe",
     "slug": "bracelet-pierres-naturelles-en-jaspe",
     "title": "BRACELET pierres naturelles  en JASPE",
     "price": 12,
@@ -7798,7 +7760,7 @@
   },
   {
     "id": "prod-412",
-    "name": "Etole 100% coton  blanc à fleurs",
+    "name": "Etole 100% coton blanc à fleurs",
     "slug": "etole-100-coton-blanc-à-fleurs",
     "title": "Etole 100% coton  blanc à fleurs",
     "price": 10,
@@ -7816,27 +7778,8 @@
     "inStock": true
   },
   {
-    "id": "prod-413",
-    "name": "BRACELET ARGENT avec des perles rondes",
-    "slug": "bracelet-argent-avec-des-perles-rondes",
-    "title": "BRACELET ARGENT avec des perles rondes",
-    "price": 70,
-    "description": "Bracelet est en coton ciré monté d’un coquillage cauri.Sa taille est ajustable, vous pourrez le porter en été. C’est un bracelet unisexe pour petits et grands",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products_reconciled/bracelet-argent-avec-des-perles-rondes.jpeg",
-    "image": "/images/products_reconciled/bracelet-argent-avec-des-perles-rondes.jpeg",
-    "isOnSale": true,
-    "isNew": false,
-    "images": [
-      "/images/products_reconciled/bracelet-argent-avec-des-perles-rondes.jpeg"
-    ],
-    "sku": "UGS :BRAP0017",
-    "source_url": "https://www.khashika.com/produit/bracelet-argent-avec-des-perles-rondes-de-fabrication-artisanale-avec-de-belles-pierres-rondes-1-cm/",
-    "inStock": true
-  },
-  {
     "id": "prod-414",
-    "name": "Ligne Elephants peints porte bonheur",
+    "name": "Ligne elephants peints porte bonheur",
     "slug": "ligne-elephants-peints-porte-bonheur",
     "title": "Ligne Elephants peints porte bonheur",
     "price": 12,
@@ -7855,7 +7798,7 @@
   },
   {
     "id": "prod-415",
-    "name": "BRACELET pierre onyx noir avec cordon ajustable",
+    "name": "Bracelet pierre onyx noir avec cordon ajustable",
     "slug": "bracelet-pierre-onyx-noir-avec-cordon-ajustable",
     "title": "BRACELET pierre onyx noir avec cordon ajustable",
     "price": 15,
@@ -7874,7 +7817,7 @@
   },
   {
     "id": "prod-416",
-    "name": "BRACELET pierre du soleil",
+    "name": "Bracelet pierre du soleil",
     "slug": "bracelet-pierre-du-soleil",
     "title": "BRACELET pierre du soleil",
     "price": 5,
@@ -7893,7 +7836,7 @@
   },
   {
     "id": "prod-417",
-    "name": "Collier Tibétain avec des perles taillées",
+    "name": "Collier tibétain avec des perles taillées",
     "slug": "collier-tibétain-avec-des-perles-taillées",
     "title": "Collier Tibétain avec des perles taillées",
     "price": 3,
@@ -7912,7 +7855,7 @@
   },
   {
     "id": "prod-418",
-    "name": "bracelet sur fil pierres AMAZONITE et grenat",
+    "name": "Bracelet sur fil pierres amazonite et grenat",
     "slug": "bracelet-sur-fil-pierres-amazonite-et-grenat",
     "title": "bracelet sur fil pierres AMAZONITE et grenat",
     "price": 22,
@@ -7931,7 +7874,7 @@
   },
   {
     "id": "prod-419",
-    "name": "BRACELET tibetain argenté pierre turquoise corail tête de bouddha",
+    "name": "Bracelet tibetain argenté pierre turquoise corail tête de bouddha",
     "slug": "bracelet-tibetain-argenté-pierre-turquoise-corail-tête-de-bouddha",
     "title": "BRACELET tibetain argenté pierre turquoise corail tête de bouddha",
     "price": 14,
@@ -7969,7 +7912,7 @@
   },
   {
     "id": "prod-421",
-    "name": "Collier Mala tibétain jade verte avec 108 perles en pierres naturelles 6mm",
+    "name": "Collier mala tibétain jade verte avec 108 perles en pierres naturelles 6mm",
     "slug": "collier-mala-tibétain-jade-verte-avec-108-perles-en-pierres-naturelles-6mm",
     "title": "Collier Mala tibétain jade verte avec 108 perles en pierres naturelles 6mm",
     "price": 26,
@@ -7988,7 +7931,7 @@
   },
   {
     "id": "prod-422",
-    "name": "COLLIER pierres Rhodocrosite",
+    "name": "Collier pierres rhodocrosite",
     "slug": "collier-pierres-rhodocrosite",
     "title": "COLLIER pierres Rhodocrosite",
     "price": 19,
@@ -8007,7 +7950,7 @@
   },
   {
     "id": "prod-423",
-    "name": "BRACELET pierres naturelles en agate bleu",
+    "name": "Bracelet pierres naturelles en agate bleu",
     "slug": "bracelet-pierres-naturelles-en-agate-bleu",
     "title": "BRACELET pierres naturelles en agate bleu",
     "price": 12,
@@ -8026,7 +7969,7 @@
   },
   {
     "id": "prod-424",
-    "name": "BRACELET pierres naturelles OEIL DU TIGRE  ROUGE",
+    "name": "Bracelet pierres naturelles oeil du tigre rouge",
     "slug": "bracelet-pierres-naturelles-oeil-du-tigre-rouge",
     "title": "BRACELET pierres naturelles OEIL DU TIGRE  ROUGE",
     "price": 12,
@@ -8045,7 +7988,7 @@
   },
   {
     "id": "prod-425",
-    "name": "BRACELET pierre triple protection obsidienne/hematite/oeil du tigre  8 mm",
+    "name": "Bracelet pierre triple protection obsidienne/hematite/oeil du tigre 8 mm",
     "slug": "bracelet-pierre-triple-protection-obsidiennehematiteoeil-du-tigre-8-mm",
     "title": "BRACELET pierre triple protection obsidienne/hematite/oeil du tigre  8 mm",
     "price": 16,
@@ -8064,7 +8007,7 @@
   },
   {
     "id": "prod-426",
-    "name": "Collier Mala avec 108 pierres naturelles en Multi stones",
+    "name": "Collier mala avec 108 pierres naturelles en multi stones",
     "slug": "collier-mala-avec-108-pierres-naturelles-en-multi-stones",
     "title": "Collier Mala avec 108 pierres naturelles en Multi stones",
     "price": 34,
@@ -8083,7 +8026,7 @@
   },
   {
     "id": "prod-427",
-    "name": "BOUCLES D’OREILLES argent filigrane et Lapis-Lazuli",
+    "name": "Boucles d’oreilles argent filigrane et lapis-lazuli",
     "slug": "boucles-doreilles-argent-filigrane-et-lapis-lazuli",
     "title": "BOUCLES D’OREILLES argent filigrane et Lapis-Lazuli",
     "price": 29,
@@ -8121,7 +8064,7 @@
   },
   {
     "id": "prod-429",
-    "name": "BRACELET ARGENT pierre de lune",
+    "name": "Bracelet argent pierre de lune",
     "slug": "bracelet-argent-pierre-de-lune",
     "title": "BRACELET ARGENT pierre de lune",
     "price": 28,
@@ -8140,7 +8083,7 @@
   },
   {
     "id": "prod-430",
-    "name": "BRACELET chainette argent et pierre onyx noir",
+    "name": "Bracelet chainette argent et pierre onyx noir",
     "slug": "bracelet-chainette-argent-et-pierre-onyx-noir",
     "title": "BRACELET chainette argent et pierre onyx noir",
     "price": 17,
@@ -8159,7 +8102,7 @@
   },
   {
     "id": "prod-431",
-    "name": "BRACELET quartz rose fermoir perle",
+    "name": "Bracelet quartz rose fermoir perle",
     "slug": "bracelet-quartz-rose-fermoir-perle",
     "title": "BRACELET quartz rose fermoir perle",
     "price": 19,
@@ -8178,7 +8121,7 @@
   },
   {
     "id": "prod-432",
-    "name": "BRACELET pierres naturelles multi color",
+    "name": "Bracelet pierres naturelles multi color",
     "slug": "bracelet-pierres-naturelles-multi-color",
     "title": "BRACELET pierres naturelles multi color",
     "price": 12,
@@ -8197,7 +8140,7 @@
   },
   {
     "id": "prod-433",
-    "name": "boucles D’OREILLES ARGENT onyx noir",
+    "name": "Boucles d’oreilles argent onyx noir",
     "slug": "boucles-doreilles-argent-onyx-noir",
     "title": "boucles D’OREILLES ARGENT onyx noir",
     "price": 16,
@@ -8216,7 +8159,7 @@
   },
   {
     "id": "prod-434",
-    "name": "Collier Tibetain en  lapis-lazuliavec un pendentif tibétain",
+    "name": "Collier tibetain en lapis-lazuliavec un pendentif tibétain",
     "slug": "collier-tibetain-en-lapis-lazuliavec-un-pendentif-tibétain",
     "title": "Collier Tibetain en  lapis-lazuliavec un pendentif tibétain",
     "price": 29,
@@ -8235,7 +8178,7 @@
   },
   {
     "id": "prod-435",
-    "name": "PENDENTIF ARGENT onyx noir  avec son cordon en cuir noir",
+    "name": "Pendentif argent onyx noir avec son cordon en cuir noir",
     "slug": "pendentif-argent-onyx-noir-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT onyx noir  avec son cordon en cuir noir",
     "price": 1,
@@ -8248,7 +8191,7 @@
   },
   {
     "id": "prod-436",
-    "name": "Bague ajustable Argent et onyx noir",
+    "name": "Bague ajustable argent et onyx noir",
     "slug": "bague-ajustable-argent-et-onyx-noir",
     "title": "Bague ajustable Argent et onyx noir",
     "price": 27,
@@ -8267,7 +8210,7 @@
   },
   {
     "id": "prod-437",
-    "name": "Bague réglable argentée  pierre en onyx noir",
+    "name": "Bague réglable argentée pierre en onyx noir",
     "slug": "bague-réglable-argentée-pierre-en-onyx-noir",
     "title": "Bague réglable argentée  pierre en onyx noir",
     "price": 10,
@@ -8286,7 +8229,7 @@
   },
   {
     "id": "prod-438",
-    "name": "BRACELET ARGENT avec pierre onyx noir",
+    "name": "Bracelet argent avec pierre onyx noir",
     "slug": "bracelet-argent-avec-pierre-onyx-noir",
     "title": "BRACELET ARGENT avec pierre onyx noir",
     "price": 26,
@@ -8362,7 +8305,7 @@
   },
   {
     "id": "prod-442",
-    "name": "BOUCLES D’OREILLES ARGENT améthyste",
+    "name": "Boucles d’oreilles argent améthyste",
     "slug": "boucles-doreilles-argent-améthyste",
     "title": "BOUCLES D’OREILLES ARGENT améthyste",
     "price": 23,
@@ -8400,7 +8343,7 @@
   },
   {
     "id": "prod-444",
-    "name": "bracelet souple argent saphir",
+    "name": "Bracelet souple argent saphir",
     "slug": "bracelet-souple-argent-saphir",
     "title": "bracelet souple argent saphir",
     "price": 29,
@@ -8419,7 +8362,7 @@
   },
   {
     "id": "prod-445",
-    "name": "Collier Mala tibétain Lapis-lazuli  pierre 6mm",
+    "name": "Collier mala tibétain lapis-lazuli pierre 6mm",
     "slug": "collier-mala-tibétain-lapis-lazuli-pierre-6mm",
     "title": "Collier Mala tibétain Lapis-lazuli  pierre 6mm",
     "price": 32,
@@ -8438,7 +8381,7 @@
   },
   {
     "id": "prod-446",
-    "name": "Bague Argent ciselée pierre oeil du tigre",
+    "name": "Bague argent ciselée pierre oeil du tigre",
     "slug": "bague-argent-ciselée-pierre-oeil-du-tigre",
     "title": "Bague Argent ciselée pierre oeil du tigre",
     "price": 23,
@@ -8457,7 +8400,7 @@
   },
   {
     "id": "prod-447",
-    "name": "BOUCLES D’OREILLES ARGENT pierre de lune",
+    "name": "Boucles d’oreilles argent pierre de lune",
     "slug": "boucles-doreilles-argent-pierre-de-lune",
     "title": "BOUCLES D’OREILLES ARGENT pierre de lune",
     "price": 10,
@@ -8476,7 +8419,7 @@
   },
   {
     "id": "prod-448",
-    "name": "chiffon spécial argent",
+    "name": "Chiffon spécial argent",
     "slug": "chiffon-spécial-argent",
     "title": "chiffon spécial argent",
     "price": 3,
@@ -8495,7 +8438,7 @@
   },
   {
     "id": "prod-449",
-    "name": "BRACELET ARGENT onyx noir",
+    "name": "Bracelet argent onyx noir",
     "slug": "bracelet-argent-onyx-noir",
     "title": "BRACELET ARGENT onyx noir",
     "price": 34,
@@ -8533,7 +8476,7 @@
   },
   {
     "id": "prod-451",
-    "name": "BOUCLES D’OREILLES ARGENT LAPIS-LAZULI",
+    "name": "Boucles d’oreilles argent lapis-lazuli",
     "slug": "boucles-doreilles-argent-lapis-lazuli",
     "title": "BOUCLES D’OREILLES ARGENT LAPIS-LAZULI",
     "price": 14,
@@ -8552,7 +8495,7 @@
   },
   {
     "id": "prod-452",
-    "name": "BRACELET pierres onyx noir",
+    "name": "Bracelet pierres onyx noir",
     "slug": "bracelet-pierres-onyx-noir",
     "title": "BRACELET pierres onyx noir",
     "price": 14,
@@ -8590,7 +8533,7 @@
   },
   {
     "id": "prod-454",
-    "name": "BRACELET pierres  multistone cordon réglable",
+    "name": "Bracelet pierres multistone cordon réglable",
     "slug": "bracelet-pierres-multistone-cordon-réglable",
     "title": "BRACELET pierres  multistone cordon réglable",
     "price": 16,
@@ -8609,7 +8552,7 @@
   },
   {
     "id": "prod-455",
-    "name": "BRACELET ARGENT avec des pierres ovales en péridot",
+    "name": "Bracelet argent avec des pierres ovales en péridot",
     "slug": "bracelet-argent-avec-des-pierres-ovales-en-péridot",
     "title": "BRACELET ARGENT avec des pierres ovales en péridot",
     "price": 42,
@@ -8628,7 +8571,7 @@
   },
   {
     "id": "prod-456",
-    "name": "bracelets système solaire 11 planètes",
+    "name": "Bracelets système solaire 11 planètes",
     "slug": "bracelets-système-solaire-11-planètes",
     "title": "bracelets système solaire 11 planètes",
     "price": 9,
@@ -8666,7 +8609,7 @@
   },
   {
     "id": "prod-458",
-    "name": "BRACELET grandes pierres pierre de lune et quartz rose avec cordon  réglable",
+    "name": "Bracelet grandes pierres pierre de lune et quartz rose avec cordon réglable",
     "slug": "bracelet-grandes-pierres-pierre-de-lune-et-quartz-rose-avec-cordon-réglable",
     "title": "BRACELET grandes pierres pierre de lune et quartz rose avec cordon  réglable",
     "price": 22,
@@ -8685,7 +8628,7 @@
   },
   {
     "id": "prod-459",
-    "name": "créoles ethniques ARGENTE ET PIERRE turquoise",
+    "name": "Créoles ethniques argente et pierre turquoise",
     "slug": "créoles-ethniques-argente-et-pierre-turquoise",
     "title": "créoles ethniques ARGENTE ET PIERRE turquoise",
     "price": 24,
@@ -8704,7 +8647,7 @@
   },
   {
     "id": "prod-460",
-    "name": "Collier Tibétain avec des perles taillées et pierres turquoise et lapis-lazuli",
+    "name": "Collier tibétain avec des perles taillées et pierres turquoise et lapis-lazuli",
     "slug": "collier-tibétain-avec-des-perles-taillées-et-pierres-turquoise-et-lapis-lazuli",
     "title": "Collier Tibétain avec des perles taillées et pierres turquoise et lapis-lazuli",
     "price": 36,
@@ -8723,7 +8666,7 @@
   },
   {
     "id": "prod-461",
-    "name": "Bague fantaisie  ajustable dorée pierre péridot",
+    "name": "Bague fantaisie ajustable dorée pierre péridot",
     "slug": "bague-fantaisie-ajustable-dorée-pierre-péridot",
     "title": "Bague fantaisie  ajustable dorée pierre péridot",
     "price": 18,
@@ -8742,7 +8685,7 @@
   },
   {
     "id": "prod-462",
-    "name": "BOUCLES D’OREILLES ARGENT filigrane",
+    "name": "Boucles d’oreilles argent filigrane",
     "slug": "boucles-doreilles-argent-filigrane",
     "title": "BOUCLES D’OREILLES ARGENT filigrane",
     "price": 22,
@@ -8761,7 +8704,7 @@
   },
   {
     "id": "prod-463",
-    "name": "BOUCLES D’oreilles ARGENT PERODIT",
+    "name": "Boucles d’oreilles argent perodit",
     "slug": "boucles-doreilles-argent-perodit",
     "title": "BOUCLES D’oreilles ARGENT PERODIT",
     "price": 20,
@@ -8780,7 +8723,7 @@
   },
   {
     "id": "prod-464",
-    "name": "Pour cheville cordon bleu  foncé réglable  avec Devel Eyes",
+    "name": "Pour cheville cordon bleu foncé réglable avec devel eyes",
     "slug": "pour-cheville-cordon-bleu-foncé-réglable-avec-devel-eyes",
     "title": "Pour cheville cordon bleu  foncé réglable  avec Devel Eyes",
     "price": 4,
@@ -8818,7 +8761,7 @@
   },
   {
     "id": "prod-466",
-    "name": "Joli Bague Argent Onyx noir",
+    "name": "Joli bague argent onyx noir",
     "slug": "joli-bague-argent-onyx-noir",
     "title": "Joli Bague Argent Onyx noir",
     "price": 29,
@@ -8837,7 +8780,7 @@
   },
   {
     "id": "prod-467",
-    "name": "CHAINE DE CHEVILLES argentée papillon",
+    "name": "Chaine de chevilles argentée papillon",
     "slug": "chaine-de-chevilles-argentée-papillon",
     "title": "CHAINE DE CHEVILLES argentée papillon",
     "price": 8,
@@ -8856,7 +8799,7 @@
   },
   {
     "id": "prod-468",
-    "name": "BRACELET pierres naturelles en agate mixe",
+    "name": "Bracelet pierres naturelles en agate mixe",
     "slug": "bracelet-pierres-naturelles-en-agate-mixe",
     "title": "BRACELET pierres naturelles en agate mixe",
     "price": 12,
@@ -8894,7 +8837,7 @@
   },
   {
     "id": "prod-470",
-    "name": "BOUCLES D’OREILLES ARGENT lapis-lazuli",
+    "name": "Boucles d’oreilles argent lapis-lazuli",
     "slug": "boucles-doreilles-argent-lapis-lazuli",
     "title": "BOUCLES D’OREILLES ARGENT lapis-lazuli",
     "price": 14,
@@ -8913,7 +8856,7 @@
   },
   {
     "id": "prod-471",
-    "name": "Bague Argent pierre lapis-lazuli",
+    "name": "Bague argent pierre lapis-lazuli",
     "slug": "bague-argent-pierre-lapis-lazuli",
     "title": "Bague Argent pierre lapis-lazuli",
     "price": 19,
@@ -8932,7 +8875,7 @@
   },
   {
     "id": "prod-472",
-    "name": "PASHMINA vert cachemire ET SOIE",
+    "name": "Pashmina vert cachemire et soie",
     "slug": "pashmina-vert-cachemire-et-soie",
     "title": "PASHMINA vert cachemire ET SOIE",
     "price": 26,
@@ -8951,7 +8894,7 @@
   },
   {
     "id": "prod-473",
-    "name": "BRACELET pierre quartz rose et une fleur de lotus",
+    "name": "Bracelet pierre quartz rose et une fleur de lotus",
     "slug": "bracelet-pierre-quartz-rose-et-une-fleur-de-lotus",
     "title": "BRACELET pierre quartz rose et une fleur de lotus",
     "price": 18,
@@ -8970,7 +8913,7 @@
   },
   {
     "id": "prod-474",
-    "name": "Boucles d’oreilles Meenakari noires et roses",
+    "name": "Boucles d’oreilles meenakari noires et roses",
     "slug": "boucles-doreilles-meenakari-noires-et-roses",
     "title": "Boucles d’oreilles Meenakari noires et roses",
     "price": 14,
@@ -8983,7 +8926,7 @@
   },
   {
     "id": "prod-475",
-    "name": "Bracelet Cinabre, Corde Rouge Tressée",
+    "name": "Bracelet cinabre, corde rouge tressée",
     "slug": "bracelet-cinabre-corde-rouge-tressée",
     "title": "Bracelet Cinabre, Corde Rouge Tressée",
     "price": 4,
@@ -9002,7 +8945,7 @@
   },
   {
     "id": "prod-476",
-    "name": "bracelet souple argent fin anneau",
+    "name": "Bracelet souple argent fin anneau",
     "slug": "bracelet-souple-argent-fin-anneau",
     "title": "bracelet souple argent fin anneau",
     "price": 24,
@@ -9021,7 +8964,7 @@
   },
   {
     "id": "prod-477",
-    "name": "CLOUS D’OREILLES ARGENT onyx vert",
+    "name": "Clous d’oreilles argent onyx vert",
     "slug": "clous-doreilles-argent-onyx-vert",
     "title": "CLOUS D’OREILLES ARGENT onyx vert",
     "price": 10,
@@ -9135,7 +9078,7 @@
   },
   {
     "id": "prod-483",
-    "name": "Bague Argent  AMETHYSTE",
+    "name": "Bague argent amethyste",
     "slug": "bague-argent-amethyste",
     "title": "Bague Argent  AMETHYSTE",
     "price": 19,
@@ -9154,7 +9097,7 @@
   },
   {
     "id": "prod-484",
-    "name": "BRACELET pierre agate",
+    "name": "Bracelet pierre agate",
     "slug": "bracelet-pierre-agate",
     "title": "BRACELET pierre agate",
     "price": 14,
@@ -9173,7 +9116,7 @@
   },
   {
     "id": "prod-485",
-    "name": "BRACELET pierres agate",
+    "name": "Bracelet pierres agate",
     "slug": "bracelet-pierres-agate",
     "title": "BRACELET pierres agate",
     "price": 12,
@@ -9192,7 +9135,7 @@
   },
   {
     "id": "prod-486",
-    "name": "Bague Argent filigrane pierre SMOKY QUARTZ",
+    "name": "Bague argent filigrane pierre smoky quartz",
     "slug": "bague-argent-filigrane-pierre-smoky-quartz",
     "title": "Bague Argent filigrane pierre SMOKY QUARTZ",
     "price": 32,
@@ -9211,7 +9154,7 @@
   },
   {
     "id": "prod-487",
-    "name": "Collier Mala tibétain améthyste et onyx noir pierre 8 mm",
+    "name": "Collier mala tibétain améthyste et onyx noir pierre 8 mm",
     "slug": "collier-mala-tibétain-améthyste-et-onyx-noir-pierre-8-mm",
     "title": "Collier Mala tibétain améthyste et onyx noir pierre 8 mm",
     "price": 38,
@@ -9230,7 +9173,7 @@
   },
   {
     "id": "prod-488",
-    "name": "Petite boucle d’oreille en pierre Péridot et en argent",
+    "name": "Petite boucle d’oreille en pierre péridot et en argent",
     "slug": "petite-boucle-doreille-en-pierre-péridot-et-en-argent",
     "title": "Petite boucle d’oreille en pierre Péridot et en argent",
     "price": 25,
@@ -9249,7 +9192,7 @@
   },
   {
     "id": "prod-489",
-    "name": "Bague argent INFINITI",
+    "name": "Bague argent infiniti",
     "slug": "bague-argent-infiniti",
     "title": "Bague argent INFINITI",
     "price": 12,
@@ -9268,7 +9211,7 @@
   },
   {
     "id": "prod-490",
-    "name": "BRACELET INDIEN argenté vraie pierre onyx rouge",
+    "name": "Bracelet indien argenté vraie pierre onyx rouge",
     "slug": "bracelet-indien-argenté-vraie-pierre-onyx-rouge",
     "title": "BRACELET INDIEN argenté vraie pierre onyx rouge",
     "price": 14,
@@ -9287,7 +9230,7 @@
   },
   {
     "id": "prod-491",
-    "name": "collier indien en bois blanc",
+    "name": "Collier indien en bois blanc",
     "slug": "collier-indien-en-bois-blanc",
     "title": "collier indien en bois blanc",
     "price": 3,
@@ -9325,7 +9268,7 @@
   },
   {
     "id": "prod-493",
-    "name": "BOUCLES D’oreilles Jhumka ARGENT+ONYX NOIR",
+    "name": "Boucles d’oreilles jhumka argent+onyx noir",
     "slug": "boucles-doreilles-jhumka-argentonyx-noir",
     "title": "BOUCLES D’oreilles Jhumka ARGENT+ONYX NOIR",
     "price": 19,
@@ -9344,7 +9287,7 @@
   },
   {
     "id": "prod-494",
-    "name": "Créoles en ARGENT et pierre véritable en labradorite",
+    "name": "Créoles en argent et pierre véritable en labradorite",
     "slug": "créoles-en-argent-et-pierre-véritable-en-labradorite",
     "title": "Créoles en ARGENT et pierre véritable en labradorite",
     "price": 27,
@@ -9363,7 +9306,7 @@
   },
   {
     "id": "prod-495",
-    "name": "CHAINE DE CHEVILLES argentée perles turquoise",
+    "name": "Chaine de chevilles argentée perles turquoise",
     "slug": "chaine-de-chevilles-argentée-perles-turquoise",
     "title": "CHAINE DE CHEVILLES argentée perles turquoise",
     "price": 12,
@@ -9401,7 +9344,7 @@
   },
   {
     "id": "prod-497",
-    "name": "BRACELET TIBETAIN argenté AVEC UN PETIT ÉLÉPHANT",
+    "name": "Bracelet tibetain argenté avec un petit éléphant",
     "slug": "bracelet-tibetain-argenté-avec-un-petit-éléphant",
     "title": "BRACELET TIBETAIN argenté AVEC UN PETIT ÉLÉPHANT",
     "price": 12,
@@ -9420,7 +9363,7 @@
   },
   {
     "id": "prod-498",
-    "name": "Pashmina 100% cachemire BLEU FONCE",
+    "name": "Pashmina 100% cachemire bleu fonce",
     "slug": "pashmina-100-cachemire-bleu-fonce",
     "title": "Pashmina 100% cachemire BLEU FONCE",
     "price": 34,
@@ -9436,19 +9379,6 @@
     "sku": "UGS :ACPA0036",
     "source_url": "https://www.khashika.com/produit/pashmina-100-cachemire-bleu-fonce-cest-une-echarpe-douce-et-agreable-a-porter-et-donne-une-touche-a-vos-tenues-toutes-nos-etoles-proviennent-dinde/",
     "inStock": true
-  },
-  {
-    "id": "prod-499",
-    "name": "Bague Argent filigrane pierre amethyste",
-    "slug": "bague-argent-filigrane-pierre-amethyste",
-    "title": "Bague Argent filigrane pierre amethyste",
-    "price": 728,
-    "description": "Belle bague en argent joliment ciselée et  sertie d’une pierre en AMETHYSTE  facettée.",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products/prod-499.jpeg",
-    "image": "/images/products/prod-499.jpeg",
-    "isOnSale": true,
-    "isNew": false
   },
   {
     "id": "prod-500",
@@ -9471,7 +9401,7 @@
   },
   {
     "id": "prod-501",
-    "name": "BRACELET pierres naturelles en jaspe noir/gris",
+    "name": "Bracelet pierres naturelles en jaspe noir/gris",
     "slug": "bracelet-pierres-naturelles-en-jaspe-noirgris",
     "title": "BRACELET pierres naturelles en jaspe noir/gris",
     "price": 12,
@@ -9490,7 +9420,7 @@
   },
   {
     "id": "prod-502",
-    "name": "Grande Bague Argent ajustable turquoise",
+    "name": "Grande bague argent ajustable turquoise",
     "slug": "grande-bague-argent-ajustable-turquoise",
     "title": "Grande Bague Argent ajustable turquoise",
     "price": 36,
@@ -9509,7 +9439,7 @@
   },
   {
     "id": "prod-503",
-    "name": "BRACELET en  pierres OEIL DU TIGRE BLEU",
+    "name": "Bracelet en pierres oeil du tigre bleu",
     "slug": "bracelet-en-pierres-oeil-du-tigre-bleu",
     "title": "BRACELET en  pierres OEIL DU TIGRE BLEU",
     "price": 12,
@@ -9528,7 +9458,7 @@
   },
   {
     "id": "prod-504",
-    "name": "BRACELET pierres naturelles   7 chakras",
+    "name": "Bracelet pierres naturelles 7 chakras",
     "slug": "bracelet-pierres-naturelles-7-chakras",
     "title": "BRACELET pierres naturelles   7 chakras",
     "price": 16,
@@ -9547,7 +9477,7 @@
   },
   {
     "id": "prod-505",
-    "name": "Collier Tibetain Turquoise et Corail",
+    "name": "Collier tibetain turquoise et corail",
     "slug": "collier-tibetain-turquoise-et-corail",
     "title": "Collier Tibetain Turquoise et Corail",
     "price": 34,
@@ -9623,7 +9553,7 @@
   },
   {
     "id": "prod-509",
-    "name": "ETOLE marron clair et beige avec des motifs cachemire.",
+    "name": "Etole marron clair et beige avec des motifs cachemire.",
     "slug": "etole-marron-clair-et-beige-avec-des-motifs-cachemire",
     "title": "ETOLE marron clair et beige avec des motifs cachemire.",
     "price": 25,
@@ -9661,7 +9591,7 @@
   },
   {
     "id": "prod-511",
-    "name": "BRACELET pierres naturelles  agate vert nuancé",
+    "name": "Bracelet pierres naturelles agate vert nuancé",
     "slug": "bracelet-pierres-naturelles-agate-vert-nuancé",
     "title": "BRACELET pierres naturelles  agate vert nuancé",
     "price": 12,
@@ -9699,7 +9629,7 @@
   },
   {
     "id": "prod-513",
-    "name": "CHAINE DE CHEVILLES argentée",
+    "name": "Chaine de chevilles argentée",
     "slug": "chaine-de-chevilles-argentée",
     "title": "CHAINE DE CHEVILLES argentée",
     "price": 12,
@@ -9718,7 +9648,7 @@
   },
   {
     "id": "prod-514",
-    "name": "BRACELET tibetain argenté pierre turquoise et lapis-lazuli tête de bouddha",
+    "name": "Bracelet tibetain argenté pierre turquoise et lapis-lazuli tête de bouddha",
     "slug": "bracelet-tibetain-argenté-pierre-turquoise-et-lapis-lazuli-tête-de-bouddha",
     "title": "BRACELET tibetain argenté pierre turquoise et lapis-lazuli tête de bouddha",
     "price": 14,
@@ -9737,7 +9667,7 @@
   },
   {
     "id": "prod-515",
-    "name": "CHAINE DE CHEVILLES perles de couleur cordon réglable",
+    "name": "Chaine de chevilles perles de couleur cordon réglable",
     "slug": "chaine-de-chevilles-perles-de-couleur-cordon-réglable",
     "title": "CHAINE DE CHEVILLES perles de couleur cordon réglable",
     "price": 7,
@@ -9775,7 +9705,7 @@
   },
   {
     "id": "prod-517",
-    "name": "POCHETTE EN SOIE",
+    "name": "Pochette en soie",
     "slug": "pochette-en-soie",
     "title": "POCHETTE EN SOIE",
     "price": 7,
@@ -9794,7 +9724,7 @@
   },
   {
     "id": "prod-518",
-    "name": "collier indien en pierres naturelles Calcédoine",
+    "name": "Collier indien en pierres naturelles calcédoine",
     "slug": "collier-indien-en-pierres-naturelles-calcédoine",
     "title": "collier indien en pierres naturelles Calcédoine",
     "price": 28,
@@ -9813,7 +9743,7 @@
   },
   {
     "id": "prod-519",
-    "name": "BRACELET pierres  agate multistone cordon rouge réglable",
+    "name": "Bracelet pierres agate multistone cordon rouge réglable",
     "slug": "bracelet-pierres-agate-multistone-cordon-rouge-réglable",
     "title": "BRACELET pierres  agate multistone cordon rouge réglable",
     "price": 16,
@@ -9870,7 +9800,7 @@
   },
   {
     "id": "prod-522",
-    "name": "COLLIER ARGENT QUARTZ ROSE",
+    "name": "Collier argent quartz rose",
     "slug": "collier-argent-quartz-rose",
     "title": "COLLIER ARGENT QUARTZ ROSE",
     "price": 15,
@@ -9889,7 +9819,7 @@
   },
   {
     "id": "prod-523",
-    "name": "BRACELET en  pierres Pierre de Lune",
+    "name": "Bracelet en pierres pierre de lune",
     "slug": "bracelet-en-pierres-pierre-de-lune",
     "title": "BRACELET en  pierres Pierre de Lune",
     "price": 12,
@@ -9927,7 +9857,7 @@
   },
   {
     "id": "prod-525",
-    "name": "PASHMINA cachemire ET SOIE rouge motifs éléphant",
+    "name": "Pashmina cachemire et soie rouge motifs éléphant",
     "slug": "pashmina-cachemire-et-soie-rouge-motifs-éléphant",
     "title": "PASHMINA cachemire ET SOIE rouge motifs éléphant",
     "price": 24,
@@ -9946,7 +9876,7 @@
   },
   {
     "id": "prod-526",
-    "name": "BRACELET ARGENT grenat",
+    "name": "Bracelet argent grenat",
     "slug": "bracelet-argent-grenat",
     "title": "BRACELET ARGENT grenat",
     "price": 4,
@@ -9965,7 +9895,7 @@
   },
   {
     "id": "prod-527",
-    "name": "bracelet rigide argenté plume",
+    "name": "Bracelet rigide argenté plume",
     "slug": "bracelet-rigide-argenté-plume",
     "title": "bracelet rigide argenté plume",
     "price": 17,
@@ -9984,7 +9914,7 @@
   },
   {
     "id": "prod-528",
-    "name": "BOUCLES D’OREILLES ARGENT quartz rose",
+    "name": "Boucles d’oreilles argent quartz rose",
     "slug": "boucles-doreilles-argent-quartz-rose",
     "title": "BOUCLES D’OREILLES ARGENT quartz rose",
     "price": 10,
@@ -10002,21 +9932,8 @@
     "inStock": true
   },
   {
-    "id": "prod-529",
-    "name": "Bague Argent filigrane pierre QUARTZ ROSE",
-    "slug": "bague-argent-filigrane-pierre-quartz-rose",
-    "title": "Bague Argent filigrane pierre QUARTZ ROSE",
-    "price": 754,
-    "description": "Cesboucles d’oreilles sur une tige en argent et une belle pierre ronde en Améthyste defabrication artisanale.",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products/prod-529.jpeg",
-    "image": "/images/products/prod-529.jpeg",
-    "isOnSale": true,
-    "isNew": false
-  },
-  {
     "id": "prod-530",
-    "name": "BRACELET onyx noir bouddha",
+    "name": "Bracelet onyx noir bouddha",
     "slug": "bracelet-onyx-noir-bouddha",
     "title": "BRACELET onyx noir bouddha",
     "price": 16,
@@ -10035,7 +9952,7 @@
   },
   {
     "id": "prod-531",
-    "name": "BRACELET TIBETAIN  turquoise",
+    "name": "Bracelet tibetain turquoise",
     "slug": "bracelet-tibetain-turquoise",
     "title": "BRACELET TIBETAIN  turquoise",
     "price": 27,
@@ -10091,25 +10008,6 @@
     "inStock": true
   },
   {
-    "id": "prod-534",
-    "name": "Bague Argent ajustable avec  pierre onyx vert",
-    "slug": "bague-argent-ajustable-avec-pierre-onyx-vert",
-    "title": "Bague Argent ajustable avec  pierre onyx vert",
-    "price": 932,
-    "description": "Cesboucles d’oreilles sur une tige en argent et une belle pierre ronde en Améthyste defabrication artisanale.",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products_reconciled/bague-argent-ajustable-avec-pierre-onyx-vert.jpeg",
-    "image": "/images/products_reconciled/bague-argent-ajustable-avec-pierre-onyx-vert.jpeg",
-    "isOnSale": true,
-    "isNew": false,
-    "images": [
-      "/images/products_reconciled/bague-argent-ajustable-avec-pierre-onyx-vert.jpeg"
-    ],
-    "sku": "UGS :BAAP0037",
-    "source_url": "https://www.khashika.com/produit/belle-bague-en-argent-fleur-et-sertie-dune-belle-pierre-en-onyx-vert-se-porte-avec-tous-vos-vetements-chics-ce-bijou-indien-est-de-fabrication-artisanale/",
-    "inStock": true
-  },
-  {
     "id": "prod-535",
     "name": "Boucles d’oreille tibétaines lapis-lazuli",
     "slug": "boucles-doreille-tibétaines-lapis-lazuli",
@@ -10130,7 +10028,7 @@
   },
   {
     "id": "prod-536",
-    "name": "CHAINE DE CHEVILLES ARGENT",
+    "name": "Chaine de chevilles argent",
     "slug": "chaine-de-chevilles-argent",
     "title": "CHAINE DE CHEVILLES ARGENT",
     "price": 26,
@@ -10149,7 +10047,7 @@
   },
   {
     "id": "prod-537",
-    "name": "grandes Créoles en laiton",
+    "name": "Grandes créoles en laiton",
     "slug": "grandes-créoles-en-laiton",
     "title": "grandes Créoles en laiton",
     "price": 18,
@@ -10187,7 +10085,7 @@
   },
   {
     "id": "prod-539",
-    "name": "CHAINE EN ARGENT avec 15 perles argent tendance",
+    "name": "Chaine en argent avec 15 perles argent tendance",
     "slug": "chaine-en-argent-avec-15-perles-argent-tendance",
     "title": "CHAINE EN ARGENT avec 15 perles argent tendance",
     "price": 32,
@@ -10206,7 +10104,7 @@
   },
   {
     "id": "prod-540",
-    "name": "PENDENTIF ARGENT cornaline  avec son cordon en cuir noir",
+    "name": "Pendentif argent cornaline avec son cordon en cuir noir",
     "slug": "pendentif-argent-cornaline-avec-son-cordon-en-cuir-noir",
     "title": "PENDENTIF ARGENT cornaline  avec son cordon en cuir noir",
     "price": 3,
@@ -10225,7 +10123,7 @@
   },
   {
     "id": "prod-541",
-    "name": "Collier Mala tibétain agate rouge et  turquoise pierre 6mm",
+    "name": "Collier mala tibétain agate rouge et turquoise pierre 6mm",
     "slug": "collier-mala-tibétain-agate-rouge-et-turquoise-pierre-6mm",
     "title": "Collier Mala tibétain agate rouge et  turquoise pierre 6mm",
     "price": 9,
@@ -10238,7 +10136,7 @@
   },
   {
     "id": "prod-542",
-    "name": "bracelets pierres naturelles AGATE multistone",
+    "name": "Bracelets pierres naturelles agate multistone",
     "slug": "bracelets-pierres-naturelles-agate-multistone",
     "title": "bracelets pierres naturelles AGATE multistone",
     "price": 16,
@@ -10257,7 +10155,7 @@
   },
   {
     "id": "prod-543",
-    "name": "pendentif style Boho motif fleur",
+    "name": "Pendentif style boho motif fleur",
     "slug": "pendentif-style-boho-motif-fleur",
     "title": "pendentif style Boho motif fleur",
     "price": 9,
@@ -10276,7 +10174,7 @@
   },
   {
     "id": "prod-544",
-    "name": "Fine Bague Argent  peridot",
+    "name": "Fine bague argent peridot",
     "slug": "fine-bague-argent-peridot",
     "title": "Fine Bague Argent  peridot",
     "price": 15,
@@ -10295,7 +10193,7 @@
   },
   {
     "id": "prod-545",
-    "name": "Bague Argent pierre rubis indien",
+    "name": "Bague argent pierre rubis indien",
     "slug": "bague-argent-pierre-rubis-indien",
     "title": "Bague Argent pierre rubis indien",
     "price": 26,
@@ -10314,7 +10212,7 @@
   },
   {
     "id": "prod-546",
-    "name": "Collier Tibetain Turquoise bleue et verte et Corail",
+    "name": "Collier tibetain turquoise bleue et verte et corail",
     "slug": "collier-tibetain-turquoise-bleue-et-verte-et-corail",
     "title": "Collier Tibetain Turquoise bleue et verte et Corail",
     "price": 34,
@@ -10352,7 +10250,7 @@
   },
   {
     "id": "prod-548",
-    "name": "BOUCLES D’oreilles ARGENT saphir",
+    "name": "Boucles d’oreilles argent saphir",
     "slug": "boucles-doreilles-argent-saphir",
     "title": "BOUCLES D’oreilles ARGENT saphir",
     "price": 18,
@@ -10371,7 +10269,7 @@
   },
   {
     "id": "prod-549",
-    "name": "CHAINE DE CHEVILLES ARGENT",
+    "name": "Chaine de chevilles argent",
     "slug": "chaine-de-chevilles-argent",
     "title": "CHAINE DE CHEVILLES ARGENT",
     "price": 26,
@@ -10390,7 +10288,7 @@
   },
   {
     "id": "prod-550",
-    "name": "Boucles d’oreille argent AMETHYSTE",
+    "name": "Boucles d’oreille argent amethyste",
     "slug": "boucles-doreille-argent-amethyste",
     "title": "Boucles d’oreille argent AMETHYSTE",
     "price": 14,
@@ -10409,7 +10307,7 @@
   },
   {
     "id": "prod-551",
-    "name": "Bague Argent turquoise",
+    "name": "Bague argent turquoise",
     "slug": "bague-argent-turquoise",
     "title": "Bague Argent turquoise",
     "price": 26,
@@ -10428,7 +10326,7 @@
   },
   {
     "id": "prod-552",
-    "name": "BRACELET pierre turquoise et un arbre de vie",
+    "name": "Bracelet pierre turquoise et un arbre de vie",
     "slug": "bracelet-pierre-turquoise-et-un-arbre-de-vie",
     "title": "BRACELET pierre turquoise et un arbre de vie",
     "price": 18,
@@ -10447,7 +10345,7 @@
   },
   {
     "id": "prod-553",
-    "name": "CHAINE DE CHEVILLES argentée perles couleur",
+    "name": "Chaine de chevilles argentée perles couleur",
     "slug": "chaine-de-chevilles-argentée-perles-couleur",
     "title": "CHAINE DE CHEVILLES argentée perles couleur",
     "price": 8,
@@ -10466,7 +10364,7 @@
   },
   {
     "id": "prod-554",
-    "name": "Créoles en ARGENT et pierre véritable en lapis-lazuli",
+    "name": "Créoles en argent et pierre véritable en lapis-lazuli",
     "slug": "créoles-en-argent-et-pierre-véritable-en-lapis-lazuli",
     "title": "Créoles en ARGENT et pierre véritable en lapis-lazuli",
     "price": 32,
@@ -10485,7 +10383,7 @@
   },
   {
     "id": "prod-555",
-    "name": "Figurine en bois  tête de bouddha",
+    "name": "Figurine en bois tête de bouddha",
     "slug": "figurine-en-bois-tête-de-bouddha",
     "title": "Figurine en bois  tête de bouddha",
     "price": 10,
@@ -10504,7 +10402,7 @@
   },
   {
     "id": "prod-556",
-    "name": "BOUCLES D’oreilles ARGENT topaze verte",
+    "name": "Boucles d’oreilles argent topaze verte",
     "slug": "boucles-doreilles-argent-topaze-verte",
     "title": "BOUCLES D’oreilles ARGENT topaze verte",
     "price": 17,
@@ -10561,7 +10459,7 @@
   },
   {
     "id": "prod-559",
-    "name": "CHAINE DE CHEVILLES argentée perles couleur",
+    "name": "Chaine de chevilles argentée perles couleur",
     "slug": "chaine-de-chevilles-argentée-perles-couleur",
     "title": "CHAINE DE CHEVILLES argentée perles couleur",
     "price": 8,
@@ -10580,7 +10478,7 @@
   },
   {
     "id": "prod-560",
-    "name": "Créoles en laiton tune pierre naturelle Oeil du tigre",
+    "name": "Créoles en laiton tune pierre naturelle oeil du tigre",
     "slug": "créoles-en-laiton-tune-pierre-naturelle-oeil-du-tigre",
     "title": "Créoles en laiton tune pierre naturelle Oeil du tigre",
     "price": 25,
@@ -10598,21 +10496,8 @@
     "inStock": false
   },
   {
-    "id": "prod-561",
-    "name": "Bague Argent ajustable sobre avec une pierre ronde agate",
-    "slug": "bague-argent-ajustable-sobre-avec-une-pierre-ronde-agate",
-    "title": "Bague Argent ajustable sobre avec une pierre ronde agate",
-    "price": 884,
-    "description": "Bague Argent ajustable sobre avec une pierre ronde agate.Se porte avec tous vos vêtements chics",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products/prod-561.jpeg",
-    "image": "/images/products/prod-561.jpeg",
-    "isOnSale": true,
-    "isNew": false
-  },
-  {
     "id": "prod-562",
-    "name": "BRACELET pierres naturelles  agate marine",
+    "name": "Bracelet pierres naturelles agate marine",
     "slug": "bracelet-pierres-naturelles-agate-marine",
     "title": "BRACELET pierres naturelles  agate marine",
     "price": 14,
@@ -10631,7 +10516,7 @@
   },
   {
     "id": "prod-563",
-    "name": "bracelet souple en argent",
+    "name": "Bracelet souple en argent",
     "slug": "bracelet-souple-en-argent",
     "title": "bracelet souple en argent",
     "price": 24,
@@ -10650,7 +10535,7 @@
   },
   {
     "id": "prod-564",
-    "name": "CHAINE DE CHEVILLES pierres 6mm 7 chakras avec perles dorées",
+    "name": "Chaine de chevilles pierres 6mm 7 chakras avec perles dorées",
     "slug": "chaine-de-chevilles-pierres-6mm-7-chakras-avec-perles-dorées",
     "title": "CHAINE DE CHEVILLES pierres 6mm 7 chakras avec perles dorées",
     "price": 16,
@@ -10669,7 +10554,7 @@
   },
   {
     "id": "prod-565",
-    "name": "BRACELET JONC argente",
+    "name": "Bracelet jonc argente",
     "slug": "bracelet-jonc-argente",
     "title": "BRACELET JONC argente",
     "price": 14,
@@ -10707,7 +10592,7 @@
   },
   {
     "id": "prod-567",
-    "name": "BRACELET  pierre CORNALIE 10mm avec cordon  réglable",
+    "name": "Bracelet pierre cornalie 10mm avec cordon réglable",
     "slug": "bracelet-pierre-cornalie-10mm-avec-cordon-réglable",
     "title": "BRACELET  pierre CORNALIE 10mm avec cordon  réglable",
     "price": 24,
@@ -10726,7 +10611,7 @@
   },
   {
     "id": "prod-568",
-    "name": "Bague Argent  et laiton anneaux anti-stresse",
+    "name": "Bague argent et laiton anneaux anti-stresse",
     "slug": "bague-argent-et-laiton-anneaux-anti-stresse",
     "title": "Bague Argent  et laiton anneaux anti-stresse",
     "price": 22,
@@ -10745,7 +10630,7 @@
   },
   {
     "id": "prod-569",
-    "name": "BOUCLES D’OREILLES ARGENT avec chainette etperles en argent",
+    "name": "Boucles d’oreilles argent avec chainette etperles en argent",
     "slug": "boucles-doreilles-argent-avec-chainette-etperles-en-argent",
     "title": "BOUCLES D’OREILLES ARGENT avec chainette etperles en argent",
     "price": 14,
@@ -10764,7 +10649,7 @@
   },
   {
     "id": "prod-570",
-    "name": "BOUCLES D’OREILLES ARGENT MAIN FATMA filigrane",
+    "name": "Boucles d’oreilles argent main fatma filigrane",
     "slug": "boucles-doreilles-argent-main-fatma-filigrane",
     "title": "BOUCLES D’OREILLES ARGENT MAIN FATMA filigrane",
     "price": 15,
@@ -10782,27 +10667,8 @@
     "inStock": true
   },
   {
-    "id": "prod-571",
-    "name": "Collier Mala tibétain agate bleu avec des pierres 6mm",
-    "slug": "collier-mala-tibétain-agate-bleu-avec-des-pierres-6mm",
-    "title": "Collier Mala tibétain agate bleu avec des pierres 6mm",
-    "price": 309,
-    "description": "Collier Mala tibétain agate de 118 pierres de 6mm",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products_reconciled/collier-mala-tibétain-agate-bleu-avec-des-pierres-6mm.jpeg",
-    "image": "/images/products_reconciled/collier-mala-tibétain-agate-bleu-avec-des-pierres-6mm.jpeg",
-    "isOnSale": true,
-    "isNew": false,
-    "images": [
-      "/images/products_reconciled/collier-mala-tibétain-agate-bleu-avec-des-pierres-6mm.jpeg"
-    ],
-    "sku": "UGS :COAP0010",
-    "source_url": "https://www.khashika.com/produit/collier-mala-tibetain-agate-bleu-avec-des-pierres-6mm-collier-mala-tibetain-agate-de-118-pierres-de-6mmplus-quun-simple-bijou-le-mala-collier-de-spiritualite-utilise-dans-la-meditation/",
-    "inStock": true
-  },
-  {
     "id": "prod-572",
-    "name": "BRACELET jonc réglable",
+    "name": "Bracelet jonc réglable",
     "slug": "bracelet-jonc-réglable",
     "title": "BRACELET jonc réglable",
     "price": 10,
@@ -10840,7 +10706,7 @@
   },
   {
     "id": "prod-574",
-    "name": "Collier Tibetain en Lapis-lazuli turquoise et corail",
+    "name": "Collier tibetain en lapis-lazuli turquoise et corail",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-et-corail",
     "title": "Collier Tibetain en Lapis-lazuli turquoise et corail",
     "price": 19,
@@ -10859,7 +10725,7 @@
   },
   {
     "id": "prod-575",
-    "name": "CHAINE DE CHEVILLES fine argentée mat doubles mailles papillon",
+    "name": "Chaine de chevilles fine argentée mat doubles mailles papillon",
     "slug": "chaine-de-chevilles-fine-argentée-mat-doubles-mailles-papillon",
     "title": "CHAINE DE CHEVILLES fine argentée mat doubles mailles papillon",
     "price": 8,
@@ -10878,7 +10744,7 @@
   },
   {
     "id": "prod-576",
-    "name": "BRACELET pierres naturelles  agate BLANCHE",
+    "name": "Bracelet pierres naturelles agate blanche",
     "slug": "bracelet-pierres-naturelles-agate-blanche",
     "title": "BRACELET pierres naturelles  agate BLANCHE",
     "price": 12,
@@ -10897,7 +10763,7 @@
   },
   {
     "id": "prod-577",
-    "name": "BRACELET pierres naturelles en lapis-lazuli",
+    "name": "Bracelet pierres naturelles en lapis-lazuli",
     "slug": "bracelet-pierres-naturelles-en-lapis-lazuli",
     "title": "BRACELET pierres naturelles en lapis-lazuli",
     "price": 12,
@@ -10935,7 +10801,7 @@
   },
   {
     "id": "prod-579",
-    "name": "BRACELET agate perle argent",
+    "name": "Bracelet agate perle argent",
     "slug": "bracelet-agate-perle-argent",
     "title": "BRACELET agate perle argent",
     "price": 16,
@@ -10954,7 +10820,7 @@
   },
   {
     "id": "prod-580",
-    "name": "BOUCLES D’OREILLES ARGENT arbre de vie onyx noir",
+    "name": "Boucles d’oreilles argent arbre de vie onyx noir",
     "slug": "boucles-doreilles-argent-arbre-de-vie-onyx-noir",
     "title": "BOUCLES D’OREILLES ARGENT arbre de vie onyx noir",
     "price": 23,
@@ -10992,7 +10858,7 @@
   },
   {
     "id": "prod-582",
-    "name": "collier jade de Birmanie",
+    "name": "Collier jade de birmanie",
     "slug": "collier-jade-de-birmanie",
     "title": "collier jade de Birmanie",
     "price": 25,
@@ -11030,7 +10896,7 @@
   },
   {
     "id": "prod-584",
-    "name": "Bague Argent pierre turquoise",
+    "name": "Bague argent pierre turquoise",
     "slug": "bague-argent-pierre-turquoise",
     "title": "Bague Argent pierre turquoise",
     "price": 11,
@@ -11049,7 +10915,7 @@
   },
   {
     "id": "prod-585",
-    "name": "COLLIER pierres 3mm en moraganite",
+    "name": "Collier pierres 3mm en moraganite",
     "slug": "collier-pierres-3mm-en-moraganite",
     "title": "COLLIER pierres 3mm en moraganite",
     "price": 9,
@@ -11087,7 +10953,7 @@
   },
   {
     "id": "prod-587",
-    "name": "BRACELET INDIEN argenté pierre corail",
+    "name": "Bracelet indien argenté pierre corail",
     "slug": "bracelet-indien-argenté-pierre-corail",
     "title": "BRACELET INDIEN argenté pierre corail",
     "price": 14,
@@ -11106,7 +10972,7 @@
   },
   {
     "id": "prod-588",
-    "name": "Pashmina 100% cachemire  bleu/rouge",
+    "name": "Pashmina 100% cachemire bleu/rouge",
     "slug": "pashmina-100-cachemire-bleurouge",
     "title": "Pashmina 100% cachemire  bleu/rouge",
     "price": 7,
@@ -11125,7 +10991,7 @@
   },
   {
     "id": "prod-589",
-    "name": "bracelet indien fantaisie",
+    "name": "Bracelet indien fantaisie",
     "slug": "bracelet-indien-fantaisie",
     "title": "bracelet indien fantaisie",
     "price": 7,
@@ -11176,7 +11042,7 @@
   },
   {
     "id": "prod-592",
-    "name": "BRACELET pierres  agate bleue cordon réglable",
+    "name": "Bracelet pierres agate bleue cordon réglable",
     "slug": "bracelet-pierres-agate-bleue-cordon-réglable",
     "title": "BRACELET pierres  agate bleue cordon réglable",
     "price": 16,
@@ -11195,7 +11061,7 @@
   },
   {
     "id": "prod-593",
-    "name": "BRACELET JONC argente  avec 1 pierre turquoise",
+    "name": "Bracelet jonc argente avec 1 pierre turquoise",
     "slug": "bracelet-jonc-argente-avec-1-pierre-turquoise",
     "title": "BRACELET JONC argente  avec 1 pierre turquoise",
     "price": 9,
@@ -11214,7 +11080,7 @@
   },
   {
     "id": "prod-594",
-    "name": "BOUCLES D’oreilles ARGENT onyx bleu",
+    "name": "Boucles d’oreilles argent onyx bleu",
     "slug": "boucles-doreilles-argent-onyx-bleu",
     "title": "BOUCLES D’oreilles ARGENT onyx bleu",
     "price": 18,
@@ -11233,7 +11099,7 @@
   },
   {
     "id": "prod-595",
-    "name": "bracelet souple argent fin  fleur de vie",
+    "name": "Bracelet souple argent fin fleur de vie",
     "slug": "bracelet-souple-argent-fin-fleur-de-vie",
     "title": "bracelet souple argent fin  fleur de vie",
     "price": 16,
@@ -11290,7 +11156,7 @@
   },
   {
     "id": "prod-598",
-    "name": "bracelet rigide en laiton grande Onyx noir",
+    "name": "Bracelet rigide en laiton grande onyx noir",
     "slug": "bracelet-rigide-en-laiton-grande-onyx-noir",
     "title": "bracelet rigide en laiton grande Onyx noir",
     "price": 12,
@@ -11328,7 +11194,7 @@
   },
   {
     "id": "prod-600",
-    "name": "BRACELET ARGENT pierre de lune",
+    "name": "Bracelet argent pierre de lune",
     "slug": "bracelet-argent-pierre-de-lune",
     "title": "BRACELET ARGENT pierre de lune",
     "price": 28,
@@ -11347,7 +11213,7 @@
   },
   {
     "id": "prod-601",
-    "name": "BRACELET en  pierres améthyste",
+    "name": "Bracelet en pierres améthyste",
     "slug": "bracelet-en-pierres-améthyste",
     "title": "BRACELET en  pierres améthyste",
     "price": 10,
@@ -11366,7 +11232,7 @@
   },
   {
     "id": "prod-602",
-    "name": "BOUCLES D’oreilles ARGENT grenat",
+    "name": "Boucles d’oreilles argent grenat",
     "slug": "boucles-doreilles-argent-grenat",
     "title": "BOUCLES D’oreilles ARGENT grenat",
     "price": 10,
@@ -11385,7 +11251,7 @@
   },
   {
     "id": "prod-603",
-    "name": "BRACELET pierres agate blanche",
+    "name": "Bracelet pierres agate blanche",
     "slug": "bracelet-pierres-agate-blanche",
     "title": "BRACELET pierres agate blanche",
     "price": 12,
@@ -11423,7 +11289,7 @@
   },
   {
     "id": "prod-605",
-    "name": "CREOLES SPIRALES EN LAITON",
+    "name": "Creoles spirales en laiton",
     "slug": "creoles-spirales-en-laiton",
     "title": "CREOLES SPIRALES EN LAITON",
     "price": 10,
@@ -11442,7 +11308,7 @@
   },
   {
     "id": "prod-606",
-    "name": "BRACELET JONC argente  avec 1 pierre rubis indien",
+    "name": "Bracelet jonc argente avec 1 pierre rubis indien",
     "slug": "bracelet-jonc-argente-avec-1-pierre-rubis-indien",
     "title": "BRACELET JONC argente  avec 1 pierre rubis indien",
     "price": 14,
@@ -11479,27 +11345,8 @@
     "inStock": false
   },
   {
-    "id": "prod-608",
-    "name": "Collier Tibétain avec des petites perles en onyx noir et turquoise",
-    "slug": "collier-tibétain-avec-des-petites-perles-en-onyx-noir-et-turquoise",
-    "title": "Collier Tibétain avec des petites perles en onyx noir et turquoise",
-    "price": 521,
-    "description": "Cesboucles d’oreilles tibétainessont rondes",
-    "category": "‹retour page précédente",
-    "image_url": "/images/products_reconciled/collier-tibétain-avec-des-petites-perles-en-onyx-noir-et-turquoise.jpeg",
-    "image": "/images/products_reconciled/collier-tibétain-avec-des-petites-perles-en-onyx-noir-et-turquoise.jpeg",
-    "isOnSale": true,
-    "isNew": false,
-    "images": [
-      "/images/products_reconciled/collier-tibétain-avec-des-petites-perles-en-onyx-noir-et-turquoise.jpeg"
-    ],
-    "sku": "UGS :COAP0092",
-    "source_url": "https://www.khashika.com/produit/collier-travail-soigne-artisanal-perles-naturelles-turquoise-et-onyx-noir-artisanal-tibetain-et-des-pierres-taillees-collier-ethnique/",
-    "inStock": true
-  },
-  {
     "id": "prod-609",
-    "name": "COLLIER ARGENT Grenat",
+    "name": "Collier argent grenat",
     "slug": "collier-argent-grenat",
     "title": "COLLIER ARGENT Grenat",
     "price": 24,
@@ -11518,7 +11365,7 @@
   },
   {
     "id": "prod-610",
-    "name": "BRACELET pierres naturelles  agate eau nuage",
+    "name": "Bracelet pierres naturelles agate eau nuage",
     "slug": "bracelet-pierres-naturelles-agate-eau-nuage",
     "title": "BRACELET pierres naturelles  agate eau nuage",
     "price": 12,
@@ -11556,7 +11403,7 @@
   },
   {
     "id": "prod-612",
-    "name": "BRACELET INDIEN metal argente pierre SAND STONE",
+    "name": "Bracelet indien metal argente pierre sand stone",
     "slug": "bracelet-indien-metal-argente-pierre-sand-stone",
     "title": "BRACELET INDIEN metal argente pierre SAND STONE",
     "price": 14,
@@ -11575,7 +11422,7 @@
   },
   {
     "id": "prod-613",
-    "name": "BRACELET pierre améthyste",
+    "name": "Bracelet pierre améthyste",
     "slug": "bracelet-pierre-améthyste",
     "title": "BRACELET pierre améthyste",
     "price": 16,
@@ -11613,7 +11460,7 @@
   },
   {
     "id": "prod-615",
-    "name": "BRACELET pierres cornaline",
+    "name": "Bracelet pierres cornaline",
     "slug": "bracelet-pierres-cornaline",
     "title": "BRACELET pierres cornaline",
     "price": 14,
@@ -11651,7 +11498,7 @@
   },
   {
     "id": "prod-617",
-    "name": "CHAINE DE CHEVILLES argentée avec des coeurs",
+    "name": "Chaine de chevilles argentée avec des coeurs",
     "slug": "chaine-de-chevilles-argentée-avec-des-coeurs",
     "title": "CHAINE DE CHEVILLES argentée avec des coeurs",
     "price": 8,
@@ -11689,7 +11536,7 @@
   },
   {
     "id": "prod-619",
-    "name": "Bague Argent ajustable sobre avec une pierre ronde turquoise",
+    "name": "Bague argent ajustable sobre avec une pierre ronde turquoise",
     "slug": "bague-argent-ajustable-sobre-avec-une-pierre-ronde-turquoise",
     "title": "Bague Argent ajustable sobre avec une pierre ronde turquoise",
     "price": 24,
@@ -11708,7 +11555,7 @@
   },
   {
     "id": "prod-620",
-    "name": "POCHETTE EN COTON blanc et noir",
+    "name": "Pochette en coton blanc et noir",
     "slug": "pochette-en-coton-blanc-et-noir",
     "title": "POCHETTE EN COTON blanc et noir",
     "price": 15,
@@ -11727,7 +11574,7 @@
   },
   {
     "id": "prod-621",
-    "name": "grandes Créoles en laiton",
+    "name": "Grandes créoles en laiton",
     "slug": "grandes-créoles-en-laiton",
     "title": "grandes Créoles en laiton",
     "price": 18,
@@ -11746,7 +11593,7 @@
   },
   {
     "id": "prod-622",
-    "name": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE typique",
+    "name": "Boucles d’oreilles argent pierre de lune typique",
     "slug": "boucles-doreilles-argent-pierre-de-lune-typique",
     "title": "BOUCLES D’oreilles ARGENT PIERRE DE LUNE typique",
     "price": 10,
@@ -11784,7 +11631,7 @@
   },
   {
     "id": "prod-624",
-    "name": "BOUCLES D’OREILLES ethniques en  argent",
+    "name": "Boucles d’oreilles ethniques en argent",
     "slug": "boucles-doreilles-ethniques-en-argent",
     "title": "BOUCLES D’OREILLES ethniques en  argent",
     "price": 19,
@@ -11803,7 +11650,7 @@
   },
   {
     "id": "prod-625",
-    "name": "BRACELET pierres naturelles  lapis-lazuli",
+    "name": "Bracelet pierres naturelles lapis-lazuli",
     "slug": "bracelet-pierres-naturelles-lapis-lazuli",
     "title": "BRACELET pierres naturelles  lapis-lazuli",
     "price": 12,
@@ -11822,7 +11669,7 @@
   },
   {
     "id": "prod-626",
-    "name": "Collier Tibetain en Lapis-lazuli Turquoise  corail",
+    "name": "Collier tibetain en lapis-lazuli turquoise corail",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-corail",
     "title": "Collier Tibetain en Lapis-lazuli Turquoise  corail",
     "price": 19,
@@ -11841,7 +11688,7 @@
   },
   {
     "id": "prod-627",
-    "name": "COLLIER ARGENT agate florida",
+    "name": "Collier argent agate florida",
     "slug": "collier-argent-agate-florida",
     "title": "COLLIER ARGENT agate florida",
     "price": 8,
@@ -11879,7 +11726,7 @@
   },
   {
     "id": "prod-629",
-    "name": "Porte-clé népalais rond  argenté  et doré",
+    "name": "Porte-clé népalais rond argenté et doré",
     "slug": "porte-clé-népalais-rond-argenté-et-doré",
     "title": "Porte-clé népalais rond  argenté  et doré",
     "price": 8,
@@ -11898,7 +11745,7 @@
   },
   {
     "id": "prod-630",
-    "name": "COLLIER pierres corail et quartz rose",
+    "name": "Collier pierres corail et quartz rose",
     "slug": "collier-pierres-corail-et-quartz-rose",
     "title": "COLLIER pierres corail et quartz rose",
     "price": 29,
@@ -11953,7 +11800,7 @@
   },
   {
     "id": "prod-633",
-    "name": "collier avec chainette dorée et aqua-marine",
+    "name": "Collier avec chainette dorée et aqua-marine",
     "slug": "collier-avec-chainette-dorée-et-aqua-marine",
     "title": "collier avec chainette dorée et aqua-marine",
     "price": 8,
@@ -11972,7 +11819,7 @@
   },
   {
     "id": "prod-634",
-    "name": "Collier Mala tibétain pierres naturelles agate et howlite de 108 perles",
+    "name": "Collier mala tibétain pierres naturelles agate et howlite de 108 perles",
     "slug": "collier-mala-tibétain-pierres-naturelles-agate-et-howlite-de-108-perles",
     "title": "Collier Mala tibétain pierres naturelles agate et howlite de 108 perles",
     "price": 38,
@@ -11991,7 +11838,7 @@
   },
   {
     "id": "prod-635",
-    "name": "CHAINE DE CHEVILLES ARGENT pierres de couleur",
+    "name": "Chaine de chevilles argent pierres de couleur",
     "slug": "chaine-de-chevilles-argent-pierres-de-couleur",
     "title": "CHAINE DE CHEVILLES ARGENT pierres de couleur",
     "price": 30,
@@ -12029,7 +11876,7 @@
   },
   {
     "id": "prod-637",
-    "name": "BOUCLES D’OREILLES ARGENT",
+    "name": "Boucles d’oreilles argent",
     "slug": "boucles-doreilles-argent",
     "title": "BOUCLES D’OREILLES ARGENT",
     "price": 29,
@@ -12048,7 +11895,7 @@
   },
   {
     "id": "prod-638",
-    "name": "BRACELET ARGENT AMETHYSTE",
+    "name": "Bracelet argent amethyste",
     "slug": "bracelet-argent-amethyste",
     "title": "BRACELET ARGENT AMETHYSTE",
     "price": 28,
@@ -12067,7 +11914,7 @@
   },
   {
     "id": "prod-639",
-    "name": "BRACELET ARGENT ONYX NOIR",
+    "name": "Bracelet argent onyx noir",
     "slug": "bracelet-argent-onyx-noir",
     "title": "BRACELET ARGENT ONYX NOIR",
     "price": 34,
@@ -12086,7 +11933,7 @@
   },
   {
     "id": "prod-640",
-    "name": "BRACELET pierres naturelles  apatite bleu",
+    "name": "Bracelet pierres naturelles apatite bleu",
     "slug": "bracelet-pierres-naturelles-apatite-bleu",
     "title": "BRACELET pierres naturelles  apatite bleu",
     "price": 12,
@@ -12105,7 +11952,7 @@
   },
   {
     "id": "prod-641",
-    "name": "Bracelet doré en pierre de Jade",
+    "name": "Bracelet doré en pierre de jade",
     "slug": "bracelet-doré-en-pierre-de-jade",
     "title": "Bracelet doré en pierre de Jade",
     "price": 18,
@@ -12162,7 +12009,7 @@
   },
   {
     "id": "prod-644",
-    "name": "bracelet fin et rigide en laiton",
+    "name": "Bracelet fin et rigide en laiton",
     "slug": "bracelet-fin-et-rigide-en-laiton",
     "title": "bracelet fin et rigide en laiton",
     "price": 10,
@@ -12200,7 +12047,7 @@
   },
   {
     "id": "prod-646",
-    "name": "bracelet souple argent pierre lapis-lazuli",
+    "name": "Bracelet souple argent pierre lapis-lazuli",
     "slug": "bracelet-souple-argent-pierre-lapis-lazuli",
     "title": "bracelet souple argent pierre lapis-lazuli",
     "price": 29,
@@ -12219,7 +12066,7 @@
   },
   {
     "id": "prod-647",
-    "name": "Pashmina SOIE/CACHEMIRE rouge/mauve avec des motifs",
+    "name": "Pashmina soie/cachemire rouge/mauve avec des motifs",
     "slug": "pashmina-soiecachemire-rougemauve-avec-des-motifs",
     "title": "Pashmina SOIE/CACHEMIRE rouge/mauve avec des motifs",
     "price": 32,
@@ -12257,7 +12104,7 @@
   },
   {
     "id": "prod-649",
-    "name": "PENDENTIF ARGENT turquoise",
+    "name": "Pendentif argent turquoise",
     "slug": "pendentif-argent-turquoise",
     "title": "PENDENTIF ARGENT turquoise",
     "price": 1,
@@ -12276,7 +12123,7 @@
   },
   {
     "id": "prod-650",
-    "name": "CHAINE DE CHEVILLES ARGENT pampilles perles de couleur",
+    "name": "Chaine de chevilles argent pampilles perles de couleur",
     "slug": "chaine-de-chevilles-argent-pampilles-perles-de-couleur",
     "title": "CHAINE DE CHEVILLES ARGENT pampilles perles de couleur",
     "price": 32,
@@ -12295,7 +12142,7 @@
   },
   {
     "id": "prod-651",
-    "name": "BRACELET JONC argente  avec 2 pierres vertes en agate",
+    "name": "Bracelet jonc argente avec 2 pierres vertes en agate",
     "slug": "bracelet-jonc-argente-avec-2-pierres-vertes-en-agate",
     "title": "BRACELET JONC argente  avec 2 pierres vertes en agate",
     "price": 18,
@@ -12314,7 +12161,7 @@
   },
   {
     "id": "prod-652",
-    "name": "bracelet pierre AGATE JAUNE sur macramé",
+    "name": "Bracelet pierre agate jaune sur macramé",
     "slug": "bracelet-pierre-agate-jaune-sur-macramé",
     "title": "bracelet pierre AGATE JAUNE sur macramé",
     "price": 18,
@@ -12333,7 +12180,7 @@
   },
   {
     "id": "prod-653",
-    "name": "Collier Tibetain en Turquoise  et  corail et une perle taillée",
+    "name": "Collier tibetain en turquoise et corail et une perle taillée",
     "slug": "collier-tibetain-en-turquoise-et-corail-et-une-perle-taillée",
     "title": "Collier Tibetain en Turquoise  et  corail et une perle taillée",
     "price": 19,
@@ -12352,7 +12199,7 @@
   },
   {
     "id": "prod-654",
-    "name": "BRACELET pierres naturelles en onyx noir 7 chakras",
+    "name": "Bracelet pierres naturelles en onyx noir 7 chakras",
     "slug": "bracelet-pierres-naturelles-en-onyx-noir-7-chakras",
     "title": "BRACELET pierres naturelles en onyx noir 7 chakras",
     "price": 16,
@@ -12371,7 +12218,7 @@
   },
   {
     "id": "prod-655",
-    "name": "BRACELET JONC argente  avec 1 pierre de lune",
+    "name": "Bracelet jonc argente avec 1 pierre de lune",
     "slug": "bracelet-jonc-argente-avec-1-pierre-de-lune",
     "title": "BRACELET JONC argente  avec 1 pierre de lune",
     "price": 14,
@@ -12390,7 +12237,7 @@
   },
   {
     "id": "prod-656",
-    "name": "Collier  tibétain pierre naturelle fantaisie",
+    "name": "Collier tibétain pierre naturelle fantaisie",
     "slug": "collier-tibétain-pierre-naturelle-fantaisie",
     "title": "Collier  tibétain pierre naturelle fantaisie",
     "price": 16,
@@ -12409,7 +12256,7 @@
   },
   {
     "id": "prod-657",
-    "name": "BRACELET JONC argente  avec  2 pierres en améthyste",
+    "name": "Bracelet jonc argente avec 2 pierres en améthyste",
     "slug": "bracelet-jonc-argente-avec-2-pierres-en-améthyste",
     "title": "BRACELET JONC argente  avec  2 pierres en améthyste",
     "price": 14,
@@ -12428,7 +12275,7 @@
   },
   {
     "id": "prod-658",
-    "name": "Collier Mala tibétain turquoise 108 perles",
+    "name": "Collier mala tibétain turquoise 108 perles",
     "slug": "collier-mala-tibétain-turquoise-108-perles",
     "title": "Collier Mala tibétain turquoise 108 perles",
     "price": 36,
@@ -12447,7 +12294,7 @@
   },
   {
     "id": "prod-659",
-    "name": "collier pierres naturelles GRENAT",
+    "name": "Collier pierres naturelles grenat",
     "slug": "collier-pierres-naturelles-grenat",
     "title": "collier pierres naturelles GRENAT",
     "price": 10,
@@ -12485,7 +12332,7 @@
   },
   {
     "id": "prod-661",
-    "name": "BRACELET pierre agate noir",
+    "name": "Bracelet pierre agate noir",
     "slug": "bracelet-pierre-agate-noir",
     "title": "BRACELET pierre agate noir",
     "price": 14,
@@ -12504,7 +12351,7 @@
   },
   {
     "id": "prod-662",
-    "name": "grand PENDENTIF ARGENT onyx noir avec cordon cuir noir",
+    "name": "Grand pendentif argent onyx noir avec cordon cuir noir",
     "slug": "grand-pendentif-argent-onyx-noir-avec-cordon-cuir-noir",
     "title": "grand PENDENTIF ARGENT onyx noir avec cordon cuir noir",
     "price": 30,
@@ -12523,7 +12370,7 @@
   },
   {
     "id": "prod-663",
-    "name": "Collier Tibetain en Turquoise  et  lapis-lazuli et une perle taillée",
+    "name": "Collier tibetain en turquoise et lapis-lazuli et une perle taillée",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli-et-une-perle-taillée",
     "title": "Collier Tibetain en Turquoise  et  lapis-lazuli et une perle taillée",
     "price": 19,
@@ -12542,7 +12389,7 @@
   },
   {
     "id": "prod-664",
-    "name": "BOUCLES D’OREILLES ARGENT améthyste",
+    "name": "Boucles d’oreilles argent améthyste",
     "slug": "boucles-doreilles-argent-améthyste",
     "title": "BOUCLES D’OREILLES ARGENT améthyste",
     "price": 23,
@@ -12561,7 +12408,7 @@
   },
   {
     "id": "prod-665",
-    "name": "BRACELET ARGENT onyx noir",
+    "name": "Bracelet argent onyx noir",
     "slug": "bracelet-argent-onyx-noir",
     "title": "BRACELET ARGENT onyx noir",
     "price": 34,
@@ -12580,7 +12427,7 @@
   },
   {
     "id": "prod-666",
-    "name": "PASHMINA cachemire ET SOIE noir",
+    "name": "Pashmina cachemire et soie noir",
     "slug": "pashmina-cachemire-et-soie-noir",
     "title": "PASHMINA cachemire ET SOIE noir",
     "price": 15,
@@ -12599,7 +12446,7 @@
   },
   {
     "id": "prod-667",
-    "name": "pendentif ARGENT ELEPHANT avec son cordon en cuir noir",
+    "name": "Pendentif argent elephant avec son cordon en cuir noir",
     "slug": "pendentif-argent-elephant-avec-son-cordon-en-cuir-noir",
     "title": "pendentif ARGENT ELEPHANT avec son cordon en cuir noir",
     "price": 18,
@@ -12618,7 +12465,7 @@
   },
   {
     "id": "prod-668",
-    "name": "BOUCLES D’OREILLES ARGENT onyx noir",
+    "name": "Boucles d’oreilles argent onyx noir",
     "slug": "boucles-doreilles-argent-onyx-noir",
     "title": "BOUCLES D’OREILLES ARGENT onyx noir",
     "price": 16,
@@ -12637,7 +12484,7 @@
   },
   {
     "id": "prod-669",
-    "name": "Bague Argent CALCEDOINE  ajustable",
+    "name": "Bague argent calcedoine ajustable",
     "slug": "bague-argent-calcedoine-ajustable",
     "title": "Bague Argent CALCEDOINE  ajustable",
     "price": 24,
@@ -12656,7 +12503,7 @@
   },
   {
     "id": "prod-670",
-    "name": "BRACELET pierres naturelles en AMAZONITE",
+    "name": "Bracelet pierres naturelles en amazonite",
     "slug": "bracelet-pierres-naturelles-en-amazonite",
     "title": "BRACELET pierres naturelles en AMAZONITE",
     "price": 12,
@@ -12675,7 +12522,7 @@
   },
   {
     "id": "prod-671",
-    "name": "BRACELET pierres naturelles  agate vert/violet nuancé",
+    "name": "Bracelet pierres naturelles agate vert/violet nuancé",
     "slug": "bracelet-pierres-naturelles-agate-vertviolet-nuancé",
     "title": "BRACELET pierres naturelles  agate vert/violet nuancé",
     "price": 12,
@@ -12694,7 +12541,7 @@
   },
   {
     "id": "prod-672",
-    "name": "bracelet pierre en turquoise avec des perles argent",
+    "name": "Bracelet pierre en turquoise avec des perles argent",
     "slug": "bracelet-pierre-en-turquoise-avec-des-perles-argent",
     "title": "bracelet pierre en turquoise avec des perles argent",
     "price": 12,
@@ -12713,7 +12560,7 @@
   },
   {
     "id": "prod-673",
-    "name": "CHAINE EN ARGENT avec 8 perles argent",
+    "name": "Chaine en argent avec 8 perles argent",
     "slug": "chaine-en-argent-avec-8-perles-argent",
     "title": "CHAINE EN ARGENT avec 8 perles argent",
     "price": 24,
@@ -12732,7 +12579,7 @@
   },
   {
     "id": "prod-674",
-    "name": "BOucles d’oreilles triangle et petite  pierre  onyx noir",
+    "name": "Boucles d’oreilles triangle et petite pierre onyx noir",
     "slug": "boucles-doreilles-triangle-et-petite-pierre-onyx-noir",
     "title": "BOucles d’oreilles triangle et petite  pierre  onyx noir",
     "price": 18,
@@ -12751,7 +12598,7 @@
   },
   {
     "id": "prod-675",
-    "name": "SAC SOIE ET COTON  pratique usage facile",
+    "name": "Sac soie et coton pratique usage facile",
     "slug": "sac-soie-et-coton-pratique-usage-facile",
     "title": "SAC SOIE ET COTON  pratique usage facile",
     "price": 15,
@@ -12827,7 +12674,7 @@
   },
   {
     "id": "prod-679",
-    "name": "BRACELET pierre AIGUE MARINE 7 chakras",
+    "name": "Bracelet pierre aigue marine 7 chakras",
     "slug": "bracelet-pierre-aigue-marine-7-chakras",
     "title": "BRACELET pierre AIGUE MARINE 7 chakras",
     "price": 16,
@@ -12865,7 +12712,7 @@
   },
   {
     "id": "prod-681",
-    "name": "Bague ajustable Argent et lapis-lazuli",
+    "name": "Bague ajustable argent et lapis-lazuli",
     "slug": "bague-ajustable-argent-et-lapis-lazuli",
     "title": "Bague ajustable Argent et lapis-lazuli",
     "price": 24,
@@ -12884,7 +12731,7 @@
   },
   {
     "id": "prod-682",
-    "name": "bracelet rigide argenté",
+    "name": "Bracelet rigide argenté",
     "slug": "bracelet-rigide-argenté",
     "title": "bracelet rigide argenté",
     "price": 9,
@@ -12903,7 +12750,7 @@
   },
   {
     "id": "prod-683",
-    "name": "COLLIER pierres Améthyste",
+    "name": "Collier pierres améthyste",
     "slug": "collier-pierres-améthyste",
     "title": "COLLIER pierres Améthyste",
     "price": 20,
@@ -12922,7 +12769,7 @@
   },
   {
     "id": "prod-684",
-    "name": "BRACELET pierres naturelles en quartz",
+    "name": "Bracelet pierres naturelles en quartz",
     "slug": "bracelet-pierres-naturelles-en-quartz",
     "title": "BRACELET pierres naturelles en quartz",
     "price": 12,
@@ -12941,7 +12788,7 @@
   },
   {
     "id": "prod-685",
-    "name": "BRACELET pierres améthyste et pierre de lune",
+    "name": "Bracelet pierres améthyste et pierre de lune",
     "slug": "bracelet-pierres-améthyste-et-pierre-de-lune",
     "title": "BRACELET pierres améthyste et pierre de lune",
     "price": 12,
@@ -12960,7 +12807,7 @@
   },
   {
     "id": "prod-686",
-    "name": "BRACELET pierres naturelles agate MULTICOLOR",
+    "name": "Bracelet pierres naturelles agate multicolor",
     "slug": "bracelet-pierres-naturelles-agate-multicolor",
     "title": "BRACELET pierres naturelles agate MULTICOLOR",
     "price": 12,
@@ -12998,7 +12845,7 @@
   },
   {
     "id": "prod-688",
-    "name": "Bague Argent  MALACHIQUE",
+    "name": "Bague argent malachique",
     "slug": "bague-argent-malachique",
     "title": "Bague Argent  MALACHIQUE",
     "price": 20,
@@ -13017,7 +12864,7 @@
   },
   {
     "id": "prod-689",
-    "name": "BOUCLES D’OREILLES ARGENT filigrane en pierre de lune",
+    "name": "Boucles d’oreilles argent filigrane en pierre de lune",
     "slug": "boucles-doreilles-argent-filigrane-en-pierre-de-lune",
     "title": "BOUCLES D’OREILLES ARGENT filigrane en pierre de lune",
     "price": 32,
@@ -13036,7 +12883,7 @@
   },
   {
     "id": "prod-690",
-    "name": "COLLIER ARGENT Grenat",
+    "name": "Collier argent grenat",
     "slug": "collier-argent-grenat",
     "title": "COLLIER ARGENT Grenat",
     "price": 24,
@@ -13055,7 +12902,7 @@
   },
   {
     "id": "prod-691",
-    "name": "BRACELET pierres agate orange",
+    "name": "Bracelet pierres agate orange",
     "slug": "bracelet-pierres-agate-orange",
     "title": "BRACELET pierres agate orange",
     "price": 12,
@@ -13093,7 +12940,7 @@
   },
   {
     "id": "prod-693",
-    "name": "BOUCLES D’OREILLES rondes EN ARGENT",
+    "name": "Boucles d’oreilles rondes en argent",
     "slug": "boucles-doreilles-rondes-en-argent",
     "title": "BOUCLES D’OREILLES rondes EN ARGENT",
     "price": 14,
@@ -13112,7 +12959,7 @@
   },
   {
     "id": "prod-694",
-    "name": "BRACELET pierres lapis-lazuli",
+    "name": "Bracelet pierres lapis-lazuli",
     "slug": "bracelet-pierres-lapis-lazuli",
     "title": "BRACELET pierres lapis-lazuli",
     "price": 12,
@@ -13131,7 +12978,7 @@
   },
   {
     "id": "prod-695",
-    "name": "Bracelet 1 rang pierres Larimar sur fil noir",
+    "name": "Bracelet 1 rang pierres larimar sur fil noir",
     "slug": "bracelet-1-rang-pierres-larimar-sur-fil-noir",
     "title": "Bracelet 1 rang pierres Larimar sur fil noir",
     "price": 18,
@@ -13150,7 +12997,7 @@
   },
   {
     "id": "prod-696",
-    "name": "BRACELET ARGENT AMETHYSTE",
+    "name": "Bracelet argent amethyste",
     "slug": "bracelet-argent-amethyste",
     "title": "BRACELET ARGENT AMETHYSTE",
     "price": 28,
@@ -13169,7 +13016,7 @@
   },
   {
     "id": "prod-697",
-    "name": "BRACELET pierre oeil du tigre  et tête de Bouddha",
+    "name": "Bracelet pierre oeil du tigre et tête de bouddha",
     "slug": "bracelet-pierre-oeil-du-tigre-et-tête-de-bouddha",
     "title": "BRACELET pierre oeil du tigre  et tête de Bouddha",
     "price": 18,
@@ -13188,7 +13035,7 @@
   },
   {
     "id": "prod-698",
-    "name": "CREOLES  EN LAITON et pierre turquoise",
+    "name": "Creoles en laiton et pierre turquoise",
     "slug": "creoles-en-laiton-et-pierre-turquoise",
     "title": "CREOLES  EN LAITON et pierre turquoise",
     "price": 17,
@@ -13226,7 +13073,7 @@
   },
   {
     "id": "prod-700",
-    "name": "Boucles d’oreille tibétaines rondes  lapis-lazuli",
+    "name": "Boucles d’oreille tibétaines rondes lapis-lazuli",
     "slug": "boucles-doreille-tibétaines-rondes-lapis-lazuli",
     "title": "Boucles d’oreille tibétaines rondes  lapis-lazuli",
     "price": 10,
@@ -13245,7 +13092,7 @@
   },
   {
     "id": "prod-701",
-    "name": "BRACELET pierres obsidienne",
+    "name": "Bracelet pierres obsidienne",
     "slug": "bracelet-pierres-obsidienne",
     "title": "BRACELET pierres obsidienne",
     "price": 12,
@@ -13264,7 +13111,7 @@
   },
   {
     "id": "prod-702",
-    "name": "Bague ajustable Argent Pierre de lune",
+    "name": "Bague ajustable argent pierre de lune",
     "slug": "bague-ajustable-argent-pierre-de-lune",
     "title": "Bague ajustable Argent Pierre de lune",
     "price": 19,
@@ -13283,7 +13130,7 @@
   },
   {
     "id": "prod-703",
-    "name": "BRACELET ARGENT labradorite",
+    "name": "Bracelet argent labradorite",
     "slug": "bracelet-argent-labradorite",
     "title": "BRACELET ARGENT labradorite",
     "price": 38,
@@ -13302,7 +13149,7 @@
   },
   {
     "id": "prod-704",
-    "name": "CHAINE DE CHEVILLES ARGENT",
+    "name": "Chaine de chevilles argent",
     "slug": "chaine-de-chevilles-argent",
     "title": "CHAINE DE CHEVILLES ARGENT",
     "price": 26,
@@ -13340,7 +13187,7 @@
   },
   {
     "id": "prod-706",
-    "name": "Boucles d’oreilles argent en Pierre de Lune",
+    "name": "Boucles d’oreilles argent en pierre de lune",
     "slug": "boucles-doreilles-argent-en-pierre-de-lune",
     "title": "Boucles d’oreilles argent en Pierre de Lune",
     "price": 28,
@@ -13359,7 +13206,7 @@
   },
   {
     "id": "prod-707",
-    "name": "COLLIER pierres Agate blanc",
+    "name": "Collier pierres agate blanc",
     "slug": "collier-pierres-agate-blanc",
     "title": "COLLIER pierres Agate blanc",
     "price": 20,
@@ -13397,7 +13244,7 @@
   },
   {
     "id": "prod-709",
-    "name": "BRACELET pierres Péridot",
+    "name": "Bracelet pierres péridot",
     "slug": "bracelet-pierres-péridot",
     "title": "BRACELET pierres Péridot",
     "price": 5,
@@ -13416,7 +13263,7 @@
   },
   {
     "id": "prod-710",
-    "name": "PENDENTIF ARGENT améthyste",
+    "name": "Pendentif argent améthyste",
     "slug": "pendentif-argent-améthyste",
     "title": "PENDENTIF ARGENT améthyste",
     "price": 30,
@@ -13435,7 +13282,7 @@
   },
   {
     "id": "prod-711",
-    "name": "BOUCLES D’oreilles labradorite",
+    "name": "Boucles d’oreilles labradorite",
     "slug": "boucles-doreilles-labradorite",
     "title": "BOUCLES D’oreilles labradorite",
     "price": 20,
@@ -13511,7 +13358,7 @@
   },
   {
     "id": "prod-715",
-    "name": "Collier Tibetain en  pierres de  corail  et Lapis-lazuli",
+    "name": "Collier tibetain en pierres de corail et lapis-lazuli",
     "slug": "collier-tibetain-en-pierres-de-corail-et-lapis-lazuli",
     "title": "Collier Tibetain en  pierres de  corail  et Lapis-lazuli",
     "price": 19,
@@ -13530,7 +13377,7 @@
   },
   {
     "id": "prod-716",
-    "name": "Collier Tibetain en  Turquoise  et  corail avec un pendentif tibétain",
+    "name": "Collier tibetain en turquoise et corail avec un pendentif tibétain",
     "slug": "collier-tibetain-en-turquoise-et-corail-avec-un-pendentif-tibétain",
     "title": "Collier Tibetain en  Turquoise  et  corail avec un pendentif tibétain",
     "price": 29,
@@ -13549,7 +13396,7 @@
   },
   {
     "id": "prod-717",
-    "name": "Boucles d’oreilles argent Aigue Marine",
+    "name": "Boucles d’oreilles argent aigue marine",
     "slug": "boucles-doreilles-argent-aigue-marine",
     "title": "Boucles d’oreilles argent Aigue Marine",
     "price": 22,
@@ -13568,7 +13415,7 @@
   },
   {
     "id": "prod-718",
-    "name": "CHAINE DE CHEVILLES argentée perles noire et turquoise",
+    "name": "Chaine de chevilles argentée perles noire et turquoise",
     "slug": "chaine-de-chevilles-argentée-perles-noire-et-turquoise",
     "title": "CHAINE DE CHEVILLES argentée perles noire et turquoise",
     "price": 8,
@@ -13587,7 +13434,7 @@
   },
   {
     "id": "prod-719",
-    "name": "PENDENTIF ARGENT « AUM » sYMBOLE indien",
+    "name": "Pendentif argent « aum » symbole indien",
     "slug": "pendentif-argent-aum-symbole-indien",
     "title": "PENDENTIF ARGENT « AUM » sYMBOLE indien",
     "price": 10,
@@ -13606,7 +13453,7 @@
   },
   {
     "id": "prod-720",
-    "name": "BRACELET pierre lapis-lazuli AVEC BRELOQUE",
+    "name": "Bracelet pierre lapis-lazuli avec breloque",
     "slug": "bracelet-pierre-lapis-lazuli-avec-breloque",
     "title": "BRACELET pierre lapis-lazuli AVEC BRELOQUE",
     "price": 18,
@@ -13644,7 +13491,7 @@
   },
   {
     "id": "prod-722",
-    "name": "BRACELET pierres de lave et 7 chakras",
+    "name": "Bracelet pierres de lave et 7 chakras",
     "slug": "bracelet-pierres-de-lave-et-7-chakras",
     "title": "BRACELET pierres de lave et 7 chakras",
     "price": 18,
@@ -13663,7 +13510,7 @@
   },
   {
     "id": "prod-723",
-    "name": "BRACELET ARGENT pierre de lune",
+    "name": "Bracelet argent pierre de lune",
     "slug": "bracelet-argent-pierre-de-lune",
     "title": "BRACELET ARGENT pierre de lune",
     "price": 28,
@@ -13682,7 +13529,7 @@
   },
   {
     "id": "prod-724",
-    "name": "bracelet  jonc en plaqué argent avec deux rubis indien.",
+    "name": "Bracelet jonc en plaqué argent avec deux rubis indien.",
     "slug": "bracelet-jonc-en-plaqué-argent-avec-deux-rubis-indien",
     "title": "bracelet  jonc en plaqué argent avec deux rubis indien.",
     "price": 14,
@@ -13701,7 +13548,7 @@
   },
   {
     "id": "prod-725",
-    "name": "BRACELET pierres agate brun cordon réglable",
+    "name": "Bracelet pierres agate brun cordon réglable",
     "slug": "bracelet-pierres-agate-brun-cordon-réglable",
     "title": "BRACELET pierres agate brun cordon réglable",
     "price": 16,
@@ -13720,7 +13567,7 @@
   },
   {
     "id": "prod-726",
-    "name": "BRACELET en  pierres onyx noir et devel eye",
+    "name": "Bracelet en pierres onyx noir et devel eye",
     "slug": "bracelet-en-pierres-onyx-noir-et-devel-eye",
     "title": "BRACELET en  pierres onyx noir et devel eye",
     "price": 12,
@@ -13739,7 +13586,7 @@
   },
   {
     "id": "prod-727",
-    "name": "BRACELET ARGENT 10 pierres ovales en pierre de lune",
+    "name": "Bracelet argent 10 pierres ovales en pierre de lune",
     "slug": "bracelet-argent-10-pierres-ovales-en-pierre-de-lune",
     "title": "BRACELET ARGENT 10 pierres ovales en pierre de lune",
     "price": 30,

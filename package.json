@@ -25,6 +25,8 @@
     "extract-prices": "tsx scripts/extract-prices.ts",
     "reformat-images": "tsx scripts/reformat-images.ts",
     "fix": "lsof -ti:3000 | xargs kill -9 || true; rm -rf .next; npm run dev",
+    "fix:clean": "pkill -f next || true; rm -rf .next; npm run dev",
+    "fix:clean:zsh": "echo 'alias fix=\"npm run fix\"' >> ~/.zshrc && source ~/.zshrc",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed"

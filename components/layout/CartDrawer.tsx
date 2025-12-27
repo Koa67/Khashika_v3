@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 import { X, Trash2, ShoppingBag } from 'lucide-react';
 import { Link } from '@/navigation';
@@ -41,7 +41,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
           <img 
             src={mainImage} 
             alt={product.name || 'Produit'} 
-            className="w-24 h-24 object-cover rounded-lg bg-gray-100"
+            className="w-24 h-24 object-cover rounded-none bg-gray-100"
           />
         </div>
       )}
@@ -58,56 +58,58 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
         </div>
         
         <div className="flex items-end justify-between mt-auto">
-          <div>
-            <p className="text-[#2596be] font-semibold">
-              {(price * quantity).toFixed(2)}€
-            </p>
-            <p className="text-xs text-gray-600">
-              {price.toFixed(2)}€ x {quantity}
-            </p>
+          <div className="flex items-center gap-3">
+            {/* Sélecteur quantité à GAUCHE */}
+            <div className="flex items-center gap-1 bg-[#D4AF37]/10 rounded-none p-1">
+              <button 
+                onClick={() => {
+                  if (quantity > 1) {
+                    onUpdateQuantity?.(product.id, quantity - 1);
+                  }
+                }}
+                className="w-6 h-6 flex items-center justify-center hover:bg-[#D4AF37]/20 rounded-none text-sm"
+                aria-label="Diminuer"
+              >
+                −
+              </button>
+              <span className="w-6 text-center text-sm font-medium">
+                {quantity}
+              </span>
+              <button 
+                onClick={() => onUpdateQuantity?.(product.id, quantity + 1)}
+                className="w-6 h-6 flex items-center justify-center hover:bg-[#D4AF37]/20 rounded-none text-sm"
+                aria-label="Augmenter"
+              >
+                +
+              </button>
+            </div>
+            {/* Prix après */}
+            <div>
+              <p className="text-[#2596be] font-semibold">
+                {(price * quantity).toFixed(2)}€
+              </p>
+              <p className="text-xs text-gray-600">
+                {price.toFixed(2)}€ x {quantity}
+              </p>
+            </div>
           </div>
-          
-          {/* Quantity Controls */}
-          <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
-            <button 
-              onClick={() => {
-                if (quantity > 1) {
-                  onUpdateQuantity?.(product.id, quantity - 1);
-                }
-              }}
-              className="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded text-sm"
-              aria-label="Diminuer"
-            >
-              −
-            </button>
-            <span className="w-6 text-center text-sm font-medium">
-              {quantity}
-            </span>
-            <button 
-              onClick={() => onUpdateQuantity?.(product.id, quantity + 1)}
-              className="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded text-sm"
-              aria-label="Augmenter"
-            >
-              +
-            </button>
-          </div>
+          {/* Poubelle à droite, taille réduite */}
+          <button
+            onClick={() => onRemove?.(product.id)}
+            className="p-2 text-gray-400 hover:text-red-500 transition-colors rounded-none hover:bg-red-50"
+            aria-label="Supprimer"
+          >
+            <Trash2 className="w-4 h-4" />
+          </button>
         </div>
       </div>
-
-      {/* Remove Button */}
-      <button
-        onClick={() => onRemove?.(product.id)}
-        className="text-gray-400 hover:text-red-500 transition-colors p-1 self-start"
-        aria-label="Supprimer"
-      >
-        <Trash2 className="w-5 h-5" />
-      </button>
     </div>
   );
 }
 
 export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const context = useCart();
+  const [showConfirmClear, setShowConfirmClear] = useState(false);
   
   if (!context) {
     return null;
@@ -116,8 +118,15 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { items = [], removeItem, updateQuantity, clearCart, getTotal } = context;
   const total = getTotal();
 
+  const handleClearCart = () => {
+    clearCart?.();
+    setShowConfirmClear(false);
+    onClose();
+  };
+
   return (
-    <Transition show={isOpen} as={Fragment}>
+    <>
+      <Transition show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-[200]" onClose={onClose}>
         {/* OVERLAY SOMBRE */}
         <Transition.Child
@@ -212,22 +221,19 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                         <Link 
                           href="/checkout"
                           onClick={onClose}
-                          className="block w-full bg-[#2596be] text-white py-3 rounded-lg hover:opacity-90 transition font-medium text-center"
+                          className="block w-full bg-[#2596be] text-white py-3 rounded-none hover:opacity-90 transition font-medium text-center"
                         >
                           Procéder au paiement
                         </Link>
                         <button
                           onClick={onClose}
-                          className="w-full border-2 border-[#D4AF37] text-gray-900 py-2 rounded-lg hover:bg-[#F5F5F5] transition font-medium"
+                          className="w-full border-2 border-[#D4AF37] text-gray-900 py-2 rounded-none hover:bg-[#D4AF37]/10 transition font-medium"
                         >
                           Continuer le shopping
                         </button>
                         <button
-                          onClick={() => {
-                            clearCart?.();
-                            onClose();
-                          }}
-                          className="w-full text-red-600 py-2 text-sm hover:bg-red-50 transition rounded-lg font-medium"
+                          onClick={() => setShowConfirmClear(true)}
+                          className="w-full text-red-600 py-2 text-sm hover:bg-red-50 transition rounded-none font-medium"
                         >
                           Vider le panier
                         </button>
@@ -241,5 +247,60 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
         </div>
       </Dialog>
     </Transition>
+
+    {/* Confirmation Dialog */}
+    <Transition show={showConfirmClear} as={Fragment}>
+      <Dialog as="div" className="relative z-[300]" onClose={() => setShowConfirmClear(false)}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black/50" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-none bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Title className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                  ⚠️ Vider le panier
+                </Dialog.Title>
+                <p className="text-sm text-gray-500 mb-6">
+                  Êtes-vous sûr de vouloir vider votre panier ? Cette action est irréversible.
+                </p>
+                <div className="flex gap-3 justify-end">
+                  <button
+                    onClick={() => setShowConfirmClear(false)}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-none hover:bg-gray-200 transition-colors"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    onClick={handleClearCart}
+                    className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-none hover:bg-red-700 transition-colors"
+                  >
+                    Vider le panier
+                  </button>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition>
+    </>
   );
 }

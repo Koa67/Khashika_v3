@@ -81,7 +81,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <div className="bg-[#f4f1eb] min-h-screen mt-24">
+    <div className="bg-[#FDFBF7] min-h-screen mt-24">
       <div className="max-w-[1440px] mx-auto px-6 py-12">
         {/* Layout Split Screen: 60% Images / 40% Info (Desktop) */}
         <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 lg:gap-24 mb-12">

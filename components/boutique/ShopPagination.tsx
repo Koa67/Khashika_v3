@@ -60,7 +60,7 @@ export default function ShopPagination({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center gap-1 px-3 py-2 rounded-lg border border-foreground/20 hover:border-primary disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#D4AF37]/30 bg-[#FDFBF7] hover:border-[#D4AF37] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
         aria-label="Page précédente"
       >
         <ChevronLeft className="w-4 h-4" />
@@ -74,10 +74,10 @@ export default function ShopPagination({
             <button
               key={index}
               onClick={() => onPageChange(page)}
-              className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+              className={`w-10 h-10 rounded-none text-sm font-medium transition-colors border ${
                 page === currentPage
-                  ? 'bg-primary text-white'
-                  : 'hover:bg-foreground/10'
+                  ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
+                  : 'bg-[#FDFBF7] border-[#D4AF37]/30 hover:border-[#D4AF37]'
               }`}
               aria-label={`Page ${page}`}
               aria-current={page === currentPage ? 'page' : undefined}
@@ -96,7 +96,7 @@ export default function ShopPagination({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center gap-1 px-3 py-2 rounded-lg border border-foreground/20 hover:border-primary disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#D4AF37]/30 bg-[#FDFBF7] hover:border-[#D4AF37] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
         aria-label="Page suivante"
       >
         <span className="hidden sm:inline text-sm">Suivant</span>

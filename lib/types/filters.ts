@@ -14,6 +14,8 @@ export interface FilterState {
   occasions: string[];
   colors: string[];
   origins: string[];
+  types: string[];
+  accessories: string[];
   availability: {
     inStock: boolean;
     newArrivals: boolean;
@@ -23,7 +25,7 @@ export interface FilterState {
 }
 
 export const INITIAL_FILTERS: FilterState = {
-  priceRange: [0, 500],
+  priceRange: [1, 50],
   categories: [],
   materials: [],
   stones: [],
@@ -31,6 +33,8 @@ export const INITIAL_FILTERS: FilterState = {
   occasions: [],
   colors: [],
   origins: [],
+  types: [],
+  accessories: [],
   availability: {
     inStock: false,
     newArrivals: false,
@@ -41,6 +45,30 @@ export const INITIAL_FILTERS: FilterState = {
 
 // Configuration des filtres disponibles
 export const FILTER_CONFIG = {
+  types: [
+    { id: 'bague', label: 'Bagues', searchTerms: ['bague', 'ring', 'anneau'] },
+    { id: 'boucles-oreilles', label: "Boucles d'oreilles", searchTerms: ['boucle', 'oreille', 'earring', 'créole', 'puce'] },
+    { id: 'collier', label: 'Colliers', searchTerms: ['collier', 'necklace', 'sautoir', 'ras du cou', 'chaîne cou'] },
+    { id: 'pendentif', label: 'Pendentifs', searchTerms: ['pendentif', 'pendant', 'médaillon'] },
+    { id: 'bracelet', label: 'Bracelets', searchTerms: ['bracelet', 'jonc', 'manchette', 'chaînette'] },
+    { id: 'chaine', label: 'Chaînes', searchTerms: ['chaîne', 'chain', 'maille'] },
+    { id: 'cheville', label: 'Chevilles', searchTerms: ['cheville', 'anklet', 'chaîne cheville'] },
+    { id: 'parure', label: 'Parures', searchTerms: ['parure', 'set', 'ensemble'] },
+  ],
+  
+  accessories: [
+    { id: 'pashmina', label: 'Pashminas', searchTerms: ['pashmina', 'châle', 'étole'] },
+    { id: 'foulard', label: 'Foulards', searchTerms: ['foulard', 'scarf', 'écharpe'] },
+    { id: 'pochette', label: 'Pochettes', searchTerms: ['pochette', 'pouch', 'sacoche'] },
+    { id: 'sac', label: 'Sacs', searchTerms: ['sac', 'bag', 'cabas'] },
+    { id: 'soie', label: 'Soie', searchTerms: ['soie', 'silk'] },
+    { id: 'porte-cles', label: 'Porte-clés', searchTerms: ['porte-clé', 'porte-cles', 'keychain', 'clé'] },
+    { id: 'chouchou', label: 'Chouchous', searchTerms: ['chouchou', 'scrunchie', 'élastique cheveux'] },
+    { id: 'bandana', label: 'Bandanas', searchTerms: ['bandana', 'foulard tête'] },
+    { id: 'marque-page', label: 'Marque-pages', searchTerms: ['marque-page', 'bookmark', 'signet'] },
+    { id: 'carnet', label: 'Carnets', searchTerms: ['carnet', 'notebook', 'cahier'] },
+  ],
+  
   materials: [
     { id: 'argent-925', label: 'Argent 925', icon: '🥈' },
     { id: 'or', label: 'Or', icon: '🥇' },

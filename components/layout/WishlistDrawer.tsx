@@ -1,8 +1,8 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
-import { X, Trash2, Heart, ShoppingBag } from 'lucide-react';
+import { X, Trash2, Heart, ShoppingBag, Check } from 'lucide-react';
 import { Link } from '@/navigation';
 import { useWishlist } from '@/lib/context/WishlistContext';
 import { useCart } from '@/lib/context/CartContext';
@@ -12,14 +12,17 @@ import { Product } from '@/lib/types';
 interface WishlistDrawerProps {
   isOpen: boolean;
   onClose: () => void;
+  onOpenCart?: () => void;
 }
 
 // Separate component for wishlist item to use hook properly
-function WishlistItemRow({ product, onAddToCart, onRemove }: {
+function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
   product: Product;
   onAddToCart?: (product: Product) => void;
   onRemove?: (productId: string) => void;
+  cartItems?: Array<{ product: { id: string } }>;
 }) {
+  const isInCart = cartItems?.some(item => item.product.id === product.id) || false;
   const allProductImages = [
     product.image_url,
     product.image,
@@ -39,7 +42,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove }: {
           <img 
             src={mainImage} 
             alt={product.name || 'Produit'} 
-            className="w-24 h-24 object-cover rounded-lg bg-gray-100"
+            className="w-24 h-24 object-cover rounded-none bg-gray-100"
           />
         </div>
       )}
@@ -61,16 +64,26 @@ function WishlistItemRow({ product, onAddToCart, onRemove }: {
 
         {/* Actions */}
         <div className="flex gap-2 mt-auto">
-          <button
-            onClick={() => onAddToCart?.(product)}
-            className="flex-1 bg-[#2596be] text-white text-xs py-2 rounded-lg hover:opacity-90 transition font-medium flex items-center justify-center gap-1"
-          >
-            <ShoppingBag className="w-3 h-3" />
-            Ajouter
-          </button>
+          {isInCart ? (
+            <button
+              disabled
+              className="flex-1 bg-[#D4AF37]/20 text-[#D4AF37] text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
+            >
+              <Check className="w-3 h-3" />
+              Déjà dans le panier
+            </button>
+          ) : (
+            <button
+              onClick={() => onAddToCart?.(product)}
+              className="flex-1 bg-[#2596be] text-white text-xs py-2 rounded-none hover:opacity-90 transition font-medium flex items-center justify-center gap-1"
+            >
+              <ShoppingBag className="w-3 h-3" />
+              Ajouter au panier
+            </button>
+          )}
           <button
             onClick={() => onRemove?.(product.id)}
-            className="p-2 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-red-50"
+            className="p-2 text-gray-400 hover:text-red-500 transition-colors rounded-none hover:bg-red-50"
             aria-label="Supprimer"
           >
             <Trash2 className="w-4 h-4" />
@@ -81,25 +94,32 @@ function WishlistItemRow({ product, onAddToCart, onRemove }: {
   );
 }
 
-export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps) {
+export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: WishlistDrawerProps) {
   const wishlistContext = useWishlist();
   const cartContext = useCart();
+  const [showConfirmClear, setShowConfirmClear] = useState(false);
 
   if (!wishlistContext) {
     return null;
   }
 
-  const { items = [], removeFromWishlist } = wishlistContext;
+  const { items = [], removeFromWishlist, clearWishlist } = wishlistContext;
 
   const handleAddToCart = (product: Product) => {
     if (cartContext?.addItem) {
       cartContext.addItem(product);
-      removeFromWishlist(product.id);
+      // Ne pas retirer de la wishlist, juste ajouter au panier
     }
   };
 
+  const handleClearWishlist = () => {
+    clearWishlist();
+    setShowConfirmClear(false);
+  };
+
   return (
-    <Transition show={isOpen} as={Fragment}>
+    <>
+      <Transition show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-[200]" onClose={onClose}>
         {/* OVERLAY SOMBRE */}
         <Transition.Child
@@ -159,6 +179,7 @@ export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps)
                               product={product}
                               onAddToCart={handleAddToCart}
                               onRemove={removeFromWishlist}
+                              cartItems={cartContext?.items}
                             />
                           ))}
                         </div>
@@ -181,14 +202,31 @@ export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps)
                     {/* FOOTER */}
                     {items && items.length > 0 && (
                       <div className="px-6 py-6 border-t border-[#E8D4B8] space-y-3 bg-white">
-                        <button className="w-full bg-[#2596be] text-white py-3 rounded-lg hover:opacity-90 transition font-medium">
+                        <button 
+                          onClick={() => { items.forEach(product => handleAddToCart(product)); }}
+                          className="w-full bg-[#2596be] text-white py-3 rounded-none hover:opacity-90 transition font-medium"
+                        >
                           Ajouter tout au panier
                         </button>
+                        {onOpenCart && (
+                          <button 
+                            onClick={() => { onClose(); onOpenCart(); }}
+                            className="w-full border-2 border-[#2596be] text-[#2596be] py-2 rounded-none hover:bg-[#2596be]/10 transition font-medium"
+                          >
+                            Voir le panier
+                          </button>
+                        )}
                         <button
                           onClick={onClose}
-                          className="w-full border-2 border-[#D4AF37] text-gray-900 py-2 rounded-lg hover:bg-[#F5F5F5] transition font-medium"
+                          className="w-full border-2 border-[#D4AF37] text-gray-900 py-2 rounded-none hover:bg-[#D4AF37]/10 transition font-medium"
                         >
                           Continuer le shopping
+                        </button>
+                        <button
+                          onClick={() => setShowConfirmClear(true)}
+                          className="w-full text-red-600 py-2 text-sm hover:bg-red-50 transition rounded-none font-medium"
+                        >
+                          Vider la wishlist
                         </button>
                       </div>
                     )}
@@ -200,5 +238,60 @@ export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps)
         </div>
       </Dialog>
     </Transition>
+
+    {/* Confirmation Dialog */}
+    <Transition show={showConfirmClear} as={Fragment}>
+      <Dialog as="div" className="relative z-[300]" onClose={() => setShowConfirmClear(false)}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black/50" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-none bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Title className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                  ⚠️ Vider la wishlist
+                </Dialog.Title>
+                <p className="text-sm text-gray-500 mb-6">
+                  Êtes-vous sûr de vouloir vider votre wishlist ? Cette action est irréversible.
+                </p>
+                <div className="flex gap-3 justify-end">
+                  <button
+                    onClick={() => setShowConfirmClear(false)}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-none hover:bg-gray-200 transition-colors"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    onClick={handleClearWishlist}
+                    className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-none hover:bg-red-700 transition-colors"
+                  >
+                    Vider la wishlist
+                  </button>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition>
+    </>
   );
 }

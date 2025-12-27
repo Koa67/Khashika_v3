@@ -47,7 +47,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   };
 
   return (
-    <div className="golden-glow-card h-full flex flex-col bg-white overflow-hidden relative">
+    <div className="golden-glow-card h-full flex flex-col bg-[#FDFBF7] overflow-hidden relative">
       {/* Zone Image - Full Bleed */}
       <Link 
         href={`/product/${product.slug}`}
@@ -83,7 +83,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       </Link>
 
       {/* Zone Infos - Compacte */}
-      <div className="p-3 flex flex-col text-center bg-white">
+      <div className="p-3 flex flex-col text-center bg-[#FDFBF7]">
         <h3 className="font-serif text-sm text-foreground line-clamp-2 capitalize tracking-wide mb-1">
           {product.name}
         </h3>

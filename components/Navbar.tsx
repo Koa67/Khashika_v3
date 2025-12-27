@@ -137,7 +137,7 @@ export default function Navbar() {
             </Link>
             <div 
               ref={searchContainerRef}
-              className="relative group min-w-[220px] px-4"
+              className="relative group min-w-[220px]"
               onMouseEnter={() => {
                 setIsSearchOpen(true);
                 // Focus the input on hover (cursor ready, no text selection)
@@ -339,7 +339,11 @@ export default function Navbar() {
 
       {/* Drawers */}
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
-      <WishlistDrawer isOpen={isWishlistOpen} onClose={() => setIsWishlistOpen(false)} />
+      <WishlistDrawer 
+        isOpen={isWishlistOpen} 
+        onClose={() => setIsWishlistOpen(false)} 
+        onOpenCart={() => setIsCartOpen(true)}
+      />
     </>
   );
 }

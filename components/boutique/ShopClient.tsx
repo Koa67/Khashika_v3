@@ -8,7 +8,6 @@ import { SortOption } from '@/lib/types/filters';
 
 // Components
 import ProductGrid from './ProductGrid';
-import ShopHero from './ShopHero';
 import ShopSidebar from './ShopSidebar';
 import ActiveFilters from './ActiveFilters';
 import EmptyState from './EmptyState';
@@ -49,35 +48,33 @@ export default function ShopClient({ initialProducts }: ShopClientProps) {
   } = useShopFilters(initialProducts);
 
   return (
-    <div className="min-h-screen bg-background">
-      <ShopHero productCount={allFilteredCount} />
-
+    <div className="min-h-screen bg-background -mt-[134px] pt-[134px]">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Mobile Bar */}
-        <div className="lg:hidden sticky top-20 z-30 bg-background/95 backdrop-blur-sm border-b border-foreground/10 -mx-4 px-4 py-3 mb-6">
+        <div className="lg:hidden sticky top-20 z-30 bg-[#FDFBF7]/95 backdrop-blur-sm border-b border-[#D4AF37]/20 -mx-4 px-4 py-3 mb-6">
           <div className="flex items-center justify-between gap-3">
             <motion.button
               onClick={() => setIsFilterModalOpen(true)}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-4 py-2.5 bg-card rounded-xl text-sm font-medium relative"
+              className="flex items-center gap-2 px-4 py-2.5 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm font-medium relative hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
             >
               <Filter className="w-5 h-5" />
               <span>Filtrer</span>
               {activeFilterCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#D4AF37] text-white text-xs font-bold rounded-none flex items-center justify-center">
                   {activeFilterCount}
                 </span>
               )}
             </motion.button>
 
             <span className="text-sm text-foreground/60">
-              <span className="font-semibold text-primary">{allFilteredCount}</span> trésors
+              <span className="font-semibold text-[#D4AF37]">{allFilteredCount}</span> trésors
             </span>
 
             <select
               value={filters.sort}
               onChange={(e) => handleSort(e.target.value as SortOption)}
-              className="px-3 py-2 bg-card rounded-xl text-sm border-0 focus:ring-2 focus:ring-primary/20"
+              className="px-3 py-2 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm focus:ring-2 focus:ring-[#D4AF37]/20"
             >
               {SORT_OPTIONS.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -101,32 +98,23 @@ export default function ShopClient({ initialProducts }: ShopClientProps) {
           {/* Main Content */}
           <main className="flex-1 min-w-0">
             {/* Desktop Header */}
-            <div className="hidden lg:flex items-center justify-between mb-6">
-              <p className="text-foreground/60">
-                <span className="font-semibold text-primary">{allFilteredCount}</span>
-                {' '}trésors trouvés
-                {activeFilterCount > 0 && <span className="text-foreground/40"> (filtrés)</span>}
-                {totalPages > 1 && <span className="text-foreground/40"> — Page {currentPage}/{totalPages}</span>}
-              </p>
-
+            <div className="hidden lg:flex items-center justify-between mb-6 sticky top-[134px] z-30 bg-[#FDFBF7] py-2 -mx-4 px-4 pt-[40px] -mt-[32px] shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+              <ActiveFilters
+                filters={filters}
+                activeCount={activeFilterCount}
+                onToggle={handleToggleFilter}
+                onClearAll={handleClearAll}
+              />
               <select
                 value={filters.sort}
                 onChange={(e) => handleSort(e.target.value as SortOption)}
-                className="px-4 py-2 bg-card rounded-xl border border-foreground/10 text-sm focus:ring-2 focus:ring-primary/20"
+                className="ml-auto px-4 py-2 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm focus:ring-2 focus:ring-[#D4AF37]/20"
               >
                 {SORT_OPTIONS.map(opt => (
                   <option key={opt.value} value={opt.value}>{opt.label}</option>
                 ))}
               </select>
             </div>
-
-            {/* Active Filter Chips */}
-            <ActiveFilters
-              filters={filters}
-              activeCount={activeFilterCount}
-              onToggle={handleToggleFilter}
-              onClearAll={handleClearAll}
-            />
 
             {/* Product Grid or Empty State */}
             {filteredProducts.length > 0 ? (
