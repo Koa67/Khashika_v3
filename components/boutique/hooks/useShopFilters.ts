@@ -1,11 +1,20 @@
 import { useState, useMemo, useCallback } from 'react';
 import { Product } from '@/lib/types';
 import { FilterState, INITIAL_FILTERS, FILTER_CONFIG, SortOption } from '@/lib/types/filters';
+import { inferCategory } from '@/lib/utils/inferCategory';
 
 const PRODUCTS_PER_PAGE = 24;
 
-export function useShopFilters(products: Product[]) {
-  const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
+interface UseShopFiltersOptions {
+  initialFilters?: Partial<FilterState>;
+}
+
+export function useShopFilters(products: Product[], options?: UseShopFiltersOptions) {
+  const initialFiltersState: FilterState = {
+    ...INITIAL_FILTERS,
+    ...options?.initialFilters,
+  };
+  const [filters, setFilters] = useState<FilterState>(initialFiltersState);
   const [currentPage, setCurrentPage] = useState(1);
 
   // Price range fixed to 1-50€
@@ -33,14 +42,20 @@ export function useShopFilters(products: Product[]) {
     
     if (hasTypeFilter || hasAccessoryFilter) {
       result = result.filter(p => {
-        const searchText = `${p.name || ''} ${p.description || ''} ${p.category || ''}`.toLowerCase();
+        // Use inferred category from product name instead of potentially corrupted category field
+        const inferredCategory = inferCategory(p.name || '');
+        const categoryForSearch = inferredCategory || p.category || '';
+        const searchText = `${p.name || ''} ${p.description || ''} ${categoryForSearch}`.toLowerCase();
         
         // Check if matches any type
         const matchesType = hasTypeFilter && filters.types.some(typeId => {
           const typeConfig = FILTER_CONFIG.types.find(t => t.id === typeId);
           if (!typeConfig) return false;
           return typeConfig.searchTerms.some(term => {
-            const regex = new RegExp('\\b' + term + '\\b', 'i');
+            // Match singular or plural form (allow optional 's' at the end)
+            // Escape special regex characters in the term
+            const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
             return regex.test(searchText);
           });
         });
@@ -50,7 +65,10 @@ export function useShopFilters(products: Product[]) {
           const accConfig = FILTER_CONFIG.accessories.find(a => a.id === accId);
           if (!accConfig) return false;
           return accConfig.searchTerms.some(term => {
-            const regex = new RegExp('\\b' + term + '\\b', 'i');
+            // Match singular or plural form (allow optional 's' at the end)
+            // Escape special regex characters in the term
+            const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
             return regex.test(searchText);
           });
         });
@@ -156,9 +174,14 @@ export function useShopFilters(products: Product[]) {
 
     FILTER_CONFIG.types.forEach(t => {
       counts.types[t.id] = products.filter(p => {
-        const searchText = `${p.name || ''} ${p.description || ''} ${p.category || ''}`.toLowerCase();
+        // Use inferred category from product name instead of potentially corrupted category field
+        const inferredCategory = inferCategory(p.name || '');
+        const categoryForSearch = inferredCategory || p.category || '';
+        const searchText = `${p.name || ''} ${p.description || ''} ${categoryForSearch}`.toLowerCase();
         return t.searchTerms.some(term => {
-          const regex = new RegExp('\\b' + term + '\\b', 'i');
+          // Match singular or plural form (allow optional 's' at the end)
+          const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
           return regex.test(searchText);
         });
       }).length;
@@ -166,9 +189,14 @@ export function useShopFilters(products: Product[]) {
 
     FILTER_CONFIG.accessories.forEach(a => {
       counts.accessories[a.id] = products.filter(p => {
-        const searchText = `${p.name || ''} ${p.description || ''} ${p.category || ''}`.toLowerCase();
+        // Use inferred category from product name instead of potentially corrupted category field
+        const inferredCategory = inferCategory(p.name || '');
+        const categoryForSearch = inferredCategory || p.category || '';
+        const searchText = `${p.name || ''} ${p.description || ''} ${categoryForSearch}`.toLowerCase();
         return a.searchTerms.some(term => {
-          const regex = new RegExp('\\b' + term + '\\b', 'i');
+          // Match singular or plural form (allow optional 's' at the end)
+          const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
           return regex.test(searchText);
         });
       }).length;

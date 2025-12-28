@@ -50,6 +50,8 @@ export default function Navbar() {
   const cart = useCart();
   const wishlist = useWishlist();
   
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   const cartCount = cart?.getItemCount?.() || 0;
   const wishlistCount = wishlist?.getItemCount?.() || 0;
 
@@ -126,15 +128,12 @@ export default function Navbar() {
         <div className="jali-border-horizontal" aria-hidden="true" />
         
         {/* Header Container - Compact & Élégant */}
-        <div className="container mx-auto px-4 py-4 relative">
+        <div className="max-w-7xl mx-auto px-4 py-4 relative">
           {/* Logo & Actions */}
           <div className="flex items-center justify-between mb-3">
           
-          {/* GAUCHE : User + Search */}
+          {/* GAUCHE : Search */}
           <div className="flex items-center gap-3 w-1/3 justify-start relative" ref={searchRef}>
-            <Link href="/account" className="p-2 hover:text-[#2596be] transition-colors" aria-label="Account">
-              <User className="w-5 h-5" strokeWidth={1.5} />
-            </Link>
             <div 
               ref={searchContainerRef}
               className="relative group min-w-[220px]"
@@ -293,8 +292,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* DROITE : Wishlist + Cart + Menu Mobile */}
+          {/* DROITE : User + Wishlist + Cart + Menu Mobile */}
           <div className="flex items-center gap-3 w-1/3 justify-end">
+            {/* User Button */}
+            <Link href="/account" className="p-2 hover:text-[#2596be] transition-colors" aria-label="Account">
+              <User className="w-5 h-5" strokeWidth={1.5} />
+            </Link>
+
             {/* Wishlist Button */}
             <button 
               onClick={() => setIsWishlistOpen(true)}
@@ -302,7 +306,7 @@ export default function Navbar() {
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" strokeWidth={1.5} />
-              {wishlistCount > 0 && (
+              {mounted && wishlistCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#2596be] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold text-[10px]">
                   {wishlistCount}
                 </span>
@@ -316,7 +320,7 @@ export default function Navbar() {
               aria-label="Panier"
             >
               <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
-              {cartCount > 0 && (
+              {mounted && cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#2596be] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold text-[10px]">
                   {cartCount}
                 </span>

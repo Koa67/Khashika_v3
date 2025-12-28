@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-serif);
   color: #111827; /* text-gray-900 */
 }
+
 /* Motif Indien Subtile */
 .indian-pattern {
   background-image: url('/patterns/indian-motif.svg');
@@ -74,107 +75,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-size: 8px 8px;
 }
 
-/* OLD - Braided Gold / Indian Zari Pattern - Horizontal (Header Bottom Border) - DEPRECATED */
-/* .pattern-zari-horizontal {
-  position: relative;
-  overflow: hidden;
-}
-
-.pattern-zari-horizontal::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-image: 
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 2px,
-      #D4AF37 2px,
-      #D4AF37 3px,
-      #FFD700 3px,
-      #FFD700 4px,
-      #D4AF37 4px,
-      #D4AF37 5px,
-      transparent 5px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 1px,
-      transparent 3px,
-      #FFD700 3px,
-      #FFD700 4px,
-      #D4AF37 4px,
-      #D4AF37 5px,
-      transparent 5px,
-      transparent 8px
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 215, 0, 0.3) 0%,
-      rgba(212, 175, 55, 0.5) 50%,
-      rgba(255, 215, 0, 0.3) 100%
-    );
-  background-size: 14px 100%, 16px 100%, 100% 100%;
-  background-position: 0 0, 2px 0, 0 0;
-  opacity: 0.9;
-  box-shadow: 0 1px 2px rgba(212, 175, 55, 0.2);
-} */
-
-/* OLD - Braided Gold / Indian Zari Pattern - Vertical (Drawer Left Border) - DEPRECATED */
-/* .pattern-zari-vertical-left {
-  position: relative;
-  overflow: hidden;
-}
-
-.pattern-zari-vertical-left::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 6px;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 2px,
-      #D4AF37 2px,
-      #D4AF37 3px,
-      #FFD700 3px,
-      #FFD700 4px,
-      #D4AF37 4px,
-      #D4AF37 5px,
-      transparent 5px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent 1px,
-      transparent 3px,
-      #FFD700 3px,
-      #FFD700 4px,
-      #D4AF37 4px,
-      #D4AF37 5px,
-      transparent 5px,
-      transparent 8px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 215, 0, 0.3) 0%,
-      rgba(212, 175, 55, 0.5) 50%,
-      rgba(255, 215, 0, 0.3) 100%
-    );
-  background-size: 100% 14px, 100% 16px, 100% 100%;
-  background-position: 0 0, 0 2px, 0 0;
-  opacity: 0.9;
-  box-shadow: 2px 0 2px rgba(212, 175, 55, 0.2);
-  z-index: 1;
-} */
-
 /* Couleur Corail pour les promotions */
 .coral-bg {
   background-color: #FF6B6B;
@@ -205,8 +105,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
@@ -214,6 +114,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .animate-fade-in-down {
   animation: fadeInDown 0.6s ease-out forwards;
 }
+
 /* Accessibilité - Focus visible */
 *:focus-visible {
   outline: 2px solid #2596be;
@@ -270,10 +171,67 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 /* ============================================================================
+   KHASHIKA - WISHLIST HEART ICON STYLES
+   ============================================================================ */
+
+/* Cœur wishlist - état default (gold avec double contour pour visibilité sur tous fonds) */
+.heart-default {
+  color: #D4AF37;
+  fill: none;
+  stroke-width: 2;
+  filter: 
+    drop-shadow(0 0 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.9));
+  transition: all 0.2s ease-out;
+}
+
+.heart-default:hover {
+  color: #E0115F;
+  transform: scale(1.15);
+  filter: 
+    drop-shadow(0 0 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.9));
+}
+
+/* Cœur wishlist - état sélectionné (rouge plein + glow gold + pulse) */
+.heart-wishlisted {
+  fill: #E0115F !important;
+  color: #E0115F !important;
+  stroke-width: 2;
+  filter: 
+    drop-shadow(0 0 4px rgba(212, 175, 55, 0.9))
+    drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)) !important;
+  animation: heart-pulse 2s ease-in-out infinite;
+}
+
+.heart-wishlisted:hover {
+  transform: scale(1.15);
+}
+
+@keyframes heart-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: 
+      drop-shadow(0 0 4px rgba(212, 175, 55, 0.9))
+      drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: 
+      drop-shadow(0 0 6px rgba(212, 175, 55, 1))
+      drop-shadow(0 0 14px rgba(212, 175, 55, 0.7));
+  }
+}
+
+/* Legacy class - kept for backwards compatibility */
+.icon-outline-white {
+  filter: 
+    drop-shadow(0 0 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.9));
+}
+
+/* ============================================================================
    KHASHIKA - FILTER SYSTEM STYLES
-   ============================================================================
-   Styles additionnels pour le système de filtres
-   À ajouter à votre globals.css ou tailwind.css
    ============================================================================ */
 
 /* Scrollbar personnalisée pour la sidebar des filtres */
@@ -457,6 +415,3 @@ nextjs-portal {
   height: 0 !important;
   overflow: hidden !important;
 }
-
-
-

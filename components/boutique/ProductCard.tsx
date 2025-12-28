@@ -85,18 +85,17 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             onClick={handleWishlistClick}
             className={`absolute top-3 right-3 z-20 flex items-center justify-center transition-all duration-200 ${
               isAnimating ? 'active:scale-125' : 'scale-100'
-            } hover:scale-110`}
+            } hover:scale-110 ${
+              isWishlisted ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+            }`}
             aria-label={isWishlisted ? 'Retirer des favoris' : 'Ajouter aux favoris'}
           >
-            <Heart
-              size={20}
-              strokeWidth={1.5}
-              className={`transition-colors duration-200 ${
-                isWishlisted
-                  ? 'fill-[#E0115F] text-[#E0115F] drop-shadow-sm'
-                  : 'text-white fill-none hover:text-[#E0115F] drop-shadow-md'
-              }`}
-            />
+           <Heart 
+  className={`
+    w-5 h-5 transition-all duration-200
+    ${isWishlisted ? 'heart-wishlisted' : 'heart-default'}
+  `}
+/>
           </button>
         </div>
         

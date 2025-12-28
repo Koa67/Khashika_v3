@@ -1,0 +1,9 @@
+@@ -80,7 +80,7 @@
+         // Calculate available height for the sidebar content
+         const sidebarTop = sidebarRef.current.getBoundingClientRect().top;
+         const availableHeight = footerRect.top - sidebarTop - margin;
+-        setMaxHeight`${Math.max(200, availableHeight)}px`);
++        setMaxHeight(\`\${Math.max(200, availableHeight)}px\`);
+       } else {
+ 
+ 

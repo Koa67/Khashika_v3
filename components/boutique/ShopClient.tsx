@@ -19,6 +19,9 @@ import { useShopFilters } from './hooks/useShopFilters';
 
 interface ShopClientProps {
   initialProducts: Product[];
+  initialFilters?: Partial<import('@/lib/types/filters').FilterState>;
+  hideTypeFilter?: boolean;
+  hideAccessoryFilter?: boolean;
 }
 
 const SORT_OPTIONS = [
@@ -28,7 +31,7 @@ const SORT_OPTIONS = [
   { value: 'price_desc' as SortOption, label: 'Prix décroissant' },
 ];
 
-export default function ShopClient({ initialProducts }: ShopClientProps) {
+export default function ShopClient({ initialProducts, initialFilters, hideTypeFilter = false, hideAccessoryFilter = false }: ShopClientProps) {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   
   const {
@@ -45,10 +48,10 @@ export default function ShopClient({ initialProducts }: ShopClientProps) {
     handleClearAll,
     handleSort,
     handlePageChange,
-  } = useShopFilters(initialProducts);
+  } = useShopFilters(initialProducts, { initialFilters });
 
   return (
-    <div className="min-h-screen bg-background -mt-[134px] pt-[134px]">
+    <div className="min-h-screen bg-[#FDFBF7] -mt-[134px] pt-[134px]">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Mobile Bar */}
         <div className="lg:hidden sticky top-20 z-30 bg-[#FDFBF7]/95 backdrop-blur-sm border-b border-[#D4AF37]/20 -mx-4 px-4 py-3 mb-6">
@@ -93,12 +96,14 @@ export default function ShopClient({ initialProducts }: ShopClientProps) {
             onToggleFilter={handleToggleFilter}
             onUpdateFilter={handleUpdateFilter}
             onClearAll={handleClearAll}
+            hideTypeFilter={hideTypeFilter}
+            hideAccessoryFilter={hideAccessoryFilter}
           />
 
           {/* Main Content */}
           <main className="flex-1 min-w-0">
             {/* Desktop Header */}
-            <div className="hidden lg:flex items-center justify-between mb-6 sticky top-[134px] z-30 bg-[#FDFBF7] py-2 -mx-4 px-4 pt-[40px] -mt-[32px] shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+            <div className="hidden lg:flex items-center justify-between mb-6 sticky top-[134px] z-30 bg-[#FDFBF7] py-2 -mx-4 px-4 pt-[40px] -mt-[32px]">
               <ActiveFilters
                 filters={filters}
                 activeCount={activeFilterCount}

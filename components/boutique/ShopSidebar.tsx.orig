@@ -51,39 +51,49 @@ export default function ShopSidebar({
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));
   };
+
+
   useEffect(() => {
     let ticking = false;
+      });
     const handleScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const footer = document.querySelector('footer');
-        if (!footer || !sidebarRef.current) {
-          ticking = false;
-          return;
-        }
-        const footerRect = footer.getBoundingClientRect();
-        const sidebarRect = sidebarRef.current.getBoundingClientRect();
-        const sidebarHeight = sidebarRect.height;
-        const originalTop = 166;
-        const margin = 20;
+      const footer = document.querySelector('footer');
+      if (!footer || !sidebarRef.current) return;
+
+      const footerRect = footer.getBoundingClientRect();
+      const sidebarRect = sidebarRef.current.getBoundingClientRect();
+      const sidebarHeight = sidebarRect.height;
+      const originalTop = 166;
+      const margin = 20;
+      
+      // Only adjust if footer is visible in viewport
+      if (footerRect.top < window.innerHeight) {
+        // Calculate maximum allowed top position to avoid overlap
+        const maxAllowedTop = footerRect.top - sidebarHeight - margin;
         
-        if (footerRect.top < window.innerHeight) {
-          const maxAllowedTop = footerRect.top - sidebarHeight - margin;
-          setSidebarTop(Math.max(originalTop, maxAllowedTop));
-          const currentSidebarTop = sidebarRef.current.getBoundingClientRect().top;
-          const availableHeight = footerRect.top - currentSidebarTop - margin;
-          setMaxHeight(`${Math.max(200, availableHeight)}px`);
-        } else {
-          setSidebarTop(originalTop);
-          setMaxHeight('calc(100vh - 166px - 16px)');
-        }
-        ticking = false;
+        // Don't go above the original position
+        setSidebarTop(Math.max(originalTop, maxAllowedTop));
+        
+        // Calculate available height for the sidebar content
+        const sidebarTop = sidebarRef.current.getBoundingClientRect().top;
+        const availableHeight = footerRect.top - sidebarTop - margin;
+        setMaxHeight(`${Math.max(200, availableHeight)}px`);
+      } else {
+        // Footer is below viewport, reset to original position
+        setSidebarTop(originalTop);
+        setMaxHeight('calc(100vh - 166px - 16px)');
+      }
+      ticking = false;
       });
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
-    handleScroll();
+    handleScroll(); // Initial check
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
