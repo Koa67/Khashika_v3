@@ -2,14 +2,19 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+interface QuickReply {
+  text: string;
+  action: string;
+}
+
 interface Message {
   text: string;
   sender: 'user' | 'bot';
   timestamp: Date;
+  quickReplies?: QuickReply[];
 }
 
 const STORAGE_KEY = 'khashika_chat_history';
-
 
 /**
  * Load messages from localStorage
@@ -23,10 +28,11 @@ function loadMessagesFromStorage(): Message[] {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       const parsed = JSON.parse(stored);
-      return parsed.map((msg: { text: string; sender: string; timestamp: string }) => ({
+      return parsed.map((msg: { text: string; sender: string; timestamp: string; quickReplies?: QuickReply[] }) => ({
         text: msg.text,
         sender: msg.sender as 'user' | 'bot',
         timestamp: new Date(msg.timestamp),
+        quickReplies: msg.quickReplies,
       }));
     }
   } catch {
@@ -59,17 +65,20 @@ export default function AIChatbot() {
     }
     return [
       {
-        text: "Bonjour ! Je suis l'Ambassadeur Culturel de Khashika. Comment puis-je enrichir votre expérience ?",
+        text: "Bonjour! Je suis votre conseillère Khashika. Comment puis-je vous aider?",
         sender: 'bot',
         timestamp: new Date(),
+        quickReplies: [
+          { text: 'Découvrir les collections', action: 'collections' },
+          { text: 'Une question', action: 'question' },
+          { text: 'Suivi commande', action: 'suivi' },
+        ],
       },
     ];
   });
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  // Messages are already loaded in useState initializer
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
@@ -84,65 +93,219 @@ export default function AIChatbot() {
   }, [messages, isTyping]);
 
   /**
-   * Arbre de décision simple pour les réponses
+   * Arbre de décision avec quick replies
    */
-  const getBotResponse = (message: string): string => {
+  const getBotResponseWithReplies = (message: string): { text: string; quickReplies: QuickReply[] } => {
     const lowerMessage = message.toLowerCase();
     
+    // Produits
+    if (lowerMessage.includes('bijoux') || lowerMessage.includes('bague') || lowerMessage.includes('collier') || 
+        lowerMessage.includes('bracelet') || lowerMessage.includes('boucle')) {
+      return {
+        text: 'Découvrez nos collections de bijoux artisanaux en argent massif. Chaque pièce est unique et inspirée de la tradition indienne.',
+        quickReplies: [
+          { text: 'Colliers', action: 'colliers' },
+          { text: 'Bracelets', action: 'bracelets' },
+          { text: "Boucles d'oreilles", action: 'boucles' },
+        ],
+      };
+    }
+    
+    // Pierres
+    if (lowerMessage.includes('turquoise') || lowerMessage.includes('améthyste') || lowerMessage.includes('lapis') || 
+        lowerMessage.includes('pierre') || lowerMessage.includes('grenat')) {
+      return {
+        text: 'Chaque pierre a ses vertus et son histoire. La turquoise protège, l\'améthyste apaise, le lapis lazuli inspire la sagesse...',
+        quickReplies: [
+          { text: 'Turquoise', action: 'turquoise' },
+          { text: 'Améthyste', action: 'amethyste' },
+          { text: 'Voir toutes', action: 'pierres' },
+        ],
+      };
+    }
+    
+    // Prix
+    if (lowerMessage.includes('prix') || lowerMessage.includes('budget') || lowerMessage.includes('combien') || 
+        lowerMessage.includes('cher') || lowerMessage.includes('euro')) {
+      return {
+        text: 'Nos bijoux vont de 15€ à 200€. Nous proposons des pièces accessibles comme des créations plus exclusives. Quelle est votre fourchette de budget?',
+        quickReplies: [
+          { text: 'Moins de 50€', action: 'prix-50' },
+          { text: '50-100€', action: 'prix-50-100' },
+          { text: 'Plus de 100€', action: 'prix-100' },
+        ],
+      };
+    }
+    
     // Livraison
-    if (lowerMessage.includes('livraison') || lowerMessage.includes('expédition') || lowerMessage.includes('délai')) {
-      return 'Nos livraisons sont effectuées sous 48h via Colissimo. Les frais de livraison sont de 5,90€ en France, offerts dès 100€ d\'achat.';
+    if (lowerMessage.includes('livraison') || lowerMessage.includes('délai') || lowerMessage.includes('expédition') || 
+        lowerMessage.includes('frais')) {
+      return {
+        text: 'Livraison 48h en France métropolitaine. Frais: 5,90€, gratuite dès 100€ d\'achat. Suivi de commande disponible.',
+        quickReplies: [
+          { text: 'Suivre commande', action: 'suivi' },
+          { text: 'Retours', action: 'retours' },
+        ],
+      };
     }
     
-    // Retour
-    if (lowerMessage.includes('retour') || lowerMessage.includes('remboursement') || lowerMessage.includes('échanger')) {
-      return 'Vous avez 30 jours pour changer d\'avis. Les retours sont gratuits et le remboursement est effectué sous 5 à 7 jours ouvrés après réception de l\'article.';
+    // Retours
+    if (lowerMessage.includes('retour') || lowerMessage.includes('échange') || lowerMessage.includes('rembours')) {
+      return {
+        text: '30 jours pour changer d\'avis. Retours gratuits, remboursement sous 5-7 jours ouvrés après réception.',
+        quickReplies: [
+          { text: 'Politique complète', action: 'politique-retours' },
+          { text: 'Contact', action: 'contact' },
+        ],
+      };
     }
     
-    // Taille
-    if (lowerMessage.includes('taille') || lowerMessage.includes('dimension') || lowerMessage.includes('mesure')) {
-      return 'Voici notre guide des tailles : [Lien]. Pour toute question sur les dimensions, n\'hésitez pas à nous contacter.';
+    // Tailles
+    if (lowerMessage.includes('taille') || lowerMessage.includes('mesure') || lowerMessage.includes('dimension')) {
+      return {
+        text: 'Nos bijoux sont disponibles en plusieurs tailles. Pour les bagues, nous proposons du 48 au 60. Pour les bracelets, réglables ou tailles fixes.',
+        quickReplies: [
+          { text: 'Guide des tailles', action: 'guide-tailles' },
+          { text: 'Contact', action: 'contact' },
+        ],
+      };
     }
     
-    // Paiement
-    if (lowerMessage.includes('paiement') || lowerMessage.includes('payer') || lowerMessage.includes('carte')) {
-      return 'Nous acceptons les cartes bancaires (Visa, Mastercard, American Express), PayPal, et les virements bancaires. Tous les paiements sont sécurisés.';
+    // Occasions
+    if (lowerMessage.includes('cadeau') || lowerMessage.includes('offrir') || lowerMessage.includes('anniversaire') || 
+        lowerMessage.includes('mariage') || lowerMessage.includes('fête')) {
+      return {
+        text: 'Pour quelle occasion souhaitez-vous offrir ce bijou? Nous avons des suggestions pour chaque moment spécial.',
+        quickReplies: [
+          { text: 'Mariage', action: 'mariage' },
+          { text: 'Anniversaire', action: 'anniversaire' },
+          { text: 'Se faire plaisir', action: 'plaisir' },
+        ],
+      };
     }
     
-    // Garantie
-    if (lowerMessage.includes('garantie') || lowerMessage.includes('défaut') || lowerMessage.includes('problème')) {
-      return 'Tous nos bijoux sont garantis 2 ans contre les défauts de fabrication. En cas de problème, contactez-nous et nous trouverons une solution.';
+    // Matériaux
+    if (lowerMessage.includes('argent') || lowerMessage.includes('925') || lowerMessage.includes('qualité') || 
+        lowerMessage.includes('entretien')) {
+      return {
+        text: 'Tous nos bijoux sont en argent 925 (92,5% d\'argent pur). Entretien simple: nettoyage avec un chiffon doux, éviter les produits chimiques.',
+        quickReplies: [
+          { text: 'Guide entretien', action: 'entretien' },
+          { text: 'Qualité', action: 'qualite' },
+        ],
+      };
     }
     
-    // Par défaut : transfert à un conseiller
-    return 'Je vais transférer votre demande à un conseiller humain. Un membre de notre équipe vous répondra dans les plus brefs délais.';
+    // Contact
+    if (lowerMessage.includes('contact') || lowerMessage.includes('parler') || lowerMessage.includes('humain') || 
+        lowerMessage.includes('aide') || lowerMessage.includes('téléphone') || lowerMessage.includes('email')) {
+      return {
+        text: 'Contactez-nous: contact@khashika.com ou par téléphone au +33 1 23 45 67 89. Nous sommes là pour vous aider!',
+        quickReplies: [
+          { text: 'Envoyer email', action: 'email' },
+          { text: 'FAQ', action: 'faq' },
+        ],
+      };
+    }
+    
+    // Salutation
+    if (lowerMessage.includes('bonjour') || lowerMessage.includes('salut') || lowerMessage.includes('hello') || 
+        lowerMessage.includes('coucou')) {
+      return {
+        text: 'Bonjour! Je suis ravie de vous aider. Que souhaitez-vous découvrir aujourd\'hui?',
+        quickReplies: [
+          { text: 'Nos collections', action: 'collections' },
+          { text: 'Livraison', action: 'livraison' },
+          { text: 'Contact', action: 'contact' },
+        ],
+      };
+    }
+    
+    // Remerciement
+    if (lowerMessage.includes('merci') || lowerMessage.includes('super') || lowerMessage.includes('parfait')) {
+      return {
+        text: 'Avec plaisir! N\'hésitez pas si vous avez d\'autres questions. Je suis là pour vous aider.',
+        quickReplies: [
+          { text: 'Autre question', action: 'question' },
+          { text: 'Voir les produits', action: 'produits' },
+        ],
+      };
+    }
+    
+    // Par défaut
+    return {
+      text: 'Comment puis-je vous aider?',
+      quickReplies: [
+        { text: 'Nos collections', action: 'collections' },
+        { text: 'Livraison', action: 'livraison' },
+        { text: 'Contact', action: 'contact' },
+      ],
+    };
+  };
+
+  /**
+   * Handle quick reply click
+   */
+  const handleQuickReply = (action: string) => {
+    const actionMessages: Record<string, string> = {
+      'collections': 'Je veux voir vos collections',
+      'question': 'J\'ai une question',
+      'suivi': 'Suivre ma commande',
+      'colliers': 'Voir les colliers',
+      'bracelets': 'Voir les bracelets',
+      'boucles': 'Voir les boucles d\'oreilles',
+      'turquoise': 'Bijoux en turquoise',
+      'amethyste': 'Bijoux en améthyste',
+      'pierres': 'Voir toutes les pierres',
+      'prix-50': 'Bijoux moins de 50€',
+      'prix-50-100': 'Bijoux entre 50 et 100€',
+      'prix-100': 'Bijoux plus de 100€',
+      'retours': 'Politique de retours',
+      'politique-retours': 'Politique de retours complète',
+      'contact': 'Contacter le service client',
+      'guide-tailles': 'Guide des tailles',
+      'mariage': 'Bijoux pour mariage',
+      'anniversaire': 'Bijoux pour anniversaire',
+      'plaisir': 'Se faire plaisir',
+      'entretien': 'Guide d\'entretien',
+      'qualite': 'Qualité des bijoux',
+      'email': 'Envoyer un email',
+      'faq': 'Consulter la FAQ',
+      'produits': 'Voir les produits',
+    };
+
+    const messageText = actionMessages[action] || action;
+    setInputValue(messageText);
+    handleSendMessage(messageText);
   };
 
   /**
    * Handle message sending avec arbre de décision
    */
-  const handleSendMessage = async () => {
-    if (!inputValue.trim() || isTyping) return;
+  const handleSendMessage = async (customMessage?: string) => {
+    const messageToSend = customMessage || inputValue.trim();
+    if (!messageToSend || isTyping) return;
 
     const userMessage: Message = {
-      text: inputValue.trim(),
+      text: messageToSend,
       sender: 'user',
       timestamp: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    const currentInput = inputValue.trim();
     setInputValue('');
     setIsTyping(true);
 
     // Simulate typing delay for better UX
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    // Utiliser l'arbre de décision
+    // Utiliser l'arbre de décision avec quick replies
+    const response = getBotResponseWithReplies(messageToSend);
     const botResponse: Message = {
-      text: getBotResponse(currentInput),
+      text: response.text,
       sender: 'bot',
       timestamp: new Date(),
+      quickReplies: response.quickReplies,
     };
     
     setMessages((prev) => [...prev, botResponse]);
@@ -196,17 +359,34 @@ export default function AIChatbot() {
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
             {messages.map((msg, index) => (
               <div key={index} className={`mb-3 flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div
-                  className={`max-w-xs px-4 py-2 rounded-lg ${
-                    msg.sender === 'user' 
-                      ? 'bg-gray-100 text-gray-800' 
-                      : 'bg-[#e6f3f7] text-gray-800 border border-[#2596be]/20'
-                  }`}
-                >
-                  <p className="font-body text-sm">{msg.text}</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </p>
+                <div className="max-w-xs">
+                  <div
+                    className={`px-4 py-2 rounded-lg ${
+                      msg.sender === 'user' 
+                        ? 'bg-gray-100 text-gray-800' 
+                        : 'bg-[#e6f3f7] text-gray-800 border border-[#2596be]/20'
+                    }`}
+                  >
+                    <p className="font-body text-sm">{msg.text}</p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </p>
+                  </div>
+                  
+                  {/* Quick Replies */}
+                  {msg.sender === 'bot' && msg.quickReplies && msg.quickReplies.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {msg.quickReplies.map((reply, replyIndex) => (
+                        <button
+                          key={replyIndex}
+                          onClick={() => handleQuickReply(reply.action)}
+                          className="border border-[#2596be] text-[#2596be] bg-white rounded-full px-3 py-1 text-xs hover:bg-[#2596be] hover:text-white transition-colors cursor-pointer"
+                        >
+                          {reply.text}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -241,7 +421,7 @@ export default function AIChatbot() {
                 disabled={isTyping}
               />
               <button
-                onClick={handleSendMessage}
+                onClick={() => handleSendMessage()}
                 disabled={!inputValue.trim() || isTyping}
                 className="bg-[#2596be] text-white px-4 py-2 rounded-r-lg hover:bg-[#1e7a9e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:ring-2 focus:ring-[#2596be]/50 focus:outline-none"
                 aria-label="Envoyer le message"

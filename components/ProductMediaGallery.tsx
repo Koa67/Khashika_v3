@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Product } from '@/lib/types';
 import { useValidatedImages } from '@/lib/hooks/useValidatedImages';
@@ -44,8 +44,47 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
     : ['/placeholder-image.svg'];
   
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   // Images already normalized, no need to re-process
   const validImages = images;
+
+  const handleImageClick = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const handleLightboxClose = () => {
+    setLightboxOpen(false);
+  };
+
+  const handleLightboxPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setLightboxIndex((prev) => (prev > 0 ? prev - 1 : validImages.length - 1));
+  };
+
+  const handleLightboxNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setLightboxIndex((prev) => (prev < validImages.length - 1 ? prev + 1 : 0));
+  };
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleLightboxClose();
+      } else if (e.key === 'ArrowLeft') {
+        setLightboxIndex((prev) => (prev > 0 ? prev - 1 : validImages.length - 1));
+      } else if (e.key === 'ArrowRight') {
+        setLightboxIndex((prev) => (prev < validImages.length - 1 ? prev + 1 : 0));
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, validImages.length]);
 
   return (
     <div>
@@ -57,6 +96,8 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
             imageUrl={imageUrl}
             alt={`${product.title || product.name} - Image ${index + 1}`}
             priority={index === 0}
+            allImages={validImages}
+            currentIndex={index}
           />
         ))}
       </div>
@@ -67,7 +108,8 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
           {validImages.map((imageUrl, index) => (
             <div
               key={index}
-              className="relative w-full flex-shrink-0 snap-center aspect-square overflow-hidden rounded-lg bg-cream-light"
+              className="relative w-full flex-shrink-0 snap-center aspect-square overflow-hidden rounded-lg bg-cream-light cursor-pointer"
+              onClick={() => handleImageClick(index)}
             >
               <Image
                 src={imageUrl}
@@ -97,6 +139,70 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
           </div>
         )}
       </div>
+
+      {/* Lightbox for mobile */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center lg:hidden"
+          onClick={handleLightboxClose}
+        >
+          {/* Close button */}
+          <button
+            onClick={handleLightboxClose}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+            aria-label="Fermer"
+          >
+            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Previous button */}
+          {validImages.length > 1 && (
+            <button
+              onClick={handleLightboxPrev}
+              className="absolute left-4 text-white hover:text-gray-300 transition-colors z-10"
+              aria-label="Image précédente"
+            >
+              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Next button */}
+          {validImages.length > 1 && (
+            <button
+              onClick={handleLightboxNext}
+              className="absolute right-4 text-white hover:text-gray-300 transition-colors z-10"
+              aria-label="Image suivante"
+            >
+              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Image */}
+          <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
+            <Image
+              src={validImages[lightboxIndex]}
+              alt={`${product.title || product.name} - Image ${lightboxIndex + 1}`}
+              width={1200}
+              height={1200}
+              className="max-w-full max-h-[90vh] object-contain"
+              priority
+            />
+          </div>
+
+          {/* Image counter */}
+          {validImages.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+              {lightboxIndex + 1} / {validImages.length}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

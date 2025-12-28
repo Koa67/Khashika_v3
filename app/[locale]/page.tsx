@@ -40,13 +40,13 @@ export default async function Home() {
       <PromotionSection />
 
       {/* Section Produits */}
-      <section className="container mx-auto px-4 py-12 bg-pattern">
-        <h2 className="font-heading text-4xl font-bold text-secondary mb-8 text-center">
-          Nos Collections
-        </h2>
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="bg-[#FDFBF7] py-8">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <h2 className="font-serif text-4xl font-bold text-[#1a1a1a] mb-8 text-center">
+            Nos Collections
+          </h2>
           {/* GRILLE RESPONSIVE STRICTE : 2 Mobile / 3 Tablette / 4 Desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product, index) => (
               <ProductCard 
                 key={product.id || `product-${index}`} 

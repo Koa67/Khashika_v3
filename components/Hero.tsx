@@ -32,7 +32,7 @@ export default function Hero() {
           </p>
           <Link
             href="/shop"
-            className="inline-block bg-[#2596be] text-white font-serif text-lg md:text-xl font-bold py-4 px-10 rounded-lg hover:bg-[#1a1a1a] transition-colors duration-300 uppercase tracking-widest shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
+            className="inline-block bg-[#2596be] text-white font-serif text-lg md:text-xl font-bold py-4 px-10 rounded-none hover:bg-[#1e7a9a] transition-colors duration-300 uppercase tracking-widest shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
           >
             DÉCOUVRIR LA COLLECTION
           </Link>

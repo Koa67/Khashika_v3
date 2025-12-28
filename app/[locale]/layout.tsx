@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import { CartProvider } from "@/lib/context/CartContext";
 import { WishlistProvider } from "@/lib/context/WishlistContext";
+import { AuthProvider } from "@/lib/context/AuthContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const karma = Karma({
@@ -147,14 +148,16 @@ export default async function RootLayout({
       />
       <div className={`${karma.variable} font-serif antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <CartProvider>
-            <WishlistProvider>
-              <Navbar />
-              {children}
-              <Footer />
-              <AIChatbot />
-            </WishlistProvider>
-          </CartProvider>
+          <AuthProvider>
+            <CartProvider>
+              <WishlistProvider>
+                <Navbar />
+                {children}
+                <Footer />
+                <AIChatbot />
+              </WishlistProvider>
+            </CartProvider>
+          </AuthProvider>
         </ThemeProvider>
       </div>
     </>

@@ -82,9 +82,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="bg-[#FDFBF7] min-h-screen mt-24">
-      <div className="max-w-[1440px] mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Layout Split Screen: 60% Images / 40% Info (Desktop) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 lg:gap-24 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12 mb-8">
           {/* Colonne gauche - Galerie (60%) */}
           <div className="w-full">
             <ProductMediaGallery product={product} />
@@ -97,7 +97,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         {/* Section Informations (pleine largeur) */}
-        <div className="mt-12">
+        <div className="mt-8">
           <ProductInfoTabs product={product} />
         </div>
       </div>

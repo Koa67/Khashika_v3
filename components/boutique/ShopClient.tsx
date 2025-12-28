@@ -22,6 +22,7 @@ interface ShopClientProps {
   initialFilters?: Partial<import('@/lib/types/filters').FilterState>;
   hideTypeFilter?: boolean;
   hideAccessoryFilter?: boolean;
+  hideStoneFilter?: boolean;
 }
 
 const SORT_OPTIONS = [
@@ -31,7 +32,7 @@ const SORT_OPTIONS = [
   { value: 'price_desc' as SortOption, label: 'Prix décroissant' },
 ];
 
-export default function ShopClient({ initialProducts, initialFilters, hideTypeFilter = false, hideAccessoryFilter = false }: ShopClientProps) {
+export default function ShopClient({ initialProducts, initialFilters, hideTypeFilter = false, hideAccessoryFilter = false, hideStoneFilter = false }: ShopClientProps) {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   
   const {
@@ -98,6 +99,7 @@ export default function ShopClient({ initialProducts, initialFilters, hideTypeFi
             onClearAll={handleClearAll}
             hideTypeFilter={hideTypeFilter}
             hideAccessoryFilter={hideAccessoryFilter}
+            hideStoneFilter={hideStoneFilter}
           />
 
           {/* Main Content */}

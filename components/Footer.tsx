@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Frise décorative inversée en haut */}
       <div className="h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60"></div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {/* 4 colonnes responsive */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Colonne 1 : À propos */}

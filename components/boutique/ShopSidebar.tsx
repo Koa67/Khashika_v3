@@ -20,6 +20,7 @@ interface ShopSidebarProps {
   onClearAll: () => void;
   hideTypeFilter?: boolean;
   hideAccessoryFilter?: boolean;
+  hideStoneFilter?: boolean;
 }
 
 export default function ShopSidebar({
@@ -32,6 +33,7 @@ export default function ShopSidebar({
   onClearAll,
   hideTypeFilter = false,
   hideAccessoryFilter = false,
+  hideStoneFilter = false,
 }: ShopSidebarProps) {
   const [sidebarTop, setSidebarTop] = useState(166);
   const [maxHeight, setMaxHeight] = useState('calc(100vh - 166px - 16px)');
@@ -195,41 +197,41 @@ export default function ShopSidebar({
         )}
 
         {!hideAccessoryFilter && (
-        /* Section Accessoires */
-        <div className="mb-0 pb-0 border-b border-[#D4AF37]/20">
-          <button 
-            onClick={() => toggleSection('accessoires')}
-            className="flex items-center justify-between w-full font-serif text-lg py-3"
-          >
-            <span>Accessoires</span>
-            <ChevronDown className={`w-4 h-4 transition-transform ${openSections.accessoires ? 'rotate-180' : ''}`} />
-          </button>
-          {openSections.accessoires && (
-            <div className="space-y-2">
-              {FILTER_CONFIG.accessories.map((acc) => (
-                <label key={acc.id} className="flex items-center gap-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    checked={filters.accessories.includes(acc.id)}
-                    onChange={() => onToggleFilter('accessories', acc.id)}
-                    className="w-4 h-4 accent-[#D4AF37] cursor-pointer"
-                  />
-                  <span className="text-foreground/80 group-hover:text-[#D4AF37] transition-colors">
-                    {acc.label}
-                  </span>
-                  <span className="ml-auto text-xs text-foreground/40">
-                    ({filterCounts.accessories?.[acc.id] || 0})
-                  </span>
-                </label>
-              ))}
-            </div>
-          )}
-        </div>
+          /* Section Accessoires */
+          <div className="mb-0 pb-0 border-b border-[#D4AF37]/20">
+            <button 
+              onClick={() => toggleSection('accessoires')}
+              className="flex items-center justify-between w-full font-serif text-lg py-3"
+            >
+              <span>Accessoires</span>
+              <ChevronDown className={`w-4 h-4 transition-transform ${openSections.accessoires ? 'rotate-180' : ''}`} />
+            </button>
+            {openSections.accessoires && (
+              <div className="space-y-2">
+                {FILTER_CONFIG.accessories.map((acc) => (
+                  <label key={acc.id} className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={filters.accessories.includes(acc.id)}
+                      onChange={() => onToggleFilter('accessories', acc.id)}
+                      className="w-4 h-4 accent-[#D4AF37] cursor-pointer"
+                    />
+                    <span className="text-foreground/80 group-hover:text-[#D4AF37] transition-colors">
+                      {acc.label}
+                    </span>
+                    <span className="ml-auto text-xs text-foreground/40">
+                      ({filterCounts.accessories?.[acc.id] || 0})
+                    </span>
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
-        )
-        }
-        {/* Section Pierres */}
-        <div className="mb-0 pb-0 border-b border-[#D4AF37]/20">
+        {!hideStoneFilter && (
+          /* Section Pierres */
+          <div className="mb-0 pb-0 border-b border-[#D4AF37]/20">
           <button 
             onClick={() => toggleSection('pierres')}
             className="flex items-center justify-between w-full py-3"
@@ -413,6 +415,7 @@ export default function ShopSidebar({
             </div>
           )}
         </div>
+        )}
       </div>
       </div>
     </aside>

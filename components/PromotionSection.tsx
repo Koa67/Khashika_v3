@@ -27,45 +27,45 @@ export default function PromotionSection() {
   };
 
   return (
-    <section className="container mx-auto px-4 py-12">
-      <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-8 py-12 text-center animate-fade-in-down" style={{ animationDelay: '200ms' }}>
-        <h2 className="text-2xl font-semibold font-heading text-gold-600 mb-4">
+    <section className="max-w-7xl mx-auto px-4 py-8">
+      <div className="bg-[#FDFBF7] border border-[#D4AF37]/20 rounded-none shadow-lg p-8 py-12 text-center animate-fade-in-down" style={{ animationDelay: '200ms' }}>
+        <h2 className="font-serif text-2xl font-semibold text-[#1a1a1a] mb-4">
           Promotion du Mois
         </h2>
-        <p className="text-lg font-sans text-gray-700 mb-8">
+        <p className="text-lg font-sans text-[#1a1a1a] mb-8">
           Profitez de nos offres exceptionnelles
         </p>
 
         {/* Compteur */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px] border border-primary/20">
-            <div className="font-heading text-3xl md:text-4xl font-medium text-primary">
+          <div className="bg-[#FDFBF7] rounded-none p-4 min-w-[80px] border border-[#D4AF37]/30">
+            <div className="font-serif text-3xl md:text-4xl font-medium text-[#D4AF37]">
               {formatTime(timeLeft.hours)}
             </div>
-            <div className="font-body text-sm mt-1 text-gray-700">Heures</div>
+            <div className="text-sm mt-1 text-[#1a1a1a]">Heures</div>
           </div>
-          <span className="font-heading text-3xl text-secondary">:</span>
-          <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px] border border-primary/20">
-            <div className="font-heading text-3xl md:text-4xl font-medium text-primary">
+          <span className="font-serif text-3xl text-[#D4AF37]">:</span>
+          <div className="bg-[#FDFBF7] rounded-none p-4 min-w-[80px] border border-[#D4AF37]/30">
+            <div className="font-serif text-3xl md:text-4xl font-medium text-[#D4AF37]">
               {formatTime(timeLeft.minutes)}
             </div>
-            <div className="font-body text-sm mt-1 text-gray-700">Minutes</div>
+            <div className="text-sm mt-1 text-[#1a1a1a]">Minutes</div>
           </div>
-          <span className="font-heading text-3xl text-secondary">:</span>
-          <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px] border border-primary/20">
-            <div className="font-heading text-3xl md:text-4xl font-medium text-primary">
+          <span className="font-serif text-3xl text-[#D4AF37]">:</span>
+          <div className="bg-[#FDFBF7] rounded-none p-4 min-w-[80px] border border-[#D4AF37]/30">
+            <div className="font-serif text-3xl md:text-4xl font-medium text-[#D4AF37]">
               {formatTime(timeLeft.seconds)}
             </div>
-            <div className="font-body text-sm mt-1 text-gray-700">Secondes</div>
+            <div className="text-sm mt-1 text-[#1a1a1a]">Secondes</div>
           </div>
         </div>
 
-        <p className="font-body text-sm mb-6 text-gray-600">
+        <p className="text-sm mb-6 text-[#1a1a1a]">
           Offre expire dans {formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
         </p>
 
         <button
-          className="transition-all duration-300 hover:scale-[1.02] hover:shadow-md transform focus:ring-2 focus:ring-primary/50 focus:outline-none bg-primary text-white font-body font-semibold py-3 px-8 rounded-lg"
+          className="transition-all duration-300 hover:scale-[1.02] hover:shadow-md transform focus:ring-2 focus:ring-[#2596be]/50 focus:outline-none bg-[#2596be] text-white font-serif font-semibold py-3 px-8 rounded-none"
           aria-label="Voir les offres promotionnelles"
         >
           Voir les offres

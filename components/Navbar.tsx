@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ShoppingBag, Heart, User, X, Search } from 'lucide-react';
 import { useCart } from '@/lib/context/CartContext';
 import { useWishlist } from '@/lib/context/WishlistContext';
+import { useAuth } from '@/lib/context/AuthContext';
 import CartDrawer from '@/components/layout/CartDrawer';
 import WishlistDrawer from '@/components/layout/WishlistDrawer';
 import { useSearch } from '@/lib/hooks/useSearch';
@@ -49,11 +50,37 @@ export default function Navbar() {
   
   const cart = useCart();
   const wishlist = useWishlist();
+  const { user, loading: authLoading, signOut } = useAuth();
   
   const [mounted, setMounted] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const userMenuRef = useRef<HTMLDivElement>(null);
   useEffect(() => { setMounted(true); }, []);
   const cartCount = cart?.getItemCount?.() || 0;
   const wishlistCount = wishlist?.getItemCount?.() || 0;
+
+  const handleSignOut = async () => {
+    await signOut();
+    setShowUserMenu(false);
+    router.push('/fr');
+  };
+
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setShowUserMenu(false);
+      }
+    };
+
+    if (showUserMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showUserMenu]);
 
   // Calculate dropdown position based on search container
   useEffect(() => {
@@ -294,10 +321,51 @@ export default function Navbar() {
 
           {/* DROITE : User + Wishlist + Cart + Menu Mobile */}
           <div className="flex items-center gap-3 w-1/3 justify-end">
-            {/* User Button */}
-            <Link href="/account" className="p-2 hover:text-[#2596be] transition-colors" aria-label="Account">
-              <User className="w-5 h-5" strokeWidth={1.5} />
-            </Link>
+            {/* User Button / Login */}
+            {!authLoading && (
+              <div className="relative" ref={userMenuRef}>
+                {user ? (
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowUserMenu(!showUserMenu)}
+                      className="p-2 hover:text-[#2596be] transition-colors flex items-center gap-2"
+                      aria-label="Mon compte"
+                    >
+                      <User className="w-5 h-5" strokeWidth={1.5} />
+                      <span className="hidden sm:inline text-sm font-serif">
+                        {user.email?.split('@')[0] || 'Mon compte'}
+                      </span>
+                    </button>
+                    {showUserMenu && (
+                      <div className="absolute right-0 top-full mt-2 bg-[#FDFBF7] border border-[#D4AF37]/20 shadow-lg rounded-none min-w-[180px] z-50">
+                        <Link
+                          href="/account"
+                          className="block px-4 py-2 text-sm hover:text-[#2596be] transition-colors"
+                          onClick={() => setShowUserMenu(false)}
+                        >
+                          Mon compte
+                        </Link>
+                        <button
+                          onClick={handleSignOut}
+                          className="w-full text-left px-4 py-2 text-sm hover:text-[#2596be] transition-colors text-red-600"
+                        >
+                          Déconnexion
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="p-2 hover:text-[#2596be] transition-colors flex items-center gap-2"
+                    aria-label="Connexion"
+                  >
+                    <User className="w-5 h-5" strokeWidth={1.5} />
+                    <span className="hidden sm:inline text-sm font-serif">Connexion</span>
+                  </Link>
+                )}
+              </div>
+            )}
 
             {/* Wishlist Button */}
             <button 
