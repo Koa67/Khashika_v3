@@ -443,3 +443,9 @@ nextjs-portal {
   color: #EAB615;
   text-shadow: 0 0 5px rgba(0,0,0,0.09);
 }
+
+/* Group-hover variant pour text-gold-fusion */
+.group:hover .group-hover\:text-gold-fusion {
+  color: #EAB615;
+  text-shadow: 0 0 5px rgba(0,0,0,0.09);
+}
