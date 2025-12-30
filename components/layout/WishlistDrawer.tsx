@@ -34,7 +34,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
   });
 
   return (
-    <div className="flex gap-4 border-b border-[#E8D4B8] pb-6 last:border-0">
+    <div className="flex gap-4 border-b border-[#F0C11D]/20 pb-6 last:border-0">
       {/* Image */}
       {mainImage && (
         <div className="flex-shrink-0">
@@ -58,7 +58,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
           </p>
         </div>
         
-        <p className="text-[#2596be] font-semibold text-sm">
+        <p className="text-[#8B4E4E] font-semibold text-sm">
           {(product.price || 0).toFixed(2)}€
         </p>
 
@@ -67,7 +67,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
           {isInCart ? (
             <button
               disabled
-              className="flex-1 bg-[#D4AF37]/20 text-[#D4AF37] text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
+              className="flex-1 bg-[#F0C11D]/20 text-[#F0C11D] text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
             >
               <Check className="w-3 h-3" />
               Déjà dans le panier
@@ -75,7 +75,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
           ) : (
             <button
               onClick={() => onAddToCart?.(product)}
-              className="flex-1 bg-[#2596be] text-white text-xs py-2 rounded-none hover:opacity-90 transition font-medium flex items-center justify-center gap-1"
+              className="flex-1 bg-[#8B4E4E] text-white text-xs py-2 rounded-none hover:opacity-90 transition font-medium flex items-center justify-center gap-1"
             >
               <ShoppingBag className="w-3 h-3" />
               Ajouter au panier
@@ -147,14 +147,14 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="golden-glow-drawer pointer-events-auto w-screen max-w-md relative">
+                <Dialog.Panel className="pointer-events-auto w-screen max-w-md relative bg-[#FAF9F7] border-l border-[#F0C11D]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)]">
                   {/* Jali Pattern Border - Vertical */}
                   <div className="jali-border-vertical" aria-hidden="true" />
                   <div className="flex h-full flex-col overflow-y-auto pl-6">
                     {/* HEADER */}
-                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#E8D4B8]">
+                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#F0C11D]/20">
                       <div className="flex items-center gap-3">
-                        <Heart className="w-6 h-6 text-[#D4AF37] fill-current" />
+                        <Heart className="w-6 h-6 text-[#F0C11D] fill-current" />
                         <Dialog.Title className="text-xl font-semibold text-gray-900">
                           Wishlist
                         </Dialog.Title>
@@ -191,7 +191,7 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
                           <Link 
                             href="/shop"
                             onClick={onClose}
-                            className="mt-4 text-[#2596be] hover:underline font-medium text-sm"
+                            className="mt-4 text-[#8B4E4E] hover:underline font-medium text-sm"
                           >
                             Découvrir nos créations
                           </Link>
@@ -201,24 +201,24 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
 
                     {/* FOOTER */}
                     {items && items.length > 0 && (
-                      <div className="px-6 py-6 border-t border-[#E8D4B8] space-y-3 bg-white">
+                      <div className="px-6 py-6 border-t border-[#E8D4B8] space-y-3 bg-[#FAF9F7]">
                         <button 
                           onClick={() => { items.forEach(product => handleAddToCart(product)); }}
-                          className="w-full bg-[#2596be] text-white py-3 rounded-none hover:opacity-90 transition font-medium"
+                          className="w-full bg-[#8B4E4E] text-white py-3 rounded-none hover:opacity-90 transition font-medium"
                         >
                           Ajouter tout au panier
                         </button>
                         {onOpenCart && (
                           <button 
                             onClick={() => { onClose(); onOpenCart(); }}
-                            className="w-full border-2 border-[#2596be] text-[#2596be] py-2 rounded-none hover:bg-[#2596be]/10 transition font-medium"
+                            className="w-full border-2 border-[#8B4E4E] text-[#8B4E4E] py-2 rounded-none hover:bg-[#8B4E4E]/10 transition font-medium"
                           >
                             Voir le panier
                           </button>
                         )}
                         <button
                           onClick={onClose}
-                          className="w-full border-2 border-[#D4AF37] text-gray-900 py-2 rounded-none hover:bg-[#D4AF37]/10 transition font-medium"
+                          className="w-full border-2 border-[#F0C11D] text-gray-900 py-2 rounded-none hover:bg-[#F0C11D]/10 transition font-medium"
                         >
                           Continuer le shopping
                         </button>
@@ -265,7 +265,7 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-none bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-none bg-[#FAF9F7] p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title className="text-lg font-medium leading-6 text-gray-900 mb-4">
                   ⚠️ Vider la wishlist
                 </Dialog.Title>

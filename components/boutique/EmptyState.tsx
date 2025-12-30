@@ -16,7 +16,7 @@ export default function EmptyState({ onClearFilters }: EmptyStateProps) {
       </p>
       <button
         onClick={onClearFilters}
-        className="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition-colors"
+        className="px-6 py-3 bg-[#8B4E4E] text-white rounded-none font-medium hover:bg-[#6B3D3D] transition-colors"
       >
         Effacer tous les filtres
       </button>

@@ -45,12 +45,12 @@ function FilterAccordion({
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-4 px-1 text-left 
-                   hover:bg-gray-50/50 transition-colors duration-200 group"
+                   hover:bg-white/50 transition-colors duration-200 group"
       >
-        <span className="font-medium text-gray-900 group-hover:text-[#2596be] transition-colors">
+        <span className="font-medium text-gray-900 group-hover:text-[#8B4E4E] transition-colors">
           {title}
           {count !== undefined && count > 0 && (
-            <span className="ml-2 text-xs bg-[#2596be] text-white px-2 py-0.5 rounded-full">
+            <span className="ml-2 text-xs bg-[#8B4E4E] text-white px-2 py-0.5 rounded-full">
               {count}
             </span>
           )}
@@ -101,8 +101,8 @@ function FilterCheckbox({
     <label
       className={`flex items-center gap-3 py-2 px-2 rounded-lg cursor-pointer 
                   transition-all duration-200 group
-                  ${disabled ? 'opacity-40 cursor-not-allowed' : 'hover:bg-gray-50'}
-                  ${checked ? 'bg-[#2596be]/5' : ''}`}
+                  ${disabled ? 'opacity-40 cursor-not-allowed' : 'hover:bg-white'}
+                  ${checked ? 'bg-[#8B4E4E]/5' : ''}`}
     >
       <div className="relative">
         <input
@@ -115,9 +115,9 @@ function FilterCheckbox({
         <div
           className={`w-5 h-5 rounded border-2 transition-all duration-200
                       ${checked 
-                        ? 'bg-[#2596be] border-[#2596be]' 
-                        : 'border-gray-300 group-hover:border-[#2596be]/50'}
-                      peer-focus:ring-2 peer-focus:ring-[#2596be]/20`}
+                        ? 'bg-[#8B4E4E] border-[#8B4E4E]' 
+                        : 'border-gray-300 group-hover:border-[#8B4E4E]/50'}
+                      peer-focus:ring-2 peer-focus:ring-[#8B4E4E]/20`}
         >
           {checked && (
             <motion.svg
@@ -167,7 +167,7 @@ function FilterToggle({
 }) {
   return (
     <label className="flex items-center justify-between py-2 px-2 rounded-lg 
-                      cursor-pointer hover:bg-gray-50 transition-colors group">
+                      cursor-pointer hover:bg-white transition-colors group">
       <span className="flex items-center gap-2 text-sm text-gray-700">
         {emoji && <span>{emoji}</span>}
         {label}
@@ -182,7 +182,7 @@ function FilterToggle({
         />
         <div
           className={`w-11 h-6 rounded-full transition-colors duration-200
-                      ${checked ? 'bg-[#2596be]' : 'bg-gray-200'}`}
+                      ${checked ? 'bg-[#8B4E4E]' : 'bg-gray-200'}`}
         >
           <motion.div
             className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md"
@@ -219,7 +219,7 @@ export default function FilterSidebar({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 onClick={onClearAll}
-                className="flex items-center gap-1.5 text-sm text-[#2596be] 
+                className="flex items-center gap-1.5 text-sm text-[#8B4E4E] 
                            hover:text-[#1a7a9e] transition-colors"
               >
                 <RotateCcw className="w-4 h-4" />
@@ -235,7 +235,7 @@ export default function FilterSidebar({
             animate={{ opacity: 1, y: 0 }}
             className="text-sm text-gray-500 mt-1"
           >
-            <span className="font-semibold text-[#2596be]">{totalResults}</span> trésors trouvés
+            <span className="font-semibold text-[#8B4E4E]">{totalResults}</span> trésors trouvés
           </motion.p>
         </div>
         
@@ -329,8 +329,8 @@ export default function FilterSidebar({
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full 
                               text-sm transition-all duration-200 border
                               ${filters.occasions.includes(occasion.id)
-                                ? 'bg-[#2596be] text-white border-[#2596be]'
-                                : 'bg-white text-gray-600 border-gray-200 hover:border-[#2596be]/50'
+                                ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
+                                : 'bg-white text-gray-600 border-gray-200 hover:border-[#8B4E4E]/50'
                               }`}
                 >
                   <span>{occasion.emoji}</span>
@@ -396,7 +396,7 @@ export default function FilterSidebar({
         
         {/* Footer avec bouton appliquer (mobile only) */}
         <div className="sticky bottom-0 bg-white border-t border-gray-100 p-4 lg:hidden">
-          <button className="w-full py-3 bg-[#2596be] text-white rounded-xl font-medium
+          <button className="w-full py-3 bg-[#8B4E4E] text-white rounded-xl font-medium
                            hover:bg-[#1a7a9e] transition-colors">
             Voir {totalResults} résultats
           </button>

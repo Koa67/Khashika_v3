@@ -205,7 +205,7 @@ export function ShippedEmail({
 
 // Styles
 const main = {
-  backgroundColor: '#FDFBF7',
+  backgroundColor: '#F5EDE6',
   fontFamily: 'serif, Georgia, "Times New Roman", serif',
 };
 
@@ -213,18 +213,18 @@ const container = {
   margin: '0 auto',
   padding: '20px',
   maxWidth: '600px',
-  backgroundColor: '#ffffff',
+  backgroundColor: '#F5EDE6',
 };
 
 const header = {
   padding: '40px 20px',
   textAlign: 'center' as const,
-  backgroundColor: '#FDFBF7',
-  borderBottom: '2px solid #D4AF37',
+  backgroundColor: '#F5EDE6',
+  borderBottom: '2px solid #F0C11D',
 };
 
 const h1 = {
-  color: '#2596be',
+  color: '#8B4E4E',
   fontSize: '28px',
   fontWeight: 'bold',
   margin: '0 0 10px 0',
@@ -232,7 +232,7 @@ const h1 = {
 };
 
 const h2 = {
-  color: '#1a1a1a',
+  color: '#2D2420',
   fontSize: '20px',
   fontWeight: 'bold',
   margin: '20px 0 10px 0',
@@ -244,7 +244,7 @@ const content = {
 };
 
 const text = {
-  color: '#1a1a1a',
+  color: '#2D2420',
   fontSize: '16px',
   lineHeight: '24px',
   margin: '0 0 16px 0',
@@ -252,7 +252,7 @@ const text = {
 };
 
 const orderNumberText = {
-  color: '#D4AF37',
+  color: '#F0C11D',
   fontSize: '18px',
   fontWeight: 'bold',
   margin: '0',
@@ -265,8 +265,8 @@ const buttonContainer = {
 };
 
 const button = {
-  backgroundColor: '#2596be',
-  color: '#ffffff',
+  backgroundColor: '#8B4E4E',
+  color: '#F5EDE6',
   padding: '12px 30px',
   borderRadius: '4px',
   textDecoration: 'none',
@@ -279,7 +279,7 @@ const button = {
 const orderSection = {
   margin: '30px 0',
   padding: '20px',
-  backgroundColor: '#FDFBF7',
+  backgroundColor: '#F5EDE6',
   borderRadius: '4px',
 };
 
@@ -288,7 +288,7 @@ const itemRow = {
 };
 
 const itemName = {
-  color: '#1a1a1a',
+  color: '#2D2420',
   fontSize: '16px',
   fontWeight: 'bold',
   margin: '0 0 5px 0',
@@ -308,7 +308,7 @@ const totalRow = {
 };
 
 const totalText = {
-  color: '#D4AF37',
+  color: '#F0C11D',
   fontSize: '20px',
   fontWeight: 'bold',
   margin: '0',
@@ -321,20 +321,20 @@ const addressSection = {
 
 const trackingSection = {
   padding: '15px',
-  backgroundColor: '#FDFBF7',
+  backgroundColor: '#F5EDE6',
   borderRadius: '4px',
   margin: '20px 0',
 };
 
 const hr = {
-  borderColor: '#D4AF37',
+  borderColor: '#F0C11D',
   margin: '30px 0',
 };
 
 const footer = {
   padding: '20px',
   textAlign: 'center' as const,
-  backgroundColor: '#FDFBF7',
+  backgroundColor: '#F5EDE6',
 };
 
 const footerText = {
@@ -345,7 +345,7 @@ const footerText = {
 };
 
 const link = {
-  color: '#2596be',
+  color: '#8B4E4E',
   textDecoration: 'underline',
 };
 

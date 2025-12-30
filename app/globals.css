@@ -6,30 +6,42 @@
 
 /* Variables CSS */
 :root {
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Montserrat', sans-serif;
-  --turquoise: #2596be;
-  --gold: #D4AF37;
-  --coral: #FF6B6B;
-  --background: #FDFBF7;
+  --turquoise: #8B4E4E;
+  --gold: #F0C11D;
+  --coral: #8B4E4E;
+  --background: #FFFFFF;
+  --foreground: #2D2420;
+  --card: #FAF9F7;
+  --card-foreground: #2D2420;
+  --primary: #8B4E4E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FAF9F7;
+  --secondary-foreground: #2D2420;
+  --accent: #F0C11D;
+  --accent-foreground: #2D2420;
+  --border: rgba(212, 175, 55, 0.2);
+  --ring: #F0C11D;
 }
 
-/* Polices */
+/* Polices - Arimo Bold 700 partout */
+* {
+  font-family: var(--font-arimo), sans-serif !important;
+}
+
 body {
-  font-family: var(--font-sans);
-  color: #1f2937; /* text-gray-800 */
+  font-family: var(--font-arimo), sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #FFFFFF;
+  color: #2D2420;
 }
 
-.font-serif {
-  font-family: var(--font-serif);
-}
-.font-sans {
-  font-family: var(--font-sans);
-}
-
+.font-serif,
+.font-sans,
 h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: var(--font-serif);
-  color: #111827; /* text-gray-900 */
+  font-family: var(--font-arimo), sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* Motif Indien Subtile */
@@ -54,9 +66,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 8px;
   pointer-events: none;
   background-image: 
-    linear-gradient(45deg, #D4AF37 25%, transparent 25%, transparent 75%, #D4AF37 75%, #D4AF37),
-    linear-gradient(-45deg, #D4AF37 25%, transparent 25%, transparent 75%, #D4AF37 75%, #D4AF37);
-  background-color: #FDFBF7;
+    linear-gradient(45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D),
+    linear-gradient(-45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D);
+  background-color: #FFFFFF;
   background-size: 8px 8px;
 }
 
@@ -69,9 +81,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 8px;
   pointer-events: none;
   background-image: 
-    linear-gradient(45deg, #D4AF37 25%, transparent 25%, transparent 75%, #D4AF37 75%, #D4AF37),
-    linear-gradient(-45deg, #D4AF37 25%, transparent 25%, transparent 75%, #D4AF37 75%, #D4AF37);
-  background-color: #FDFBF7;
+    linear-gradient(45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D),
+    linear-gradient(-45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D);
+  background-color: #FFFFFF;
   background-size: 8px 8px;
 }
 
@@ -117,7 +129,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Accessibilité - Focus visible */
 *:focus-visible {
-  outline: 2px solid #2596be;
+  outline: 2px solid #8B4E4E;
   outline-offset: 2px;
 }
 
@@ -138,13 +150,13 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   
   .golden-glow-card:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #D4AF37;
+    box-shadow: 0 0 0 2px #F0C11D;
     outline-offset: 2px;
   }
   
   /* Dropdowns (Navbar, Search) */
   .golden-glow-dropdown {
-    @apply bg-white rounded-lg;
+    @apply bg-[#FAF9F7] rounded-none;
     border: 2px solid rgba(212, 175, 55, 0.2);
     box-shadow: 
       0 12px 32px -6px rgba(212, 175, 55, 0.3),
@@ -156,8 +168,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   }
   
   .golden-glow-dropdown-item:hover {
-    background-color: #FDFBF7;
-    border-left: 4px solid #D4AF37;
+    background-color: #FFFFFF;
+    border-left: 4px solid #F0C11D;
   }
   
   /* Drawers (Cart, Wishlist) */
@@ -176,7 +188,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Cœur wishlist - état default (gold avec double contour pour visibilité sur tous fonds) */
 .heart-default {
-  color: #D4AF37;
+  color: #F0C11D;
   fill: none;
   stroke-width: 2;
   filter: 
@@ -310,7 +322,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Effet de focus accessible */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-[#2596be]/50 focus:ring-offset-2;
+  @apply focus:outline-none focus:ring-2 focus:ring-[#8B4E4E]/50 focus:ring-offset-2;
 }
 
 /* Truncation du texte */

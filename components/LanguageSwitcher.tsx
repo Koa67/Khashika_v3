@@ -38,7 +38,7 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-gray-600 hover:text-[#2596be] transition-colors"
+        className="flex items-center gap-2 text-[#2D2420] hover:text-[#8B4E4E] transition-colors"
         aria-label="Changer de langue"
       >
         <Globe className="w-5 h-5" />
@@ -54,19 +54,19 @@ export default function LanguageSwitcher() {
           />
           
           {/* Dropdown */}
-          <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
+          <div className="absolute right-0 mt-2 w-32 bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] z-20">
             <button
               onClick={() => switchLocale('fr')}
-              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                currentLocale === 'fr' ? 'bg-[#f4f1eb] font-semibold' : ''
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-white transition-colors text-[#2D2420] ${
+                currentLocale === 'fr' ? 'bg-white font-semibold' : ''
               }`}
             >
               🇫🇷 Français
             </button>
             <button
               onClick={() => switchLocale('en')}
-              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                currentLocale === 'en' ? 'bg-[#f4f1eb] font-semibold' : ''
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-white transition-colors text-[#2D2420] ${
+                currentLocale === 'en' ? 'bg-white font-semibold' : ''
               }`}
             >
               🇬🇧 English

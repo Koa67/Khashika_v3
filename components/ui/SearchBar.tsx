@@ -50,7 +50,7 @@ export default function SearchBar() {
   return (
     <div className="relative z-50">
       {/* Input minimaliste invisible */}
-      <div className="flex items-center border-b-2 border-transparent hover:border-[#1a1a1a] transition-colors duration-300">
+      <div className="flex items-center border-b-2 border-transparent hover:border-[#2D2420] transition-colors duration-300">
         <Search size={18} strokeWidth={1.5} className="text-foreground/60 mr-2" />
         <input 
           ref={inputRef}
@@ -99,10 +99,10 @@ export default function SearchBar() {
                   
                   {/* Nom et Prix */}
                   <div className="flex-1 min-w-0">
-                    <p className="font-serif text-lg text-[#1a1a1a] line-clamp-1 mb-1">
+                    <p className="font-serif text-lg text-[#2D2420] line-clamp-1 mb-1">
                       {product.name}
                     </p>
-                    <p className="text-base font-bold text-[#D4AF37]">
+                    <p className="text-base font-bold text-[#F0C11D]">
                       {typeof product.price === 'number' 
                         ? product.price.toFixed(2) 
                         : product.price} €
@@ -113,10 +113,10 @@ export default function SearchBar() {
             ))}
             
             {/* Lien "Voir tous les résultats" */}
-            <li className="p-3 text-center bg-gray-50 border-t border-gray-100">
+            <li className="p-3 text-center bg-white border-t border-gray-100">
               <Link 
                 href={`/shop?q=${encodeURIComponent(query)}`} 
-                className="text-base font-bold text-[#2596be] uppercase tracking-wider hover:underline"
+                className="text-base font-bold text-[#8B4E4E] uppercase tracking-wider hover:underline"
                 onClick={handleResultClick}
               >
                 Voir tous les résultats

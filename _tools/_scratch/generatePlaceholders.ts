@@ -4,8 +4,8 @@ import * as path from 'path';
 const PLACEHOLDERS_DIR = 'public/images/products';
 
 // Couleurs Khashika
-const PRIMARY = '#2596be';    // Turquoise
-const GOLD = '#D4AF37';       // Or
+const PRIMARY = '#8B4E4E';    // Turquoise
+const GOLD = '#F0C11D';       // Or
 const BG = '#f8f9fa';         // Fond clair
 
 const CATEGORIES = [

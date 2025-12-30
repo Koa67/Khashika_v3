@@ -113,7 +113,7 @@ export default function AdvancedSearch() {
           onFocus={() => {
             if (results.length > 0) setIsOpen(true);
           }}
-          className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2596be] focus:border-transparent"
+          className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B4E4E] focus:border-transparent"
         />
         {query && (
           <button
@@ -147,7 +147,7 @@ export default function AdvancedSearch() {
                   <li key={result.id}>
                     <button
                       onClick={() => handleResultClick(result.slug)}
-                      className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors text-left"
+                      className="w-full flex items-center gap-4 p-4 hover:bg-white transition-colors text-left"
                     >
                       {/* Image */}
                       <div className="relative w-16 h-16 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
@@ -162,13 +162,13 @@ export default function AdvancedSearch() {
 
                       {/* Info */}
                       <div className="flex-1 min-w-0">
-                        <p className="font-serif text-base text-[#1a1a1a] line-clamp-1 mb-1">
+                        <p className="font-serif text-base text-[#2D2420] line-clamp-1 mb-1">
                           {result.name}
                         </p>
                         {result.category && (
                           <p className="text-xs text-gray-500 uppercase">{result.category}</p>
                         )}
-                        <p className="text-sm font-semibold text-[#D4AF37] mt-1">
+                        <p className="text-sm font-semibold text-[#F0C11D] mt-1">
                           {typeof result.price === 'number'
                             ? result.price.toFixed(2)
                             : result.price}{' '}
@@ -184,7 +184,7 @@ export default function AdvancedSearch() {
               <div className="border-t border-gray-200 p-3">
                 <button
                   onClick={handleViewAll}
-                  className="w-full text-center text-sm font-semibold text-[#2596be] hover:text-[#1e7a9a] transition-colors"
+                  className="w-full text-center text-sm font-semibold text-[#8B4E4E] hover:text-[#6B3D3D] transition-colors"
                 >
                   {t('viewAllResults')} ({results.length})
                 </button>

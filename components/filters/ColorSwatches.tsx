@@ -69,7 +69,7 @@ export default function ColorSwatches({
                 className="absolute -inset-1 rounded-full"
                 animate={{
                   boxShadow: isSelected 
-                    ? `0 0 0 2px #2596be, 0 0 12px rgba(37, 150, 190, 0.3)`
+                    ? `0 0 0 2px #8B4E4E, 0 0 12px rgba(37, 150, 190, 0.3)`
                     : '0 0 0 0px transparent',
                 }}
                 transition={{ duration: 0.2 }}
@@ -80,7 +80,7 @@ export default function ColorSwatches({
                 className={`relative w-9 h-9 rounded-full overflow-hidden 
                            shadow-md ring-1 ring-black/10
                            transition-transform duration-200
-                           ${isSelected ? 'ring-2 ring-[#2596be]' : 'group-hover:ring-[#2596be]/50'}`}
+                           ${isSelected ? 'ring-2 ring-[#8B4E4E]' : 'group-hover:ring-[#8B4E4E]/50'}`}
                 style={{
                   background: color.hex,
                 }}

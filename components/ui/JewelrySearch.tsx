@@ -138,7 +138,7 @@ export default function JewelrySearch() {
         return (
           <>
             {text.substring(0, index)}
-            <strong className="font-bold text-[#2596be]">
+            <strong className="font-bold text-[#8B4E4E]">
               {text.substring(index, index + query.length)}
             </strong>
             {text.substring(index + query.length)}
@@ -161,7 +161,7 @@ export default function JewelrySearch() {
         return (
           <>
             {text.substring(0, index)}
-            <strong className="font-bold text-[#2596be]">
+            <strong className="font-bold text-[#8B4E4E]">
               {text.substring(index, index + query.length)}
             </strong>
             {text.substring(index + query.length)}
@@ -190,7 +190,7 @@ export default function JewelrySearch() {
       }
       // Ajouter le texte matché en gras
       parts.push(
-        <strong key={`${start}-${idx}`} className="font-bold text-[#2596be]">
+        <strong key={`${start}-${idx}`} className="font-bold text-[#8B4E4E]">
           {text.substring(start, end + 1)}
         </strong>
       );
@@ -235,7 +235,7 @@ export default function JewelrySearch() {
             onKeyDown={handleKeyDown}
             onFocus={() => query.length >= 2 && setIsOpen(true)}
             placeholder="Je cherche une bague, un collier..."
-            className="w-full pl-12 pr-10 py-2 bg-white/50 dark:bg-white/10 border border-gray-200 dark:border-gray-700 rounded-full focus:ring-2 focus:ring-[#2596be] dark:focus:ring-[#2596be] focus:border-[#2596be] transition-all shadow-inner outline-none text-sm font-medium text-foreground placeholder:text-sm placeholder:font-normal placeholder:text-gray-500 dark:placeholder:text-gray-400 leading-[21px]"
+            className="w-full pl-12 pr-10 py-2 bg-white/50 dark:bg-white/10 border border-gray-200 dark:border-gray-700 rounded-full focus:ring-2 focus:ring-[#8B4E4E] dark:focus:ring-[#8B4E4E] focus:border-[#8B4E4E] transition-all shadow-inner outline-none text-sm font-medium text-foreground placeholder:text-sm placeholder:font-normal placeholder:text-gray-500 dark:placeholder:text-gray-400 leading-[21px]"
           />
           {query && (
             <button
@@ -301,7 +301,7 @@ export default function JewelrySearch() {
                             <p className="font-serif text-base text-foreground truncate">
                               {highlightMatch(product.name, query, product)}
                             </p>
-                            <p className="text-sm font-bold text-[#D4AF37] mt-1">
+                            <p className="text-sm font-bold text-[#F0C11D] mt-1">
                               {typeof product.price === 'number' ? product.price.toFixed(2) : product.price}€
                             </p>
                           </div>

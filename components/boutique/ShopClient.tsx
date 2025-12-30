@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Filter } from 'lucide-react';
+import { Filter, X } from 'lucide-react';
+import { Link } from '@/navigation';
 import { Product } from '@/lib/types';
 import { SortOption } from '@/lib/types/filters';
 
@@ -20,9 +21,9 @@ import { useShopFilters } from './hooks/useShopFilters';
 interface ShopClientProps {
   initialProducts: Product[];
   initialFilters?: Partial<import('@/lib/types/filters').FilterState>;
-  hideTypeFilter?: boolean;
-  hideAccessoryFilter?: boolean;
-  hideStoneFilter?: boolean;
+  pageTitle?: string;
+  pageSubtitle?: string;
+  searchQuery?: string;
 }
 
 const SORT_OPTIONS = [
@@ -32,8 +33,9 @@ const SORT_OPTIONS = [
   { value: 'price_desc' as SortOption, label: 'Prix décroissant' },
 ];
 
-export default function ShopClient({ initialProducts, initialFilters, hideTypeFilter = false, hideAccessoryFilter = false, hideStoneFilter = false }: ShopClientProps) {
+export default function ShopClient({ initialProducts, initialFilters, pageTitle, pageSubtitle, searchQuery }: ShopClientProps) {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const productGridRef = useRef<HTMLDivElement>(null);
   
   const {
     filters,
@@ -44,41 +46,63 @@ export default function ShopClient({ initialProducts, initialFilters, hideTypeFi
     activeFilterCount,
     currentPage,
     totalPages,
+    itemsPerPage,
     handleToggleFilter,
     handleUpdateFilter,
     handleClearAll,
     handleSort,
-    handlePageChange,
+    handlePageChange: originalHandlePageChange,
+    handleItemsPerPageChange,
   } = useShopFilters(initialProducts, { initialFilters });
 
+  // Wrapper pour handlePageChange avec scroll vers la grille
+  const handlePageChange = (page: number) => {
+    originalHandlePageChange(page);
+    // Scroll vers la grille produits après un court délai pour laisser le DOM se mettre à jour
+    setTimeout(() => {
+      if (productGridRef.current) {
+        productGridRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        // Fallback: scroll vers le haut de la page
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
   return (
-    <div className="min-h-screen bg-[#FDFBF7] -mt-[134px] pt-[134px]">
+    <div className="min-h-screen bg-white -mt-[134px] pt-[134px]">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Mobile Bar */}
-        <div className="lg:hidden sticky top-20 z-30 bg-[#FDFBF7]/95 backdrop-blur-sm border-b border-[#D4AF37]/20 -mx-4 px-4 py-3 mb-6">
+        <div className="lg:hidden sticky top-20 z-30 bg-white/95 backdrop-blur-sm border-b border-[#F0C11D]/40 -mx-4 px-4 py-3 mb-6">
           <div className="flex items-center justify-between gap-3">
             <motion.button
               onClick={() => setIsFilterModalOpen(true)}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-4 py-2.5 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm font-medium relative hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]"
+              className="flex items-center gap-2 px-4 py-2.5 bg-white border border-[#F0C11D]/30 rounded-none text-sm font-medium relative hover:border-[#F0C11D] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
             >
               <Filter className="w-5 h-5" />
               <span>Filtrer</span>
               {activeFilterCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#D4AF37] text-white text-xs font-bold rounded-none flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#F0C11D] text-white text-xs font-bold rounded-none flex items-center justify-center">
                   {activeFilterCount}
                 </span>
               )}
             </motion.button>
 
             <span className="text-sm text-foreground/60">
-              <span className="font-semibold text-[#D4AF37]">{allFilteredCount}</span> trésors
+              <span className="font-semibold text-[#F0C11D]">{allFilteredCount}</span> trésors
             </span>
 
             <select
               value={filters.sort}
               onChange={(e) => handleSort(e.target.value as SortOption)}
-              className="px-3 py-2 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm focus:ring-2 focus:ring-[#D4AF37]/20"
+              className="px-4 py-2 bg-white border border-[#F0C11D]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#F0C11D] focus:ring-2 focus:ring-[#F0C11D]/20 cursor-pointer"
             >
               {SORT_OPTIONS.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -97,45 +121,99 @@ export default function ShopClient({ initialProducts, initialFilters, hideTypeFi
             onToggleFilter={handleToggleFilter}
             onUpdateFilter={handleUpdateFilter}
             onClearAll={handleClearAll}
-            hideTypeFilter={hideTypeFilter}
-            hideAccessoryFilter={hideAccessoryFilter}
-            hideStoneFilter={hideStoneFilter}
           />
 
           {/* Main Content */}
           <main className="flex-1 min-w-0">
-            {/* Desktop Header */}
-            <div className="hidden lg:flex items-center justify-between mb-6 sticky top-[134px] z-30 bg-[#FDFBF7] py-2 -mx-4 px-4 pt-[40px] -mt-[32px]">
-              <ActiveFilters
-                filters={filters}
-                activeCount={activeFilterCount}
-                onToggle={handleToggleFilter}
-                onClearAll={handleClearAll}
-              />
-              <select
-                value={filters.sort}
-                onChange={(e) => handleSort(e.target.value as SortOption)}
-                className="ml-auto px-4 py-2 bg-[#FDFBF7] border border-[#D4AF37]/30 rounded-none text-sm focus:ring-2 focus:ring-[#D4AF37]/20"
-              >
-                {SORT_OPTIONS.map(opt => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </div>
+            {/* Container unique pour tout le contenu */}
+            <div className="max-w-7xl mx-auto px-4 py-8">
+              
+              {/* 1. TITRE - En premier */}
+              {pageTitle && (
+                <div className="mb-6 text-center">
+                  <h1 className="font-serif text-3xl md:text-4xl text-[#2D2420]">
+                    {pageTitle}
+                  </h1>
+                  {pageSubtitle && (
+                    <p className="text-[#2D2420]/60 mt-2 max-w-2xl mx-auto">
+                      {pageSubtitle}
+                    </p>
+                  )}
+                  
+                  {/* Bouton pour effacer la recherche */}
+                  {searchQuery && (
+                    <Link 
+                      href="/shop" 
+                      className="inline-flex items-center gap-2 mt-4 px-4 py-2 text-sm text-[#8B4E4E] border border-[#8B4E4E]/30 hover:bg-[#8B4E4E] hover:text-white transition-colors rounded-none"
+                    >
+                      <X className="w-4 h-4" />
+                      Effacer la recherche
+                    </Link>
+                  )}
+                </div>
+              )}
 
-            {/* Product Grid or Empty State */}
-            {filteredProducts.length > 0 ? (
-              <>
-                <ProductGrid products={filteredProducts} />
-                <ShopPagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-                />
-              </>
-            ) : (
-              <EmptyState onClearFilters={handleClearAll} />
-            )}
+              {/* 2. BARRE DE TRI - Après le titre */}
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-[#F0C11D]/20">
+                {/* Filtres actifs (desktop) */}
+                <div className="hidden lg:flex flex-wrap items-center gap-2">
+                  <ActiveFilters
+                    filters={filters}
+                    activeCount={activeFilterCount}
+                    onToggle={handleToggleFilter}
+                    onClearAll={handleClearAll}
+                  />
+                </div>
+                
+                {/* Select tri */}
+                <select 
+                  value={filters.sort}
+                  onChange={(e) => handleSort(e.target.value as SortOption)}
+                  className="px-4 py-2 bg-white border border-[#F0C11D]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#F0C11D] focus:ring-2 focus:ring-[#F0C11D]/20 cursor-pointer"
+                >
+                  {SORT_OPTIONS.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* 3. GRILLE PRODUITS - Après le select */}
+              {filteredProducts.length > 0 ? (
+                <>
+                  <div ref={productGridRef}>
+                    <ProductGrid products={filteredProducts} />
+                  </div>
+                  {/* 4. PAGINATION - En bas */}
+                  <ShopPagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                    itemsPerPage={itemsPerPage}
+                    onItemsPerPageChange={handleItemsPerPageChange}
+                    totalItems={allFilteredCount}
+                  />
+                </>
+              ) : (
+                <>
+                  {/* Message si aucun résultat de recherche */}
+                  {searchQuery ? (
+                    <div className="text-center py-12">
+                      <p className="text-[#2D2420]/60 mb-4">
+                        Aucun produit ne correspond à votre recherche &quot;{searchQuery}&quot;
+                      </p>
+                      <Link 
+                        href="/shop" 
+                        className="inline-block px-6 py-3 bg-[#8B4E4E] text-white hover:bg-[#6B3D3D] transition-colors rounded-none"
+                      >
+                        Voir tous les produits
+                      </Link>
+                    </div>
+                  ) : (
+                    <EmptyState onClearFilters={handleClearAll} />
+                  )}
+                </>
+              )}
+            </div>
           </main>
         </div>
       </div>

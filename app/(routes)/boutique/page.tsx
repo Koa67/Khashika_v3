@@ -25,7 +25,7 @@ export default async function BoutiquePage() {
     <main className="min-h-screen bg-[#f4f1eb]">
       {/* Hero section / Titre section */}
       <section className="max-w-7xl mx-auto px-4 pt-24 pb-8">
-        <h1 className="font-serif text-4xl md:text-5xl text-center mb-4 text-[#1a1a1a]">
+        <h1 className="font-serif text-4xl md:text-5xl text-center mb-4 text-[#2D2420]">
           Notre Collection
         </h1>
         <p className="text-center text-gray-600 max-w-2xl mx-auto font-sans">

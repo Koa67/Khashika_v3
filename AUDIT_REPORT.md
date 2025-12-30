@@ -1,214 +1,329 @@
-# AUDIT UI/UX - HARMONISATION AVEC /fr/shop
+# CORRECTIONS PAGE PRODUIT - RAPPORT FINAL
 
-## RÉFÉRENCE: Shop (`components/boutique/ShopClient.tsx`)
-
-**Patterns identifiés:**
-- Container: `max-w-7xl mx-auto px-4 py-8`
-- Background: `bg-[#FDFBF7]`
-- Borders: `border border-[#D4AF37]/20` ou `/30`
-- Rounded: `rounded-none` (pas de border-radius)
-- Typography titres: `font-serif text-xl` ou `text-2xl`, `text-[#1a1a1a]`
-- Inputs: `border border-gray-300 rounded-none focus:border-[#2596be]`
-- Buttons: `border border-[#D4AF37]/30 rounded-none hover:border-[#D4AF37]`
-
----
-
-## VÉRIFICATIONS PAR PAGE
-
-### 1. LAYOUT CONTAINER
-
-**Shop utilise:** `max-w-7xl mx-auto px-4 py-8`
-
-| Page | Container | Statut | Différence |
-|------|-----------|--------|------------|
-| Homepage | `max-w-7xl mx-auto px-4 py-8` | ✅ OUI | Identique |
-| Login | `max-w-md` (centré, spécifique) | ✅ OUI | Acceptable (formulaire centré) |
-| Checkout | `max-w-7xl mx-auto px-4 py-8` | ✅ OUI | Identique |
-| Product | `max-w-7xl mx-auto px-4 py-8` | ✅ OUI | Identique |
-
-**Preuve:**
-- Homepage ligne 44: `<div className="max-w-7xl mx-auto px-4 py-8">`
-- Checkout ligne 163: `<div className="max-w-7xl mx-auto px-4 py-8">`
-- Product ligne 85: `<div className="max-w-7xl mx-auto px-4 py-8">`
-
----
-
-### 2. TITRES H1/H2
-
-**Shop utilise:** `font-serif text-xl` ou `text-2xl`, `text-[#1a1a1a]`
-
-| Page | Titres | Statut | Différence |
-|------|--------|--------|------------|
-| Homepage | `font-serif text-4xl font-bold text-[#1a1a1a]` | ✅ OUI | Identique (taille adaptée) |
-| Login | `font-serif text-3xl font-bold text-[#2596be]` | ⚠️ PARTIEL | Couleur différente (spécifique login) |
-| Checkout | `font-serif text-4xl md:text-5xl text-[#1a1a1a]` | ✅ OUI | Identique |
-| Product | Utilise composants ProductConversionModule | ✅ OUI | Délégué aux composants |
-
-**Preuve:**
-- Homepage ligne 45: `<h2 className="font-serif text-4xl font-bold text-[#1a1a1a] mb-8 text-center">`
-- Checkout ligne 164: `<h1 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-8 text-center">`
-
----
-
-### 3. BOUTONS PRINCIPAUX
-
-**Shop utilise:** `border border-[#D4AF37]/30 rounded-none hover:border-[#D4AF37]`
-
-| Page | Boutons | Statut | Différence |
-|------|---------|--------|------------|
-| Homepage | Hero button: `bg-[#2596be] rounded-none hover:bg-[#1e7a9a]` | ✅ OUI | Style primaire (cohérent) |
-| Login | `bg-[#2596be] rounded-none hover:bg-[#1e7a9a]` | ✅ OUI | Identique |
-| Checkout | `bg-[#2596be] rounded-none hover:bg-[#1e7a9a]` | ✅ OUI | Identique |
-| Product | Délégué aux composants | ✅ OUI | Délégué |
-
-**Preuve:**
-- Login ligne 207: `className="w-full bg-[#2596be] text-white py-3 px-6 rounded-none font-serif text-lg font-bold hover:bg-[#1e7a9a]"`
-- Checkout ligne 562: `className="w-full bg-[#2596be] hover:bg-[#1e7a9a] text-white py-4 text-lg font-bold rounded-none"`
-
----
-
-### 4. CARDS/CONTAINERS
-
-**Shop utilise:** `bg-[#FDFBF7] border border-[#D4AF37]/20 rounded-none`
-
-| Page | Cards | Statut | Différence |
-|------|-------|--------|------------|
-| Homepage | ProductCard (composant) | ✅ OUI | Utilise ProductCard (cohérent) |
-| Login | `bg-white border border-[#D4AF37]/20 rounded-none` | ✅ OUI | Identique (fond blanc pour contraste) |
-| Checkout | `bg-white border-gray-200 rounded-none` | ✅ OUI | Identique (sections accordéon) |
-| Product | Délégué aux composants | ✅ OUI | Délégué |
-
-**Preuve:**
-- Login ligne 95: `<div className="w-full max-w-md bg-white shadow-xl rounded-none overflow-hidden border border-[#D4AF37]/20">`
-- Checkout ligne 170: `<div className={...border-b border-gray-200 pb-6 bg-white rounded-none}>`
-
----
-
-### 5. BACKGROUND PAGE
-
-**Shop utilise:** `bg-[#FDFBF7]`
-
-| Page | Background | Statut | Différence |
-|------|-----------|--------|------------|
-| Homepage | `bg-[#FDFBF7]` | ✅ OUI | Identique |
-| Login | `bg-[#FDFBF7]` | ✅ OUI | Identique |
-| Checkout | `bg-[#FDFBF7]` | ✅ OUI | Identique |
-| Product | `bg-[#FDFBF7]` | ✅ OUI | Identique |
-
-**Preuve:**
-- Homepage ligne 43: `<section className="bg-[#FDFBF7] py-8">`
-- Login ligne 94: `<div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center pt-24 px-4">`
-- Checkout ligne 162: `<div className="min-h-screen bg-[#FDFBF7] pt-24 pb-20">`
-- Product ligne 84: `<div className="bg-[#FDFBF7] min-h-screen mt-24">`
-
----
-
-### 6. INPUTS
-
-**Shop utilise:** `border border-gray-300 rounded-none focus:border-[#2596be] focus:ring-[#2596be]`
-
-| Page | Inputs | Statut | Différence |
-|------|--------|--------|------------|
-| Login | `border border-gray-300 rounded-none focus:border-[#2596be] focus:ring-[#2596be]` | ✅ OUI | Identique |
-| Checkout | `border rounded-none bg-white text-[#1a1a1a] focus:border-[#2596be]` | ✅ OUI | Identique |
-
-**Preuve:**
-- Login ligne 148: `className={...rounded-none border ...focus:border-[#2596be] focus:ring-[#2596be]}`
-- Checkout ligne 195: `className={...border rounded-none bg-white text-[#1a1a1a] ...focus:border-[#2596be]}`
-
----
-
-## TABLEAU FINAL
-
-| Page | Container | Titres | Boutons | Cards | Background | Inputs | Score |
-|------|-----------|--------|---------|-------|------------|--------|-------|
-| Homepage | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | N/A | 5/5 |
-| Login | ✅ OUI* | ⚠️ PARTIEL | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | 5/5* |
-| Checkout | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | 5/5 |
-| Product | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | ✅ OUI | N/A | 5/5 |
-
-*Login: Container `max-w-md` accepté (formulaire centré), titre couleur `#2596be` accepté (spécifique login)
-
----
-
-## CORRECTIONS APPLIQUÉES
-
-### Correction 1: Messages d'alerte Login
-**Fichier:** `app/[locale]/login/page.tsx`
-**Lignes:** 127, 132
-**AVANT:**
-```tsx
-<div className="... rounded-lg">
-```
-**APRÈS:**
-```tsx
-<div className="... rounded-none">
-```
-**Pourquoi:** Alignement avec `rounded-none` de shop.
-
-### Correction 2: Border tabs Login
-**Fichier:** `app/[locale]/login/page.tsx`
-**Ligne:** 102
-**AVANT:**
-```tsx
-<div className="flex border-b border-gray-200">
-```
-**APRÈS:**
-```tsx
-<div className="flex border-b border-[#D4AF37]/20">
-```
-**Pourquoi:** Alignement avec `border-[#D4AF37]/20` de shop.
-
----
-
-## CORRECTIONS SUPPLÉMENTAIRES
-
-### Correction 3: Page Checkout Success
-**Fichier:** `app/[locale]/checkout/success/page.tsx`
-**Lignes:** 80, 81, 84, 101, 153, 173
+## PROBLÈME 1: BREADCRUMB PAS PRÉCIS ✅
 
 **AVANT:**
-```tsx
-<div className="min-h-screen bg-background pt-32 pb-20">
-  <div className="container mx-auto px-4 max-w-2xl">
-  <div className="... rounded-full ...">
-  <div className="bg-white rounded-lg shadow-lg ...">
-  className="... rounded-lg ... border-gray-200 ...">
+```
+Accueil > Boutique > BRACELET ARGENT turquoise
 ```
 
 **APRÈS:**
-```tsx
-<div className="min-h-screen bg-[#FDFBF7] pt-32 pb-20">
-  <div className="max-w-7xl mx-auto px-4 py-8">
-  <div className="... rounded-none ...">
-  <div className="bg-white border border-[#D4AF37]/20 rounded-none shadow-lg ...">
-  className="... rounded-none ... border-[#D4AF37]/30 ...">
+```
+Accueil > Boutique > Bracelets > BRACELET ARGENT turquoise
 ```
 
-**Pourquoi:** Harmonisation complète avec shop (container, background, borders, rounded).
+**Fichier:** `app/[locale]/product/[slug]/page.tsx`
+**Lignes:** 98-104, 119-124
+
+**Code AVANT:**
+```tsx
+const getCategoryLabel = (cat: string) => {
+  const catLower = cat.toLowerCase();
+  if (catLower.includes('bijou')) return 'Bijoux';
+  if (catLower.includes('pierre')) return 'Pierres';
+  if (catLower.includes('accessoire')) return 'Accessoires';
+  return cat || 'Boutique';
+};
+```
+
+**Code APRÈS:**
+```tsx
+const getCategoryLabel = (cat: string, productName: string) => {
+  const catLower = cat.toLowerCase();
+  const nameLower = (productName || '').toLowerCase();
+  
+  // Mapping précis par type de bijou
+  if (nameLower.includes('bracelet') || catLower.includes('bracelet')) return 'Bracelets';
+  if (nameLower.includes('collier') || catLower.includes('collier')) return 'Colliers';
+  if (nameLower.includes('boucle') || catLower.includes('boucle')) return 'Boucles d\'oreilles';
+  if (nameLower.includes('bague') || catLower.includes('bague')) return 'Bagues';
+  if (nameLower.includes('pendentif') || catLower.includes('pendentif')) return 'Pendentifs';
+  if (nameLower.includes('bague') || catLower.includes('ring')) return 'Bagues';
+  
+  // Catégories générales
+  if (catLower.includes('bijou')) return 'Bijoux';
+  if (catLower.includes('pierre')) return 'Pierres';
+  if (catLower.includes('accessoire')) return 'Accessoires';
+  
+  return cat || 'Boutique';
+};
+```
+
+**Preuve:** Le breadcrumb affiche maintenant la catégorie précise (Bracelets, Colliers, etc.) au lieu de juste "Boutique".
 
 ---
 
-## RÉSUMÉ
+## PROBLÈME 2: BOUTON SANS FEEDBACK ✅
 
-✅ **Toutes les pages sont harmonisées avec shop**
-- Container: `max-w-7xl mx-auto px-4 py-8` (sauf login: `max-w-md` centré)
-- Background: `bg-[#FDFBF7]` partout
-- Borders: `border-[#D4AF37]/20` ou `/30`, `rounded-none`
-- Typography: `font-serif` pour titres, `text-[#1a1a1a]` pour texte
-- Inputs: `rounded-none focus:border-[#2596be]`
-- Buttons: `rounded-none hover:bg-[#1e7a9a]`
+**Fichier:** `components/ProductConversionModule.tsx`
+**Lignes:** 16, 28-33, 123-128, 147-152
 
-**Pages harmonisées:**
-1. ✅ Homepage (`app/[locale]/page.tsx`)
-2. ✅ Login (`app/[locale]/login/page.tsx`)
-3. ✅ Checkout (`app/[locale]/checkout/page.tsx`)
-4. ✅ Checkout Success (`app/[locale]/checkout/success/page.tsx`)
-5. ✅ Product (`app/[locale]/product/[slug]/page.tsx`)
-6. ✅ Navbar (`components/Navbar.tsx`)
-7. ✅ Footer (`components/Footer.tsx`)
-8. ✅ Hero (`components/Hero.tsx`)
-9. ✅ PromotionSection (`components/PromotionSection.tsx`)
+**Code AVANT:**
+```tsx
+const [quantity, setQuantity] = useState(1);
+
+const handleAddToCart = () => {
+  addItem(product, quantity);
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Ajouter au panier:', { productId: product.id, quantity });
+  }
+};
+
+<button
+  onClick={handleAddToCart}
+  className="w-full bg-[#D4AF37] text-white font-sans font-semibold py-4 px-6 rounded-none transition-colors hover:bg-[#D4AF37]/90"
+>
+  Ajouter au panier
+</button>
+```
+
+**Code APRÈS:**
+```tsx
+const [quantity, setQuantity] = useState(1);
+const [isAdded, setIsAdded] = useState(false);
+
+const handleAddToCart = () => {
+  addItem(product, quantity);
+  setIsAdded(true);
+  setTimeout(() => setIsAdded(false), 1500);
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Ajouter au panier:', { productId: product.id, quantity });
+  }
+};
+
+<button
+  onClick={handleAddToCart}
+  disabled={isAdded}
+  className={`w-full py-4 px-6 rounded-none font-sans font-semibold transition-all ${
+    isAdded 
+      ? 'bg-green-600 text-white' 
+      : 'bg-[#D4AF37] text-white hover:bg-[#D4AF37]/90'
+  }`}
+>
+  {isAdded ? '✓ Ajouté au panier' : 'Ajouter au panier'}
+</button>
+```
+
+**Preuve:** Le bouton affiche "✓ Ajouté au panier" en vert pendant 1.5s après le clic, puis revient à l'état normal.
+
+---
+
+## PROBLÈME 3: ONGLETS → TOUT SUR UNE PAGE ✅
+
+**Fichier:** `components/ProductInfoTabs.tsx`
+**Lignes:** 10-13, 21-324
+
+**Code AVANT:**
+```tsx
+const [activeTab, setActiveTab] = useState<'description' | 'characteristics' | 'reviews'>('description');
+
+const tabs = [
+  { id: 'description' as const, label: 'Description' },
+  { id: 'characteristics' as const, label: 'Caractéristiques' },
+  { id: 'reviews' as const, label: 'Avis Clients' },
+];
+
+return (
+  <div className="mt-8">
+    {/* Onglets Desktop */}
+    <div className="hidden md:block border-b border-emerald/10">
+      <div className="flex gap-4">
+        {tabs.map((tab) => (
+          <button onClick={() => setActiveTab(tab.id)}>...</button>
+        ))}
+      </div>
+    </div>
+    {/* Contenu conditionnel avec activeTab === 'description' etc. */}
+  </div>
+);
+```
+
+**Code APRÈS:**
+```tsx
+export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
+  return (
+    <div className="mt-8 space-y-12">
+      {/* Description - Toujours visible */}
+      <div>
+        <h2 className="font-serif text-2xl font-bold text-[#1a1a1a] mb-4">Description</h2>
+        {/* Contenu description */}
+      </div>
+
+      {/* Caractéristiques - Toujours visible */}
+      <div>
+        <h2 className="font-serif text-2xl font-bold text-[#1a1a1a] mb-4">Caractéristiques</h2>
+        {/* Contenu caractéristiques */}
+      </div>
+
+      {/* Avis Clients - Toujours visible */}
+      <div>
+        <h2 className="font-serif text-2xl font-bold text-[#1a1a1a] mb-4">Avis Clients</h2>
+        {/* Contenu avis */}
+      </div>
+    </div>
+  );
+}
+```
+
+**Preuve:** Plus d'onglets, tout est visible d'un coup avec des titres H2 pour chaque section.
+
+---
+
+## PROBLÈME 4: "VOUS AIMEREZ AUSSI" PAS RÉALISTE ✅
+
+**Fichier:** `app/[locale]/product/[slug]/page.tsx`
+**Lignes:** 86-95
+
+**Code AVANT:**
+```tsx
+const similarProducts = allProducts
+  .filter(p => 
+    p.id !== product.id && 
+    (p.category === product.category || 
+     (product.attributes?.stone && p.attributes?.stone === product.attributes.stone) ||
+     (product.material && p.material === product.material))
+  )
+  .slice(0, 4);
+```
+
+**Code APRÈS:**
+```tsx
+const currentPrice = typeof product.price === 'number' ? product.price : parseFloat(String(product.price || 0));
+const priceRange = { min: currentPrice * 0.8, max: currentPrice * 1.2 }; // ±20%
+
+const similarProducts = allProducts
+  .filter(p => {
+    if (p.id === product.id) return false;
+    
+    // Même catégorie
+    const sameCategory = p.category === product.category;
+    
+    // Même pierre
+    const sameStone = (product.attributes?.stone && p.attributes?.stone === product.attributes.stone) ||
+                      (product.stone && p.stone === product.stone);
+    
+    // Même gamme de prix (±20%)
+    const pPrice = typeof p.price === 'number' ? p.price : parseFloat(String(p.price || 0));
+    const samePriceRange = pPrice >= priceRange.min && pPrice <= priceRange.max;
+    
+    return sameCategory || sameStone || samePriceRange;
+  })
+  .slice(0, 4);
+```
+
+**Preuve:** Les produits similaires sont maintenant filtrés par catégorie OU pierre OU gamme de prix (±20%), rendant les suggestions plus pertinentes.
+
+---
+
+## PROBLÈME 5: ESPACE BLANC ENTRE NAVBAR ET PAGE ✅
+
+**Fichier:** `app/[locale]/product/[slug]/page.tsx`
+**Ligne:** 107
+
+**Code AVANT:**
+```tsx
+<div className="bg-[#FDFBF7] min-h-screen mt-24">
+```
+
+**Code APRÈS:**
+```tsx
+<div className="bg-[#FDFBF7] min-h-screen mt-16">
+```
+
+**Preuve:** Réduction de l'espace de `mt-24` (96px) à `mt-16` (64px).
+
+---
+
+## PROBLÈME 6: EMOJIS ENCORE PRÉSENTS (BLOQUANT) ✅
+
+### Correction 1: TrustBadges
+
+**Fichier:** `components/TrustBadges.tsx`
+**Lignes:** 1, 6, 12, 18
+
+**Code AVANT:**
+```tsx
+export default function TrustBadges() {
+  return (
+    <div className="flex flex-wrap items-center gap-4 mt-6 pt-6 border-t border-gray-200">
+      <div className="flex items-center gap-2">
+        <span className="text-xl">🔒</span>
+        <span className="font-body text-sm text-gray-700">Paiement Sécurisé</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-xl">🚀</span>
+        <span className="font-body text-sm text-gray-700">Livraison Gratuite</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-xl">⭐</span>
+        <span className="font-body text-sm text-gray-700">4.9/5 (128 avis)</span>
+      </div>
+    </div>
+  );
+}
+```
+
+**Code APRÈS:**
+```tsx
+import { Lock, Truck, Star } from 'lucide-react';
+
+export default function TrustBadges() {
+  return (
+    <div className="flex flex-wrap items-center gap-4 mt-6 pt-6 border-t border-gray-200">
+      <div className="flex items-center gap-2">
+        <Lock className="w-5 h-5 text-[#2596be]" />
+        <span className="font-body text-sm text-gray-700">Paiement Sécurisé</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <Truck className="w-5 h-5 text-[#2596be]" />
+        <span className="font-body text-sm text-gray-700">Livraison Gratuite</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <Star className="w-5 h-5 text-[#D4AF37] fill-[#D4AF37]" />
+        <span className="font-body text-sm text-gray-700">4.9/5 (128 avis)</span>
+      </div>
+    </div>
+  );
+}
+```
+
+### Correction 2: ProductInfoTabs (mobile)
+
+**Fichier:** `components/ProductInfoTabs.tsx`
+**Ligne:** 301
+
+**Code AVANT:**
+```tsx
+<span className={i < review.rating ? 'text-gold' : 'text-anthracite/20'}>
+  ⭐
+</span>
+```
+
+**Code APRÈS:**
+```tsx
+<span className={`text-lg ${i < review.rating ? 'text-[#D4AF37]' : 'text-gray-300'}`}>
+  ★
+</span>
+```
+
+**Preuve:** Tous les emojis ont été remplacés par des icônes Lucide React ou des caractères Unicode (★).
+
+---
+
+## RÉSUMÉ DES CORRECTIONS
+
+| Problème | Fichier | Lignes | Statut |
+|----------|---------|--------|--------|
+| 1. Breadcrumb précis | `app/[locale]/product/[slug]/page.tsx` | 98-104, 119-124 | ✅ |
+| 2. Feedback bouton | `components/ProductConversionModule.tsx` | 16, 28-33, 123-128, 147-152 | ✅ |
+| 3. Onglets → tout visible | `components/ProductInfoTabs.tsx` | 10-324 | ✅ |
+| 4. Produits similaires | `app/[locale]/product/[slug]/page.tsx` | 86-95 | ✅ |
+| 5. Espace navbar | `app/[locale]/product/[slug]/page.tsx` | 107 | ✅ |
+| 6. Emojis (BLOQUANT) | `components/TrustBadges.tsx` | 1, 6, 12, 18 | ✅ |
+| 6. Emojis (BLOQUANT) | `components/ProductInfoTabs.tsx` | 301 | ✅ |
+
+**Total:** 7 corrections appliquées
 
 **Build Status:** ✅ SUCCESS (0 erreurs)
 **Linter Status:** ✅ 0 erreurs
+**TypeScript Status:** ✅ 0 erreurs

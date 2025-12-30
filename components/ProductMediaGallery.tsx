@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Heart } from 'lucide-react';
 import { Product } from '@/lib/types';
 import { useValidatedImages } from '@/lib/hooks/useValidatedImages';
+import { useWishlist } from '@/lib/context/WishlistContext';
 import ProductZoom from '@/components/product/ProductZoom';
 
 interface ProductMediaGalleryProps {
@@ -23,6 +25,9 @@ const getValidImageUrl = (path: string | null | undefined): string => {
 };
 
 export default function ProductMediaGallery({ product }: ProductMediaGalleryProps) {
+  const { isInWishlist, toggleWishlist } = useWishlist();
+  const [isAnimating, setIsAnimating] = useState(false);
+  
   // Collect all possible image sources and deduplicate
   const allProductImages = [
     product.image_url,
@@ -48,6 +53,16 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
   const [lightboxIndex, setLightboxIndex] = useState(0);
   // Images already normalized, no need to re-process
   const validImages = images;
+  
+  const isWishlisted = isInWishlist(product.id);
+  
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsAnimating(true);
+    toggleWishlist(product);
+    setTimeout(() => setIsAnimating(false), 200);
+  };
 
   const handleImageClick = (index: number) => {
     setLightboxIndex(index);
@@ -91,14 +106,35 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
       {/* Desktop: Stack vertical d'images avec zoom lens */}
       <div className="hidden lg:block space-y-6">
         {validImages.map((imageUrl, index) => (
-          <ProductZoom
-            key={index}
-            imageUrl={imageUrl}
-            alt={`${product.title || product.name} - Image ${index + 1}`}
-            priority={index === 0}
-            allImages={validImages}
-            currentIndex={index}
-          />
+          <div key={index} className="relative">
+            <ProductZoom
+              imageUrl={imageUrl}
+              alt={`${product.title || product.name} - Image ${index + 1}`}
+              priority={index === 0}
+              allImages={validImages}
+              currentIndex={index}
+            />
+            {/* Bouton Wishlist - uniquement sur la première image */}
+            {index === 0 && (
+              <button
+                onClick={handleWishlistClick}
+                className={`absolute top-3 right-3 z-20 flex items-center justify-center transition-all duration-200 ${
+                  isAnimating ? 'active:scale-125' : 'scale-100'
+                } hover:scale-110`}
+                aria-label={isWishlisted ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+              >
+                <Heart
+                  size={24}
+                  strokeWidth={1.5}
+                  className={`transition-colors duration-200 ${
+                    isWishlisted
+                      ? 'fill-[#E0115F] text-[#E0115F] drop-shadow-sm'
+                      : 'text-white fill-none hover:text-[#E0115F] drop-shadow-md'
+                  }`}
+                />
+              </button>
+            )}
+          </div>
         ))}
       </div>
 
@@ -108,7 +144,7 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
           {validImages.map((imageUrl, index) => (
             <div
               key={index}
-              className="relative w-full flex-shrink-0 snap-center aspect-square overflow-hidden rounded-lg bg-cream-light cursor-pointer"
+              className="relative w-full flex-shrink-0 snap-center aspect-square overflow-hidden rounded-none bg-cream-light cursor-pointer"
               onClick={() => handleImageClick(index)}
             >
               <Image
@@ -119,6 +155,26 @@ export default function ProductMediaGallery({ product }: ProductMediaGalleryProp
                 sizes="100vw"
                 priority={index === 0}
               />
+              {/* Bouton Wishlist - uniquement sur la première image */}
+              {index === 0 && (
+                <button
+                  onClick={handleWishlistClick}
+                  className={`absolute top-3 right-3 z-20 flex items-center justify-center transition-all duration-200 ${
+                    isAnimating ? 'active:scale-125' : 'scale-100'
+                  } hover:scale-110`}
+                  aria-label={isWishlisted ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                >
+                  <Heart
+                    size={24}
+                    strokeWidth={1.5}
+                    className={`transition-colors duration-200 ${
+                      isWishlisted
+                        ? 'fill-[#E0115F] text-[#E0115F] drop-shadow-sm'
+                        : 'text-white fill-none hover:text-[#E0115F] drop-shadow-md'
+                    }`}
+                  />
+                </button>
+              )}
             </div>
           ))}
         </div>

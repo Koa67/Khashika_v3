@@ -85,14 +85,14 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
   };
 
   return (
-    <div className="bg-[#f4f1eb] rounded-lg border border-[#D4AF37]/20 p-6 space-y-8 sticky top-24">
-      <h2 className="font-serif text-2xl text-[#2596be] mb-6">
+    <div className="bg-[#f4f1eb] rounded-lg border border-[#F0C11D]/40 p-6 space-y-8 sticky top-24">
+      <h2 className="font-serif text-2xl text-[#8B4E4E] mb-6">
         Filtres
       </h2>
 
       {/* Slider de Prix */}
       <div>
-        <label className="block font-serif text-base font-medium text-[#2596be] mb-4">
+        <label className="block font-serif text-base font-medium text-[#8B4E4E] mb-4">
           Prix : {priceRange[0]}€ - {priceRange[1]}€
         </label>
         <div className="space-y-2">
@@ -105,7 +105,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
             onChange={(e) =>
               setPriceRange([parseInt(e.target.value), priceRange[1]])
             }
-            className="w-full accent-[#2596be]"
+            className="w-full accent-[#8B4E4E]"
           />
           <input
             type="range"
@@ -116,18 +116,18 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
             onChange={(e) =>
               setPriceRange([priceRange[0], parseInt(e.target.value)])
             }
-            className="w-full accent-[#2596be]"
+            className="w-full accent-[#8B4E4E]"
           />
         </div>
         <div className="flex justify-between text-xs text-anthracite/50 mt-1 font-body">
-          <span>0€</span>
-          <span>500€</span>
+          <span>0 €</span>
+          <span>500 €</span>
         </div>
       </div>
 
       {/* Catégorie */}
       <div>
-        <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+        <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
           Catégorie
         </h3>
         <div className="space-y-3">
@@ -141,9 +141,9 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                   type="checkbox"
                   className="sr-only"
                 />
-                <div className="w-5 h-5 border-2 border-[#D4AF37] rounded-sm flex items-center justify-center transition-all group-hover:border-[#2596be]">
+                <div className="w-5 h-5 border-2 border-[#F0C11D] rounded-sm flex items-center justify-center transition-all group-hover:border-[#8B4E4E]">
                   <svg
-                    className="w-3 h-3 text-[#2596be] opacity-0 group-hover:opacity-30 transition-opacity"
+                    className="w-3 h-3 text-[#8B4E4E] opacity-0 group-hover:opacity-30 transition-opacity"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -160,7 +160,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
 
       {/* Matière */}
       <div>
-        <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+        <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
           Matière
         </h3>
         <div className="space-y-3">
@@ -178,12 +178,12 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                 />
                 <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center transition-all ${
                   selectedMaterials.includes(material)
-                    ? 'border-[#D4AF37] bg-[#2596be]/10'
-                    : 'border-[#D4AF37] group-hover:border-[#2596be]'
+                    ? 'border-[#F0C11D] bg-[#8B4E4E]/10'
+                    : 'border-[#F0C11D] group-hover:border-[#8B4E4E]'
                 }`}>
                   {selectedMaterials.includes(material) && (
                     <svg
-                      className="w-3 h-3 text-[#2596be]"
+                      className="w-3 h-3 text-[#8B4E4E]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -201,7 +201,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
 
       {/* Pierre */}
       <div>
-        <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+        <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
           Pierre
         </h3>
         <div className="space-y-3">
@@ -219,12 +219,12 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                 />
                 <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center transition-all ${
                   selectedStones.includes(stone)
-                    ? 'border-[#D4AF37] bg-[#2596be]/10'
-                    : 'border-[#D4AF37] group-hover:border-[#2596be]'
+                    ? 'border-[#F0C11D] bg-[#8B4E4E]/10'
+                    : 'border-[#F0C11D] group-hover:border-[#8B4E4E]'
                 }`}>
                   {selectedStones.includes(stone) && (
                     <svg
-                      className="w-3 h-3 text-[#2596be]"
+                      className="w-3 h-3 text-[#8B4E4E]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -242,7 +242,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
 
       {/* Style */}
       <div>
-        <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+        <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
           Style
         </h3>
         <div className="space-y-3">
@@ -260,12 +260,12 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                 />
                 <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center transition-all ${
                   selectedStyles.includes(style)
-                    ? 'border-[#D4AF37] bg-[#2596be]/10'
-                    : 'border-[#D4AF37] group-hover:border-[#2596be]'
+                    ? 'border-[#F0C11D] bg-[#8B4E4E]/10'
+                    : 'border-[#F0C11D] group-hover:border-[#8B4E4E]'
                 }`}>
                   {selectedStyles.includes(style) && (
                     <svg
-                      className="w-3 h-3 text-[#2596be]"
+                      className="w-3 h-3 text-[#8B4E4E]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -283,7 +283,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
 
       {/* Tags */}
       <div>
-        <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+        <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
           Tags
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -293,8 +293,8 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
               onClick={() => handleTagToggle(tag)}
               className={`px-3 py-1.5 rounded text-xs font-sans transition-colors ${
                 selectedTags.includes(tag)
-                  ? 'bg-[#2596be] text-white'
-                  : 'bg-[#f4f1eb] text-[#1a1a1a]/70 hover:bg-[#D4AF37]/20 border border-[#2596be]/10'
+                  ? 'bg-[#8B4E4E] text-white'
+                  : 'bg-[#f4f1eb] text-[#2D2420]/70 hover:bg-[#F0C11D]/20 border border-[#8B4E4E]/10'
               }`}
             >
               {tag}
@@ -304,16 +304,16 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
       </div>
 
       {/* Boutons Actions */}
-      <div className="flex flex-col gap-2 pt-4 border-t border-[#2596be]/10">
+      <div className="flex flex-col gap-2 pt-4 border-t border-[#8B4E4E]/10">
         <button
           onClick={handleApply}
-          className="w-full bg-[#2596be] text-white font-sans font-medium py-3 px-4 rounded transition-colors hover:bg-[#2596be]/90"
+          className="w-full bg-[#8B4E4E] text-white font-sans font-medium py-3 px-4 rounded transition-colors hover:bg-[#8B4E4E]/90"
         >
           Appliquer
         </button>
         <button
           onClick={handleReset}
-          className="w-full bg-[#f4f1eb] text-[#2596be] font-sans font-medium py-2 px-4 rounded transition-colors hover:bg-[#D4AF37]/20 border border-[#2596be]/10"
+          className="w-full bg-[#f4f1eb] text-[#8B4E4E] font-sans font-medium py-2 px-4 rounded transition-colors hover:bg-[#F0C11D]/20 border border-[#8B4E4E]/10"
         >
           Réinitialiser
         </button>

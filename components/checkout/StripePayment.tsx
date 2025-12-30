@@ -64,7 +64,7 @@ function CheckoutForm({ amount, onSuccess, onError }: StripePaymentProps) {
       <button
         type="submit"
         disabled={!stripe || isProcessing}
-        className="w-full bg-[#2596be] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-[#8B4E4E] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#6B3D3D] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isProcessing ? 'Traitement...' : `Payer ${amount.toFixed(2)} €`}
       </button>
@@ -84,9 +84,9 @@ export default function StripePayment({ amount, onSuccess, onError }: StripePaym
   // Mode Simulation (si clé API manquante)
   if (isSimulationMode) {
     return (
-      <div className="border-2 border-dashed border-[#D4AF37] rounded-lg p-6 bg-[#f4f1eb]">
+      <div className="border-2 border-dashed border-[#F0C11D] rounded-lg p-6 bg-[#f4f1eb]">
         <div className="text-center mb-4">
-          <h3 className="font-serif text-xl text-[#1a1a1a] mb-2">
+          <h3 className="font-serif text-xl text-[#2D2420] mb-2">
             Mode Simulation
           </h3>
           <p className="text-sm text-gray-600 mb-4">
@@ -98,7 +98,7 @@ export default function StripePayment({ amount, onSuccess, onError }: StripePaym
             toast.success('Paiement simulé avec succès !');
             onSuccess();
           }}
-          className="w-full bg-[#2596be] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors"
+          className="w-full bg-[#8B4E4E] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#6B3D3D] transition-colors"
         >
           Simuler Paiement Réussi
         </button>
@@ -117,9 +117,9 @@ export default function StripePayment({ amount, onSuccess, onError }: StripePaym
     appearance: {
       theme: 'stripe',
       variables: {
-        colorPrimary: '#2596be',
-        colorBackground: '#ffffff',
-        colorText: '#1a1a1a',
+        colorPrimary: '#8B4E4E',
+        colorBackground: '#FFFFFF',
+        colorText: '#2D2420',
         fontFamily: 'system-ui, sans-serif',
       },
     },

@@ -53,7 +53,7 @@ website:   	http://www.themepunch.com
 	top:0px !important;
 	left:0px !important;
 	z-index:9999999 !important;
-	background:#ffffff !important;
+	background:#F5EDE6 !important;
 }
 
 
@@ -881,14 +881,14 @@ img.tp-slider-alternative-image	{
 	font-size: 13px;
 	font-weight: normal;
 	color: #7f8c8d;
-	color: #ffffff;
+	color: #F5EDE6;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	letter-spacing: 2px;
 }
 .rev-scroll-btn > *:hover,
 .rev-scroll-btn > *:focus,
 .rev-scroll-btn > *.active {
-	color: #ffffff;
+	color: #F5EDE6;
 }
 .rev-scroll-btn > *:hover,
 .rev-scroll-btn > *:focus,

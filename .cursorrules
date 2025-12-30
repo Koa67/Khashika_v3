@@ -1,7 +1,7 @@
-# Khashika - Cursor Rules v4
+# Khashika - Cursor Rules v5
 
 ## Context Priority
-1. _CONTEXT.md (project state)
+1. _CONTEXT.md (project state + BRICKMODE templates)
 2. .cursorrules (coding rules)
 3. @tagged files only
 4. README.md (only if asked about setup)
@@ -16,57 +16,69 @@ Never scan folders. Never read untagged JSON.
 
 ## BRICKMODE Gate (mandatory)
 Before writing any patch:
-- Require the user request to include the 8-line Patch Request Template (MODE/GOAL/SCOPE/FILES/CONSTRAINTS/ASSUMPTIONS/TESTS/DONE WHEN).
+- Require the 8-line Patch Request Template from _CONTEXT.md (MODE/GOAL/SCOPE/FILES/CONSTRAINTS/ASSUMPTIONS/TESTS/DONE WHEN).
 - Refuse to modify any file not listed in FILES (opened/tagged).
 - If MODE: PATCH → output diff-only + mandatory tests + rollback.
 - If MODE: PLAN → allow options/architecture, no patch unless asked.
-
+- If ITERATION >= 3 or 2x consecutive FAIL → ESCALATE only, no more patches.
 
 ## Tech Constraints
 | Rule | Value |
 |------|-------|
 | Framework | Next.js 16 App Router |
-| Styling | Tailwind v4, no inline |
+| Styling | Tailwind v3.4.x, no inline |
 | Database | Supabase via @/lib/db/supabase |
 | Icons | lucide-react only |
 | Images | next/image + getValidImageUrl() |
 | New libs | Forbidden without approval |
 
-## File Map
+## File Map (actual structure)
 ```
 app/
-  boutique/page.tsx       # Shop listing
-  product/[slug]/page.tsx # Product detail
-  checkout/page.tsx       # Checkout
-  layout.tsx              # Global layout
+  [locale]/
+    shop/page.tsx           # Shop listing
+    product/[slug]/page.tsx # Product detail  
+    checkout/page.tsx       # Checkout
+    cart/page.tsx           # Cart
+    login/page.tsx          # Auth
+  api/
+    webhooks/stripe/        # Stripe webhooks
+  layout.tsx                # Global layout
 
 components/
-  ui/                     # Button, Input, Badge
-  product/                # ProductCard, Grid, Gallery
-  layout/                 # Navbar, Footer, Drawers
-  AIChatbot.tsx          # Chat assistant
+  ui/                       # Shadcn (Button, Input, Badge)
+  product/                  # ProductCard, Grid, Gallery
+  layout/                   # Navbar, Footer, Drawers
+  AIChatbot.tsx            # Chat assistant
 
 lib/
-  data/products-ultimate.json  # Product data
-  types/                  # TypeScript interfaces
-  utils/images.ts         # Image helpers
-  db/supabase.ts         # DB client
+  data/products-ultimate.json  # Product data (726 items)
+  types/                    # TypeScript interfaces
+  utils/images.ts           # Image helpers
+  db/supabase.ts           # DB client
+
+contexts/
+  CartContext.tsx          # Cart state
+  WishlistContext.tsx      # Wishlist state
 ```
 
 ## Commands
 - go/run: Read TASK.md, execute autonomously
 - wtf: Diagnose in 1 sentence, then fix
 - clean: Lint, remove unused imports
-- design: Apply design system from context
+- design: Apply design system from _CONTEXT.md
 - update: Save progress to _CONTEXT.md
 - ship: Run build, report errors
 
 ## Design Quick Reference
 ```tsx
-// Colors
-bg-[#2596be] text-[#D4AF37] bg-[#F4EAD8]
+// Colors (from _CONTEXT.md)
+bg-[#2596be]   // Primary turquoise
+text-[#D4AF37] // Gold accent
+bg-[#F4EAD8]   // Cream background
+text-[#1a1a1a] // Dark text
 
-// Golden hover
+// Golden hover effect
 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:border-[#D4AF37]
 
 // Product cards
@@ -87,32 +99,32 @@ export async function GET(req: NextRequest) {
 ```
 
 ## Pre-Response Check
-- Read _CONTEXT.md?
-- Correct file paths?
-- Using getValidImageUrl()?
-- Code-first response?
-- No new libraries?
+- [ ] Read _CONTEXT.md?
+- [ ] Correct file paths (app/[locale]/...)?
+- [ ] Using getValidImageUrl()?
+- [ ] Code-first response?
+- [ ] No new libraries?
+- [ ] BRICKMODE template provided?
 
 ## Terminal Output Rules (BRICKMODE)
 - Never put explanations inside bash blocks.
 - BASH BLOCK GROUPING:
-  If multiple bash commands can be pasted and executed together safely, output them in ONE bash block (multiple lines).
+  If multiple bash commands can be pasted and executed together safely, output them in ONE bash block.
   Split into multiple bash blocks only when a verification/stop/choice is needed.
 - Paths with brackets must be quoted (ex: 'app/[locale]/...')
 
 ## ANTI-DEBUG-LOOPS Gate (mandatory)
-- NO BLUFF: If evidence is missing (logs/output/file content), write "UNKNOWN" and request exactly ONE command or ONE missing file/tag.
-- ONE-ITERATION RULE: One patch per reply. No multiple alternative patches in the same response.
-- CHANGE BUDGET (unless explicitly overridden):
+- NO BLUFF: If evidence is missing → write "UNKNOWN" → request ONE command or ONE missing file.
+- ONE-ITERATION RULE: One patch per reply. No alternatives.
+- CHANGE BUDGET (unless overridden in CONSTRAINTS):
   - Max 2 files touched
   - Max 40 lines changed total
-  - No refactor/renames/formatting-only changes
+  - No refactor/renames/formatting-only
 - VERIFY OR STOP:
-  - Every PATCH reply MUST include:
-    1) Diff-only patch
-    2) ONE verification command
-    3) Expected result (exact error disappears / exact string / exact behavior)
-    4) Rollback command
+  Every PATCH reply MUST include:
+  1. Diff-only patch
+  2. ONE verification command
+  3. Expected result
+  4. Rollback command
 - FAIL LOOP BREAKER:
-  - After 2 consecutive FAIL (symptom unchanged or new error), STOP patching.
-  - Switch to ESCALATE mode: minimal repro OR git bisect OR revert to last green.
+  After 2 consecutive FAIL → STOP → ESCALATE (A/B/C/D/E from _CONTEXT.md)

@@ -92,8 +92,8 @@ export const testDescriptions = {
  *   - Reset button disappears
  * 
  * ✅ Design System:
- *   - Turquoise (#2596be) on selected/hover
- *   - Gold border (#D4AF37) on container
+ *   - Turquoise (#8B4E4E) on selected/hover
+ *   - Gold border (#F0C11D) on container
  *   - Cream background (#F4EAD8) if needed
  */
 

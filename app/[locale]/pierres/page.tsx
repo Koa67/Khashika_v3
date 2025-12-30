@@ -14,22 +14,31 @@ export const metadata: Metadata = {
 export default async function PierresPage() {
   const allProducts = await getAllProducts();
   
+  // Filtrer les produits avec pierres
+  const pierres = allProducts.filter(p => {
+    const stone = (p.stone || p.attributes?.stone || '').toLowerCase();
+    const name = (p.name || p.title || '').toLowerCase();
+    return stone.length > 0 || 
+           name.includes('turquoise') ||
+           name.includes('améthyste') ||
+           name.includes('amethyste') ||
+           name.includes('lapis') ||
+           name.includes('corail') ||
+           name.includes('grenat') ||
+           name.includes('pierre') ||
+           name.includes('onyx') ||
+           name.includes('jade') ||
+           name.includes('perle') ||
+           name.includes('moonstone') ||
+           name.includes('labradorite');
+  });
+
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
-      {/* Hero section */}
-      <div className="bg-[#FDFBF7] border-b border-[#D4AF37]/20 py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="font-serif text-3xl md:text-4xl text-center">Bijoux par Pierre</h1>
-          <p className="text-center text-foreground/60 mt-2 max-w-2xl mx-auto">
-            Explorez notre collection de bijoux organisée par pierre naturelle
-          </p>
-        </div>
-      </div>
-      
-      <ShopClient 
-        initialProducts={allProducts}
-      />
-    </div>
+    <ShopClient 
+      initialProducts={pierres}
+      pageTitle="Bijoux par Pierre"
+      pageSubtitle="Explorez notre collection de bijoux organisée par pierre naturelle"
+    />
   );
 }
 

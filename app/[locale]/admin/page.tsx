@@ -33,16 +33,16 @@ export default async function AdminDashboardPage({
   return (
     <div className="min-h-screen bg-background pt-32 pb-20">
       <div className="container mx-auto px-4">
-        <h1 className="font-serif text-4xl text-[#1a1a1a] mb-8">{t('title')}</h1>
+        <h1 className="font-serif text-4xl text-[#2D2420] mb-8">{t('title')}</h1>
 
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {/* Chiffre d'affaire total */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-[#2596be]">
-            <h3 className="text-sm text-gray-600 uppercase tracking-wide mb-2">
+          <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#8B4E4E]">
+            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('totalRevenue')}
             </h3>
-            <p className="text-3xl font-bold text-[#2596be]">
+            <p className="text-3xl font-bold text-[#8B4E4E]">
               {stats.totalRevenue.toLocaleString('fr-FR', {
                 style: 'currency',
                 currency: 'EUR',
@@ -51,24 +51,24 @@ export default async function AdminDashboardPage({
           </div>
 
           {/* Commandes du jour */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-[#D4AF37]">
-            <h3 className="text-sm text-gray-600 uppercase tracking-wide mb-2">
+          <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#F0C11D]">
+            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('todayOrders')}
             </h3>
-            <p className="text-3xl font-bold text-[#D4AF37]">{stats.todayOrders}</p>
+            <p className="text-3xl font-bold text-[#F0C11D]">{stats.todayOrders}</p>
           </div>
 
           {/* Produits en rupture */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
-            <h3 className="text-sm text-gray-600 uppercase tracking-wide mb-2">
+          <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-red-500">
+            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('outOfStock')}
             </h3>
             <p className="text-3xl font-bold text-red-500">{stats.outOfStock}</p>
           </div>
 
           {/* Derniers inscrits */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500">
-            <h3 className="text-sm text-gray-600 uppercase tracking-wide mb-2">
+          <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-green-500">
+            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('recentSignups')}
             </h3>
             <p className="text-3xl font-bold text-green-500">{stats.recentSignups}</p>
@@ -76,18 +76,18 @@ export default async function AdminDashboardPage({
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h2 className="font-serif text-2xl text-[#1a1a1a] mb-4">Actions rapides</h2>
+        <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 mb-8">
+          <h2 className="font-serif text-2xl text-[#2D2420] mb-4">Actions rapides</h2>
           <div className="flex flex-wrap gap-4">
             <a
               href={`/${params.locale}/admin/orders`}
-              className="bg-[#2596be] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1e7a9a] transition-colors"
+              className="bg-[#8B4E4E] text-white px-6 py-3 rounded-none font-medium hover:bg-[#6B3D3D] transition-colors"
             >
               {t('orders')}
             </a>
             <a
               href={`/${params.locale}/admin/products`}
-              className="bg-[#D4AF37] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#b8941f] transition-colors"
+              className="bg-[#F0C11D] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#b8941f] transition-colors"
             >
               {t('products')}
             </a>
@@ -102,7 +102,7 @@ export default async function AdminDashboardPage({
 
         {/* Recent Activity (Placeholder) */}
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="font-serif text-2xl text-[#1a1a1a] mb-4">Activité récente</h2>
+          <h2 className="font-serif text-2xl text-[#2D2420] mb-4">Activité récente</h2>
           <p className="text-gray-600">Les dernières activités seront affichées ici.</p>
         </div>
       </div>

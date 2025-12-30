@@ -127,8 +127,8 @@ export default function PriceRangeSlider({
             }}
             className={`px-2.5 py-1 text-xs rounded-full transition-all duration-200 border
                        ${isPresetActive(preset.value)
-                         ? 'bg-[#2596be] text-white border-[#2596be]'
-                         : 'bg-gray-50 text-gray-600 border-gray-200 hover:border-[#2596be]/50'
+                         ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
+                         : 'bg-[#F5EDE6] text-gray-600 border-gray-200 hover:border-[#8B4E4E]/50'
                        }`}
           >
             {preset.label}
@@ -164,7 +164,7 @@ export default function PriceRangeSlider({
         >
           {/* Range actif */}
           <motion.div
-            className="absolute h-full bg-gradient-to-r from-[#2596be] to-[#40c4ff] rounded-full"
+            className="absolute h-full bg-gradient-to-r from-[#8B4E4E] to-[#40c4ff] rounded-full"
             style={{
               left: `${minPercent}%`,
               width: `${maxPercent - minPercent}%`,
@@ -175,11 +175,11 @@ export default function PriceRangeSlider({
           {/* Thumb Min */}
           <motion.div
             className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 
-                       bg-white rounded-full shadow-lg border-2 cursor-grab
+                       bg-[#F5EDE6] rounded-full shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'min' 
-                         ? 'border-[#2596be] shadow-[#2596be]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-gray-300 hover:border-[#2596be]'}`}
+                         ? 'border-[#8B4E4E] shadow-[#8B4E4E]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-gray-300 hover:border-[#8B4E4E]'}`}
             style={{ left: `${minPercent}%` }}
             onMouseDown={handleMouseDown('min')}
             whileHover={{ scale: 1.1 }}
@@ -199,11 +199,11 @@ export default function PriceRangeSlider({
           {/* Thumb Max */}
           <motion.div
             className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 
-                       bg-white rounded-full shadow-lg border-2 cursor-grab
+                       bg-[#F5EDE6] rounded-full shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'max' 
-                         ? 'border-[#2596be] shadow-[#2596be]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-gray-300 hover:border-[#2596be]'}`}
+                         ? 'border-[#8B4E4E] shadow-[#8B4E4E]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-gray-300 hover:border-[#8B4E4E]'}`}
             style={{ left: `${maxPercent}%` }}
             onMouseDown={handleMouseDown('max')}
             whileHover={{ scale: 1.1 }}
@@ -234,7 +234,7 @@ export default function PriceRangeSlider({
               max={localMax - step}
               step={step}
               className="w-full px-3 py-2 pr-7 text-sm border border-gray-200 rounded-lg
-                        focus:outline-none focus:border-[#2596be] focus:ring-1 focus:ring-[#2596be]/20
+                        focus:outline-none focus:border-[#8B4E4E] focus:ring-1 focus:ring-[#8B4E4E]/20
                         transition-all duration-200"
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
@@ -258,7 +258,7 @@ export default function PriceRangeSlider({
               max={max}
               step={step}
               className="w-full px-3 py-2 pr-7 text-sm border border-gray-200 rounded-lg
-                        focus:outline-none focus:border-[#2596be] focus:ring-1 focus:ring-[#2596be]/20
+                        focus:outline-none focus:border-[#8B4E4E] focus:ring-1 focus:ring-[#8B4E4E]/20
                         transition-all duration-200"
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
@@ -271,7 +271,7 @@ export default function PriceRangeSlider({
       {/* Indicateur visuel de la plage */}
       <div className="flex items-center justify-between text-xs text-gray-400">
         <span>{min}{currency}</span>
-        <span className="text-[#2596be] font-medium">
+        <span className="text-[#8B4E4E] font-medium">
           {localMin}{currency} – {localMax}{currency}
         </span>
         <span>{max}{currency}+</span>

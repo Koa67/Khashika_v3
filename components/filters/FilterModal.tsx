@@ -276,7 +276,7 @@ export default function FilterModal({
                       contentRef.current.scrollTop = 0;
                     }
                   }}
-                  className="flex items-center gap-2 text-[#2596be] font-medium
+                  className="flex items-center gap-2 text-[#8B4E4E] font-medium
                             min-h-[44px] min-w-[44px] -ml-2 pl-2"
                 >
                   <ChevronRight className="w-5 h-5 rotate-180" />
@@ -287,7 +287,7 @@ export default function FilterModal({
                   <Filter className="w-5 h-5 text-gray-600" />
                   <h2 className="text-lg font-serif text-gray-900">Filtres</h2>
                   {activeFilterCount > 0 && (
-                    <span className="px-2 py-0.5 bg-[#2596be] text-white text-xs 
+                    <span className="px-2 py-0.5 bg-[#8B4E4E] text-white text-xs 
                                     font-medium rounded-full">
                       {activeFilterCount}
                     </span>
@@ -299,8 +299,8 @@ export default function FilterModal({
                 {activeFilterCount > 0 && currentSection === 'main' && (
                   <button
                     onClick={onClearAll}
-                    className="flex items-center gap-1.5 px-3 py-2 text-sm text-[#2596be]
-                              hover:bg-[#2596be]/5 rounded-lg transition-colors min-h-[44px]"
+                    className="flex items-center gap-1.5 px-3 py-2 text-sm text-[#8B4E4E]
+                              hover:bg-[#8B4E4E]/5 rounded-lg transition-colors min-h-[44px]"
                   >
                     <RotateCcw className="w-4 h-4" />
                     <span>Effacer</span>
@@ -344,7 +344,7 @@ export default function FilterModal({
                             }
                           }}
                           className="w-full flex items-center justify-between px-4 py-4
-                                    hover:bg-gray-50 active:bg-gray-100 transition-colors
+                                    hover:bg-white active:bg-gray-100 transition-colors
                                     min-h-[56px]"
                         >
                           <div className="flex items-center gap-3">
@@ -354,7 +354,7 @@ export default function FilterModal({
                           
                           <div className="flex items-center gap-2">
                             {count > 0 && (
-                              <span className="px-2 py-0.5 bg-[#2596be]/10 text-[#2596be] 
+                              <span className="px-2 py-0.5 bg-[#8B4E4E]/10 text-[#8B4E4E] 
                                              text-sm font-medium rounded-full">
                                 {count}
                               </span>
@@ -373,7 +373,7 @@ export default function FilterModal({
                     exit={{ opacity: 0, x: 20 }}
                   >
                     {/* Titre de la section */}
-                    <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
+                    <div className="px-4 py-3 bg-white border-b border-gray-100">
                       <h3 className="font-medium text-gray-700">
                         {SECTIONS.find(s => s.id === currentSection)?.label}
                       </h3>
@@ -390,8 +390,8 @@ export default function FilterModal({
               <motion.button
                 onClick={onClose}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 bg-[#2596be] text-white rounded-2xl font-medium
-                          text-lg shadow-lg shadow-[#2596be]/20 
+                className="w-full py-4 bg-[#8B4E4E] text-white rounded-2xl font-medium
+                          text-lg shadow-lg shadow-[#8B4E4E]/20 
                           active:bg-[#1a7a9e] transition-colors"
               >
                 Voir {totalResults} trésors
@@ -424,13 +424,13 @@ function MobileFilterItem({
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl
                  transition-all duration-200 min-h-[52px]
                  ${selected 
-                   ? 'bg-[#2596be]/10 border-2 border-[#2596be]' 
-                   : 'bg-gray-50 border-2 border-transparent'}`}
+                   ? 'bg-[#8B4E4E]/10 border-2 border-[#8B4E4E]' 
+                   : 'bg-white border-2 border-transparent'}`}
     >
       {icon && <span className="text-xl">{icon}</span>}
       
       <span className={`flex-1 text-left font-medium
-                       ${selected ? 'text-[#2596be]' : 'text-gray-700'}`}>
+                       ${selected ? 'text-[#8B4E4E]' : 'text-gray-700'}`}>
         {label}
       </span>
       
@@ -442,7 +442,7 @@ function MobileFilterItem({
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          className="w-6 h-6 bg-[#2596be] rounded-full flex items-center justify-center"
+          className="w-6 h-6 bg-[#8B4E4E] rounded-full flex items-center justify-center"
         >
           <Check className="w-4 h-4 text-white" strokeWidth={3} />
         </motion.div>
@@ -470,8 +470,8 @@ function MobileOccasionButton({
       className={`flex flex-col items-center justify-center gap-2 p-4 rounded-2xl
                  transition-all duration-200 min-h-[88px]
                  ${selected 
-                   ? 'bg-[#2596be] text-white shadow-lg shadow-[#2596be]/30' 
-                   : 'bg-gray-50 text-gray-700'}`}
+                   ? 'bg-[#8B4E4E] text-white shadow-lg shadow-[#8B4E4E]/30' 
+                   : 'bg-white text-gray-700'}`}
     >
       <span className="text-2xl">{emoji}</span>
       <span className="font-medium text-sm">{label}</span>
@@ -495,7 +495,7 @@ function MobileToggleItem({
     <button
       onClick={onChange}
       className="w-full flex items-center justify-between px-4 py-4 
-                bg-gray-50 rounded-xl min-h-[56px]"
+                bg-white rounded-xl min-h-[56px]"
     >
       <div className="flex items-center gap-3">
         <span className="text-xl">{emoji}</span>
@@ -504,7 +504,7 @@ function MobileToggleItem({
       
       <div
         className={`w-14 h-8 rounded-full transition-colors duration-200 relative
-                   ${checked ? 'bg-[#2596be]' : 'bg-gray-300'}`}
+                   ${checked ? 'bg-[#8B4E4E]' : 'bg-gray-300'}`}
       >
         <motion.div
           className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md"

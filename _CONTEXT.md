@@ -1,17 +1,17 @@
-# bash +
 # KHASHIKA - Project Context
 > Source of truth. Cursor reads this FIRST.
+> Last updated: 2025-12-29
 
 ## Status
 - Completion: 85%
-- Products: 704 active
+- Products: 726 imported (704 with valid images)
 - Sprint: Feature completion (Filters, Zoom, Stripe)
 - Blocker: None
 
 ## Stack (immutable)
 - Next.js 16 (App Router)
-- Tailwind CSS v3.4.x (current)
-- Supabase
+- Tailwind CSS v3.4.x (immutable - do not upgrade to v4)
+- Supabase (Postgres + Auth + Storage)
 - TypeScript strict
 - lucide-react icons
 - next/image with Sharp
@@ -26,34 +26,55 @@ Text:       #1a1a1a (dark)
 - No rounded corners on products (rounded-none)
 - Gold borders on interactive elements
 - Hover: shadow-[0_0_15px_rgba(212,175,55,0.3)]
+- Dropdowns: bg-[#F4EAD8] (cream, not white)
 
-## Stable Components (do not break)
+## Stable Components (do not modify without ADR)
 - Navbar.tsx
 - Footer.tsx
 - CartContext.tsx
 - WishlistContext.tsx
 - ProductCard.tsx
 - AIChatbot.tsx
+- components/ui/* (Shadcn)
 
 ## In Progress
-1. Advanced filters (price slider, material, stone)
-2. Product zoom (lens effect)
-3. Stripe integration
+1. Advanced filters (price slider, material, stone) — ADR-001
+2. Product zoom (lens effect) — ADR-005
+3. Stripe integration — ADR-006
 
 ## Known Issues
 - Drawer z-index conflicts
+- Filter logic broken (type/category mismatch)
 - Occasional Supabase 500 on high load
+- ~22% images missing
 
 ## Code Rules
 - Server Components default, 'use client' only when needed
 - try/catch on all API/DB calls
 - Use @/ imports, never relative ../../
 - Interfaces in lib/types/
+- Prices in paise (not euros) — ADR-006
+
+## Routes (source of truth)
+```
+/fr/shop                    # Boutique listing
+/fr/bijoux/[category]       # Jewelry by category
+/fr/accessoires/[category]  # Accessories by category
+/fr/pierres/[category]      # Stones by category
+/fr/product/[slug]          # Product detail
+/fr/cart                    # Cart
+/fr/checkout                # Checkout
+/fr/login                   # Auth
+```
 
 ## Last Updates
-- 12/12: Image sync fixed (90% products)
+- 12/29: Filter logic identified as broken (type vs category)
+- 12/28: Auth checkpoint created
+- 12/19: Next.js upgraded to 16.0.10 (ADR-007)
+- 12/12: Image sync fixed (78% products)
 - 12/12: Golden Glow design implemented
-- 12/11: Navigation redesign complete
+
+---
 
 ## DEBUG_SHIELD 🐞 — Anti-Loop Protocol (mandatory when debugging)
 This exists to kill infinite debug loops. Evidence only. No vibes.
@@ -103,9 +124,11 @@ E) Data Fixture: replace remote data with a 3-item fixture to compare behavior
 - I/O:
   - Define error behavior (retry/fail-fast/user message) and never log secrets
 
+---
+
 ## BRICKMODE — Patch Request Template (mandatory)
 Copy/paste this at the top of every request:
-
+```
 MODE: PLAN | PATCH
 ITERATION: 1
 LAST VERDICT: N/A (first run) | PASS | FAIL — unchanged | FAIL — changed | BLOCKED
@@ -116,16 +139,22 @@ CONSTRAINTS: <no new libs? perf? style rules? allow >2 files? allow >40 lines?>
 ASSUMPTIONS: <allowed assumptions if info missing>
 TESTS I CAN RUN: <pnpm lint / pnpm build / pnpm test:e2e --grep checkout ...>
 DONE WHEN: <3–6 acceptance checkboxes>
+```
 
 ## FAIL REPORT (paste this after every verification)
+```
 ITÉRATION: <number>
 VERDICT: PASS | FAIL — unchanged | FAIL — changed | BLOCKED
 VERIFY COMMAND:
 RAW OUTPUT:
 WHAT CHANGED:
 NEXT ACTION: PATCH (only if iteration <3 and not 2x FAIL) | ESCALATE (A/B/C/D/E)
+```
+
+---
 
 ## Definition of Done (DoD)
+
 ### Boutique (filters / scroll)
 - Filters reflected in URL query params
 - Never render all products at once
@@ -138,9 +167,6 @@ NEXT ACTION: PATCH (only if iteration <3 and not 2x FAIL) | ESCALATE (A/B/C/D/E)
 - Payment confirmed only via webhook
 - E2E checkout passes
 
-### Routes snapshot (source of truth for paths)
-- docs/routes.snapshot.txt
-
 ### Terminal batching rule
 - If commands can run together, output ONE multi-line bash block.
 - Split blocks only when a check/stop/choice is needed.
@@ -151,8 +177,17 @@ NEXT ACTION: PATCH (only if iteration <3 and not 2x FAIL) | ESCALATE (A/B/C/D/E)
 - pnpm build
 - pnpm test:e2e --grep checkout (minimum when touching checkout)
 
-## Decision Log (date - decision - why)
-- YYYY-MM-DD: BRICKMODE introduced (Patch/Plan modes, guard hook) — prevent repo drift & reduce regressions
+## Decision Log (ADRs)
+| ID | Decision | Date |
+|----|----------|------|
+| ADR-001 | Filters persist in URL only | 2025-12-15 |
+| ADR-002 | Chatbot anonymous first | 2025-12-15 |
+| ADR-003 | One-page checkout | 2025-12-15 |
+| ADR-004 | Claude Haiku 4.5 for chatbot | 2025-12-15 |
+| ADR-005 | Canvas-based zoom (no library) | 2025-12-15 |
+| ADR-006 | Prices stored in paise | 2025-12-15 |
+| ADR-007 | Next.js 16.0.10 upgrade | 2025-12-19 |
 
 ## E2E Policy (BRICKMODE)
-- Checkout E2E is required only when Stripe env is configured (CI/staging). Locally it may be skipped if keys are missing.
+- Checkout E2E is required only when Stripe env is configured (CI/staging).
+- Locally it may be skipped if keys are missing.

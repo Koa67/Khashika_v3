@@ -82,6 +82,8 @@ export interface Product {
   material?: string;
   /** Pierre précieuse (pour filtrage - compatibilité) */
   stone?: string;
+  /** Liste des pierres (enrichie par script) */
+  stones?: string[];
   /** Style du produit (pour filtrage) */
   style?: string;
 }

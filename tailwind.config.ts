@@ -9,31 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Nouvelle palette Khashika
         primary: {
-          DEFAULT: '#2596be',
-          dark: '#1e7a9a',
-          light: '#3ab0d8',
+          DEFAULT: '#8B4E4E',  // Terre cuite (CTAs)
+          dark: '#6B3D3D',
+          light: '#A66B6B',
         },
         gold: {
-          DEFAULT: '#D4AF37',
-          dark: '#b8962f',
-          light: '#e5c85c',
+          DEFAULT: '#F0C11D',  // Or plus visible
+          dark: '#A8871F',
+          light: '#DCBA3D',
         },
-        secondary: "#1a1a1a",
-        accent: "#D4AF37",
-        cream: "#F4EAD8",
-        night: "#121A21",
-        coral: '#FF6B6B',
-        emerald: '#50C878',
-        background: "rgb(var(--background) / <alpha-value>)",
-        foreground: "rgb(var(--foreground) / <alpha-value>)",
-        card: "rgb(var(--card) / <alpha-value>)",
-        "card-foreground": "rgb(var(--card-foreground) / <alpha-value>)",
-        border: "rgb(var(--border) / <alpha-value>)",
+        secondary: "#2D2420",  // Brun foncé (texte)
+        accent: "#F0C11D",     // OR
+        cream: "#F5EDE6",      // Fond principal
+        sand: "#EDE4DB",       // Fond cards/sidebar
+        night: "#2D2420",
+        coral: '#8B4E4E',      // Remplace l'ancien coral
+        emerald: '#6B5B52',    // Brun moyen
+        background: "#F5EDE6",
+        foreground: "#2D2420",
+        card: "#EDE4DB",
+        "card-foreground": "#2D2420",
+        border: "#F0C11D",
       },
       fontFamily: {
-        sans: ["var(--font-karma)", "serif"],
-        serif: ["var(--font-karma)", "serif"],
+        sans: ["var(--font-arimo)", "sans-serif"],
+        serif: ["var(--font-arimo)", "sans-serif"],
       },
     },
   },

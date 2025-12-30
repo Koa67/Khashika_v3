@@ -53,8 +53,8 @@ export default function ProductGrid({ products, searchParams }: ProductGridProps
 
   if (!filteredProducts || filteredProducts.length === 0) {
     return (
-      <div className="text-center py-20">
-        <p className="font-serif text-xl text-[#1a1a1a]">
+      <div className="text-center py-8">
+        <p className="font-serif text-xl text-[#2D2420]">
           Aucun produit ne correspond à vos critères.
         </p>
       </div>

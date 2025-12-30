@@ -81,7 +81,7 @@
 
 /* Effet de focus accessible */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-[#2596be]/50 focus:ring-offset-2;
+  @apply focus:outline-none focus:ring-2 focus:ring-[#8B4E4E]/50 focus:ring-offset-2;
 }
 
 /* Truncation du texte */

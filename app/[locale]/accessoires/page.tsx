@@ -15,22 +15,29 @@ export const metadata: Metadata = {
 export default async function AccessoiresPage() {
   const allProducts = await getAllProducts();
   
+  // Filtrer les accessoires (pas les bijoux)
+  const accessoires = allProducts.filter(p => {
+    const cat = (p.category || '').toLowerCase();
+    const name = (p.name || p.title || '').toLowerCase();
+    return cat.includes('accessoire') || 
+           cat.includes('textile') ||
+           name.includes('étole') ||
+           name.includes('etole') ||
+           name.includes('foulard') ||
+           name.includes('écharpe') ||
+           name.includes('echarpe') ||
+           name.includes('pashmina') ||
+           name.includes('sac') ||
+           name.includes('pochette') ||
+           name.includes('trousse');
+  });
+
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
-      {/* Hero section */}
-      <div className="bg-[#FDFBF7] border-b border-[#D4AF37]/20 py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="font-serif text-3xl md:text-4xl text-center">Accessoires Indiens</h1>
-          <p className="text-center text-foreground/60 mt-2 max-w-2xl mx-auto">
-            Découvrez notre collection d'accessoires indiens faits main : pashminas, foulards, pochettes et sacs
-          </p>
-        </div>
-      </div>
-      
-      <ShopClient 
-        initialProducts={allProducts}
-      />
-    </div>
+    <ShopClient 
+      initialProducts={accessoires}
+      pageTitle="Accessoires"
+      pageSubtitle="Étoles, foulards et accessoires de mode"
+    />
   );
 }
 

@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/db/supabase';
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,6 +16,14 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Lire le query param ?tab=register
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab === 'register') {
+      setActiveTab('register');
+    }
+  }, [searchParams]);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -91,31 +100,26 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center pt-24 px-4">
-      <div className="w-full max-w-md bg-white shadow-xl rounded-none overflow-hidden border border-[#D4AF37]/20">
-        {/* Titre KHASHIKA */}
-        <div className="text-center py-6 border-b border-[#D4AF37]/20">
-          <h1 className="font-serif text-3xl font-bold text-[#2596be]">KHASHIKA</h1>
-        </div>
-
+    <div className="min-h-screen bg-white flex items-center justify-center pt-24 px-4">
+      <div className="w-full max-w-md bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-8">
         {/* Tabs */}
-        <div className="flex border-b border-[#D4AF37]/20">
+        <div className="flex border-b border-[#F0C11D]/20 mb-6">
           <button
             onClick={() => setActiveTab('login')}
-            className={`flex-1 py-4 text-center font-serif text-sm font-bold tracking-wider transition-colors ${
+            className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'login'
-                ? 'text-[#2596be] border-b-2 border-[#2596be]'
-                : 'text-gray-600 hover:text-[#2596be]'
+                ? 'text-[#F0C11D] border-[#F0C11D]'
+                : ''
             }`}
           >
             CONNEXION
           </button>
           <button
             onClick={() => setActiveTab('register')}
-            className={`flex-1 py-4 text-center font-serif text-sm font-bold tracking-wider transition-colors ${
+            className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'register'
-                ? 'text-[#2596be] border-b-2 border-[#2596be]'
-                : 'text-gray-600 hover:text-[#2596be]'
+                ? 'text-[#F0C11D] border-[#F0C11D]'
+                : ''
             }`}
           >
             INSCRIPTION
@@ -135,9 +139,9 @@ export default function LoginPage() {
         )}
 
         {/* Formulaire */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-sans text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-sans text-[#2D2420] mb-2">
               Email
             </label>
             <input
@@ -145,10 +149,10 @@ export default function LoginPage() {
               type="email"
               value={email}
               onChange={(e) => handleEmailChange(e.target.value)}
-              className={`w-full px-4 py-3 rounded-none border transition-colors focus:outline-none focus:ring-2 focus:ring-[#2596be] ${
+              className={`w-full px-4 py-3 rounded-none border transition-colors focus:outline-none focus:ring-2 focus:ring-[#8B4E4E] ${
                 emailError
                   ? 'border-red-500'
-                  : 'border-gray-300 focus:border-[#2596be]'
+                  : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
               }`}
               placeholder="votre@email.com"
               required
@@ -159,7 +163,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-sans text-gray-700 mb-2">
+            <label htmlFor="password" className="block text-sm font-sans text-[#2D2420] mb-2">
               Mot de passe
             </label>
             <input
@@ -167,7 +171,7 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 rounded-none border border-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2596be] focus:border-[#2596be]"
+              className="w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#F0C11D]"
               placeholder="••••••••"
               required
             />
@@ -175,7 +179,7 @@ export default function LoginPage() {
 
           {activeTab === 'register' && (
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-sans text-gray-700 mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-sans text-[#2D2420] mb-2">
                 Confirmer le mot de passe
               </label>
               <input
@@ -183,7 +187,7 @@ export default function LoginPage() {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-none border border-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2596be] focus:border-[#2596be]"
+                className="w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#F0C11D]"
                 placeholder="••••••••"
                 required
               />
@@ -194,7 +198,7 @@ export default function LoginPage() {
             <div className="text-right">
               <Link
                 href="/forgot-password"
-                className="text-sm text-[#2596be] underline hover:text-[#1e7a9e] transition-colors"
+                className="text-sm text-[#8B4E4E] underline hover:text-[#1e7a9e] transition-colors"
               >
                 Mot de passe oublié ?
               </Link>
@@ -204,7 +208,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#2596be] text-white py-3 px-6 rounded-none font-serif text-lg font-bold hover:bg-[#1e7a9a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3 bg-[#8B4E4E] text-white font-medium rounded-none hover:bg-[#6B3D3D] transition-colors"
           >
             {loading ? 'Chargement...' : activeTab === 'login' ? 'SE CONNECTER' : "S'INSCRIRE"}
           </button>

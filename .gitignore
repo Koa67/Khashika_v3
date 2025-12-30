@@ -54,3 +54,4 @@ blob-report/
 playwright-report/
 test-results/
 blob-report/
+.next*

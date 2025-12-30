@@ -14,22 +14,29 @@ export const metadata: Metadata = {
 export default async function BijouxPage() {
   const allProducts = await getAllProducts();
   
+  // Filtrer les bijoux (pas les accessoires)
+  const bijoux = allProducts.filter(p => {
+    const cat = (p.category || '').toLowerCase();
+    const name = (p.name || p.title || '').toLowerCase();
+    return cat.includes('bijoux') || 
+           cat.includes('collier') || 
+           cat.includes('bracelet') || 
+           cat.includes('bague') || 
+           cat.includes('boucle') ||
+           cat.includes('pendentif') ||
+           name.includes('collier') ||
+           name.includes('bracelet') ||
+           name.includes('bague') ||
+           name.includes('boucle') ||
+           name.includes('pendentif');
+  });
+
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
-      {/* Hero section */}
-      <div className="bg-[#FDFBF7] border-b border-[#D4AF37]/20 py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="font-serif text-3xl md:text-4xl text-center">Bijoux Indiens</h1>
-          <p className="text-center text-foreground/60 mt-2 max-w-2xl mx-auto">
-            Découvrez notre collection complète de bijoux indiens faits main en argent et pierres naturelles
-          </p>
-        </div>
-      </div>
-      
-      <ShopClient 
-        initialProducts={allProducts}
-      />
-    </div>
+    <ShopClient 
+      initialProducts={bijoux}
+      pageTitle="Bijoux"
+      pageSubtitle="Découvrez notre collection de bijoux artisanaux"
+    />
   );
 }
 

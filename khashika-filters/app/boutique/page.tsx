@@ -72,14 +72,14 @@ function ProductCard({ product, index }: ProductCardProps) {
       transition={{ delay: index * 0.03, duration: 0.4 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white rounded-2xl overflow-hidden 
-                border border-gray-100 hover:border-[#2596be]/30
-                shadow-sm hover:shadow-xl hover:shadow-[#2596be]/5
+      className="group relative bg-[#F5EDE6] rounded-2xl overflow-hidden 
+                border border-gray-100 hover:border-[#8B4E4E]/30
+                shadow-sm hover:shadow-xl hover:shadow-[#8B4E4E]/5
                 transition-all duration-500"
     >
       <Link href={`/produit/${product.slug}`} className="block">
         {/* Image Container */}
-        <div className="relative aspect-square overflow-hidden bg-gray-50">
+        <div className="relative aspect-square overflow-hidden bg-[#F5EDE6]">
           {/* Skeleton pendant le chargement */}
           {!imageLoaded && (
             <div className="absolute inset-0 bg-gray-100 animate-pulse" />
@@ -107,7 +107,7 @@ function ProductCard({ product, index }: ProductCardProps) {
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.isNew && (
-              <span className="px-2.5 py-1 bg-[#2596be] text-white text-xs 
+              <span className="px-2.5 py-1 bg-[#8B4E4E] text-white text-xs 
                              font-semibold rounded-full shadow-lg">
                 Nouveau
               </span>
@@ -127,8 +127,8 @@ function ProductCard({ product, index }: ProductCardProps) {
             className="absolute bottom-3 right-3 flex gap-2"
           >
             <button
-              className="p-2.5 bg-white/90 backdrop-blur-sm rounded-full shadow-lg
-                        hover:bg-white transition-colors"
+              className="p-2.5 bg-[#F5EDE6]/90 backdrop-blur-sm rounded-full shadow-lg
+                        hover:bg-[#F5EDE6] transition-colors"
               onClick={(e) => {
                 e.preventDefault();
                 // TODO: Add to wishlist
@@ -140,8 +140,8 @@ function ProductCard({ product, index }: ProductCardProps) {
               </svg>
             </button>
             <button
-              className="p-2.5 bg-white/90 backdrop-blur-sm rounded-full shadow-lg
-                        hover:bg-white transition-colors"
+              className="p-2.5 bg-[#F5EDE6]/90 backdrop-blur-sm rounded-full shadow-lg
+                        hover:bg-[#F5EDE6] transition-colors"
               onClick={(e) => {
                 e.preventDefault();
                 // TODO: Quick view
@@ -161,14 +161,14 @@ function ProductCard({ product, index }: ProductCardProps) {
         <div className="p-4">
           {/* Category */}
           {product.category && (
-            <p className="text-xs text-[#2596be] font-medium uppercase tracking-wider mb-1">
+            <p className="text-xs text-[#8B4E4E] font-medium uppercase tracking-wider mb-1">
               {product.category}
             </p>
           )}
           
           {/* Name */}
           <h3 className="font-medium text-gray-900 line-clamp-2 mb-2 
-                        group-hover:text-[#2596be] transition-colors">
+                        group-hover:text-[#8B4E4E] transition-colors">
             {product.name}
           </h3>
           
@@ -185,8 +185,8 @@ function ProductCard({ product, index }: ProductCardProps) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-2 bg-[#2596be]/10 rounded-full text-[#2596be]
-                        hover:bg-[#2596be] hover:text-white transition-all"
+              className="p-2 bg-[#8B4E4E]/10 rounded-full text-[#8B4E4E]
+                        hover:bg-[#8B4E4E] hover:text-white transition-all"
               onClick={(e) => {
                 e.preventDefault();
                 // TODO: Add to cart
@@ -276,7 +276,7 @@ export default function ShopPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <div className="min-h-screen bg-[#F5EDE6]/50">
       {/* Hero Banner */}
       <section className="relative h-48 md:h-64 bg-gradient-to-r from-[#1a1a2e] to-[#2a2a4e] 
                          overflow-hidden">
@@ -305,9 +305,9 @@ export default function ShopPage() {
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute right-0 top-0 w-64 h-64 bg-[#2596be]/20 rounded-full 
+        <div className="absolute right-0 top-0 w-64 h-64 bg-[#8B4E4E]/20 rounded-full 
                        blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute left-1/2 bottom-0 w-96 h-32 bg-[#D4AF37]/10 rounded-full 
+        <div className="absolute left-1/2 bottom-0 w-96 h-32 bg-[#F0C11D]/10 rounded-full 
                        blur-3xl translate-y-1/2" />
       </section>
       
@@ -349,7 +349,7 @@ export default function ShopPage() {
                   animate={{ opacity: 1 }}
                   className="text-gray-600"
                 >
-                  <span className="font-semibold text-[#2596be]">{filteredProducts.length}</span>
+                  <span className="font-semibold text-[#8B4E4E]">{filteredProducts.length}</span>
                   {' '}trésors trouvés
                   {isFiltered && <span className="text-gray-400"> (filtrés)</span>}
                 </motion.p>
@@ -381,8 +381,8 @@ export default function ShopPage() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-3 border-2 border-[#2596be] text-[#2596be] 
-                            rounded-xl font-medium hover:bg-[#2596be] hover:text-white
+                  className="px-8 py-3 border-2 border-[#8B4E4E] text-[#8B4E4E] 
+                            rounded-xl font-medium hover:bg-[#8B4E4E] hover:text-white
                             transition-all duration-300"
                 >
                   Charger plus de trésors

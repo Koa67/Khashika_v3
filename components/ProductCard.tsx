@@ -1,7 +1,7 @@
 'use client';
 
 import { Link } from '@/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Heart } from 'lucide-react';
 import { Product } from '@/lib/types';
@@ -15,8 +15,11 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
-  const { isInWishlist, toggleWishlist } = useWishlist();
+  const { isInWishlist: checkWishlist, toggleWishlist } = useWishlist();
   const [isAnimating, setIsAnimating] = useState(false);
+  // État local initialisé à false (même valeur que serveur)
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const [mounted, setMounted] = useState(false);
   
   // Use validated images hook to filter out blacklisted images (must be before early return)
   const allProductImages = product ? [
@@ -31,9 +34,13 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   
   const imageUrl = getValidImageUrl(mainImage || '/placeholder-image.svg');
   
-  if (!product) return null;
+  // Synchroniser après montage (client-only)
+  useEffect(() => {
+    setMounted(true);
+    setIsWishlisted(checkWishlist(product.id));
+  }, [checkWishlist, product.id]);
   
-  const isWishlisted = isInWishlist(product.id);
+  if (!product) return null;
   
   const price = typeof product.price === 'number' ? product.price : parseFloat(String(product.price || 0));
   const displayPrice = price > 0 ? `${price.toFixed(2)} €` : 'Prix sur demande';
@@ -43,15 +50,17 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
     e.stopPropagation();
     setIsAnimating(true);
     toggleWishlist(product);
+    // Mettre à jour l'état local immédiatement
+    setIsWishlisted(!isWishlisted);
     setTimeout(() => setIsAnimating(false), 200);
   };
 
   return (
-    <div className="golden-glow-card h-full flex flex-col bg-[#FDFBF7] overflow-hidden relative">
+    <div className="golden-glow-card h-full flex flex-col bg-[#FAF9F7] overflow-hidden relative">
       {/* Zone Image - Full Bleed */}
       <Link 
         href={`/product/${product.slug}`}
-        className="relative w-full aspect-[3/2] overflow-hidden"
+        className="relative w-full aspect-[3/2] overflow-hidden bg-[#FAF9F7]"
       >
         <Image
           src={imageUrl}
@@ -83,11 +92,11 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       </Link>
 
       {/* Zone Infos - Compacte */}
-      <div className="p-3 flex flex-col text-center bg-[#FDFBF7]">
+      <div className="p-3 flex flex-col text-center bg-[#FAF9F7]">
         <h3 className="font-serif text-sm text-foreground line-clamp-2 capitalize tracking-wide mb-1">
           {product.name}
         </h3>
-        <p className="text-[#D4AF37] font-bold text-sm tracking-wider">
+        <p className="text-[#F0C11D] font-bold text-sm tracking-wider">
           {displayPrice}
         </p>
       </div>

@@ -26,12 +26,12 @@ interface StyleGridProps {
 
 // Fallback images si les images de style ne sont pas disponibles
 const FALLBACK_GRADIENTS: Record<string, string> = {
-  traditionnel: 'linear-gradient(135deg, #D4AF37 0%, #8B6914 100%)',
+  traditionnel: 'linear-gradient(135deg, #F0C11D 0%, #8B6914 100%)',
   moderne: 'linear-gradient(135deg, #C0C0C0 0%, #6B7280 100%)',
   boheme: 'linear-gradient(135deg, #F59E0B 0%, #92400E 100%)',
   tribal: 'linear-gradient(135deg, #78350F 0%, #451A03 100%)',
   kundan: 'linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)',
-  temple: 'linear-gradient(135deg, #D4AF37 0%, #B45309 100%)',
+  temple: 'linear-gradient(135deg, #F0C11D 0%, #B45309 100%)',
 };
 
 export default function StyleGrid({
@@ -66,8 +66,8 @@ export default function StyleGrid({
               className={`relative aspect-[4/3] rounded-xl overflow-hidden group
                          transition-all duration-300
                          ${isSelected 
-                           ? 'ring-2 ring-[#2596be] ring-offset-2' 
-                           : 'ring-1 ring-gray-200 hover:ring-[#2596be]/50'}`}
+                           ? 'ring-2 ring-[#8B4E4E] ring-offset-2' 
+                           : 'ring-1 ring-gray-200 hover:ring-[#8B4E4E]/50'}`}
             >
               {/* Image ou gradient fallback */}
               {!hasImageError ? (
@@ -89,7 +89,7 @@ export default function StyleGrid({
               <div 
                 className={`absolute inset-0 transition-opacity duration-300
                            ${isSelected 
-                             ? 'bg-[#2596be]/40' 
+                             ? 'bg-[#8B4E4E]/40' 
                              : 'bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70'}`}
               />
               
@@ -114,7 +114,7 @@ export default function StyleGrid({
                     className="absolute top-2 right-2 w-6 h-6 bg-white rounded-full 
                               flex items-center justify-center shadow-lg"
                   >
-                    <Check className="w-4 h-4 text-[#2596be]" strokeWidth={3} />
+                    <Check className="w-4 h-4 text-[#8B4E4E]" strokeWidth={3} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -153,7 +153,7 @@ export default function StyleGrid({
                   <span
                     key={id}
                     className="inline-flex items-center gap-1 px-2.5 py-1 
-                              bg-[#2596be]/10 text-[#2596be] rounded-full text-xs font-medium"
+                              bg-[#8B4E4E]/10 text-[#8B4E4E] rounded-full text-xs font-medium"
                   >
                     {style.label}
                   </span>

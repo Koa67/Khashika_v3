@@ -33,7 +33,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
   const quantity = item.quantity || 1;
 
   return (
-    <div className="flex gap-4 border-b border-[#E8D4B8] pb-6 last:border-0">
+    <div className="flex gap-4 border-b border-[#F0C11D]/20 pb-6 last:border-0">
       {/* Image */}
       {mainImage && (
         <div className="flex-shrink-0">
@@ -60,14 +60,14 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
         <div className="flex items-end justify-between mt-auto">
           <div className="flex items-center gap-3">
             {/* Sélecteur quantité à GAUCHE */}
-            <div className="flex items-center gap-1 bg-[#D4AF37]/10 rounded-none p-1">
+            <div className="flex items-center gap-1 bg-[#F0C11D]/10 rounded-none p-1">
               <button 
                 onClick={() => {
                   if (quantity > 1) {
                     onUpdateQuantity?.(product.id, quantity - 1);
                   }
                 }}
-                className="w-6 h-6 flex items-center justify-center hover:bg-[#D4AF37]/20 rounded-none text-sm"
+                className="w-6 h-6 flex items-center justify-center hover:bg-[#F0C11D]/20 rounded-none text-sm"
                 aria-label="Diminuer"
               >
                 −
@@ -77,7 +77,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
               </span>
               <button 
                 onClick={() => onUpdateQuantity?.(product.id, quantity + 1)}
-                className="w-6 h-6 flex items-center justify-center hover:bg-[#D4AF37]/20 rounded-none text-sm"
+                className="w-6 h-6 flex items-center justify-center hover:bg-[#F0C11D]/20 rounded-none text-sm"
                 aria-label="Augmenter"
               >
                 +
@@ -85,7 +85,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
             </div>
             {/* Prix après */}
             <div>
-              <p className="text-[#2596be] font-semibold">
+              <p className="text-[#8B4E4E] font-semibold">
                 {(price * quantity).toFixed(2)}€
               </p>
               <p className="text-xs text-gray-600">
@@ -154,14 +154,14 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="golden-glow-drawer pointer-events-auto w-screen max-w-md relative">
+                <Dialog.Panel className="pointer-events-auto w-screen max-w-md relative bg-[#FAF9F7] border-l border-[#F0C11D]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)]">
                   {/* Jali Pattern Border - Vertical */}
                   <div className="jali-border-vertical" aria-hidden="true" />
                   <div className="flex h-full flex-col overflow-y-auto pl-6">
                     {/* HEADER */}
-                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#E8D4B8]">
+                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#F0C11D]/20">
                       <div className="flex items-center gap-3">
-                        <ShoppingBag className="w-6 h-6 text-[#2596be]" />
+                        <ShoppingBag className="w-6 h-6 text-[#8B4E4E]" />
                         <Dialog.Title className="text-xl font-semibold text-gray-900">
                           Panier
                         </Dialog.Title>
@@ -200,7 +200,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
                     {/* FOOTER */}
                     {items && items.length > 0 && (
-                      <div className="px-6 py-6 border-t border-[#E8D4B8] space-y-4 bg-white">
+                      <div className="px-6 py-6 border-t border-[#F0C11D]/20 space-y-4 bg-[#FAF9F7]">
                         {/* Summary */}
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm text-gray-600">
@@ -211,9 +211,9 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                             <span>Livraison</span>
                             <span>À calculer</span>
                           </div>
-                          <div className="border-t border-[#E8D4B8] pt-2 flex justify-between text-lg font-semibold">
+                          <div className="border-t border-[#F0C11D]/20 pt-2 flex justify-between text-lg font-semibold">
                             <span>Total</span>
-                            <span className="text-[#2596be]">{total.toFixed(2)}€</span>
+                            <span className="text-[#8B4E4E]">{total.toFixed(2)}€</span>
                           </div>
                         </div>
 
@@ -221,13 +221,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                         <Link 
                           href="/checkout"
                           onClick={onClose}
-                          className="block w-full bg-[#2596be] text-white py-3 rounded-none hover:opacity-90 transition font-medium text-center"
+                          className="block w-full bg-[#8B4E4E] text-white py-3 rounded-none hover:opacity-90 transition font-medium text-center"
                         >
                           Procéder au paiement
                         </Link>
                         <button
                           onClick={onClose}
-                          className="w-full border-2 border-[#D4AF37] text-gray-900 py-2 rounded-none hover:bg-[#D4AF37]/10 transition font-medium"
+                          className="w-full border-2 border-[#F0C11D] text-gray-900 py-2 rounded-none hover:bg-[#F0C11D]/10 transition font-medium"
                         >
                           Continuer le shopping
                         </button>
@@ -274,7 +274,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-none bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-none bg-[#FAF9F7] p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title className="text-lg font-medium leading-6 text-gray-900 mb-4">
                   ⚠️ Vider le panier
                 </Dialog.Title>

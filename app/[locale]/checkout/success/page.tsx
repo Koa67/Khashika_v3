@@ -27,14 +27,14 @@ function CheckoutSuccessContent() {
           angle: 60,
           spread: 55,
           origin: { x: 0 },
-          colors: ['#2596be', '#D4AF37', '#FF6B6B'],
+          colors: ['#8B4E4E', '#F0C11D', '#FF6B6B'],
         });
         confetti({
           particleCount: 3,
           angle: 120,
           spread: 55,
           origin: { x: 1 },
-          colors: ['#2596be', '#D4AF37', '#FF6B6B'],
+          colors: ['#8B4E4E', '#F0C11D', '#FF6B6B'],
         });
       } else {
         clearInterval(interval);
@@ -77,30 +77,30 @@ function CheckoutSuccessContent() {
   }, 0);
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Succès Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-none mb-6">
             <CheckCircle className="w-12 h-12 text-green-600" />
           </div>
-          <h1 className="font-serif text-4xl text-[#1a1a1a] mb-4">
+          <h1 className="font-serif text-4xl text-[#2D2420] mb-4">
             Commande confirmée !
           </h1>
           {orderNumber && (
-            <p className="text-lg text-[#2596be] font-semibold mb-2">
+            <p className="text-lg text-[#8B4E4E] font-semibold mb-2">
               Numéro de commande: {orderNumber}
             </p>
           )}
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-[#2D2420]/70">
             Merci pour votre achat. Votre commande a été traitée avec succès.
           </p>
         </div>
 
         {/* Récapitulatif */}
-        <div className="bg-white border border-[#D4AF37]/20 rounded-none shadow-lg p-8 mb-8">
-          <h2 className="font-serif text-2xl text-[#1a1a1a] mb-6 flex items-center gap-2">
-            <Package className="w-6 h-6 text-[#2596be]" />
+          <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 mb-8">
+          <h2 className="font-serif text-2xl text-[#2D2420] mb-6 flex items-center gap-2">
+            <Package className="w-6 h-6 text-[#8B4E4E]" />
             Récapitulatif de votre commande
           </h2>
 
@@ -112,12 +112,12 @@ function CheckoutSuccessContent() {
                     ? item.product.price 
                     : parseFloat(String(item.product.price || 0));
                   return (
-                    <div key={item.id} className="flex justify-between items-center py-3 border-b border-gray-200">
+                    <div key={item.id} className="flex justify-between items-center py-3 border-b border-[#F0C11D]/40">
                       <div className="flex-1">
-                        <p className="font-medium text-[#1a1a1a]">{item.product.name}</p>
-                        <p className="text-sm text-gray-500">Quantité : {item.quantity}</p>
+                        <p className="font-medium text-[#2D2420]">{item.product.name}</p>
+                        <p className="text-sm text-[#2D2420]/60">Quantité : {item.quantity}</p>
                       </div>
-                      <p className="text-[#D4AF37] font-semibold">
+                      <p className="text-[#F0C11D] font-semibold">
                         {(price * item.quantity).toFixed(2)} €
                       </p>
                     </div>
@@ -125,15 +125,15 @@ function CheckoutSuccessContent() {
                 })}
               </div>
 
-              <div className="border-t border-gray-200 pt-4">
+              <div className="border-t border-[#F0C11D]/40 pt-4">
                 <div className="flex justify-between items-center text-lg font-semibold">
-                  <span className="text-[#1a1a1a]">Total</span>
-                  <span className="text-[#D4AF37]">{orderTotal.toFixed(2)} €</span>
+                  <span className="text-[#2D2420]">Total</span>
+                  <span className="text-[#F0C11D]">{orderTotal.toFixed(2)} €</span>
                 </div>
               </div>
             </>
           ) : (
-            <p className="text-gray-600">
+            <p className="text-[#2D2420]/70">
               Votre commande a été enregistrée. Vous recevrez un email de confirmation sous peu.
             </p>
           )}
@@ -143,14 +143,14 @@ function CheckoutSuccessContent() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/shop"
-            className="inline-flex items-center justify-center gap-2 bg-[#2596be] text-white px-6 py-3 rounded-none font-medium hover:bg-[#1e7a9a] transition-colors font-serif"
+            className="inline-flex items-center justify-center gap-2 bg-[#8B4E4E] text-white px-6 py-3 rounded-none font-medium hover:bg-[#6B3D3D] transition-colors font-serif"
           >
             <ShoppingBag className="w-5 h-5" />
             Continuer mes achats
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-none font-medium border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-white text-[#2D2420] px-6 py-3 rounded-none font-medium border-2 border-[#F0C11D]/30 hover:border-[#F0C11D] transition-colors"
           >
             <Home className="w-5 h-5" />
             Retour à l&apos;accueil
@@ -170,9 +170,9 @@ function CheckoutSuccessContent() {
 export default function CheckoutSuccessPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-[#FDFBF7] pt-32 pb-20 flex items-center justify-center">
+      <div className="min-h-screen bg-white pt-24 pb-12 flex items-center justify-center">
         <div className="text-center">
-          <p className="font-serif text-xl text-[#1a1a1a]">Chargement...</p>
+          <p className="font-serif text-xl text-[#2D2420]">Chargement...</p>
         </div>
       </div>
     }>

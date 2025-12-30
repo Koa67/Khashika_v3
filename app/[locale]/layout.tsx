@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Karma } from "next/font/google";
+import { Arimo } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,10 +9,11 @@ import { WishlistProvider } from "@/lib/context/WishlistContext";
 import { AuthProvider } from "@/lib/context/AuthContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const karma = Karma({
-  variable: "--font-karma",
+const arimo = Arimo({
+  variable: "--font-arimo",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["700"],
+  style: ["normal"],
   display: 'swap',
 });
 
@@ -101,12 +102,15 @@ export default async function RootLayout({
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'FR',
-      addressLocality: 'Paris',
+      addressLocality: 'CERNAY',
+      streetAddress: '43, Rue du Raisin',
+      postalCode: '68700',
     },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'contact@khashika.com',
+      email: 'evelyne.stutz@khashika.com',
+      telephone: '+33629068595',
       availableLanguage: ['French'],
     },
     sameAs: [
@@ -146,7 +150,7 @@ export default async function RootLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      <div className={`${karma.variable} font-serif antialiased`}>
+      <div className={`${arimo.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <AuthProvider>
             <CartProvider>

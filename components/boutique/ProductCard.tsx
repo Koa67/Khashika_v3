@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Link } from '@/navigation';
 import { Heart } from 'lucide-react';
@@ -16,8 +16,11 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const [isImageLoading, setIsImageLoading] = useState(true);
-  const { isInWishlist, toggleWishlist } = useWishlist();
+  const { isInWishlist: checkWishlist, toggleWishlist } = useWishlist();
   const [isAnimating, setIsAnimating] = useState(false);
+  // État local initialisé à false (même valeur que serveur)
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   // Use validated images hook to filter out blacklisted images (must be before early return)
   const allProductImages = product ? [
@@ -33,9 +36,13 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   // Get valid image URL
   const imageUrl = getValidImageUrl(mainImage || '/placeholder-image.svg');
 
-  if (!product) return null;
+  // Synchroniser après montage (client-only)
+  useEffect(() => {
+    setMounted(true);
+    setIsWishlisted(checkWishlist(product.id));
+  }, [checkWishlist, product.id]);
 
-  const isWishlisted = isInWishlist(product.id);
+  if (!product) return null;
 
   // Format price - integers display without decimals
   const price = typeof product.price === 'number' ? product.price : parseFloat(String(product.price || 0));
@@ -48,6 +55,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
     e.stopPropagation();
     setIsAnimating(true);
     toggleWishlist(product);
+    // Mettre à jour l'état local immédiatement
+    setIsWishlisted(!isWishlisted);
     setTimeout(() => setIsAnimating(false), 200);
   };
 
@@ -57,9 +66,9 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       className="group block w-full h-full"
     >
       {/* Card container */}
-      <div className="golden-glow-card h-full flex flex-col bg-[#FDFBF7] overflow-hidden relative">
+      <div className="h-full flex flex-col bg-[#FAF9F7] overflow-hidden relative border border-[#F0C11D]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)] transition-all duration-300 group-hover:shadow-[0_12px_32px_rgba(240,193,29,0.35)] group-hover:border-[#F0C11D] group-hover:-translate-y-2">
         {/* Image zone with hover effect */}
-        <div className="relative aspect-[3/2] w-full overflow-hidden">
+        <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#FAF9F7]">
           {/* Skeleton Loader pendant le chargement */}
           {isImageLoading && (
             <div className="absolute inset-0 bg-gray-200 animate-pulse" />
@@ -100,7 +109,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </div>
         
         {/* Info section */}
-        <div className="p-3 bg-[#FDFBF7] flex-1 flex flex-col">
+        <div className="p-3 bg-[#FAF9F7] flex-1 flex flex-col">
           {/* Category */}
           {product.category && (
             <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
@@ -109,12 +118,12 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           )}
           
           {/* Product name */}
-          <h3 className="font-serif text-sm text-[#1a1a1a] mb-2 min-h-[4rem]">
+          <h3 className="font-serif text-sm text-[#2D2420] mb-2 min-h-[4rem]">
             {product.name}
           </h3>
           
           {/* Price in gold */}
-          <p className="text-[#D4AF37] text-xl font-semibold mt-auto">
+          <p className="text-[#F0C11D] text-xl font-bold mt-auto">
             {displayPrice}
           </p>
         </div>

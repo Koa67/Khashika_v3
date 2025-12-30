@@ -91,10 +91,10 @@ export default function PriceRangeSlider({
       // Plage petite (1-50€) - segments clairs
       return [
         { label: 'Tous', value: [min, max] as [number, number] },
-        { label: '< 10€', value: [min, Math.min(10, max)] as [number, number] },
-        { label: '10-25€', value: [Math.max(min, 10), Math.min(25, max)] as [number, number] },
-        { label: '25-40€', value: [Math.max(min, 25), Math.min(40, max)] as [number, number] },
-        { label: '> 40€', value: [Math.max(min, 40), max] as [number, number] },
+        { label: '< 10 €', value: [min, Math.min(10, max)] as [number, number] },
+        { label: '10-25 €', value: [Math.max(min, 10), Math.min(25, max)] as [number, number] },
+        { label: '25-40 €', value: [Math.max(min, 25), Math.min(40, max)] as [number, number] },
+        { label: '> 40 €', value: [Math.max(min, 40), max] as [number, number] },
       ];
     } else {
       // Plage plus large (fallback)
@@ -128,8 +128,8 @@ export default function PriceRangeSlider({
             }}
             className={`px-2.5 py-1 text-xs rounded-none transition-all duration-200 border
                        ${isPresetActive(preset.value)
-                         ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
-                         : 'bg-[#FDFBF7] text-gray-600 border-[#D4AF37]/30 hover:border-[#D4AF37] hover:shadow-[0_0_8px_rgba(212,175,55,0.2)]'
+                         ? 'bg-[#F0C11D] text-white border-[#F0C11D]'
+                         : 'bg-white text-gray-600 border-[#F0C11D]/30 hover:border-[#F0C11D] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]'
                        }`}
           >
             {preset.label}
@@ -165,7 +165,7 @@ export default function PriceRangeSlider({
         >
           {/* Range actif */}
           <motion.div
-            className="absolute h-full bg-gradient-to-r from-[#D4AF37] to-[#E8C547] rounded-none"
+            className="absolute h-full bg-gradient-to-r from-[#F0C11D] to-[#E8C547] rounded-none"
             style={{
               left: `${minPercent}%`,
               width: `${maxPercent - minPercent}%`,
@@ -179,8 +179,8 @@ export default function PriceRangeSlider({
                        bg-white rounded-none shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'min' 
-                         ? 'border-[#D4AF37] shadow-[#D4AF37]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-[#D4AF37]/30 hover:border-[#D4AF37]'}`}
+                         ? 'border-[#F0C11D] shadow-[#F0C11D]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'}`}
             style={{ left: `${minPercent}%` }}
             onMouseDown={handleMouseDown('min')}
             whileHover={{ scale: 1.1 }}
@@ -203,8 +203,8 @@ export default function PriceRangeSlider({
                        bg-white rounded-none shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'max' 
-                         ? 'border-[#2596be] shadow-[#2596be]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-gray-300 hover:border-[#2596be]'}`}
+                         ? 'border-[#8B4E4E] shadow-[#8B4E4E]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-gray-300 hover:border-[#8B4E4E]'}`}
             style={{ left: `${maxPercent}%` }}
             onMouseDown={handleMouseDown('max')}
             whileHover={{ scale: 1.1 }}
@@ -225,7 +225,7 @@ export default function PriceRangeSlider({
       {/* Indicateur visuel de la plage */}
       <div className="flex items-center justify-between text-xs text-gray-400">
         <span>{min}{currency}</span>
-        <span className="text-[#D4AF37] font-medium">
+        <span className="text-[#F0C11D] font-medium">
           {localMin}{currency} – {localMax}{currency}
         </span>
         <span>{max}{currency}</span>

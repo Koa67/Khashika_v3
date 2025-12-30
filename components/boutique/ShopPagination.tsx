@@ -6,14 +6,28 @@ interface ShopPaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  itemsPerPage: number;
+  onItemsPerPageChange: (count: number) => void;
+  totalItems: number;
 }
 
 export default function ShopPagination({ 
   currentPage, 
   totalPages, 
-  onPageChange 
+  onPageChange,
+  itemsPerPage,
+  onItemsPerPageChange,
+  totalItems,
 }: ShopPaginationProps) {
-  if (totalPages <= 1) return null;
+  const perPageOptions = [
+    { value: 24, label: '24' },
+    { value: 40, label: '40' },
+    { value: 80, label: '80' },
+    { value: -1, label: 'Tout' }, // -1 = all
+  ];
+
+  // Show pagination if more than 1 page or if showing all items (Tout)
+  if (totalPages <= 1 && itemsPerPage !== -1) return null;
 
   // Generate page numbers to show
   const getPageNumbers = () => {
@@ -55,53 +69,78 @@ export default function ShopPagination({
   };
 
   return (
-    <div className="flex items-center justify-center gap-2 mt-12 mb-8">
-      {/* Previous button */}
-      <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#D4AF37]/30 bg-[#FDFBF7] hover:border-[#D4AF37] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-        aria-label="Page précédente"
-      >
-        <ChevronLeft className="w-4 h-4" />
-        <span className="hidden sm:inline text-sm">Précédent</span>
-      </button>
+    <div className="flex items-center justify-between mt-12 mb-8">
+      {/* Spacer gauche pour centrer la pagination */}
+      <div className="hidden lg:block w-32" />
+      
+      {/* Pagination centrée */}
+      <div className="flex items-center justify-center gap-2">
+        {/* Previous button */}
+        <button
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#F0C11D]/30 bg-white hover:border-[#F0C11D] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          aria-label="Page précédente"
+        >
+          <ChevronLeft className="w-4 h-4" />
+          <span className="hidden sm:inline text-sm">Précédent</span>
+        </button>
 
-      {/* Page numbers */}
-      <div className="flex items-center gap-1">
-        {getPageNumbers().map((page, index) => (
-          typeof page === 'number' ? (
-            <button
-              key={index}
-              onClick={() => onPageChange(page)}
-              className={`w-10 h-10 rounded-none text-sm font-medium transition-colors border ${
-                page === currentPage
-                  ? 'bg-[#D4AF37] text-white border-[#D4AF37]'
-                  : 'bg-[#FDFBF7] border-[#D4AF37]/30 hover:border-[#D4AF37]'
-              }`}
-              aria-label={`Page ${page}`}
-              aria-current={page === currentPage ? 'page' : undefined}
-            >
-              {page}
-            </button>
-          ) : (
-            <span key={index} className="px-2 text-foreground/40">
-              {page}
-            </span>
-          )
-        ))}
+        {/* Page numbers */}
+        <div className="flex items-center gap-1">
+          {getPageNumbers().map((page, index) => (
+            typeof page === 'number' ? (
+              <button
+                key={index}
+                onClick={() => onPageChange(page)}
+                className={`w-10 h-10 rounded-none text-sm font-medium transition-colors border ${
+                  page === currentPage
+                    ? 'bg-[#F0C11D] text-white border-[#F0C11D]'
+                    : 'bg-white border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                }`}
+                aria-label={`Page ${page}`}
+                aria-current={page === currentPage ? 'page' : undefined}
+              >
+                {page}
+              </button>
+            ) : (
+              <span key={index} className="px-2 text-foreground/40">
+                {page}
+              </span>
+            )
+          ))}
+        </div>
+
+        {/* Next button */}
+        <button
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#F0C11D]/30 bg-white hover:border-[#F0C11D] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          aria-label="Page suivante"
+        >
+          <span className="hidden sm:inline text-sm">Suivant</span>
+          <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
 
-      {/* Next button */}
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#D4AF37]/30 bg-[#FDFBF7] hover:border-[#D4AF37] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-        aria-label="Page suivante"
-      >
-        <span className="hidden sm:inline text-sm">Suivant</span>
-        <ChevronRight className="w-4 h-4" />
-      </button>
+      {/* Sélecteur "Afficher" à droite */}
+      <div className="flex items-center gap-2">
+        <span className="text-sm text-[#2D2420]/60 hidden lg:inline">Afficher</span>
+        <select
+          value={itemsPerPage}
+          onChange={(e) => {
+            const value = parseInt(e.target.value);
+            onItemsPerPageChange(value);
+          }}
+          className="px-3 py-2 text-sm bg-white border border-[#F0C11D]/30 rounded-none hover:border-[#F0C11D] focus:border-[#F0C11D] focus:outline-none cursor-pointer transition-colors text-[#2D2420]"
+        >
+          {perPageOptions.map(opt => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }

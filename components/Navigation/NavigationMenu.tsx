@@ -92,7 +92,7 @@ const menuData: DropdownMenu[] = [
         ],
       },
       {
-        title: 'Petites attentions',
+        title: 'Petits articles',
         items: [
           { label: 'Porte-clés', href: '/accessoires/porte-cles' },
           { label: 'Chouchous', href: '/accessoires/chouchous' },
@@ -147,7 +147,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           group flex items-center gap-1.5 px-4 py-2
           text-sm font-medium tracking-wide uppercase
           transition-all duration-300 ease-out
-          ${isActive ? 'text-primary' : 'text-gray-800 hover:text-primary'}
+          ${isActive ? 'text-[#F0C11D]' : 'text-gray-800 hover:text-[#F0C11D]'}
         `}
       >
         <span className="relative">
@@ -174,37 +174,31 @@ const Dropdown: React.FC<DropdownProps> = ({
       >
         <div 
           className="
-            bg-white rounded-lg shadow-xl
-            border border-gray-100
-            min-w-[280px] p-6
-            backdrop-blur-sm
+            bg-[#FDFCFB] rounded-none shadow-[0_8px_30px_rgba(240,193,29,0.3)]
+            border border-[#F0C11D]/20
+            min-w-[280px] p-4
           "
-          style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
         >
-          <div 
-            className="absolute top-2 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"
-          />
-
-          <div className="flex gap-8">
+          <div className="flex gap-4">
             {menu.sections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="min-w-[140px]">
+              <div key={sectionIndex} className="min-w-[120px]">
                 {section.title && (
                   <h3 className="
                     text-xs font-semibold uppercase tracking-wider
-                    text-gray-400 mb-3 pb-2
-                    border-b border-gray-100
+                    text-[#2D2420]/60 mb-1.5 pb-1
+                    border-b border-[#F0C11D]/20
                   ">
                     {section.title}
                   </h3>
                 )}
-                <ul className="space-y-1">
+                <ul className="space-y-0.5">
                   {section.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
                       <Link
                         href={item.href}
                         className="
-                          block py-1.5 text-sm text-gray-700
-                          hover:text-primary hover:translate-x-1
+                          block px-2 py-1 text-sm text-[#2D2420]
+                          hover:text-[#F0C11D] hover:translate-x-1
                           transition-all duration-200
                         "
                       >
@@ -218,16 +212,16 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
 
           {menu.featured && menu.featured.length > 0 && (
-            <div className="mt-4 pt-4 border-t border-gray-100">
+            <div className="mt-3 pt-3 border-t border-[#F0C11D]/20">
               {menu.featured.map((feat, index) => (
                 <Link
                   key={index}
                   href={feat.href}
                   className={`
-                    inline-flex items-center gap-2 text-sm font-medium
+                    inline-flex items-center gap-1.5 text-sm font-medium
                     ${feat.highlight 
-                      ? 'text-primary hover:text-primary-dark' 
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-[#F0C11D] hover:text-[#A8871F]' 
+                      : 'text-[#2D2420]/60 hover:text-[#F0C11D]'
                     }
                     transition-colors duration-200
                   `}
@@ -271,16 +265,16 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       <div
         className={`
           fixed top-0 right-0 h-full w-80 max-w-[85vw]
-          bg-white z-50 shadow-2xl
+          bg-[#FDFCFB] z-50 shadow-2xl
           transform transition-transform duration-300 ease-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <span className="text-lg font-serif text-gray-800">Menu</span>
+        <div className="flex items-center justify-between p-4 border-b border-[#F0C11D]/20">
+          <span className="text-lg font-serif text-[#2D2420]">Menu</span>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-[#FDF9F7] rounded-full transition-colors"
             aria-label="Fermer le menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -291,14 +285,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
         <nav className="overflow-y-auto h-[calc(100%-64px)] py-4">
           {menuData.map((menu) => (
-            <div key={menu.label} className="border-b border-gray-50">
+            <div key={menu.label} className="border-b border-[#F0C11D]/20">
               <button
                 onClick={() => toggleExpand(menu.label)}
                 className="
                   w-full flex items-center justify-between
                   px-6 py-4 text-left
-                  text-gray-800 font-medium
-                  hover:bg-gray-50 transition-colors
+                  text-[#2D2420] font-medium
+                  hover:text-[#F0C11D] transition-all duration-200
                 "
               >
                 <span>{menu.label}</span>
@@ -310,11 +304,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ${expandedMenu === menu.label ? 'max-h-[500px]' : 'max-h-0'}
                 `}
               >
-                <div className="px-6 pb-4 bg-gray-50/50">
+                <div className="px-6 pb-4 bg-[#FDFCFB]/50">
                   {menu.sections.map((section, sectionIndex) => (
                     <div key={sectionIndex} className="mb-4">
                       {section.title && (
-                        <h4 className="text-xs uppercase tracking-wider text-gray-400 mb-2 mt-3">
+                        <h4 className="text-xs uppercase tracking-wider text-[#2D2420]/60 mb-2 mt-3">
                           {section.title}
                         </h4>
                       )}
@@ -325,8 +319,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                               href={item.href}
                               onClick={onClose}
                               className="
-                                block py-2 text-sm text-gray-600
-                                hover:text-primary transition-colors
+                                block px-3 py-2 text-sm text-[#2D2420]
+                                hover:text-[#F0C11D] transition-all duration-200
                               "
                             >
                               {item.label}
@@ -338,15 +332,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ))}
 
                   {menu.featured && (
-                    <div className="pt-2 border-t border-gray-200">
+                    <div className="pt-2 border-t border-[#F0C11D]/20">
                       {menu.featured.map((feat, index) => (
                         <Link
                           key={index}
                           href={feat.href}
                           onClick={onClose}
                           className="
-                            block py-2 text-sm font-medium text-primary
-                            hover:text-primary-dark transition-colors
+                            block py-2 text-sm font-medium text-[#F0C11D]
+                            hover:text-[#A8871F] transition-colors
                           "
                         >
                           → {feat.label}

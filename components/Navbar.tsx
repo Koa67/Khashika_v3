@@ -1,9 +1,9 @@
 'use client';
 
-import { Link, useRouter } from '@/navigation';
+import { Link, useRouter, usePathname } from '@/navigation';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { ShoppingBag, Heart, User, X, Search } from 'lucide-react';
+import { ShoppingBag, Heart, User, X, Search, ArrowRight } from 'lucide-react';
 import { useCart } from '@/lib/context/CartContext';
 import { useWishlist } from '@/lib/context/WishlistContext';
 import { useAuth } from '@/lib/context/AuthContext';
@@ -12,6 +12,7 @@ import WishlistDrawer from '@/components/layout/WishlistDrawer';
 import { useSearch } from '@/lib/hooks/useSearch';
 import { getValidImageUrl } from '@/lib/utils/images';
 import { NavigationMenu } from '@/components/Navigation';
+import { supabase } from '@/lib/db/supabase';
 
 // Function to highlight matching text in turquoise
 const highlightMatch = (text: string, query: string) => {
@@ -25,7 +26,7 @@ const highlightMatch = (text: string, query: string) => {
       return (
         <span 
           key={index} 
-          className="text-[#2596be] font-semibold"
+          className="text-[#8B4E4E] font-semibold"
         >
           {part}
         </span>
@@ -36,6 +37,8 @@ const highlightMatch = (text: string, query: string) => {
 };
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const locale = pathname.startsWith('/en') ? 'en' : 'fr';
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -54,7 +57,10 @@ export default function Navbar() {
   
   const [mounted, setMounted] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [quickEmail, setQuickEmail] = useState('');
+  const [quickPassword, setQuickPassword] = useState('');
   const userMenuRef = useRef<HTMLDivElement>(null);
+  const userMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   useEffect(() => { setMounted(true); }, []);
   const cartCount = cart?.getItemCount?.() || 0;
   const wishlistCount = wishlist?.getItemCount?.() || 0;
@@ -62,7 +68,34 @@ export default function Navbar() {
   const handleSignOut = async () => {
     await signOut();
     setShowUserMenu(false);
-    router.push('/fr');
+    router.push(`/${locale}`);
+  };
+
+  const handleQuickLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const { error } = await supabase.auth.signInWithPassword({
+      email: quickEmail,
+      password: quickPassword,
+    });
+    if (!error) {
+      setQuickEmail('');
+      setQuickPassword('');
+      setShowUserMenu(false);
+    }
+  };
+
+  // Handle hover and click for user menu
+  const handleUserMenuEnter = () => {
+    if (userMenuTimeoutRef.current) {
+      clearTimeout(userMenuTimeoutRef.current);
+    }
+    setShowUserMenu(true);
+  };
+
+  const handleUserMenuLeave = () => {
+    userMenuTimeoutRef.current = setTimeout(() => {
+      setShowUserMenu(false);
+    }, 150);
   };
 
   // Close user menu when clicking outside
@@ -79,6 +112,9 @@ export default function Navbar() {
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      if (userMenuTimeoutRef.current) {
+        clearTimeout(userMenuTimeoutRef.current);
+      }
     };
   }, [showUserMenu]);
 
@@ -150,7 +186,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-[#FDFBF7] transition-all shadow-sm overflow-visible w-full">
+      <header className="sticky top-0 z-50 bg-white border-b border-[#F0C11D]/40 transition-all overflow-visible w-full">
         {/* Jali Pattern Border - Horizontal */}
         <div className="jali-border-horizontal" aria-hidden="true" />
         
@@ -159,7 +195,7 @@ export default function Navbar() {
           {/* Logo & Actions */}
           <div className="flex items-center justify-between mb-3">
           
-          {/* GAUCHE : Search */}
+            {/* GAUCHE : Search */}
           <div className="flex items-center gap-3 w-1/3 justify-start relative" ref={searchRef}>
             <div 
               ref={searchContainerRef}
@@ -180,14 +216,9 @@ export default function Navbar() {
                 }, 100);
               }}
             >
-              <div 
-                className="flex items-center gap-2 w-[165px] border-b border-transparent transition-colors duration-300"
-                style={{
-                  borderBottomColor: isSearchOpen ? '#000' : 'transparent'
-                }}
-              >
+              <div className="flex items-center gap-2 relative">
                 <button 
-                  className="p-2 hover:text-[#2596be] transition-colors" 
+                  className="p-2 text-[#2D2420] hover:text-[#F0C11D] transition-colors duration-200" 
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" strokeWidth={1.5} />
@@ -198,7 +229,7 @@ export default function Navbar() {
                   <input
                     ref={searchInputRef}
                     type="text"
-                    placeholder=""
+                    placeholder="Rechercher..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
@@ -206,9 +237,7 @@ export default function Navbar() {
                       setIsSearchOpen(true);
                       // Just focus, no text selection
                     }}
-                    className={`bg-transparent border-none outline-none focus:outline-none ring-0 focus:ring-0 text-sm text-[#1a1a1a] transition-all duration-300 ${
-                      isSearchOpen ? 'w-48 opacity-100' : 'w-0 opacity-0 pointer-events-none'
-                    }`}
+                    className="bg-transparent border-none outline-none focus:outline-none ring-0 focus:ring-0 text-sm text-[#2D2420] placeholder:text-[#2D2420]/50 w-32 transition-all duration-300"
                     style={{
                       paddingBottom: '2px',
                       paddingTop: '2px'
@@ -220,73 +249,77 @@ export default function Navbar() {
                       setQuery('');
                       setIsSearchOpen(false);
                     }}
-                    className="ml-1 text-gray-400 hover:text-gray-600 transition-colors"
+                    className="ml-1 text-[#2D2420]/50 hover:text-[#2D2420] transition-colors"
                     aria-label="Effacer"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 )}
+                  {/* Underline dynamique en or */}
+                  <span className="absolute -bottom-0.5 left-0 h-0.5 bg-[#F0C11D] transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
                 </div>
               </div>
               
-              {/* Search Results Dropdown */}
-              {isSearchOpen && query.length >= 2 && results.length > 0 && (
+              {/* Search Results Dropdown - Suggestions sans ascenseur */}
+              {isSearchOpen && query.length >= 2 && (
                 <div 
                   ref={dropdownRef}
-                  className="golden-glow-dropdown fixed top-[72px] w-96 z-[9999]"
+                  className="fixed top-[72px] w-72 z-[9999] bg-[#FDFCFB] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
                   style={{ left: `${dropdownLeft}px` }}
                 >
-                  <div className="max-h-96 overflow-y-auto">
-                    <ul>
-                      {results.map((product) => (
-                        <li key={product.id} className="border-b border-gray-50 last:border-0">
-                          <Link
-                            href={`/product/${product.slug || product.id}`}
-                            className="golden-glow-dropdown-item flex items-center gap-4"
-                            onClick={() => {
-                              setQuery('');
-                              setIsSearchOpen(false);
-                            }}
-                          >
-                            {/* Image */}
-                            <div className="relative w-12 h-12 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={getValidImageUrl(product.image_url || product.image)}
-                                alt={product.name || 'Bijou'}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            
-                            {/* Name and Price */}
-                            <div className="flex-1 min-w-0">
-                              <p className="font-serif text-sm text-[#1a1a1a] line-clamp-1 mb-1">
-                                {highlightMatch(product.name, query)}
-                              </p>
-                              <p className="text-xs font-bold text-[#D4AF37]">
-                                {typeof product.price === 'number' 
-                                  ? product.price.toFixed(2) 
-                                  : product.price} €
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
+                  {/* Suggestions produits - Max 5, pas d'ascenseur */}
+                  {results.length > 0 ? (
+                    <div className="p-2">
+                      {results.slice(0, 5).map((product) => (
+                        <Link
+                          key={product.id}
+                          href={`/product/${product.slug || product.id}`}
+                          className="flex items-center gap-3 p-2 hover:bg-[#FDF9F7] transition-colors"
+                          onClick={() => {
+                            setQuery('');
+                            setIsSearchOpen(false);
+                          }}
+                        >
+                          <div className="relative w-12 h-12 flex-shrink-0 bg-[#FDFCFB] overflow-hidden">
+                            <Image
+                              src={getValidImageUrl(product.image_url || product.image)}
+                              alt={product.name || 'Bijou'}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm text-[#2D2420] truncate">{product.name}</p>
+                            <p className="text-sm font-bold text-[#F0C11D]">
+                              {typeof product.price === 'number' 
+                                ? product.price.toFixed(2) 
+                                : product.price} €
+                            </p>
+                          </div>
+                        </Link>
                       ))}
-                    </ul>
-                    
-                    {/* View All Results Link */}
-                    <div className="p-3 text-center bg-gray-50 border-t border-gray-100">
-                      <Link
-                        href={`/shop?q=${encodeURIComponent(query)}`}
-                        className="text-sm font-bold text-[#2596be] uppercase tracking-wider hover:underline"
-                        onClick={() => {
-                          setQuery('');
-                          setIsSearchOpen(false);
-                        }}
-                      >
-                        Voir tous les résultats
-                      </Link>
                     </div>
+                  ) : (
+                    <div className="p-4 text-center text-sm text-[#2D2420]/60">
+                      Aucun produit trouvé
+                    </div>
+                  )}
+                  
+                  {/* VOIR TOUS LES RÉSULTATS - Toujours visible */}
+                  <div className="border-t border-[#F0C11D]/20 p-2">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        router.push(`/shop?q=${encodeURIComponent(query.trim())}`);
+                        setQuery('');
+                        setIsSearchOpen(false);
+                      }}
+                      className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium text-[#F0C11D] hover:text-[#8B4E4E] transition-colors"
+                    >
+                      Voir tous les résultats
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               )}
@@ -295,7 +328,7 @@ export default function Navbar() {
               {isSearchOpen && query.length >= 2 && results.length === 0 && (
                 <div 
                   ref={dropdownRef}
-                  className="golden-glow-dropdown fixed top-[72px] w-96 z-[9999] p-8 text-center text-gray-500 text-sm"
+                  className="fixed top-[72px] w-96 z-[9999] p-8 text-center text-[#2D2420]/60 text-sm bg-[#FDFCFB] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
                   style={{ left: `${dropdownLeft}px` }}
                 >
                   Aucun résultat trouvé
@@ -304,7 +337,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* CENTRE : Logo Officiel - Positioned towards top */}
+            {/* CENTRE : Logo Officiel - Positioned towards top */}
           <div className="w-1/3 flex justify-center flex-shrink-0">
             <Link href="/" className="flex-shrink-0 inline-block">
               <Image 
@@ -315,20 +348,26 @@ export default function Navbar() {
                 className="h-[50px] w-auto object-contain"
                 priority
                 quality={100}
+                unoptimized
               />
             </Link>
           </div>
 
-          {/* DROITE : User + Wishlist + Cart + Menu Mobile */}
+            {/* DROITE : User + Wishlist + Cart + Menu Mobile */}
           <div className="flex items-center gap-3 w-1/3 justify-end">
             {/* User Button / Login */}
             {!authLoading && (
-              <div className="relative" ref={userMenuRef}>
+              <div 
+                className="relative" 
+                ref={userMenuRef}
+                onMouseEnter={handleUserMenuEnter}
+                onMouseLeave={handleUserMenuLeave}
+              >
                 {user ? (
                   <div className="relative">
                     <button
                       onClick={() => setShowUserMenu(!showUserMenu)}
-                      className="p-2 hover:text-[#2596be] transition-colors flex items-center gap-2"
+                      className="p-2 hover:text-[#F0C11D] transition-colors duration-200 flex items-center gap-2"
                       aria-label="Mon compte"
                     >
                       <User className="w-5 h-5" strokeWidth={1.5} />
@@ -337,31 +376,48 @@ export default function Navbar() {
                       </span>
                     </button>
                     {showUserMenu && (
-                      <div className="absolute right-0 top-full mt-2 bg-[#FDFBF7] border border-[#D4AF37]/20 shadow-lg rounded-none min-w-[180px] z-50">
-                        <Link
-                          href="/account"
-                          className="block px-4 py-2 text-sm hover:text-[#2596be] transition-colors"
-                          onClick={() => setShowUserMenu(false)}
-                        >
-                          Mon compte
-                        </Link>
-                        <button
-                          onClick={handleSignOut}
-                          className="w-full text-left px-4 py-2 text-sm hover:text-[#2596be] transition-colors text-red-600"
-                        >
-                          Déconnexion
-                        </button>
+                      <div className="absolute right-0 top-full mt-2 w-56 bg-[#FDFCFB] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] z-50 overflow-hidden">
+                        <div className="p-2">
+                          <Link
+                            href={`/${locale}/account`}
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#F0C11D] transition-colors"
+                            onClick={() => setShowUserMenu(false)}
+                          >
+                            Mon compte
+                          </Link>
+                          <Link
+                            href={`/${locale}/account?section=orders`}
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#F0C11D] transition-colors"
+                            onClick={() => setShowUserMenu(false)}
+                          >
+                            Mes commandes
+                          </Link>
+                          <Link
+                            href={`/${locale}/account?section=wishlist`}
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#F0C11D] transition-colors"
+                            onClick={() => setShowUserMenu(false)}
+                          >
+                            Mes favoris
+                          </Link>
+                          <div className="p-2 border-t border-[#F0C11D]/20 mt-2">
+                            <button
+                              onClick={handleSignOut}
+                              className="w-full px-3 py-2 text-sm text-[#8B4E4E] hover:bg-[#8B4E4E] hover:text-white transition-colors rounded-none"
+                            >
+                              Déconnexion
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
                 ) : (
                   <Link
-                    href="/login"
-                    className="p-2 hover:text-[#2596be] transition-colors flex items-center gap-2"
+                    href={`/${locale}/login`}
+                    className="p-2 hover:text-[#F0C11D] transition-colors duration-200"
                     aria-label="Connexion"
                   >
                     <User className="w-5 h-5" strokeWidth={1.5} />
-                    <span className="hidden sm:inline text-sm font-serif">Connexion</span>
                   </Link>
                 )}
               </div>
@@ -370,12 +426,12 @@ export default function Navbar() {
             {/* Wishlist Button */}
             <button 
               onClick={() => setIsWishlistOpen(true)}
-              className="p-2 hover:text-[#2596be] transition-colors relative"
+              className="relative p-2 text-[#2D2420] hover:text-[#F0C11D] transition-colors duration-200"
               aria-label="Wishlist"
             >
-              <Heart className="w-5 h-5" strokeWidth={1.5} />
+              <Heart className="w-6 h-6" strokeWidth={1.5} />
               {mounted && wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#2596be] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold text-[10px]">
+                <span className="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] flex items-center justify-center bg-[#F0C11D] text-white text-[13px] font-bold rounded-full leading-none shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                   {wishlistCount}
                 </span>
               )}
@@ -384,12 +440,12 @@ export default function Navbar() {
             {/* Cart Button */}
             <button 
               onClick={() => setIsCartOpen(true)}
-              className="p-2 hover:text-[#2596be] transition-colors relative"
+              className="relative p-2 text-[#2D2420] hover:text-[#F0C11D] transition-colors duration-200"
               aria-label="Panier"
             >
-              <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
+              <ShoppingBag className="w-6 h-6" strokeWidth={1.5} />
               {mounted && cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#2596be] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold text-[10px]">
+                <span className="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] flex items-center justify-center bg-[#F0C11D] text-white text-[13px] font-bold rounded-full leading-none shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                   {cartCount}
                 </span>
               )}

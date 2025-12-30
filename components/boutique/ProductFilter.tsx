@@ -114,7 +114,7 @@ export default function ProductFilter({
       <div className="md:hidden mb-4">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between p-4 bg-white border border-[#D4AF37]/20 rounded-lg hover:border-[#2596be] transition-colors"
+          className="w-full flex items-center justify-between p-4 bg-white border border-[#F0C11D]/40 rounded-none hover:border-[#8B4E4E] transition-colors"
           aria-label={isOpen ? 'Fermer les filtres' : 'Ouvrir les filtres'}
           aria-expanded={isOpen}
         >
@@ -123,7 +123,7 @@ export default function ProductFilter({
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <ChevronDown size={20} className="text-[#2596be]" />
+            <ChevronDown size={20} className="text-[#8B4E4E]" />
           </motion.div>
         </button>
       </div>
@@ -136,15 +136,15 @@ export default function ProductFilter({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-white border border-[#D4AF37]/20 rounded-lg p-6 space-y-8 md:sticky md:top-24"
+            className="bg-[#FDF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 space-y-8 md:sticky md:top-24"
           >
             {/* Header */}
             <div className="flex items-center justify-between">
-              <h2 className="font-serif text-2xl text-[#2596be]">Filtres</h2>
+              <h2 className="font-serif text-2xl text-[#8B4E4E]">Filtres</h2>
               {hasActiveFilters && (
                 <button
                   onClick={handleReset}
-                  className="text-sm text-foreground/60 hover:text-[#2596be] transition-colors flex items-center gap-1"
+                  className="text-sm text-foreground/60 hover:text-[#8B4E4E] transition-colors flex items-center gap-1"
                   aria-label="Réinitialiser les filtres"
                 >
                   <X size={16} />
@@ -155,7 +155,7 @@ export default function ProductFilter({
 
             {/* Categories Filter */}
             <div>
-              <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+              <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
                 Catégories
               </h3>
               <div className="space-y-2">
@@ -167,10 +167,10 @@ export default function ProductFilter({
                       onClick={() => handleCategoryToggle(category)}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`w-full text-left px-4 py-2 rounded-lg border transition-all ${
+                      className={`w-full text-left px-4 py-2 rounded-none border transition-all ${
                         isSelected
-                          ? 'bg-[#2596be] text-white border-[#2596be]'
-                          : 'bg-white text-foreground border-gray-200 hover:border-[#2596be] hover:text-[#2596be]'
+                          ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
+                          : 'bg-white text-[#2D2420] border-[#F0C11D]/40 hover:border-[#8B4E4E] hover:text-[#8B4E4E]'
                       }`}
                       aria-pressed={isSelected}
                     >
@@ -183,7 +183,7 @@ export default function ProductFilter({
 
             {/* Price Range Filter */}
             <div>
-              <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+              <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
                 Prix
               </h3>
               <div className="space-y-4">
@@ -199,7 +199,7 @@ export default function ProductFilter({
                       step={10}
                       value={priceRange[0]}
                       onChange={(e) => handlePriceChange(0, parseInt(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#2596be]"
+                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#8B4E4E]"
                       aria-label="Prix minimum"
                     />
                     <input
@@ -209,7 +209,7 @@ export default function ProductFilter({
                       step={10}
                       value={priceRange[1]}
                       onChange={(e) => handlePriceChange(1, parseInt(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#2596be] mt-2"
+                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#8B4E4E] mt-2"
                       aria-label="Prix maximum"
                     />
                   </div>
@@ -223,7 +223,7 @@ export default function ProductFilter({
 
             {/* Materials Filter */}
             <div>
-              <h3 className="font-serif text-lg font-medium text-[#2596be] mb-4">
+              <h3 className="font-serif text-lg font-medium text-[#8B4E4E] mb-4">
                 Matériaux
               </h3>
               <div className="space-y-2">
@@ -235,10 +235,10 @@ export default function ProductFilter({
                       onClick={() => handleMaterialToggle(material)}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`w-full text-left px-4 py-2 rounded-lg border transition-all ${
+                      className={`w-full text-left px-4 py-2 rounded-none border transition-all ${
                         isSelected
-                          ? 'bg-[#2596be] text-white border-[#2596be]'
-                          : 'bg-white text-foreground border-gray-200 hover:border-[#2596be] hover:text-[#2596be]'
+                          ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
+                          : 'bg-white text-[#2D2420] border-[#F0C11D]/40 hover:border-[#8B4E4E] hover:text-[#8B4E4E]'
                       }`}
                       aria-pressed={isSelected}
                     >

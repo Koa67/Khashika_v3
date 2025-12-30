@@ -242,7 +242,7 @@ export default function ProductZoom({
               ref={canvasRef}
               width={LENS_SIZE}
               height={LENS_SIZE}
-              className="rounded-full border-2 border-[#2596be] shadow-lg"
+              className="rounded-full border-2 border-[#8B4E4E] shadow-lg"
               style={{
                 boxShadow: '0 0 20px rgba(37, 150, 190, 0.3)',
               }}

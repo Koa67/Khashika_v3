@@ -60,19 +60,29 @@ export function useSearch() {
     };
   }, []);
 
-  // Configurer Fuse.js avec les poids et includeMatches
+  // Configurer Fuse.js avec les poids et includeMatches - Recherche fuzzy tolérante
   const fuse = useMemo(() => {
     if (allProducts.length === 0) return null;
     
     return new Fuse(allProducts, {
       keys: [
-        { name: 'name', weight: 0.7 },
-        { name: 'category', weight: 0.5 },
-        { name: 'description', weight: 0.1 },
+        { name: 'name', weight: 0.4 },           // Nom = priorité haute
+        { name: 'category', weight: 0.2 },       // Catégorie
+        { name: 'attributes.stone', weight: 0.2 }, // Pierre (via attributes)
+        { name: 'stone', weight: 0.2 },          // Pierre (direct)
+        { name: 'attributes.material', weight: 0.1 }, // Matériau (via attributes)
+        { name: 'material', weight: 0.1 },       // Matériau (direct)
+        { name: 'description', weight: 0.1 },    // Description
       ],
-      threshold: 0.4, // Tolérance aux fautes
-      includeMatches: true, // Pour le highlighting
-      minMatchCharLength: 2,
+      threshold: 0.4,          // 0 = exact, 1 = tout accepter (0.4 = tolérant)
+      distance: 100,           // Distance max entre caractères
+      includeScore: true,      // Inclure le score de pertinence
+      ignoreLocation: true,    // Chercher partout dans le texte
+      minMatchCharLength: 2,   // Min 2 caractères pour matcher
+      shouldSort: true,        // Trier par pertinence
+      findAllMatches: true,    // Trouver toutes les correspondances
+      useExtendedSearch: true, // Recherche étendue
+      includeMatches: true,    // Pour le highlighting
     });
   }, [allProducts]);
 

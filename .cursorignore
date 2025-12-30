@@ -1,3 +1,8 @@
+# ═══════════════════════════════════════════════════════════════
+# KHASHIKA v2.0 — Cursor Ignore List
+# Fichiers protégés que Cursor NE DOIT JAMAIS modifier
+# ═══════════════════════════════════════════════════════════════
+
 # Build & Runtime
 node_modules/
 .next/
@@ -10,7 +15,9 @@ coverage/
 # Version Control
 .git/
 
-# Assets (binary, unreadable)
+# ═══════════════════════════════════════════════════════════════
+# ASSETS (binary, unreadable)
+# ═══════════════════════════════════════════════════════════════
 public/images/
 *.png
 *.jpg
@@ -24,11 +31,39 @@ public/images/
 *.woff
 *.woff2
 
-# Data Files (reference with @file if needed)
+# ═══════════════════════════════════════════════════════════════
+# DATA FILES (source of truth - use @file to reference)
+# ═══════════════════════════════════════════════════════════════
 lib/data/*.json
 *.csv
 *.pdf
 *.xlsx
+
+# ═══════════════════════════════════════════════════════════════
+# DATABASE (stable - do not modify)
+# ═══════════════════════════════════════════════════════════════
+lib/db/supabase.ts
+lib/db/schema.sql
+
+# ═══════════════════════════════════════════════════════════════
+# CONTEXTS (stable - do not modify)
+# ═══════════════════════════════════════════════════════════════
+contexts/CartContext.tsx
+contexts/WishlistContext.tsx
+
+# ═══════════════════════════════════════════════════════════════
+# UI PRIMITIVES (Shadcn - do not modify)
+# ═══════════════════════════════════════════════════════════════
+components/ui/*
+
+# ═══════════════════════════════════════════════════════════════
+# CONFIG (do not modify without ADR)
+# ═══════════════════════════════════════════════════════════════
+.env*
+next.config.*
+tailwind.config.*
+tsconfig.json
+postcss.config.*
 
 # Lock & Logs
 package-lock.json
@@ -36,15 +71,21 @@ yarn.lock
 pnpm-lock.yaml
 *.log
 
-# Legacy
+# ═══════════════════════════════════════════════════════════════
+# LEGACY & BACKUPS
+# ═══════════════════════════════════════════════════════════════
 _LEGACY_CLONE/
 *.bak
+*.backup
 
 # System
 .DS_Store
 .vscode/settings.json
 *.swp
+
+# ═══════════════════════════════════════════════════════════════
 # BRICKMODE: ignore shadow symlinks (edit root only)
+# ═══════════════════════════════════════════════════════════════
 components/.cursorrules
 components/.cursorignore
 scripts/_CONTEXT.md
