@@ -28,7 +28,7 @@ export default function ActiveFilters({
           <button
             key={m}
             onClick={() => onToggle('materials', m)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#E8B71B]/30 rounded-none text-sm group hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#EAB615]/30 rounded-none text-sm group hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
           >
             <span>{mat?.icon}</span>
             <span>{mat?.label}</span>
@@ -44,7 +44,7 @@ export default function ActiveFilters({
           <button
             key={t}
             onClick={() => onToggle('types', t)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#E8B71B]/30 rounded-none text-sm group hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#EAB615]/30 rounded-none text-sm group hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
           >
             <span>{type?.label}</span>
             <X className="w-3.5 h-3.5 text-gold-fusion opacity-50 group-hover:opacity-100" />
@@ -59,7 +59,7 @@ export default function ActiveFilters({
           <button
             key={a}
             onClick={() => onToggle('accessories', a)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#E8B71B]/30 rounded-none text-sm group hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#EAB615]/30 rounded-none text-sm group hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
           >
             <span>{acc?.label}</span>
             <X className="w-3.5 h-3.5 text-gold-fusion opacity-50 group-hover:opacity-100" />
@@ -73,7 +73,7 @@ export default function ActiveFilters({
           <button
             key={s}
             onClick={() => onToggle('stones', s)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#E8B71B]/30 rounded-none text-sm group hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#EAB615]/30 rounded-none text-sm group hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
           >
             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone?.color }} />
             <span>{stone?.label}</span>
@@ -88,7 +88,7 @@ export default function ActiveFilters({
           <button
             key={o}
             onClick={() => onToggle('occasions', o)}
-            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#E8B71B]/30 rounded-none text-sm group hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#EAB615]/30 rounded-none text-sm group hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
           >
             <span>{occ?.emoji}</span>
             <span>{occ?.label}</span>

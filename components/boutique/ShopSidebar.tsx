@@ -95,7 +95,7 @@ export default function ShopSidebar({
       >
         <div 
           style={{ maxHeight }}
-          className="bg-[#FDF9F7] rounded-none border border-[#E8B71B]/40 p-6 overflow-y-auto overscroll-contain shadow-[0_4px_12px_rgba(240,193,29,0.25)]"
+          className="bg-[#FDF9F7] rounded-none border border-[#EAB615]/40 p-6 overflow-y-auto overscroll-contain shadow-[0_4px_12px_rgba(240,193,29,0.25)]"
         >
           <div className="flex items-center justify-between mb-6">
           <h2 className="font-serif text-xl">Filtres</h2>
@@ -115,7 +115,7 @@ export default function ShopSidebar({
         </p>
 
         {/* Section Prix - Compacte */}
-        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
+        <div className="mb-0 pb-0 border-b border-[#EAB615]/20">
           <button 
             onClick={() => toggleSection('prix')}
             className="flex items-center justify-between w-full py-3"
@@ -141,8 +141,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [priceRange.min, priceRange.max])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isAll
-                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                            ? 'bg-[#EAB615] text-white border border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         Tous
@@ -151,8 +151,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [priceRange.min, 10])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isUnder10
-                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                            ? 'bg-[#EAB615] text-white border border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         &lt; 10 €
@@ -161,8 +161,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [10, 25])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           is10to25
-                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                            ? 'bg-[#EAB615] text-white border border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         10-25 €
@@ -171,8 +171,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [25, priceRange.max])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isOver25
-                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                            ? 'bg-[#EAB615] text-white border border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         &gt; 25 €
@@ -186,7 +186,7 @@ export default function ShopSidebar({
         </div>
 
         {/* Section Bijoux - TOUJOURS VISIBLE */}
-        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
+        <div className="mb-0 pb-0 border-b border-[#EAB615]/20">
           <button 
             onClick={() => toggleSection('bijoux')}
             className="flex items-center justify-between w-full font-serif text-lg py-3"
@@ -202,7 +202,7 @@ export default function ShopSidebar({
                     type="checkbox"
                     checked={filters.types.includes(type.id)}
                     onChange={() => onToggleFilter('types', type.id)}
-                    className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
+                    className="w-4 h-4 accent-[#EAB615] cursor-pointer"
                   />
                   <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
                     {type.label}
@@ -217,7 +217,7 @@ export default function ShopSidebar({
         </div>
 
         {/* Section Accessoires - TOUJOURS VISIBLE */}
-        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
+        <div className="mb-0 pb-0 border-b border-[#EAB615]/20">
           <button 
             onClick={() => toggleSection('accessoires')}
             className="flex items-center justify-between w-full font-serif text-lg py-3"
@@ -233,7 +233,7 @@ export default function ShopSidebar({
                     type="checkbox"
                     checked={filters.accessories.includes(acc.id)}
                     onChange={() => onToggleFilter('accessories', acc.id)}
-                    className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
+                    className="w-4 h-4 accent-[#EAB615] cursor-pointer"
                   />
                   <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
                     {acc.label}
@@ -248,7 +248,7 @@ export default function ShopSidebar({
         </div>
 
         {/* Section Pierres - TOUJOURS VISIBLE */}
-        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
+        <div className="mb-0 pb-0 border-b border-[#EAB615]/20">
           <button 
             onClick={() => toggleSection('pierres')}
             className="flex items-center justify-between w-full py-3"
@@ -260,7 +260,7 @@ export default function ShopSidebar({
           {openSections.pierres && (
             <div className="space-y-4">
               {/* Onglets */}
-              <div className="flex gap-1 p-1 bg-[#E8B71B]/10 rounded-none">
+              <div className="flex gap-1 p-1 bg-[#EAB615]/10 rounded-none">
                 {['top', 'couleurs'].map((view) => (
                   <button
                     key={view}
@@ -285,10 +285,10 @@ export default function ShopSidebar({
                         type="checkbox"
                         checked={filters.stones.includes(stone.id)}
                         onChange={() => onToggleFilter('stones', stone.id)}
-                        className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
+                        className="w-4 h-4 accent-[#EAB615] cursor-pointer"
                       />
                       <span 
-                        className="w-4 h-4 border border-[#E8B71B]/30 rounded-none" 
+                        className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
                         style={{ backgroundColor: stone.color }} 
                       />
                       <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
@@ -325,8 +325,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
-                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                                ? 'border-[#EAB615] bg-[#EAB615]/10'
+                                : 'border-[#EAB615]/30 hover:border-[#EAB615]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -348,8 +348,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
-                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                                ? 'border-[#EAB615] bg-[#EAB615]/10'
+                                : 'border-[#EAB615]/30 hover:border-[#EAB615]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -371,8 +371,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
-                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                                ? 'border-[#EAB615] bg-[#EAB615]/10'
+                                : 'border-[#EAB615]/30 hover:border-[#EAB615]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -394,8 +394,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
-                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                                ? 'border-[#EAB615] bg-[#EAB615]/10'
+                                : 'border-[#EAB615]/30 hover:border-[#EAB615]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -417,8 +417,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
-                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
+                                ? 'border-[#EAB615] bg-[#EAB615]/10'
+                                : 'border-[#EAB615]/30 hover:border-[#EAB615]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />

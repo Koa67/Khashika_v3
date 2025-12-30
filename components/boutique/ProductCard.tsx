@@ -66,7 +66,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       className="group block w-full h-full"
     >
       {/* Card container */}
-      <div className="h-full flex flex-col bg-[#FAF9F7] overflow-hidden relative border border-[#E8B71B]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)] transition-all duration-300 group-hover:shadow-[0_12px_32px_rgba(240,193,29,0.35)] group-hover:border-[#E8B71B] group-hover:-translate-y-2">
+      <div className="h-full flex flex-col bg-[#FAF9F7] overflow-hidden relative border border-[#EAB615]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)] transition-all duration-300 group-hover:shadow-[0_12px_32px_rgba(240,193,29,0.35)] group-hover:border-[#EAB615] group-hover:-translate-y-2">
         {/* Image zone with hover effect */}
         <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#FAF9F7]">
           {/* Skeleton Loader pendant le chargement */}

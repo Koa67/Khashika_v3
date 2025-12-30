@@ -43,12 +43,12 @@ export default function AccountPage() {
         
         <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-8">
           {/* Sidebar navigation */}
-          <nav className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-4 space-y-1">
+          <nav className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-4 space-y-1">
             <button 
               onClick={() => setActiveSection('profile')} 
               className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2420] hover:bg-white rounded-none transition-colors ${
                 activeSection === 'profile' 
-                  ? 'bg-white border-l-4 border-[#E8B71B]' 
+                  ? 'bg-white border-l-4 border-[#EAB615]' 
                   : ''
               }`}
             >
@@ -59,7 +59,7 @@ export default function AccountPage() {
               onClick={() => setActiveSection('orders')}
               className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2420] hover:bg-white rounded-none transition-colors ${
                 activeSection === 'orders' 
-                  ? 'bg-white border-l-4 border-[#E8B71B]' 
+                  ? 'bg-white border-l-4 border-[#EAB615]' 
                   : ''
               }`}
             >
@@ -70,21 +70,21 @@ export default function AccountPage() {
               onClick={() => setActiveSection('wishlist')}
               className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2420] hover:bg-white rounded-none transition-colors ${
                 activeSection === 'wishlist' 
-                  ? 'bg-white border-l-4 border-[#E8B71B]' 
+                  ? 'bg-white border-l-4 border-[#EAB615]' 
                   : ''
               }`}
             >
               <Heart className="w-5 h-5" />
               <span>Mes favoris</span>
               {wishlistItems.length > 0 && (
-                <span className="ml-auto bg-[#E8B71B] text-white text-xs px-2 py-0.5 rounded-full">
+                <span className="ml-auto bg-[#EAB615] text-white text-xs px-2 py-0.5 rounded-full">
                   {wishlistItems.length}
                 </span>
               )}
             </button>
             <button 
               onClick={signOut}
-              className="w-full flex items-center gap-3 px-4 py-3 text-left text-[#8B4E4E] hover:bg-[#8B4E4E] hover:text-white rounded-none transition-colors mt-4 border-t border-[#E8B71B]/20 pt-4"
+              className="w-full flex items-center gap-3 px-4 py-3 text-left text-[#8B4E4E] hover:bg-[#8B4E4E] hover:text-white rounded-none transition-colors mt-4 border-t border-[#EAB615]/20 pt-4"
             >
               <LogOut className="w-5 h-5" />
               <span>Déconnexion</span>
@@ -92,7 +92,7 @@ export default function AccountPage() {
           </nav>
 
           {/* Contenu principal */}
-          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-6">
+          <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-6">
             {activeSection === 'profile' && (
               <div>
                 <h2 className="font-serif text-xl font-bold mb-6">Informations personnelles</h2>

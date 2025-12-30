@@ -38,7 +38,7 @@ export default async function AdminDashboardPage({
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {/* Chiffre d'affaire total */}
-          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#8B4E4E]">
+          <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#8B4E4E]">
             <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('totalRevenue')}
             </h3>
@@ -51,7 +51,7 @@ export default async function AdminDashboardPage({
           </div>
 
           {/* Commandes du jour */}
-          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#E8B71B]">
+          <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#EAB615]">
             <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('todayOrders')}
             </h3>
@@ -59,7 +59,7 @@ export default async function AdminDashboardPage({
           </div>
 
           {/* Produits en rupture */}
-          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-red-500">
+          <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-red-500">
             <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('outOfStock')}
             </h3>
@@ -67,7 +67,7 @@ export default async function AdminDashboardPage({
           </div>
 
           {/* Derniers inscrits */}
-          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-green-500">
+          <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-green-500">
             <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('recentSignups')}
             </h3>
@@ -76,7 +76,7 @@ export default async function AdminDashboardPage({
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 mb-8">
+        <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 mb-8">
           <h2 className="font-serif text-2xl text-[#2D2420] mb-4">Actions rapides</h2>
           <div className="flex flex-wrap gap-4">
             <a
@@ -87,7 +87,7 @@ export default async function AdminDashboardPage({
             </a>
             <a
               href={`/${params.locale}/admin/products`}
-              className="bg-[#E8B71B] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#b8941f] transition-colors"
+              className="bg-[#EAB615] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#b8941f] transition-colors"
             >
               {t('products')}
             </a>

@@ -34,7 +34,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
   });
 
   return (
-    <div className="flex gap-4 border-b border-[#E8B71B]/20 pb-6 last:border-0">
+    <div className="flex gap-4 border-b border-[#EAB615]/20 pb-6 last:border-0">
       {/* Image */}
       {mainImage && (
         <div className="flex-shrink-0">
@@ -67,7 +67,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
           {isInCart ? (
             <button
               disabled
-              className="flex-1 bg-[#E8B71B]/20 text-gold-fusion text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
+              className="flex-1 bg-[#EAB615]/20 text-gold-fusion text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
             >
               <Check className="w-3 h-3" />
               Déjà dans le panier
@@ -147,12 +147,12 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-md relative bg-[#FAF9F7] border-l border-[#E8B71B]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)]">
+                <Dialog.Panel className="pointer-events-auto w-screen max-w-md relative bg-[#FAF9F7] border-l border-[#EAB615]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)]">
                   {/* Jali Pattern Border - Vertical */}
                   <div className="jali-border-vertical" aria-hidden="true" />
                   <div className="flex h-full flex-col overflow-y-auto pl-6">
                     {/* HEADER */}
-                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#E8B71B]/20">
+                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#EAB615]/20">
                       <div className="flex items-center gap-3">
                         <Heart className="w-6 h-6 text-gold-fusion fill-current" />
                         <Dialog.Title className="text-xl font-semibold text-gray-900">
@@ -218,7 +218,7 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
                         )}
                         <button
                           onClick={onClose}
-                          className="w-full border-2 border-[#E8B71B] text-gray-900 py-2 rounded-none hover:bg-[#E8B71B]/10 transition font-medium"
+                          className="w-full border-2 border-[#EAB615] text-gray-900 py-2 rounded-none hover:bg-[#EAB615]/10 transition font-medium"
                         >
                           Continuer le shopping
                         </button>

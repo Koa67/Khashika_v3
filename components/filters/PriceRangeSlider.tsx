@@ -128,8 +128,8 @@ export default function PriceRangeSlider({
             }}
             className={`px-2.5 py-1 text-xs rounded-none transition-all duration-200 border
                        ${isPresetActive(preset.value)
-                         ? 'bg-[#E8B71B] text-white border-[#E8B71B]'
-                         : 'bg-white text-gray-600 border-[#E8B71B]/30 hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]'
+                         ? 'bg-[#EAB615] text-white border-[#EAB615]'
+                         : 'bg-white text-gray-600 border-[#EAB615]/30 hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]'
                        }`}
           >
             {preset.label}
@@ -165,7 +165,7 @@ export default function PriceRangeSlider({
         >
           {/* Range actif */}
           <motion.div
-            className="absolute h-full bg-gradient-to-r from-[#E8B71B] to-[#E8C547] rounded-none"
+            className="absolute h-full bg-gradient-to-r from-[#EAB615] to-[#E8C547] rounded-none"
             style={{
               left: `${minPercent}%`,
               width: `${maxPercent - minPercent}%`,
@@ -179,8 +179,8 @@ export default function PriceRangeSlider({
                        bg-white rounded-none shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'min' 
-                         ? 'border-[#E8B71B] shadow-[#E8B71B]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'}`}
+                         ? 'border-[#EAB615] shadow-[#EAB615]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-[#EAB615]/30 hover:border-[#EAB615]'}`}
             style={{ left: `${minPercent}%` }}
             onMouseDown={handleMouseDown('min')}
             whileHover={{ scale: 1.1 }}

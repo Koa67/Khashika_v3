@@ -17,7 +17,7 @@ export default function TrustBadges() {
 
       {/* Badge Avis */}
       <div className="flex items-center gap-2">
-        <Star className="w-5 h-5 text-gold-fusion fill-[#E8B71B]" />
+        <Star className="w-5 h-5 text-gold-fusion fill-[#EAB615]" />
         <span className="font-body text-sm text-gray-700">4.9/5 (128 avis)</span>
       </div>
     </div>

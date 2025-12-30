@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#2D2420] text-[#FFFFFF] relative">
       {/* Frise décorative inversée en haut */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[#E8B71B] to-transparent opacity-60"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#EAB615] to-transparent opacity-60"></div>
 
       <div className="max-w-7xl mx-auto px-4 py-10">
         {/* 4 colonnes responsive */}

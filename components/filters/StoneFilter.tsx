@@ -199,7 +199,7 @@ export default function StoneFilter({
       {hasMore && (
         <button
           onClick={() => setShowAll(true)}
-          className="w-full py-2 text-sm text-[#8B4E4E] hover:text-[#1a7a9e] 
+          className="w-full py-2 text-sm text-[#8B4E4E] hover:text-gold-fusion 
                     font-medium transition-colors flex items-center justify-center gap-1"
         >
           <span>Voir {filteredStones.length - 8} autres pierres</span>

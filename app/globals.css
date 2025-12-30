@@ -437,3 +437,9 @@ nextjs-portal {
 .text-gold-icon {
   color: #EAB615;
 }
+
+/* Hover variant pour text-gold-fusion */
+.hover\:text-gold-fusion:hover {
+  color: #EAB615;
+  text-shadow: 0 0 5px rgba(0,0,0,0.09);
+}

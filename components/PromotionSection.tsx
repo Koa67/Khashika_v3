@@ -28,7 +28,7 @@ export default function PromotionSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-8">
-      <div className="bg-white border border-[#E8B71B]/40 rounded-none shadow-lg p-8 py-12 text-center animate-fade-in-down" style={{ animationDelay: '200ms' }}>
+      <div className="bg-white border border-[#EAB615]/40 rounded-none shadow-lg p-8 py-12 text-center animate-fade-in-down" style={{ animationDelay: '200ms' }}>
         <h2 className="font-serif text-2xl font-semibold text-[#2D2420] mb-4">
           Promotion du Mois
         </h2>
@@ -38,21 +38,21 @@ export default function PromotionSection() {
 
         {/* Compteur */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#E8B71B]/30">
+          <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#EAB615]/30">
             <div className="font-serif text-3xl md:text-4xl font-medium text-gold-fusion">
               {formatTime(timeLeft.hours)}
             </div>
             <div className="text-sm mt-1 text-[#2D2420]">Heures</div>
           </div>
           <span className="font-serif text-3xl text-gold-fusion">:</span>
-          <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#E8B71B]/30">
+          <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#EAB615]/30">
             <div className="font-serif text-3xl md:text-4xl font-medium text-gold-fusion">
               {formatTime(timeLeft.minutes)}
             </div>
             <div className="text-sm mt-1 text-[#2D2420]">Minutes</div>
           </div>
           <span className="font-serif text-3xl text-gold-fusion">:</span>
-          <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#E8B71B]/30">
+          <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#EAB615]/30">
             <div className="font-serif text-3xl md:text-4xl font-medium text-gold-fusion">
               {formatTime(timeLeft.seconds)}
             </div>

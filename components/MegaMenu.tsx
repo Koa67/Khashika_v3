@@ -19,7 +19,7 @@ export default function MegaMenu({ items, isOpen, onMouseEnter, onMouseLeave }: 
 
   return (
     <div
-      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-screen max-w-5xl backdrop-blur-sm z-[200] animate-in fade-in slide-in-from-top-2 duration-200 bg-[#FDFCFB] border-t-2 border-t-[#E8B71B]/40 rounded-none shadow-[0_10px_40px_rgba(240,193,29,0.25)]"
+      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-screen max-w-5xl backdrop-blur-sm z-[200] animate-in fade-in slide-in-from-top-2 duration-200 bg-[#FDFCFB] border-t-2 border-t-[#EAB615]/40 rounded-none shadow-[0_10px_40px_rgba(240,193,29,0.25)]"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

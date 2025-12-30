@@ -47,7 +47,7 @@ function FilterAccordion({
         className="w-full flex items-center justify-between py-4 px-1 text-left 
                    hover:bg-white/50 transition-colors duration-200 group"
       >
-        <span className="font-medium text-gray-900 group-hover:text-[#8B4E4E] transition-colors">
+        <span className="font-medium text-gray-900 group-hover:text-gold-fusion transition-colors">
           {title}
           {count !== undefined && count > 0 && (
             <span className="ml-2 text-xs bg-[#8B4E4E] text-white px-2 py-0.5 rounded-full">
@@ -220,7 +220,7 @@ export default function FilterSidebar({
                 animate={{ opacity: 1, scale: 1 }}
                 onClick={onClearAll}
                 className="flex items-center gap-1.5 text-sm text-[#8B4E4E] 
-                           hover:text-[#1a7a9e] transition-colors"
+                           hover:text-gold-fusion transition-colors"
               >
                 <RotateCcw className="w-4 h-4" />
                 <span>Réinitialiser</span>

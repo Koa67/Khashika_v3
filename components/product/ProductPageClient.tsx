@@ -36,7 +36,7 @@ export default function ProductPageClient({ product, type }: ProductPageClientPr
       >
         <Heart className={`w-6 h-6 transition-all duration-200 ${
           isInWishlist(product.id)
-            ? 'fill-[#E8B71B] text-gold-fusion'
+            ? 'fill-[#EAB615] text-gold-fusion'
             : 'text-[#2D2420] hover:text-gold-fusion'
         }`} />
       </button>
@@ -57,8 +57,8 @@ export default function ProductPageClient({ product, type }: ProductPageClientPr
           onClick={handleToggleWishlist}
           className={`px-4 py-3 border transition-colors rounded-none ${
             isInWishlist(product.id)
-              ? 'border-[#E8B71B] text-gold-fusion bg-[#E8B71B]/10'
-              : 'border-[#E8B71B]/40 text-[#2D2420] hover:border-[#E8B71B] hover:text-gold-fusion'
+              ? 'border-[#EAB615] text-gold-fusion bg-[#EAB615]/10'
+              : 'border-[#EAB615]/40 text-[#2D2420] hover:border-[#EAB615] hover:text-gold-fusion'
           }`}
           aria-label="Ajouter à la wishlist"
         >

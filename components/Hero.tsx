@@ -45,22 +45,22 @@ export default function Hero() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-center items-center gap-1 md:gap-2">
             
-            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#E8B71B]/50">
+            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#EAB615]/50">
               <Truck className="w-6 h-6 text-gold-fusion flex-shrink-0" />
               <span className="text-[14px] md:text-base text-white font-medium whitespace-nowrap">Livraison gratuite dès 50 €</span>
             </div>
             
-            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#E8B71B]/50">
+            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#EAB615]/50">
               <Lock className="w-6 h-6 text-gold-fusion flex-shrink-0" />
               <span className="text-[14px] md:text-base text-white font-medium whitespace-nowrap">Paiement sécurisé</span>
             </div>
             
-            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#E8B71B]/50">
+            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#EAB615]/50">
               <RefreshCw className="w-6 h-6 text-gold-fusion flex-shrink-0" />
               <span className="text-[14px] md:text-base text-white font-medium whitespace-nowrap">Retours 30j</span>
             </div>
             
-            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#E8B71B]/50">
+            <div className="flex items-center gap-2 px-3 md:px-6 py-3 bg-black/70 backdrop-blur-sm border border-[#EAB615]/50">
               <Gem className="w-6 h-6 text-gold-fusion flex-shrink-0" />
               <span className="text-[14px] md:text-base text-white font-medium whitespace-nowrap">Fabrication artisanale</span>
             </div>

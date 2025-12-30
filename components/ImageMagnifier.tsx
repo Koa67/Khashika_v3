@@ -54,7 +54,7 @@ export default function ImageMagnifier({
       {/* Loupe */}
       {showMagnifier && (
         <div
-          className="absolute pointer-events-none border-4 border-[#E8B71B] rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] z-50"
+          className="absolute pointer-events-none border-4 border-[#EAB615] rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] z-50"
           style={{
             height: magnifierSize,
             width: magnifierSize,

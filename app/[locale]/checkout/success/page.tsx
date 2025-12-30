@@ -27,14 +27,14 @@ function CheckoutSuccessContent() {
           angle: 60,
           spread: 55,
           origin: { x: 0 },
-          colors: ['#8B4E4E', '#E8B71B', '#FF6B6B'],
+          colors: ['#8B4E4E', '#EAB615', '#FF6B6B'],
         });
         confetti({
           particleCount: 3,
           angle: 120,
           spread: 55,
           origin: { x: 1 },
-          colors: ['#8B4E4E', '#E8B71B', '#FF6B6B'],
+          colors: ['#8B4E4E', '#EAB615', '#FF6B6B'],
         });
       } else {
         clearInterval(interval);
@@ -98,7 +98,7 @@ function CheckoutSuccessContent() {
         </div>
 
         {/* Récapitulatif */}
-          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 mb-8">
+          <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 mb-8">
           <h2 className="font-serif text-2xl text-[#2D2420] mb-6 flex items-center gap-2">
             <Package className="w-6 h-6 text-[#8B4E4E]" />
             Récapitulatif de votre commande
@@ -112,7 +112,7 @@ function CheckoutSuccessContent() {
                     ? item.product.price 
                     : parseFloat(String(item.product.price || 0));
                   return (
-                    <div key={item.id} className="flex justify-between items-center py-3 border-b border-[#E8B71B]/40">
+                    <div key={item.id} className="flex justify-between items-center py-3 border-b border-[#EAB615]/40">
                       <div className="flex-1">
                         <p className="font-medium text-[#2D2420]">{item.product.name}</p>
                         <p className="text-sm text-[#2D2420]/60">Quantité : {item.quantity}</p>
@@ -125,7 +125,7 @@ function CheckoutSuccessContent() {
                 })}
               </div>
 
-              <div className="border-t border-[#E8B71B]/40 pt-4">
+              <div className="border-t border-[#EAB615]/40 pt-4">
                 <div className="flex justify-between items-center text-lg font-semibold">
                   <span className="text-[#2D2420]">Total</span>
                   <span className="text-gold-fusion">{orderTotal.toFixed(2)} €</span>
@@ -150,7 +150,7 @@ function CheckoutSuccessContent() {
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 bg-white text-[#2D2420] px-6 py-3 rounded-none font-medium border-2 border-[#E8B71B]/30 hover:border-[#E8B71B] transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-white text-[#2D2420] px-6 py-3 rounded-none font-medium border-2 border-[#EAB615]/30 hover:border-[#EAB615] transition-colors"
           >
             <Home className="w-5 h-5" />
             Retour à l&apos;accueil

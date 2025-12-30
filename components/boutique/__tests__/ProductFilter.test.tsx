@@ -93,7 +93,7 @@ export const testDescriptions = {
  * 
  * ✅ Design System:
  *   - Turquoise (#8B4E4E) on selected/hover
- *   - Gold border (#E8B71B) on container
+ *   - Gold border (#EAB615) on container
  *   - Cream background (#F4EAD8) if needed
  */
 

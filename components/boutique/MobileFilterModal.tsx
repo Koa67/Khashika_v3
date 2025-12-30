@@ -47,19 +47,19 @@ export default function MobileFilterModal({
         className="absolute inset-x-0 bottom-0 top-12 bg-white rounded-none overflow-hidden flex flex-col"
       >
         {/* Header modal */}
-        <div className="flex items-center justify-between px-4 py-4 border-b border-[#E8B71B]/40">
+        <div className="flex items-center justify-between px-4 py-4 border-b border-[#EAB615]/40">
           <div className="flex items-center gap-2">
             <Filter className="w-5 h-5" />
             <h2 className="text-lg font-serif">Filtres</h2>
             {activeFilterCount > 0 && (
-              <span className="px-2 py-0.5 bg-[#E8B71B] text-white text-xs font-medium rounded-none">
+              <span className="px-2 py-0.5 bg-[#EAB615] text-white text-xs font-medium rounded-none">
                 {activeFilterCount}
               </span>
             )}
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-[#E8B71B]/10 rounded-none"
+            className="p-2 hover:bg-[#EAB615]/10 rounded-none"
           >
             <X className="w-6 h-6" />
           </button>
@@ -68,7 +68,7 @@ export default function MobileFilterModal({
         {/* Contenu scrollable */}
         <div className="flex-1 overflow-y-auto p-4">
           {/* Prix */}
-          <div className="mb-6 pb-6 border-b border-[#E8B71B]/40">
+          <div className="mb-6 pb-6 border-b border-[#EAB615]/40">
             <h3 className="font-medium mb-4">Prix</h3>
             <PriceRangeSlider
               min={priceRange.min}
@@ -79,7 +79,7 @@ export default function MobileFilterModal({
           </div>
 
           {/* Matériaux */}
-          <div className="mb-6 pb-6 border-b border-[#E8B71B]/40">
+          <div className="mb-6 pb-6 border-b border-[#EAB615]/40">
             <h3 className="font-medium mb-4">Matière</h3>
             <div className="grid grid-cols-2 gap-2">
               {FILTER_CONFIG.materials.map(mat => (
@@ -88,8 +88,8 @@ export default function MobileFilterModal({
                   onClick={() => onToggleFilter('materials', mat.id)}
                   className={`flex items-center gap-2 px-3 py-3 rounded-none text-sm transition-all border
                     ${filters.materials.includes(mat.id)
-                      ? 'bg-[#E8B71B]/10 border-[#E8B71B]'
-                      : 'bg-white border-[#E8B71B]/30'
+                      ? 'bg-[#EAB615]/10 border-[#EAB615]'
+                      : 'bg-white border-[#EAB615]/30'
                     }`}
                 >
                   <span>{mat.icon}</span>
@@ -100,7 +100,7 @@ export default function MobileFilterModal({
           </div>
 
           {/* Pierres */}
-          <div className="mb-6 pb-6 border-b border-[#E8B71B]/40">
+          <div className="mb-6 pb-6 border-b border-[#EAB615]/40">
             <h3 className="font-medium mb-4">Pierre</h3>
             <div className="grid grid-cols-2 gap-2">
               {FILTER_CONFIG.stones.map(stone => (
@@ -109,12 +109,12 @@ export default function MobileFilterModal({
                   onClick={() => onToggleFilter('stones', stone.id)}
                   className={`flex items-center gap-2 px-3 py-3 rounded-none text-sm transition-all border
                     ${filters.stones.includes(stone.id)
-                      ? 'bg-[#E8B71B]/10 border-[#E8B71B]'
-                      : 'bg-white border-[#E8B71B]/30'
+                      ? 'bg-[#EAB615]/10 border-[#EAB615]'
+                      : 'bg-white border-[#EAB615]/30'
                     }`}
                 >
                   <span 
-                    className="w-5 h-5 rounded-none border border-[#E8B71B]/30"
+                    className="w-5 h-5 rounded-none border border-[#EAB615]/30"
                     style={{ backgroundColor: stone.color }}
                   />
                   <span>{stone.label}</span>
@@ -133,8 +133,8 @@ export default function MobileFilterModal({
                   onClick={() => onToggleFilter('occasions', occ.id)}
                   className={`flex flex-col items-center justify-center gap-2 p-4 rounded-none border transition-all
                     ${filters.occasions.includes(occ.id)
-                      ? 'bg-[#E8B71B] text-white border-[#E8B71B]'
-                      : 'bg-white border-[#E8B71B]/30'
+                      ? 'bg-[#EAB615] text-white border-[#EAB615]'
+                      : 'bg-white border-[#EAB615]/30'
                     }`}
                 >
                   <span className="text-2xl">{occ.emoji}</span>
@@ -146,10 +146,10 @@ export default function MobileFilterModal({
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-[#E8B71B]/40 bg-white">
+        <div className="p-4 border-t border-[#EAB615]/40 bg-white">
           <button
             onClick={onClose}
-            className="w-full py-4 bg-[#E8B71B] text-white rounded-none font-medium text-lg"
+            className="w-full py-4 bg-[#EAB615] text-white rounded-none font-medium text-lg"
           >
             Voir {filteredCount} trésors
           </button>

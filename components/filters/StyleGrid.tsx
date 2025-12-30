@@ -26,12 +26,12 @@ interface StyleGridProps {
 
 // Fallback images si les images de style ne sont pas disponibles
 const FALLBACK_GRADIENTS: Record<string, string> = {
-  traditionnel: 'linear-gradient(135deg, #E8B71B 0%, #8B6914 100%)',
+  traditionnel: 'linear-gradient(135deg, #EAB615 0%, #8B6914 100%)',
   moderne: 'linear-gradient(135deg, #C0C0C0 0%, #6B7280 100%)',
   boheme: 'linear-gradient(135deg, #F59E0B 0%, #92400E 100%)',
   tribal: 'linear-gradient(135deg, #78350F 0%, #451A03 100%)',
   kundan: 'linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)',
-  temple: 'linear-gradient(135deg, #E8B71B 0%, #B45309 100%)',
+  temple: 'linear-gradient(135deg, #EAB615 0%, #B45309 100%)',
 };
 
 export default function StyleGrid({

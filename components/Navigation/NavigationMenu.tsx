@@ -175,7 +175,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <div 
           className="
             bg-[#FDFCFB] rounded-none shadow-[0_8px_30px_rgba(240,193,29,0.3)]
-            border border-[#E8B71B]/20
+            border border-[#EAB615]/20
             min-w-[280px] p-4
           "
         >
@@ -186,7 +186,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                   <h3 className="
                     text-xs font-semibold uppercase tracking-wider
                     text-[#2D2420]/60 mb-1.5 pb-1
-                    border-b border-[#E8B71B]/20
+                    border-b border-[#EAB615]/20
                   ">
                     {section.title}
                   </h3>
@@ -212,7 +212,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
 
           {menu.featured && menu.featured.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-[#E8B71B]/20">
+            <div className="mt-3 pt-3 border-t border-[#EAB615]/20">
               {menu.featured.map((feat, index) => (
                 <Link
                   key={index}
@@ -270,7 +270,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
-        <div className="flex items-center justify-between p-4 border-b border-[#E8B71B]/20">
+        <div className="flex items-center justify-between p-4 border-b border-[#EAB615]/20">
           <span className="text-lg font-serif text-[#2D2420]">Menu</span>
           <button
             onClick={onClose}
@@ -285,7 +285,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
         <nav className="overflow-y-auto h-[calc(100%-64px)] py-4">
           {menuData.map((menu) => (
-            <div key={menu.label} className="border-b border-[#E8B71B]/20">
+            <div key={menu.label} className="border-b border-[#EAB615]/20">
               <button
                 onClick={() => toggleExpand(menu.label)}
                 className="
@@ -332,7 +332,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ))}
 
                   {menu.featured && (
-                    <div className="pt-2 border-t border-[#E8B71B]/20">
+                    <div className="pt-2 border-t border-[#EAB615]/20">
                       {menu.featured.map((feat, index) => (
                         <Link
                           key={index}

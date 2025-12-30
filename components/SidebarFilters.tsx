@@ -85,7 +85,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
   };
 
   return (
-    <div className="bg-[#f4f1eb] rounded-lg border border-[#E8B71B]/40 p-6 space-y-8 sticky top-24">
+    <div className="bg-[#f4f1eb] rounded-lg border border-[#EAB615]/40 p-6 space-y-8 sticky top-24">
       <h2 className="font-serif text-2xl text-[#8B4E4E] mb-6">
         Filtres
       </h2>
@@ -141,7 +141,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                   type="checkbox"
                   className="sr-only"
                 />
-                <div className="w-5 h-5 border-2 border-[#E8B71B] rounded-sm flex items-center justify-center transition-all group-hover:border-[#8B4E4E]">
+                <div className="w-5 h-5 border-2 border-[#EAB615] rounded-sm flex items-center justify-center transition-all group-hover:border-[#8B4E4E]">
                   <svg
                     className="w-3 h-3 text-[#8B4E4E] opacity-0 group-hover:opacity-30 transition-opacity"
                     fill="none"
@@ -178,8 +178,8 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                 />
                 <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center transition-all ${
                   selectedMaterials.includes(material)
-                    ? 'border-[#E8B71B] bg-[#8B4E4E]/10'
-                    : 'border-[#E8B71B] group-hover:border-[#8B4E4E]'
+                    ? 'border-[#EAB615] bg-[#8B4E4E]/10'
+                    : 'border-[#EAB615] group-hover:border-[#8B4E4E]'
                 }`}>
                   {selectedMaterials.includes(material) && (
                     <svg
@@ -219,8 +219,8 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                 />
                 <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center transition-all ${
                   selectedStones.includes(stone)
-                    ? 'border-[#E8B71B] bg-[#8B4E4E]/10'
-                    : 'border-[#E8B71B] group-hover:border-[#8B4E4E]'
+                    ? 'border-[#EAB615] bg-[#8B4E4E]/10'
+                    : 'border-[#EAB615] group-hover:border-[#8B4E4E]'
                 }`}>
                   {selectedStones.includes(stone) && (
                     <svg
@@ -260,8 +260,8 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
                 />
                 <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center transition-all ${
                   selectedStyles.includes(style)
-                    ? 'border-[#E8B71B] bg-[#8B4E4E]/10'
-                    : 'border-[#E8B71B] group-hover:border-[#8B4E4E]'
+                    ? 'border-[#EAB615] bg-[#8B4E4E]/10'
+                    : 'border-[#EAB615] group-hover:border-[#8B4E4E]'
                 }`}>
                   {selectedStyles.includes(style) && (
                     <svg
@@ -294,7 +294,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
               className={`px-3 py-1.5 rounded text-xs font-sans transition-colors ${
                 selectedTags.includes(tag)
                   ? 'bg-[#8B4E4E] text-white'
-                  : 'bg-[#f4f1eb] text-[#2D2420]/70 hover:bg-[#E8B71B]/20 border border-[#8B4E4E]/10'
+                  : 'bg-[#f4f1eb] text-[#2D2420]/70 hover:bg-[#EAB615]/20 border border-[#8B4E4E]/10'
               }`}
             >
               {tag}
@@ -313,7 +313,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
         </button>
         <button
           onClick={handleReset}
-          className="w-full bg-[#f4f1eb] text-[#8B4E4E] font-sans font-medium py-2 px-4 rounded transition-colors hover:bg-[#E8B71B]/20 border border-[#8B4E4E]/10"
+          className="w-full bg-[#f4f1eb] text-[#8B4E4E] font-sans font-medium py-2 px-4 rounded transition-colors hover:bg-[#EAB615]/20 border border-[#8B4E4E]/10"
         >
           Réinitialiser
         </button>
