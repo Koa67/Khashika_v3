@@ -62,15 +62,15 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
             {/* Sélecteur quantité à GAUCHE */}
             <div className="flex items-center gap-1 bg-[#EAB615]/10 rounded-none p-1">
               <button 
-                onClick={() => {
+                onClick={() => { if (quantity === 1) { onRemove?.(product.id); return; }
                   if (quantity > 1) {
                     onUpdateQuantity?.(product.id, quantity - 1);
                   }
                 }}
                 className="w-6 h-6 flex items-center justify-center hover:bg-[#EAB615]/20 rounded-none text-sm"
-                aria-label="Diminuer"
+                aria-label={quantity === 1 ? "Supprimer" : "Diminuer"}
               >
-                −
+                {quantity === 1 ? <Trash2 className="w-3.5 h-3.5 text-red-500" /> : "−"}
               </button>
               <span className="w-6 text-center text-sm font-medium">
                 {quantity}
@@ -85,7 +85,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
             </div>
             {/* Prix après */}
             <div>
-              <p className="text-[#8B4E4E] font-semibold">
+              <p className="text-gold-fusion font-semibold">
                 {(price * quantity).toFixed(2)}€
               </p>
               <p className="text-xs text-gray-600">
@@ -213,7 +213,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                           </div>
                           <div className="border-t border-[#EAB615]/20 pt-2 flex justify-between text-lg font-semibold">
                             <span>Total</span>
-                            <span className="text-[#8B4E4E]">{total.toFixed(2)}€</span>
+                            <span className="text-gold-fusion">{total.toFixed(2)}€</span>
                           </div>
                         </div>
 

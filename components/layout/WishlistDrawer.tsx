@@ -58,7 +58,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
           </p>
         </div>
         
-        <p className="text-[#8B4E4E] font-semibold text-sm">
+        <p className="text-gold-fusion font-semibold text-sm">
           {(product.price || 0).toFixed(2)}€
         </p>
 
