@@ -186,7 +186,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white border-b border-[#F0C11D]/40 transition-all overflow-visible w-full">
+      <header className="sticky top-0 z-50 bg-white border-b border-[#E8B71B]/40 transition-all overflow-visible w-full">
         {/* Jali Pattern Border - Horizontal */}
         <div className="jali-border-horizontal" aria-hidden="true" />
         
@@ -218,7 +218,7 @@ export default function Navbar() {
             >
               <div className="flex items-center gap-2 relative">
                 <button 
-                  className="p-2 text-[#2D2420] hover:text-[#F0C11D] transition-colors duration-200" 
+                  className="p-2 text-[#2D2420] hover:text-[#E8B71B] transition-colors duration-200" 
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" strokeWidth={1.5} />
@@ -256,7 +256,7 @@ export default function Navbar() {
                   </button>
                 )}
                   {/* Underline dynamique en or */}
-                  <span className="absolute -bottom-0.5 left-0 h-0.5 bg-[#F0C11D] transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+                  <span className="absolute -bottom-0.5 left-0 h-0.5 bg-[#E8B71B] transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
                 </div>
               </div>
               
@@ -264,7 +264,7 @@ export default function Navbar() {
               {isSearchOpen && query.length >= 2 && (
                 <div 
                   ref={dropdownRef}
-                  className="fixed top-[72px] w-72 z-[9999] bg-[#FDFCFB] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
+                  className="fixed top-[72px] w-72 z-[9999] bg-[#FDFCFB] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
                   style={{ left: `${dropdownLeft}px` }}
                 >
                   {/* Suggestions produits - Max 5, pas d'ascenseur */}
@@ -290,7 +290,7 @@ export default function Navbar() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm text-[#2D2420] truncate">{product.name}</p>
-                            <p className="text-sm font-bold text-[#F0C11D]">
+                            <p className="text-sm font-bold text-[#E8B71B]">
                               {typeof product.price === 'number' 
                                 ? product.price.toFixed(2) 
                                 : product.price} €
@@ -306,7 +306,7 @@ export default function Navbar() {
                   )}
                   
                   {/* VOIR TOUS LES RÉSULTATS - Toujours visible */}
-                  <div className="border-t border-[#F0C11D]/20 p-2">
+                  <div className="border-t border-[#E8B71B]/20 p-2">
                     <button
                       type="button"
                       onClick={(e) => {
@@ -315,7 +315,7 @@ export default function Navbar() {
                         setQuery('');
                         setIsSearchOpen(false);
                       }}
-                      className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium text-[#F0C11D] hover:text-[#8B4E4E] transition-colors"
+                      className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium text-[#E8B71B] hover:text-[#8B4E4E] transition-colors"
                     >
                       Voir tous les résultats
                       <ArrowRight className="w-4 h-4" />
@@ -328,7 +328,7 @@ export default function Navbar() {
               {isSearchOpen && query.length >= 2 && results.length === 0 && (
                 <div 
                   ref={dropdownRef}
-                  className="fixed top-[72px] w-96 z-[9999] p-8 text-center text-[#2D2420]/60 text-sm bg-[#FDFCFB] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
+                  className="fixed top-[72px] w-96 z-[9999] p-8 text-center text-[#2D2420]/60 text-sm bg-[#FDFCFB] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
                   style={{ left: `${dropdownLeft}px` }}
                 >
                   Aucun résultat trouvé
@@ -367,7 +367,7 @@ export default function Navbar() {
                   <div className="relative">
                     <button
                       onClick={() => setShowUserMenu(!showUserMenu)}
-                      className="p-2 hover:text-[#F0C11D] transition-colors duration-200 flex items-center gap-2"
+                      className="p-2 hover:text-[#E8B71B] transition-colors duration-200 flex items-center gap-2"
                       aria-label="Mon compte"
                     >
                       <User className="w-5 h-5" strokeWidth={1.5} />
@@ -376,30 +376,30 @@ export default function Navbar() {
                       </span>
                     </button>
                     {showUserMenu && (
-                      <div className="absolute right-0 top-full mt-2 w-56 bg-[#FDFCFB] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] z-50 overflow-hidden">
+                      <div className="absolute right-0 top-full mt-2 w-56 bg-[#FDFCFB] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] z-50 overflow-hidden">
                         <div className="p-2">
                           <Link
                             href={`/${locale}/account`}
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#F0C11D] transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#E8B71B] transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mon compte
                           </Link>
                           <Link
                             href={`/${locale}/account?section=orders`}
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#F0C11D] transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#E8B71B] transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes commandes
                           </Link>
                           <Link
                             href={`/${locale}/account?section=wishlist`}
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#F0C11D] transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#E8B71B] transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes favoris
                           </Link>
-                          <div className="p-2 border-t border-[#F0C11D]/20 mt-2">
+                          <div className="p-2 border-t border-[#E8B71B]/20 mt-2">
                             <button
                               onClick={handleSignOut}
                               className="w-full px-3 py-2 text-sm text-[#8B4E4E] hover:bg-[#8B4E4E] hover:text-white transition-colors rounded-none"
@@ -414,7 +414,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={`/${locale}/login`}
-                    className="p-2 hover:text-[#F0C11D] transition-colors duration-200"
+                    className="p-2 hover:text-[#E8B71B] transition-colors duration-200"
                     aria-label="Connexion"
                   >
                     <User className="w-5 h-5" strokeWidth={1.5} />
@@ -426,12 +426,12 @@ export default function Navbar() {
             {/* Wishlist Button */}
             <button 
               onClick={() => setIsWishlistOpen(true)}
-              className="relative p-2 text-[#2D2420] hover:text-[#F0C11D] transition-colors duration-200"
+              className="relative p-2 text-[#2D2420] hover:text-[#E8B71B] transition-colors duration-200"
               aria-label="Wishlist"
             >
               <Heart className="w-6 h-6" strokeWidth={1.5} />
               {mounted && wishlistCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] flex items-center justify-center bg-[#F0C11D] text-white text-[13px] font-bold rounded-full leading-none shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                <span className="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] flex items-center justify-center bg-[#E8B71B] text-white text-[13px] font-bold rounded-full leading-none shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                   {wishlistCount}
                 </span>
               )}
@@ -440,12 +440,12 @@ export default function Navbar() {
             {/* Cart Button */}
             <button 
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#2D2420] hover:text-[#F0C11D] transition-colors duration-200"
+              className="relative p-2 text-[#2D2420] hover:text-[#E8B71B] transition-colors duration-200"
               aria-label="Panier"
             >
               <ShoppingBag className="w-6 h-6" strokeWidth={1.5} />
               {mounted && cartCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] flex items-center justify-center bg-[#F0C11D] text-white text-[13px] font-bold rounded-full leading-none shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                <span className="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] flex items-center justify-center bg-[#E8B71B] text-white text-[13px] font-bold rounded-full leading-none shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                   {cartCount}
                 </span>
               )}

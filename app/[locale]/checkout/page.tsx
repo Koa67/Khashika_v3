@@ -178,8 +178,8 @@ export default function CheckoutPage() {
               <input
                 type="email"
                 {...register('email')}
-                className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                  errors.email ? 'border-red-500' : 'focus:border-[#F0C11D]'
+                className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                  errors.email ? 'border-red-500' : 'focus:border-[#E8B71B]'
                 } focus:outline-none`}
               />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -189,8 +189,8 @@ export default function CheckoutPage() {
               <input
                 type="tel"
                 {...register('phone')}
-                className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                  errors.phone ? 'border-red-500' : 'focus:border-[#F0C11D]'
+                className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                  errors.phone ? 'border-red-500' : 'focus:border-[#E8B71B]'
                 } focus:outline-none`}
               />
               {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
@@ -203,8 +203,8 @@ export default function CheckoutPage() {
                 <input
                   type="text"
                   {...register('firstName')}
-                  className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                    errors.firstName ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                    errors.firstName ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                   } focus:outline-none`}
                 />
                 {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
@@ -214,8 +214,8 @@ export default function CheckoutPage() {
                 <input
                   type="text"
                   {...register('lastName')}
-                  className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                    errors.lastName ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                    errors.lastName ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                   } focus:outline-none`}
                 />
                 {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
@@ -227,7 +227,7 @@ export default function CheckoutPage() {
                 type="text"
                 {...register('address')}
                 className={`w-full px-3 py-2 border rounded-none text-sm ${
-                  errors.address ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  errors.address ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                 } focus:outline-none`}
               />
               {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address.message}</p>}
@@ -239,8 +239,8 @@ export default function CheckoutPage() {
                   type="text"
                   {...register('zipCode')}
                   maxLength={5}
-                  className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                    errors.zipCode ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                    errors.zipCode ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                   } focus:outline-none`}
                 />
                 {errors.zipCode && <p className="text-red-500 text-xs mt-1">{errors.zipCode.message}</p>}
@@ -250,8 +250,8 @@ export default function CheckoutPage() {
                 <input
                   type="text"
                   {...register('city')}
-                  className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                    errors.city ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                    errors.city ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                   } focus:outline-none`}
                 />
                 {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city.message}</p>}
@@ -259,7 +259,7 @@ export default function CheckoutPage() {
             </div>
             
             {/* Paiement */}
-            <div className="border-t border-[#F0C11D]/40 pt-4 mt-4">
+            <div className="border-t border-[#E8B71B]/40 pt-4 mt-4">
               <label className="block text-sm font-medium text-[#2D2420] mb-1">Carte bancaire</label>
               <input
                 type="text"
@@ -272,7 +272,7 @@ export default function CheckoutPage() {
                   },
                 })}
                 className={`w-full px-3 py-2 border rounded-none text-sm mb-2 ${
-                  errors.cardNumber ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  errors.cardNumber ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                 } focus:outline-none`}
               />
               {errors.cardNumber && <p className="text-red-500 text-xs mb-2">{errors.cardNumber.message}</p>}
@@ -287,8 +287,8 @@ export default function CheckoutPage() {
                       setValue('cardExpiry', formatted);
                     },
                   })}
-                  className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                    errors.cardExpiry ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                    errors.cardExpiry ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                   } focus:outline-none`}
                 />
                 <input
@@ -301,8 +301,8 @@ export default function CheckoutPage() {
                       setValue('cardCVC', v);
                     },
                   })}
-                  className={`w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] ${
-                    errors.cardCVC ? 'border-red-500' : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  className={`w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] ${
+                    errors.cardCVC ? 'border-red-500' : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
                   } focus:outline-none`}
                 />
               </div>
@@ -312,7 +312,7 @@ export default function CheckoutPage() {
 
             {/* Option créer un compte */}
             {!user && (
-              <div className="border-t border-[#F0C11D]/40 pt-4">
+              <div className="border-t border-[#E8B71B]/40 pt-4">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -331,7 +331,7 @@ export default function CheckoutPage() {
                       type="password"
                       placeholder="Mot de passe *"
                       {...register('password')}
-                      className="w-full px-3 py-2 bg-white border border-[#F0C11D]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#F0C11D]"
+                      className="w-full px-3 py-2 bg-white border border-[#E8B71B]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#E8B71B]"
                     />
                   </div>
                 )}
@@ -341,8 +341,8 @@ export default function CheckoutPage() {
 
           {/* Récapitulatif (droite) */}
           <div className="lg:sticky lg:top-24 h-fit">
-            <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-6 sticky top-24">
-              <h2 className="font-serif text-xl text-[#2D2420] mb-4 pb-2 border-b border-[#F0C11D]/20">Récapitulatif</h2>
+            <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-6 sticky top-24">
+              <h2 className="font-serif text-xl text-[#2D2420] mb-4 pb-2 border-b border-[#E8B71B]/20">Récapitulatif</h2>
               
               {/* Liste produits */}
               <div className="space-y-3 max-h-48 overflow-y-auto mb-4">
@@ -367,7 +367,7 @@ export default function CheckoutPage() {
               </div>
               
               {/* Totaux */}
-              <div className="border-t border-[#F0C11D]/20 pt-4 space-y-2">
+              <div className="border-t border-[#E8B71B]/20 pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-[#2D2420]/60">Sous-total</span>
                   <span className="text-[#2D2420]">{subtotal.toFixed(2)}€</span>
@@ -376,9 +376,9 @@ export default function CheckoutPage() {
                   <span className="text-[#2D2420]/60">Livraison</span>
                   <span className="text-[#2D2420]">{shipping === 0 ? 'Gratuite' : `${shipping.toFixed(2)}€`}</span>
                 </div>
-                <div className="flex justify-between text-lg font-bold pt-2 border-t border-[#F0C11D]/20">
+                <div className="flex justify-between text-lg font-bold pt-2 border-t border-[#E8B71B]/20">
                   <span className="text-[#2D2420]">Total</span>
-                  <span className="text-[#F0C11D]">{finalTotal.toFixed(2)}€</span>
+                  <span className="text-[#E8B71B]">{finalTotal.toFixed(2)}€</span>
                 </div>
               </div>
               

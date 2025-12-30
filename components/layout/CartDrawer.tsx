@@ -33,7 +33,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
   const quantity = item.quantity || 1;
 
   return (
-    <div className="flex gap-4 border-b border-[#F0C11D]/20 pb-6 last:border-0">
+    <div className="flex gap-4 border-b border-[#E8B71B]/20 pb-6 last:border-0">
       {/* Image */}
       {mainImage && (
         <div className="flex-shrink-0">
@@ -60,14 +60,14 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
         <div className="flex items-end justify-between mt-auto">
           <div className="flex items-center gap-3">
             {/* Sélecteur quantité à GAUCHE */}
-            <div className="flex items-center gap-1 bg-[#F0C11D]/10 rounded-none p-1">
+            <div className="flex items-center gap-1 bg-[#E8B71B]/10 rounded-none p-1">
               <button 
                 onClick={() => {
                   if (quantity > 1) {
                     onUpdateQuantity?.(product.id, quantity - 1);
                   }
                 }}
-                className="w-6 h-6 flex items-center justify-center hover:bg-[#F0C11D]/20 rounded-none text-sm"
+                className="w-6 h-6 flex items-center justify-center hover:bg-[#E8B71B]/20 rounded-none text-sm"
                 aria-label="Diminuer"
               >
                 −
@@ -77,7 +77,7 @@ function CartItemRow({ item, onUpdateQuantity, onRemove }: {
               </span>
               <button 
                 onClick={() => onUpdateQuantity?.(product.id, quantity + 1)}
-                className="w-6 h-6 flex items-center justify-center hover:bg-[#F0C11D]/20 rounded-none text-sm"
+                className="w-6 h-6 flex items-center justify-center hover:bg-[#E8B71B]/20 rounded-none text-sm"
                 aria-label="Augmenter"
               >
                 +
@@ -154,12 +154,12 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-md relative bg-[#FAF9F7] border-l border-[#F0C11D]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)]">
+                <Dialog.Panel className="pointer-events-auto w-screen max-w-md relative bg-[#FAF9F7] border-l border-[#E8B71B]/40 shadow-[0_4px_12px_rgba(240,193,29,0.15)]">
                   {/* Jali Pattern Border - Vertical */}
                   <div className="jali-border-vertical" aria-hidden="true" />
                   <div className="flex h-full flex-col overflow-y-auto pl-6">
                     {/* HEADER */}
-                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#F0C11D]/20">
+                    <div className="flex items-center justify-between px-6 py-6 border-b border-[#E8B71B]/20">
                       <div className="flex items-center gap-3">
                         <ShoppingBag className="w-6 h-6 text-[#8B4E4E]" />
                         <Dialog.Title className="text-xl font-semibold text-gray-900">
@@ -200,7 +200,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
                     {/* FOOTER */}
                     {items && items.length > 0 && (
-                      <div className="px-6 py-6 border-t border-[#F0C11D]/20 space-y-4 bg-[#FAF9F7]">
+                      <div className="px-6 py-6 border-t border-[#E8B71B]/20 space-y-4 bg-[#FAF9F7]">
                         {/* Summary */}
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm text-gray-600">
@@ -211,7 +211,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                             <span>Livraison</span>
                             <span>À calculer</span>
                           </div>
-                          <div className="border-t border-[#F0C11D]/20 pt-2 flex justify-between text-lg font-semibold">
+                          <div className="border-t border-[#E8B71B]/20 pt-2 flex justify-between text-lg font-semibold">
                             <span>Total</span>
                             <span className="text-[#8B4E4E]">{total.toFixed(2)}€</span>
                           </div>
@@ -227,7 +227,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                         </Link>
                         <button
                           onClick={onClose}
-                          className="w-full border-2 border-[#F0C11D] text-gray-900 py-2 rounded-none hover:bg-[#F0C11D]/10 transition font-medium"
+                          className="w-full border-2 border-[#E8B71B] text-gray-900 py-2 rounded-none hover:bg-[#E8B71B]/10 transition font-medium"
                         >
                           Continuer le shopping
                         </button>

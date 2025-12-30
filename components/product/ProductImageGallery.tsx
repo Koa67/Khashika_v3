@@ -57,7 +57,7 @@ export default function ProductImageGallery({ product }: ProductImageGalleryProp
             onClick={() => setSelectedImageIndex(index)}
             className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
               selectedImageIndex === index
-                ? 'border-[#F0C11D] scale-105'
+                ? 'border-[#E8B71B] scale-105'
                 : 'border-transparent hover:border-foreground/20'
             }`}
             aria-label={`Voir l'image ${index + 1}`}
@@ -106,7 +106,7 @@ export default function ProductImageGallery({ product }: ProductImageGalleryProp
             onClick={() => setSelectedImageIndex(index)}
             className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
               selectedImageIndex === index
-                ? 'border-[#F0C11D] scale-105'
+                ? 'border-[#E8B71B] scale-105'
                 : 'border-transparent'
             }`}
             aria-label={`Voir l'image ${index + 1}`}

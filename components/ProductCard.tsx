@@ -96,7 +96,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         <h3 className="font-serif text-sm text-foreground line-clamp-2 capitalize tracking-wide mb-1">
           {product.name}
         </h3>
-        <p className="text-[#F0C11D] font-bold text-sm tracking-wider">
+        <p className="text-[#E8B71B] font-bold text-sm tracking-wider">
           {displayPrice}
         </p>
       </div>

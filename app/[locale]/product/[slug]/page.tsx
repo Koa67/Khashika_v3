@@ -192,18 +192,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* BREADCRUMB - Compact */}
-      <div className="bg-[#FAF9F7] border-b border-[#F0C11D]/20">
+      <div className="bg-[#FAF9F7] border-b border-[#E8B71B]/20">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <nav className="flex items-center gap-2 text-sm text-[#2D2420]/60">
-            <Link href={`/${locale}`} className="hover:text-[#F0C11D] transition-colors">Accueil</Link>
+            <Link href={`/${locale}`} className="hover:text-[#E8B71B] transition-colors">Accueil</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href={`/${locale}/shop`} className="hover:text-[#F0C11D] transition-colors">Boutique</Link>
+            <Link href={`/${locale}/shop`} className="hover:text-[#E8B71B] transition-colors">Boutique</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href={`/${locale}${categoryUrl}`} className="hover:text-[#F0C11D] transition-colors">{breadcrumbInfo.label}</Link>
+            <Link href={`/${locale}${categoryUrl}`} className="hover:text-[#E8B71B] transition-colors">{breadcrumbInfo.label}</Link>
             {stone && (
               <>
                 <ChevronRight className="w-3 h-3" />
-                <Link href={`/${locale}/pierres`} className="hover:text-[#F0C11D] transition-colors">{stone}</Link>
+                <Link href={`/${locale}/pierres`} className="hover:text-[#E8B71B] transition-colors">{stone}</Link>
               </>
             )}
             <ChevronRight className="w-3 h-3" />
@@ -232,7 +232,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {gallery.length > 0 && (
               <div className="flex gap-2">
                 {gallery.map((img, i) => (
-                  <button key={i} className="group relative w-20 h-20 border border-[#F0C11D]/20 hover:border-[#F0C11D] transition-colors overflow-hidden">
+                  <button key={i} className="group relative w-20 h-20 border border-[#E8B71B]/20 hover:border-[#E8B71B] transition-colors overflow-hidden">
                     <Image src={img} alt="" fill className="object-cover" />
                     {/* Mini loupe au hover */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-all duration-200">
@@ -251,7 +251,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <h1 className="font-serif text-2xl md:text-3xl text-[#2D2420] leading-tight">
                 {product.title || product.name}
               </h1>
-              <p className="text-3xl font-bold text-[#F0C11D] mt-2">
+              <p className="text-3xl font-bold text-[#E8B71B] mt-2">
                 {displayPrice} €
               </p>
             </div>
@@ -259,12 +259,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* Badges */}
             <div className="flex flex-wrap gap-2">
               {stone && (
-                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#F0C11D]/30 text-[#2D2420]">
+                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#E8B71B]/30 text-[#2D2420]">
                   Pierre : {stone}
                 </span>
               )}
               {material && (
-                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#F0C11D]/30 text-[#2D2420]">
+                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#E8B71B]/30 text-[#2D2420]">
                   {material}
                 </span>
               )}
@@ -279,24 +279,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <ProductPageClient product={product} type="cta-buttons" />
 
             {/* Réassurance compacte */}
-            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#F0C11D]/20">
+            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#E8B71B]/20">
               <div className="flex flex-col items-center text-center gap-1">
-                <Truck className="w-5 h-5 text-[#F0C11D]" />
+                <Truck className="w-5 h-5 text-[#E8B71B]" />
                 <span className="text-[10px] text-[#2D2420]/60">Livraison offerte dès 50 €</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
-                <RotateCcw className="w-5 h-5 text-[#F0C11D]" />
+                <RotateCcw className="w-5 h-5 text-[#E8B71B]" />
                 <span className="text-[10px] text-[#2D2420]/60">Retours gratuits 30j</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
-                <Shield className="w-5 h-5 text-[#F0C11D]" />
+                <Shield className="w-5 h-5 text-[#E8B71B]" />
                 <span className="text-[10px] text-[#2D2420]/60">Paiement sécurisé</span>
               </div>
             </div>
 
             {/* Description détaillée */}
             {product.description && (
-              <div className="pt-4 border-t border-[#F0C11D]/20">
+              <div className="pt-4 border-t border-[#E8B71B]/20">
                 <h2 className="font-serif text-lg text-[#2D2420] mb-2">Description</h2>
                 <div className="text-sm text-[#2D2420]/70 leading-relaxed space-y-2">
                   {typeof product.description === 'string' && product.description.includes('<') ? (
@@ -310,7 +310,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {/* Caractéristiques */}
             {(stone || material || dimensions || origin) && (
-              <div className="pt-4 border-t border-[#F0C11D]/20">
+              <div className="pt-4 border-t border-[#E8B71B]/20">
                 <h2 className="font-serif text-lg text-[#2D2420] mb-2">Caractéristiques</h2>
                 <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
                   {stone && (
@@ -345,7 +345,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         {/* PRODUITS SIMILAIRES - Compact */}
         {similarProducts.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-[#F0C11D]/20">
+          <div className="mt-12 pt-8 border-t border-[#E8B71B]/20">
             <h2 className="font-serif text-xl text-[#2D2420] mb-4">Vous aimerez aussi</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {similarProducts.map((similarProduct) => (

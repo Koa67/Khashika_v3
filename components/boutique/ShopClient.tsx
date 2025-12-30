@@ -79,30 +79,30 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
     <div className="min-h-screen bg-white -mt-[134px] pt-[134px]">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Mobile Bar */}
-        <div className="lg:hidden sticky top-20 z-30 bg-white/95 backdrop-blur-sm border-b border-[#F0C11D]/40 -mx-4 px-4 py-3 mb-6">
+        <div className="lg:hidden sticky top-20 z-30 bg-white/95 backdrop-blur-sm border-b border-[#E8B71B]/40 -mx-4 px-4 py-3 mb-6">
           <div className="flex items-center justify-between gap-3">
             <motion.button
               onClick={() => setIsFilterModalOpen(true)}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-4 py-2.5 bg-white border border-[#F0C11D]/30 rounded-none text-sm font-medium relative hover:border-[#F0C11D] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
+              className="flex items-center gap-2 px-4 py-2.5 bg-white border border-[#E8B71B]/30 rounded-none text-sm font-medium relative hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
             >
               <Filter className="w-5 h-5" />
               <span>Filtrer</span>
               {activeFilterCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#F0C11D] text-white text-xs font-bold rounded-none flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#E8B71B] text-white text-xs font-bold rounded-none flex items-center justify-center">
                   {activeFilterCount}
                 </span>
               )}
             </motion.button>
 
             <span className="text-sm text-foreground/60">
-              <span className="font-semibold text-[#F0C11D]">{allFilteredCount}</span> trésors
+              <span className="font-semibold text-[#E8B71B]">{allFilteredCount}</span> trésors
             </span>
 
             <select
               value={filters.sort}
               onChange={(e) => handleSort(e.target.value as SortOption)}
-              className="px-4 py-2 bg-white border border-[#F0C11D]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#F0C11D] focus:ring-2 focus:ring-[#F0C11D]/20 cursor-pointer"
+              className="px-4 py-2 bg-white border border-[#E8B71B]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#E8B71B] focus:ring-2 focus:ring-[#E8B71B]/20 cursor-pointer"
             >
               {SORT_OPTIONS.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -154,7 +154,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
               )}
 
               {/* 2. BARRE DE TRI - Après le titre */}
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-[#F0C11D]/20">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E8B71B]/20">
                 {/* Filtres actifs (desktop) */}
                 <div className="hidden lg:flex flex-wrap items-center gap-2">
                   <ActiveFilters
@@ -169,7 +169,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
                 <select 
                   value={filters.sort}
                   onChange={(e) => handleSort(e.target.value as SortOption)}
-                  className="px-4 py-2 bg-white border border-[#F0C11D]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#F0C11D] focus:ring-2 focus:ring-[#F0C11D]/20 cursor-pointer"
+                  className="px-4 py-2 bg-white border border-[#E8B71B]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#E8B71B] focus:ring-2 focus:ring-[#E8B71B]/20 cursor-pointer"
                 >
                   {SORT_OPTIONS.map(opt => (
                     <option key={opt.value} value={opt.value}>{opt.label}</option>

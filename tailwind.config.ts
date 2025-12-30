@@ -16,12 +16,12 @@ const config: Config = {
           light: '#A66B6B',
         },
         gold: {
-          DEFAULT: '#F0C11D',  // Or plus visible
+          DEFAULT: '#E8B71B',  // Or plus visible
           dark: '#A8871F',
           light: '#DCBA3D',
         },
         secondary: "#2D2420",  // Brun foncé (texte)
-        accent: "#F0C11D",     // OR
+        accent: "#E8B71B",     // OR
         cream: "#F5EDE6",      // Fond principal
         sand: "#EDE4DB",       // Fond cards/sidebar
         night: "#2D2420",
@@ -31,7 +31,7 @@ const config: Config = {
         foreground: "#2D2420",
         card: "#EDE4DB",
         "card-foreground": "#2D2420",
-        border: "#F0C11D",
+        border: "#E8B71B",
       },
       fontFamily: {
         sans: ["var(--font-arimo)", "sans-serif"],

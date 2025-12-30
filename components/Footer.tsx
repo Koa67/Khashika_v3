@@ -10,14 +10,14 @@ export default function Footer() {
   return (
     <footer className="bg-[#2D2420] text-[#FFFFFF] relative">
       {/* Frise décorative inversée en haut */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[#F0C11D] to-transparent opacity-60"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#E8B71B] to-transparent opacity-60"></div>
 
       <div className="max-w-7xl mx-auto px-4 py-10">
         {/* 4 colonnes responsive */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Colonne 1 : Marque */}
           <div>
-            <h3 className="text-xl text-[#F0C11D] mb-3">Khashika</h3>
+            <h3 className="text-xl text-[#E8B71B] mb-3">Khashika</h3>
             <p className="text-[#FFFFFF]/70 text-sm leading-relaxed">
               Bijoux artisanaux d&apos;Inde et du Tibet. Argent, pierres semi-précieuses et accessoires sélectionnés avec soin.
             </p>
@@ -28,27 +28,27 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FFFFFF] mb-3">Boutique</h3>
             <ul className="space-y-1.5 text-sm">
               <li>
-                <Link href="/shop" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/shop" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Tous les produits
                 </Link>
               </li>
               <li>
-                <Link href="/bijoux/bracelets" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/bijoux/bracelets" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Bracelets
                 </Link>
               </li>
               <li>
-                <Link href="/bijoux/colliers" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/bijoux/colliers" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Colliers
                 </Link>
               </li>
               <li>
-                <Link href="/bijoux/bagues" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/bijoux/bagues" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Bagues
                 </Link>
               </li>
               <li>
-                <Link href="/accessoires/pashminas" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/accessoires/pashminas" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Pashminas
                 </Link>
               </li>
@@ -60,22 +60,22 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FFFFFF] mb-3">Informations</h3>
             <ul className="space-y-1.5 text-sm">
               <li>
-                <Link href="/univers" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/univers" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Notre univers
                 </Link>
               </li>
               <li>
-                <Link href="/pierres" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/pierres" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Guide des pierres
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/contact" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/legal/cgv" className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors">
+                <Link href="/legal/cgv" className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors">
                   CGV
                 </Link>
               </li>
@@ -88,13 +88,13 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-[#FFFFFF]/70">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <a href={`mailto:${CONTACT.email}`} className="hover:text-[#F0C11D] transition-colors">
+                <a href={`mailto:${CONTACT.email}`} className="hover:text-[#E8B71B] transition-colors">
                   {CONTACT.email}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <a href={`tel:${CONTACT.phoneHref}`} className="hover:text-[#F0C11D] transition-colors">
+                <a href={`tel:${CONTACT.phoneHref}`} className="hover:text-[#E8B71B] transition-colors">
                   {CONTACT.phoneDisplay}
                 </a>
               </li>
@@ -109,7 +109,7 @@ export default function Footer() {
                 href="https://instagram.com/khashika"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors"
+                className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function Footer() {
                 href="https://facebook.com/khashika"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#FFFFFF]/70 hover:text-[#F0C11D] transition-colors"
+                className="text-[#FFFFFF]/70 hover:text-[#E8B71B] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />

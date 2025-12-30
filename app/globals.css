@@ -7,7 +7,7 @@
 /* Variables CSS */
 :root {
   --turquoise: #8B4E4E;
-  --gold: #F0C11D;
+  --gold: #E8B71B;
   --coral: #8B4E4E;
   --background: #FFFFFF;
   --foreground: #2D2420;
@@ -17,10 +17,10 @@
   --primary-foreground: #FFFFFF;
   --secondary: #FAF9F7;
   --secondary-foreground: #2D2420;
-  --accent: #F0C11D;
+  --accent: #E8B71B;
   --accent-foreground: #2D2420;
   --border: rgba(212, 175, 55, 0.2);
-  --ring: #F0C11D;
+  --ring: #E8B71B;
 }
 
 /* Polices - Arimo Bold 700 partout */
@@ -66,8 +66,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 8px;
   pointer-events: none;
   background-image: 
-    linear-gradient(45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D),
-    linear-gradient(-45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D);
+    linear-gradient(45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B),
+    linear-gradient(-45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B);
   background-color: #FFFFFF;
   background-size: 8px 8px;
 }
@@ -81,8 +81,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 8px;
   pointer-events: none;
   background-image: 
-    linear-gradient(45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D),
-    linear-gradient(-45deg, #F0C11D 25%, transparent 25%, transparent 75%, #F0C11D 75%, #F0C11D);
+    linear-gradient(45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B),
+    linear-gradient(-45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B);
   background-color: #FFFFFF;
   background-size: 8px 8px;
 }
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   
   .golden-glow-card:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #F0C11D;
+    box-shadow: 0 0 0 2px #E8B71B;
     outline-offset: 2px;
   }
   
@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   
   .golden-glow-dropdown-item:hover {
     background-color: #FFFFFF;
-    border-left: 4px solid #F0C11D;
+    border-left: 4px solid #E8B71B;
   }
   
   /* Drawers (Cart, Wishlist) */
@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Cœur wishlist - état default (gold avec double contour pour visibilité sur tous fonds) */
 .heart-default {
-  color: #F0C11D;
+  color: #E8B71B;
   fill: none;
   stroke-width: 2;
   filter: 

@@ -96,7 +96,7 @@ export default function StoryPage() {
           </section>
 
           {/* Call to action */}
-          <div className="bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 text-center">
+          <div className="bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 text-center">
             <h3 className="font-serif text-2xl text-[#2D2420] mb-4">
               Découvrez Nos Créations
             </h3>

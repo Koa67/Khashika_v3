@@ -177,7 +177,7 @@ export default function OrdersTable() {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="text-sm font-semibold text-[#F0C11D]">
+                    <span className="text-sm font-semibold text-[#E8B71B]">
                       {order.total.toFixed(2)} €
                     </span>
                   </td>

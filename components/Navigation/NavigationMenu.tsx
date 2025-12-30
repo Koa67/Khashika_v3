@@ -147,7 +147,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           group flex items-center gap-1.5 px-4 py-2
           text-sm font-medium tracking-wide uppercase
           transition-all duration-300 ease-out
-          ${isActive ? 'text-[#F0C11D]' : 'text-gray-800 hover:text-[#F0C11D]'}
+          ${isActive ? 'text-[#E8B71B]' : 'text-gray-800 hover:text-[#E8B71B]'}
         `}
       >
         <span className="relative">
@@ -175,7 +175,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <div 
           className="
             bg-[#FDFCFB] rounded-none shadow-[0_8px_30px_rgba(240,193,29,0.3)]
-            border border-[#F0C11D]/20
+            border border-[#E8B71B]/20
             min-w-[280px] p-4
           "
         >
@@ -186,7 +186,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                   <h3 className="
                     text-xs font-semibold uppercase tracking-wider
                     text-[#2D2420]/60 mb-1.5 pb-1
-                    border-b border-[#F0C11D]/20
+                    border-b border-[#E8B71B]/20
                   ">
                     {section.title}
                   </h3>
@@ -198,7 +198,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                         href={item.href}
                         className="
                           block px-2 py-1 text-sm text-[#2D2420]
-                          hover:text-[#F0C11D] hover:translate-x-1
+                          hover:text-[#E8B71B] hover:translate-x-1
                           transition-all duration-200
                         "
                       >
@@ -212,7 +212,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
 
           {menu.featured && menu.featured.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-[#F0C11D]/20">
+            <div className="mt-3 pt-3 border-t border-[#E8B71B]/20">
               {menu.featured.map((feat, index) => (
                 <Link
                   key={index}
@@ -220,8 +220,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                   className={`
                     inline-flex items-center gap-1.5 text-sm font-medium
                     ${feat.highlight 
-                      ? 'text-[#F0C11D] hover:text-[#A8871F]' 
-                      : 'text-[#2D2420]/60 hover:text-[#F0C11D]'
+                      ? 'text-[#E8B71B] hover:text-[#A8871F]' 
+                      : 'text-[#2D2420]/60 hover:text-[#E8B71B]'
                     }
                     transition-colors duration-200
                   `}
@@ -270,7 +270,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
-        <div className="flex items-center justify-between p-4 border-b border-[#F0C11D]/20">
+        <div className="flex items-center justify-between p-4 border-b border-[#E8B71B]/20">
           <span className="text-lg font-serif text-[#2D2420]">Menu</span>
           <button
             onClick={onClose}
@@ -285,14 +285,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
         <nav className="overflow-y-auto h-[calc(100%-64px)] py-4">
           {menuData.map((menu) => (
-            <div key={menu.label} className="border-b border-[#F0C11D]/20">
+            <div key={menu.label} className="border-b border-[#E8B71B]/20">
               <button
                 onClick={() => toggleExpand(menu.label)}
                 className="
                   w-full flex items-center justify-between
                   px-6 py-4 text-left
                   text-[#2D2420] font-medium
-                  hover:text-[#F0C11D] transition-all duration-200
+                  hover:text-[#E8B71B] transition-all duration-200
                 "
               >
                 <span>{menu.label}</span>
@@ -320,7 +320,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                               onClick={onClose}
                               className="
                                 block px-3 py-2 text-sm text-[#2D2420]
-                                hover:text-[#F0C11D] transition-all duration-200
+                                hover:text-[#E8B71B] transition-all duration-200
                               "
                             >
                               {item.label}
@@ -332,14 +332,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ))}
 
                   {menu.featured && (
-                    <div className="pt-2 border-t border-[#F0C11D]/20">
+                    <div className="pt-2 border-t border-[#E8B71B]/20">
                       {menu.featured.map((feat, index) => (
                         <Link
                           key={index}
                           href={feat.href}
                           onClick={onClose}
                           className="
-                            block py-2 text-sm font-medium text-[#F0C11D]
+                            block py-2 text-sm font-medium text-[#E8B71B]
                             hover:text-[#A8871F] transition-colors
                           "
                         >

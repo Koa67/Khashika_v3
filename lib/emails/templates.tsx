@@ -220,7 +220,7 @@ const header = {
   padding: '40px 20px',
   textAlign: 'center' as const,
   backgroundColor: '#F5EDE6',
-  borderBottom: '2px solid #F0C11D',
+  borderBottom: '2px solid #E8B71B',
 };
 
 const h1 = {
@@ -252,7 +252,7 @@ const text = {
 };
 
 const orderNumberText = {
-  color: '#F0C11D',
+  color: '#E8B71B',
   fontSize: '18px',
   fontWeight: 'bold',
   margin: '0',
@@ -308,7 +308,7 @@ const totalRow = {
 };
 
 const totalText = {
-  color: '#F0C11D',
+  color: '#E8B71B',
   fontSize: '20px',
   fontWeight: 'bold',
   margin: '0',
@@ -327,7 +327,7 @@ const trackingSection = {
 };
 
 const hr = {
-  borderColor: '#F0C11D',
+  borderColor: '#E8B71B',
   margin: '30px 0',
 };
 

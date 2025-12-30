@@ -307,7 +307,7 @@ export default function ShopPage() {
         {/* Decorative elements */}
         <div className="absolute right-0 top-0 w-64 h-64 bg-[#8B4E4E]/20 rounded-full 
                        blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute left-1/2 bottom-0 w-96 h-32 bg-[#F0C11D]/10 rounded-full 
+        <div className="absolute left-1/2 bottom-0 w-96 h-32 bg-[#E8B71B]/10 rounded-full 
                        blur-3xl translate-y-1/2" />
       </section>
       

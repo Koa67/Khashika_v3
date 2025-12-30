@@ -95,7 +95,7 @@ export default function ShopSidebar({
       >
         <div 
           style={{ maxHeight }}
-          className="bg-[#FDF9F7] rounded-none border border-[#F0C11D]/40 p-6 overflow-y-auto overscroll-contain shadow-[0_4px_12px_rgba(240,193,29,0.25)]"
+          className="bg-[#FDF9F7] rounded-none border border-[#E8B71B]/40 p-6 overflow-y-auto overscroll-contain shadow-[0_4px_12px_rgba(240,193,29,0.25)]"
         >
           <div className="flex items-center justify-between mb-6">
           <h2 className="font-serif text-xl">Filtres</h2>
@@ -111,17 +111,17 @@ export default function ShopSidebar({
         </div>
 
         <p className="text-sm text-[#2D2420]/60 mb-6">
-          <span className="font-semibold text-[#F0C11D]">{filterCounts.total}</span> trésors trouvés
+          <span className="font-semibold text-[#E8B71B]">{filterCounts.total}</span> trésors trouvés
         </p>
 
         {/* Section Prix - Compacte */}
-        <div className="mb-0 pb-0 border-b border-[#F0C11D]/20">
+        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
           <button 
             onClick={() => toggleSection('prix')}
             className="flex items-center justify-between w-full py-3"
           >
             <h3 className="font-serif text-lg">Prix</h3>
-            <ChevronDown className={`w-4 h-4 text-[#F0C11D] transition-transform ${openSections.prix ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 text-[#E8B71B] transition-transform ${openSections.prix ? 'rotate-180' : ''}`} />
           </button>
           
           {openSections.prix && (
@@ -141,8 +141,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [priceRange.min, priceRange.max])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isAll
-                            ? 'bg-[#F0C11D] text-white border border-[#F0C11D]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
                         }`}
                       >
                         Tous
@@ -151,8 +151,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [priceRange.min, 10])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isUnder10
-                            ? 'bg-[#F0C11D] text-white border border-[#F0C11D]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
                         }`}
                       >
                         &lt; 10 €
@@ -161,8 +161,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [10, 25])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           is10to25
-                            ? 'bg-[#F0C11D] text-white border border-[#F0C11D]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
                         }`}
                       >
                         10-25 €
@@ -171,8 +171,8 @@ export default function ShopSidebar({
                         onClick={() => onUpdateFilter('priceRange', [25, priceRange.max])}
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isOver25
-                            ? 'bg-[#F0C11D] text-white border border-[#F0C11D]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                            ? 'bg-[#E8B71B] text-white border border-[#E8B71B]'
+                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#E8B71B]/30 hover:border-[#E8B71B]'
                         }`}
                       >
                         &gt; 25 €
@@ -186,7 +186,7 @@ export default function ShopSidebar({
         </div>
 
         {/* Section Bijoux - TOUJOURS VISIBLE */}
-        <div className="mb-0 pb-0 border-b border-[#F0C11D]/20">
+        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
           <button 
             onClick={() => toggleSection('bijoux')}
             className="flex items-center justify-between w-full font-serif text-lg py-3"
@@ -202,9 +202,9 @@ export default function ShopSidebar({
                     type="checkbox"
                     checked={filters.types.includes(type.id)}
                     onChange={() => onToggleFilter('types', type.id)}
-                    className="w-4 h-4 accent-[#F0C11D] cursor-pointer"
+                    className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420] group-hover:text-[#F0C11D] transition-colors">
+                  <span className="text-sm text-[#2D2420] group-hover:text-[#E8B71B] transition-colors">
                     {type.label}
                   </span>
                   <span className="ml-auto text-xs text-[#2D2420]/40">
@@ -217,7 +217,7 @@ export default function ShopSidebar({
         </div>
 
         {/* Section Accessoires - TOUJOURS VISIBLE */}
-        <div className="mb-0 pb-0 border-b border-[#F0C11D]/20">
+        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
           <button 
             onClick={() => toggleSection('accessoires')}
             className="flex items-center justify-between w-full font-serif text-lg py-3"
@@ -233,9 +233,9 @@ export default function ShopSidebar({
                     type="checkbox"
                     checked={filters.accessories.includes(acc.id)}
                     onChange={() => onToggleFilter('accessories', acc.id)}
-                    className="w-4 h-4 accent-[#F0C11D] cursor-pointer"
+                    className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420] group-hover:text-[#F0C11D] transition-colors">
+                  <span className="text-sm text-[#2D2420] group-hover:text-[#E8B71B] transition-colors">
                     {acc.label}
                   </span>
                   <span className="ml-auto text-xs text-[#2D2420]/40">
@@ -248,27 +248,27 @@ export default function ShopSidebar({
         </div>
 
         {/* Section Pierres - TOUJOURS VISIBLE */}
-        <div className="mb-0 pb-0 border-b border-[#F0C11D]/20">
+        <div className="mb-0 pb-0 border-b border-[#E8B71B]/20">
           <button 
             onClick={() => toggleSection('pierres')}
             className="flex items-center justify-between w-full py-3"
           >
             <h3 className="font-serif text-lg">Pierres</h3>
-            <ChevronDown className={`w-4 h-4 text-[#F0C11D] transition-transform ${openSections.pierres ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 text-[#E8B71B] transition-transform ${openSections.pierres ? 'rotate-180' : ''}`} />
           </button>
           
           {openSections.pierres && (
             <div className="space-y-4">
               {/* Onglets */}
-              <div className="flex gap-1 p-1 bg-[#F0C11D]/10 rounded-none">
+              <div className="flex gap-1 p-1 bg-[#E8B71B]/10 rounded-none">
                 {['top', 'couleurs'].map((view) => (
                   <button
                     key={view}
                     onClick={() => setStoneView(view as 'top' | 'couleurs')}
                     className={`flex-1 px-2 py-1.5 text-xs font-medium transition-colors rounded-none ${
                       stoneView === view 
-                        ? 'bg-[#FDF9F7] text-[#F0C11D] shadow-sm' 
-                        : 'text-[#2D2420]/60 hover:text-[#F0C11D]'
+                        ? 'bg-[#FDF9F7] text-[#E8B71B] shadow-sm' 
+                        : 'text-[#2D2420]/60 hover:text-[#E8B71B]'
                     }`}
                   >
                     {view === 'top' ? 'Populaires' : 'Par couleurs'}
@@ -285,13 +285,13 @@ export default function ShopSidebar({
                         type="checkbox"
                         checked={filters.stones.includes(stone.id)}
                         onChange={() => onToggleFilter('stones', stone.id)}
-                        className="w-4 h-4 accent-[#F0C11D] cursor-pointer"
+                        className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
                       />
                       <span 
-                        className="w-4 h-4 border border-[#F0C11D]/30 rounded-none" 
+                        className="w-4 h-4 border border-[#E8B71B]/30 rounded-none" 
                         style={{ backgroundColor: stone.color }} 
                       />
-                      <span className="text-sm text-[#2D2420] group-hover:text-[#F0C11D] transition-colors">
+                      <span className="text-sm text-[#2D2420] group-hover:text-[#E8B71B] transition-colors">
                         {stone.label}
                       </span>
                       <span className="ml-auto text-xs text-[#2D2420]/40">
@@ -302,7 +302,7 @@ export default function ShopSidebar({
                   {!showAllStones && FILTER_CONFIG.stones.length > 8 && (
                     <button 
                       onClick={() => setShowAllStones(true)}
-                      className="text-sm text-[#F0C11D] hover:underline mt-2"
+                      className="text-sm text-[#E8B71B] hover:underline mt-2"
                     >
                       + {FILTER_CONFIG.stones.length - 8} autres pierres
                     </button>
@@ -325,8 +325,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#F0C11D] bg-[#F0C11D]/10'
-                                : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
+                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -348,8 +348,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#F0C11D] bg-[#F0C11D]/10'
-                                : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
+                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -371,8 +371,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#F0C11D] bg-[#F0C11D]/10'
-                                : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
+                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -394,8 +394,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#F0C11D] bg-[#F0C11D]/10'
-                                : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
+                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
@@ -417,8 +417,8 @@ export default function ShopSidebar({
                             onClick={() => onToggleFilter('stones', stone.id)}
                             className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
                               filters.stones.includes(stone.id)
-                                ? 'border-[#F0C11D] bg-[#F0C11D]/10'
-                                : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                                ? 'border-[#E8B71B] bg-[#E8B71B]/10'
+                                : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'
                             }`}
                           >
                             <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />

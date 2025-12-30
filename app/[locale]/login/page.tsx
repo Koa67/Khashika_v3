@@ -101,14 +101,14 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center pt-24 px-4">
-      <div className="w-full max-w-md bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-8">
+      <div className="w-full max-w-md bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-8">
         {/* Tabs */}
-        <div className="flex border-b border-[#F0C11D]/20 mb-6">
+        <div className="flex border-b border-[#E8B71B]/20 mb-6">
           <button
             onClick={() => setActiveTab('login')}
             className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'login'
-                ? 'text-[#F0C11D] border-[#F0C11D]'
+                ? 'text-[#E8B71B] border-[#E8B71B]'
                 : ''
             }`}
           >
@@ -118,7 +118,7 @@ export default function LoginPage() {
             onClick={() => setActiveTab('register')}
             className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'register'
-                ? 'text-[#F0C11D] border-[#F0C11D]'
+                ? 'text-[#E8B71B] border-[#E8B71B]'
                 : ''
             }`}
           >
@@ -152,7 +152,7 @@ export default function LoginPage() {
               className={`w-full px-4 py-3 rounded-none border transition-colors focus:outline-none focus:ring-2 focus:ring-[#8B4E4E] ${
                 emailError
                   ? 'border-red-500'
-                  : 'border-[#F0C11D]/40 focus:border-[#F0C11D]'
+                  : 'border-[#E8B71B]/40 focus:border-[#E8B71B]'
               }`}
               placeholder="votre@email.com"
               required
@@ -171,7 +171,7 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#F0C11D]"
+              className="w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#E8B71B]"
               placeholder="••••••••"
               required
             />
@@ -187,7 +187,7 @@ export default function LoginPage() {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-[#F0C11D]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#F0C11D]"
+                className="w-full px-4 py-3 bg-white border border-[#E8B71B]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#E8B71B]"
                 placeholder="••••••••"
                 required
               />

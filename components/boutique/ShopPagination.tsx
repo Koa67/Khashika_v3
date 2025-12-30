@@ -79,7 +79,7 @@ export default function ShopPagination({
         <button
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#F0C11D]/30 bg-white hover:border-[#F0C11D] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#E8B71B]/30 bg-white hover:border-[#E8B71B] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           aria-label="Page précédente"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -95,8 +95,8 @@ export default function ShopPagination({
                 onClick={() => onPageChange(page)}
                 className={`w-10 h-10 rounded-none text-sm font-medium transition-colors border ${
                   page === currentPage
-                    ? 'bg-[#F0C11D] text-white border-[#F0C11D]'
-                    : 'bg-white border-[#F0C11D]/30 hover:border-[#F0C11D]'
+                    ? 'bg-[#E8B71B] text-white border-[#E8B71B]'
+                    : 'bg-white border-[#E8B71B]/30 hover:border-[#E8B71B]'
                 }`}
                 aria-label={`Page ${page}`}
                 aria-current={page === currentPage ? 'page' : undefined}
@@ -115,7 +115,7 @@ export default function ShopPagination({
         <button
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#F0C11D]/30 bg-white hover:border-[#F0C11D] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center gap-1 px-3 py-2 rounded-none border border-[#E8B71B]/30 bg-white hover:border-[#E8B71B] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           aria-label="Page suivante"
         >
           <span className="hidden sm:inline text-sm">Suivant</span>
@@ -132,7 +132,7 @@ export default function ShopPagination({
             const value = parseInt(e.target.value);
             onItemsPerPageChange(value);
           }}
-          className="px-3 py-2 text-sm bg-white border border-[#F0C11D]/30 rounded-none hover:border-[#F0C11D] focus:border-[#F0C11D] focus:outline-none cursor-pointer transition-colors text-[#2D2420]"
+          className="px-3 py-2 text-sm bg-white border border-[#E8B71B]/30 rounded-none hover:border-[#E8B71B] focus:border-[#E8B71B] focus:outline-none cursor-pointer transition-colors text-[#2D2420]"
         >
           {perPageOptions.map(opt => (
             <option key={opt.value} value={opt.value}>

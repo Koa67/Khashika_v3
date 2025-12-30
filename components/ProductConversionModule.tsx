@@ -48,7 +48,7 @@ export default function ProductConversionModule({
 
         {/* Prix */}
         <div className="flex items-center gap-4">
-          <span className="font-serif text-4xl font-bold text-[#F0C11D]">
+          <span className="font-serif text-4xl font-bold text-[#E8B71B]">
             {displayPrice}
           </span>
           {product.isOnSale && (
@@ -129,7 +129,7 @@ export default function ProductConversionModule({
           className={`w-full py-4 px-6 rounded-none font-sans font-semibold transition-all ${
             isAdded 
               ? 'bg-green-600 text-white' 
-              : 'bg-[#F0C11D] text-white hover:bg-[#F0C11D]/90'
+              : 'bg-[#E8B71B] text-white hover:bg-[#E8B71B]/90'
           }`}
         >
           {isAdded ? '✓ Ajouté au panier' : 'Ajouter au panier'}
@@ -140,7 +140,7 @@ export default function ProductConversionModule({
       </div>
 
       {/* BARRE FIXE MOBILE - Thumb Zone */}
-      <div className="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-[#F0C11D]/30 shadow-lg block md:hidden">
+      <div className="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-[#E8B71B]/30 shadow-lg block md:hidden">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           {/* Prix à gauche */}
           <div className="flex-1">
@@ -158,7 +158,7 @@ export default function ProductConversionModule({
             className={`flex-shrink-0 text-white font-sans font-semibold py-3 px-6 rounded-none transition-all active:scale-95 ${
               isAdded 
                 ? 'bg-green-600' 
-                : 'bg-[#F0C11D] hover:bg-[#F0C11D]/90'
+                : 'bg-[#E8B71B] hover:bg-[#E8B71B]/90'
             }`}
           >
             {isAdded ? '✓ Ajouté' : 'Ajouter'}

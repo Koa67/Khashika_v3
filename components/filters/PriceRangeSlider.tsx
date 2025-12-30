@@ -128,8 +128,8 @@ export default function PriceRangeSlider({
             }}
             className={`px-2.5 py-1 text-xs rounded-none transition-all duration-200 border
                        ${isPresetActive(preset.value)
-                         ? 'bg-[#F0C11D] text-white border-[#F0C11D]'
-                         : 'bg-white text-gray-600 border-[#F0C11D]/30 hover:border-[#F0C11D] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]'
+                         ? 'bg-[#E8B71B] text-white border-[#E8B71B]'
+                         : 'bg-white text-gray-600 border-[#E8B71B]/30 hover:border-[#E8B71B] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]'
                        }`}
           >
             {preset.label}
@@ -165,7 +165,7 @@ export default function PriceRangeSlider({
         >
           {/* Range actif */}
           <motion.div
-            className="absolute h-full bg-gradient-to-r from-[#F0C11D] to-[#E8C547] rounded-none"
+            className="absolute h-full bg-gradient-to-r from-[#E8B71B] to-[#E8C547] rounded-none"
             style={{
               left: `${minPercent}%`,
               width: `${maxPercent - minPercent}%`,
@@ -179,8 +179,8 @@ export default function PriceRangeSlider({
                        bg-white rounded-none shadow-lg border-2 cursor-grab
                        transition-shadow duration-200
                        ${isDragging === 'min' 
-                         ? 'border-[#F0C11D] shadow-[#F0C11D]/30 shadow-lg scale-110 cursor-grabbing' 
-                         : 'border-[#F0C11D]/30 hover:border-[#F0C11D]'}`}
+                         ? 'border-[#E8B71B] shadow-[#E8B71B]/30 shadow-lg scale-110 cursor-grabbing' 
+                         : 'border-[#E8B71B]/30 hover:border-[#E8B71B]'}`}
             style={{ left: `${minPercent}%` }}
             onMouseDown={handleMouseDown('min')}
             whileHover={{ scale: 1.1 }}
@@ -225,7 +225,7 @@ export default function PriceRangeSlider({
       {/* Indicateur visuel de la plage */}
       <div className="flex items-center justify-between text-xs text-gray-400">
         <span>{min}{currency}</span>
-        <span className="text-[#F0C11D] font-medium">
+        <span className="text-[#E8B71B] font-medium">
           {localMin}{currency} – {localMax}{currency}
         </span>
         <span>{max}{currency}</span>

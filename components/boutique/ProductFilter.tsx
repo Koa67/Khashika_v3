@@ -114,7 +114,7 @@ export default function ProductFilter({
       <div className="md:hidden mb-4">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between p-4 bg-white border border-[#F0C11D]/40 rounded-none hover:border-[#8B4E4E] transition-colors"
+          className="w-full flex items-center justify-between p-4 bg-white border border-[#E8B71B]/40 rounded-none hover:border-[#8B4E4E] transition-colors"
           aria-label={isOpen ? 'Fermer les filtres' : 'Ouvrir les filtres'}
           aria-expanded={isOpen}
         >
@@ -136,7 +136,7 @@ export default function ProductFilter({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#FDF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 space-y-8 md:sticky md:top-24"
+            className="bg-[#FDF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 space-y-8 md:sticky md:top-24"
           >
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -170,7 +170,7 @@ export default function ProductFilter({
                       className={`w-full text-left px-4 py-2 rounded-none border transition-all ${
                         isSelected
                           ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
-                          : 'bg-white text-[#2D2420] border-[#F0C11D]/40 hover:border-[#8B4E4E] hover:text-[#8B4E4E]'
+                          : 'bg-white text-[#2D2420] border-[#E8B71B]/40 hover:border-[#8B4E4E] hover:text-[#8B4E4E]'
                       }`}
                       aria-pressed={isSelected}
                     >
@@ -238,7 +238,7 @@ export default function ProductFilter({
                       className={`w-full text-left px-4 py-2 rounded-none border transition-all ${
                         isSelected
                           ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
-                          : 'bg-white text-[#2D2420] border-[#F0C11D]/40 hover:border-[#8B4E4E] hover:text-[#8B4E4E]'
+                          : 'bg-white text-[#2D2420] border-[#E8B71B]/40 hover:border-[#8B4E4E] hover:text-[#8B4E4E]'
                       }`}
                       aria-pressed={isSelected}
                     >

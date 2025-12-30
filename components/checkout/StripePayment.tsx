@@ -84,7 +84,7 @@ export default function StripePayment({ amount, onSuccess, onError }: StripePaym
   // Mode Simulation (si clé API manquante)
   if (isSimulationMode) {
     return (
-      <div className="border-2 border-dashed border-[#F0C11D] rounded-lg p-6 bg-[#f4f1eb]">
+      <div className="border-2 border-dashed border-[#E8B71B] rounded-lg p-6 bg-[#f4f1eb]">
         <div className="text-center mb-4">
           <h3 className="font-serif text-xl text-[#2D2420] mb-2">
             Mode Simulation

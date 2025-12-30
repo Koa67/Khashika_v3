@@ -126,7 +126,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                       {[...Array(5)].map((_, i) => (
                         <span
                           key={i}
-                          className={`text-lg ${i < review.rating ? 'text-[#F0C11D]' : 'text-gray-300'}`}
+                          className={`text-lg ${i < review.rating ? 'text-[#E8B71B]' : 'text-gray-300'}`}
                         >
                           ★
                         </span>

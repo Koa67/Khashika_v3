@@ -102,7 +102,7 @@ export default function SearchBar() {
                     <p className="font-serif text-lg text-[#2D2420] line-clamp-1 mb-1">
                       {product.name}
                     </p>
-                    <p className="text-base font-bold text-[#F0C11D]">
+                    <p className="text-base font-bold text-[#E8B71B]">
                       {typeof product.price === 'number' 
                         ? product.price.toFixed(2) 
                         : product.price} €

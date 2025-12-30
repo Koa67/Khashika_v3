@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="text-center max-w-md">
         {/* Illustration ou texte stylé */}
-        <h1 className="font-serif text-9xl font-bold text-[#F0C11D] mb-4">404</h1>
+        <h1 className="font-serif text-9xl font-bold text-[#E8B71B] mb-4">404</h1>
         <h2 className="font-serif text-2xl text-[#2D2420] mb-4">
           Page introuvable
         </h2>
@@ -25,7 +25,7 @@ export default function NotFound() {
           </Link>
           <Link 
             href="/fr/shop" 
-            className="inline-flex items-center justify-center gap-2 bg-transparent border border-[#F0C11D]/40 text-[#2D2420] font-medium px-6 py-3 rounded-none hover:bg-[#F0C11D]/10 transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-transparent border border-[#E8B71B]/40 text-[#2D2420] font-medium px-6 py-3 rounded-none hover:bg-[#E8B71B]/10 transition-colors"
           >
             <Search className="w-4 h-4" />
             Voir la boutique
@@ -33,7 +33,7 @@ export default function NotFound() {
         </div>
 
         {/* Suggestions */}
-        <div className="mt-12 pt-8 border-t border-[#F0C11D]/20">
+        <div className="mt-12 pt-8 border-t border-[#E8B71B]/20">
           <p className="text-sm text-[#2D2420]/60 mb-4">Peut-être cherchez-vous:</p>
           <div className="flex flex-wrap justify-center gap-2">
             <Link href="/fr/shop?category=colliers" className="text-[#8B4E4E] hover:underline text-sm">Colliers</Link>

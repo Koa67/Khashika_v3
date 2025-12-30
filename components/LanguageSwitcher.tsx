@@ -54,7 +54,7 @@ export default function LanguageSwitcher() {
           />
           
           {/* Dropdown */}
-          <div className="absolute right-0 mt-2 w-32 bg-[#FAF9F7] border border-[#F0C11D]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] z-20">
+          <div className="absolute right-0 mt-2 w-32 bg-[#FAF9F7] border border-[#E8B71B]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] z-20">
             <button
               onClick={() => switchLocale('fr')}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-white transition-colors text-[#2D2420] ${

@@ -271,7 +271,7 @@ export default function FilterSidebar({
             {section.id === 'stone' && (
               <div className="space-y-2">
                 {uniqueStones.map((stone) => {
-                  const color = STONE_COLORS[stone] || '#F0C11D';
+                  const color = STONE_COLORS[stone] || '#E8B71B';
                   return (
                     <label
                       key={stone}
