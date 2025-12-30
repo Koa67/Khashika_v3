@@ -168,7 +168,7 @@ export default function AdvancedSearch() {
                         {result.category && (
                           <p className="text-xs text-gray-500 uppercase">{result.category}</p>
                         )}
-                        <p className="text-sm font-semibold text-[#E8B71B] mt-1">
+                        <p className="text-sm font-semibold text-gold-fusion mt-1">
                           {typeof result.price === 'number'
                             ? result.price.toFixed(2)
                             : result.price}{' '}

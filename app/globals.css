@@ -427,3 +427,13 @@ nextjs-portal {
   height: 0 !important;
   overflow: hidden !important;
 }
+/* Gold Fusion - Gradient + Drop Shadow */
+.text-gold-fusion {
+  color: #EAB615;
+  text-shadow: 0 0 5px rgba(0,0,0,0.09);
+}
+
+/* Gold flat pour icônes (pas de gradient sur SVG) */
+.text-gold-icon {
+  color: #EAB615;
+}

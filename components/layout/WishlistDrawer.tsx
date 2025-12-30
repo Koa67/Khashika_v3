@@ -67,7 +67,7 @@ function WishlistItemRow({ product, onAddToCart, onRemove, cartItems }: {
           {isInCart ? (
             <button
               disabled
-              className="flex-1 bg-[#E8B71B]/20 text-[#E8B71B] text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
+              className="flex-1 bg-[#E8B71B]/20 text-gold-fusion text-xs py-2 rounded-none font-medium flex items-center justify-center gap-1 cursor-default"
             >
               <Check className="w-3 h-3" />
               Déjà dans le panier
@@ -154,7 +154,7 @@ export default function WishlistDrawer({ isOpen, onClose, onOpenCart }: Wishlist
                     {/* HEADER */}
                     <div className="flex items-center justify-between px-6 py-6 border-b border-[#E8B71B]/20">
                       <div className="flex items-center gap-3">
-                        <Heart className="w-6 h-6 text-[#E8B71B] fill-current" />
+                        <Heart className="w-6 h-6 text-gold-fusion fill-current" />
                         <Dialog.Title className="text-xl font-semibold text-gray-900">
                           Wishlist
                         </Dialog.Title>

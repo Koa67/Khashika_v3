@@ -301,7 +301,7 @@ export default function JewelrySearch() {
                             <p className="font-serif text-base text-foreground truncate">
                               {highlightMatch(product.name, query, product)}
                             </p>
-                            <p className="text-sm font-bold text-[#E8B71B] mt-1">
+                            <p className="text-sm font-bold text-gold-fusion mt-1">
                               {typeof product.price === 'number' ? product.price.toFixed(2) : product.price}€
                             </p>
                           </div>

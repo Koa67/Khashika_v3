@@ -117,7 +117,7 @@ function CheckoutSuccessContent() {
                         <p className="font-medium text-[#2D2420]">{item.product.name}</p>
                         <p className="text-sm text-[#2D2420]/60">Quantité : {item.quantity}</p>
                       </div>
-                      <p className="text-[#E8B71B] font-semibold">
+                      <p className="text-gold-fusion font-semibold">
                         {(price * item.quantity).toFixed(2)} €
                       </p>
                     </div>
@@ -128,7 +128,7 @@ function CheckoutSuccessContent() {
               <div className="border-t border-[#E8B71B]/40 pt-4">
                 <div className="flex justify-between items-center text-lg font-semibold">
                   <span className="text-[#2D2420]">Total</span>
-                  <span className="text-[#E8B71B]">{orderTotal.toFixed(2)} €</span>
+                  <span className="text-gold-fusion">{orderTotal.toFixed(2)} €</span>
                 </div>
               </div>
             </>

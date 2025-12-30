@@ -55,7 +55,7 @@ export default async function AdminDashboardPage({
             <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
               {t('todayOrders')}
             </h3>
-            <p className="text-3xl font-bold text-[#E8B71B]">{stats.todayOrders}</p>
+            <p className="text-3xl font-bold text-gold-fusion">{stats.todayOrders}</p>
           </div>
 
           {/* Produits en rupture */}

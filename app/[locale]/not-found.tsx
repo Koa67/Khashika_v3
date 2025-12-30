@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="text-center max-w-md">
         {/* Illustration ou texte stylé */}
-        <h1 className="font-serif text-9xl font-bold text-[#E8B71B] mb-4">404</h1>
+        <h1 className="font-serif text-9xl font-bold text-gold-fusion mb-4">404</h1>
         <h2 className="font-serif text-2xl text-[#2D2420] mb-4">
           Page introuvable
         </h2>

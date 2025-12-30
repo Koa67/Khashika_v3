@@ -218,7 +218,7 @@ export default function Navbar() {
             >
               <div className="flex items-center gap-2 relative">
                 <button 
-                  className="p-2 text-[#2D2420] hover:text-[#E8B71B] transition-colors duration-200" 
+                  className="p-2 text-[#2D2420] hover:text-gold-fusion transition-colors duration-200" 
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" strokeWidth={1.5} />
@@ -290,7 +290,7 @@ export default function Navbar() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm text-[#2D2420] truncate">{product.name}</p>
-                            <p className="text-sm font-bold text-[#E8B71B]">
+                            <p className="text-sm font-bold text-gold-fusion">
                               {typeof product.price === 'number' 
                                 ? product.price.toFixed(2) 
                                 : product.price} €
@@ -315,7 +315,7 @@ export default function Navbar() {
                         setQuery('');
                         setIsSearchOpen(false);
                       }}
-                      className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium text-[#E8B71B] hover:text-[#8B4E4E] transition-colors"
+                      className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium text-gold-fusion hover:text-[#8B4E4E] transition-colors"
                     >
                       Voir tous les résultats
                       <ArrowRight className="w-4 h-4" />
@@ -367,7 +367,7 @@ export default function Navbar() {
                   <div className="relative">
                     <button
                       onClick={() => setShowUserMenu(!showUserMenu)}
-                      className="p-2 hover:text-[#E8B71B] transition-colors duration-200 flex items-center gap-2"
+                      className="p-2 hover:text-gold-fusion transition-colors duration-200 flex items-center gap-2"
                       aria-label="Mon compte"
                     >
                       <User className="w-5 h-5" strokeWidth={1.5} />
@@ -380,21 +380,21 @@ export default function Navbar() {
                         <div className="p-2">
                           <Link
                             href={`/${locale}/account`}
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#E8B71B] transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mon compte
                           </Link>
                           <Link
                             href={`/${locale}/account?section=orders`}
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#E8B71B] transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes commandes
                           </Link>
                           <Link
                             href={`/${locale}/account?section=wishlist`}
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-[#E8B71B] transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes favoris
@@ -414,7 +414,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={`/${locale}/login`}
-                    className="p-2 hover:text-[#E8B71B] transition-colors duration-200"
+                    className="p-2 hover:text-gold-fusion transition-colors duration-200"
                     aria-label="Connexion"
                   >
                     <User className="w-5 h-5" strokeWidth={1.5} />
@@ -426,7 +426,7 @@ export default function Navbar() {
             {/* Wishlist Button */}
             <button 
               onClick={() => setIsWishlistOpen(true)}
-              className="relative p-2 text-[#2D2420] hover:text-[#E8B71B] transition-colors duration-200"
+              className="relative p-2 text-[#2D2420] hover:text-gold-fusion transition-colors duration-200"
               aria-label="Wishlist"
             >
               <Heart className="w-6 h-6" strokeWidth={1.5} />
@@ -440,7 +440,7 @@ export default function Navbar() {
             {/* Cart Button */}
             <button 
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#2D2420] hover:text-[#E8B71B] transition-colors duration-200"
+              className="relative p-2 text-[#2D2420] hover:text-gold-fusion transition-colors duration-200"
               aria-label="Panier"
             >
               <ShoppingBag className="w-6 h-6" strokeWidth={1.5} />

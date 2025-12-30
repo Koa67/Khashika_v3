@@ -108,7 +108,7 @@ export default function LoginPage() {
             onClick={() => setActiveTab('login')}
             className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'login'
-                ? 'text-[#E8B71B] border-[#E8B71B]'
+                ? 'text-gold-fusion border-[#E8B71B]'
                 : ''
             }`}
           >
@@ -118,7 +118,7 @@ export default function LoginPage() {
             onClick={() => setActiveTab('register')}
             className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'register'
-                ? 'text-[#E8B71B] border-[#E8B71B]'
+                ? 'text-gold-fusion border-[#E8B71B]'
                 : ''
             }`}
           >

@@ -225,7 +225,7 @@ export default function PriceRangeSlider({
       {/* Indicateur visuel de la plage */}
       <div className="flex items-center justify-between text-xs text-gray-400">
         <span>{min}{currency}</span>
-        <span className="text-[#E8B71B] font-medium">
+        <span className="text-gold-fusion font-medium">
           {localMin}{currency} – {localMax}{currency}
         </span>
         <span>{max}{currency}</span>

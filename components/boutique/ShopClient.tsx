@@ -96,7 +96,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
             </motion.button>
 
             <span className="text-sm text-foreground/60">
-              <span className="font-semibold text-[#E8B71B]">{allFilteredCount}</span> trésors
+              <span className="font-semibold text-gold-fusion">{allFilteredCount}</span> trésors
             </span>
 
             <select

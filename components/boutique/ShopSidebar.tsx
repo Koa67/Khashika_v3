@@ -111,7 +111,7 @@ export default function ShopSidebar({
         </div>
 
         <p className="text-sm text-[#2D2420]/60 mb-6">
-          <span className="font-semibold text-[#E8B71B]">{filterCounts.total}</span> trésors trouvés
+          <span className="font-semibold text-gold-fusion">{filterCounts.total}</span> trésors trouvés
         </p>
 
         {/* Section Prix - Compacte */}
@@ -121,7 +121,7 @@ export default function ShopSidebar({
             className="flex items-center justify-between w-full py-3"
           >
             <h3 className="font-serif text-lg">Prix</h3>
-            <ChevronDown className={`w-4 h-4 text-[#E8B71B] transition-transform ${openSections.prix ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 text-gold-fusion transition-transform ${openSections.prix ? 'rotate-180' : ''}`} />
           </button>
           
           {openSections.prix && (
@@ -204,7 +204,7 @@ export default function ShopSidebar({
                     onChange={() => onToggleFilter('types', type.id)}
                     className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420] group-hover:text-[#E8B71B] transition-colors">
+                  <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
                     {type.label}
                   </span>
                   <span className="ml-auto text-xs text-[#2D2420]/40">
@@ -235,7 +235,7 @@ export default function ShopSidebar({
                     onChange={() => onToggleFilter('accessories', acc.id)}
                     className="w-4 h-4 accent-[#E8B71B] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420] group-hover:text-[#E8B71B] transition-colors">
+                  <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
                     {acc.label}
                   </span>
                   <span className="ml-auto text-xs text-[#2D2420]/40">
@@ -254,7 +254,7 @@ export default function ShopSidebar({
             className="flex items-center justify-between w-full py-3"
           >
             <h3 className="font-serif text-lg">Pierres</h3>
-            <ChevronDown className={`w-4 h-4 text-[#E8B71B] transition-transform ${openSections.pierres ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 text-gold-fusion transition-transform ${openSections.pierres ? 'rotate-180' : ''}`} />
           </button>
           
           {openSections.pierres && (
@@ -267,8 +267,8 @@ export default function ShopSidebar({
                     onClick={() => setStoneView(view as 'top' | 'couleurs')}
                     className={`flex-1 px-2 py-1.5 text-xs font-medium transition-colors rounded-none ${
                       stoneView === view 
-                        ? 'bg-[#FDF9F7] text-[#E8B71B] shadow-sm' 
-                        : 'text-[#2D2420]/60 hover:text-[#E8B71B]'
+                        ? 'bg-[#FDF9F7] text-gold-fusion shadow-sm' 
+                        : 'text-[#2D2420]/60 hover:text-gold-fusion'
                     }`}
                   >
                     {view === 'top' ? 'Populaires' : 'Par couleurs'}
@@ -291,7 +291,7 @@ export default function ShopSidebar({
                         className="w-4 h-4 border border-[#E8B71B]/30 rounded-none" 
                         style={{ backgroundColor: stone.color }} 
                       />
-                      <span className="text-sm text-[#2D2420] group-hover:text-[#E8B71B] transition-colors">
+                      <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
                         {stone.label}
                       </span>
                       <span className="ml-auto text-xs text-[#2D2420]/40">
@@ -302,7 +302,7 @@ export default function ShopSidebar({
                   {!showAllStones && FILTER_CONFIG.stones.length > 8 && (
                     <button 
                       onClick={() => setShowAllStones(true)}
-                      className="text-sm text-[#E8B71B] hover:underline mt-2"
+                      className="text-sm text-gold-fusion hover:underline mt-2"
                     >
                       + {FILTER_CONFIG.stones.length - 8} autres pierres
                     </button>

@@ -48,7 +48,7 @@ export default function ProductConversionModule({
 
         {/* Prix */}
         <div className="flex items-center gap-4">
-          <span className="font-serif text-4xl font-bold text-[#E8B71B]">
+          <span className="font-serif text-4xl font-bold text-gold-fusion">
             {displayPrice}
           </span>
           {product.isOnSale && (

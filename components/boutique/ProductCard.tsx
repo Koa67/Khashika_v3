@@ -123,7 +123,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           </h3>
           
           {/* Price in gold */}
-          <p className="text-[#E8B71B] text-xl font-bold mt-auto">
+          <p className="text-gold-fusion text-xl font-bold mt-auto">
             {displayPrice}
           </p>
         </div>

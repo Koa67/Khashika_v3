@@ -147,7 +147,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           group flex items-center gap-1.5 px-4 py-2
           text-sm font-medium tracking-wide uppercase
           transition-all duration-300 ease-out
-          ${isActive ? 'text-[#E8B71B]' : 'text-gray-800 hover:text-[#E8B71B]'}
+          ${isActive ? 'text-gold-fusion' : 'text-gray-800 hover:text-gold-fusion'}
         `}
       >
         <span className="relative">
@@ -198,7 +198,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                         href={item.href}
                         className="
                           block px-2 py-1 text-sm text-[#2D2420]
-                          hover:text-[#E8B71B] hover:translate-x-1
+                          hover:text-gold-fusion hover:translate-x-1
                           transition-all duration-200
                         "
                       >
@@ -220,8 +220,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                   className={`
                     inline-flex items-center gap-1.5 text-sm font-medium
                     ${feat.highlight 
-                      ? 'text-[#E8B71B] hover:text-[#A8871F]' 
-                      : 'text-[#2D2420]/60 hover:text-[#E8B71B]'
+                      ? 'text-gold-fusion hover:text-[#A8871F]' 
+                      : 'text-[#2D2420]/60 hover:text-gold-fusion'
                     }
                     transition-colors duration-200
                   `}
@@ -292,7 +292,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   w-full flex items-center justify-between
                   px-6 py-4 text-left
                   text-[#2D2420] font-medium
-                  hover:text-[#E8B71B] transition-all duration-200
+                  hover:text-gold-fusion transition-all duration-200
                 "
               >
                 <span>{menu.label}</span>
@@ -320,7 +320,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                               onClick={onClose}
                               className="
                                 block px-3 py-2 text-sm text-[#2D2420]
-                                hover:text-[#E8B71B] transition-all duration-200
+                                hover:text-gold-fusion transition-all duration-200
                               "
                             >
                               {item.label}
@@ -339,7 +339,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                           href={feat.href}
                           onClick={onClose}
                           className="
-                            block py-2 text-sm font-medium text-[#E8B71B]
+                            block py-2 text-sm font-medium text-gold-fusion
                             hover:text-[#A8871F] transition-colors
                           "
                         >

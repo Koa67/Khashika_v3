@@ -195,15 +195,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <div className="bg-[#FAF9F7] border-b border-[#E8B71B]/20">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <nav className="flex items-center gap-2 text-sm text-[#2D2420]/60">
-            <Link href={`/${locale}`} className="hover:text-[#E8B71B] transition-colors">Accueil</Link>
+            <Link href={`/${locale}`} className="hover:text-gold-fusion transition-colors">Accueil</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href={`/${locale}/shop`} className="hover:text-[#E8B71B] transition-colors">Boutique</Link>
+            <Link href={`/${locale}/shop`} className="hover:text-gold-fusion transition-colors">Boutique</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href={`/${locale}${categoryUrl}`} className="hover:text-[#E8B71B] transition-colors">{breadcrumbInfo.label}</Link>
+            <Link href={`/${locale}${categoryUrl}`} className="hover:text-gold-fusion transition-colors">{breadcrumbInfo.label}</Link>
             {stone && (
               <>
                 <ChevronRight className="w-3 h-3" />
-                <Link href={`/${locale}/pierres`} className="hover:text-[#E8B71B] transition-colors">{stone}</Link>
+                <Link href={`/${locale}/pierres`} className="hover:text-gold-fusion transition-colors">{stone}</Link>
               </>
             )}
             <ChevronRight className="w-3 h-3" />
@@ -251,7 +251,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <h1 className="font-serif text-2xl md:text-3xl text-[#2D2420] leading-tight">
                 {product.title || product.name}
               </h1>
-              <p className="text-3xl font-bold text-[#E8B71B] mt-2">
+              <p className="text-3xl font-bold text-gold-fusion mt-2">
                 {displayPrice} €
               </p>
             </div>
@@ -281,15 +281,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* Réassurance compacte */}
             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#E8B71B]/20">
               <div className="flex flex-col items-center text-center gap-1">
-                <Truck className="w-5 h-5 text-[#E8B71B]" />
+                <Truck className="w-5 h-5 text-gold-fusion" />
                 <span className="text-[10px] text-[#2D2420]/60">Livraison offerte dès 50 €</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
-                <RotateCcw className="w-5 h-5 text-[#E8B71B]" />
+                <RotateCcw className="w-5 h-5 text-gold-fusion" />
                 <span className="text-[10px] text-[#2D2420]/60">Retours gratuits 30j</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
-                <Shield className="w-5 h-5 text-[#E8B71B]" />
+                <Shield className="w-5 h-5 text-gold-fusion" />
                 <span className="text-[10px] text-[#2D2420]/60">Paiement sécurisé</span>
               </div>
             </div>
