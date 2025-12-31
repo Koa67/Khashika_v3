@@ -68,7 +68,7 @@ export default function Navbar() {
   const handleSignOut = async () => {
     await signOut();
     setShowUserMenu(false);
-    router.push(`/${locale}`);
+    router.push('/');
   };
 
   const handleQuickLogin = async (e: React.FormEvent) => {
@@ -379,21 +379,21 @@ export default function Navbar() {
                       <div className="absolute right-0 top-full mt-2 w-56 bg-[#FDFCFB] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] z-50 overflow-hidden">
                         <div className="p-2">
                           <Link
-                            href={`/${locale}/account`}
+                            href="/account"
                             className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mon compte
                           </Link>
                           <Link
-                            href={`/${locale}/account?section=orders`}
+                            href="/account?section=orders"
                             className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes commandes
                           </Link>
                           <Link
-                            href={`/${locale}/account?section=wishlist`}
+                            href="/account?section=wishlist"
                             className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
@@ -413,7 +413,7 @@ export default function Navbar() {
                   </div>
                 ) : (
                   <Link
-                    href={`/${locale}/login`}
+                    href="/login"
                     className="p-2 hover:text-gold-fusion transition-colors duration-200"
                     aria-label="Connexion"
                   >
