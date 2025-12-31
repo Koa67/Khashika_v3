@@ -150,7 +150,7 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen bg-white pt-24 pb-12 flex items-center justify-center">
         <div className="text-center">
-          <p className="font-serif text-2xl text-[#2D2420] mb-4">
+          <p className="font-serif text-2xl text-[#2D2926] mb-4">
             Votre panier est vide
           </p>
           <button
@@ -167,29 +167,29 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-white pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="font-serif text-3xl font-bold text-[#2D2420] mb-6">Paiement</h1>
+        <h1 className="font-serif text-3xl font-bold text-[#2D2926] mb-6">Paiement</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-6">
           {/* Formulaire (gauche) */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Contact */}
             <div>
-              <label className="block text-sm font-medium text-[#2D2420] mb-1">Email *</label>
+              <label className="block text-sm font-medium text-[#2D2926] mb-1">Email *</label>
               <input
                 type="email"
                 {...register('email')}
-                className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                   errors.email ? 'border-red-500' : 'focus:border-[#EAB615]'
                 } focus:outline-none`}
               />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#2D2420] mb-1">Téléphone *</label>
+              <label className="block text-sm font-medium text-[#2D2926] mb-1">Téléphone *</label>
               <input
                 type="tel"
                 {...register('phone')}
-                className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                   errors.phone ? 'border-red-500' : 'focus:border-[#EAB615]'
                 } focus:outline-none`}
               />
@@ -199,22 +199,22 @@ export default function CheckoutPage() {
             {/* Adresse - 2 colonnes */}
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-medium text-[#2D2420] mb-1">Prénom *</label>
+                <label className="block text-sm font-medium text-[#2D2926] mb-1">Prénom *</label>
                 <input
                   type="text"
                   {...register('firstName')}
-                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                     errors.firstName ? 'border-red-500' : 'border-[#EAB615]/40 focus:border-[#EAB615]'
                   } focus:outline-none`}
                 />
                 {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#2D2420] mb-1">Nom *</label>
+                <label className="block text-sm font-medium text-[#2D2926] mb-1">Nom *</label>
                 <input
                   type="text"
                   {...register('lastName')}
-                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                     errors.lastName ? 'border-red-500' : 'border-[#EAB615]/40 focus:border-[#EAB615]'
                   } focus:outline-none`}
                 />
@@ -222,7 +222,7 @@ export default function CheckoutPage() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#2D2420] mb-1">Adresse *</label>
+              <label className="block text-sm font-medium text-[#2D2926] mb-1">Adresse *</label>
               <input
                 type="text"
                 {...register('address')}
@@ -234,23 +234,23 @@ export default function CheckoutPage() {
             </div>
             <div className="grid grid-cols-3 gap-3">
               <div>
-                <label className="block text-sm font-medium text-[#2D2420] mb-1">Code postal *</label>
+                <label className="block text-sm font-medium text-[#2D2926] mb-1">Code postal *</label>
                 <input
                   type="text"
                   {...register('zipCode')}
                   maxLength={5}
-                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                     errors.zipCode ? 'border-red-500' : 'border-[#EAB615]/40 focus:border-[#EAB615]'
                   } focus:outline-none`}
                 />
                 {errors.zipCode && <p className="text-red-500 text-xs mt-1">{errors.zipCode.message}</p>}
               </div>
               <div className="col-span-2">
-                <label className="block text-sm font-medium text-[#2D2420] mb-1">Ville *</label>
+                <label className="block text-sm font-medium text-[#2D2926] mb-1">Ville *</label>
                 <input
                   type="text"
                   {...register('city')}
-                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                     errors.city ? 'border-red-500' : 'border-[#EAB615]/40 focus:border-[#EAB615]'
                   } focus:outline-none`}
                 />
@@ -260,7 +260,7 @@ export default function CheckoutPage() {
             
             {/* Paiement */}
             <div className="border-t border-[#EAB615]/40 pt-4 mt-4">
-              <label className="block text-sm font-medium text-[#2D2420] mb-1">Carte bancaire</label>
+              <label className="block text-sm font-medium text-[#2D2926] mb-1">Carte bancaire</label>
               <input
                 type="text"
                 placeholder="4242 4242 4242 4242"
@@ -287,7 +287,7 @@ export default function CheckoutPage() {
                       setValue('cardExpiry', formatted);
                     },
                   })}
-                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                     errors.cardExpiry ? 'border-red-500' : 'border-[#EAB615]/40 focus:border-[#EAB615]'
                   } focus:outline-none`}
                 />
@@ -301,7 +301,7 @@ export default function CheckoutPage() {
                       setValue('cardCVC', v);
                     },
                   })}
-                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] ${
+                  className={`w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] ${
                     errors.cardCVC ? 'border-red-500' : 'border-[#EAB615]/40 focus:border-[#EAB615]'
                   } focus:outline-none`}
                 />
@@ -323,7 +323,7 @@ export default function CheckoutPage() {
                     }}
                     className="w-4 h-4 accent-[#8B4E4E] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420]">Créer un compte</span>
+                  <span className="text-sm text-[#2D2926]">Créer un compte</span>
                 </label>
                 {createAccount && (
                   <div className="mt-2">
@@ -331,7 +331,7 @@ export default function CheckoutPage() {
                       type="password"
                       placeholder="Mot de passe *"
                       {...register('password')}
-                      className="w-full px-3 py-2 bg-white border border-[#EAB615]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#EAB615]"
+                      className="w-full px-3 py-2 bg-white border border-[#EAB615]/40 rounded-none text-sm text-[#2D2926] focus:outline-none focus:border-[#EAB615]"
                     />
                   </div>
                 )}
@@ -342,7 +342,7 @@ export default function CheckoutPage() {
           {/* Récapitulatif (droite) */}
           <div className="lg:sticky lg:top-24 h-fit">
             <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-6 sticky top-24">
-              <h2 className="font-serif text-xl text-[#2D2420] mb-4 pb-2 border-b border-[#EAB615]/20">Récapitulatif</h2>
+              <h2 className="font-serif text-xl text-[#2D2926] mb-4 pb-2 border-b border-[#EAB615]/20">Récapitulatif</h2>
               
               {/* Liste produits */}
               <div className="space-y-3 max-h-48 overflow-y-auto mb-4">
@@ -359,7 +359,7 @@ export default function CheckoutPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="truncate font-medium">{item.product.name}</p>
-                      <p className="text-[#2D2420]/60">x{item.quantity}</p>
+                      <p className="text-[#2D2926]/60">x{item.quantity}</p>
                     </div>
                     <p className="font-medium">{(item.product.price * item.quantity).toFixed(2)}€</p>
                   </div>
@@ -369,15 +369,15 @@ export default function CheckoutPage() {
               {/* Totaux */}
               <div className="border-t border-[#EAB615]/20 pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#2D2420]/60">Sous-total</span>
-                  <span className="text-[#2D2420]">{subtotal.toFixed(2)}€</span>
+                  <span className="text-[#2D2926]/60">Sous-total</span>
+                  <span className="text-[#2D2926]">{subtotal.toFixed(2)}€</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#2D2420]/60">Livraison</span>
-                  <span className="text-[#2D2420]">{shipping === 0 ? 'Gratuite' : `${shipping.toFixed(2)}€`}</span>
+                  <span className="text-[#2D2926]/60">Livraison</span>
+                  <span className="text-[#2D2926]">{shipping === 0 ? 'Gratuite' : `${shipping.toFixed(2)}€`}</span>
                 </div>
                 <div className="flex justify-between text-lg font-bold pt-2 border-t border-[#EAB615]/20">
-                  <span className="text-[#2D2420]">Total</span>
+                  <span className="text-[#2D2926]">Total</span>
                   <span className="text-gold-fusion">{finalTotal.toFixed(2)}€</span>
                 </div>
               </div>

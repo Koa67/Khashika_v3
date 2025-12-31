@@ -104,7 +104,7 @@ export const FILTER_CONFIG = {
   ],
   
   colors: [
-    { id: 'or', label: 'Doré', hex: '#E8B71B' },
+    { id: 'or', label: 'Doré', hex: '#EAB615' },
     { id: 'argent', label: 'Argenté', hex: '#C0C0C0' },
     { id: 'bleu', label: 'Bleu', hex: '#2596BE' },
     { id: 'rouge', label: 'Rouge', hex: '#C41E3A' },

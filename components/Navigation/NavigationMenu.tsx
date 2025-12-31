@@ -42,7 +42,6 @@ const menuData: DropdownMenu[] = [
           { label: 'Bracelets', href: '/bijoux/bracelets' },
           { label: 'Chaînes', href: '/bijoux/chaines' },
           { label: 'Chevilles', href: '/bijoux/chevilles' },
-          { label: 'Parures', href: '/bijoux/parures' },
         ],
       },
       {
@@ -111,6 +110,7 @@ const menuData: DropdownMenu[] = [
         items: [
           { label: 'Notre univers', href: '/univers' },
           { label: 'Guide des pierres', href: '/guide-pierres' },
+          { label: 'Notre histoire', href: '/notre-histoire' },
           { label: 'Entretien bijoux', href: '/entretien' },
         ],
       },
@@ -185,7 +185,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 {section.title && (
                   <h3 className="
                     text-xs font-semibold uppercase tracking-wider
-                    text-[#2D2420]/60 mb-1.5 pb-1
+                    text-[#2D2926]/60 mb-1.5 pb-1
                     border-b border-[#EAB615]/20
                   ">
                     {section.title}
@@ -197,7 +197,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                       <Link
                         href={item.href}
                         className="
-                          block px-2 py-1 text-sm text-[#2D2420]
+                          block px-2 py-1 text-sm text-[#2D2926]
                           hover:text-gold-fusion hover:translate-x-1
                           transition-all duration-200
                         "
@@ -221,7 +221,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     inline-flex items-center gap-1.5 text-sm font-medium
                     ${feat.highlight 
                       ? 'text-gold-fusion hover:text-[#A8871F]' 
-                      : 'text-[#2D2420]/60 hover:text-gold-fusion'
+                      : 'text-[#2D2926]/60 hover:text-gold-fusion'
                     }
                     transition-colors duration-200
                   `}
@@ -271,7 +271,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         `}
       >
         <div className="flex items-center justify-between p-4 border-b border-[#EAB615]/20">
-          <span className="text-lg font-serif text-[#2D2420]">Menu</span>
+          <span className="text-lg font-serif text-[#2D2926]">Menu</span>
           <button
             onClick={onClose}
             className="p-2 hover:bg-[#FDF9F7] rounded-full transition-colors"
@@ -291,7 +291,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 className="
                   w-full flex items-center justify-between
                   px-6 py-4 text-left
-                  text-[#2D2420] font-medium
+                  text-[#2D2926] font-medium
                   hover:text-gold-fusion transition-all duration-200
                 "
               >
@@ -308,7 +308,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   {menu.sections.map((section, sectionIndex) => (
                     <div key={sectionIndex} className="mb-4">
                       {section.title && (
-                        <h4 className="text-xs uppercase tracking-wider text-[#2D2420]/60 mb-2 mt-3">
+                        <h4 className="text-xs uppercase tracking-wider text-[#2D2926]/60 mb-2 mt-3">
                           {section.title}
                         </h4>
                       )}
@@ -319,7 +319,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                               href={item.href}
                               onClick={onClose}
                               className="
-                                block px-3 py-2 text-sm text-[#2D2420]
+                                block px-3 py-2 text-sm text-[#2D2926]
                                 hover:text-gold-fusion transition-all duration-200
                               "
                             >

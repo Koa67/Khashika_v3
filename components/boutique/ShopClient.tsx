@@ -102,7 +102,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
             <select
               value={filters.sort}
               onChange={(e) => handleSort(e.target.value as SortOption)}
-              className="px-4 py-2 bg-white border border-[#EAB615]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#EAB615] focus:ring-2 focus:ring-[#EAB615]/20 cursor-pointer"
+              className="px-4 py-2 bg-white border border-[#EAB615]/40 rounded-none text-sm text-[#2D2926] focus:outline-none focus:border-[#EAB615] focus:ring-2 focus:ring-[#EAB615]/20 cursor-pointer"
             >
               {SORT_OPTIONS.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -131,11 +131,11 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
               {/* 1. TITRE - En premier */}
               {pageTitle && (
                 <div className="mb-6 text-center">
-                  <h1 className="font-serif text-3xl md:text-4xl text-[#2D2420]">
+                  <h1 className="font-serif text-3xl md:text-4xl text-[#2D2926]">
                     {pageTitle}
                   </h1>
                   {pageSubtitle && (
-                    <p className="text-[#2D2420]/60 mt-2 max-w-2xl mx-auto">
+                    <p className="text-[#2D2926]/60 mt-2 max-w-2xl mx-auto">
                       {pageSubtitle}
                     </p>
                   )}
@@ -169,7 +169,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
                 <select 
                   value={filters.sort}
                   onChange={(e) => handleSort(e.target.value as SortOption)}
-                  className="px-4 py-2 bg-white border border-[#EAB615]/40 rounded-none text-sm text-[#2D2420] focus:outline-none focus:border-[#EAB615] focus:ring-2 focus:ring-[#EAB615]/20 cursor-pointer"
+                  className="px-4 py-2 bg-white border border-[#EAB615]/40 rounded-none text-sm text-[#2D2926] focus:outline-none focus:border-[#EAB615] focus:ring-2 focus:ring-[#EAB615]/20 cursor-pointer"
                 >
                   {SORT_OPTIONS.map(opt => (
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -198,7 +198,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
                   {/* Message si aucun résultat de recherche */}
                   {searchQuery ? (
                     <div className="text-center py-12">
-                      <p className="text-[#2D2420]/60 mb-4">
+                      <p className="text-[#2D2926]/60 mb-4">
                         Aucun produit ne correspond à votre recherche &quot;{searchQuery}&quot;
                       </p>
                       <Link 

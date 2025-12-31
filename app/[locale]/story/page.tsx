@@ -12,7 +12,7 @@ export default function StoryPage() {
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-serif text-5xl text-[#2D2420] mb-6">
+          <h1 className="font-serif text-5xl text-[#2D2926] mb-6">
             L&apos;Esprit Khashika
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -24,7 +24,7 @@ export default function StoryPage() {
         <article className="prose prose-lg max-w-none font-serif">
           {/* Section 1 */}
           <section className="mb-16">
-            <h2 className="font-serif text-3xl text-[#2D2420] mb-6">
+            <h2 className="font-serif text-3xl text-[#2D2926] mb-6">
               Notre Héritage
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -43,7 +43,7 @@ export default function StoryPage() {
 
           {/* Section 2 */}
           <section className="mb-16">
-            <h2 className="font-serif text-3xl text-[#2D2420] mb-6">
+            <h2 className="font-serif text-3xl text-[#2D2926] mb-6">
               L&apos;Art du Kundan
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -61,7 +61,7 @@ export default function StoryPage() {
 
           {/* Section 3 */}
           <section className="mb-16">
-            <h2 className="font-serif text-3xl text-[#2D2420] mb-6">
+            <h2 className="font-serif text-3xl text-[#2D2926] mb-6">
               Le Meenakari : L&apos;Art de l&apos;Émail
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -79,7 +79,7 @@ export default function StoryPage() {
 
           {/* Section 4 */}
           <section className="mb-16">
-            <h2 className="font-serif text-3xl text-[#2D2420] mb-6">
+            <h2 className="font-serif text-3xl text-[#2D2926] mb-6">
               Notre Engagement
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -97,10 +97,10 @@ export default function StoryPage() {
 
           {/* Call to action */}
           <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 text-center">
-            <h3 className="font-serif text-2xl text-[#2D2420] mb-4">
+            <h3 className="font-serif text-2xl text-[#2D2926] mb-4">
               Découvrez Nos Créations
             </h3>
-            <p className="text-[#2D2420]/70 mb-6">
+            <p className="text-[#2D2926]/70 mb-6">
               Explorez notre collection de bijoux artisanaux, chacun porteur d&apos;une histoire unique.
             </p>
             <Link

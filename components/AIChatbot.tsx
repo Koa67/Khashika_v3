@@ -194,7 +194,7 @@ const renderMessageWithLinks = (text: string) => {
   // Liens produits /fr/product/...
   let result = text.replace(
     /\/fr\/product\/([a-z0-9-]+)/g, 
-    '<a href="/fr/product/$1" class="text-[#2BA19D] underline hover:text-[#238F8B]" target="_blank">Voir le produit</a>'
+    '<a href="/product/$1" class="text-[#2BA19D] underline hover:text-[#238F8B]" target="_blank">Voir le produit</a>'
   );
   
   // Regex pour email
@@ -235,8 +235,9 @@ export default function AIChatbot() {
   const [isTyping, setIsTyping] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
-  // Charger les produits au mount
+  // Charger les produits seulement quand le chat s'ouvre
   useEffect(() => {
+    if (!isOpen) return;
     const loadProducts = async () => {
       try {
         const response = await fetch('/api/products');
@@ -251,17 +252,19 @@ export default function AIChatbot() {
       }
     };
     loadProducts();
-  }, []);
+  }, [isOpen]);
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
+    if (!isOpen) return;
     if (messages.length > 0) {
       saveMessagesToStorage(messages);
     }
-  }, [messages]);
+  }, [messages, isOpen]);
 
   // Scroll à l'ouverture du chat
   useEffect(() => {
+    if (!isOpen) return;
     if (isOpen && messagesContainerRef.current) {
       setTimeout(() => {
         messagesContainerRef.current!.scrollTop = messagesContainerRef.current!.scrollHeight;
@@ -271,6 +274,7 @@ export default function AIChatbot() {
 
   // Auto-scroll to bottom on new messages
   useEffect(() => {
+    if (!isOpen) return;
     if (messagesContainerRef.current) {
       setTimeout(() => {
         messagesContainerRef.current!.scrollTop = messagesContainerRef.current!.scrollHeight;
@@ -596,7 +600,7 @@ export default function AIChatbot() {
                   className={`px-4 py-3 rounded-none max-w-xs ${
                     msg.sender === 'user' 
                       ? 'bg-[#2BA19D] text-white ml-8' 
-                      : 'bg-gray-100 text-[#2D2420] border-l-4 border-[#2BA19D] mr-8'
+                      : 'bg-gray-100 text-[#2D2926] border-l-4 border-[#2BA19D] mr-8'
                   }`}
                 >
                   <p className="font-body text-sm whitespace-pre-line">
@@ -612,7 +616,7 @@ export default function AIChatbot() {
             {/* Typing indicator with animated dots */}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-gray-100 text-[#2D2420] border-l-4 border-[#2BA19D] rounded-none px-4 py-2 mr-8">
+                <div className="bg-gray-100 text-[#2D2926] border-l-4 border-[#2BA19D] rounded-none px-4 py-2 mr-8">
                   <div className="flex space-x-1 items-center">
                     <span className="w-2 h-2 bg-[#2BA19D] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
                     <span className="w-2 h-2 bg-[#2BA19D] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
@@ -666,7 +670,7 @@ export default function AIChatbot() {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Posez votre question..."
-              className="flex-1 px-3 py-2 bg-gray-50 border border-gray-300 rounded-none text-[#2D2420] focus:border-[#2BA19D] focus:outline-none focus:ring-2 focus:ring-[#2BA19D]/20"
+              className="flex-1 px-3 py-2 bg-gray-50 border border-gray-300 rounded-none text-[#2D2926] focus:border-[#2BA19D] focus:outline-none focus:ring-2 focus:ring-[#2BA19D]/20"
               aria-label="Message à envoyer"
               disabled={isTyping}
             />

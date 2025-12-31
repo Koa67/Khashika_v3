@@ -44,51 +44,71 @@ export const INITIAL_FILTERS: FilterState = {
 };
 
 // Configuration des filtres disponibles
+// IDs DOIVENT correspondre EXACTEMENT aux valeurs dans products-ultimate.json
 export const FILTER_CONFIG = {
+  // Types de bijoux (match exact avec le champ "type" du JSON)
   types: [
     { id: 'bague', label: 'Bagues', searchTerms: ['bague', 'ring', 'anneau'] },
-    { id: 'boucles-oreilles', label: "Boucles d'oreilles", searchTerms: ['boucle', 'oreille', 'earring', 'créole', 'puce'] },
-    { id: 'collier', label: 'Colliers', searchTerms: ['collier', 'necklace', 'sautoir', 'ras du cou', 'chaîne cou'] },
+    { id: "boucles d'oreilles", label: "Boucles d'oreilles", searchTerms: ['boucle', 'oreille', 'earring', 'créole', 'puce'] },
+    { id: 'collier', label: 'Colliers', searchTerms: ['collier', 'necklace', 'sautoir', 'ras du cou'] },
     { id: 'pendentif', label: 'Pendentifs', searchTerms: ['pendentif', 'pendant', 'médaillon'] },
     { id: 'bracelet', label: 'Bracelets', searchTerms: ['bracelet', 'jonc', 'manchette', 'chaînette'] },
-    { id: 'chaine', label: 'Chaînes', searchTerms: ['chaîne', 'chain', 'maille'] },
+    { id: 'chaîne', label: 'Chaînes', searchTerms: ['chaîne', 'chain', 'maille'] },
     { id: 'cheville', label: 'Chevilles', searchTerms: ['cheville', 'anklet', 'chaîne cheville'] },
-    { id: 'parure', label: 'Parures', searchTerms: ['parure', 'set', 'ensemble'] },
   ],
   
+  // Accessoires (match exact avec le champ "type" du JSON)
   accessories: [
     { id: 'pashmina', label: 'Pashminas', searchTerms: ['pashmina', 'châle', 'étole'] },
-    { id: 'foulard', label: 'Foulards', searchTerms: ['foulard', 'scarf', 'écharpe'] },
-    { id: 'pochette', label: 'Pochettes', searchTerms: ['pochette', 'pouch', 'sacoche'] },
-    { id: 'sac', label: 'Sacs', searchTerms: ['sac', 'bag', 'cabas'] },
-    { id: 'soie', label: 'Soie', searchTerms: ['soie', 'silk'] },
-    { id: 'porte-cles', label: 'Porte-clés', searchTerms: ['porte-clé', 'porte-cles', 'keychain', 'clé'] },
-    { id: 'chouchou', label: 'Chouchous', searchTerms: ['chouchou', 'scrunchie', 'élastique cheveux'] },
-    { id: 'bandana', label: 'Bandanas', searchTerms: ['bandana', 'foulard tête'] },
-    { id: 'marque-page', label: 'Marque-pages', searchTerms: ['marque-page', 'bookmark', 'signet'] },
-    { id: 'carnet', label: 'Carnets', searchTerms: ['carnet', 'notebook', 'cahier'] },
+    { id: 'foulard', label: 'Foulards', searchTerms: ['foulard', 'scarf', 'écharpe', 'étole'] },
+    { id: 'sac', label: 'Sacs', searchTerms: ['sac', 'bag', 'cabas', 'pochette'] },
+    { id: 'accessoire', label: 'Accessoires', searchTerms: ['accessoire', 'porte-clé', 'marque-page'] },
+    { id: 'accessoire cheveux', label: 'Accessoires cheveux', searchTerms: ['chouchou', 'bandana', 'cheveux'] },
   ],
   
   materials: [
-    { id: 'argent-925', label: 'Argent 925', icon: '🥈' },
+    { id: 'argent', label: 'Argent', icon: '🥈' },
     { id: 'or', label: 'Or', icon: '🥇' },
-    { id: 'plaque-or', label: 'Plaqué Or', icon: '✨' },
+    { id: 'plaqué or', label: 'Plaqué Or', icon: '✨' },
     { id: 'laiton', label: 'Laiton', icon: '🔶' },
-    { id: 'metal', label: 'Métal', icon: '⚙️' },
-    { id: 'vermeil', label: 'Vermeil', icon: '💫' },
+    { id: 'métal', label: 'Métal', icon: '⚙️' },
+    { id: 'coton', label: 'Coton', icon: '🧵' },
+    { id: 'soie', label: 'Soie', icon: '✨' },
+    { id: 'cuir', label: 'Cuir', icon: '🟤' },
   ],
   
+  // Pierres (IDs EXACTS du champ "stones" dans le JSON)
   stones: [
+    // Top pierres (par fréquence)
     { id: 'turquoise', label: 'Turquoise', color: '#40E0D0' },
     { id: 'lapis-lazuli', label: 'Lapis Lazuli', color: '#26619C' },
+    { id: 'agate', label: 'Agate', color: '#B5651D' },
+    { id: 'onyx noir', label: 'Onyx Noir', color: '#353839' },
+    { id: 'onyx vert', label: 'Onyx Vert', color: '#355E3B' },
+    { id: 'onyx bleu', label: 'Onyx Bleu', color: '#4169E1' },
+    { id: 'onyx rouge', label: 'Onyx Rouge', color: '#8B0000' },
+    { id: 'pierre de lune', label: 'Pierre de Lune', color: '#E8E4D9' },
     { id: 'corail', label: 'Corail', color: '#FF6B6B' },
-    { id: 'onyx', label: 'Onyx', color: '#353839' },
-    { id: 'jade', label: 'Jade', color: '#00A86B' },
-    { id: 'amethyste', label: 'Améthyste', color: '#9966CC' },
-    { id: 'grenat', label: 'Grenat', color: '#7B1113' },
+    { id: 'améthyste', label: 'Améthyste', color: '#9966CC' },
+    { id: 'quartz', label: 'Quartz', color: '#F5F5F5' },
+    // Pierres moyennes
     { id: 'perle', label: 'Perle', color: '#FDEEF4' },
-    { id: 'moonstone', label: 'Pierre de Lune', color: '#E8E4D9' },
+    { id: 'jade', label: 'Jade', color: '#00A86B' },
+    { id: 'grenat', label: 'Grenat', color: '#7B1113' },
+    { id: 'calcédoine', label: 'Calcédoine', color: '#9FC5E8' },
+    { id: 'jaspe', label: 'Jaspe', color: '#D2691E' },
+    { id: 'topaze', label: 'Topaze', color: '#FFC87C' },
     { id: 'labradorite', label: 'Labradorite', color: '#6699CC' },
+    // Pierres moins fréquentes
+    { id: 'obsidienne', label: 'Obsidienne', color: '#1C1C1C' },
+    { id: 'howlite', label: 'Howlite', color: '#F5F5F5' },
+    { id: 'citrine', label: 'Citrine', color: '#E4D00A' },
+    { id: 'amazonite', label: 'Amazonite', color: '#00C4B0' },
+    { id: 'malachite', label: 'Malachite', color: '#0BDA51' },
+    { id: 'aventurine', label: 'Aventurine', color: '#568203' },
+    { id: 'cristal', label: 'Cristal', color: '#E0E0E0' },
+    { id: 'tourmaline', label: 'Tourmaline', color: '#86608E' },
+    { id: 'rhodonite', label: 'Rhodonite', color: '#E75480' },
   ],
   
   styles: [
@@ -106,7 +126,7 @@ export const FILTER_CONFIG = {
   ],
   
   colors: [
-    { id: 'or', label: 'Doré', hex: '#E8B71B' },
+    { id: 'or', label: 'Doré', hex: '#EAB615' },
     { id: 'argent', label: 'Argenté', hex: '#C0C0C0' },
     { id: 'bleu', label: 'Bleu', hex: '#2596BE' },
     { id: 'rouge', label: 'Rouge', hex: '#C41E3A' },
@@ -121,7 +141,3 @@ export const FILTER_CONFIG = {
     { id: 'tibet', label: 'Tibet', flag: '🏔️' },
   ],
 };
-
-
-
-

@@ -8,7 +8,7 @@ interface ProductGridProps {
 export default function ProductGrid({ products }: ProductGridProps) {
   if (!products || products.length === 0) {
     return (
-      <p className="text-center text-[#2D2420]/60 font-serif text-lg">
+      <p className="text-center text-[#2D2926]/60 font-serif text-lg">
         Aucun produit disponible pour le moment.
       </p>
     );

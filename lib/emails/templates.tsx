@@ -232,7 +232,7 @@ const h1 = {
 };
 
 const h2 = {
-  color: '#2D2420',
+  color: '#2D2926',
   fontSize: '20px',
   fontWeight: 'bold',
   margin: '20px 0 10px 0',
@@ -244,7 +244,7 @@ const content = {
 };
 
 const text = {
-  color: '#2D2420',
+  color: '#2D2926',
   fontSize: '16px',
   lineHeight: '24px',
   margin: '0 0 16px 0',
@@ -288,7 +288,7 @@ const itemRow = {
 };
 
 const itemName = {
-  color: '#2D2420',
+  color: '#2D2926',
   fontSize: '16px',
   fontWeight: 'bold',
   margin: '0 0 5px 0',

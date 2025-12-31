@@ -30,7 +30,7 @@ export default function AccountPage() {
 
   if (loading) return (
     <div className="min-h-screen bg-white mt-16 pt-8 pb-12 flex items-center justify-center">
-      <div className="text-[#2D2420]">Chargement...</div>
+      <div className="text-[#2D2926]">Chargement...</div>
     </div>
   );
   
@@ -39,14 +39,14 @@ export default function AccountPage() {
   return (
     <div className="min-h-screen bg-white mt-16 pt-8 pb-12">
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className="font-serif text-3xl font-bold text-[#2D2420] mb-8">Mon compte</h1>
+        <h1 className="font-serif text-3xl font-bold text-[#2D2926] mb-8">Mon compte</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-8">
           {/* Sidebar navigation */}
           <nav className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)] p-4 space-y-1">
             <button 
               onClick={() => setActiveSection('profile')} 
-              className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2420] hover:bg-white rounded-none transition-colors ${
+              className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2926] hover:bg-white rounded-none transition-colors ${
                 activeSection === 'profile' 
                   ? 'bg-white border-l-4 border-[#EAB615]' 
                   : ''
@@ -57,7 +57,7 @@ export default function AccountPage() {
             </button>
             <button 
               onClick={() => setActiveSection('orders')}
-              className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2420] hover:bg-white rounded-none transition-colors ${
+              className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2926] hover:bg-white rounded-none transition-colors ${
                 activeSection === 'orders' 
                   ? 'bg-white border-l-4 border-[#EAB615]' 
                   : ''
@@ -68,7 +68,7 @@ export default function AccountPage() {
             </button>
             <button 
               onClick={() => setActiveSection('wishlist')}
-              className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2420] hover:bg-white rounded-none transition-colors ${
+              className={`w-full flex items-center gap-3 px-4 py-3 text-left text-[#2D2926] hover:bg-white rounded-none transition-colors ${
                 activeSection === 'wishlist' 
                   ? 'bg-white border-l-4 border-[#EAB615]' 
                   : ''
@@ -98,12 +98,12 @@ export default function AccountPage() {
                 <h2 className="font-serif text-xl font-bold mb-6">Informations personnelles</h2>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm text-[#2D2420]/60 mb-1">Email</label>
-                    <p className="text-[#2D2420]">{user.email}</p>
+                    <label className="block text-sm text-[#2D2926]/60 mb-1">Email</label>
+                    <p className="text-[#2D2926]">{user.email}</p>
                   </div>
                   <div>
-                    <label className="block text-sm text-[#2D2420]/60 mb-1">Membre depuis</label>
-                    <p className="text-[#2D2420]">
+                    <label className="block text-sm text-[#2D2926]/60 mb-1">Membre depuis</label>
+                    <p className="text-[#2D2926]">
                       {new Date(user.created_at || Date.now()).toLocaleDateString('fr-FR', { 
                         year: 'numeric', month: 'long', day: 'numeric' 
                       })}
@@ -116,8 +116,8 @@ export default function AccountPage() {
             {activeSection === 'orders' && (
               <div>
                 <h2 className="font-serif text-xl font-bold mb-6">Mes commandes</h2>
-                <p className="text-[#2D2420]/60">Aucune commande pour le moment.</p>
-                <Link href="/fr/shop" className="inline-block mt-4 text-[#8B4E4E] hover:underline">
+                <p className="text-[#2D2926]/60">Aucune commande pour le moment.</p>
+                <Link href="/shop" className="inline-block mt-4 text-[#8B4E4E] hover:underline">
                   Découvrir nos collections →
                 </Link>
               </div>
@@ -128,8 +128,8 @@ export default function AccountPage() {
                 <h2 className="font-serif text-xl font-bold mb-6">Mes favoris ({wishlistItems.length})</h2>
                 {wishlistItems.length === 0 ? (
                   <div>
-                    <p className="text-[#2D2420]/60">Aucun favori pour le moment.</p>
-                    <Link href="/fr/shop" className="inline-block mt-4 text-[#8B4E4E] hover:underline">
+                    <p className="text-[#2D2926]/60">Aucun favori pour le moment.</p>
+                    <Link href="/shop" className="inline-block mt-4 text-[#8B4E4E] hover:underline">
                       Découvrir nos collections →
                     </Link>
                   </div>

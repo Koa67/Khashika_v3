@@ -84,7 +84,7 @@ function CheckoutSuccessContent() {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-none mb-6">
             <CheckCircle className="w-12 h-12 text-green-600" />
           </div>
-          <h1 className="font-serif text-4xl text-[#2D2420] mb-4">
+          <h1 className="font-serif text-4xl text-[#2D2926] mb-4">
             Commande confirmée !
           </h1>
           {orderNumber && (
@@ -92,14 +92,14 @@ function CheckoutSuccessContent() {
               Numéro de commande: {orderNumber}
             </p>
           )}
-          <p className="text-lg text-[#2D2420]/70">
+          <p className="text-lg text-[#2D2926]/70">
             Merci pour votre achat. Votre commande a été traitée avec succès.
           </p>
         </div>
 
         {/* Récapitulatif */}
           <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-8 mb-8">
-          <h2 className="font-serif text-2xl text-[#2D2420] mb-6 flex items-center gap-2">
+          <h2 className="font-serif text-2xl text-[#2D2926] mb-6 flex items-center gap-2">
             <Package className="w-6 h-6 text-[#8B4E4E]" />
             Récapitulatif de votre commande
           </h2>
@@ -114,8 +114,8 @@ function CheckoutSuccessContent() {
                   return (
                     <div key={item.id} className="flex justify-between items-center py-3 border-b border-[#EAB615]/40">
                       <div className="flex-1">
-                        <p className="font-medium text-[#2D2420]">{item.product.name}</p>
-                        <p className="text-sm text-[#2D2420]/60">Quantité : {item.quantity}</p>
+                        <p className="font-medium text-[#2D2926]">{item.product.name}</p>
+                        <p className="text-sm text-[#2D2926]/60">Quantité : {item.quantity}</p>
                       </div>
                       <p className="text-gold-fusion font-semibold">
                         {(price * item.quantity).toFixed(2)} €
@@ -127,13 +127,13 @@ function CheckoutSuccessContent() {
 
               <div className="border-t border-[#EAB615]/40 pt-4">
                 <div className="flex justify-between items-center text-lg font-semibold">
-                  <span className="text-[#2D2420]">Total</span>
+                  <span className="text-[#2D2926]">Total</span>
                   <span className="text-gold-fusion">{orderTotal.toFixed(2)} €</span>
                 </div>
               </div>
             </>
           ) : (
-            <p className="text-[#2D2420]/70">
+            <p className="text-[#2D2926]/70">
               Votre commande a été enregistrée. Vous recevrez un email de confirmation sous peu.
             </p>
           )}
@@ -150,7 +150,7 @@ function CheckoutSuccessContent() {
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 bg-white text-[#2D2420] px-6 py-3 rounded-none font-medium border-2 border-[#EAB615]/30 hover:border-[#EAB615] transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-white text-[#2D2926] px-6 py-3 rounded-none font-medium border-2 border-[#EAB615]/30 hover:border-[#EAB615] transition-colors"
           >
             <Home className="w-5 h-5" />
             Retour à l&apos;accueil
@@ -172,7 +172,7 @@ export default function CheckoutSuccessPage() {
     <Suspense fallback={
       <div className="min-h-screen bg-white pt-24 pb-12 flex items-center justify-center">
         <div className="text-center">
-          <p className="font-serif text-xl text-[#2D2420]">Chargement...</p>
+          <p className="font-serif text-xl text-[#2D2926]">Chargement...</p>
         </div>
       </div>
     }>

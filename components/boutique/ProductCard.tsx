@@ -118,7 +118,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           )}
           
           {/* Product name */}
-          <h3 className="font-serif text-sm text-[#2D2420] mb-2 min-h-[4rem]">
+          <h3 className="font-serif text-sm text-[#2D2926] mb-2 min-h-[4rem]">
             {product.name}
           </h3>
           

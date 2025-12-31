@@ -113,3 +113,5 @@ Object.entries(stoneCounts)
 fs.writeFileSync(jsonPath, JSON.stringify(uniqueProducts, null, 2), 'utf8');
 console.log(`\n💾 Sauvegardé: ${jsonPath}`);
 
+
+

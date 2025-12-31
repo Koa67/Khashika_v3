@@ -42,7 +42,7 @@ export default function ProductConversionModule({
     <>
       <div className="space-y-6 hidden md:block">
         {/* Titre du produit */}
-        <h1 className="font-serif text-3xl font-bold text-[#2D2420]">
+        <h1 className="font-serif text-3xl font-bold text-[#2D2926]">
           {product.title || product.name}
         </h1>
 
@@ -67,7 +67,7 @@ export default function ProductConversionModule({
         <div className="flex items-center gap-4">
           <label
             htmlFor="quantity"
-            className="font-sans text-sm font-medium text-[#2D2420]"
+            className="font-sans text-sm font-medium text-[#2D2926]"
           >
             Quantité :
           </label>
@@ -75,7 +75,7 @@ export default function ProductConversionModule({
             <button
               type="button"
               onClick={handleDecrease}
-              className="px-3 py-2 font-sans text-[#2D2420] hover:bg-[#8B4E4E]/10 transition-colors"
+              className="px-3 py-2 font-sans text-[#2D2926] hover:bg-[#8B4E4E]/10 transition-colors"
               aria-label="Diminuer la quantité"
             >
               −
@@ -89,12 +89,12 @@ export default function ProductConversionModule({
                 const value = parseInt(e.target.value) || 1;
                 setQuantity(Math.max(1, value));
               }}
-              className="w-16 px-2 py-2 text-center font-sans text-[#2D2420] border-x border-[#8B4E4E]/30 focus:outline-none focus:ring-2 focus:ring-[#8B4E4E]"
+              className="w-16 px-2 py-2 text-center font-sans text-[#2D2926] border-x border-[#8B4E4E]/30 focus:outline-none focus:ring-2 focus:ring-[#8B4E4E]"
             />
             <button
               type="button"
               onClick={handleIncrease}
-              className="px-3 py-2 font-sans text-[#2D2420] hover:bg-[#8B4E4E]/10 transition-colors"
+              className="px-3 py-2 font-sans text-[#2D2926] hover:bg-[#8B4E4E]/10 transition-colors"
               aria-label="Augmenter la quantité"
             >
               +
@@ -107,7 +107,7 @@ export default function ProductConversionModule({
           <div className="space-y-4">
             {product.characteristics.size && (
               <div>
-                <label className="block font-sans text-sm font-medium text-[#2D2420] mb-2">
+                <label className="block font-sans text-sm font-medium text-[#2D2926] mb-2">
                   Taille :
                 </label>
                 <select className="w-full px-4 py-2 border border-[#8B4E4E]/30 rounded-none focus:outline-none focus:ring-2 focus:ring-[#8B4E4E] font-sans">
@@ -144,10 +144,10 @@ export default function ProductConversionModule({
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           {/* Prix à gauche */}
           <div className="flex-1">
-            <p className="font-serif text-lg font-semibold text-[#2D2420]">
+            <p className="font-serif text-lg font-semibold text-[#2D2926]">
               {displayPrice}
             </p>
-            <p className="font-sans text-xs text-[#2D2420]/60 line-clamp-1">
+            <p className="font-sans text-xs text-[#2D2926]/60 line-clamp-1">
               {product.name}
             </p>
           </div>

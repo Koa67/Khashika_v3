@@ -12,15 +12,15 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
     <div className="mt-8 space-y-12">
       {/* Description - Toujours visible */}
       <div>
-        <h2 className="font-serif text-2xl font-bold text-[#2D2420] mb-4">Description</h2>
+        <h2 className="font-serif text-2xl font-bold text-[#2D2926] mb-4">Description</h2>
         <div className="prose max-w-none">
           {product.description && product.description.includes('<') ? (
             <div 
-              className="font-sans text-[#2D2420]/70 leading-relaxed"
+              className="font-sans text-[#2D2926]/70 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
           ) : (
-            <p className="font-sans text-[#2D2420]/70 leading-relaxed whitespace-pre-line">
+            <p className="font-sans text-[#2D2926]/70 leading-relaxed whitespace-pre-line">
               {product.description}
             </p>
           )}
@@ -29,7 +29,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
 
       {/* Caractéristiques - Toujours visible */}
       <div>
-        <h2 className="font-serif text-2xl font-bold text-[#2D2420] mb-4">Caractéristiques</h2>
+        <h2 className="font-serif text-2xl font-bold text-[#2D2926] mb-4">Caractéristiques</h2>
         <div className="space-y-3">
             {/* Afficher d'abord les attributs (nouveaux) depuis product.attributes */}
             {product.attributes && Object.keys(product.attributes).length > 0 ? (
@@ -39,7 +39,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                     <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px]">
                       Pierre :
                     </span>
-                    <span className="font-sans text-[#2D2420]/70">{product.attributes.stone}</span>
+                    <span className="font-sans text-[#2D2926]/70">{product.attributes.stone}</span>
                   </div>
                 )}
                 {product.attributes.material && (
@@ -47,7 +47,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                     <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px]">
                       Matière :
                     </span>
-                    <span className="font-sans text-[#2D2420]/70">{product.attributes.material}</span>
+                    <span className="font-sans text-[#2D2926]/70">{product.attributes.material}</span>
                   </div>
                 )}
                 {product.attributes.dimensions && (
@@ -55,7 +55,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                     <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px]">
                       Dimensions :
                     </span>
-                    <span className="font-sans text-[#2D2420]/70">{product.attributes.dimensions}</span>
+                    <span className="font-sans text-[#2D2926]/70">{product.attributes.dimensions}</span>
                   </div>
                 )}
                 {product.attributes.origin && (
@@ -63,7 +63,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                     <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px]">
                       Origine :
                     </span>
-                    <span className="font-sans text-[#2D2420]/70">{product.attributes.origin}</span>
+                    <span className="font-sans text-[#2D2926]/70">{product.attributes.origin}</span>
                   </div>
                 )}
               </>
@@ -77,7 +77,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                     <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px]">
                       Pierre :
                     </span>
-                    <span className="font-sans text-[#2D2420]/70">{product.stone}</span>
+                    <span className="font-sans text-[#2D2926]/70">{product.stone}</span>
                   </div>
                 )}
                 {product.material && (
@@ -85,7 +85,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                     <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px]">
                       Matière :
                     </span>
-                    <span className="font-sans text-[#2D2420]/70">{product.material}</span>
+                    <span className="font-sans text-[#2D2926]/70">{product.material}</span>
                   </div>
                 )}
               </>
@@ -98,14 +98,14 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
                   <span className="font-serif font-semibold text-[#8B4E4E] min-w-[120px] capitalize">
                     {key} :
                   </span>
-                  <span className="font-sans text-[#2D2420]/70">{String(value)}</span>
+                  <span className="font-sans text-[#2D2926]/70">{String(value)}</span>
                 </div>
               ))
             ) : (
               (!product.attributes || Object.keys(product.attributes).length === 0) && 
               !product.stone && 
               !product.material && (
-                <p className="font-sans text-[#2D2420]/60">Aucune caractéristique disponible.</p>
+                <p className="font-sans text-[#2D2926]/60">Aucune caractéristique disponible.</p>
               )
             )}
           </div>
@@ -113,7 +113,7 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsProps) {
 
       {/* Avis Clients - Toujours visible */}
       <div>
-        <h2 className="font-serif text-2xl font-bold text-[#2D2420] mb-4">Avis Clients</h2>
+        <h2 className="font-serif text-2xl font-bold text-[#2D2926] mb-4">Avis Clients</h2>
         <div className="space-y-6">
             {product.reviews && product.reviews.length > 0 ? (
               product.reviews.map((review, index) => (

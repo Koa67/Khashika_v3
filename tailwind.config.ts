@@ -16,22 +16,22 @@ const config: Config = {
           light: '#A66B6B',
         },
         gold: {
-          DEFAULT: '#E8B71B',  // Or plus visible
+          DEFAULT: '#EAB615',  // Or plus visible
           dark: '#A8871F',
           light: '#DCBA3D',
         },
-        secondary: "#2D2420",  // Brun foncé (texte)
-        accent: "#E8B71B",     // OR
+        secondary: "#2D2926",  // Brun foncé (texte)
+        accent: "#EAB615",     // OR
         cream: "#F5EDE6",      // Fond principal
         sand: "#EDE4DB",       // Fond cards/sidebar
-        night: "#2D2420",
+        night: "#2D2926",
         coral: '#8B4E4E',      // Remplace l'ancien coral
         emerald: '#6B5B52',    // Brun moyen
         background: "#F5EDE6",
-        foreground: "#2D2420",
+        foreground: "#2D2926",
         card: "#EDE4DB",
-        "card-foreground": "#2D2420",
-        border: "#E8B71B",
+        "card-foreground": "#2D2926",
+        border: "#EAB615",
       },
       fontFamily: {
         sans: ["var(--font-arimo)", "sans-serif"],

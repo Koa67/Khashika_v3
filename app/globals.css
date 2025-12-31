@@ -7,20 +7,20 @@
 /* Variables CSS */
 :root {
   --turquoise: #8B4E4E;
-  --gold: #E8B71B;
+  --gold: #EAB615;
   --coral: #8B4E4E;
   --background: #FFFFFF;
-  --foreground: #2D2420;
+  --foreground: #2D2926;
   --card: #FAF9F7;
-  --card-foreground: #2D2420;
+  --card-foreground: #2D2926;
   --primary: #8B4E4E;
   --primary-foreground: #FFFFFF;
   --secondary: #FAF9F7;
-  --secondary-foreground: #2D2420;
-  --accent: #E8B71B;
-  --accent-foreground: #2D2420;
+  --secondary-foreground: #2D2926;
+  --accent: #EAB615;
+  --accent-foreground: #2D2926;
   --border: rgba(212, 175, 55, 0.2);
-  --ring: #E8B71B;
+  --ring: #EAB615;
 }
 
 /* Polices - Arimo Bold 700 partout */
@@ -33,7 +33,7 @@ body {
   font-weight: 700;
   font-style: normal;
   background-color: #FFFFFF;
-  color: #2D2420;
+  color: #2D2926;
 }
 
 .font-serif,
@@ -66,8 +66,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 8px;
   pointer-events: none;
   background-image: 
-    linear-gradient(45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B),
-    linear-gradient(-45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B);
+    linear-gradient(45deg, #EAB615 25%, transparent 25%, transparent 75%, #EAB615 75%, #EAB615),
+    linear-gradient(-45deg, #EAB615 25%, transparent 25%, transparent 75%, #EAB615 75%, #EAB615);
   background-color: #FFFFFF;
   background-size: 8px 8px;
 }
@@ -81,8 +81,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 8px;
   pointer-events: none;
   background-image: 
-    linear-gradient(45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B),
-    linear-gradient(-45deg, #E8B71B 25%, transparent 25%, transparent 75%, #E8B71B 75%, #E8B71B);
+    linear-gradient(45deg, #EAB615 25%, transparent 25%, transparent 75%, #EAB615 75%, #EAB615),
+    linear-gradient(-45deg, #EAB615 25%, transparent 25%, transparent 75%, #EAB615 75%, #EAB615);
   background-color: #FFFFFF;
   background-size: 8px 8px;
 }
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   
   .golden-glow-card:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #E8B71B;
+    box-shadow: 0 0 0 2px #EAB615;
     outline-offset: 2px;
   }
   
@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   
   .golden-glow-dropdown-item:hover {
     background-color: #FFFFFF;
-    border-left: 4px solid #E8B71B;
+    border-left: 4px solid #EAB615;
   }
   
   /* Drawers (Cart, Wishlist) */
@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Cœur wishlist - état default (gold avec double contour pour visibilité sur tous fonds) */
 .heart-default {
-  color: #E8B71B;
+  color: #EAB615;
   fill: none;
   stroke-width: 2;
   filter: 

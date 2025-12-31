@@ -8,7 +8,7 @@ import { CONTACT } from '@/lib/constants/contact';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2D2420] text-[#FFFFFF] relative">
+    <footer className="bg-[#2D2926] text-[#FFFFFF] relative">
       {/* Frise décorative inversée en haut */}
       <div className="h-1 bg-gradient-to-r from-transparent via-[#EAB615] to-transparent opacity-60"></div>
 

@@ -86,7 +86,7 @@ export default function StripePayment({ amount, onSuccess, onError }: StripePaym
     return (
       <div className="border-2 border-dashed border-[#EAB615] rounded-lg p-6 bg-[#f4f1eb]">
         <div className="text-center mb-4">
-          <h3 className="font-serif text-xl text-[#2D2420] mb-2">
+          <h3 className="font-serif text-xl text-[#2D2926] mb-2">
             Mode Simulation
           </h3>
           <p className="text-sm text-gray-600 mb-4">
@@ -119,7 +119,7 @@ export default function StripePayment({ amount, onSuccess, onError }: StripePaym
       variables: {
         colorPrimary: '#8B4E4E',
         colorBackground: '#FFFFFF',
-        colorText: '#2D2420',
+        colorText: '#2D2926',
         fontFamily: 'system-ui, sans-serif',
       },
     },

@@ -162,7 +162,7 @@ export default function AdvancedSearch() {
 
                       {/* Info */}
                       <div className="flex-1 min-w-0">
-                        <p className="font-serif text-base text-[#2D2420] line-clamp-1 mb-1">
+                        <p className="font-serif text-base text-[#2D2926] line-clamp-1 mb-1">
                           {result.name}
                         </p>
                         {result.category && (

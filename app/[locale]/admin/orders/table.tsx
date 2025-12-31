@@ -99,7 +99,7 @@ export default function OrdersTable() {
     <div className="min-h-screen bg-background pt-32 pb-20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <h1 className="font-serif text-4xl text-[#2D2420]">{t('orders')}</h1>
+          <h1 className="font-serif text-4xl text-[#2D2926]">{t('orders')}</h1>
         </div>
 
         {/* Filtres et recherche */}
@@ -167,12 +167,12 @@ export default function OrdersTable() {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
                       <Package className="w-5 h-5 text-gray-400 mr-2" />
-                      <span className="font-medium text-[#2D2420]">{order.orderNumber}</span>
+                      <span className="font-medium text-[#2D2926]">{order.orderNumber}</span>
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div>
-                      <div className="text-sm font-medium text-[#2D2420]">{order.customerName}</div>
+                      <div className="text-sm font-medium text-[#2D2926]">{order.customerName}</div>
                       <div className="text-sm text-gray-500">{order.email}</div>
                     </div>
                   </td>
@@ -203,7 +203,7 @@ export default function OrdersTable() {
                           {t('markAsShipped')}
                         </button>
                       )}
-                      <button className="text-gray-600 hover:text-[#2D2420] font-medium">
+                      <button className="text-gray-600 hover:text-[#2D2926] font-medium">
                         {t('viewDetails')}
                       </button>
                     </div>

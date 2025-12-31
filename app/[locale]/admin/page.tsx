@@ -33,13 +33,13 @@ export default async function AdminDashboardPage({
   return (
     <div className="min-h-screen bg-background pt-32 pb-20">
       <div className="container mx-auto px-4">
-        <h1 className="font-serif text-4xl text-[#2D2420] mb-8">{t('title')}</h1>
+        <h1 className="font-serif text-4xl text-[#2D2926] mb-8">{t('title')}</h1>
 
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {/* Chiffre d'affaire total */}
           <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#8B4E4E]">
-            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
+            <h3 className="text-sm text-[#2D2926]/60 uppercase tracking-wide mb-2">
               {t('totalRevenue')}
             </h3>
             <p className="text-3xl font-bold text-[#8B4E4E]">
@@ -52,7 +52,7 @@ export default async function AdminDashboardPage({
 
           {/* Commandes du jour */}
           <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-[#EAB615]">
-            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
+            <h3 className="text-sm text-[#2D2926]/60 uppercase tracking-wide mb-2">
               {t('todayOrders')}
             </h3>
             <p className="text-3xl font-bold text-gold-fusion">{stats.todayOrders}</p>
@@ -60,7 +60,7 @@ export default async function AdminDashboardPage({
 
           {/* Produits en rupture */}
           <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-red-500">
-            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
+            <h3 className="text-sm text-[#2D2926]/60 uppercase tracking-wide mb-2">
               {t('outOfStock')}
             </h3>
             <p className="text-3xl font-bold text-red-500">{stats.outOfStock}</p>
@@ -68,7 +68,7 @@ export default async function AdminDashboardPage({
 
           {/* Derniers inscrits */}
           <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 border-l-4 border-green-500">
-            <h3 className="text-sm text-[#2D2420]/60 uppercase tracking-wide mb-2">
+            <h3 className="text-sm text-[#2D2926]/60 uppercase tracking-wide mb-2">
               {t('recentSignups')}
             </h3>
             <p className="text-3xl font-bold text-green-500">{stats.recentSignups}</p>
@@ -77,7 +77,7 @@ export default async function AdminDashboardPage({
 
         {/* Quick Actions */}
         <div className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 mb-8">
-          <h2 className="font-serif text-2xl text-[#2D2420] mb-4">Actions rapides</h2>
+          <h2 className="font-serif text-2xl text-[#2D2926] mb-4">Actions rapides</h2>
           <div className="flex flex-wrap gap-4">
             <a
               href={`/${params.locale}/admin/orders`}
@@ -102,7 +102,7 @@ export default async function AdminDashboardPage({
 
         {/* Recent Activity (Placeholder) */}
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="font-serif text-2xl text-[#2D2420] mb-4">Activité récente</h2>
+          <h2 className="font-serif text-2xl text-[#2D2926] mb-4">Activité récente</h2>
           <p className="text-gray-600">Les dernières activités seront affichées ici.</p>
         </div>
       </div>

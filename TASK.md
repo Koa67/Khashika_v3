@@ -1,3 +1,4 @@
+cat > TASK.md << 'EOF'
 # TASK.md — Corriger Descriptions Corrompues + Enrichir depuis NOM
 
 ## 🎯 MISSION
@@ -35,7 +36,7 @@ const fs = require('fs');
 const path = require('path');
 
 const jsonPath = path.join(__dirname, '../lib/data/products-ultimate.json');
-const productse(fs.readFileSync(jsonPath, 'utf8'));
+const products = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
 console.log(`📦 ${products.length} produits chargés\n`);
 
@@ -69,7 +70,7 @@ const STONES = {
   'pierre de lune': ['pierre de lune', 'pierre-de-lune'],
   'quartz': ['quartz'],
   'agate': ['agate'],
-  'jaspe': 
+  'jaspe': ['jaspe'],
   'obsidienne': ['obsidienne'],
   'labradorite': ['labradorite'],
   'oeil de tigre': ['oeil de tigre', 'œil de tigre', 'oeil-de-tigre'],
@@ -110,7 +111,7 @@ const normalize = (str) => {
 
 const getTypeFromText = (text) => {
   const normalized = normalize(text);
-  for [type, keywords] of Object.entries(PRODUCT_TYPES)) {
+  for (const [type, keywords] of Object.entries(PRODUCT_TYPES)) {
     for (const kw of keywords) {
       if (normalized.includes(normalize(kw))) {
         return type;
@@ -195,7 +196,7 @@ const fixedProducts = products.map(p => {
   
   // 2. Vérifier cohérence description vs nom
   if (isDescriptionInconsistent(product.name, product.description)) {
-    console.log(`⚠️  Description incohérente suppriméename}"`);
+    console.log(`⚠️  Description incohérente supprimée: "${product.name}"`);
     product.description = '';
     stats.descriptionsCleared++;
   }
@@ -270,7 +271,8 @@ fixedProducts.forEach(p => {
   });
 });
 
-console.log('\n📊 Produits par pect.entries(stoneStats)
+console.log('\n📊 Produits par pierre:');
+Object.entries(stoneStats)
   .sort((a, b) => b[1] - a[1])
   .forEach(([stone, count]) => {
     console.log(`   ${stone}: ${count}`);
@@ -307,5 +309,6 @@ Après exécution:
 - ~50-60 descriptions incohérentes supprimées
 - Chaque produit a un `type` (si détectable)
 - Chaque produit a `stones[]` (array des pierres dans le nom)
-- Chaque produit a `material
+- Chaque produit a `material` (si détectable)
 - Les filtres fonctionneront sur ces champs enrichis
+EOFgrep -n "typeInfo.filter" app/\[locale\]/accessoires/\[type\]/page.tsx

@@ -106,7 +106,7 @@ export default function LoginPage() {
         <div className="flex border-b border-[#EAB615]/20 mb-6">
           <button
             onClick={() => setActiveTab('login')}
-            className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
+            className={`flex-1 py-3 text-sm font-medium text-[#2D2926]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'login'
                 ? 'text-gold-fusion border-[#EAB615]'
                 : ''
@@ -116,7 +116,7 @@ export default function LoginPage() {
           </button>
           <button
             onClick={() => setActiveTab('register')}
-            className={`flex-1 py-3 text-sm font-medium text-[#2D2420]/60 border-b-2 border-transparent transition-colors rounded-none ${
+            className={`flex-1 py-3 text-sm font-medium text-[#2D2926]/60 border-b-2 border-transparent transition-colors rounded-none ${
               activeTab === 'register'
                 ? 'text-gold-fusion border-[#EAB615]'
                 : ''
@@ -141,7 +141,7 @@ export default function LoginPage() {
         {/* Formulaire */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-sans text-[#2D2420] mb-2">
+            <label htmlFor="email" className="block text-sm font-sans text-[#2D2926] mb-2">
               Email
             </label>
             <input
@@ -163,7 +163,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-sans text-[#2D2420] mb-2">
+            <label htmlFor="password" className="block text-sm font-sans text-[#2D2926] mb-2">
               Mot de passe
             </label>
             <input
@@ -171,7 +171,7 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#EAB615]"
+              className="w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] transition-colors focus:outline-none focus:border-[#EAB615]"
               placeholder="••••••••"
               required
             />
@@ -179,7 +179,7 @@ export default function LoginPage() {
 
           {activeTab === 'register' && (
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-sans text-[#2D2420] mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-sans text-[#2D2926] mb-2">
                 Confirmer le mot de passe
               </label>
               <input
@@ -187,7 +187,7 @@ export default function LoginPage() {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2420] transition-colors focus:outline-none focus:border-[#EAB615]"
+                className="w-full px-4 py-3 bg-white border border-[#EAB615]/40 rounded-none text-[#2D2926] transition-colors focus:outline-none focus:border-[#EAB615]"
                 placeholder="••••••••"
                 required
               />

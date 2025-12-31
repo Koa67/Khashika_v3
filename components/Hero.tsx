@@ -10,10 +10,11 @@ export default function Hero() {
       {/* Image Hero */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-khashika.png"
+          src="/images/hero-khashika.webp"
           alt="Khashika - Bijoux d'Inde"
           fill
           priority={true}
+          fetchPriority="high"
           className="object-cover"
           quality={90}
           sizes="100vw"

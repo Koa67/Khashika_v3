@@ -294,7 +294,7 @@ export default function SidebarFilters({ onApplyFilters }: SidebarFiltersProps) 
               className={`px-3 py-1.5 rounded text-xs font-sans transition-colors ${
                 selectedTags.includes(tag)
                   ? 'bg-[#8B4E4E] text-white'
-                  : 'bg-[#f4f1eb] text-[#2D2420]/70 hover:bg-[#EAB615]/20 border border-[#8B4E4E]/10'
+                  : 'bg-[#f4f1eb] text-[#2D2926]/70 hover:bg-[#EAB615]/20 border border-[#8B4E4E]/10'
               }`}
             >
               {tag}

@@ -50,7 +50,7 @@ export default function SearchBar() {
   return (
     <div className="relative z-50">
       {/* Input minimaliste invisible */}
-      <div className="flex items-center border-b-2 border-transparent hover:border-[#2D2420] transition-colors duration-300">
+      <div className="flex items-center border-b-2 border-transparent hover:border-[#2D2926] transition-colors duration-300">
         <Search size={18} strokeWidth={1.5} className="text-foreground/60 mr-2" />
         <input 
           ref={inputRef}
@@ -99,7 +99,7 @@ export default function SearchBar() {
                   
                   {/* Nom et Prix */}
                   <div className="flex-1 min-w-0">
-                    <p className="font-serif text-lg text-[#2D2420] line-clamp-1 mb-1">
+                    <p className="font-serif text-lg text-[#2D2926] line-clamp-1 mb-1">
                       {product.name}
                     </p>
                     <p className="text-base font-bold text-gold-fusion">

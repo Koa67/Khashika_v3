@@ -125,14 +125,14 @@ export default function ShopPagination({
 
       {/* Sélecteur "Afficher" à droite */}
       <div className="flex items-center gap-2">
-        <span className="text-sm text-[#2D2420]/60 hidden lg:inline">Afficher</span>
+        <span className="text-sm text-[#2D2926]/60 hidden lg:inline">Afficher</span>
         <select
           value={itemsPerPage}
           onChange={(e) => {
             const value = parseInt(e.target.value);
             onItemsPerPageChange(value);
           }}
-          className="px-3 py-2 text-sm bg-white border border-[#EAB615]/30 rounded-none hover:border-[#EAB615] focus:border-[#EAB615] focus:outline-none cursor-pointer transition-colors text-[#2D2420]"
+          className="px-3 py-2 text-sm bg-white border border-[#EAB615]/30 rounded-none hover:border-[#EAB615] focus:border-[#EAB615] focus:outline-none cursor-pointer transition-colors text-[#2D2926]"
         >
           {perPageOptions.map(opt => (
             <option key={opt.value} value={opt.value}>

@@ -194,7 +194,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {/* BREADCRUMB - Compact */}
       <div className="bg-[#FAF9F7] border-b border-[#EAB615]/20">
         <div className="max-w-6xl mx-auto px-4 py-3">
-          <nav className="flex items-center gap-2 text-sm text-[#2D2420]/60">
+          <nav className="flex items-center gap-2 text-sm text-[#2D2926]/60">
             <Link href="/" className="hover:text-gold-fusion transition-colors">Accueil</Link>
             <ChevronRight className="w-3 h-3" />
             <Link href="/shop" className="hover:text-gold-fusion transition-colors">Boutique</Link>
@@ -207,7 +207,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </>
             )}
             <ChevronRight className="w-3 h-3" />
-            <span className="text-[#2D2420] font-medium truncate max-w-[200px]">{product.title || product.name}</span>
+            <span className="text-[#2D2926] font-medium truncate max-w-[200px]">{product.title || product.name}</span>
           </nav>
         </div>
       </div>
@@ -248,7 +248,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="space-y-4">
             {/* Nom + Prix */}
             <div>
-              <h1 className="font-serif text-2xl md:text-3xl text-[#2D2420] leading-tight">
+              <h1 className="font-serif text-2xl md:text-3xl text-[#2D2926] leading-tight">
                 {product.title || product.name}
               </h1>
               <p className="text-3xl font-bold text-gold-fusion mt-2">
@@ -259,12 +259,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* Badges */}
             <div className="flex flex-wrap gap-2">
               {stone && (
-                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#EAB615]/30 text-[#2D2420]">
+                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#EAB615]/30 text-[#2D2926]">
                   Pierre : {stone}
                 </span>
               )}
               {material && (
-                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#EAB615]/30 text-[#2D2420]">
+                <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#EAB615]/30 text-[#2D2926]">
                   {material}
                 </span>
               )}
@@ -282,23 +282,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#EAB615]/20">
               <div className="flex flex-col items-center text-center gap-1">
                 <Truck className="w-5 h-5 text-gold-fusion" />
-                <span className="text-[10px] text-[#2D2420]/60">Livraison offerte dès 50 €</span>
+                <span className="text-[10px] text-[#2D2926]/60">Livraison offerte dès 50 €</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
                 <RotateCcw className="w-5 h-5 text-gold-fusion" />
-                <span className="text-[10px] text-[#2D2420]/60">Retours gratuits 30j</span>
+                <span className="text-[10px] text-[#2D2926]/60">Retours gratuits 30j</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
                 <Shield className="w-5 h-5 text-gold-fusion" />
-                <span className="text-[10px] text-[#2D2420]/60">Paiement sécurisé</span>
+                <span className="text-[10px] text-[#2D2926]/60">Paiement sécurisé</span>
               </div>
             </div>
 
             {/* Description détaillée */}
             {product.description && (
               <div className="pt-4 border-t border-[#EAB615]/20">
-                <h2 className="font-serif text-lg text-[#2D2420] mb-2">Description</h2>
-                <div className="text-sm text-[#2D2420]/70 leading-relaxed space-y-2">
+                <h2 className="font-serif text-lg text-[#2D2926] mb-2">Description</h2>
+                <div className="text-sm text-[#2D2926]/70 leading-relaxed space-y-2">
                   {typeof product.description === 'string' && product.description.includes('<') ? (
                     <div dangerouslySetInnerHTML={{ __html: product.description }} />
                   ) : (
@@ -311,30 +311,30 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* Caractéristiques */}
             {(stone || material || dimensions || origin) && (
               <div className="pt-4 border-t border-[#EAB615]/20">
-                <h2 className="font-serif text-lg text-[#2D2420] mb-2">Caractéristiques</h2>
+                <h2 className="font-serif text-lg text-[#2D2926] mb-2">Caractéristiques</h2>
                 <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
                   {stone && (
                     <>
-                      <dt className="text-[#2D2420]/60">Pierre</dt>
-                      <dd className="text-[#2D2420]">{stone}</dd>
+                      <dt className="text-[#2D2926]/60">Pierre</dt>
+                      <dd className="text-[#2D2926]">{stone}</dd>
                     </>
                   )}
                   {material && (
                     <>
-                      <dt className="text-[#2D2420]/60">Matériau</dt>
-                      <dd className="text-[#2D2420]">{material}</dd>
+                      <dt className="text-[#2D2926]/60">Matériau</dt>
+                      <dd className="text-[#2D2926]">{material}</dd>
                     </>
                   )}
                   {dimensions && (
                     <>
-                      <dt className="text-[#2D2420]/60">Dimensions</dt>
-                      <dd className="text-[#2D2420]">{dimensions}</dd>
+                      <dt className="text-[#2D2926]/60">Dimensions</dt>
+                      <dd className="text-[#2D2926]">{dimensions}</dd>
                     </>
                   )}
                   {origin && (
                     <>
-                      <dt className="text-[#2D2420]/60">Origine</dt>
-                      <dd className="text-[#2D2420]">{origin}</dd>
+                      <dt className="text-[#2D2926]/60">Origine</dt>
+                      <dd className="text-[#2D2926]">{origin}</dd>
                     </>
                   )}
                 </dl>
@@ -346,7 +346,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* PRODUITS SIMILAIRES - Compact */}
         {similarProducts.length > 0 && (
           <div className="mt-12 pt-8 border-t border-[#EAB615]/20">
-            <h2 className="font-serif text-xl text-[#2D2420] mb-4">Vous aimerez aussi</h2>
+            <h2 className="font-serif text-xl text-[#2D2926] mb-4">Vous aimerez aussi</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {similarProducts.map((similarProduct) => (
                 <ProductCard

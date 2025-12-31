@@ -218,7 +218,7 @@ export default function Navbar() {
             >
               <div className="flex items-center gap-2 relative">
                 <button 
-                  className="p-2 text-[#2D2420] hover:text-gold-fusion transition-colors duration-200" 
+                  className="p-2 text-[#2D2926] hover:text-gold-fusion transition-colors duration-200" 
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" strokeWidth={1.5} />
@@ -237,7 +237,7 @@ export default function Navbar() {
                       setIsSearchOpen(true);
                       // Just focus, no text selection
                     }}
-                    className="bg-transparent border-none outline-none focus:outline-none ring-0 focus:ring-0 text-sm text-[#2D2420] placeholder:text-[#2D2420]/50 w-32 transition-all duration-300"
+                    className="bg-transparent border-none outline-none focus:outline-none ring-0 focus:ring-0 text-sm text-[#2D2926] placeholder:text-[#2D2926]/50 w-32 transition-all duration-300"
                     style={{
                       paddingBottom: '2px',
                       paddingTop: '2px'
@@ -249,7 +249,7 @@ export default function Navbar() {
                       setQuery('');
                       setIsSearchOpen(false);
                     }}
-                    className="ml-1 text-[#2D2420]/50 hover:text-[#2D2420] transition-colors"
+                    className="ml-1 text-[#2D2926]/50 hover:text-[#2D2926] transition-colors"
                     aria-label="Effacer"
                   >
                     <X className="w-4 h-4" />
@@ -289,7 +289,7 @@ export default function Navbar() {
                             />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm text-[#2D2420] truncate">{product.name}</p>
+                            <p className="text-sm text-[#2D2926] truncate">{product.name}</p>
                             <p className="text-sm font-bold text-gold-fusion">
                               {typeof product.price === 'number' 
                                 ? product.price.toFixed(2) 
@@ -300,7 +300,7 @@ export default function Navbar() {
                       ))}
                     </div>
                   ) : (
-                    <div className="p-4 text-center text-sm text-[#2D2420]/60">
+                    <div className="p-4 text-center text-sm text-[#2D2926]/60">
                       Aucun produit trouvé
                     </div>
                   )}
@@ -328,7 +328,7 @@ export default function Navbar() {
               {isSearchOpen && query.length >= 2 && results.length === 0 && (
                 <div 
                   ref={dropdownRef}
-                  className="fixed top-[72px] w-96 z-[9999] p-8 text-center text-[#2D2420]/60 text-sm bg-[#FDFCFB] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
+                  className="fixed top-[72px] w-96 z-[9999] p-8 text-center text-[#2D2926]/60 text-sm bg-[#FDFCFB] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.15)]"
                   style={{ left: `${dropdownLeft}px` }}
                 >
                   Aucun résultat trouvé
@@ -341,7 +341,7 @@ export default function Navbar() {
           <div className="w-1/3 flex justify-center flex-shrink-0">
             <Link href="/" className="flex-shrink-0 inline-block">
               <Image 
-                src="/logo-khashika.png" 
+                src="/logo-khashika.webp" 
                 alt="Khashika - Luxury Indian Jewelry" 
                 width={150}
                 height={50}
@@ -380,21 +380,21 @@ export default function Navbar() {
                         <div className="p-2">
                           <Link
                             href="/account"
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2926] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mon compte
                           </Link>
                           <Link
                             href="/account?section=orders"
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2926] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes commandes
                           </Link>
                           <Link
                             href="/account?section=wishlist"
-                            className="block px-3 py-2 text-sm text-[#2D2420] hover:text-gold-fusion transition-colors"
+                            className="block px-3 py-2 text-sm text-[#2D2926] hover:text-gold-fusion transition-colors"
                             onClick={() => setShowUserMenu(false)}
                           >
                             Mes favoris
@@ -426,7 +426,7 @@ export default function Navbar() {
             {/* Wishlist Button */}
             <button 
               onClick={() => setIsWishlistOpen(true)}
-              className="relative p-2 text-[#2D2420] hover:text-gold-fusion transition-colors duration-200"
+              className="relative p-2 text-[#2D2926] hover:text-gold-fusion transition-colors duration-200"
               aria-label="Wishlist"
             >
               <Heart className="w-6 h-6" strokeWidth={1.5} />
@@ -440,7 +440,7 @@ export default function Navbar() {
             {/* Cart Button */}
             <button 
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#2D2420] hover:text-gold-fusion transition-colors duration-200"
+              className="relative p-2 text-[#2D2926] hover:text-gold-fusion transition-colors duration-200"
               aria-label="Panier"
             >
               <ShoppingBag className="w-6 h-6" strokeWidth={1.5} />

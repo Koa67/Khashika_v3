@@ -29,10 +29,10 @@ export default function PromotionSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-8">
       <div className="bg-white border border-[#EAB615]/40 rounded-none shadow-lg p-8 py-12 text-center animate-fade-in-down" style={{ animationDelay: '200ms' }}>
-        <h2 className="font-serif text-2xl font-semibold text-[#2D2420] mb-4">
+        <h2 className="font-serif text-2xl font-semibold text-[#2D2926] mb-4">
           Promotion du Mois
         </h2>
-        <p className="text-lg font-sans text-[#2D2420] mb-8">
+        <p className="text-lg font-sans text-[#2D2926] mb-8">
           Profitez de nos offres exceptionnelles
         </p>
 
@@ -42,25 +42,25 @@ export default function PromotionSection() {
             <div className="font-serif text-3xl md:text-4xl font-medium text-gold-fusion">
               {formatTime(timeLeft.hours)}
             </div>
-            <div className="text-sm mt-1 text-[#2D2420]">Heures</div>
+            <div className="text-sm mt-1 text-[#2D2926]">Heures</div>
           </div>
           <span className="font-serif text-3xl text-gold-fusion">:</span>
           <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#EAB615]/30">
             <div className="font-serif text-3xl md:text-4xl font-medium text-gold-fusion">
               {formatTime(timeLeft.minutes)}
             </div>
-            <div className="text-sm mt-1 text-[#2D2420]">Minutes</div>
+            <div className="text-sm mt-1 text-[#2D2926]">Minutes</div>
           </div>
           <span className="font-serif text-3xl text-gold-fusion">:</span>
           <div className="bg-white rounded-none p-4 min-w-[80px] border border-[#EAB615]/30">
             <div className="font-serif text-3xl md:text-4xl font-medium text-gold-fusion">
               {formatTime(timeLeft.seconds)}
             </div>
-            <div className="text-sm mt-1 text-[#2D2420]">Secondes</div>
+            <div className="text-sm mt-1 text-[#2D2926]">Secondes</div>
           </div>
         </div>
 
-        <p className="text-sm mb-6 text-[#2D2420]">
+        <p className="text-sm mb-6 text-[#2D2926]">
           Offre expire dans {formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
         </p>
 

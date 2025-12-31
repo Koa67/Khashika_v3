@@ -20,7 +20,7 @@ export default function ActiveFilters({
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="text-sm text-[#2D2420]/60">Filtres :</span>
+      <span className="text-sm text-[#2D2926]/60">Filtres :</span>
       
       {filters.materials.map(m => {
         const mat = FILTER_CONFIG.materials.find(x => x.id === m);

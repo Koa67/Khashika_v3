@@ -110,7 +110,7 @@ export default function ShopSidebar({
           )}
         </div>
 
-        <p className="text-sm text-[#2D2420]/60 mb-6">
+        <p className="text-sm text-[#2D2926]/60 mb-6">
           <span className="font-semibold text-gold-fusion">{filterCounts.total}</span> trésors trouvés
         </p>
 
@@ -142,7 +142,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isAll
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         Tous
@@ -152,7 +152,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isUnder10
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         &lt; 10 €
@@ -162,7 +162,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           is10to25
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         10-25 €
@@ -172,7 +172,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isOver25
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2420] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         &gt; 25 €
@@ -204,10 +204,10 @@ export default function ShopSidebar({
                     onChange={() => onToggleFilter('types', type.id)}
                     className="w-4 h-4 accent-[#EAB615] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
+                  <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
                     {type.label}
                   </span>
-                  <span className="ml-auto text-xs text-[#2D2420]/40">
+                  <span className="ml-auto text-xs text-[#2D2926]/40">
                     ({filterCounts.types?.[type.id] || 0})
                   </span>
                 </label>
@@ -235,10 +235,10 @@ export default function ShopSidebar({
                     onChange={() => onToggleFilter('accessories', acc.id)}
                     className="w-4 h-4 accent-[#EAB615] cursor-pointer"
                   />
-                  <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
+                  <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
                     {acc.label}
                   </span>
-                  <span className="ml-auto text-xs text-[#2D2420]/40">
+                  <span className="ml-auto text-xs text-[#2D2926]/40">
                     ({filterCounts.accessories?.[acc.id] || 0})
                   </span>
                 </label>
@@ -260,15 +260,15 @@ export default function ShopSidebar({
           {openSections.pierres && (
             <div className="space-y-4">
               {/* Onglets */}
-              <div className="flex gap-1 p-1 bg-[#EAB615]/10 rounded-none">
+              <div className="flex gap-1">
                 {['top', 'couleurs'].map((view) => (
                   <button
                     key={view}
                     onClick={() => setStoneView(view as 'top' | 'couleurs')}
-                    className={`flex-1 px-2 py-1.5 text-xs font-medium transition-colors rounded-none ${
-                      stoneView === view 
-                        ? 'bg-[#FDF9F7] text-gold-fusion shadow-sm' 
-                        : 'text-[#2D2420]/60 hover:text-gold-fusion'
+                    className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
+                      stoneView === view
+                        ? 'bg-[#EAB615] text-white border border-[#EAB615]'
+                        : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                     }`}
                   >
                     {view === 'top' ? 'Populaires' : 'Par couleurs'}
@@ -291,10 +291,10 @@ export default function ShopSidebar({
                         className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
                         style={{ backgroundColor: stone.color }} 
                       />
-                      <span className="text-sm text-[#2D2420] group-hover:text-gold-fusion transition-colors">
+                      <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
                         {stone.label}
                       </span>
-                      <span className="ml-auto text-xs text-[#2D2420]/40">
+                      <span className="ml-auto text-xs text-[#2D2926]/40">
                         ({filterCounts.stones?.[stone.id] || 0})
                       </span>
                     </label>
@@ -315,10 +315,10 @@ export default function ShopSidebar({
                 <div className="space-y-4">
                   {/* Bleus */}
                   <div>
-                    <p className="text-xs text-[#2D2420]/50 mb-2 uppercase tracking-wide">Bleus</p>
+                    <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Bleus</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['turquoise', 'lapis-lazuli', 'labradorite'].includes(s.id))
+                        .filter(s => ['turquoise', 'lapis-lazuli', 'labradorite', 'calcédoine', 'amazonite', 'onyx bleu'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -338,10 +338,33 @@ export default function ShopSidebar({
                   
                   {/* Rouges/Roses */}
                   <div>
-                    <p className="text-xs text-[#2D2420]/50 mb-2 uppercase tracking-wide">Rouges & Roses</p>
+                    <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Rouges & Roses</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['corail', 'grenat'].includes(s.id))
+                        .filter(s => ['corail', 'grenat', 'rhodonite', 'onyx rouge'].includes(s.id))
+                        .map(stone => (
+                          <button
+                            key={stone.id}
+                            onClick={() => onToggleFilter('stones', stone.id)}
+                            className={`flex items-center gap-2 px-3 py-1.5 border transition-all rounded-none ${
+                              filters.stones.includes(stone.id)
+                                ? 'border-[#EAB615] bg-[#EAB615]/10'
+                                : 'border-[#EAB615]/30 hover:border-[#EAB615]'
+                            }`}
+                          >
+                            <span className="w-3 h-3 rounded-none" style={{ backgroundColor: stone.color }} />
+                            <span className="text-xs">{stone.label}</span>
+                          </button>
+                        ))}
+                    </div>
+                  </div>
+                  
+                  {/* Jaunes & Orangés */}
+                  <div>
+                    <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Jaunes & Orangés</p>
+                    <div className="flex flex-wrap gap-2">
+                      {FILTER_CONFIG.stones
+                        .filter(s => ['citrine', 'topaze', 'agate', 'jaspe'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -361,10 +384,10 @@ export default function ShopSidebar({
                   
                   {/* Verts */}
                   <div>
-                    <p className="text-xs text-[#2D2420]/50 mb-2 uppercase tracking-wide">Verts</p>
+                    <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Verts</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['jade'].includes(s.id))
+                        .filter(s => ['jade', 'malachite', 'aventurine', 'onyx vert'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -384,10 +407,10 @@ export default function ShopSidebar({
                   
                   {/* Violets */}
                   <div>
-                    <p className="text-xs text-[#2D2420]/50 mb-2 uppercase tracking-wide">Violets</p>
+                    <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Violets</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['amethyste'].includes(s.id))
+                        .filter(s => ['améthyste', 'tourmaline'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -407,10 +430,10 @@ export default function ShopSidebar({
                   
                   {/* Neutres */}
                   <div>
-                    <p className="text-xs text-[#2D2420]/50 mb-2 uppercase tracking-wide">Neutres</p>
+                    <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Neutres</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['onyx', 'perle', 'moonstone'].includes(s.id))
+                        .filter(s => ['onyx noir', 'perle', 'pierre de lune', 'quartz', 'cristal', 'howlite', 'obsidienne'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -437,4 +460,3 @@ export default function ShopSidebar({
     </aside>
   );
 }
-

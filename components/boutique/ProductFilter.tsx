@@ -170,7 +170,7 @@ export default function ProductFilter({
                       className={`w-full text-left px-4 py-2 rounded-none border transition-all ${
                         isSelected
                           ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
-                          : 'bg-white text-[#2D2420] border-[#EAB615]/40 hover:border-[#EAB615] hover:text-gold-fusion'
+                          : 'bg-white text-[#2D2926] border-[#EAB615]/40 hover:border-[#EAB615] hover:text-gold-fusion'
                       }`}
                       aria-pressed={isSelected}
                     >
@@ -238,7 +238,7 @@ export default function ProductFilter({
                       className={`w-full text-left px-4 py-2 rounded-none border transition-all ${
                         isSelected
                           ? 'bg-[#8B4E4E] text-white border-[#8B4E4E]'
-                          : 'bg-white text-[#2D2420] border-[#EAB615]/40 hover:border-[#EAB615] hover:text-gold-fusion'
+                          : 'bg-white text-[#2D2926] border-[#EAB615]/40 hover:border-[#EAB615] hover:text-gold-fusion'
                       }`}
                       aria-pressed={isSelected}
                     >

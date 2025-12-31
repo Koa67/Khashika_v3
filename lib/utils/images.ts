@@ -29,7 +29,7 @@ export function getValidImageUrl(url: string | undefined | null): string {
   }
   
   // If path starts with /images/products/, check for missing image patterns
-  if (url.startsWith('/images/products/')) {
+  if (url.startsWith('/images/products/') || url.startsWith('/images/products_reconciled/')) {
     // If it contains 'prod-' pattern, it's likely a missing image
     if (url.includes('prod-')) {
       return '/placeholder-image.svg';
@@ -49,14 +49,13 @@ export function getValidImageUrl(url: string | undefined | null): string {
     } catch {
       // If decoding fails, use original URL and let onError handle it
     }
-    // For p-X.jpg patterns, we'll let the browser try to load it
-    // and use onError handler in components to fallback to placeholder
-    // This avoids expensive file system checks on every render
+    // Prefer WebP over jpg/jpeg for products_reconciled
+    if (url.includes('products_reconciled') && url.match(/\.(jpg|jpeg)$/i)) {
+      return url.replace(/\.(jpg|jpeg)$/i, '.webp');
+    }
     return url;
   }
   
   // Other valid paths starting with /
   return url;
 }
-
-

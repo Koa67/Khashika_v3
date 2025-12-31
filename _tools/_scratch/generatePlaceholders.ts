@@ -5,7 +5,7 @@ const PLACEHOLDERS_DIR = 'public/images/products';
 
 // Couleurs Khashika
 const PRIMARY = '#8B4E4E';    // Turquoise
-const GOLD = '#E8B71B';       // Or
+const GOLD = '#EAB615';       // Or
 const BG = '#f8f9fa';         // Fond clair
 
 const CATEGORIES = [
