@@ -1,65 +1,49 @@
 import { redirect } from 'next/navigation';
-import { createClient } from '@supabase/supabase-js';
-import { cookies } from 'next/headers';
+import { createServerSupabaseClient } from '@/lib/db/supabase-server';
+import AdminSidebar from './components/AdminSidebar';
+import AdminHeader from './components/AdminHeader';
 
 export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Récupérer les cookies pour l'authentification
-  const cookieStore = await cookies();
-  const accessToken = cookieStore.get('sb-access-token')?.value;
+  const supabase = await createServerSupabaseClient();
 
-  // Si pas de token, rediriger vers login
-  if (!accessToken) {
-    redirect('/login');
-  }
-
-  // Créer le client Supabase avec les tokens
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseKey) {
-    // En dev, rediriger si Supabase n'est pas configuré
-    console.warn('Supabase not configured, redirecting from admin');
-    redirect('/');
-  }
-
-  const supabase = createClient(supabaseUrl, supabaseKey, {
-    auth: {
-      persistSession: false,
-    },
-  });
-
-  // Vérifier l'authentification
-  const { data: { user }, error: authError } = await supabase.auth.getUser(accessToken);
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser();
 
   if (authError || !user) {
-    redirect('/login');
+    redirect('/fr/login');
   }
 
-  // Vérifier le rôle dans la table profiles
-  const { data: profile, error: profileError } = await supabase
+  const { data: profile } = await supabase
     .from('profiles')
-    .select('role')
+    .select('role, full_name')
     .eq('id', user.id)
     .single();
 
-  if (profileError || !profile || profile.role !== 'admin') {
-    redirect('/');
+  if (!profile || profile.role !== 'admin') {
+    redirect('/fr');
   }
 
-  return <>{children}</>;
+  const adminData = {
+    email: user.email || '',
+    name: profile.full_name || user.email?.split('@')[0] || 'Admin',
+    role: profile.role,
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F8F9FA]">
+      <AdminSidebar />
+      <div className="ml-64">
+        <AdminHeader admin={adminData} />
+        <main className="p-6 mt-16">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
 }
-
-
-
-
-
-
-
-
-
-
-

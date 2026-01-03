@@ -29,7 +29,7 @@ export default function MegaMenu({ items, isOpen, onMouseEnter, onMouseLeave }: 
             <Link
               key={index}
               href={item.href}
-              className="group block hover:text-gold-fusion px-4 py-3 transition-all duration-200 cursor-pointer hover:bg-[#FDF9F7]/80"
+              className="group block hover:text-gold-fusion px-4 py-3 transition-all duration-200 cursor-pointer hover:bg-[#FAF9F7]/80"
             >
               <h3 className="font-serif text-base font-semibold text-[#2D2926] mb-1 group-hover:text-gold-fusion transition-colors">
                 {item.title}

@@ -42,7 +42,8 @@
     "stones": [
       "labradorite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-2",
@@ -50,7 +51,7 @@
     "slug": "bracelet-pierres-naturelles-obsidienne",
     "title": "BRACELET pierres naturelles obsidienne",
     "price": 12,
-    "description": "BRACELET pierres naturelles aventurine ,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
+    "description": "BRACELET pierres naturelles aventurine,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-obsidienne.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-obsidienne.jpeg",
@@ -65,7 +66,8 @@
     "stones": [
       "obsidienne"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-3",
@@ -91,11 +93,11 @@
   },
   {
     "id": "prod-4",
-    "name": "Collier tibetain en turquoise et corail",
+    "name": "Collier tibétain en turquoise et corail",
     "slug": "collier-tibetain-en-turquoise-et-corail",
     "title": "Collier Tibetain en  Turquoise  et  corail",
     "price": 19,
-    "description": "Collier TIBETAIN orné de pierres Turquoise et Corailet de perles argentées, Ce joli collier pour embellir toutes vos tenues.",
+    "description": "Collier TIBÉTAIN orné de pierres Turquoise et Corailet de perles argentées, Ce joli collier pour embellir toutes vos tenues.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-tibetain-en-turquoise-et-corail.jpeg",
     "image": "/images/products_reconciled/collier-tibetain-en-turquoise-et-corail.jpeg",
@@ -111,7 +113,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-5",
@@ -134,7 +137,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-6",
@@ -176,8 +180,11 @@
     "sku": "UGS :BRAP0068",
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-dalmatien-il-convient-a-tous-les-poignets-ce-bracelet-est-monte-sur-un-elastique-tres-solide-les-perles-sont-rondes-avec-des-nuances-differentes/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "jaspe dalmatien"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-8",
@@ -185,7 +192,7 @@
     "slug": "bracelet-pierres-naturelles-jaspe-gris",
     "title": "BRACELET pierres naturelles JASPE GRIS",
     "price": 10,
-    "description": "BRACELET pierres naturelles JASPE ,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
+    "description": "BRACELET pierres naturelles JASPE,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-jaspe-gris.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-jaspe-gris.jpeg",
@@ -200,7 +207,8 @@
     "stones": [
       "jaspe"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-9",
@@ -244,7 +252,9 @@
     "sku": "UGS :BRAP0005",
     "source_url": "https://www.khashika.com/produit/ce-bracelet-argent-est-fin-monte-dune-pierre-emeraude-cest-un-bijou-fin-et-facile-a-porter-avec-tout-la-taille-est-ajustable-sur-le-bras/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "émeraude"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -269,11 +279,12 @@
     "stones": [
       "pierre de lune"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-12",
-    "name": "Bracelet chainette argent et pierre pierre de lune",
+    "name": "Bracelet chaînette argent et pierre pierre de lune",
     "slug": "bracelet-chainette-argent-et-pierre-pierre-de-lune",
     "title": "BRACELET chainette argent et pierre pierre de lune",
     "price": 24,
@@ -297,7 +308,7 @@
   },
   {
     "id": "prod-14",
-    "name": "Collier metal argente ras du cou",
+    "name": "Collier métal argenté ras du cou",
     "slug": "collier-metal-argente-ras-du-cou",
     "title": "COLLIER METAL ARGENTE  RAS DU COU",
     "price": 30,
@@ -365,7 +376,7 @@
   },
   {
     "id": "prod-17",
-    "name": "Collier pierres agate mousse, oeil du tigre pierre dzi tibetaine",
+    "name": "Collier pierres agate mousse, oeil du tigre pierre dzi tibétaine",
     "slug": "collier-pierres-agate-mousse-oeil-du-tigre-pierre-dzi-tibetaine",
     "title": "COLLIER pierres agate mousse, oeil du tigre pierre Dzi tibetaine",
     "price": 32,
@@ -382,9 +393,12 @@
     "source_url": "https://www.khashika.com/produit/collier-pierres-agate-mousse-oeil-du-tigre-pierre-dzi-tibetaine/",
     "inStock": true,
     "stones": [
-      "agate"
+      "agate",
+      "oeil de tigre",
+      "dzi"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-18",
@@ -407,7 +421,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "bague"
+    "type": "bague",
+    "material": "fantaisie"
   },
   {
     "id": "prod-19",
@@ -495,7 +510,9 @@
     "sku": "UGS :BOAP0046",
     "source_url": "https://www.khashika.com/produit/grandes-boucles-doreilles-argent-avec-un-rubis-indien-facette-grandes-boucles-doreilles-argent-avec-un-rubis-indien-facette/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "rubis"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -521,11 +538,12 @@
       "améthyste",
       "turquoise"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-24",
-    "name": "Collier tibetain en turquoise et lapis-lazuli avec des perles taillées",
+    "name": "Collier tibétain en turquoise et lapis-lazuli avec des perles taillées",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli-avec-des-perles-taillées",
     "title": "Collier Tibetain en Turquoise et lapis-lazuli avec des perles taillées",
     "price": 36,
@@ -545,7 +563,8 @@
       "turquoise",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-25",
@@ -571,7 +590,7 @@
   },
   {
     "id": "prod-26",
-    "name": "Collier fantaisie metal perles argentées et noires",
+    "name": "Collier fantaisie métal perles argentées et noires",
     "slug": "collier-fantaisie-metal-perles-argentées-et-noires",
     "title": "Collier fantaisie metal  perles argentées et noires",
     "price": 8,
@@ -612,7 +631,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-28",
@@ -635,7 +655,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-29",
@@ -703,7 +724,8 @@
     "stones": [
       "tourmaline"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-32",
@@ -746,7 +768,8 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-ethniques/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "résine"
   },
   {
     "id": "prod-34",
@@ -771,7 +794,7 @@
   },
   {
     "id": "prod-35",
-    "name": "Collier fantaisie metal argenté galet blanc",
+    "name": "Collier fantaisie métal argenté galet blanc",
     "slug": "collier-fantaisie-metal-argenté-galet-blanc",
     "title": "Collier fantaisie metal  argenté galet blanc",
     "price": 6,
@@ -858,11 +881,12 @@
     "stones": [
       "quartz"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-39",
-    "name": "Collier tibetain turquoise et corail lapis-lazuli",
+    "name": "Collier tibétain turquoise et corail lapis-lazuli",
     "slug": "collier-tibetain-turquoise-et-corail-lapis-lazuli",
     "title": "Collier Tibetain Turquoise et Corail Lapis-lazuli",
     "price": 32,
@@ -883,7 +907,8 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-40",
@@ -1024,7 +1049,8 @@
     "stones": [
       "quartz"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-46",
@@ -1091,7 +1117,8 @@
     "source_url": "https://www.khashika.com/produit/ce-bracelet-est-monte-sur-un-elastique-tres-solide-avec-des-pierres-naturelles-7-chakras-il-convient-a-tous-les-poignets-les-perles-sont-rondes-avec-des-nuances-differentes-pierre-de-lune/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-49",
@@ -1119,7 +1146,7 @@
   },
   {
     "id": "prod-50",
-    "name": "Bracelet en pierres 6mm emeraude lavande",
+    "name": "Bracelet en pierres 6mm émeraude lavande",
     "slug": "bracelet-en-pierres-6mm-emeraude-lavande",
     "title": "BRACELET en  pierres 6mm EMERAUDE LAVANDE",
     "price": 10,
@@ -1135,8 +1162,11 @@
     "sku": "UGS :BRAP0205",
     "source_url": "https://www.khashika.com/produit/ce-bracelet-est-monte-sur-un-elastique-de-pierres-de-6mm-en-emeraude-lavande-il-convient-a-tous-les-poignets-les-perles-sont-rondes-avec-des-nuances-differentes/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "émeraude"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-51",
@@ -1159,7 +1189,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-52",
@@ -1206,7 +1237,7 @@
   },
   {
     "id": "prod-54",
-    "name": "Chaine de chevilles argentée coeur",
+    "name": "Chaîne de chevilles argentée coeur",
     "slug": "chaine-de-chevilles-argentée-coeur",
     "title": "CHAINE DE CHEVILLES argentée coeur",
     "price": 8,
@@ -1320,7 +1351,7 @@
   },
   {
     "id": "prod-59",
-    "name": "Collier tibetain en pierres de turquoise corail et lapis-lazuli",
+    "name": "Collier tibétain en pierres de turquoise corail et lapis-lazuli",
     "slug": "collier-tibetain-en-pierres-de-turquoise-corail-et-lapis-lazuli",
     "title": "Collier Tibetain en  pierres de Turquoise corail  et Lapis-lazuli",
     "price": 19,
@@ -1341,7 +1372,8 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-60",
@@ -1367,7 +1399,7 @@
   },
   {
     "id": "prod-61",
-    "name": "Bague argent amethyste",
+    "name": "Bague argent améthyste",
     "slug": "bague-argent-amethyste",
     "title": "Bague Argent AMETHYSTE",
     "price": 19,
@@ -1410,15 +1442,16 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-63",
-    "name": "Bracelet pierres naturelles amethyste",
+    "name": "Bracelet pierres naturelles améthyste",
     "slug": "bracelet-pierres-naturelles-amethyste",
     "title": "BRACELET pierres naturelles amethyste",
     "price": 12,
-    "description": "BRACELET pierres naturelles AMETHYSTE,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
+    "description": "BRACELET pierres naturelles AMÉTHYSTE,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-amethyste.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-amethyste.jpeg",
@@ -1433,7 +1466,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-64",
@@ -1454,7 +1488,8 @@
     "source_url": "https://www.khashika.com/produit/ce-bracelet-est-monte-de-perles-colorees-et-de-pampilles-en-metal-argente-cest-un-bijou-de-style-tibetain-il-est-artisanal-et-typique/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-65",
@@ -1508,7 +1543,7 @@
     "slug": "bracelet-pierres-naturelles-en-turquoise-7-chakras",
     "title": "BRACELET pierres naturelles en TURQUOISE  7 chakras",
     "price": 16,
-    "description": "Cebraceletest monté sur un élastique très solide, avec des pierres naturellesTURQUOISE 7 chakras ,il convient à tous les poignets.",
+    "description": "Cebraceletest monté sur un élastique très solide, avec des pierres naturellesTURQUOISE 7 chakras,il convient à tous les poignets.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-en-turquoise-7-chakras.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-en-turquoise-7-chakras.jpeg",
@@ -1523,7 +1558,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-69",
@@ -1546,15 +1582,16 @@
     "stones": [
       "jade"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-70",
-    "name": "Bracelet tibetain en lapis-lazuli et corail",
+    "name": "Bracelet tibétain en lapis-lazuli et corail",
     "slug": "bracelet-tibetain-en-lapis-lazuli-et-corail",
     "title": "BRACELET TIBETAIN  en lapis-lazuli  et corail",
     "price": 29,
-    "description": "BRACELET TIBETAIN lapis-lazuli et corail",
+    "description": "BRACELET TIBÉTAIN lapis-lazuli et corail",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-tibetain-en-lapis-lazuli-et-corail.jpeg",
     "image": "/images/products_reconciled/bracelet-tibetain-en-lapis-lazuli-et-corail.jpeg",
@@ -1570,11 +1607,12 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-71",
-    "name": "Bracelet tibetain argenté perles corail et turquoise",
+    "name": "Bracelet tibétain argenté perles corail et turquoise",
     "slug": "bracelet-tibetain-argenté-perles-corail-et-turquoise",
     "title": "BRACELET TIBETAIN argenté PERLES CORAIL ET TURQUOISE",
     "price": 14,
@@ -1669,7 +1707,7 @@
   },
   {
     "id": "prod-75",
-    "name": "Collier tibetain en turquoise et lapis-lazuli et une perle taillée",
+    "name": "Collier tibétain en turquoise et lapis-lazuli et une perle taillée",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli-et-une-perle-taillée",
     "title": "Collier Tibetain en turquoise et  lapis-lazuli et une perle taillée",
     "price": 19,
@@ -1690,7 +1728,8 @@
       "lapis-lazuli",
       "perle"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-76",
@@ -1710,8 +1749,11 @@
     "sku": "UGS :BRAP0135",
     "source_url": "https://www.khashika.com/produit/ce-bracelet-pierre-est-en-oeil-du-tigre-est-fabrique-a-la-main-en-macrame-vous-pourrez-ajuster-sa-taille-grace-au-noeud-coulissant-le-grenat-est-une-pierre-qui-apporte-courage-vitalite-et-pass/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-78",
@@ -1828,7 +1870,8 @@
     "stones": [
       "jaspe"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-83",
@@ -1851,7 +1894,8 @@
     "stones": [
       "quartz"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-84",
@@ -1874,7 +1918,8 @@
     "stones": [
       "aventurine"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-85",
@@ -1935,9 +1980,11 @@
     "isOnSale": true,
     "isNew": false,
     "stones": [
-      "turquoise"
+      "turquoise",
+      "cornaline"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-88",
@@ -2006,7 +2053,7 @@
   },
   {
     "id": "prod-91",
-    "name": "Foulard en 100%soie à motifs vert , bleu et fuchsia",
+    "name": "Foulard en 100%soie à motifs vert, bleu et fuchsia",
     "slug": "foulard-en-100soie-à-motifs-vert-bleu-et-fuchsia",
     "title": "Foulard  en 100%soie à motifs vert , bleu et fuchsia",
     "price": 18,
@@ -2044,7 +2091,9 @@
     "sku": "UGS :BOAP0039",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-argent-triangle-et-peridot-taille-cest-un-bijou-original-que-vous-porterez-avec-toutes-vos-tenues/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -2069,7 +2118,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-94",
@@ -2308,7 +2358,7 @@
   },
   {
     "id": "prod-104",
-    "name": "Collier tibetain en corail et lapis-lazuli et une perle taillée",
+    "name": "Collier tibétain en corail et lapis-lazuli et une perle taillée",
     "slug": "collier-tibetain-en-corail-et-lapis-lazuli-et-une-perle-taillée",
     "title": "Collier Tibetain en corail  et  lapis-lazuli et une perle taillée",
     "price": 19,
@@ -2329,7 +2379,8 @@
       "lapis-lazuli",
       "perle"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-105",
@@ -2376,7 +2427,8 @@
     "stones": [
       "citrine"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-107",
@@ -2397,7 +2449,8 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreille-tibetaines-colorees/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-108",
@@ -2418,9 +2471,11 @@
     "source_url": "https://www.khashika.com/produit/bracelet-triple-protection-obsdienne-hematite-oeil-du-tigre/",
     "inStock": true,
     "stones": [
-      "obsidienne"
+      "obsidienne",
+      "oeil de tigre"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-109",
@@ -2441,7 +2496,8 @@
     "source_url": "https://www.khashika.com/produit/bague-elastique-avec-perles-4mm-energie-facile-a-porter-et-reglable-sur-tous-les-doigts/",
     "inStock": true,
     "stones": [],
-    "type": "bague"
+    "type": "bague",
+    "material": "pierres"
   },
   {
     "id": "prod-110",
@@ -2509,12 +2565,15 @@
     "sku": "UGS :BOAP0043",
     "source_url": "https://www.khashika.com/produit/boucle-doreille-3-creoles-et-pierre-en-peridot/",
     "inStock": true,
-    "stones": [],
-    "type": "boucles d'oreilles"
+    "stones": [
+      "péridot"
+    ],
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-113",
-    "name": "Collier tibetain en pierres de corail et lapis-lazuli et turquoise",
+    "name": "Collier tibétain en pierres de corail et lapis-lazuli et turquoise",
     "slug": "collier-tibetain-en-pierres-de-corail-et-lapis-lazuli-et-turquoise",
     "title": "Collier Tibetain en  pierres de  corail  et Lapis-lazuli et turquoise",
     "price": 19,
@@ -2535,7 +2594,8 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-114",
@@ -2652,7 +2712,8 @@
     "stones": [
       "amazonite"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-119",
@@ -2718,7 +2779,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-122",
@@ -2744,7 +2806,7 @@
   },
   {
     "id": "prod-123",
-    "name": "Collier tibetain en turquoise avec un pendentif tibétain",
+    "name": "Collier tibétain en turquoise avec un pendentif tibétain",
     "slug": "collier-tibetain-en-turquoise-avec-un-pendentif-tibétain",
     "title": "Collier Tibetain en turquoise avec un pendentif tibétain",
     "price": 29,
@@ -2763,7 +2825,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-124",
@@ -2849,7 +2912,9 @@
     "sku": "UGS :BOAP0200",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-dorees-pierre-onacre/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "nacre"
+    ],
     "material": "or",
     "type": "boucles d'oreilles"
   },
@@ -2920,15 +2985,16 @@
     "source_url": "https://www.khashika.com/produit/collier-pierres-rhyotique-pierres-naturelles-bijou-inde-femme-et-fille/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-131",
-    "name": "Bracelet metal argenté perles vertes",
+    "name": "Bracelet métal argenté perles vertes",
     "slug": "bracelet-metal-argenté-perles-vertes",
     "title": "bracelet metal argenté perles vertes",
     "price": 6,
-    "description": "Bracelet indien fantaisie sur une chainette argentée avec des perles vertes.Ce bracelet est un bijoux de fabrication artisanale en provenance du Rajasthan.",
+    "description": "Bracelet indien fantaisie sur une chaînette argentée avec des perles vertes.Ce bracelet est un bijoux de fabrication artisanale en provenance du Rajasthan.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-metal-argenté-perles-vertes.jpg",
     "image": "/images/products_reconciled/bracelet-metal-argenté-perles-vertes.jpg",
@@ -3034,18 +3100,20 @@
     "inStock": true,
     "stones": [
       "onyx",
-      "quartz"
+      "quartz",
+      "oeil de tigre",
+      "cornaline"
     ],
     "type": "bracelet",
     "material": "argent"
   },
   {
     "id": "prod-136",
-    "name": "Collier tibetain en lapis-lazuli turquoise et corail avec un pendentif",
+    "name": "Collier tibétain en lapis-lazuli turquoise et corail avec un pendentif",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-et-corail-avec-un-pendentif",
     "title": "Collier Tibetain en Lapis-lazuli Turquoise  et  corail avec un pendentif",
     "price": 29,
-    "description": "Collier TIBETAIN orné de pierres Lapis-Lazuli Turquoise et Corail avec un magnifique pendentifet des perles argentées, Ce joli collier pour embellir toutes vos tenues.",
+    "description": "Collier TIBÉTAIN orné de pierres Lapis-Lazuli Turquoise et Corail avec un magnifique pendentifet des perles argentées, Ce joli collier pour embellir toutes vos tenues.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-tibetain-en-lapis-lazuli-turquoise-et-corail-avec-un-pendentif.jpeg",
     "image": "/images/products_reconciled/collier-tibetain-en-lapis-lazuli-turquoise-et-corail-avec-un-pendentif.jpeg",
@@ -3062,7 +3130,8 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-137",
@@ -3103,7 +3172,9 @@
     "sku": "UGS :BRAP0427",
     "source_url": "https://www.khashika.com/produit/bce-bijou-indien-est-un-beau-bracelet-en-argent-avec-2-rangs-de-pierres-en-pierre-naturelle-et-de-jolies-perles-en-argent-ciselees-de-fabrication-artisanale-en-provenance-du-rajasthan/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -3128,11 +3199,12 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-140",
-    "name": "Foulard en 100%soie à motifs marron , orange et blanc",
+    "name": "Foulard en 100%soie à motifs marron, orange et blanc",
     "slug": "foulard-en-100soie-à-motifs-marron-orange-et-blanc",
     "title": "Foulard  en 100%soie à motifs marron , orange et blanc",
     "price": 18,
@@ -3194,7 +3266,9 @@
     "sku": "UGS :BRAP0008",
     "source_url": "https://www.khashika.com/produit/bracelet-argent-avec-des-pierres-rondes-en-cornaline-de-fabrication-artisanale-avec-de-belles-pierres-rondes-1-cm/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -3224,7 +3298,7 @@
   },
   {
     "id": "prod-144",
-    "name": "Boucles d’oreille en argent et pierre véritable en amethyste",
+    "name": "Boucles d’oreille en argent et pierre véritable en améthyste",
     "slug": "boucles-doreille-en-argent-et-pierre-véritable-en-amethyste",
     "title": "Boucles d’oreille en ARGENT et pierre véritable en amethyste",
     "price": 32,
@@ -3268,7 +3342,8 @@
     "source_url": "https://www.khashika.com/produit/ce-collier-de-pierres-taillees-est-monte-sur-fil-de-coton-noir-cest-un-bijou-qui-se-porte-en-ras-de-cou-vous-pouvez-retrouver-dans-ce-collier-lapis-lazuli-la-iolite-et-onyx-noir-qui-me/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-146",
@@ -3293,7 +3368,8 @@
       "agate",
       "citrine"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-147",
@@ -3316,7 +3392,8 @@
     "stones": [
       "aventurine"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-148",
@@ -3339,7 +3416,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-149",
@@ -3365,7 +3443,7 @@
   },
   {
     "id": "prod-150",
-    "name": "Collier tibetain pierres turquoise/corail et un pendentif",
+    "name": "Collier tibétain pierres turquoise/corail et un pendentif",
     "slug": "collier-tibetain-pierres-turquoisecorail-et-un-pendentif",
     "title": "Collier Tibetain pierres turquoise/corail et un pendentif",
     "price": 29,
@@ -3385,7 +3463,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-151",
@@ -3498,7 +3577,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-157",
@@ -3526,7 +3606,7 @@
   },
   {
     "id": "prod-158",
-    "name": "Chaine de chevilles argent pampilles perles de couleur",
+    "name": "Chaîne de chevilles argent pampilles perles de couleur",
     "slug": "chaine-de-chevilles-argent-pampilles-perles-de-couleur",
     "title": "CHAINE DE CHEVILLES ARGENT pampilles perles de couleur",
     "price": 32,
@@ -3565,7 +3645,8 @@
     "source_url": "https://www.khashika.com/produit/collier-indien-en-bois-brun-et-naturel-bijou-femme-et-homme/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "bois"
   },
   {
     "id": "prod-160",
@@ -3594,7 +3675,7 @@
     "slug": "collier-argent-avec-pendentif-en-calcédoine-bleu-foncé",
     "title": "COLLIER ARGENT avec pendentif en calcédoine bleu foncé",
     "price": 18,
-    "description": "Ce bijou est un magnifique collier indien sur une fine chainette en argent avec un pendentif enCalcédoine bleu foncéen pierre facettée.",
+    "description": "Ce bijou est un magnifique collier indien sur une fine chaînette en argent avec un pendentif enCalcédoine bleu foncéen pierre facettée.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-argent-avec-pendentif-en-calcédoine-bleu-foncé.jpg",
     "image": "/images/products_reconciled/collier-argent-avec-pendentif-en-calcédoine-bleu-foncé.jpg",
@@ -3662,7 +3743,7 @@
   },
   {
     "id": "prod-166",
-    "name": "Chaine longue métal argenté",
+    "name": "Chaîne longue métal argenté",
     "slug": "chaine-longue-métal-argenté",
     "title": "Chaine longue métal argenté",
     "price": 6,
@@ -3703,7 +3784,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-168",
@@ -3726,7 +3808,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-170",
@@ -3769,7 +3852,8 @@
     "source_url": "https://www.khashika.com/produit/creoles-en-argent-vraie-pierre-cher-et-artisanale-joli-bijou-indien-facile-a-porter-tendance-bijou-femme-indien-belle-finition/",
     "inStock": false,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-172",
@@ -3885,7 +3969,7 @@
   },
   {
     "id": "prod-177",
-    "name": "Bracelet argent amethyste",
+    "name": "Bracelet argent améthyste",
     "slug": "bracelet-argent-amethyste",
     "title": "BRACELET ARGENT AMETHYSTE",
     "price": 28,
@@ -3952,7 +4036,8 @@
     "stones": [
       "pierre de lune"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-180",
@@ -3972,8 +4057,11 @@
     "sku": "UGS :BRAP0053",
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-oeil-du-tigre/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-181",
@@ -3994,7 +4082,8 @@
     "source_url": "https://www.khashika.com/produit/collier-mala-avec-108-pierres-naturelles-en-opale-les-colliers-malas-sont-des-longs-colliers-en-pierres-qui-ont-aujourdhui-fait-leur-place-dans-lunivers-de-la-mode-comme-des-accessoires-tendances/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-182",
@@ -4017,7 +4106,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-183",
@@ -4037,7 +4127,9 @@
     "sku": "UGS :BOAP0873",
     "source_url": "https://www.khashika.com/produit/clous-doreilles-argent-pierre-naturelle-aigne-marine-bijou-femme-artisanal-inde/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "aigue-marine"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -4106,9 +4198,11 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-triple-protection-obsidienne-hematite-oeil-du-tigre-signe-aum/",
     "inStock": true,
     "stones": [
-      "obsidienne"
+      "obsidienne",
+      "oeil de tigre"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-188",
@@ -4128,13 +4222,15 @@
     "sku": "UGS :BOAP0084",
     "source_url": "https://www.khashika.com/produit/ces-boucles-doreilles-argent-et-pierre-de-saphir-bleu-sont-des-bijoux-dinde-la-monture-est-ciselee-et-la-pierre-semi-precieuse-bijou-de-fabrication-artisanale/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "saphir"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
   {
     "id": "prod-189",
-    "name": "Collier tibetain en turquoise et lapis-lazuli",
+    "name": "Collier tibétain en turquoise et lapis-lazuli",
     "slug": "collier-tibetain-en-turquoise-et-lapis-lazuli",
     "title": "Collier Tibetain en  Turquoise  et  Lapis-lazuli",
     "price": 19,
@@ -4154,11 +4250,12 @@
       "turquoise",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-190",
-    "name": "Creoles en laiton",
+    "name": "Créoles en laiton",
     "slug": "creoles-en-laiton",
     "title": "CREOLES EN LAITON",
     "price": 14,
@@ -4262,11 +4359,12 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-pendantes-rondes-a-imprime-floral-ethnique-vintage-bijoux-en-cuivre-cadeau-exquis-pour-femmes-filles/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "fantaisie"
   },
   {
     "id": "prod-195",
-    "name": "Bracelet pierre en amethyste sur macramé",
+    "name": "Bracelet pierre en améthyste sur macramé",
     "slug": "bracelet-pierre-en-amethyste-sur-macramé",
     "title": "Bracelet pierre en amethyste sur macramé",
     "price": 14,
@@ -4285,7 +4383,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-196",
@@ -4329,7 +4428,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-198",
@@ -4376,7 +4476,8 @@
     "stones": [
       "labradorite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-200",
@@ -4397,7 +4498,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-en-lave-et-yin-yang-il-convient-a-tous-les-poignets-les-perles-sont-rondes-avec-des-nuances-differentes/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-201",
@@ -4420,11 +4522,12 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-202",
-    "name": "Boucles d’oreilles argent amethyste",
+    "name": "Boucles d’oreilles argent améthyste",
     "slug": "boucles-doreilles-argent-amethyste",
     "title": "BOUCLES D’OREILLES ARGENT AMETHYSTE",
     "price": 23,
@@ -4465,7 +4568,8 @@
     "source_url": "https://www.khashika.com/produit/collier-sur-fil-pierres-lapis-lazuli-et-grenat-tres-elegant-qui-convient-a-toutes-vos-tenues-il-est-reglable-grave-on-son-fil-en-coton-pierres-naturelles-lapis-lazuli-et-grenat/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "cordon"
   },
   {
     "id": "prod-204",
@@ -4490,7 +4594,7 @@
   },
   {
     "id": "prod-205",
-    "name": "Bracelet argentet pierres naturelles aigue-marine",
+    "name": "Bracelet argent et pierres naturelles aigue-marine",
     "slug": "bracelet-argentet-pierres-naturelles-aigue-marine",
     "title": "BRACELET ARGENTet pierres naturelles aigue-marine",
     "price": 32,
@@ -4506,7 +4610,9 @@
     "sku": "UGS :BRAP0440",
     "source_url": "https://www.khashika.com/produit/bracelet-argentet-pierres-naturelles-aigue-marine-de-fabrication-artisanale-indienne-ce-bracelet-est-tres-chic-et-embellira-vos-tenues/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "aigue-marine"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -4528,8 +4634,11 @@
     "sku": "UGS :COAP0032",
     "source_url": "https://www.khashika.com/produit/collier-tibetain-nalo-dzi-fantaisie-qui-se-regle-avec-un-cordon-a-la-taille-souhaitee-stabilise-laura-favorise-lamour-et-la-paix-interieure-calme-les-angoisses-et-stabilise-lenergie-du-corps/",
     "inStock": true,
-    "stones": [],
-    "type": "collier"
+    "stones": [
+      "dzi"
+    ],
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-207",
@@ -4595,7 +4704,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-en-pierre-de-lune-et-agate-copibracelet-inscriptions-tibetaines-et-main-de-fatma-elle-est-souvent-associee-a-la-protection-contre-le-mal-et-a-la-chance/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-210",
@@ -4637,8 +4747,11 @@
     "sku": "est une pierre naturelle semi précieuse. Les perles sont rondes avec des nuances.",
     "source_url": "https://www.khashika.com/produit/collier-en-oeil-du-tigre-grande-pierre-veritable-artisanale-bijou-femme-pierres-naturelles/",
     "inStock": true,
-    "stones": [],
-    "type": "collier"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-212",
@@ -4688,11 +4801,11 @@
   },
   {
     "id": "prod-214",
-    "name": "Bracelet chainette dorée et pierre de jade",
+    "name": "Bracelet chaînette dorée et pierre de jade",
     "slug": "bracelet-chainette-dorée-et-pierre-de-jade",
     "title": "BRACELET chainette DORÉE et pierre de JADE",
     "price": 21,
-    "description": "BRACELET chainette DORÉE et pierre de JADECe bijou est en provenance de l’Inde fait par des artisans.",
+    "description": "BRACELET chaînette DORÉE et pierre de JADECe bijou est en provenance de l’Inde fait par des artisans.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-chainette-dorée-et-pierre-de-jade.jpeg",
     "image": "/images/products_reconciled/bracelet-chainette-dorée-et-pierre-de-jade.jpeg",
@@ -4755,7 +4868,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-217",
@@ -4778,7 +4892,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-218",
@@ -4826,7 +4941,7 @@
   },
   {
     "id": "prod-220",
-    "name": "Bracelet tibetain en lapis-lazuli",
+    "name": "Bracelet tibétain en lapis-lazuli",
     "slug": "bracelet-tibetain-en-lapis-lazuli",
     "title": "BRACELET TIBETAIN  en lapis-lazuli",
     "price": 29,
@@ -4845,7 +4960,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-221",
@@ -4870,7 +4986,8 @@
       "pierre de lune",
       "cristal"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "fantaisie"
   },
   {
     "id": "prod-222",
@@ -4894,7 +5011,8 @@
       "améthyste",
       "pierre de lune"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-223",
@@ -4915,9 +5033,11 @@
     "source_url": "https://www.khashika.com/produit/collier-travail-soigne-artisanal-perles-naturelles-turquoise-et-oeil-du-tigre-artisanal-tibetain/",
     "inStock": true,
     "stones": [
-      "turquoise"
+      "turquoise",
+      "oeil de tigre"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-224",
@@ -4940,7 +5060,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-226",
@@ -4987,7 +5108,8 @@
     "stones": [
       "topaze"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-228",
@@ -5032,7 +5154,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-perles-bois-de-rose-avec-tete-de-bouddha/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "bois"
   },
   {
     "id": "prod-231",
@@ -5079,7 +5202,8 @@
     "stones": [
       "labradorite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-234",
@@ -5152,7 +5276,7 @@
   },
   {
     "id": "prod-237",
-    "name": "Chaine metal argenté fille et garcon",
+    "name": "Chaîne métal argenté fille et garcon",
     "slug": "chaine-metal-argenté-fille-et-garcon",
     "title": "Chaine metal argenté fille et garcon",
     "price": 16,
@@ -5216,7 +5340,8 @@
       "perle",
       "cristal"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-240",
@@ -5239,7 +5364,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-241",
@@ -5284,7 +5410,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-de-guerison-en-multi-stone-il-convient-a-tous-les-poignets-ce-bracelet-est-monte-sur-un-elastique-tres-solide/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-244",
@@ -5325,7 +5452,9 @@
     "sku": "UGS :BAAP0059",
     "source_url": "https://www.khashika.com/produit/bague-en-argent-est-fine-et-martelee-la-monture-saccompagne-dune-pierre-rose-taillee-en-rubis-indien-cest-un-bijou-discret-que-vous-porterez-facilement-ce-bijou-indien-de-fabrication-ar/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "rubis"
+    ],
     "type": "bague",
     "material": "argent"
   },
@@ -5371,7 +5500,8 @@
     "stones": [
       "pierre de lune"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-248",
@@ -5418,7 +5548,8 @@
     "stones": [
       "grenat"
     ],
-    "type": "bague"
+    "type": "bague",
+    "material": "pierres"
   },
   {
     "id": "prod-251",
@@ -5439,7 +5570,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-indien-fantaisie-3/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "fantaisie"
   },
   {
     "id": "prod-252",
@@ -5484,9 +5616,11 @@
     "source_url": "https://www.khashika.com/produit/bracelet-mala-en-pierre-cornaline-de-fabrication-artisanale-monte-sur-un-elastique-tres-solide-il-convient-a-tous-les-poignets/",
     "inStock": true,
     "stones": [
-      "pierre de lune"
+      "pierre de lune",
+      "cornaline"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-254",
@@ -5510,7 +5644,8 @@
       "turquoise",
       "lapis-lazuli"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-255",
@@ -5518,7 +5653,7 @@
     "slug": "carré-de-soie-blanc-rose-et-bleu-motifs-fleuris",
     "title": "Carré de soie blanc, rose et bleu motifs fleuris",
     "price": 18,
-    "description": "C’est unaccessoire en soieà porter autour du cou, mais aussi enfoulard pour les cheveuxou autour de la taille. Pour les femmes bohèmes ou hippie chic, pour celles qui aiment lesfoulards colorés et bariolés,ce foulard indien est pour vous ! La soie est une matière noble, douce et légère, vous aimerez la porter en toutes occasions. Nos foulards de soie proviennent de Bénarès en Inde. Lefoulard femme en soieest une idée de cadeau qui fait toujours très plaisir!",
+    "description": "C’est unaccessoire en soieà porter autour du cou, mais aussi enfoulard pour les cheveuxou autour de la taille. Pour les femmes bohèmes ou hippie chic, pour celles qui aiment lesfoulards colorés et bariolés,ce foulard indien est pour vous! La soie est une matière noble, douce et légère, vous aimerez la porter en toutes occasions. Nos foulards de soie proviennent de Bénarès en Inde. Lefoulard femme en soieest une idée de cadeau qui fait toujours très plaisir!",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/carré-de-soie-blanc-rose-et-bleu-motifs-fleuris.jpeg",
     "image": "/images/products_reconciled/carré-de-soie-blanc-rose-et-bleu-motifs-fleuris.jpeg",
@@ -5552,8 +5687,11 @@
     "sku": "est une pierre naturelle semi précieuse. Les perles sont rondes avec des nuances.",
     "source_url": "https://www.khashika.com/produit/collier-pierres-naturelles-oeil-du-tigre-bijou-femme-authentique-moderne-petit-prix-pierres-naturelles/",
     "inStock": true,
-    "stones": [],
-    "type": "collier"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-257",
@@ -5596,11 +5734,12 @@
     "source_url": "https://www.khashika.com/produit/loeil-protecteur-est-un-symbole-culturel-ancien-qui-est-souvent-associe-a-la-protection-la-chance-et-la-securite/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "fantaisie"
   },
   {
     "id": "prod-259",
-    "name": "Bracelet jonc argente réglable style flèches",
+    "name": "Bracelet jonc argenté réglable style flèches",
     "slug": "bracelet-jonc-argente-réglable-style-flèches",
     "title": "BRACELET JONC argente réglable style flèches",
     "price": 10,
@@ -5641,7 +5780,8 @@
     "stones": [
       "jaspe"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-261",
@@ -5710,7 +5850,8 @@
     "stones": [
       "pierre de lune"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-264",
@@ -5846,13 +5987,15 @@
     "sku": "UGS :PEAP0183",
     "source_url": "https://www.khashika.com/produit/pendentif-argent-pierre-naturelle-cornaline-bijou-femme/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "type": "pendentif",
     "material": "argent"
   },
   {
     "id": "prod-270",
-    "name": "Chaine de chevilles fine argentée mat doubles mailles",
+    "name": "Chaîne de chevilles fine argentée mat doubles mailles",
     "slug": "chaine-de-chevilles-fine-argentée-mat-doubles-mailles",
     "title": "CHAINE DE CHEVILLES fine argentée mat doubles mailles",
     "price": 8,
@@ -5917,11 +6060,12 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-273",
-    "name": "Bracelet pierres naturelles en amethyste",
+    "name": "Bracelet pierres naturelles en améthyste",
     "slug": "bracelet-pierres-naturelles-en-amethyste",
     "title": "BRACELET pierres naturelles en AMETHYSTE",
     "price": 12,
@@ -5940,7 +6084,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-274",
@@ -5963,7 +6108,8 @@
     "stones": [
       "howlite"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-275",
@@ -5986,7 +6132,8 @@
     "stones": [
       "howlite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-276",
@@ -6053,7 +6200,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-280",
@@ -6076,7 +6224,8 @@
     "stones": [
       "howlite"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-281",
@@ -6099,7 +6248,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-282",
@@ -6187,7 +6337,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-sable-bleu-il-convient-a-tous-les-poignets-ce-bracelet-est-monte-sur-un-elastique-tres-solide-les-perles-sont-rondes-avec-des-nuances-differentes/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-288",
@@ -6207,8 +6358,11 @@
     "sku": "UGS :BRAP0095",
     "source_url": "https://www.khashika.com/produit/bracelet-en-pierres-naturelles-en-cornaline-il-convient-a-tous-les-poignets-ce-bracelet-est-monte-sur-un-elastique-tres-solide-les-perles-sont-rondes-avec-des-nuances-differentes/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "cornaline"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-289",
@@ -6231,7 +6385,8 @@
     "stones": [
       "jade"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-290",
@@ -6252,7 +6407,8 @@
     "source_url": "https://www.khashika.com/produit/collier-pendentif-en-perles-de-bois-longue-chaine-de-chandail-boho-sculpte/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "bois"
   },
   {
     "id": "prod-291",
@@ -6301,7 +6457,7 @@
   },
   {
     "id": "prod-293",
-    "name": "Chaine dorée élégante se porte seule",
+    "name": "Chaîne dorée élégante se porte seule",
     "slug": "chaine-dorée-élégante-se-porte-seule",
     "title": "Chaine dorée élégante se porte seule",
     "price": 4,
@@ -6342,11 +6498,12 @@
     "stones": [
       "jade"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-295",
-    "name": "Creoles en laiton et pierre lapis-lazuli",
+    "name": "Créoles en laiton et pierre lapis-lazuli",
     "slug": "creoles-en-laiton-et-pierre-lapis-lazuli",
     "title": "CREOLES  EN LAITON et pierre lapis-lazuli",
     "price": 17,
@@ -6394,7 +6551,7 @@
   },
   {
     "id": "prod-297",
-    "name": "Bracelet tibetain en turquoise et corail",
+    "name": "Bracelet tibétain en turquoise et corail",
     "slug": "bracelet-tibetain-en-turquoise-et-corail",
     "title": "BRACELET TIBETAIN  en turquoise et corail",
     "price": 27,
@@ -6414,7 +6571,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-298",
@@ -6437,7 +6595,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-299",
@@ -6459,9 +6618,11 @@
     "inStock": true,
     "stones": [
       "turquoise",
-      "lapis-lazuli"
+      "lapis-lazuli",
+      "oeil de tigre"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-300",
@@ -6529,11 +6690,12 @@
     "source_url": "https://www.khashika.com/produit/collier-indien-en-bois-naturel-bijou-femme-bijou-homme/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "bois"
   },
   {
     "id": "prod-305",
-    "name": "Joli collier tibetain turquoise et corail",
+    "name": "Joli collier tibétain turquoise et corail",
     "slug": "joli-collier-tibetain-turquoise-et-corail",
     "title": "Joli Collier Tibetain Turquoise et Corail",
     "price": 36,
@@ -6553,7 +6715,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-306",
@@ -6576,7 +6739,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-307",
@@ -6597,7 +6761,8 @@
     "source_url": "https://www.khashika.com/produit/chaine-de-chevilles-cordon-bleu-reglable-avec-une-tortue-ce-bijou-est-tres-tendance-et-se-porte-surtout-lete/",
     "inStock": true,
     "stones": [],
-    "type": "cheville"
+    "type": "cheville",
+    "material": "cordon"
   },
   {
     "id": "prod-308",
@@ -6620,7 +6785,8 @@
     "stones": [
       "jaspe"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-309",
@@ -6664,8 +6830,11 @@
     "sku": "UGS :COAP0096",
     "source_url": "https://www.khashika.com/produit/ollier-mala-tibetain-pierres-naturelles-turquoise-aigue-marine-avec-108-perles-collier-tibetain-collier-mala-avec-108-pierres-naturelles-plus-quun-simple-bijou-le-mala-est-un-collier-de/",
     "inStock": true,
-    "stones": [],
-    "type": "collier"
+    "stones": [
+      "aigue-marine"
+    ],
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-311",
@@ -6686,7 +6855,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-en-l-pierre-de-lave-7-chakra-et-bouddha-monte-sur-un-elastique-tres-solide/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-312",
@@ -6844,7 +7014,9 @@
     "sku": "UGS :PEAP0008",
     "source_url": "https://www.khashika.com/produit/magnifique-pendentif-en-argent-et-serti-dun-pierre-oeil-du-tigre-ce-bijou-est-en-provenance-dinde-hauteur-25-cm-pierre-18-mm/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "oeil de tigre"
+    ],
     "type": "pendentif",
     "material": "argent"
   },
@@ -6891,7 +7063,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-multi-stone-ce-bracelet-est-monte-sur-un-elastique-tres-solide-il-convient-a-tous-les-poignet-vous-pouvez-lassortir-avec-dautres-bracelets/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-325",
@@ -6923,7 +7096,7 @@
     "slug": "bracelet-pierres-naturelles-jaspe",
     "title": "BRACELET pierres naturelles JASPE",
     "price": 12,
-    "description": "BRACELET pierres naturelles JASPE ,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
+    "description": "BRACELET pierres naturelles JASPE,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-jaspe.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-jaspe.jpeg",
@@ -6938,7 +7111,8 @@
     "stones": [
       "jaspe"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-328",
@@ -6961,7 +7135,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-329",
@@ -6969,7 +7144,7 @@
     "slug": "bracelet-souple-argent-zircon",
     "title": "bracelet souple argent zircon",
     "price": 26,
-    "description": "Bracelet indien souple enargentavec une chainette et des perles argent ciselées et avec des pierreszircon en fleurTrès beau bijou qui peut vous accompagner avec toutes vos tenues,il est indémodable.",
+    "description": "Bracelet indien souple enargentavec une chaînette et des perles argent ciselées et avec des pierreszircon en fleurTrès beau bijou qui peut vous accompagner avec toutes vos tenues,il est indémodable.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-souple-argent-zircon.jpg",
     "image": "/images/products_reconciled/bracelet-souple-argent-zircon.jpg",
@@ -6981,7 +7156,9 @@
     "sku": "UGS :BRAP0144",
     "source_url": "https://www.khashika.com/produit/bracelet-indien-souple-en-argent-avec-une-chainette-et-des-perles-argent-ciselees-et-avec-des-pierres-zircon-en-fleur-tres-beau-bijou-qui-peut-vous-accompagner-avec-toutes-vos-tenues/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "zircon"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -7004,7 +7181,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-jonc-tibetain/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-331",
@@ -7110,7 +7288,9 @@
     "sku": "UGS :BOAP0038",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-argent-cercle-et-larimar-ces-boucles-doreille-argent-sont-en-forme-de-cercle-et-largent-est-travaille-en-tresse-la-pierre-bleue-est-une-larimar-elle-est/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "larimar"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -7136,7 +7316,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "bague"
+    "type": "bague",
+    "material": "fantaisie"
   },
   {
     "id": "prod-337",
@@ -7163,7 +7344,7 @@
   },
   {
     "id": "prod-338",
-    "name": "Collier tibetain en lapis-lazuli turquoise corail",
+    "name": "Collier tibétain en lapis-lazuli turquoise corail",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-corail",
     "title": "Collier Tibetain en Lapis-lazuli Turquoise  corail",
     "price": 19,
@@ -7184,11 +7365,12 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-341",
-    "name": "Boucles d’oreilles argent et petite pierre emeraude",
+    "name": "Boucles d’oreilles argent et petite pierre émeraude",
     "slug": "boucles-doreilles-argent-et-petite-pierre-emeraude",
     "title": "BOucles d’oreilles argent et petite  pierre emeraude",
     "price": 32,
@@ -7204,7 +7386,9 @@
     "sku": "UGS :BOAP0620",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-indiennes-argent-pierre-emeraude-bijou-femme-ethnique-authentique-typique-inde/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "émeraude"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -7229,7 +7413,8 @@
     "stones": [
       "pierre de lune"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-343",
@@ -7303,7 +7488,7 @@
   },
   {
     "id": "prod-346",
-    "name": "Chaine en argent 52 cm",
+    "name": "Chaîne en argent 52 cm",
     "slug": "chaine-en-argent-52-cm",
     "title": "CHAINE EN ARGENT 52 cm",
     "price": 9,
@@ -7329,7 +7514,7 @@
     "slug": "bracelet-argent-oeil-du-tigre",
     "title": "BRACELET ARGENT oeil du tigre",
     "price": 25,
-    "description": "Ce bijou indien est un bracelet en argent sur une chainette serti de 3 pierres en oeil du tigre.",
+    "description": "Ce bijou indien est un bracelet en argent sur une chaînette serti de 3 pierres en oeil du tigre.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-argent-oeil-du-tigre.jpeg",
     "image": "/images/products_reconciled/bracelet-argent-oeil-du-tigre.jpeg",
@@ -7341,7 +7526,9 @@
     "sku": "UGS :BRAP0340",
     "source_url": "https://www.khashika.com/produit/bracelet-argent-oeil-du-tigre-bijou-femme-vraie-pierre-et-en-argent-massif/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "oeil de tigre"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -7393,7 +7580,7 @@
   },
   {
     "id": "prod-350",
-    "name": "Collier tibetain en pierres de corail, turquoise verte et lapis-lazuli",
+    "name": "Collier tibétain en pierres de corail, turquoise verte et lapis-lazuli",
     "slug": "collier-tibetain-en-pierres-de-corail-turquoise-verte-et-lapis-lazuli",
     "title": "Collier Tibetain en  pierres de  corail, turquoise verte  et Lapis-lazuli",
     "price": 26,
@@ -7414,7 +7601,8 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-351",
@@ -7437,7 +7625,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-352",
@@ -7460,7 +7649,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-353",
@@ -7481,7 +7671,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-fantaisie-porte-bonheur/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "fantaisie"
   },
   {
     "id": "prod-354",
@@ -7551,7 +7742,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-indien-jonc-bois-et-peint-a-la-main-authentique-typique-ndien/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "bois"
   },
   {
     "id": "prod-357",
@@ -7644,7 +7836,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-362",
@@ -7689,7 +7882,8 @@
     "source_url": "https://www.khashika.com/produit/collier-indien-en-bois-blanc-bijou-femme-bijou-homme/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "bois"
   },
   {
     "id": "prod-364",
@@ -7760,7 +7954,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-367",
@@ -7894,7 +8089,8 @@
       "pierre de lune",
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-373",
@@ -7941,7 +8137,8 @@
     "stones": [
       "jaspe"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-375",
@@ -7969,7 +8166,7 @@
   },
   {
     "id": "prod-376",
-    "name": "Bracelet jonc argente avec 1 pierre onyx noir",
+    "name": "Bracelet jonc argenté avec 1 pierre onyx noir",
     "slug": "bracelet-jonc-argente-avec-1-pierre-onyx-noir",
     "title": "BRACELET JONC argente  avec 1 pierre onyx noir",
     "price": 16,
@@ -8010,7 +8207,8 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-pierre-facettee-en-lapis-lazuli-bijou-femme-fait-main-en-inde/",
     "inStock": false,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-378",
@@ -8031,7 +8229,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-7-chakras/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-379",
@@ -8081,7 +8280,7 @@
   },
   {
     "id": "prod-382",
-    "name": "Belle bague fine en argent et peridot",
+    "name": "Belle bague fine en argent et péridot",
     "slug": "belle-bague-fine-en-argent-et-peridot",
     "title": "Belle bague fine en  Argent et  peridot",
     "price": 17,
@@ -8097,7 +8296,9 @@
     "sku": "UGS :BAAP0209",
     "source_url": "https://www.khashika.com/produit/fine-bague-argent-peridot-artisanle-fait-en-inde-bijou-femme-bijoux-argent-bijou-pierre/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "type": "bague",
     "material": "argent"
   },
@@ -8119,7 +8320,9 @@
     "sku": "UGS :BOAP5004",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-argent-cornaline-bijou-femme-bijou-authentique-veritables-pierres-inde-belles-boucles-doreilles-indiennes-en-argent-avec-une-pierre-en-cornaline-de-fabrication-artisana/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -8144,7 +8347,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-385",
@@ -8167,11 +8371,12 @@
     "stones": [
       "malachite"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-386",
-    "name": "Chaine de chevilles argentée perles de turquoise",
+    "name": "Chaîne de chevilles argentée perles de turquoise",
     "slug": "chaine-de-chevilles-argentée-perles-de-turquoise",
     "title": "CHAINE DE CHEVILLES argentée perles de turquoise",
     "price": 8,
@@ -8211,7 +8416,9 @@
     "sku": "UGS :BRAP0027",
     "source_url": "https://www.khashika.com/produit/bracelet-argent-cornaline-magnifique-bracelet-indien-en-argent-et-6-grandes-pierres-en-cornaline-de-fabrication-artisanale-avec-de-belles-pierres-ovales-15cm-1-cm/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -8280,11 +8487,12 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-391",
-    "name": "Chaine de chevilles argentée perles de couleur et ponpon",
+    "name": "Chaîne de chevilles argentée perles de couleur et ponpon",
     "slug": "chaine-de-chevilles-argentée-perles-de-couleur-et-ponpon",
     "title": "CHAINE DE CHEVILLES argentée perles de couleur et ponpon",
     "price": 8,
@@ -8349,7 +8557,8 @@
     "stones": [
       "quartz"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-394",
@@ -8372,7 +8581,8 @@
     "stones": [
       "rhodonite"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-395",
@@ -8439,7 +8649,8 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-fantaisie-noir-et-blanc-bijou-fantaisie-indien/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "fantaisie"
   },
   {
     "id": "prod-399",
@@ -8462,7 +8673,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-400",
@@ -8553,15 +8765,16 @@
     "stones": [
       "howlite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-405",
-    "name": "Collier fantaise chainette metal argente",
+    "name": "Collier fantaise chaînette métal argenté",
     "slug": "collier-fantaise-chainette-metal-argente",
     "title": "Collier fantaise chainette metal argente",
     "price": 9,
-    "description": "Collier fantaisie monté sur chaine argentée en petits cubes et de petites perles rondes et carrés couleur noir et bleu.",
+    "description": "Collier fantaisie monté sur chaîne argentée en petits cubes et de petites perles rondes et carrés couleur noir et bleu.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-fantaise-chainette-metal-argente.jpg",
     "image": "/images/products_reconciled/collier-fantaise-chainette-metal-argente.jpg",
@@ -8639,7 +8852,8 @@
     "source_url": "https://www.khashika.com/produit/ces-boucles-doreilles-fantaisie-indiennes-sont-de-style-meenakari-fabrication-typique-du-rajasthan-ce-sont-des-bijoux-peints-a-la-main-facon-emaux-ce-modele-est-noir-aux-motifs-rouges-ce-sont-d/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "fantaisie"
   },
   {
     "id": "prod-410",
@@ -8663,7 +8877,8 @@
       "turquoise",
       "quartz"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-412",
@@ -8729,7 +8944,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-416",
@@ -8750,7 +8966,8 @@
     "source_url": "https://www.khashika.com/produit/ce-bijou-indien-est-un-bracelet-en-pierre-de-soleil-naturelle-cest-un-bijou-qui-se-porte-facilement-et-les-pierres-semi-precieuses-sont-toujours-tres-appreciees-la-pierre-de-soleil-bri/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-417",
@@ -8758,7 +8975,7 @@
     "slug": "collier-tibétain-avec-des-perles-taillées",
     "title": "Collier Tibétain avec des perles taillées",
     "price": 3,
-    "description": "Collier TIBETAIN orné de pierres taillées typiquement tibétainet des perles argentées",
+    "description": "Collier TIBÉTAIN orné de pierres taillées typiquement tibétainet des perles argentées",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-tibétain-avec-des-perles-taillées.jpeg",
     "image": "/images/products_reconciled/collier-tibétain-avec-des-perles-taillées.jpeg",
@@ -8771,7 +8988,8 @@
     "source_url": "https://www.khashika.com/produit/collier-tibetain-avec-des-perles-taillees-typique-du-neppal-bijoux-femme-ollier-ethnique/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-418",
@@ -8795,11 +9013,12 @@
       "grenat",
       "amazonite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-419",
-    "name": "Bracelet tibetain argenté pierre turquoise corail tête de bouddha",
+    "name": "Bracelet tibétain argenté pierre turquoise corail tête de bouddha",
     "slug": "bracelet-tibetain-argenté-pierre-turquoise-corail-tête-de-bouddha",
     "title": "BRACELET tibetain argenté pierre turquoise corail tête de bouddha",
     "price": 14,
@@ -8843,7 +9062,8 @@
     "stones": [
       "jade"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-422",
@@ -8864,7 +9084,8 @@
     "source_url": "https://www.khashika.com/produit/collier-pierres-naturelles-rhodochrosite-bijou-fait-main-pierres-naturelles-bienfaits-physique/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-423",
@@ -8887,7 +9108,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-424",
@@ -8907,8 +9129,11 @@
     "sku": "UGS :BRAP0113",
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-oeil-du-tigre-il-convient-a-tous-les-poignets-ce-bracelet-est-monte-sur-un-elastique-tres-solide/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-425",
@@ -8929,9 +9154,11 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-triple-protection-obsidienne-hematite-oeil-du-tigre/",
     "inStock": true,
     "stones": [
-      "obsidienne"
+      "obsidienne",
+      "oeil de tigre"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-426",
@@ -8952,7 +9179,8 @@
     "source_url": "https://www.khashika.com/produit/collier-mala-avec-108-pierres-naturelles-en-multi-stones-les-colliers-malas-sont-des-longs-colliers-en-pierres-qui-ont-aujourdhui-fait-leur-place-dans-lunivers-de-la-mode-comme-des-accessoires-te/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-428",
@@ -9001,7 +9229,7 @@
   },
   {
     "id": "prod-430",
-    "name": "Bracelet chainette argent et pierre onyx noir",
+    "name": "Bracelet chaînette argent et pierre onyx noir",
     "slug": "bracelet-chainette-argent-et-pierre-onyx-noir",
     "title": "BRACELET chainette argent et pierre onyx noir",
     "price": 17,
@@ -9045,7 +9273,8 @@
       "perle",
       "quartz"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-432",
@@ -9066,7 +9295,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-multi-color/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-433",
@@ -9094,7 +9324,7 @@
   },
   {
     "id": "prod-434",
-    "name": "Collier tibetain en lapis-lazuliavec un pendentif tibétain",
+    "name": "Collier tibétain en lapis-lazuliavec un pendentif tibétain",
     "slug": "collier-tibetain-en-lapis-lazuliavec-un-pendentif-tibétain",
     "title": "Collier Tibetain en  lapis-lazuliavec un pendentif tibétain",
     "price": 29,
@@ -9111,7 +9341,8 @@
     "source_url": "https://www.khashika.com/produit/collier-tibetain-en-lapis-lazuliavec-un-pendentif-tibetain/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-435",
@@ -9222,7 +9453,8 @@
     "source_url": "https://www.khashika.com/produit/ce-collier-de-pierres-taillees-est-monte-sur-fil-de-coton-noir-cest-un-bijou-qui-se-porte-en-ras-de-cou-vous-pouvez-retrouver-dans-ce-collier-lamethyste-la-iolite-et-lagate-verte-qui-mel/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-440",
@@ -9319,7 +9551,7 @@
     "slug": "bracelet-souple-argent-saphir",
     "title": "bracelet souple argent saphir",
     "price": 29,
-    "description": "Bracelet indien souple enargentavec une chainette et des perles argent ciselées et avec des pierressaphir en fleurTrès beau bijou qui peut vous accompagner avec toutes vos tenues,il est indémodable.",
+    "description": "Bracelet indien souple enargentavec une chaînette et des perles argent ciselées et avec des pierressaphir en fleurTrès beau bijou qui peut vous accompagner avec toutes vos tenues,il est indémodable.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-souple-argent-saphir.jpg",
     "image": "/images/products_reconciled/bracelet-souple-argent-saphir.jpg",
@@ -9331,7 +9563,9 @@
     "sku": "UGS :BRAP0426",
     "source_url": "https://www.khashika.com/produit/bracelet-souple-argent-onyx-noir-bijou-femme-authentique-pas-cher-creation-moderne-en-inde/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "saphir"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -9356,7 +9590,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-446",
@@ -9376,7 +9611,9 @@
     "sku": "UGS :BAAP0003",
     "source_url": "https://www.khashika.com/produit/bague-argent-loeil-du-tigre-bijou-femme-bijou-pierre-bijou-argent-convient-aussi-a-une-petite-fille/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "oeil de tigre"
+    ],
     "type": "bague",
     "material": "argent"
   },
@@ -9447,7 +9684,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-453",
@@ -9490,7 +9728,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-multistones-de-fabrication-artisanale-monte-sur-un-cordon-reglable/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-455",
@@ -9510,7 +9749,9 @@
     "sku": "UGS :BRAP0009",
     "source_url": "https://www.khashika.com/produit/bracelet-argent-avec-des-pierres-ovales-en-peridot-de-fabrication-artisanale-avec-de-belles-pierres-ovales-1-cm/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -9533,7 +9774,8 @@
     "source_url": "https://www.khashika.com/produit/bracelets-systeme-solaire-11-planetes/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-457",
@@ -9578,11 +9820,12 @@
       "pierre de lune",
       "quartz"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-459",
-    "name": "Créoles ethniques argente et pierre turquoise",
+    "name": "Créoles ethniques argenté et pierre turquoise",
     "slug": "créoles-ethniques-argente-et-pierre-turquoise",
     "title": "créoles ethniques ARGENTE ET PIERRE turquoise",
     "price": 24,
@@ -9626,7 +9869,8 @@
       "turquoise",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-461",
@@ -9646,7 +9890,9 @@
     "sku": "UGS :BAAP0035",
     "source_url": "https://www.khashika.com/produit/cette-bague-fantaisie-est-de-forme-ovale-elle-est-doree-en-laiton-et-saccompagne-de-2-pierres-en-peridot-bijou-indien-de-fabrication-artisanale/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "type": "bague",
     "material": "or"
   },
@@ -9713,7 +9959,8 @@
     "source_url": "https://www.khashika.com/produit/chaine-de-chevilles-cordon-bleu-reglable-avec-developper-eyes-ce-bijou-est-tres-tendance-et-se-porte-surtout-lete-bijou-inde-bijou-femme/",
     "inStock": true,
     "stones": [],
-    "type": "cheville"
+    "type": "cheville",
+    "material": "cordon"
   },
   {
     "id": "prod-465",
@@ -9762,7 +10009,7 @@
   },
   {
     "id": "prod-467",
-    "name": "Chaine de chevilles argentée papillon",
+    "name": "Chaîne de chevilles argentée papillon",
     "slug": "chaine-de-chevilles-argentée-papillon",
     "title": "CHAINE DE CHEVILLES argentée papillon",
     "price": 8,
@@ -9803,7 +10050,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-469",
@@ -9894,7 +10142,8 @@
     "stones": [
       "quartz"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-474",
@@ -9909,7 +10158,8 @@
     "isOnSale": true,
     "isNew": false,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "fantaisie"
   },
   {
     "id": "prod-475",
@@ -9930,7 +10180,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-en-cuir-avec-pierre-turquoise-copie/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-476",
@@ -9984,7 +10235,7 @@
     "slug": "carré-de-soie-turquoise-motifs-fleurs-et-éléphant",
     "title": "Carré de soie turquoise motifs fleurs et éléphant",
     "price": 6,
-    "description": "Cecarré de soieest de couleur bleu turquoise, rose, et vert avec des motifs éléphants et fleuris. C’est unaccessoire en soieà porter autour du cou, mais aussi enfoulard pour les cheveuxou autour de la taille. Pour les femmes bohèmes ou hippie chic, pour celles qui aiment lesfoulards colorés et bariolés,ce foulard indien est pour vous ! La soie est une matière noble, douce et légère, vous aimerez la porter en toutes occasions. Nos foulards de soie proviennent de Bénarès en Inde. Lefoulard femme en soieest une idée de cadeau qui fait toujours très plaisir!",
+    "description": "Cecarré de soieest de couleur bleu turquoise, rose, et vert avec des motifs éléphants et fleuris. C’est unaccessoire en soieà porter autour du cou, mais aussi enfoulard pour les cheveuxou autour de la taille. Pour les femmes bohèmes ou hippie chic, pour celles qui aiment lesfoulards colorés et bariolés,ce foulard indien est pour vous! La soie est une matière noble, douce et légère, vous aimerez la porter en toutes occasions. Nos foulards de soie proviennent de Bénarès en Inde. Lefoulard femme en soieest une idée de cadeau qui fait toujours très plaisir!",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/carré-de-soie-turquoise-motifs-fleurs-et-éléphant.jpeg",
     "image": "/images/products_reconciled/carré-de-soie-turquoise-motifs-fleurs-et-éléphant.jpeg",
@@ -10111,7 +10362,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-485",
@@ -10134,7 +10386,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-486",
@@ -10182,7 +10435,8 @@
       "améthyste",
       "onyx noir"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-488",
@@ -10202,7 +10456,9 @@
     "sku": "UGS :BOAP0101",
     "source_url": "https://www.khashika.com/produit/petite-boucle-doreille-en-pierre-peridot-et-en-argent-bijou-femme-indien-authentique/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -10271,7 +10527,8 @@
     "source_url": "https://www.khashika.com/produit/collier-indien-en-bois-blanc-bijou-femme-bijou-homme-2/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "bois"
   },
   {
     "id": "prod-492",
@@ -10345,7 +10602,7 @@
   },
   {
     "id": "prod-495",
-    "name": "Chaine de chevilles argentée perles turquoise",
+    "name": "Chaîne de chevilles argentée perles turquoise",
     "slug": "chaine-de-chevilles-argentée-perles-turquoise",
     "title": "CHAINE DE CHEVILLES argentée perles turquoise",
     "price": 12,
@@ -10390,7 +10647,7 @@
   },
   {
     "id": "prod-497",
-    "name": "Bracelet tibetain argenté avec un petit éléphant",
+    "name": "Bracelet tibétain argenté avec un petit éléphant",
     "slug": "bracelet-tibetain-argenté-avec-un-petit-éléphant",
     "title": "BRACELET TIBETAIN argenté AVEC UN PETIT ÉLÉPHANT",
     "price": 12,
@@ -10437,7 +10694,7 @@
     "slug": "boucles-doreilles-créoles-dorées-en-laiton-et-très-légères",
     "title": "Boucles d’oreilles créoles dorées en laiton et très légères",
     "price": 16,
-    "description": "Cescréoles doréessont enlaiton et très légères ,matière qui ne bouge pas et qui change du plaqué-or.",
+    "description": "Cescréoles doréessont enlaiton et très légères,matière qui ne bouge pas et qui change du plaqué-or.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/boucles-doreilles-créoles-dorées-en-laiton-et-très-légères.jpeg",
     "image": "/images/products_reconciled/boucles-doreilles-créoles-dorées-en-laiton-et-très-légères.jpeg",
@@ -10495,12 +10752,15 @@
     "sku": "UGS :BRAP0210",
     "source_url": "https://www.khashika.com/produit/ce-bracelet-est-monte-sur-un-elastique-tres-solide-avec-des-pierres-naturelles-en-oeil-du-titre-bleu-il-convient-a-tous-les-poignets-les-perles-sont-rondes-avec-des-nuances-differentes-ce-bijou/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-505",
-    "name": "Collier tibetain turquoise et corail",
+    "name": "Collier tibétain turquoise et corail",
     "slug": "collier-tibetain-turquoise-et-corail",
     "title": "Collier Tibetain Turquoise et Corail",
     "price": 34,
@@ -10520,7 +10780,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-506",
@@ -10549,7 +10810,7 @@
     "slug": "bracelet-fleur-de-vie-en-laiton",
     "title": "Bracelet fleur de vie en laiton",
     "price": 10,
-    "description": "Cebracelet fantaisieest fin, c’est une chaine dorée en laiton avec un médaillon enfleur de vie.",
+    "description": "Cebracelet fantaisieest fin, c’est une chaîne dorée en laiton avec un médaillon enfleur de vie.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-fleur-de-vie-en-laiton.jpeg",
     "image": "/images/products_reconciled/bracelet-fleur-de-vie-en-laiton.jpeg",
@@ -10629,7 +10890,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-512",
@@ -10650,11 +10912,12 @@
     "source_url": "https://www.khashika.com/produit/bracelet-tibetain-en-perles-ce-bracelet-est-monte-de-perles-colorees-et-de-perles-en-metal-argente-cest-un-bijou-de-style-tibetain-il-est-artisanal-et-typique/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-513",
-    "name": "Chaine de chevilles argentée",
+    "name": "Chaîne de chevilles argentée",
     "slug": "chaine-de-chevilles-argentée",
     "title": "CHAINE DE CHEVILLES argentée",
     "price": 12,
@@ -10676,11 +10939,11 @@
   },
   {
     "id": "prod-514",
-    "name": "Bracelet tibetain argenté pierre turquoise et lapis-lazuli tête de bouddha",
+    "name": "Bracelet tibétain argenté pierre turquoise et lapis-lazuli tête de bouddha",
     "slug": "bracelet-tibetain-argenté-pierre-turquoise-et-lapis-lazuli-tête-de-bouddha",
     "title": "BRACELET tibetain argenté pierre turquoise et lapis-lazuli tête de bouddha",
     "price": 14,
-    "description": "Cebracelet Tibétainse compose de 3 rangs de perlesTurquoise , lapis-lazuli et une tête de bouddha.",
+    "description": "Cebracelet Tibétainse compose de 3 rangs de perlesTurquoise, lapis-lazuli et une tête de bouddha.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-tibetain-argenté-pierre-turquoise-et-lapis-lazuli-tête-de-bouddha.jpeg",
     "image": "/images/products_reconciled/bracelet-tibetain-argenté-pierre-turquoise-et-lapis-lazuli-tête-de-bouddha.jpeg",
@@ -10701,7 +10964,7 @@
   },
   {
     "id": "prod-515",
-    "name": "Chaine de chevilles perles de couleur cordon réglable",
+    "name": "Chaîne de chevilles perles de couleur cordon réglable",
     "slug": "chaine-de-chevilles-perles-de-couleur-cordon-réglable",
     "title": "CHAINE DE CHEVILLES perles de couleur cordon réglable",
     "price": 7,
@@ -10718,7 +10981,8 @@
     "source_url": "https://www.khashika.com/produit/chaine-de-chevilles-cordelette-coton-et-perles-de-couleur/",
     "inStock": true,
     "stones": [],
-    "type": "chaîne"
+    "type": "chaîne",
+    "material": "cordon"
   },
   {
     "id": "prod-516",
@@ -10765,7 +11029,8 @@
     "stones": [
       "calcédoine"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-519",
@@ -10788,7 +11053,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-520",
@@ -10880,7 +11146,8 @@
     "stones": [
       "pierre de lune"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-524",
@@ -11016,11 +11283,12 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-531",
-    "name": "Bracelet tibetain turquoise",
+    "name": "Bracelet tibétain turquoise",
     "slug": "bracelet-tibetain-turquoise",
     "title": "BRACELET TIBETAIN  turquoise",
     "price": 27,
@@ -11039,7 +11307,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-532",
@@ -11080,13 +11349,15 @@
     "sku": "UGS :BOAP0022",
     "source_url": "https://www.khashika.com/produit/bijou-femme-creoles-argent-dune-pierre-en-cornaline-ces-boucles-sont-legeres-le-quartz-rose-est-la-pierre-du-coeur-et-de-lamourdiam-creole-argent-3cm/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
   {
     "id": "prod-536",
-    "name": "Chaine de chevilles argent",
+    "name": "Chaîne de chevilles argent",
     "slug": "chaine-de-chevilles-argent",
     "title": "CHAINE DE CHEVILLES ARGENT",
     "price": 26,
@@ -11152,11 +11423,11 @@
   },
   {
     "id": "prod-539",
-    "name": "Chaine en argent avec 15 perles argent tendance",
+    "name": "Chaîne en argent avec 15 perles argent tendance",
     "slug": "chaine-en-argent-avec-15-perles-argent-tendance",
     "title": "CHAINE EN ARGENT avec 15 perles argent tendance",
     "price": 32,
-    "description": "Belle chaine enargentavec une belle maille et15 magnifiques perles en argent joliment ciselées.",
+    "description": "Belle chaîne enargentavec une belle maille et15 magnifiques perles en argent joliment ciselées.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/chaine-en-argent-avec-15-perles-argent-tendance.jpg",
     "image": "/images/products_reconciled/chaine-en-argent-avec-15-perles-argent-tendance.jpg",
@@ -11190,7 +11461,9 @@
     "sku": "UGS :PEAP0052",
     "source_url": "https://www.khashika.com/produit/pendentif-argent-cornaline-pendentif-argent-pierre-naturelle-bijou-femme/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "cornaline"
+    ],
     "type": "pendentif",
     "material": "argent"
   },
@@ -11210,7 +11483,8 @@
       "turquoise",
       "agate"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-542",
@@ -11233,7 +11507,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-543",
@@ -11254,11 +11529,12 @@
     "source_url": "https://www.khashika.com/produit/pendentif-style-boho-motif-fleur/",
     "inStock": true,
     "stones": [],
-    "type": "pendentif"
+    "type": "pendentif",
+    "material": "fantaisie"
   },
   {
     "id": "prod-544",
-    "name": "Fine bague argent peridot",
+    "name": "Fine bague argent péridot",
     "slug": "fine-bague-argent-peridot",
     "title": "Fine Bague Argent  peridot",
     "price": 15,
@@ -11274,7 +11550,9 @@
     "sku": "UGS :BAAP0208",
     "source_url": "https://www.khashika.com/produit/fine-bague-argent-peridote-bague-fait-main-par-des-artisans-en-inde/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "type": "bague",
     "material": "argent"
   },
@@ -11296,17 +11574,19 @@
     "sku": "UGS :BAAP0025",
     "source_url": "https://www.khashika.com/produit/bague-argent-pierre-rubis-indien-bijou-femme-elegant-facile-a-porter/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "rubis"
+    ],
     "type": "bague",
     "material": "argent"
   },
   {
     "id": "prod-546",
-    "name": "Collier tibetain turquoise bleue et verte et corail",
+    "name": "Collier tibétain turquoise bleue et verte et corail",
     "slug": "collier-tibetain-turquoise-bleue-et-verte-et-corail",
     "title": "Collier Tibetain Turquoise bleue et verte et Corail",
     "price": 34,
-    "description": "Collier TIBETAIN orné de pierres de Turquoise et de Corail ainsi que de belles perles joliment ciselées .",
+    "description": "Collier TIBÉTAIN orné de pierres de Turquoise et de Corail ainsi que de belles perles joliment ciselées .",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-tibetain-turquoise-bleue-et-verte-et-corail.jpeg",
     "image": "/images/products_reconciled/collier-tibetain-turquoise-bleue-et-verte-et-corail.jpeg",
@@ -11322,7 +11602,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-547",
@@ -11364,13 +11645,15 @@
     "sku": "UGS :BOAP0631",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-argent-pierre-saphir-typique-indien/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "saphir"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
   {
     "id": "prod-550",
-    "name": "Boucles d’oreille argent amethyste",
+    "name": "Boucles d’oreille argent améthyste",
     "slug": "boucles-doreille-argent-amethyste",
     "title": "Boucles d’oreille argent AMETHYSTE",
     "price": 14,
@@ -11413,11 +11696,12 @@
     "stones": [
       "turquoise"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-553",
-    "name": "Chaine de chevilles argentée perles couleur",
+    "name": "Chaîne de chevilles argentée perles couleur",
     "slug": "chaine-de-chevilles-argentée-perles-couleur",
     "title": "CHAINE DE CHEVILLES argentée perles couleur",
     "price": 8,
@@ -11546,7 +11830,9 @@
     "sku": "UGS :BOAP0075",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-argent-triangle-et-peridot-taille-sterling-925/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "péridot"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
@@ -11568,7 +11854,9 @@
     "sku": "UGS :bola0025",
     "source_url": "https://www.khashika.com/produit/creoles-en-laiton-tune-pierre-naturelle-oeil-du-tigre/",
     "inStock": false,
-    "stones": [],
+    "stones": [
+      "oeil de tigre"
+    ],
     "type": "boucles d'oreilles",
     "material": "laiton"
   },
@@ -11593,7 +11881,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-563",
@@ -11619,7 +11908,7 @@
   },
   {
     "id": "prod-564",
-    "name": "Chaine de chevilles pierres 6mm 7 chakras avec perles dorées",
+    "name": "Chaîne de chevilles pierres 6mm 7 chakras avec perles dorées",
     "slug": "chaine-de-chevilles-pierres-6mm-7-chakras-avec-perles-dorées",
     "title": "CHAINE DE CHEVILLES pierres 6mm 7 chakras avec perles dorées",
     "price": 16,
@@ -11641,7 +11930,7 @@
   },
   {
     "id": "prod-565",
-    "name": "Bracelet jonc argente",
+    "name": "Bracelet jonc argenté",
     "slug": "bracelet-jonc-argente",
     "title": "BRACELET JONC argente",
     "price": 14,
@@ -11703,8 +11992,11 @@
     "sku": "UGS :BRAP0215",
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-naturelle-cornaline-avec-cordon-reglable-de-fabrication-artisanale-ce-bijou-en-pierres-est-tres-elegant-convient-aussi-a-un-homme-diam-pierre-10-mm/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "cornaline"
+    ],
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-568",
@@ -11730,7 +12022,7 @@
   },
   {
     "id": "prod-569",
-    "name": "Boucles d’oreilles argent avec chainette etperles en argent",
+    "name": "Boucles d’oreilles argent avec chaînette etperles en argent",
     "slug": "boucles-doreilles-argent-avec-chainette-etperles-en-argent",
     "title": "BOUCLES D’OREILLES ARGENT avec chainette etperles en argent",
     "price": 14,
@@ -11791,7 +12083,8 @@
     "source_url": "https://www.khashika.com/produit/de-style-ethnique-ce-jonc-est-en-metal-argente-le-corps-du-bracelet-et-lisse-et-sepaissi-au-niveau-des-2-tetes-celles-ci-forment-2-boules-cest-un-bijou-qui-peut-se-regler-au-poignet-et-qui-pe/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "métal"
   },
   {
     "id": "prod-573",
@@ -11812,11 +12105,12 @@
     "source_url": "https://www.khashika.com/produit/cette-chaine-de-cheville-est-montee-sur-du-fil-de-coton-cire-avec-des-petites-perles-noires-et-colorees-ce-bracelet-de-cheville-se-referme-en-faisant-un-noeud-vous-pouvez-garder-cette-chevilliere-to/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-574",
-    "name": "Collier tibetain en lapis-lazuli turquoise et corail",
+    "name": "Collier tibétain en lapis-lazuli turquoise et corail",
     "slug": "collier-tibetain-en-lapis-lazuli-turquoise-et-corail",
     "title": "Collier Tibetain en Lapis-lazuli turquoise et corail",
     "price": 19,
@@ -11837,11 +12131,12 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-575",
-    "name": "Chaine de chevilles fine argentée mat doubles mailles papillon",
+    "name": "Chaîne de chevilles fine argentée mat doubles mailles papillon",
     "slug": "chaine-de-chevilles-fine-argentée-mat-doubles-mailles-papillon",
     "title": "CHAINE DE CHEVILLES fine argentée mat doubles mailles papillon",
     "price": 8,
@@ -11882,7 +12177,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-577",
@@ -11905,11 +12201,12 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-578",
-    "name": "Collier mala perles de rudraksha tete de bouddha et turquoise",
+    "name": "Collier mala perles de rudraksha tête de bouddha et turquoise",
     "slug": "collier-mala-perles-de-rudraksha-tete-de-bouddha-et-turquoise",
     "title": "Collier mala perles de rudraksha tete de bouddha et turquoise",
     "price": 26,
@@ -11928,7 +12225,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-579",
@@ -12006,7 +12304,7 @@
     "slug": "bracelet-doré-et-pierre-de-lune",
     "title": "Bracelet doré et pierre de lune",
     "price": 5,
-    "description": "Cebracelet fantaisieest en laiton doré avec despierres de lunefacettées et une chaine fine.",
+    "description": "Cebracelet fantaisieest en laiton doré avec despierres de lunefacettées et une chaîne fine.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-doré-et-pierre-de-lune.jpeg",
     "image": "/images/products_reconciled/bracelet-doré-et-pierre-de-lune.jpeg",
@@ -12067,7 +12365,8 @@
     "source_url": "https://www.khashika.com/produit/ce-bijou-en-pierres-est-un-collier-en-morganite-qui-est-une-pierre-naturelle-semi-precieuse-les-perles-sont-rondes-avec-des-nuances-taille-des-pierres-3-mm/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-586",
@@ -12090,7 +12389,8 @@
     "stones": [
       "topaze"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-587",
@@ -12158,7 +12458,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-591",
@@ -12166,7 +12467,7 @@
     "slug": "collier-fin-laiton-et-calcédoine",
     "title": "Collier fin laiton et calcédoine",
     "price": 6,
-    "description": "Cecollierfin est enlaitondoré, matière qui ne bouge pas. La chaine est raffinée avec des petites boules et les pierres bleues taillées sont descalcedoines.",
+    "description": "Cecollierfin est enlaitondoré, matière qui ne bouge pas. La chaîne est raffinée avec des petites boules et les pierres bleues taillées sont descalcedoines.",
     "category": "‹retour page précédente",
     "image_url": "/images/products/prod-591.jpeg",
     "image": "/images/products/prod-591.jpeg",
@@ -12199,11 +12500,12 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-593",
-    "name": "Bracelet jonc argente avec 1 pierre turquoise",
+    "name": "Bracelet jonc argenté avec 1 pierre turquoise",
     "slug": "bracelet-jonc-argente-avec-1-pierre-turquoise",
     "title": "BRACELET JONC argente  avec 1 pierre turquoise",
     "price": 9,
@@ -12299,7 +12601,7 @@
     "slug": "collier-pendentif-ethnique-en-laiton",
     "title": "Collier pendentif ethnique en laiton",
     "price": 12,
-    "description": "Cecollier ethniqueest en plaqué doré, il est ciselé . C’est unpendentifsur fine chaine ajustable",
+    "description": "Cecollier ethniqueest en plaqué doré, il est ciselé . C’est unpendentifsur fine chaîne ajustable",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/collier-pendentif-ethnique-en-laiton.jpeg",
     "image": "/images/products_reconciled/collier-pendentif-ethnique-en-laiton.jpeg",
@@ -12358,7 +12660,8 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-perles-noires-vertes/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-603",
@@ -12381,7 +12684,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-604",
@@ -12407,7 +12711,7 @@
   },
   {
     "id": "prod-605",
-    "name": "Creoles spirales en laiton",
+    "name": "Créoles spirales en laiton",
     "slug": "creoles-spirales-en-laiton",
     "title": "CREOLES SPIRALES EN LAITON",
     "price": 10,
@@ -12429,7 +12733,7 @@
   },
   {
     "id": "prod-606",
-    "name": "Bracelet jonc argente avec 1 pierre rubis indien",
+    "name": "Bracelet jonc argenté avec 1 pierre rubis indien",
     "slug": "bracelet-jonc-argente-avec-1-pierre-rubis-indien",
     "title": "BRACELET JONC argente  avec 1 pierre rubis indien",
     "price": 14,
@@ -12445,7 +12749,9 @@
     "sku": "UGS :BRFA0007",
     "source_url": "https://www.khashika.com/produit/ce-bracelet-ethnique-indien-est-argente-avec-une-pierre-en-rubis-indien-cest-un-bracelet-apportera-gaiete-a-votre-look/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "rubis"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -12491,7 +12797,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-611",
@@ -12512,11 +12819,12 @@
     "source_url": "https://www.khashika.com/produit/bces-boucles-doreilles-tibetaines-pierres-veritables-de-fabrication-artisanale-cest-un-bijou-leger-de-taille-moyenne-elles-sont-parfaites-pour-egayer-vos-tenues-et-vous-apportent-une-touch/",
     "inStock": true,
     "stones": [],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-612",
-    "name": "Bracelet indien metal argente pierre sand stone",
+    "name": "Bracelet indien métal argenté pierre sand stone",
     "slug": "bracelet-indien-metal-argente-pierre-sand-stone",
     "title": "BRACELET INDIEN metal argente pierre SAND STONE",
     "price": 14,
@@ -12557,7 +12865,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-614",
@@ -12601,8 +12910,11 @@
     "sku": "UGS :BRAP0179",
     "source_url": "https://www.khashika.com/produit/ce-bracelet-est-monte-sur-un-elastique-tres-solide-il-convient-a-tous-les-poignets/",
     "inStock": false,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "cornaline"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-616",
@@ -12628,7 +12940,7 @@
   },
   {
     "id": "prod-617",
-    "name": "Chaine de chevilles argentée avec des coeurs",
+    "name": "Chaîne de chevilles argentée avec des coeurs",
     "slug": "chaine-de-chevilles-argentée-avec-des-coeurs",
     "title": "CHAINE DE CHEVILLES argentée avec des coeurs",
     "price": 8,
@@ -12734,9 +13046,11 @@
     "source_url": "https://www.khashika.com/produit/boucles-doreille-tibetaines-avec-pierres-en-cornaline-et-turquoise-de-fabrication-artisanale-cest-un-bijou-leger-de-taille-moyenne/",
     "inStock": true,
     "stones": [
-      "turquoise"
+      "turquoise",
+      "cornaline"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-624",
@@ -12766,7 +13080,7 @@
     "slug": "bracelet-pierres-naturelles-lapis-lazuli",
     "title": "BRACELET pierres naturelles  lapis-lazuli",
     "price": 12,
-    "description": "BRACELET pierres naturelles lapis-lazuli ,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
+    "description": "BRACELET pierres naturelles lapis-lazuli,il convient à tous les poignets. Cebraceletest monté sur un élastique très solide",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-lapis-lazuli.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-lapis-lazuli.jpeg",
@@ -12781,7 +13095,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-627",
@@ -12850,7 +13165,8 @@
       "corail",
       "quartz"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-631",
@@ -12898,7 +13214,7 @@
   },
   {
     "id": "prod-633",
-    "name": "Collier avec chainette dorée et aqua-marine",
+    "name": "Collier avec chaînette dorée et aqua-marine",
     "slug": "collier-avec-chainette-dorée-et-aqua-marine",
     "title": "collier avec chainette dorée et aqua-marine",
     "price": 8,
@@ -12940,11 +13256,12 @@
       "agate",
       "howlite"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-635",
-    "name": "Chaine de chevilles argent pierres de couleur",
+    "name": "Chaîne de chevilles argent pierres de couleur",
     "slug": "chaine-de-chevilles-argent-pierres-de-couleur",
     "title": "CHAINE DE CHEVILLES ARGENT pierres de couleur",
     "price": 30,
@@ -13027,7 +13344,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-naturelles-apatite-bleu-il-convient-a-tous-les-poignets-ce-bracelet-est-monte-sur-un-elastique-tres-solide-les-perles-sont-rondes-avec-des-nuances-differe/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-641",
@@ -13055,7 +13373,7 @@
   },
   {
     "id": "prod-643",
-    "name": "Chaine metal argenté pour vos pendentifs",
+    "name": "Chaîne métal argenté pour vos pendentifs",
     "slug": "chaine-metal-argenté-pour-vos-pendentifs",
     "title": "Chaine metal argenté pour vos pendentifs",
     "price": 4,
@@ -13193,7 +13511,7 @@
   },
   {
     "id": "prod-651",
-    "name": "Bracelet jonc argente avec 2 pierres vertes en agate",
+    "name": "Bracelet jonc argenté avec 2 pierres vertes en agate",
     "slug": "bracelet-jonc-argente-avec-2-pierres-vertes-en-agate",
     "title": "BRACELET JONC argente  avec 2 pierres vertes en agate",
     "price": 18,
@@ -13236,11 +13554,12 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-653",
-    "name": "Collier tibetain en turquoise et corail et une perle taillée",
+    "name": "Collier tibétain en turquoise et corail et une perle taillée",
     "slug": "collier-tibetain-en-turquoise-et-corail-et-une-perle-taillée",
     "title": "Collier Tibetain en Turquoise  et  corail et une perle taillée",
     "price": 19,
@@ -13261,7 +13580,8 @@
       "corail",
       "perle"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-654",
@@ -13269,7 +13589,7 @@
     "slug": "bracelet-pierres-naturelles-en-onyx-noir-7-chakras",
     "title": "BRACELET pierres naturelles en onyx noir 7 chakras",
     "price": 16,
-    "description": "Cebraceletest monté sur un élastique très solide, avec des pierres naturellesONYX NOIR, 7 chakras ,il convient à tous les poignets.",
+    "description": "Cebraceletest monté sur un élastique très solide, avec des pierres naturellesONYX NOIR, 7 chakras,il convient à tous les poignets.",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/bracelet-pierres-naturelles-en-onyx-noir-7-chakras.jpeg",
     "image": "/images/products_reconciled/bracelet-pierres-naturelles-en-onyx-noir-7-chakras.jpeg",
@@ -13284,11 +13604,12 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-655",
-    "name": "Bracelet jonc argente avec 1 pierre de lune",
+    "name": "Bracelet jonc argenté avec 1 pierre de lune",
     "slug": "bracelet-jonc-argente-avec-1-pierre-de-lune",
     "title": "BRACELET JONC argente  avec 1 pierre de lune",
     "price": 14,
@@ -13329,11 +13650,12 @@
     "source_url": "https://www.khashika.com/produit/collier-tibetain-avec-de-vraies-pierres-il-est-reglable-avec-son-cordon-en-cuir-%e2%80%8bce-bijou-est-de-fabrication-artisanale-avec-une-belle-finition/",
     "inStock": true,
     "stones": [],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-657",
-    "name": "Bracelet jonc argente avec 2 pierres en améthyste",
+    "name": "Bracelet jonc argenté avec 2 pierres en améthyste",
     "slug": "bracelet-jonc-argente-avec-2-pierres-en-améthyste",
     "title": "BRACELET JONC argente  avec  2 pierres en améthyste",
     "price": 14,
@@ -13376,7 +13698,8 @@
     "stones": [
       "turquoise"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-659",
@@ -13399,7 +13722,8 @@
     "stones": [
       "grenat"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-660",
@@ -13446,7 +13770,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-662",
@@ -13561,7 +13886,8 @@
     "stones": [
       "amazonite"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-671",
@@ -13584,7 +13910,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-672",
@@ -13612,7 +13939,7 @@
   },
   {
     "id": "prod-673",
-    "name": "Chaine en argent avec 8 perles argent",
+    "name": "Chaîne en argent avec 8 perles argent",
     "slug": "chaine-en-argent-avec-8-perles-argent",
     "title": "CHAINE EN ARGENT avec 8 perles argent",
     "price": 24,
@@ -13653,7 +13980,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-675",
@@ -13716,8 +14044,11 @@
     "sku": "UGS :BRAP0069",
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-aigue-marine-7-chakras/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "aigue-marine"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-680",
@@ -13810,7 +14141,8 @@
     "stones": [
       "améthyste"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-684",
@@ -13833,7 +14165,8 @@
     "stones": [
       "quartz"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-685",
@@ -13857,7 +14190,8 @@
       "améthyste",
       "pierre de lune"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-686",
@@ -13880,7 +14214,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-689",
@@ -13973,7 +14308,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-695",
@@ -13993,8 +14329,11 @@
     "sku": "UGS :BRAP0056",
     "source_url": "https://www.khashika.com/produit/bracelet-1-rang-pierres-larimer-sur-fil-noir-ce-bracelet-ethnique-est-monte-de-pierres-semi-precieuses-et-montees-sur-fil-de-coton-cire-noir-sa-taille-est-ajustable-sur-le-poignet-grace-a-son-n/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "larimar"
+    ],
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-697",
@@ -14014,12 +14353,15 @@
     "sku": "UGS :BRAP0040",
     "source_url": "https://www.khashika.com/produit/bracelet-pierre-lapis-lazuli-et-tete-de-bouddha-ce-bracelet-est-monte-sur-un-elastique-tres-solide-il-convient-a-tous-les-poignet-vous-pouvez-lassortir-avec-dautres-bracelets/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "oeil de tigre"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-698",
-    "name": "Creoles en laiton et pierre turquoise",
+    "name": "Créoles en laiton et pierre turquoise",
     "slug": "creoles-en-laiton-et-pierre-turquoise",
     "title": "CREOLES  EN LAITON et pierre turquoise",
     "price": 17,
@@ -14062,7 +14404,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-701",
@@ -14085,7 +14428,8 @@
     "stones": [
       "obsidienne"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-702",
@@ -14154,7 +14498,8 @@
     "source_url": "https://www.khashika.com/produit/ce-bracelet-est-un-jonc-noir-en-bois-peint-au-motif-paon-il-senfile-directement-sur-le-bras-et-sa-taille-est-moyenne-vous-pourrez-le-porter-seul-ou-a-plusieurs-ces-bracelets-sont-typique-indiens/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "bois"
   },
   {
     "id": "prod-706",
@@ -14201,7 +14546,8 @@
     "stones": [
       "agate"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-708",
@@ -14209,7 +14555,7 @@
     "slug": "chaîne-fine-en-argent-45-cm",
     "title": "Chaîne fine en argent 45 cm",
     "price": 12,
-    "description": "longueur chaine argent 45 cm largeur 1mm",
+    "description": "longueur chaîne argent 45 cm largeur 1mm",
     "category": "‹retour page précédente",
     "image_url": "/images/products_reconciled/chaîne-fine-en-argent-45-cm.jpeg",
     "image": "/images/products_reconciled/chaîne-fine-en-argent-45-cm.jpeg",
@@ -14243,8 +14589,11 @@
     "sku": "UGS :BRAP0051",
     "source_url": "https://www.khashika.com/produit/le-peridot-est-une-pierre-de-purification-il-regenere-le-corps-et-lesprit-en-reequilibrant-nos-energies-cest-aussi-la-pierre-du-chakra-du-coeur-elle-dynamise-nos-defenses-naturelles-cest/",
     "inStock": true,
-    "stones": [],
-    "type": "bracelet"
+    "stones": [
+      "péridot"
+    ],
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-710",
@@ -14291,7 +14640,8 @@
     "stones": [
       "labradorite"
     ],
-    "type": "boucles d'oreilles"
+    "type": "boucles d'oreilles",
+    "material": "pierres"
   },
   {
     "id": "prod-712",
@@ -14359,11 +14709,12 @@
     "stones": [
       "améthyste"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "pierres"
   },
   {
     "id": "prod-715",
-    "name": "Collier tibetain en pierres de corail et lapis-lazuli",
+    "name": "Collier tibétain en pierres de corail et lapis-lazuli",
     "slug": "collier-tibetain-en-pierres-de-corail-et-lapis-lazuli",
     "title": "Collier Tibetain en  pierres de  corail  et Lapis-lazuli",
     "price": 19,
@@ -14383,11 +14734,12 @@
       "corail",
       "lapis-lazuli"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-716",
-    "name": "Collier tibetain en turquoise et corail avec un pendentif tibétain",
+    "name": "Collier tibétain en turquoise et corail avec un pendentif tibétain",
     "slug": "collier-tibetain-en-turquoise-et-corail-avec-un-pendentif-tibétain",
     "title": "Collier Tibetain en  Turquoise  et  corail avec un pendentif tibétain",
     "price": 29,
@@ -14407,7 +14759,8 @@
       "turquoise",
       "corail"
     ],
-    "type": "collier"
+    "type": "collier",
+    "material": "métal tibétain"
   },
   {
     "id": "prod-717",
@@ -14427,13 +14780,15 @@
     "sku": "UGS :BOAP0013",
     "source_url": "https://www.khashika.com/produit/boucles-doreilles-argent-aigue-marine-clous-doreilles-argent-ronde-et-aigue-marine-taille-cest-un-bijou-original-que-vous-porterez-avec-toutes-vos-tenues/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "aigue-marine"
+    ],
     "material": "argent",
     "type": "boucles d'oreilles"
   },
   {
     "id": "prod-718",
-    "name": "Chaine de chevilles argentée perles noire et turquoise",
+    "name": "Chaîne de chevilles argentée perles noire et turquoise",
     "slug": "chaine-de-chevilles-argentée-perles-noire-et-turquoise",
     "title": "CHAINE DE CHEVILLES argentée perles noire et turquoise",
     "price": 8,
@@ -14476,7 +14831,8 @@
     "stones": [
       "lapis-lazuli"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-721",
@@ -14519,7 +14875,8 @@
     "source_url": "https://www.khashika.com/produit/bracelet-pierres-de-lave-et-7-chakras-bijou-indien-bijou-pierres-naturelles/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-724",
@@ -14539,7 +14896,9 @@
     "sku": "UGS :BRFA0006",
     "source_url": "https://www.khashika.com/produit/bracelet-jonc-en-plaque-argent-avec-deux-rubis-indien/",
     "inStock": true,
-    "stones": [],
+    "stones": [
+      "rubis"
+    ],
     "type": "bracelet",
     "material": "argent"
   },
@@ -14564,7 +14923,8 @@
     "stones": [
       "agate"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "cordon"
   },
   {
     "id": "prod-726",
@@ -14587,7 +14947,8 @@
     "stones": [
       "onyx noir"
     ],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   },
   {
     "id": "prod-727",
@@ -14632,6 +14993,7 @@
     "source_url": "https://www.khashika.com/produit/bracelet-est-en-coton-cire-monte-dun-coquillage-cauri-sa-taille-est-ajustable-vous-pourrez-le-porter-en-ete-cest-un-bracelet-unisexe-pour-petits-et-grands/",
     "inStock": true,
     "stones": [],
-    "type": "bracelet"
+    "type": "bracelet",
+    "material": "pierres"
   }
 ]

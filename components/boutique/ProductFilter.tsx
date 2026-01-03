@@ -136,7 +136,7 @@ export default function ProductFilter({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#FDF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 space-y-8 md:sticky md:top-24"
+            className="bg-[#FAF9F7] border border-[#EAB615]/40 rounded-none shadow-[0_4px_12px_rgba(240,193,29,0.25)] p-6 space-y-8 md:sticky md:top-24"
           >
             {/* Header */}
             <div className="flex items-center justify-between">

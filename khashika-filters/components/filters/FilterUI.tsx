@@ -103,8 +103,8 @@ export function ActiveFilterChips({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={onClearAll}
-          className="flex items-center gap-1 px-2.5 py-1.5 text-sm text-[#8B4E4E]
-                    hover:bg-[#8B4E4E]/5 rounded-full transition-colors ml-2"
+          className="flex items-center gap-1 px-2.5 py-1.5 text-sm text-[#2596be]
+                    hover:bg-[#2596be]/5 rounded-full transition-colors ml-2"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           <span>Tout effacer</span>
@@ -158,8 +158,8 @@ export function SortDropdown({ value, onChange }: SortDropdownProps) {
     <div ref={dropdownRef} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2.5 bg-[#F5EDE6] border border-gray-200 
-                  rounded-xl text-sm text-gray-700 hover:border-[#8B4E4E]/50
+        className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 
+                  rounded-xl text-sm text-gray-700 hover:border-[#2596be]/50
                   transition-all duration-200 min-w-[180px] justify-between"
       >
         <div className="flex items-center gap-2">
@@ -181,7 +181,7 @@ export function SortDropdown({ value, onChange }: SortDropdownProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-56 bg-[#F5EDE6] rounded-xl border border-gray-200 
+            className="absolute right-0 mt-2 w-56 bg-white rounded-xl border border-gray-200 
                       shadow-lg shadow-black/5 overflow-hidden z-20"
           >
             {SORT_OPTIONS.map((option) => (
@@ -194,8 +194,8 @@ export function SortDropdown({ value, onChange }: SortDropdownProps) {
                 className={`w-full flex items-center gap-2 px-4 py-3 text-sm text-left
                            transition-colors
                            ${option.value === value 
-                             ? 'bg-[#8B4E4E]/5 text-[#8B4E4E]' 
-                             : 'text-gray-700 hover:bg-[#F5EDE6]'}`}
+                             ? 'bg-[#2596be]/5 text-[#2596be]' 
+                             : 'text-gray-700 hover:bg-gray-50'}`}
               >
                 {option.icon && <span>{option.icon}</span>}
                 <span className={option.value === value ? 'font-medium' : ''}>{option.label}</span>
@@ -203,7 +203,7 @@ export function SortDropdown({ value, onChange }: SortDropdownProps) {
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="ml-auto text-[#8B4E4E]"
+                    className="ml-auto text-[#2596be]"
                   >
                     ✓
                   </motion.span>
@@ -239,7 +239,7 @@ export function MobileFilterBar({
   onSortChange,
 }: MobileFilterBarProps) {
   return (
-    <div className="lg:hidden sticky top-16 z-30 bg-[#F5EDE6] border-b border-gray-100 
+    <div className="lg:hidden sticky top-16 z-30 bg-white border-b border-gray-100 
                    shadow-sm -mx-4 px-4 py-3">
       <div className="flex items-center justify-between gap-3">
         {/* Bouton Filtrer */}
@@ -260,7 +260,7 @@ export function MobileFilterBar({
             <motion.span
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#8B4E4E] text-white 
+              className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#2596be] text-white 
                         text-xs font-bold rounded-full flex items-center justify-center"
             >
               {activeFilterCount}
@@ -275,7 +275,7 @@ export function MobileFilterBar({
           animate={{ opacity: 1 }}
           className="text-sm text-gray-500"
         >
-          <span className="font-semibold text-[#8B4E4E]">{totalResults}</span> trésors
+          <span className="font-semibold text-[#2596be]">{totalResults}</span> trésors
         </motion.span>
         
         {/* Mini tri */}

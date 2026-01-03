@@ -48,7 +48,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
         
         // Map inferred category to typeId (inferCategory returns 'boucle' but typeId is 'boucles-oreilles')
         const inferredToTypeId: Record<string, string> = {
-          'boucle': 'boucles-oreilles',
+          'boucle': "boucles d'oreilles",
         };
         const mappedCategory = inferredToTypeId[inferredCategory || ''] || inferredCategory;
         
@@ -199,7 +199,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
         result = result.filter(p => {
           const inferredCategory = inferCategory(p.name || '');
           const inferredToTypeId: Record<string, string> = {
-            'boucle': 'boucles-oreilles',
+            'boucle': "boucles d'oreilles",
           };
           const mappedCategory = inferredToTypeId[inferredCategory || ''] || inferredCategory;
           
@@ -327,7 +327,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       counts.types[t.id] = productsForTypeCounts.filter(p => {
         const inferredCategory = inferCategory(p.name || '');
         const inferredToTypeId: Record<string, string> = {
-          'boucle': 'boucles-oreilles',
+          'boucle': "boucles d'oreilles",
         };
         const mappedCategory = inferredToTypeId[inferredCategory || ''] || inferredCategory;
         

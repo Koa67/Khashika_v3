@@ -60,23 +60,13 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FFFFFF] mb-3">Informations</h3>
             <ul className="space-y-1.5 text-sm">
               <li>
-                <Link href="/univers" className="text-[#FFFFFF]/70 hover:text-gold-fusion transition-colors">
-                  Notre univers
-                </Link>
-              </li>
-              <li>
-                <Link href="/pierres" className="text-[#FFFFFF]/70 hover:text-gold-fusion transition-colors">
-                  Guide des pierres
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-[#FFFFFF]/70 hover:text-gold-fusion transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
                 <Link href="/legal/cgv" className="text-[#FFFFFF]/70 hover:text-gold-fusion transition-colors">
                   CGV
+                </Link>
+              </li>
+              <li>
+                <Link href="/plan-du-site" className="text-[#FFFFFF]/70 hover:text-gold-fusion transition-colors">
+                  Plan du site
                 </Link>
               </li>
             </ul>
@@ -100,7 +90,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>{CONTACT.address.postalCode} {CONTACT.address.city}, France</span>
+                <span>{CONTACT.address.street} - {CONTACT.address.postalCode} {CONTACT.address.city}, France</span>
               </li>
             </ul>
             {/* Social icons */}

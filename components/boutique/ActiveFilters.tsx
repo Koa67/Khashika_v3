@@ -30,7 +30,7 @@ export default function ActiveFilters({
             onClick={() => onToggle('materials', m)}
             className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-[#EAB615]/30 rounded-none text-sm group hover:border-[#EAB615] hover:shadow-[0_0_8px_rgba(240,193,29,0.3)]"
           >
-            <span>{mat?.icon}</span>
+            
             <span>{mat?.label}</span>
             <X className="w-3.5 h-3.5 text-gold-fusion opacity-50 group-hover:opacity-100" />
           </button>

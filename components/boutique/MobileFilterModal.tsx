@@ -92,7 +92,7 @@ export default function MobileFilterModal({
                       : 'bg-white border-[#EAB615]/30'
                     }`}
                 >
-                  <span>{mat.icon}</span>
+                  
                   <span>{mat.label}</span>
                 </button>
               ))}

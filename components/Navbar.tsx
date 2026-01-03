@@ -274,7 +274,7 @@ export default function Navbar() {
                         <Link
                           key={product.id}
                           href={`/product/${product.slug || product.id}`}
-                          className="flex items-center gap-3 p-2 hover:bg-[#FDF9F7] transition-colors"
+                          className="flex items-center gap-3 p-2 hover:bg-[#FAF9F7] transition-colors"
                           onClick={() => {
                             setQuery('');
                             setIsSearchOpen(false);

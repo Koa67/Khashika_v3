@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllProducts } from '@/lib/data/products-loader';
 import ShopClient from '@/components/boutique/ShopClient';
-import { PIERRES_STONE_MAP, getAllPierresStoneSlugs } from '@/lib/constants/categories';
+import { PIERRES_STONE_MAP, getAllPierresStoneSlugs, getStoneFilters } from '@/lib/constants/categories';
 
 type PageParams = { stone: string; locale: string };
 
@@ -38,12 +38,15 @@ export default async function PierresTypePage({ params }: { params: Promise<Page
     notFound();
   }
   
+  // Obtenir le(s) filtre(s) - peut être string ou array
+  const stoneFilters = getStoneFilters(stone);
+  
   const allProducts = await getAllProducts();
   
   return (
     <ShopClient 
       initialProducts={allProducts}
-      initialFilters={{ stones: [stoneInfo.filter] }}
+      initialFilters={{ stones: stoneFilters }}
       pageTitle={stoneInfo.label}
       pageSubtitle={stoneInfo.description}
     />

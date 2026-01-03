@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { RotateCcw, ChevronDown } from 'lucide-react';
-import { FilterState, FILTER_CONFIG } from '@/lib/types/filters';
+import { RotateCcw, ChevronDown, Search, X } from 'lucide-react';
+import { FilterState, FILTER_CONFIG, STONES_WITHOUT_ONYX_VARIANTS, ONYX_VARIANTS, ONYX_VARIANT_IDS, TOP_STONES } from '@/lib/types/filters';
+import { fuzzyFilter } from '@/lib/utils/fuzzySearch';
 
 interface ShopSidebarProps {
   filters: FilterState;
@@ -32,11 +33,13 @@ export default function ShopSidebar({
   const [sidebarTop, setSidebarTop] = useState(166);
   const [maxHeight, setMaxHeight] = useState('calc(100vh - 166px - 16px)');
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const [stoneView, setStoneView] = useState<'top' | 'couleurs'>('top');
+  const [stoneView, setStoneView] = useState<'top' | 'couleurs' | 'search'>('top');
   const [showAllStones, setShowAllStones] = useState(false);
+  const [stoneSearch, setStoneSearch] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     prix: true,
-    bijoux: true,
+    materiaux: true,
     accessoires: false,
     pierres: true,
     matiere: false,
@@ -47,6 +50,39 @@ export default function ShopSidebar({
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));
   };
+
+  // Calculer le compte combiné pour "onyx" (toutes variantes)
+  const getOnyxCombinedCount = () => {
+    return ONYX_VARIANT_IDS.reduce((sum, id) => sum + (filterCounts.stones?.[id] || 0), 0);
+  };
+
+  // Obtenir le count pour une pierre (onyx = combiné)
+  const getStoneCount = (stoneId: string) => {
+    if (stoneId === 'onyx') {
+      return getOnyxCombinedCount();
+    }
+    return filterCounts.stones?.[stoneId] || 0;
+  };
+
+  // Vérifier si onyx (master) est sélectionné
+  const isOnyxSelected = () => {
+    return filters.stones.includes('onyx') || 
+           ONYX_VARIANT_IDS.some(id => filters.stones.includes(id));
+  };
+
+  // Toggle onyx master = toggle toutes les variantes
+  const handleOnyxToggle = () => {
+    if (isOnyxSelected()) {
+      // Désélectionner toutes les variantes d'onyx
+      const newStones = filters.stones.filter(s => s !== 'onyx' && !ONYX_VARIANT_IDS.includes(s));
+      onUpdateFilter('stones', newStones);
+    } else {
+      // Sélectionner toutes les variantes d'onyx
+      const newStones = [...filters.stones, ...ONYX_VARIANT_IDS];
+      onUpdateFilter('stones', [...new Set(newStones)]);
+    }
+  };
+
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
@@ -86,6 +122,12 @@ export default function ShopSidebar({
     };
   }, []);
 
+  // Pierres avec >= 5 produits pour la vue "Populaires" (sans variantes d'onyx séparées)
+  const topStonesForPopular = TOP_STONES;
+  
+  // Toutes les pierres pour "voir plus" (sans variantes d'onyx séparées)
+  const allStonesForPopular = STONES_WITHOUT_ONYX_VARIANTS;
+
   return (
     <aside className="hidden lg:block w-72 flex-shrink-0">
       <div 
@@ -95,7 +137,7 @@ export default function ShopSidebar({
       >
         <div 
           style={{ maxHeight }}
-          className="bg-[#FDF9F7] rounded-none border border-[#EAB615]/40 p-6 overflow-y-auto overscroll-contain shadow-[0_4px_12px_rgba(240,193,29,0.25)]"
+          className="bg-[#FAF9F7] rounded-none border border-[#EAB615]/40 p-6 overflow-y-auto overscroll-contain shadow-[0_4px_12px_rgba(240,193,29,0.25)]"
         >
           <div className="flex items-center justify-between mb-6">
           <h2 className="font-serif text-xl">Filtres</h2>
@@ -142,7 +184,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isAll
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FAF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         Tous
@@ -152,7 +194,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isUnder10
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FAF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         &lt; 10 €
@@ -162,7 +204,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           is10to25
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FAF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         10-25 €
@@ -172,7 +214,7 @@ export default function ShopSidebar({
                         className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
                           isOver25
                             ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                            : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                            : 'bg-[#FAF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
                         }`}
                       >
                         &gt; 25 €
@@ -181,6 +223,68 @@ export default function ShopSidebar({
                   );
                 })()}
               </div>
+            </div>
+          )}
+
+        {/* Section Matériaux */}
+        <div className="mb-0 pb-0 border-b border-[#EAB615]/20">
+          <button 
+            onClick={() => toggleSection('materiaux')}
+            className="flex items-center justify-between w-full font-serif text-lg py-3"
+          >
+            <span>Matériaux</span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${openSections.materiaux ? 'rotate-180' : ''}`} />
+          </button>
+          {openSections.materiaux && (
+            <div className="space-y-1 pb-4">
+              {FILTER_CONFIG.materials.map((mat) => (
+                <label key={mat.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
+                  <input
+                    type="checkbox"
+                    checked={filters.materials.includes(mat.id)}
+                    onChange={() => onToggleFilter('materials', mat.id)}
+                    className="w-4 h-4 accent-[#EAB615] cursor-pointer"
+                  />
+                  <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
+                    {mat.label}
+                  </span>
+                  <span className="ml-auto text-xs text-[#2D2926]/40">
+                    ({filterCounts.materials?.[mat.id] || 0})
+                  </span>
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+        </div>
+
+        {/* Section Matériaux - EN PREMIER */}
+        <div className="mb-0 pb-0 border-b border-[#EAB615]/20">
+          <button 
+            onClick={() => toggleSection('materiaux')}
+            className="flex items-center justify-between w-full font-serif text-lg py-3"
+          >
+            <span>Matériaux</span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${openSections.materiaux ? 'rotate-180' : ''}`} />
+          </button>
+          {openSections.materiaux && (
+            <div className="space-y-1 pb-4">
+              {FILTER_CONFIG.materials.map((mat) => (
+                <label key={mat.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
+                  <input
+                    type="checkbox"
+                    checked={filters.materials.includes(mat.id)}
+                    onChange={() => onToggleFilter('materials', mat.id)}
+                    className="w-4 h-4 accent-[#EAB615] cursor-pointer"
+                  />
+                  <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
+                    {mat.label}
+                  </span>
+                  <span className="ml-auto text-xs text-[#2D2926]/40">
+                    ({filterCounts.materials?.[mat.id] || 0})
+                  </span>
+                </label>
+              ))}
             </div>
           )}
         </div>
@@ -259,58 +363,181 @@ export default function ShopSidebar({
           
           {openSections.pierres && (
             <div className="space-y-4">
-              {/* Onglets */}
-              <div className="flex gap-1">
-                {['top', 'couleurs'].map((view) => (
+              {/* Barre de recherche */}
+              <div className="relative">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2D2926]/40" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Rechercher une pierre..."
+                  value={stoneSearch}
+                  onChange={(e) => {
+                    setStoneSearch(e.target.value);
+                    if (e.target.value.trim()) {
+                      setStoneView('search');
+                    } else {
+                      setStoneView('top');
+                    }
+                  }}
+                  className="w-full pl-8 pr-8 py-2 text-sm border border-[#EAB615]/30 rounded-none bg-white placeholder:text-[#2D2926]/40 focus:outline-none focus:border-[#EAB615] transition-colors"
+                />
+                {stoneSearch && (
                   <button
-                    key={view}
-                    onClick={() => setStoneView(view as 'top' | 'couleurs')}
-                    className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
-                      stoneView === view
-                        ? 'bg-[#EAB615] text-white border border-[#EAB615]'
-                        : 'bg-[#FDF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
-                    }`}
+                    onClick={() => {
+                      setStoneSearch('');
+                      setStoneView('top');
+                    }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 hover:bg-[#EAB615]/10 rounded-full"
                   >
-                    {view === 'top' ? 'Populaires' : 'Par couleurs'}
+                    <X className="w-4 h-4 text-[#2D2926]/40 hover:text-[#2D2926]" />
                   </button>
-                ))}
+                )}
               </div>
+
+              {/* Onglets (cachés si recherche active) */}
+              {stoneView !== 'search' && (
+                <div className="flex gap-1">
+                  {['top', 'couleurs'].map((view) => (
+                    <button
+                      key={view}
+                      onClick={() => setStoneView(view as 'top' | 'couleurs')}
+                      className={`flex-1 px-2 py-0.5 text-xs rounded-none transition-colors whitespace-nowrap ${
+                        stoneView === view
+                          ? 'bg-[#EAB615] text-white border border-[#EAB615]'
+                          : 'bg-[#FAF9F7] text-[#2D2926] border border-[#EAB615]/30 hover:border-[#EAB615]'
+                      }`}
+                    >
+                      {view === 'top' ? 'Populaires' : 'Par couleurs'}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Vue: Résultats de recherche */}
+              {stoneView === 'search' && (
+                <div className="space-y-1 pb-4 max-h-[300px] overflow-y-auto">
+                  {(() => {
+                    const filteredStones = fuzzyFilter(STONES_WITHOUT_ONYX_VARIANTS, stoneSearch);
+                    
+                    if (filteredStones.length === 0) {
+                      return (
+                        <p className="text-sm text-[#2D2926]/50 py-4 text-center">
+                          Aucune pierre trouvée
+                        </p>
+                      );
+                    }
+                    
+                    return filteredStones.map((stone) => {
+                      if (stone.id === 'onyx') {
+                        return (
+                          <label key={stone.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
+                            <input
+                              type="checkbox"
+                              checked={isOnyxSelected()}
+                              onChange={handleOnyxToggle}
+                              className="w-4 h-4 accent-[#EAB615] cursor-pointer"
+                            />
+                            <span 
+                              className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
+                              style={{ backgroundColor: stone.color }} 
+                            />
+                            <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
+                              {stone.label}
+                            </span>
+                            <span className="ml-auto text-xs text-[#2D2926]/40">
+                              ({getOnyxCombinedCount()})
+                            </span>
+                          </label>
+                        );
+                      }
+                      
+                      return (
+                        <label key={stone.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
+                          <input
+                            type="checkbox"
+                            checked={filters.stones.includes(stone.id)}
+                            onChange={() => onToggleFilter('stones', stone.id)}
+                            className="w-4 h-4 accent-[#EAB615] cursor-pointer"
+                          />
+                          <span 
+                            className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
+                            style={{ backgroundColor: stone.color }} 
+                          />
+                          <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
+                            {stone.label}
+                          </span>
+                          <span className="ml-auto text-xs text-[#2D2926]/40">
+                            ({getStoneCount(stone.id)})
+                          </span>
+                        </label>
+                      );
+                    });
+                  })()}
+                </div>
+              )}
               
-              {/* Vue: Top 8 pierres */}
+              {/* Vue: Populaires (Top avec onyx combiné) */}
               {stoneView === 'top' && (
                 <div className="space-y-1 pb-4">
-                  {FILTER_CONFIG.stones.slice(0, showAllStones ? undefined : 8).map((stone) => (
-                    <label key={stone.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
-                      <input
-                        type="checkbox"
-                        checked={filters.stones.includes(stone.id)}
-                        onChange={() => onToggleFilter('stones', stone.id)}
-                        className="w-4 h-4 accent-[#EAB615] cursor-pointer"
-                      />
-                      <span 
-                        className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
-                        style={{ backgroundColor: stone.color }} 
-                      />
-                      <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
-                        {stone.label}
-                      </span>
-                      <span className="ml-auto text-xs text-[#2D2926]/40">
-                        ({filterCounts.stones?.[stone.id] || 0})
-                      </span>
-                    </label>
-                  ))}
-                  {!showAllStones && FILTER_CONFIG.stones.length > 8 && (
+                  {(showAllStones ? allStonesForPopular : topStonesForPopular).map((stone) => {
+                    // Cas spécial pour onyx (toutes couleurs)
+                    if (stone.id === 'onyx') {
+                      return (
+                        <label key={stone.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
+                          <input
+                            type="checkbox"
+                            checked={isOnyxSelected()}
+                            onChange={handleOnyxToggle}
+                            className="w-4 h-4 accent-[#EAB615] cursor-pointer"
+                          />
+                          <span 
+                            className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
+                            style={{ backgroundColor: stone.color }} 
+                          />
+                          <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
+                            {stone.label}
+                          </span>
+                          <span className="ml-auto text-xs text-[#2D2926]/40">
+                            ({getOnyxCombinedCount()})
+                          </span>
+                        </label>
+                      );
+                    }
+                    
+                    // Pierres normales
+                    return (
+                      <label key={stone.id} className="flex items-center gap-3 cursor-pointer group py-1.5 hover:translate-x-1 transition-all duration-200">
+                        <input
+                          type="checkbox"
+                          checked={filters.stones.includes(stone.id)}
+                          onChange={() => onToggleFilter('stones', stone.id)}
+                          className="w-4 h-4 accent-[#EAB615] cursor-pointer"
+                        />
+                        <span 
+                          className="w-4 h-4 border border-[#EAB615]/30 rounded-none" 
+                          style={{ backgroundColor: stone.color }} 
+                        />
+                        <span className="text-sm text-[#2D2926] group-hover:text-gold-fusion transition-colors">
+                          {stone.label}
+                        </span>
+                        <span className="ml-auto text-xs text-[#2D2926]/40">
+                          ({getStoneCount(stone.id)})
+                        </span>
+                      </label>
+                    );
+                  })}
+                  {!showAllStones && allStonesForPopular.length > TOP_STONES.length && (
                     <button 
                       onClick={() => setShowAllStones(true)}
                       className="text-sm text-gold-fusion hover:underline mt-2"
                     >
-                      + {FILTER_CONFIG.stones.length - 8} autres pierres
+                      + {allStonesForPopular.length - TOP_STONES.length} autres pierres
                     </button>
                   )}
                 </div>
               )}
               
-              {/* Vue: Par couleurs */}
+              {/* Vue: Par couleurs (variantes d'onyx séparées dans leurs catégories) */}
               {stoneView === 'couleurs' && (
                 <div className="space-y-4">
                   {/* Bleus */}
@@ -318,7 +545,7 @@ export default function ShopSidebar({
                     <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Bleus</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['turquoise', 'lapis-lazuli', 'labradorite', 'calcédoine', 'amazonite', 'onyx bleu'].includes(s.id))
+                        .filter(s => ['turquoise', 'lapis-lazuli', 'labradorite', 'calcédoine', 'amazonite', 'aigue-marine', 'saphir', 'larimar', 'onyx bleu'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -341,7 +568,7 @@ export default function ShopSidebar({
                     <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Rouges & Roses</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['corail', 'grenat', 'rhodonite', 'onyx rouge'].includes(s.id))
+                        .filter(s => ['corail', 'grenat', 'rubis', 'rhodonite', 'cornaline', 'onyx rouge'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -364,7 +591,7 @@ export default function ShopSidebar({
                     <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Jaunes & Orangés</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['citrine', 'topaze', 'agate', 'jaspe'].includes(s.id))
+                        .filter(s => ['citrine', 'topaze', 'agate', 'jaspe', 'jaspe dalmatien', 'oeil de tigre', 'dzi'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -387,7 +614,7 @@ export default function ShopSidebar({
                     <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Verts</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['jade', 'malachite', 'aventurine', 'onyx vert'].includes(s.id))
+                        .filter(s => ['jade', 'malachite', 'aventurine', 'émeraude', 'péridot', 'onyx vert'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -410,7 +637,7 @@ export default function ShopSidebar({
                     <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Violets</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['améthyste', 'tourmaline'].includes(s.id))
+                        .filter(s => ['améthyste', 'tourmaline', 'zircon'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}
@@ -428,12 +655,12 @@ export default function ShopSidebar({
                     </div>
                   </div>
                   
-                  {/* Neutres */}
+                  {/* Neutres (blancs, noirs, gris) */}
                   <div>
                     <p className="text-xs text-[#2D2926]/50 mb-2 uppercase tracking-wide">Neutres</p>
                     <div className="flex flex-wrap gap-2">
                       {FILTER_CONFIG.stones
-                        .filter(s => ['onyx noir', 'perle', 'pierre de lune', 'quartz', 'cristal', 'howlite', 'obsidienne'].includes(s.id))
+                        .filter(s => ['perle', 'pierre de lune', 'quartz', 'cristal', 'howlite', 'nacre', 'obsidienne', 'onyx noir'].includes(s.id))
                         .map(stone => (
                           <button
                             key={stone.id}

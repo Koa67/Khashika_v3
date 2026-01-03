@@ -38,7 +38,7 @@ export function inferCategory(productName: string): string | null {
   
   // Chaînes
   if (/\b(chaîne|chain|maille)s?\b/i.test(name) && !/\bchaîne\s+cou\b/i.test(name)) {
-    return 'chaine';
+    return 'chaîne';
   }
   
   // Accessoires (étole, foulard, pashmina)

@@ -39,7 +39,7 @@ function ProductCardSkeleton({ delay = 0 }: { delay?: number }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay }}
-      className="bg-[#F5EDE6] rounded-2xl overflow-hidden border border-gray-100"
+      className="bg-white rounded-2xl overflow-hidden border border-gray-100"
     >
       {/* Image skeleton */}
       <div className="aspect-square bg-gray-100 relative overflow-hidden">
@@ -123,9 +123,9 @@ export function EmptyState({ onClearFilters }: EmptyStateProps) {
         transition={{ type: 'spring', stiffness: 200, damping: 15 }}
         className="w-32 h-32 mb-6 relative"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#8B4E4E]/20 to-[#40c4ff]/20 
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2596be]/20 to-[#40c4ff]/20 
                        rounded-full animate-pulse" />
-        <div className="absolute inset-4 bg-gradient-to-br from-[#8B4E4E]/30 to-[#40c4ff]/30 
+        <div className="absolute inset-4 bg-gradient-to-br from-[#2596be]/30 to-[#40c4ff]/30 
                        rounded-full" />
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-5xl">💎</span>
@@ -146,8 +146,8 @@ export function EmptyState({ onClearFilters }: EmptyStateProps) {
         onClick={onClearFilters}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="px-6 py-3 bg-[#8B4E4E] text-white rounded-xl font-medium
-                  hover:bg-[#1a7a9e] transition-colors shadow-lg shadow-[#8B4E4E]/20"
+        className="px-6 py-3 bg-[#2596be] text-white rounded-xl font-medium
+                  hover:bg-[#1a7a9e] transition-colors shadow-lg shadow-[#2596be]/20"
       >
         Effacer tous les filtres
       </motion.button>
@@ -185,9 +185,9 @@ export function FilterBadge({ count }: { count: number }) {
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       exit={{ scale: 0 }}
-      className="absolute -top-1 -right-1 w-5 h-5 bg-[#8B4E4E] text-white text-xs 
+      className="absolute -top-1 -right-1 w-5 h-5 bg-[#2596be] text-white text-xs 
                 font-bold rounded-full flex items-center justify-center
-                shadow-lg shadow-[#8B4E4E]/30"
+                shadow-lg shadow-[#2596be]/30"
     >
       {count > 9 ? '9+' : count}
     </motion.span>

@@ -69,7 +69,7 @@ export default function StoneFilter({
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Rechercher une pierre..."
           className="w-full pl-9 pr-8 py-2 text-sm border border-gray-200 rounded-lg
-                    focus:outline-none focus:border-[#8B4E4E] focus:ring-1 focus:ring-[#8B4E4E]/20
+                    focus:outline-none focus:border-[#2596be] focus:ring-1 focus:ring-[#2596be]/20
                     transition-all duration-200 placeholder:text-gray-400"
         />
         {searchQuery && (
@@ -95,9 +95,9 @@ export default function StoneFilter({
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 onClick={() => onToggle(id)}
-                className="flex items-center gap-1.5 pl-1.5 pr-2 py-1 bg-[#8B4E4E]/10 
-                          text-[#8B4E4E] rounded-full text-xs font-medium 
-                          hover:bg-[#8B4E4E]/20 transition-colors group"
+                className="flex items-center gap-1.5 pl-1.5 pr-2 py-1 bg-[#2596be]/10 
+                          text-[#2596be] rounded-full text-xs font-medium 
+                          hover:bg-[#2596be]/20 transition-colors group"
               >
                 <span
                   className="w-4 h-4 rounded-full border border-white/50 shadow-sm"
@@ -132,8 +132,8 @@ export default function StoneFilter({
                 className={`relative flex items-center gap-2.5 p-2.5 rounded-xl border 
                            transition-all duration-200 text-left group
                            ${isSelected 
-                             ? 'border-[#8B4E4E] bg-[#8B4E4E]/5 ring-1 ring-[#8B4E4E]/20' 
-                             : 'border-gray-200 hover:border-[#8B4E4E]/50 hover:bg-[#F5EDE6]'}
+                             ? 'border-[#2596be] bg-[#2596be]/5 ring-1 ring-[#2596be]/20' 
+                             : 'border-gray-200 hover:border-[#2596be]/50 hover:bg-gray-50'}
                            ${isDisabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}
               >
                 {/* Swatch de couleur/texture */}
@@ -164,7 +164,7 @@ export default function StoneFilter({
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0 }}
-                        className="absolute inset-0 bg-[#8B4E4E]/80 flex items-center justify-center"
+                        className="absolute inset-0 bg-[#2596be]/80 flex items-center justify-center"
                       >
                         <Check className="w-4 h-4 text-white" strokeWidth={3} />
                       </motion.div>
@@ -175,7 +175,7 @@ export default function StoneFilter({
                 {/* Label et compteur */}
                 <div className="flex-1 min-w-0">
                   <span className={`text-sm block truncate transition-colors
-                                   ${isSelected ? 'text-[#8B4E4E] font-medium' : 'text-gray-700'}`}>
+                                   ${isSelected ? 'text-[#2596be] font-medium' : 'text-gray-700'}`}>
                     {stone.label}
                   </span>
                   {count > 0 && (
@@ -186,8 +186,8 @@ export default function StoneFilter({
                 </div>
                 
                 {/* Effet de survol */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#8B4E4E]/0 
-                               to-[#8B4E4E]/5 opacity-0 group-hover:opacity-100 transition-opacity 
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#2596be]/0 
+                               to-[#2596be]/5 opacity-0 group-hover:opacity-100 transition-opacity 
                                pointer-events-none" />
               </motion.button>
             );
@@ -199,7 +199,7 @@ export default function StoneFilter({
       {hasMore && (
         <button
           onClick={() => setShowAll(true)}
-          className="w-full py-2 text-sm text-[#8B4E4E] hover:text-[#1a7a9e] 
+          className="w-full py-2 text-sm text-[#2596be] hover:text-[#1a7a9e] 
                     font-medium transition-colors flex items-center justify-center gap-1"
         >
           <span>Voir {filteredStones.length - 8} autres pierres</span>

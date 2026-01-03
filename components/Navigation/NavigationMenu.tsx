@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from '@/navigation';
 import { usePathname } from 'next/navigation';
+import { Search } from 'lucide-react';
+import { fuzzyFilter } from '@/lib/utils/fuzzySearch';
 
 // Types
 interface MenuItem {
@@ -24,9 +26,55 @@ interface DropdownMenu {
     href: string;
     highlight?: boolean;
   }[];
+  searchable?: boolean;
 }
 
+// Toutes les pierres pour la recherche (40 pierres)
+const ALL_STONES: MenuItem[] = [
+  { label: 'Turquoise', href: '/pierres/turquoise' },
+  { label: 'Lapis Lazuli', href: '/pierres/lapis-lazuli' },
+  { label: 'Agate', href: '/pierres/agate' },
+  { label: 'Onyx (toutes couleurs)', href: '/pierres/onyx' },
+  { label: 'Pierre de Lune', href: '/pierres/pierre-de-lune' },
+  { label: 'Corail', href: '/pierres/corail' },
+  { label: 'Améthyste', href: '/pierres/amethyste' },
+  { label: 'Quartz', href: '/pierres/quartz-rose' },
+  { label: 'Œil de Tigre', href: '/pierres/oeil-de-tigre' },
+  { label: 'Cornaline', href: '/pierres/cornaline' },
+  { label: 'Péridot', href: '/pierres/peridot' },
+  { label: 'Grenat', href: '/pierres/grenat' },
+  { label: 'Jade', href: '/pierres/jade' },
+  { label: 'Calcédoine', href: '/pierres/calcedoine' },
+  { label: 'Perle', href: '/pierres/perle' },
+  { label: 'Jaspe', href: '/pierres/jaspe' },
+  { label: 'Labradorite', href: '/pierres/labradorite' },
+  { label: 'Topaze', href: '/pierres/topaze' },
+  { label: 'Obsidienne', href: '/pierres/obsidienne' },
+  { label: 'Rubis', href: '/pierres/rubis' },
+  { label: 'Citrine', href: '/pierres/citrine' },
+  { label: 'Aigue-Marine', href: '/pierres/aigue-marine' },
+  { label: 'Howlite', href: '/pierres/howlite' },
+  { label: 'Amazonite', href: '/pierres/amazonite' },
+  { label: 'Émeraude', href: '/pierres/emeraude' },
+  { label: 'Cristal', href: '/pierres/cristal' },
+  { label: 'Aventurine', href: '/pierres/aventurine' },
+  { label: 'Saphir', href: '/pierres/saphir' },
+  { label: 'Malachite', href: '/pierres/malachite' },
+  { label: 'Dzi (Tibétaine)', href: '/pierres/dzi' },
+  { label: 'Larimar', href: '/pierres/larimar' },
+  { label: 'Jaspe Dalmatien', href: '/pierres/jaspe-dalmatien' },
+  { label: 'Tourmaline', href: '/pierres/tourmaline' },
+  { label: 'Nacre', href: '/pierres/nacre' },
+  { label: 'Zircon', href: '/pierres/zircon' },
+  { label: 'Rhodonite', href: '/pierres/rhodonite' },
+  { label: 'Onyx Noir', href: '/pierres/onyx-noir' },
+  { label: 'Onyx Vert', href: '/pierres/onyx-vert' },
+  { label: 'Onyx Bleu', href: '/pierres/onyx-bleu' },
+  { label: 'Onyx Rouge', href: '/pierres/onyx-rouge' },
+];
+
 // Menu Data - Proposition A "Type-First"
+// PIERRES TRIÉES PAR POPULARITÉ (nombre de produits)
 const menuData: DropdownMenu[] = [
   {
     label: 'Bijoux',
@@ -57,18 +105,27 @@ const menuData: DropdownMenu[] = [
   {
     label: 'Nos Pierres',
     href: '/pierres',
+    searchable: true,
     sections: [
       {
         title: 'Pierres vedettes',
         items: [
-          { label: 'Améthyste', href: '/pierres/amethyste' },
+          // Pierres avec > 7 produits (15 pierres, triées par popularité)
           { label: 'Turquoise', href: '/pierres/turquoise' },
-          { label: 'Lapis-lazuli', href: '/pierres/lapis-lazuli' },
-          { label: 'Pierre de lune', href: '/pierres/pierre-de-lune' },
-          { label: 'Grenat', href: '/pierres/grenat' },
+          { label: 'Lapis Lazuli', href: '/pierres/lapis-lazuli' },
+          { label: 'Agate', href: '/pierres/agate' },
+          { label: 'Onyx (toutes couleurs)', href: '/pierres/onyx' },
+          { label: 'Pierre de Lune', href: '/pierres/pierre-de-lune' },
           { label: 'Corail', href: '/pierres/corail' },
-          { label: 'Onyx', href: '/pierres/onyx' },
-          { label: 'Quartz rose', href: '/pierres/quartz-rose' },
+          { label: 'Améthyste', href: '/pierres/amethyste' },
+          { label: 'Quartz', href: '/pierres/quartz-rose' },
+          { label: 'Œil de Tigre', href: '/pierres/oeil-de-tigre' },
+          { label: 'Cornaline', href: '/pierres/cornaline' },
+          { label: 'Péridot', href: '/pierres/peridot' },
+          { label: 'Grenat', href: '/pierres/grenat' },
+          { label: 'Jade', href: '/pierres/jade' },
+          { label: 'Calcédoine', href: '/pierres/calcedoine' },
+          { label: 'Perle', href: '/pierres/perle' },
         ],
       },
     ],
@@ -134,6 +191,23 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const pathname = usePathname();
   const isActive = pathname?.startsWith(menu.href || '');
+  const [stoneSearch, setStoneSearch] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Reset search when dropdown closes
+  useEffect(() => {
+    if (!isOpen) {
+      setStoneSearch('');
+    } else if (menu.searchable && searchInputRef.current) {
+      // Focus search input when dropdown opens
+      setTimeout(() => searchInputRef.current?.focus(), 100);
+    }
+  }, [isOpen, menu.searchable]);
+
+  // Filtrer les pierres avec recherche fuzzy
+  const filteredStones = stoneSearch.trim()
+    ? fuzzyFilter(ALL_STONES, stoneSearch)
+    : null;
 
   return (
     <div
@@ -179,58 +253,105 @@ const Dropdown: React.FC<DropdownProps> = ({
             min-w-[280px] p-4
           "
         >
-          <div className="flex gap-4">
-            {menu.sections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="min-w-[120px]">
-                {section.title && (
-                  <h3 className="
-                    text-xs font-semibold uppercase tracking-wider
-                    text-[#2D2926]/60 mb-1.5 pb-1
-                    border-b border-[#EAB615]/20
-                  ">
-                    {section.title}
-                  </h3>
-                )}
+          {/* Barre de recherche pour les pierres */}
+          {menu.searchable && (
+            <div className="mb-3 pb-3 border-b border-[#EAB615]/20">
+              <div className="relative">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2D2926]/40" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Rechercher une pierre..."
+                  value={stoneSearch}
+                  onChange={(e) => setStoneSearch(e.target.value)}
+                  className="w-full pl-8 pr-3 py-2 text-sm border border-[#EAB615]/30 rounded-none bg-white placeholder:text-[#2D2926]/40 focus:outline-none focus:border-[#EAB615] transition-colors"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Résultats de recherche ou menu normal */}
+          {filteredStones ? (
+            <div className="max-h-[300px] overflow-y-auto">
+              {filteredStones.length > 0 ? (
                 <ul className="space-y-0.5">
-                  {section.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>
+                  {filteredStones.map((stone, index) => (
+                    <li key={index}>
                       <Link
-                        href={item.href}
+                        href={stone.href}
                         className="
-                          block px-2 py-1 text-sm text-[#2D2926]
-                          hover:text-gold-fusion hover:translate-x-1
+                          block px-2 py-1.5 text-sm text-[#2D2926]
+                          hover:text-gold-fusion hover:bg-[#EAB615]/5 hover:translate-x-1
                           transition-all duration-200
                         "
                       >
-                        {item.label}
+                        {stone.label}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-
-          {menu.featured && menu.featured.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-[#EAB615]/20">
-              {menu.featured.map((feat, index) => (
-                <Link
-                  key={index}
-                  href={feat.href}
-                  className={`
-                    inline-flex items-center gap-1.5 text-sm font-medium
-                    ${feat.highlight 
-                      ? 'text-gold-fusion hover:text-[#A8871F]' 
-                      : 'text-[#2D2926]/60 hover:text-gold-fusion'
-                    }
-                    transition-colors duration-200
-                  `}
-                >
-                  <span>→</span>
-                  {feat.label}
-                </Link>
-              ))}
+              ) : (
+                <p className="text-sm text-[#2D2926]/50 py-2 text-center">
+                  Aucune pierre trouvée
+                </p>
+              )}
             </div>
+          ) : (
+            <>
+              <div className="flex gap-4">
+                {menu.sections.map((section, sectionIndex) => (
+                  <div key={sectionIndex} className="min-w-[120px]">
+                    {section.title && (
+                      <h3 className="
+                        text-xs font-semibold uppercase tracking-wider
+                        text-[#2D2926]/60 mb-1.5 pb-1
+                        border-b border-[#EAB615]/20
+                      ">
+                        {section.title}
+                      </h3>
+                    )}
+                    <ul className="space-y-0.5">
+                      {section.items.map((item, itemIndex) => (
+                        <li key={itemIndex}>
+                          <Link
+                            href={item.href}
+                            className="
+                              block px-2 py-1 text-sm text-[#2D2926]
+                              hover:text-gold-fusion hover:translate-x-1
+                              transition-all duration-200
+                            "
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              {menu.featured && menu.featured.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-[#EAB615]/20">
+                  {menu.featured.map((feat, index) => (
+                    <Link
+                      key={index}
+                      href={feat.href}
+                      className={`
+                        inline-flex items-center gap-1.5 text-sm font-medium
+                        ${feat.highlight 
+                          ? 'text-gold-fusion hover:text-[#A8871F]' 
+                          : 'text-[#2D2926]/60 hover:text-gold-fusion'
+                        }
+                        transition-colors duration-200
+                      `}
+                    >
+                      <span>→</span>
+                      {feat.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -246,10 +367,17 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+  const [stoneSearch, setStoneSearch] = useState('');
 
   const toggleExpand = (label: string) => {
     setExpandedMenu(expandedMenu === label ? null : label);
+    setStoneSearch('');
   };
+
+  // Filtrer les pierres avec recherche fuzzy
+  const filteredStones = stoneSearch.trim()
+    ? fuzzyFilter(ALL_STONES, stoneSearch)
+    : null;
 
   return (
     <>
@@ -274,7 +402,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <span className="text-lg font-serif text-[#2D2926]">Menu</span>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-[#FDF9F7] rounded-full transition-colors"
+            className="p-2 hover:bg-[#FAF9F7] rounded-full transition-colors"
             aria-label="Fermer le menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -301,52 +429,98 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               <div
                 className={`
                   overflow-hidden transition-all duration-300
-                  ${expandedMenu === menu.label ? 'max-h-[500px]' : 'max-h-0'}
+                  ${expandedMenu === menu.label ? 'max-h-[600px]' : 'max-h-0'}
                 `}
               >
                 <div className="px-6 pb-4 bg-[#FDFCFB]/50">
-                  {menu.sections.map((section, sectionIndex) => (
-                    <div key={sectionIndex} className="mb-4">
-                      {section.title && (
-                        <h4 className="text-xs uppercase tracking-wider text-[#2D2926]/60 mb-2 mt-3">
-                          {section.title}
-                        </h4>
+                  {/* Barre de recherche pour les pierres (mobile) */}
+                  {menu.searchable && (
+                    <div className="mb-3 pb-3 border-b border-[#EAB615]/20">
+                      <div className="relative">
+                        <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2D2926]/40" />
+                        <input
+                          type="text"
+                          placeholder="Rechercher une pierre..."
+                          value={stoneSearch}
+                          onChange={(e) => setStoneSearch(e.target.value)}
+                          className="w-full pl-8 pr-3 py-2 text-sm border border-[#EAB615]/30 rounded-none bg-white placeholder:text-[#2D2926]/40 focus:outline-none focus:border-[#EAB615] transition-colors"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Résultats de recherche ou menu normal */}
+                  {menu.searchable && filteredStones ? (
+                    <div className="max-h-[250px] overflow-y-auto">
+                      {filteredStones.length > 0 ? (
+                        <ul className="space-y-1">
+                          {filteredStones.map((stone, index) => (
+                            <li key={index}>
+                              <Link
+                                href={stone.href}
+                                onClick={onClose}
+                                className="
+                                  block px-3 py-2 text-sm text-[#2D2926]
+                                  hover:text-gold-fusion transition-all duration-200
+                                "
+                              >
+                                {stone.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-sm text-[#2D2926]/50 py-2 text-center">
+                          Aucune pierre trouvée
+                        </p>
                       )}
-                      <ul className="space-y-1">
-                        {section.items.map((item, itemIndex) => (
-                          <li key={itemIndex}>
+                    </div>
+                  ) : (
+                    <>
+                      {menu.sections.map((section, sectionIndex) => (
+                        <div key={sectionIndex} className="mb-4">
+                          {section.title && (
+                            <h4 className="text-xs uppercase tracking-wider text-[#2D2926]/60 mb-2 mt-3">
+                              {section.title}
+                            </h4>
+                          )}
+                          <ul className="space-y-1">
+                            {section.items.map((item, itemIndex) => (
+                              <li key={itemIndex}>
+                                <Link
+                                  href={item.href}
+                                  onClick={onClose}
+                                  className="
+                                    block px-3 py-2 text-sm text-[#2D2926]
+                                    hover:text-gold-fusion transition-all duration-200
+                                  "
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+
+                      {menu.featured && (
+                        <div className="pt-2 border-t border-[#EAB615]/20">
+                          {menu.featured.map((feat, index) => (
                             <Link
-                              href={item.href}
+                              key={index}
+                              href={feat.href}
                               onClick={onClose}
                               className="
-                                block px-3 py-2 text-sm text-[#2D2926]
-                                hover:text-gold-fusion transition-all duration-200
+                                block py-2 text-sm font-medium text-gold-fusion
+                                hover:text-[#A8871F] transition-colors
                               "
                             >
-                              {item.label}
+                              → {feat.label}
                             </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-
-                  {menu.featured && (
-                    <div className="pt-2 border-t border-[#EAB615]/20">
-                      {menu.featured.map((feat, index) => (
-                        <Link
-                          key={index}
-                          href={feat.href}
-                          onClick={onClose}
-                          className="
-                            block py-2 text-sm font-medium text-gold-fusion
-                            hover:text-[#A8871F] transition-colors
-                          "
-                        >
-                          → {feat.label}
-                        </Link>
-                      ))}
-                    </div>
+                          ))}
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -421,9 +595,3 @@ export const NavigationMenu: React.FC = () => {
 };
 
 export default NavigationMenu;
-
-
-
-
-
-
