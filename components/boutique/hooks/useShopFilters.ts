@@ -18,89 +18,70 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(DEFAULT_PRODUCTS_PER_PAGE);
 
-  // Price range fixed to 1-50€
   const priceRange = useMemo(() => {
     return { min: 1, max: 50 };
   }, []);
 
-  // Filter products
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
-    // Category filter
     if (filters.categories.length > 0) {
       result = result.filter(p => filters.categories.includes(p.category));
     }
 
-    // Price filter
     result = result.filter(p => 
       p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1]
     );
 
-    // Types + Accessories filter (UNION/OR between them, AND with other filters)
     const hasTypeFilter = filters.types.length > 0;
     const hasAccessoryFilter = filters.accessories.length > 0;
     
     if (hasTypeFilter || hasAccessoryFilter) {
       result = result.filter(p => {
-        // Use inferred category from product name ONLY (not description) to avoid false positives
         const inferredCategory = inferCategory(p.name || '');
         
-        // Map inferred category to typeId (inferCategory returns 'boucle' but typeId is 'boucles-oreilles')
         const inferredToTypeId: Record<string, string> = {
           'boucle': "boucles d'oreilles",
         };
         const mappedCategory = inferredToTypeId[inferredCategory || ''] || inferredCategory;
         
-        // Check if matches any type - compare mapped category directly with typeId
-        // Only match if inferred category exactly matches the typeId (no fallback to prevent false positives)
         const matchesType = hasTypeFilter && filters.types.some(typeId => {
-          // Direct match: mapped category must match the typeId
           return mappedCategory === typeId;
         });
         
-        // Check if matches any accessory - same logic
         const matchesAccessory = hasAccessoryFilter && filters.accessories.some(accId => {
-          // For accessories, we need to check the name since inferCategory returns 'accessoire' generically
           const accConfig = FILTER_CONFIG.accessories.find(a => a.id === accId);
           if (!accConfig) return false;
           const nameLower = (p.name || '').toLowerCase();
           return accConfig.searchTerms.some(term => {
-            const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
-            return regex.test(nameLower);
+            return nameLower.includes(term.toLowerCase());
           });
         });
         
-        // UNION: pass if matches type OR accessory
         return matchesType || matchesAccessory;
       });
     }
 
-    // Material filter - use word boundary matching to avoid false positives
     if (filters.materials.length > 0) {
       result = result.filter(p => {
         const searchText = `${p.name || ''} ${p.description || ''} ${p.material || ''}`.toLowerCase();
         return filters.materials.some(m => {
           const term = m.replace('-', ' ').trim();
-          // Use word boundary regex for accurate matching
-          const regex = new RegExp('\\b' + term + '\\b', 'i');
+          const regex = new RegExp(`\\b${term}\\b`, 'i');
           return regex.test(searchText);
         });
       });
     }
 
-    // Stone filter - use stones array (enriched by script)
     if (filters.stones.length > 0) {
       result = result.filter(p => {
         if (!p.stones || !Array.isArray(p.stones)) return false;
         
-        // Normalize strings to handle accents (améthyste vs amethyste)
         const normalizeString = (str: string): string => {
           return str
             .toLowerCase()
             .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, ''); // Remove accents
+            .replace(/[\u0300-\u036f]/g, '');
         };
         
         return filters.stones.some(filterStone => {
@@ -113,7 +94,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       });
     }
 
-    // Style filter
     if (filters.styles.length > 0) {
       result = result.filter(p => {
         const style = (p.style || '').toLowerCase();
@@ -121,7 +101,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       });
     }
 
-    // Availability filter
     if (filters.availability.newArrivals) {
       result = result.filter(p => p.isNew);
     }
@@ -129,7 +108,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       result = result.filter(p => p.isOnSale);
     }
 
-    // Sort
     switch (filters.sort) {
       case 'price_asc':
         result.sort((a, b) => a.price - b.price);
@@ -142,12 +120,11 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
         break;
     }
 
-    // Deduplicate products by slug (or name if no slug)
     const seen = new Set<string>();
     const deduplicatedResult = result.filter(product => {
       const key = product.slug || product.name || product.id;
       if (seen.has(key)) {
-        return false; // Duplicate, skip it
+        return false;
       }
       seen.add(key);
       return true;
@@ -156,9 +133,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     return deduplicatedResult;
   }, [products, filters]);
 
-  // Paginated products
   const paginatedProducts = useMemo(() => {
-    // Si -1 (Tout), afficher tous les produits
     if (itemsPerPage === -1) {
       return filteredProducts;
     }
@@ -168,28 +143,23 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
   }, [filteredProducts, currentPage, itemsPerPage]);
 
   const totalPages = useMemo(() => {
-    if (itemsPerPage === -1) return 1; // Tout = 1 page
+    if (itemsPerPage === -1) return 1;
     return Math.ceil(filteredProducts.length / itemsPerPage);
   }, [filteredProducts.length, itemsPerPage]);
 
-  // Helper function to apply filters excluding specific categories (for cross-filter counts)
   const applyFiltersExcept = useCallback((productsToFilter: Product[], excludeCategories: string[] = []) => {
     let result = [...productsToFilter];
 
-    // Category filter
     if (!excludeCategories.includes('categories') && filters.categories.length > 0) {
       result = result.filter(p => filters.categories.includes(p.category));
     }
 
-    // Price filter
     if (!excludeCategories.includes('price')) {
       result = result.filter(p => 
         p.price >= filters.priceRange[0] && p.price <= filters.priceRange[1]
       );
     }
 
-    // Types + Accessories filter (exclude if counting types/accessories)
-    // When excluding types/accessories, we exclude the entire UNION filter to get accurate cross-filter counts
     const excludeTypesAndAccessories = excludeCategories.includes('types') && excludeCategories.includes('accessories');
     if (!excludeTypesAndAccessories) {
       const hasTypeFilter = filters.types.length > 0 && !excludeCategories.includes('types');
@@ -212,9 +182,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
             if (!accConfig) return false;
             const nameLower = (p.name || '').toLowerCase();
             return accConfig.searchTerms.some(term => {
-              const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-              const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
-              return regex.test(nameLower);
+              return nameLower.includes(term.toLowerCase());
             });
           });
           
@@ -223,29 +191,26 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       }
     }
 
-    // Material filter
     if (!excludeCategories.includes('materials') && filters.materials.length > 0) {
       result = result.filter(p => {
         const searchText = `${p.name || ''} ${p.description || ''} ${p.material || ''}`.toLowerCase();
         return filters.materials.some(m => {
           const term = m.replace('-', ' ').trim();
-          const regex = new RegExp('\\b' + term + '\\b', 'i');
+          const regex = new RegExp(`\\b${term}\\b`, 'i');
           return regex.test(searchText);
         });
       });
     }
 
-    // Stone filter - use stones array (enriched by script)
     if (!excludeCategories.includes('stones') && filters.stones.length > 0) {
       result = result.filter(p => {
         if (!p.stones || !Array.isArray(p.stones)) return false;
         
-        // Normalize strings to handle accents (améthyste vs amethyste)
         const normalizeString = (str: string): string => {
           return str
             .toLowerCase()
             .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, ''); // Remove accents
+            .replace(/[\u0300-\u036f]/g, '');
         };
         
         return filters.stones.some(filterStone => {
@@ -258,7 +223,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       });
     }
 
-    // Style filter
     if (!excludeCategories.includes('styles') && filters.styles.length > 0) {
       result = result.filter(p => {
         const style = (p.style || '').toLowerCase();
@@ -266,7 +230,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       });
     }
 
-    // Availability filter
     if (!excludeCategories.includes('availability')) {
       if (filters.availability.newArrivals) {
         result = result.filter(p => p.isNew);
@@ -279,7 +242,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     return result;
   }, [filters]);
 
-  // Filter counts - cross-filter aware (apply all filters except the category being counted)
   const filterCounts = useMemo(() => {
     const counts = {
       materials: {} as Record<string, number>,
@@ -289,26 +251,23 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       accessories: {} as Record<string, number>,
     };
 
-    // Apply all filters except materials to get base set for material counts
     const productsForMaterialCounts = applyFiltersExcept(products, ['materials']);
     FILTER_CONFIG.materials.forEach(m => {
-      const term = m.id.replace('-', ' ').trim();
-      const regex = new RegExp('\\b' + term + '\\b', 'i');
       counts.materials[m.id] = productsForMaterialCounts.filter(p => {
         const searchText = `${p.name || ''} ${p.description || ''} ${p.material || ''}`.toLowerCase();
+        const term = m.id.replace("-", " ").trim();
+        const regex = new RegExp(`\\b${term}\\b`, 'i');
         return regex.test(searchText);
       }).length;
     });
 
-    // Apply all filters except stones to get base set for stone counts
     const productsForStoneCounts = applyFiltersExcept(products, ['stones']);
     FILTER_CONFIG.stones.forEach(s => {
-      // Normalize strings to handle accents (améthyste vs amethyste)
       const normalizeString = (str: string): string => {
         return str
           .toLowerCase()
           .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, ''); // Remove accents
+          .replace(/[\u0300-\u036f]/g, '');
       };
       
       const normalizedFilterStone = normalizeString(s.id);
@@ -321,7 +280,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
       }).length;
     });
 
-    // Apply all filters except types to get base set for type counts
     const productsForTypeCounts = applyFiltersExcept(products, ['types', 'accessories']);
     FILTER_CONFIG.types.forEach(t => {
       counts.types[t.id] = productsForTypeCounts.filter(p => {
@@ -338,24 +296,19 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
         if (inferredCategory === null) {
           const nameLower = (p.name || '').toLowerCase();
           return t.searchTerms.some(term => {
-            const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
-            return regex.test(nameLower);
+            return nameLower.includes(term.toLowerCase());
           });
         }
         return false;
       }).length;
     });
 
-    // Apply all filters except accessories to get base set for accessory counts
     const productsForAccessoryCounts = applyFiltersExcept(products, ['types', 'accessories']);
     FILTER_CONFIG.accessories.forEach(a => {
       counts.accessories[a.id] = productsForAccessoryCounts.filter(p => {
         const nameLower = (p.name || '').toLowerCase();
         return a.searchTerms.some(term => {
-          const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-          const regex = new RegExp('\\b' + escapedTerm + 's?\\b', 'i');
-          return regex.test(nameLower);
+          return nameLower.includes(term.toLowerCase());
         });
       }).length;
     });
@@ -363,7 +316,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     return { ...counts, total: filteredProducts.length };
   }, [products, filters, applyFiltersExcept, filteredProducts.length]);
 
-  // Active filter count
   const activeFilterCount = useMemo(() => {
     let count = 0;
     if (filters.categories.length) count += filters.categories.length;
@@ -380,7 +332,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     return count;
   }, [filters, priceRange]);
 
-  // Handlers
   const handleToggleFilter = useCallback((key: keyof FilterState, value: string) => {
     setFilters(prev => {
       const currentArray = prev[key] as string[];
@@ -411,7 +362,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
 
   const handleItemsPerPageChange = useCallback((count: number) => {
     setItemsPerPage(count);
-    setCurrentPage(1); // Reset à la page 1
+    setCurrentPage(1);
   }, []);
 
   return {
@@ -432,4 +383,3 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     handleItemsPerPageChange,
   };
 }
-
