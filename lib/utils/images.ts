@@ -35,23 +35,17 @@ export function getValidImageUrl(url: string | undefined | null): string {
       return '/placeholder-image.svg';
     }
     // Check for double-encoded URLs (malformed encoding like %C3%83%C2%A9)
-    // These will fail to load, so use placeholder immediately
     if (url.includes('%C3%83%C2')) {
       return '/placeholder-image.svg';
     }
     // Decode URL to handle properly encoded special characters
     try {
       const decoded = decodeURIComponent(url);
-      // If decoding changed something and it's still a valid path, use decoded version
       if (decoded !== url && decoded.startsWith('/images/products/')) {
         return decoded;
       }
     } catch {
       // If decoding fails, use original URL and let onError handle it
-    }
-    // Prefer WebP over jpg/jpeg for products_reconciled
-    if (url.includes('products_reconciled') && url.match(/\.(jpg|jpeg)$/i)) {
-      return url.replace(/\.(jpg|jpeg)$/i, '.webp');
     }
     return url;
   }

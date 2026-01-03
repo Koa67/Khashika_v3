@@ -13,7 +13,9 @@ import ShopSidebar from './ShopSidebar';
 import ActiveFilters from './ActiveFilters';
 import EmptyState from './EmptyState';
 import MobileFilterModal from './MobileFilterModal';
-import ShopPagination from './ShopPagination';
+import ShopPagination from "./ShopPagination";
+import RecentlyViewed from "./RecentlyViewed";
+// import ShopPagination from './ShopPagination';
 
 // Hooks
 import { useShopFilters } from './hooks/useShopFilters';
@@ -121,6 +123,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
             onToggleFilter={handleToggleFilter}
             onUpdateFilter={handleUpdateFilter}
             onClearAll={handleClearAll}
+            pageTitle={pageTitle}
           />
 
           {/* Main Content */}
@@ -128,6 +131,19 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
             {/* Container unique pour tout le contenu */}
             <div className="max-w-7xl mx-auto px-4 py-8">
               
+
+              {/* Breadcrumb */}
+              <nav className="flex items-center gap-2 text-sm text-[#2D2926]/60 mb-4">
+                <a href="/fr" className="hover:text-[#EAB615] transition-colors">Accueil</a>
+                <span>/</span>
+                <a href="/fr/shop" className="hover:text-[#EAB615] transition-colors">Boutique</a>
+                {pageTitle && pageTitle !== "Boutique" && (
+                  <>
+                    <span>/</span>
+                    <span className="text-[#2D2926] font-medium">{pageTitle}</span>
+                  </>
+                )}
+              </nav>
               {/* 1. TITRE - En premier */}
               {pageTitle && (
                 <div className="mb-6 text-center">
@@ -162,6 +178,7 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
                     activeCount={activeFilterCount}
                     onToggle={handleToggleFilter}
                     onClearAll={handleClearAll}
+            pageTitle={pageTitle}
                   />
                 </div>
                 
@@ -192,6 +209,9 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
                     onItemsPerPageChange={handleItemsPerPageChange}
                     totalItems={allFilteredCount}
                   />
+
+                  {/* 5. PRODUITS RÉCEMMENT CONSULTÉS */}
+                  <RecentlyViewed />
                 </>
               ) : (
                 <>

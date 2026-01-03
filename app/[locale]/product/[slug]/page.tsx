@@ -7,6 +7,8 @@ import { getProductBySlug } from '@/lib/utils/products';
 import { getAllProducts } from '@/lib/data/products-loader';
 import ProductCard from '@/components/ProductCard';
 import ProductPageClient from '@/components/product/ProductPageClient';
+import TrackProductView from '@/components/product/TrackProductView';
+import RecentlyViewed from '@/components/boutique/RecentlyViewed';
 import { getValidImageUrl } from '@/lib/utils/images';
 import ImageMagnifier from '@/components/ImageMagnifier';
 import { inferCategory } from '@/lib/utils/inferCategory';
@@ -191,6 +193,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="min-h-screen bg-white">
+      <TrackProductView product={product} />
       {/* BREADCRUMB - Compact */}
       <div className="bg-[#FAF9F7] border-b border-[#EAB615]/20">
         <div className="max-w-6xl mx-auto px-4 py-3">
@@ -341,6 +344,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             )}
           </div>
+        </div>
+
+        {/* RÉCEMMENT CONSULTÉS */}
+        <div className="max-w-6xl mx-auto px-4">
+          <RecentlyViewed />
         </div>
 
         {/* PRODUITS SIMILAIRES - Compact */}
