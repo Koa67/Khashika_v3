@@ -12,8 +12,11 @@ export default function NotreHistoirePage() {
       {/* Hero */}
       <section className="bg-[#2D2926] text-white py-10">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-[#EAB615] text-lg mb-2">Namasté</p>
-          <h1 className="text-2xl font-bold">Notre Histoire</h1>
+          <p className="text-[#EAB615] text-sm uppercase tracking-widest mb-2">Namasté</p>
+          <h1 className="text-2xl font-bold mb-2">Notre Histoire</h1>
+          <p className="text-sm text-white/80">
+            Une passion pour l&apos;Inde et ses bijoux artisanaux
+          </p>
         </div>
       </section>
 
@@ -123,9 +126,10 @@ export default function NotreHistoirePage() {
 
       {/* CTA */}
       <section className="py-10 bg-[#2D2926] text-white text-center">
-        <div className="max-w-2xl mx-auto px-4">
-          <p className="text-sm text-white/80 mb-4">
-            Découvrez notre sélection de bijoux indiens authentiques, 
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-base font-bold mb-4">Découvrez nos créations</h2>
+          <p className="text-sm text-white/80 mb-6">
+            Découvrez notre sélection de bijoux indiens authentiques,
             choisis avec passion lors de nos voyages.
           </p>
           <Link href="/shop" className="inline-flex items-center justify-center px-6 py-2.5 bg-[#EAB615] text-[#2D2926] text-sm font-medium hover:bg-[#EAB615]/90 transition-colors">

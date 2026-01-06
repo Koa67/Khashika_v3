@@ -1,5 +1,4 @@
 'use client';
-
 import { useMemo, useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { Product } from '@/lib/types';
@@ -9,12 +8,18 @@ interface SearchResult {
   suggestions: string[];
 }
 
+function normalizeText(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
 export function useSearch() {
   const [query, setQuery] = useState('');
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Charger tous les produits une seule fois au montage via API uniquement
   useEffect(() => {
     const controller = new AbortController();
     let alive = true;
@@ -30,7 +35,6 @@ export function useSearch() {
         }
         
         const json = await response.json();
-        // Handle API response format: { success: true, data: [...] }
         const products = Array.isArray(json) 
           ? json 
           : (json.data || json.products || []);
@@ -60,62 +64,60 @@ export function useSearch() {
     };
   }, []);
 
-  // Configurer Fuse.js avec les poids et includeMatches - Recherche fuzzy tolérante
-  const fuse = useMemo(() => {
-    if (allProducts.length === 0) return null;
-    
-    return new Fuse(allProducts, {
-      keys: [
-        { name: 'name', weight: 0.4 },           // Nom = priorité haute
-        { name: 'category', weight: 0.2 },       // Catégorie
-        { name: 'attributes.stone', weight: 0.2 }, // Pierre (via attributes)
-        { name: 'stone', weight: 0.2 },          // Pierre (direct)
-        { name: 'attributes.material', weight: 0.1 }, // Matériau (via attributes)
-        { name: 'material', weight: 0.1 },       // Matériau (direct)
-        { name: 'description', weight: 0.1 },    // Description
-      ],
-      threshold: 0.4,          // 0 = exact, 1 = tout accepter (0.4 = tolérant)
-      distance: 100,           // Distance max entre caractères
-      includeScore: true,      // Inclure le score de pertinence
-      ignoreLocation: true,    // Chercher partout dans le texte
-      minMatchCharLength: 2,   // Min 2 caractères pour matcher
-      shouldSort: true,        // Trier par pertinence
-      findAllMatches: true,    // Trouver toutes les correspondances
-      useExtendedSearch: true, // Recherche étendue
-      includeMatches: true,    // Pour le highlighting
-    });
-  }, [allProducts]);
-
-  // Calculer les résultats : produits + suggestions
-  const results: SearchResult = useMemo(() => {
-    if (!query || query.length < 2 || !fuse) {
+  const searchResults: SearchResult = useMemo(() => {
+    if (!query.trim() || allProducts.length === 0) {
       return { products: [], suggestions: [] };
     }
 
-    const fuseResults = fuse.search(query, { limit: 5 });
-    
-    // Extraire les produits (top 5)
-    const products = fuseResults.map((result) => result.item);
+    // Ajoute des champs normalisés aux produits
+    const productsWithNormalized = allProducts.map(p => ({
+      ...p,
+      _searchTitle: normalizeText(p.title || p.name || ''),
+      _searchDesc: normalizeText(p.description || ''),
+      _searchMat: normalizeText(p.material || ''),
+      _searchCat: normalizeText(p.category || ''),
+    }));
 
-    // Extraire les catégories uniques des résultats pour les suggestions
-    const categories = new Set<string>();
-    fuseResults.forEach((result) => {
-      if (result.item.category) {
-        categories.add(result.item.category);
-      }
+    const fuse = new Fuse(productsWithNormalized, {
+      keys: [
+        { name: '_searchTitle', weight: 2 },
+        { name: '_searchDesc', weight: 1 },
+        { name: '_searchMat', weight: 1.5 },
+        { name: '_searchCat', weight: 1.5 },
+      ],
+      threshold: 0.3,
+      distance: 100,
+      ignoreLocation: true,
+      minMatchCharLength: 2,
     });
-    
-    const suggestions = Array.from(categories).slice(0, 3); // Max 3 suggestions
 
-    return { products, suggestions };
-  }, [query, fuse]);
+    const normalizedQuery = normalizeText(query);
+    const results = fuse.search(normalizedQuery);
 
-  return { 
-    query, 
-    setQuery, 
-    results: results.products,
-    suggestions: results.suggestions,
+    const products = results.map(result => result.item).slice(0, 20);
+
+    const suggestions: string[] = [];
+    if (products.length > 0) {
+      const materials = new Set(products.map(p => p.material).filter((m): m is string => Boolean(m)));
+      const categories = new Set(products.map(p => p.category).filter((c): c is string => Boolean(c)));
+      
+      suggestions.push(
+        ...Array.from(materials).slice(0, 3),
+        ...Array.from(categories).slice(0, 2)
+      );
+    }
+
+    return {
+      products,
+      suggestions: suggestions.slice(0, 5),
+    };
+  }, [query, allProducts]);
+
+  return {
+    query,
+    setQuery,
+    results: searchResults.products,
+    suggestions: searchResults.suggestions,
     isLoading,
-    fuseInstance: fuse, // Exposer pour le highlighting
   };
 }

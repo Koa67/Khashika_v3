@@ -6,14 +6,39 @@
       "args": ["-l"]
     }
   },
-  "terminal.integrated.shell.osx": "/bin/zsh",
   "terminal.integrated.env.osx": {
     "PATH": "${env:PATH}"
+  },
+  
+  "// Claude Code Settings": "───────────────────────────",
+  "claude.preferredModel": "claude-sonnet-4-5-20250514",
+  
+  "// Editor Settings for AI": "───────────────────────────",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  
+  "// TypeScript": "───────────────────────────",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.suggest.paths": true,
+  
+  "// Tailwind": "───────────────────────────",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  
+  "// File Associations": "───────────────────────────",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  
+  "// Exclude from search": "───────────────────────────",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/_LEGACY_CLONE": true,
+    "**/pnpm-lock.yaml": true
   }
 }
-
-
-
-
-
-

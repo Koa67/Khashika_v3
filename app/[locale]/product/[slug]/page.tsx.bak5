@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Link } from '@/navigation';
 import Image from 'next/image';
-import { ChevronRight, Heart, ShoppingBag, Truck, RotateCcw, Shield, ZoomIn, Sparkles } from 'lucide-react';
+import { ChevronRight, Heart, ShoppingBag, Truck, RotateCcw, Shield, ZoomIn } from 'lucide-react';
 import { getProductBySlug } from '@/lib/utils/products';
 import { getAllProducts } from '@/lib/data/products-loader';
 import ProductCard from '@/components/ProductCard';
@@ -12,7 +12,6 @@ import RecentlyViewed from '@/components/boutique/RecentlyViewed';
 import { getValidImageUrl } from '@/lib/utils/images';
 import ImageMagnifier from '@/components/ImageMagnifier';
 import { inferCategory } from '@/lib/utils/inferCategory';
-import { findStoneByName } from '@/lib/data/stones';
 
 function safeDecodeSlug(slug: string): string {
   try {
@@ -80,7 +79,7 @@ export async function generateMetadata({
 export default async function ProductPage({ params }: ProductPageProps) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
-  const locale = 'fr';
+  const locale = 'fr'; // Could be extracted from params if needed
   const wanted = normalizeSlug(slug);
 
   const product = await getProductBySlug(wanted);
@@ -112,7 +111,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const getBreadcrumbInfo = (cat: string, productName: string) => {
     const nameLower = (productName || '').toLowerCase();
     
-    // First, check for accessories
+    // First, check for accessories (before inferring type, as accessories might match bijoux keywords)
     const accToBreadcrumb: Record<string, { parentCategory: string; typeSlug: string; label: string }> = {
       'pashmina': { parentCategory: 'accessoires', typeSlug: 'pashminas', label: 'Pashminas' },
       'étole': { parentCategory: 'accessoires', typeSlug: 'pashminas', label: 'Pashminas' },
@@ -128,7 +127,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
       'bandana': { parentCategory: 'accessoires', typeSlug: 'bandanas', label: 'Bandanas' },
       'marque-page': { parentCategory: 'accessoires', typeSlug: 'marque-pages', label: 'Marque-pages' },
       'carnet': { parentCategory: 'accessoires', typeSlug: 'carnets', label: 'Carnets' },
-      'figurine': { parentCategory: 'accessoires', typeSlug: 'decoration', label: 'Décoration' },
     };
     
     for (const [key, info] of Object.entries(accToBreadcrumb)) {
@@ -140,6 +138,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     // Then infer type for bijoux
     const inferredType = inferCategory(productName || '');
     
+    // Mapping: inferred type → { parentCategory, typeSlug, label }
     const typeToBreadcrumb: Record<string, { parentCategory: string; typeSlug: string; label: string }> = {
       'bague': { parentCategory: 'bijoux', typeSlug: 'bagues', label: 'Bagues' },
       'bracelet': { parentCategory: 'bijoux', typeSlug: 'bracelets', label: 'Bracelets' },
@@ -151,6 +150,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       'parure': { parentCategory: 'bijoux', typeSlug: 'parures', label: 'Parures' },
     };
     
+    // If we have an inferred type with a mapping, use it
     if (inferredType && typeToBreadcrumb[inferredType]) {
       return typeToBreadcrumb[inferredType];
     }
@@ -167,21 +167,21 @@ export default async function ProductPage({ params }: ProductPageProps) {
       return { parentCategory: 'pierres', typeSlug: '', label: 'Pierres' };
     }
     
-    // Return null to avoid duplicate "Boutique"
-    return null;
+    return { parentCategory: 'shop', typeSlug: '', label: 'Boutique' };
   };
 
-  const breadcrumbInfo = getBreadcrumbInfo(product.type || '', product.title || product.name || '');
-  const categoryUrl = breadcrumbInfo?.typeSlug 
+  const breadcrumbInfo = getBreadcrumbInfo(product.type || '');
+  const categoryUrl = breadcrumbInfo.typeSlug 
     ? `/${breadcrumbInfo.parentCategory}/${breadcrumbInfo.typeSlug}`
-    : breadcrumbInfo ? `/${breadcrumbInfo.parentCategory}` : '/shop';
-  const stone = product.attributes?.stone || product.stone || (product.stones && product.stones.length > 0 ? product.stones[0] : undefined);
+    : `/${breadcrumbInfo.parentCategory === 'shop' ? 'shop' : breadcrumbInfo.parentCategory}`;
+  const stone = product.attributes?.stone || product.stone;
   const material = product.attributes?.material || product.material;
   const dimensions = product.attributes?.dimensions;
   const origin = product.attributes?.origin;
   const price = typeof product.price === 'number' ? product.price : parseFloat(String(product.price || 0));
   const displayPrice = price > 0 ? `${price.toFixed(2)}` : '0';
 
+  // Get main image
   const mainImage = getValidImageUrl(
     product.images && product.images.length > 0 
       ? product.images[0] 
@@ -194,19 +194,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <div className="min-h-screen bg-white">
       <TrackProductView product={product} />
-      {/* BREADCRUMB */}
+      {/* BREADCRUMB - Compact */}
       <div className="bg-[#FAF9F7] border-b border-[#EAB615]/20">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <nav className="flex items-center gap-2 text-sm text-[#2D2926]/60">
             <Link href="/" className="hover:text-gold-fusion transition-colors">Accueil</Link>
             <ChevronRight className="w-3 h-3" />
             <Link href="/shop" className="hover:text-gold-fusion transition-colors">Boutique</Link>
-            {breadcrumbInfo && (
-              <>
-                <ChevronRight className="w-3 h-3" />
-                <Link href={categoryUrl} className="hover:text-gold-fusion transition-colors">{breadcrumbInfo.label}</Link>
-              </>
-            )}
+            <ChevronRight className="w-3 h-3" />
+            <Link href={categoryUrl} className="hover:text-gold-fusion transition-colors">{breadcrumbInfo.label}</Link>
             {stone && (
               <>
                 <ChevronRight className="w-3 h-3" />
@@ -225,6 +221,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           
           {/* COLONNE GAUCHE - Images */}
           <div className="space-y-3">
+            {/* Image principale avec loupe */}
             <div className="relative">
               <ImageMagnifier
                 src={mainImage}
@@ -234,11 +231,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
               />
             </div>
             
+            {/* Thumbnails (si plusieurs images) */}
             {gallery.length > 0 && (
               <div className="flex gap-2">
                 {gallery.map((img, i) => (
                   <button key={i} className="group relative w-20 h-20 border border-[#EAB615]/20 hover:border-[#EAB615] transition-colors overflow-hidden">
                     <Image src={img} alt="" fill className="object-cover" />
+                    {/* Mini loupe au hover */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-all duration-200">
                       <ZoomIn className="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     </div>
@@ -250,6 +249,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
           {/* COLONNE DROITE - Infos */}
           <div className="space-y-4">
+            {/* Nom + Prix */}
             <div>
               <h1 className="font-serif text-2xl md:text-3xl text-[#2D2926] leading-tight">
                 {product.title || product.name}
@@ -259,6 +259,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </p>
             </div>
 
+            {/* Badges */}
             <div className="flex flex-wrap gap-2">
               {stone && (
                 <span className="px-3 py-1 text-xs bg-[#FAF9F7] border border-[#EAB615]/30 text-[#2D2926]">
@@ -277,8 +278,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               )}
             </div>
 
+            {/* Boutons CTA */}
             <ProductPageClient product={product} type="cta-buttons" />
 
+            {/* Réassurance compacte */}
             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#EAB615]/20">
               <div className="flex flex-col items-center text-center gap-1">
                 <Truck className="w-5 h-5 text-gold-fusion" />
@@ -294,6 +297,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
 
+            {/* Description détaillée */}
             {product.description && (
               <div className="pt-4 border-t border-[#EAB615]/20">
                 <h2 className="font-serif text-lg text-[#2D2926] mb-2">Description</h2>
@@ -307,6 +311,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             )}
 
+            {/* Caractéristiques */}
             {(stone || material || dimensions || origin) && (
               <div className="pt-4 border-t border-[#EAB615]/20">
                 <h2 className="font-serif text-lg text-[#2D2926] mb-2">Caractéristiques</h2>
@@ -338,71 +343,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </dl>
               </div>
             )}
-
-            {/* SECTION INFO PIERRE */}
-            {stone && (() => {
-              const stoneInfo = findStoneByName(stone);
-              if (!stoneInfo) return null;
-              return (
-                <div className="pt-4 border-t border-[#EAB615]/20">
-                  <div className="bg-gradient-to-br from-[#FAF9F7] to-[#F5F0E8] rounded-xl p-4 border border-[#EAB615]/20">
-                    <div className="flex items-start gap-4">
-                      <div className="relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden border border-[#EAB615]/30">
-                        <Image
-                          src={stoneInfo.image}
-                          alt={stoneInfo.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                          <Sparkles className="w-4 h-4 text-[#EAB615]" />
-                          <h3 className="font-serif text-base font-semibold text-[#2D2926]">
-                            {stoneInfo.name}
-                          </h3>
-                        </div>
-                        <p className="text-xs text-[#8B4E4E] font-medium mb-2">
-                          {stoneInfo.short}
-                        </p>
-                        <p className="text-xs text-[#2D2926]/70 leading-relaxed">
-                          {stoneInfo.full}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-3 pt-3 border-t border-[#EAB615]/20">
-                      <p className="text-[10px] font-semibold text-[#2D2926]/50 uppercase mb-1.5">
-                        Signes astrologiques associés
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {stoneInfo.signs.map((sign) => (
-                          <span
-                            key={sign}
-                            className="text-[10px] px-2 py-0.5 bg-white border border-[#EAB615]/30 text-[#2D2926]/70 rounded-full"
-                          >
-                            {sign}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <Link
-                      href="/guide-pierres"
-                      className="mt-3 inline-flex items-center gap-1 text-xs text-[#8B4E4E] hover:text-[#6B3D3D] transition-colors"
-                    >
-                      Voir le guide des pierres
-                      <ChevronRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })()}
           </div>
         </div>
 
+        {/* RÉCEMMENT CONSULTÉS */}
         <div className="max-w-6xl mx-auto px-4">
           <RecentlyViewed />
         </div>
 
+        {/* PRODUITS SIMILAIRES - Compact */}
         {similarProducts.length > 0 && (
           <div className="mt-12 pt-8 border-t border-[#EAB615]/20">
             <h2 className="font-serif text-xl text-[#2D2926] mb-4">Vous aimerez aussi</h2>

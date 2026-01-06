@@ -1,0 +1,172 @@
+{
+  "Khashika Server Component": {
+    "prefix": "ksc",
+    "body": [
+      "import { Metadata } from 'next'",
+      "",
+      "export const metadata: Metadata = {",
+      "  title: '$1 | Khashika',",
+      "  description: '$2',",
+      "}",
+      "",
+      "export default async function $3Page() {",
+      "  return (",
+      "    <main className=\"container mx-auto px-4 py-8\">",
+      "      $0",
+      "    </main>",
+      "  )",
+      "}"
+    ],
+    "description": "Khashika Server Component with metadata"
+  },
+  "Khashika Client Component": {
+    "prefix": "kcc",
+    "body": [
+      "'use client'",
+      "",
+      "import { useState } from 'react'",
+      "",
+      "interface ${1:Component}Props {",
+      "  $2",
+      "}",
+      "",
+      "export function $1({ $3 }: ${1}Props) {",
+      "  const [state, setState] = useState($4)",
+      "",
+      "  return (",
+      "    <div className=\"$5\">",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "Khashika Client Component"
+  },
+  "Khashika API Route": {
+    "prefix": "kapi",
+    "body": [
+      "import { NextRequest, NextResponse } from 'next/server'",
+      "import { supabase } from '@/lib/db/supabase'",
+      "",
+      "export async function ${1|GET,POST,PUT,DELETE|}(req: NextRequest) {",
+      "  try {",
+      "    const { data, error } = await supabase",
+      "      .from('$2')",
+      "      .select('$3')",
+      "",
+      "    if (error) throw error",
+      "",
+      "    return NextResponse.json({ data })",
+      "  } catch (error) {",
+      "    console.error('[${4:ROUTE}]:', error)",
+      "    return NextResponse.json(",
+      "      { error: 'Erreur serveur' },",
+      "      { status: 500 }",
+      "    )",
+      "  }",
+      "}"
+    ],
+    "description": "Khashika API Route with error handling"
+  },
+  "Khashika Hook": {
+    "prefix": "khook",
+    "body": [
+      "'use client'",
+      "",
+      "import { useState, useEffect } from 'react'",
+      "",
+      "export function use$1($2) {",
+      "  const [data, setData] = useState<$3 | null>(null)",
+      "  const [loading, setLoading] = useState(true)",
+      "  const [error, setError] = useState<Error | null>(null)",
+      "",
+      "  useEffect(() => {",
+      "    async function fetch() {",
+      "      try {",
+      "        $0",
+      "        setData(result)",
+      "      } catch (e) {",
+      "        setError(e as Error)",
+      "      } finally {",
+      "        setLoading(false)",
+      "      }",
+      "    }",
+      "    fetch()",
+      "  }, [$4])",
+      "",
+      "  return { data, loading, error }",
+      "}"
+    ],
+    "description": "Khashika custom hook"
+  },
+  "Khashika Image": {
+    "prefix": "kimg",
+    "body": [
+      "import Image from 'next/image'",
+      "import { getValidImageUrl } from '@/lib/utils/images'",
+      "",
+      "<Image",
+      "  src={getValidImageUrl($1)}",
+      "  alt=\"$2\"",
+      "  width={$3:400}",
+      "  height={$4:400}",
+      "  className=\"$5\"",
+      "/>"
+    ],
+    "description": "Khashika Image with getValidImageUrl"
+  },
+  "Khashika Try Catch": {
+    "prefix": "ktry",
+    "body": [
+      "try {",
+      "  $0",
+      "} catch (error) {",
+      "  console.error('[${1:CONTEXT}]:', error)",
+      "  throw new Error('${2:Erreur serveur}')",
+      "}"
+    ],
+    "description": "Khashika try-catch pattern"
+  },
+  "Khashika Gold Button": {
+    "prefix": "kbtn",
+    "body": [
+      "<button",
+      "  className=\"bg-[#2596be] text-white px-6 py-3 hover:bg-[#1e7a9a] hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:border-[#D4AF37] transition-all\"",
+      "  onClick={$1}",
+      ">",
+      "  $2",
+      "</button>"
+    ],
+    "description": "Khashika styled button"
+  },
+  "Claude Patch Request": {
+    "prefix": "cpatch",
+    "body": [
+      "MODE: PATCH",
+      "ITERATION: ${1:1}",
+      "LAST VERDICT: ${2|N/A,PASS,FAIL — unchanged,FAIL — changed,BLOCKED|}",
+      "GOAL: $3",
+      "SCOPE: $4",
+      "FILES: $5",
+      "CONSTRAINTS: ${6:Max 2 fichiers, 40 lignes, pas de nouvelles deps}",
+      "DONE WHEN:",
+      "  - [ ] $7",
+      "  - [ ] pnpm build OK"
+    ],
+    "description": "Claude Code patch request template"
+  },
+  "Claude Fail Report": {
+    "prefix": "cfail",
+    "body": [
+      "ITERATION: ${1:1}",
+      "VERDICT: ${2|PASS,FAIL — unchanged,FAIL — changed,BLOCKED|}",
+      "VERIFY COMMAND: $3",
+      "OUTPUT:",
+      "```",
+      "$4",
+      "```",
+      "NEXT ACTION: ${5|PATCH,ESCALATE A,ESCALATE B,ESCALATE C,ESCALATE D,ESCALATE E|}"
+    ],
+    "description": "Claude Code fail report template"
+  }
+}

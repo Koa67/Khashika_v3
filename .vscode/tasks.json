@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+): (error|warning) (.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Compiling",
+          "endsPattern": "^✓ Ready"
+        }
+      },
+      "group": "build"
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "pnpm build",
+      "problemMatcher": ["$tsc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "pnpm lint",
+      "problemMatcher": ["$eslint-stylish"],
+      "group": "build"
+    },
+    {
+      "label": "lint:fix",
+      "type": "shell",
+      "command": "pnpm lint --fix",
+      "problemMatcher": ["$eslint-stylish"],
+      "group": "build"
+    },
+    {
+      "label": "check",
+      "type": "shell",
+      "command": "pnpm check",
+      "dependsOn": ["lint", "build"],
+      "dependsOrder": "sequence",
+      "group": "build"
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "pnpm clean",
+      "group": "build"
+    },
+    {
+      "label": "types",
+      "type": "shell",
+      "command": "pnpm types",
+      "problemMatcher": ["$tsc"],
+      "group": "build"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { Product } from '@/lib/types';
-import { FilterState, INITIAL_FILTERS, FILTER_CONFIG, SortOption, ONYX_VARIANT_IDS } from '@/lib/types/filters';
+import { FilterState, INITIAL_FILTERS, FILTER_CONFIG, SortOption } from '@/lib/types/filters';
 import { inferCategory } from '@/lib/utils/inferCategory';
 
 const DEFAULT_PRODUCTS_PER_PAGE = 24;
@@ -15,7 +15,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     ...options?.initialFilters,
   };
   const [filters, setFilters] = useState<FilterState>(initialFiltersState);
-  console.log("🔍 MERGE - INITIAL:", INITIAL_FILTERS.types, "options:", options?.initialFilters, "result:", initialFiltersState.types);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(DEFAULT_PRODUCTS_PER_PAGE);
 
@@ -45,20 +44,20 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
           'boucle': "boucles d'oreilles",
         };
         const mappedCategory = inferredToTypeId[inferredCategory || ''] || inferredCategory;
+        
         const matchesType = hasTypeFilter && filters.types.some(typeId => {
-          // Compare d'abord p.type directement, puis mappedCategory
-          const productType = (p.type || '').toLowerCase();
-          const filterType = typeId.toLowerCase();
-          if (productType === filterType) return true;
-          return (mappedCategory && mappedCategory.toLowerCase() === filterType);
+          return mappedCategory === typeId;
         });
-        console.log("🔍 FILTER p.type:", p.type, "mappedCategory:", mappedCategory, "filters.types:", filters.types, "matchesType:", matchesType);
         
         const matchesAccessory = hasAccessoryFilter && filters.accessories.some(accId => {
-          // Compare directement avec p.type
-          const productType = (p.type || '').toLowerCase();
-          return productType === accId.toLowerCase();
-        });        
+          const accConfig = FILTER_CONFIG.accessories.find(a => a.id === accId);
+          if (!accConfig) return false;
+          const nameLower = (p.name || '').toLowerCase();
+          return accConfig.searchTerms.some(term => {
+            return nameLower.includes(term.toLowerCase());
+          });
+        });
+        
         return matchesType || matchesAccessory;
       });
     }
@@ -89,8 +88,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
           const normalizedFilterStone = normalizeString(filterStone);
           return p.stones!.some(stone => {
             const normalizedStone = normalizeString(stone);
-            // Pour variantes onyx, matcher aussi "onyx" simple
-            if (ONYX_VARIANT_IDS.includes(filterStone)) { const productName = normalizeString(p.name || ""); if (productName.includes(normalizeString(filterStone))) return true; }
             return normalizedStone === normalizedFilterStone;
           });
         });
@@ -112,10 +109,10 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     }
 
     switch (filters.sort) {
-      case 'price-asc':
+      case 'price_asc':
         result.sort((a, b) => a.price - b.price);
         break;
-      case 'price-desc':
+      case 'price_desc':
         result.sort((a, b) => b.price - a.price);
         break;
       case 'newest':
@@ -182,7 +179,7 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
           
           const matchesAccessory = hasAccessoryFilter && filters.accessories.some(accId => {
             const accConfig = FILTER_CONFIG.accessories.find(a => a.id === accId);
-            if (!accConfig || !accConfig.searchTerms) return false;
+            if (!accConfig) return false;
             const nameLower = (p.name || '').toLowerCase();
             return accConfig.searchTerms.some(term => {
               return nameLower.includes(term.toLowerCase());
@@ -220,8 +217,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
           const normalizedFilterStone = normalizeString(filterStone);
           return p.stones!.some(stone => {
             const normalizedStone = normalizeString(stone);
-            // Pour variantes onyx, matcher aussi "onyx" simple
-            if (ONYX_VARIANT_IDS.includes(filterStone)) { const productName = normalizeString(p.name || ""); if (productName.includes(normalizeString(filterStone))) return true; }
             return normalizedStone === normalizedFilterStone;
           });
         });
@@ -280,8 +275,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
         if (!p.stones || !Array.isArray(p.stones)) return false;
         return p.stones.some(stone => {
           const normalizedStone = normalizeString(stone);
-          // Pour variantes onyx, matcher aussi "onyx" simple
-          if (ONYX_VARIANT_IDS.includes(s.id)) { const productName = normalizeString(p.name || ""); if (productName.includes(normalizeString(s.id))) return true; }
           return normalizedStone === normalizedFilterStone;
         });
       }).length;
@@ -301,7 +294,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
         }
         
         if (inferredCategory === null) {
-          if (!t.searchTerms) return false;
           const nameLower = (p.name || '').toLowerCase();
           return t.searchTerms.some(term => {
             return nameLower.includes(term.toLowerCase());
@@ -314,7 +306,6 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
     const productsForAccessoryCounts = applyFiltersExcept(products, ['types', 'accessories']);
     FILTER_CONFIG.accessories.forEach(a => {
       counts.accessories[a.id] = productsForAccessoryCounts.filter(p => {
-        if (!a.searchTerms) return false;
         const nameLower = (p.name || '').toLowerCase();
         return a.searchTerms.some(term => {
           return nameLower.includes(term.toLowerCase());
@@ -356,9 +347,9 @@ export function useShopFilters(products: Product[], options?: UseShopFiltersOpti
   }, []);
 
   const handleClearAll = useCallback(() => {
-    setFilters({ ...initialFiltersState, priceRange: [priceRange.min, priceRange.max] });
+    setFilters({ ...INITIAL_FILTERS, priceRange: [priceRange.min, priceRange.max] });
     setCurrentPage(1);
-  }, [priceRange, initialFiltersState]);
+  }, [priceRange]);
 
   const handleSort = useCallback((sort: SortOption) => {
     setFilters(prev => ({ ...prev, sort }));

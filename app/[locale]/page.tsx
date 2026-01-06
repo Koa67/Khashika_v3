@@ -35,7 +35,7 @@ const collections = [
   { name: 'Pendentifs', type: 'pendentif', image: '/images/products_reconciled/pendentif-argent-aum-symbole-indien.jpeg' },
   { name: 'Chaînes', type: 'chaîne', image: '/images/products_reconciled/chaine-de-chevilles-argentée-coeur.jpeg' },
   { name: 'Chevilles', type: 'cheville', image: '/images/products_reconciled/chaine-de-chevilles-argentée-perles-de-turquoise.jpeg' },
-  { name: 'Pashminas', type: 'pashmina', image: '/iproducts_reconciled/pashmina-cachemire-et-soie-vert-motifs-éléphant.jpeg' },
+  { name: 'Pashminas', type: 'pashmina', image: '/images/products_reconciled/pashmina-cachemire-et-soie-vert-motifs-éléphant.jpeg' },
   { name: 'Foulards', type: 'foulard', image: '/images/products_reconciled/étole-marron-100-coton-avec-nuance-de-couleur.jpeg' },
   { name: 'Sacs', type: 'sac', image: '/images/products_reconciled/sac-bohème-bleu-brodé-à-pompons.jpeg' },
   { name: 'Accessoires', type: 'accessoire', image: '/images/products_reconciled/porte-clé-lotus-argenté-rond.jpg' },
@@ -66,7 +66,7 @@ export default async function Home() {
       <Hero />
 
       {/* Nos Collections */}
-      <section className="bg-white py-12">
+      <section id="notre-collection" className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-[#2D2926] text-center mb-8">
             Nos Collections

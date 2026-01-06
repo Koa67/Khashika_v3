@@ -1,0 +1,30 @@
+{
+  "recommendations": [
+    // Claude Code (essential)
+    "anthropic.claude-code",
+    
+    // TypeScript & React
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    
+    // Next.js
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    
+    // Git
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    
+    // Productivity
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-french",
+    
+    // Icons & Theme
+    "PKief.material-icon-theme"
+  ],
+  "unwantedRecommendations": [
+    "GitHub.copilot"
+  ]
+}

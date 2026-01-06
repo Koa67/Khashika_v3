@@ -1,11 +1,16 @@
-'use client';
+export interface Stone {
+  id: string;
+  name: string;
+  image: string;
+  short: string;
+  full: string;
+  signs: string[];
+  slug: string;
+}
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { Link } from '@/navigation';
-
-const stones = [
+export const stones: Stone[] = [
   { id: 'amethyste', name: 'Améthyste', image: '/images/pierres/amethyste.jpg', short: "Sagesse et sérénité", full: "Quartz violet aux reflets diaphanes, l'améthyste incarne la sagesse et l'humilité. Elle favorise l'élévation spirituelle, dissipe la colère, la peur et l'anxiété. Elle purifie l'atmosphère des lieux où elle se trouve.", signs: ['Sagittaire', 'Vierge', 'Poissons', 'Verseau', 'Capricorne'], slug: 'amethyste' },
+  { id: 'aigue-marine', name: 'Aigue-marine', image: '/images/pierres/aigue-marine.jpg', short: "Clarté et apaisement", full: "Pierre d'eau douce aux reflets bleu-vert, l'aigue-marine apaise les tensions et favorise la communication claire. Elle est associée à la sérénité et à la méditation.", signs: ['Gémeaux', 'Poissons', 'Balance', 'Verseau'], slug: 'aigue-marine' },
   { id: 'apatite', name: 'Apatite', image: '/images/pierres/apatite.jpg', short: "Courage et motivation", full: "Pierre de l'inspiration et de la motivation, l'apatite donne du courage et facilite les contacts. Elle aide à surmonter la timidité et renforce la confiance en soi.", signs: ['Gémeaux', 'Balance', 'Sagittaire'], slug: 'apatite' },
   { id: 'aventurine', name: 'Aventurine', image: '/images/pierres/aventurine.jpg', short: "Calme intérieur", full: "Pierre d'une grande douceur, l'aventurine apaise les problèmes liés au cœur. Elle procure une tranquillité intérieure, dissout la mélancolie et renforce la maîtrise de soi.", signs: ['Cancer', 'Taureau', 'Balance'], slug: 'aventurine' },
   { id: 'citrine', name: 'Citrine', image: '/images/pierres/citrine.jpg', short: "Énergie solaire", full: "Pierre chaleureuse et énergisante, la citrine purifie les chakras sans nécessiter de nettoyage. Elle absorbe et transforme l'énergie négative, stimulant créativité et joie de vivre.", signs: ['Lion', 'Vierge', 'Balance', 'Scorpion', 'Gémeaux'], slug: 'citrine' },
@@ -30,75 +35,22 @@ const stones = [
   { id: 'turquoise', name: 'Turquoise', image: '/images/pierres/turquoise.jpg', short: "Communication sacrée", full: "Pierre positive par excellence, la turquoise aide à discerner le bien du mal. Elle diffuse confiance, renforce l'amitié et purifie les fluides vitaux du corps.", signs: ['Verseau', 'Poissons', 'Gémeaux', 'Sagittaire', 'Balance', 'Scorpion'], slug: 'turquoise' },
 ];
 
-function StoneCard({ stone }: { stone: typeof stones[0] }) {
-  const [isHovered, setIsHovered] = useState(false);
+// Fonction pour trouver une pierre par son nom (insensible à la casse et aux accents)
+export function findStoneByName(stoneName: string): Stone | undefined {
+  if (!stoneName) return undefined;
 
-  return (
-    <div
-      className="relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Link
-        href={`/shop?q=${stone.name}`}
-        className="block bg-[#FAF9F7] hover:bg-white border border-transparent hover:border-[#EAB615] transition-all rounded-lg overflow-hidden"
-      >
-        <div className="relative aspect-square overflow-hidden bg-[#F5F5F5] flex items-center justify-center">
-          <Image
-            src={stone.image}
-            alt={stone.name}
-            fill
-            className="object-contain p-2"
-            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
-          />
-        </div>
-        <div className="p-3 text-center">
-          <h3 className="text-sm font-semibold text-[#2D2926] truncate">{stone.name}</h3>
-          <p className="text-xs text-[#2D2926]/60 mt-1">{stone.short}</p>
-        </div>
-      </Link>
+  const normalizedSearch = stoneName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-      {/* Tooltip au survol */}
-      {isHovered && (
-        <div className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-2 w-72 bg-white border border-[#EAB615] shadow-lg rounded-lg p-4 pointer-events-none">
-          <h4 className="text-base font-bold text-[#2D2926] mb-2">{stone.name}</h4>
-          <p className="text-sm text-[#2D2926]/80 leading-relaxed mb-3">{stone.full}</p>
-          <div className="border-t border-[#EAB615]/20 pt-3">
-            <p className="text-xs font-semibold text-[#2D2926]/50 uppercase mb-2">Signes associés</p>
-            <div className="flex flex-wrap gap-1.5">
-              {stone.signs.map((sign) => (
-                <span key={sign} className="text-xs px-2 py-1 bg-[#EAB615]/10 text-[#2D2926]/70 rounded">{sign}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+  return stones.find(stone => {
+    const normalizedName = stone.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const normalizedSlug = stone.slug.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const normalizedId = stone.id.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-export default function GuidePierresPage() {
-  return (
-    <div className="bg-white">
-      {/* Hero */}
-      <section className="bg-[#2D2926] text-white py-10">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-[#EAB615] text-sm uppercase tracking-widest mb-2">Lithothérapie</p>
-          <h1 className="text-2xl font-bold mb-2">Guide des Pierres</h1>
-          <p className="text-sm text-white/80">
-            Découvrez les vertus et significations de nos pierres semi-précieuses.
-            Survolez chaque pierre pour en apprendre davantage.
-          </p>
-        </div>
-      </section>
-
-      <div className="max-w-5xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-          {stones.map((stone) => (
-            <StoneCard key={stone.id} stone={stone} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+    return normalizedName.includes(normalizedSearch) ||
+           normalizedSearch.includes(normalizedName) ||
+           normalizedSlug.includes(normalizedSearch) ||
+           normalizedSearch.includes(normalizedSlug) ||
+           normalizedId.includes(normalizedSearch) ||
+           normalizedSearch.includes(normalizedId);
+  });
 }

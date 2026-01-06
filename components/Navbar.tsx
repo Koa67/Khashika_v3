@@ -9,6 +9,7 @@ import { useWishlist } from '@/lib/context/WishlistContext';
 import { useAuth } from '@/lib/context/AuthContext';
 import CartDrawer from '@/components/layout/CartDrawer';
 import WishlistDrawer from '@/components/layout/WishlistDrawer';
+import LoginDrawer from '@/components/layout/LoginDrawer';
 import { useSearch } from '@/lib/hooks/useSearch';
 import { getValidImageUrl } from '@/lib/utils/images';
 import { NavigationMenu } from '@/components/Navigation';
@@ -41,6 +42,7 @@ export default function Navbar() {
   const locale = pathname.startsWith('/en') ? 'en' : 'fr';
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   
   const router = useRouter();
@@ -412,13 +414,13 @@ export default function Navbar() {
                     )}
                   </div>
                 ) : (
-                  <Link
-                    href="/login"
+                  <button
+                    onClick={() => setIsLoginOpen(true)}
                     className="p-2 hover:text-gold-fusion transition-colors duration-200"
                     aria-label="Connexion"
                   >
                     <User className="w-5 h-5" strokeWidth={1.5} />
-                  </Link>
+                  </button>
                 )}
               </div>
             )}
@@ -472,6 +474,7 @@ export default function Navbar() {
         onClose={() => setIsWishlistOpen(false)} 
         onOpenCart={() => setIsCartOpen(true)}
       />
+      <LoginDrawer isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </>
   );
 }

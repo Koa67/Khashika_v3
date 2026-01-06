@@ -1,88 +1,98 @@
 const fs = require('fs');
+const path = require('path');
 
-const jsonPath = './lib/data/products-ultimate.json';
+const jsonPath = path.join(__dirname, '../lib/data/products-ultimate.json');
 const products = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
-console.log('📦 ' + products.length + ' produits chargés\n');
+console.log(`📦 ${products.length} produits chargés\n`);
 
+// === CONFIGURATION ===
+
+// Types de produits (ordre = priorité)
 const PRODUCT_TYPES = {
-  "boucles d'oreilles": ["boucles d'oreille", "boucle d'oreille", "clous d'oreille", "creole", "créole"],
-  "collier": ["collier"],
-  "bracelet": ["bracelet"],
-  "bague": ["bague", "anneau"],
-  "pendentif": ["pendentif"],
-  "chaîne": ["chaine", "chaîne"],
-  "cheville": ["cheville", "chevilles"],
-  "parure": ["parure"],
-  "pashmina": ["pashmina"],
-  "foulard": ["foulard", "étole", "etole"],
-  "sac": ["sac", "pochette"]
+  'boucles d\'oreilles': ['boucles d\'oreille', 'boucle d\'oreille', 'clous d\'oreille', 'creole', 'créole'],
+  'collier': ['collier'],
+  'bracelet': ['bracelet'],
+  'bague': ['bague', 'anneau'],
+  'pendentif': ['pendentif'],
+  'chaîne': ['chaine', 'chaîne'],
+  'cheville': ['cheville', 'chevilles'],
+  'parure': ['parure'],
+  'pashmina': ['pashmina'],
+  'foulard': ['foulard', 'étole', 'etole'],
+  'sac': ['sac', 'pochette'],
 };
 
+// Pierres
 const STONES = {
-  "améthyste": ["améthyste", "amethyste"],
-  "turquoise": ["turquoise"],
-  "corail": ["corail"],
-  "lapis-lazuli": ["lapis-lazuli", "lapis lazuli", "lapislazuli"],
-  "onyx": ["onyx"],
-  "jade": ["jade"],
-  "grenat": ["grenat"],
-  "perle": ["perle"],
-  "pierre de lune": ["pierre de lune", "pierre-de-lune"],
-  "quartz": ["quartz"],
-  "agate": ["agate"],
-  "jaspe": ["jaspe"],
-  "obsidienne": ["obsidienne"],
-  "labradorite": ["labradorite"],
-  "oeil de tigre": ["oeil de tigre", "œil de tigre"],
-  "cristal": ["cristal"],
-  "malachite": ["malachite"],
-  "howlite": ["howlite"],
-  "amazonite": ["amazonite"],
-  "aventurine": ["aventurine"],
-  "calcédoine": ["calcedoine", "calcédoine"],
-  "citrine": ["citrine"],
-  "rhodonite": ["rhodonite"],
-  "sodalite": ["sodalite"],
-  "topaze": ["topaze"],
-  "tourmaline": ["tourmaline"]
+  'améthyste': ['améthyste', 'amethyste'],
+  'turquoise': ['turquoise'],
+  'corail': ['corail'],
+  'lapis-lazuli': ['lapis-lazuli', 'lapis lazuli', 'lapislazuli'],
+  'onyx': ['onyx'],
+  'jade': ['jade'],
+  'grenat': ['grenat'],
+  'perle': ['perle'],
+  'pierre de lune': ['pierre de lune', 'pierre-de-lune'],
+  'quartz': ['quartz'],
+  'agate': ['agate'],
+  'jaspe': ['jaspe'],
+  'obsidienne': ['obsidienne'],
+  'labradorite': ['labradorite'],
+  'oeil de tigre': ['oeil de tigre', 'œil de tigre', 'oeil-de-tigre'],
+  'cristal': ['cristal'],
+  'malachite': ['malachite'],
+  'howlite': ['howlite'],
+  'amazonite': ['amazonite'],
+  'aventurine': ['aventurine'],
+  'calcédoine': ['calcedoine', 'calcédoine'],
+  'citrine': ['citrine'],
+  'rhodonite': ['rhodonite'],
+  'sodalite': ['sodalite'],
+  'topaze': ['topaze'],
+  'tourmaline': ['tourmaline'],
 };
 
+// Matériaux
 const MATERIALS = {
-  "argent": ["argent", "silver"],
-  "or": ["or ", " or", "doré", "gold"],
-  "laiton": ["laiton", "brass"],
-  "métal": ["metal", "métal"],
-  "cuir": ["cuir", "leather"],
-  "coton": ["coton", "cotton"],
-  "soie": ["soie", "silk"]
+  'argent': ['argent', 'silver'],
+  'or': ['or ', ' or', 'doré', 'gold'],
+  'laiton': ['laiton', 'brass'],
+  'métal': ['metal', 'métal'],
+  'cuir': ['cuir', 'leather'],
+  'coton': ['coton', 'cotton'],
+  'soie': ['soie', 'silk'],
 };
 
-function normalize(str) {
-  if (!str) return '';
-  return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['']/g, "'");
-}
+// === FONCTIONS ===
 
-function getTypeFromText(text) {
-  var normalized = normalize(text);
-  for (var type in PRODUCT_TYPES) {
-    var keywords = PRODUCT_TYPES[type];
-    for (var i = 0; i < keywords.length; i++) {
-      if (normalized.includes(normalize(keywords[i]))) {
+const normalize = (str) => {
+  if (!str) return '';
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/['']/g, "'");
+};
+
+const getTypeFromText = (text) => {
+  const normalized = normalize(text);
+  for (const [type, keywords] of Object.entries(PRODUCT_TYPES)) {
+    for (const kw of keywords) {
+      if (normalized.includes(normalize(kw))) {
         return type;
       }
     }
   }
   return null;
-}
+};
 
-function getStonesFromText(text) {
-  var normalized = normalize(text);
-  var found = [];
-  for (var stone in STONES) {
-    var keywords = STONES[stone];
-    for (var i = 0; i < keywords.length; i++) {
-      var regex = new RegExp('\\b' + normalize(keywords[i]) + '\\b');
+const getStonesFromText = (text) => {
+  const normalized = normalize(text);
+  const found = [];
+  for (const [stone, keywords] of Object.entries(STONES)) {
+    for (const kw of keywords) {
+      const regex = new RegExp(`\\b${normalize(kw)}\\b`);
       if (regex.test(normalized)) {
         found.push(stone);
         break;
@@ -90,44 +100,60 @@ function getStonesFromText(text) {
     }
   }
   return found;
-}
+};
 
-function getMaterialFromText(text) {
-  var normalized = normalize(text);
-  for (var material in MATERIALS) {
-    var keywords = MATERIALS[material];
-    for (var i = 0; i < keywords.length; i++) {
-      if (normalized.includes(normalize(keywords[i]))) {
+const getMaterialFromText = (text) => {
+  const normalized = normalize(text);
+  for (const [material, keywords] of Object.entries(MATERIALS)) {
+    for (const kw of keywords) {
+      if (normalized.includes(normalize(kw))) {
         return material;
       }
     }
   }
   return null;
-}
+};
 
-function isDescriptionInconsistent(name, description) {
+const isDescriptionInconsistent = (name, description) => {
   if (!description || !name) return false;
-  var nameType = getTypeFromText(name);
-  var descType = getTypeFromText(description);
-  return (nameType && descType && nameType !== descType);
-}
+  
+  const nameType = getTypeFromText(name);
+  const descType = getTypeFromText(description);
+  
+  // Si les types sont différents, la description est incohérente
+  if (nameType && descType && nameType !== descType) {
+    return true;
+  }
+  
+  return false;
+};
 
-var stats = {
+// === TRAITEMENT ===
+
+let stats = {
   descriptionsCleared: 0,
   typesEnriched: 0,
   stonesEnriched: 0,
   materialsEnriched: 0,
-  namesFixed: 0
+  namesFixed: 0,
 };
 
-var fixedProducts = products.map(function(p) {
-  var product = Object.assign({}, p);
+const fixedProducts = products.map(p => {
+  let product = { ...p };
   
-  // 1. Corriger le nom
+  // 1. Corriger le nom (syntaxe, espaces)
   if (product.name) {
-    var name = product.name.replace(/\s+/g, ' ').trim();
+    let name = product.name;
+    
+    // Fix double espaces
+    name = name.replace(/\s+/g, ' ').trim();
+    
+    // Première lettre majuscule
     name = name.charAt(0).toUpperCase() + name.slice(1);
+    
+    // Fix tirets bizarres
     name = name.replace(/–/g, '-');
+    
     if (name !== product.name) {
       stats.namesFixed++;
     }
@@ -136,14 +162,14 @@ var fixedProducts = products.map(function(p) {
   
   // 2. Vérifier cohérence description vs nom
   if (isDescriptionInconsistent(product.name, product.description)) {
-    console.log('⚠️  Description incohérente supprimée: ' + product.name);
+    console.log(`⚠️  Description incohérente supprimée: "${product.name}"`);
     product.description = '';
     stats.descriptionsCleared++;
   }
   
-  // 3. Corriger la description
+  // 3. Corriger la description (syntaxe)
   if (product.description) {
-    var desc = product.description;
+    let desc = product.description;
     desc = desc.replace(/Cesboucles/g, 'Ces boucles');
     desc = desc.replace(/defabrication/g, 'de fabrication');
     desc = desc.replace(/\s+/g, ' ').trim();
@@ -152,15 +178,15 @@ var fixedProducts = products.map(function(p) {
   
   // 4. Enrichir TYPE depuis le nom
   if (!product.type) {
-    var type = getTypeFromText(product.name);
+    const type = getTypeFromText(product.name);
     if (type) {
       product.type = type;
       stats.typesEnriched++;
     }
   }
   
-  // 5. Enrichir STONES depuis le nom
-  var stonesFromName = getStonesFromText(product.name);
+  // 5. Enrichir STONES depuis le nom (PAS la description)
+  const stonesFromName = getStonesFromText(product.name);
   if (stonesFromName.length > 0) {
     product.stones = stonesFromName;
     stats.stonesEnriched++;
@@ -170,7 +196,7 @@ var fixedProducts = products.map(function(p) {
   
   // 6. Enrichir MATERIAL depuis le nom
   if (!product.material) {
-    var material = getMaterialFromText(product.name);
+    const material = getMaterialFromText(product.name);
     if (material) {
       product.material = material;
       stats.materialsEnriched++;
@@ -180,39 +206,45 @@ var fixedProducts = products.map(function(p) {
   return product;
 });
 
-console.log('\n📊 Résumé:');
-console.log('   Descriptions supprimées: ' + stats.descriptionsCleared);
-console.log('   Noms corrigés: ' + stats.namesFixed);
-console.log('   Types enrichis: ' + stats.typesEnriched);
-console.log('   Pierres enrichies: ' + stats.stonesEnriched);
-console.log('   Matériaux enrichis: ' + stats.materialsEnriched);
+// === STATS ===
 
-var typeStats = {};
-fixedProducts.forEach(function(p) {
-  var t = p.type || 'non classé';
+console.log('\n📊 Résumé des corrections:');
+console.log(`   Descriptions incohérentes supprimées: ${stats.descriptionsCleared}`);
+console.log(`   Noms corrigés (syntaxe): ${stats.namesFixed}`);
+console.log(`   Types enrichis: ${stats.typesEnriched}`);
+console.log(`   Pierres enrichies: ${stats.stonesEnriched}`);
+console.log(`   Matériaux enrichis: ${stats.materialsEnriched}`);
+
+// Stats par type
+const typeStats = {};
+fixedProducts.forEach(p => {
+  const t = p.type || 'non classé';
   typeStats[t] = (typeStats[t] || 0) + 1;
 });
 
-console.log('\n📊 Par type:');
-Object.keys(typeStats).sort(function(a, b) {
-  return typeStats[b] - typeStats[a];
-}).forEach(function(t) {
-  console.log('   ' + t + ': ' + typeStats[t]);
-});
+console.log('\n📊 Produits par type:');
+Object.entries(typeStats)
+  .sort((a, b) => b[1] - a[1])
+  .forEach(([type, count]) => {
+    console.log(`   ${type}: ${count}`);
+  });
 
-var stoneStats = {};
-fixedProducts.forEach(function(p) {
-  (p.stones || []).forEach(function(s) {
+// Stats par pierre
+const stoneStats = {};
+fixedProducts.forEach(p => {
+  (p.stones || []).forEach(s => {
     stoneStats[s] = (stoneStats[s] || 0) + 1;
   });
 });
 
-console.log('\n📊 Par pierre:');
-Object.keys(stoneStats).sort(function(a, b) {
-  return stoneStats[b] - stoneStats[a];
-}).forEach(function(s) {
-  console.log('   ' + s + ': ' + stoneStats[s]);
-});
+console.log('\n📊 Produits par pierre:');
+Object.entries(stoneStats)
+  .sort((a, b) => b[1] - a[1])
+  .forEach(([stone, count]) => {
+    console.log(`   ${stone}: ${count}`);
+  });
+
+// === SAUVEGARDER ===
 
 fs.writeFileSync(jsonPath, JSON.stringify(fixedProducts, null, 2));
-console.log('\n💾 Sauvegardé: ' + jsonPath);
+console.log(`\n💾 Sauvegardé: ${jsonPath}`);

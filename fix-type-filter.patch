@@ -1,0 +1,24 @@
+--- a/components/boutique/hooks/useShopFilters.ts
++++ b/components/boutique/hooks/useShopFilters.ts
+@@ -44,14 +44,15 @@
+     if (hasTypeFilter || hasAccessoryFilter) {
+       result = result.filter(p => {
+-        const inferredCategory = inferCategory(p.name || '');
+-        
+-        const inferredToTypeId: Record<string, string> = {
+-          'boucle': "boucles d'oreilles",
+-        };
+-        const mappedCategory = inferredToTypeId[inferredCategory || ''] || inferredCategory;
++        // Utilise p.type directement si disponible, sinon infer
++        const productType = p.type || inferCategory(p.name || '');
+         
+         const matchesType = hasTypeFilter && filters.types.some(typeId => {
+-          return mappedCategory === typeId;
++          // Normalise pour comparaison (pluriel, accents)
++          const normalizedProductType = productType.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
++          const normalizedTypeId = typeId.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
++          return normalizedProductType === normalizedTypeId || 
++                 normalizedProductType.startsWith(normalizedTypeId) ||
++                 normalizedTypeId.startsWith(normalizedProductType);
+         });
+         

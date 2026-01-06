@@ -1,0 +1,85 @@
+# ═══════════════════════════════════════════════════════════════
+# KHASHIKA — Claude Code Ignore List
+# Fichiers que Claude Code NE DOIT PAS indexer/modifier
+# ═══════════════════════════════════════════════════════════════
+
+# Build & Runtime
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+.vercel/
+coverage/
+
+# Version Control
+.git/
+
+# ═══════════════════════════════════════════════════════════════
+# ASSETS (binary, unreadable)
+# ═══════════════════════════════════════════════════════════════
+public/images/
+_raw_assets/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
+*.svg
+*.mp4
+*.mp3
+*.woff
+*.woff2
+
+# ═══════════════════════════════════════════════════════════════
+# DATA FILES (source of truth - reference only)
+# ═══════════════════════════════════════════════════════════════
+lib/data/*.json
+*.csv
+*.pdf
+*.xlsx
+
+# ═══════════════════════════════════════════════════════════════
+# LEGACY & BACKUPS
+# ═══════════════════════════════════════════════════════════════
+_LEGACY_CLONE/
+*.bak
+*.backup
+.next 2/
+.next 3/
+
+# ═══════════════════════════════════════════════════════════════
+# REPORTS & LOGS (read-only reference)
+# ═══════════════════════════════════════════════════════════════
+*.log
+*_REPORT.md
+*_report.json
+lighthouse-*.html
+audit_report.txt
+build-output.txt
+lint-output.txt
+
+# ═══════════════════════════════════════════════════════════════
+# SCRIPTS (Python/Shell - reference only)
+# ═══════════════════════════════════════════════════════════════
+*.py
+*.sh
+__pycache__/
+
+# ═══════════════════════════════════════════════════════════════
+# LOCK FILES
+# ═══════════════════════════════════════════════════════════════
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ═══════════════════════════════════════════════════════════════
+# CONFIG (stable - do not modify)
+# ═══════════════════════════════════════════════════════════════
+.env*
+tsconfig.tsbuildinfo
+
+# System
+.DS_Store
+*.swp

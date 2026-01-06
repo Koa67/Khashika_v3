@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { RotateCcw, ChevronDown, Search, X } from 'lucide-react';
-import { FilterState, FILTER_CONFIG, STONES_WITHOUT_ONYX_VARIANTS, ONYX_VARIANT_IDS, TOP_STONES } from '@/lib/types/filters';
+import { FilterState, FILTER_CONFIG, STONES_WITHOUT_ONYX_VARIANTS, ONYX_VARIANT_IDS, TOP_STONES, FilterOption } from '@/lib/types/filters';
 import { fuzzyFilter } from '@/lib/utils/fuzzySearch';
 
 interface ShopSidebarProps {
@@ -32,8 +32,8 @@ export default function ShopSidebar({
   onClearAll,
   pageTitle,
 }: ShopSidebarProps) {
-  const [sidebarTop, setSidebarTop] = useState(166);
-  const [maxHeight, setMaxHeight] = useState('calc(100vh - 166px - 16px)');
+  const [sidebarTop, setSidebarTop] = useState(210);
+  const [maxHeight, setMaxHeight] = useState('calc(100vh - 210px - 16px)');
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [stoneView, setStoneView] = useState<'top' | 'couleurs' | 'search'>('top');
   const [showAllStones, setShowAllStones] = useState(false);
@@ -52,7 +52,7 @@ export default function ShopSidebar({
   };
 
   const getOnyxCombinedCount = () => {
-    return ONYX_VARIANT_IDS.reduce((sum, id) => sum + (filterCounts.stones?.[id] || 0), 0);
+    return (filterCounts.stones?.['onyx'] || 0) + ONYX_VARIANT_IDS.reduce((sum, id) => sum + (filterCounts.stones?.[id] || 0), 0);
   };
 
   const getStoneCount = (stoneId: string) => {
@@ -69,7 +69,7 @@ export default function ShopSidebar({
       const newStones = filters.stones.filter(s => s !== 'onyx' && !ONYX_VARIANT_IDS.includes(s));
       onUpdateFilter('stones', newStones);
     } else {
-      const newStones = [...filters.stones, ...ONYX_VARIANT_IDS];
+      const newStones = [...filters.stones, 'onyx', ...ONYX_VARIANT_IDS];
       onUpdateFilter('stones', [...new Set(newStones)]);
     }
   };
@@ -84,7 +84,7 @@ export default function ShopSidebar({
         if (!footer || !sidebarRef.current) { ticking = false; return; }
         const footerRect = footer.getBoundingClientRect();
         const sidebarHeight = sidebarRef.current.getBoundingClientRect().height;
-        const originalTop = 166;
+        const originalTop = 210;
         const margin = 20;
         if (footerRect.top < window.innerHeight) {
           const maxAllowedTop = footerRect.top - sidebarHeight - margin;
@@ -94,7 +94,7 @@ export default function ShopSidebar({
           setMaxHeight(`${Math.max(200, availableHeight)}px`);
         } else {
           setSidebarTop(originalTop);
-          setMaxHeight('calc(100vh - 166px - 16px)');
+          setMaxHeight('calc(100vh - 210px - 16px)');
         }
         ticking = false;
       });
@@ -108,7 +108,7 @@ export default function ShopSidebar({
     };
   }, []);
 
-  const topStonesForPopular = TOP_STONES;
+  const topStonesForPopular = TOP_STONES.map(id => STONES_WITHOUT_ONYX_VARIANTS.find(s => s.id === id)).filter((s): s is FilterOption => s !== undefined);
   const allStonesForPopular = STONES_WITHOUT_ONYX_VARIANTS;
 
   const priceButtonClass = (active: boolean) =>
@@ -137,7 +137,7 @@ export default function ShopSidebar({
         >
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-serif text-xl">Filtres</h2>
-            <button onClick={() => { if (pageTitle) { window.location.href = "/fr/shop"; } else { onClearAll(); } }} className="relative z-10 cursor-pointer flex items-center gap-1 text-sm text-[#E07A5F] hover:text-[#C44536] transition font-medium">
+            <button onClick={onClearAll} className="relative z-10 cursor-pointer flex items-center gap-1 text-sm text-[#E07A5F] hover:text-[#C44536] transition font-medium">
               <RotateCcw className="w-4 h-4" />
               Réinitialiser
             </button>

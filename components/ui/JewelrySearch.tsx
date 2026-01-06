@@ -29,7 +29,7 @@ const getValidImageUrl = (url: string | undefined | null): string => {
 
 export default function JewelrySearch() {
   const router = useRouter();
-  const { query, setQuery, results, isLoading, fuseInstance } = useSearch();
+  const { query, setQuery, results, isLoading } = useSearch();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -129,7 +129,7 @@ export default function JewelrySearch() {
 
   // Fonction pour highlight le texte qui matche
   const highlightMatch = (text: string, query: string, product: Product): React.ReactNode => {
-    if (!query || !fuseInstance) {
+    if (!query) {
       // Fallback simple : mettre en gras les mots qui matchent
       const lowerText = text.toLowerCase();
       const lowerQuery = query.toLowerCase();
@@ -147,62 +147,7 @@ export default function JewelrySearch() {
       }
       return text;
     }
-    
-    // Utiliser Fuse pour obtenir les matches pour ce produit spécifique
-    const searchResult = fuseInstance.search(query, { limit: 10 });
-    const productMatch = searchResult.find((r) => r.item.id === product.id);
-    
-    if (!productMatch || !productMatch.matches || productMatch.matches.length === 0) {
-      // Fallback simple
-      const lowerText = text.toLowerCase();
-      const lowerQuery = query.toLowerCase();
-      if (lowerText.includes(lowerQuery)) {
-        const index = lowerText.indexOf(lowerQuery);
-        return (
-          <>
-            {text.substring(0, index)}
-            <strong className="font-bold text-[#8B4E4E]">
-              {text.substring(index, index + query.length)}
-            </strong>
-            {text.substring(index + query.length)}
-          </>
-        );
-      }
-      return text;
-    }
-
-    // Trouver le match pour le nom ou la catégorie
-    const textMatch = productMatch.matches.find((m) => 
-      (m.key === 'name' || m.key === 'category') && m.value === text
-    );
-    
-    if (!textMatch || !textMatch.indices || textMatch.indices.length === 0) {
-      return text;
-    }
-
-    const parts: React.ReactNode[] = [];
-    let lastIndex = 0;
-
-    textMatch.indices.forEach(([start, end], idx) => {
-      // Ajouter le texte avant le match
-      if (start > lastIndex) {
-        parts.push(text.substring(lastIndex, start));
-      }
-      // Ajouter le texte matché en gras
-      parts.push(
-        <strong key={`${start}-${idx}`} className="font-bold text-[#8B4E4E]">
-          {text.substring(start, end + 1)}
-        </strong>
-      );
-      lastIndex = end + 1;
-    });
-
-    // Ajouter le reste du texte
-    if (lastIndex < text.length) {
-      parts.push(text.substring(lastIndex));
-    }
-
-    return parts.length > 0 ? <>{parts}</> : text;
+    return text;
   };
 
   const hasResults = results.length > 0;

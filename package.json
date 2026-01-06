@@ -29,7 +29,13 @@
     "fix:clean:zsh": "echo 'alias fix=\"npm run fix\"' >> ~/.zshrc && source ~/.zshrc",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed"
+    "test:e2e:headed": "playwright test --headed",
+    "check": "pnpm lint && pnpm build",
+    "check:quick": "pnpm lint",
+    "clean": "rm -rf .next node_modules/.cache",
+    "clean:full": "rm -rf .next node_modules/.cache .turbo",
+    "analyze": "ANALYZE=true pnpm build",
+    "types": "tsc --noEmit"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

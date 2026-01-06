@@ -56,9 +56,7 @@ export const BIJOUX_TYPE_MAP: Record<string, { filter: string; label: string; de
 const ONYX_VARIANT_IDS = ['onyx noir', 'onyx vert', 'onyx bleu', 'onyx rouge'];
 
 // Mapping des slugs URL → filtres pour les pierres (40 pierres)
-// IMPORTANT: Les "filter" doivent correspondre EXACTEMENT aux valeurs dans products-ultimate.json
 export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; label: string; description: string }> = {
-  // === TOP 8 par popularité ===
   'turquoise': { 
     filter: 'turquoise', 
     label: 'Bijoux en Turquoise', 
@@ -75,7 +73,7 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
     description: 'Bijoux en agate, pierre aux bandes colorées symbole d\'équilibre et d\'harmonie'
   },
   'onyx': { 
-    filter: ONYX_VARIANT_IDS, 
+    filter: ['onyx', ...ONYX_VARIANT_IDS], 
     label: 'Bijoux en Onyx', 
     description: 'Bijoux en onyx, pierre élégante et protectrice disponible en plusieurs couleurs'
   },
@@ -99,7 +97,6 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
     label: 'Bijoux en Quartz', 
     description: 'Bijoux en quartz rose, pierre douce symbole d\'amour et de tendresse'
   },
-  // === Pierres moyennes (10-19 produits) ===
   'oeil-de-tigre': { 
     filter: 'oeil de tigre', 
     label: 'Bijoux en Œil de Tigre', 
@@ -115,7 +112,6 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
     label: 'Bijoux en Péridot', 
     description: 'Bijoux en péridot, pierre verte lumineuse symbole de renouveau'
   },
-  // === Pierres standard (5-9 produits) ===
   'grenat': { 
     filter: 'grenat', 
     label: 'Bijoux en Grenat', 
@@ -176,7 +172,6 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
     label: 'Bijoux en Howlite', 
     description: 'Bijoux en howlite, pierre blanche apaisante'
   },
-  // === Pierres moins fréquentes (3-4 produits) ===
   'amazonite': { 
     filter: 'amazonite', 
     label: 'Bijoux en Amazonite', 
@@ -207,7 +202,6 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
     label: 'Bijoux en Malachite', 
     description: 'Bijoux en malachite, pierre verte aux bandes hypnotiques'
   },
-  // === Pierres rares (1-2 produits) ===
   'dzi': { 
     filter: 'dzi', 
     label: 'Bijoux en Pierre Dzi', 
@@ -243,7 +237,6 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
     label: 'Bijoux en Rhodonite', 
     description: 'Bijoux en rhodonite, pierre rose symbole d\'amour compassionnel'
   },
-  // === Variantes d'onyx individuelles ===
   'onyx-noir': { 
     filter: 'onyx noir', 
     label: 'Bijoux en Onyx Noir', 
@@ -266,62 +259,74 @@ export const PIERRES_STONE_MAP: Record<string, { filter: string | string[]; labe
   },
 };
 
-// Mapping des slugs URL → filtres pour les accessoires (types)
+// Mapping des slugs URL → filtres pour les accessoires
+// IMPORTANT: Les "filter" correspondent EXACTEMENT aux valeurs "type" dans products-ultimate.json
 export const ACCESSOIRES_TYPE_MAP: Record<string, { filter: string; label: string; description: string }> = {
+  // Pashminas
+  'pashmina': { 
+    filter: 'pashmina', 
+    label: 'Pashminas', 
+    description: 'Pashminas indiens en cachemire et soie, écharpes de luxe artisanales'
+  },
   'pashminas': { 
     filter: 'pashmina', 
     label: 'Pashminas', 
     description: 'Pashminas indiens en cachemire et soie, écharpes de luxe artisanales'
+  },
+  // Foulards
+  'foulard': { 
+    filter: 'foulard', 
+    label: 'Foulards', 
+    description: 'Foulards indiens en soie et coton, accessoires élégants et colorés'
   },
   'foulards': { 
     filter: 'foulard', 
     label: 'Foulards', 
     description: 'Foulards indiens en soie et coton, accessoires élégants et colorés'
   },
-  'etoles': { 
-    filter: 'soie', 
-    label: 'Étoles', 
-    description: 'Étoles indiennes en soie, accessoires de mode raffinés'
-  },
-  'pochettes': { 
-    filter: 'pochette', 
-    label: 'Pochettes', 
-    description: 'Pochettes indiennes artisanales, sacs à main élégants et pratiques'
-  },
-  'soie': { 
-    filter: 'soie', 
-    label: 'Soie', 
-    description: 'Articles en soie indienne, tissus précieux et raffinés'
-  },
-  'porte-cles': { 
-    filter: 'porte-cles', 
-    label: 'Porte-clés', 
-    description: 'Porte-clés artisanaux indiens, petits accessoires uniques'
-  },
-  'chouchous': { 
-    filter: 'chouchou', 
-    label: 'Chouchous', 
-    description: 'Chouchous en tissu indien, accessoires cheveux colorés'
-  },
-  'bandanas': { 
-    filter: 'bandana', 
-    label: 'Bandanas', 
-    description: 'Bandanas indiens en coton, accessoires de mode polyvalents'
-  },
-  'marque-pages': { 
-    filter: 'marque-page', 
-    label: 'Marque-pages', 
-    description: 'Marque-pages artisanaux indiens, accessoires pour lecteurs'
-  },
-  'carnets': { 
-    filter: 'carnet', 
-    label: 'Carnets', 
-    description: 'Carnets artisanaux indiens, papeterie traditionnelle'
+  // Sacs
+  'sac': { 
+    filter: 'sac', 
+    label: 'Sacs', 
+    description: 'Sacs indiens faits main, accessoires de mode authentiques et colorés'
   },
   'sacs': { 
     filter: 'sac', 
     label: 'Sacs', 
     description: 'Sacs indiens faits main, accessoires de mode authentiques et colorés'
+  },
+  // Accessoires cheveux (chouchous, bandanas, barrettes, pinces)
+  'accessoires-cheveux': { 
+    filter: 'accessoire cheveux', 
+    label: 'Accessoires cheveux', 
+    description: 'Chouchous, bandanas et barrettes artisanaux indiens'
+  },
+  'accessoire-cheveux': { 
+    filter: 'accessoire cheveux', 
+    label: 'Accessoires cheveux', 
+    description: 'Chouchous, bandanas et barrettes artisanaux indiens'
+  },
+  // Porte-clés & Divers
+  'porte-cles': { 
+    filter: 'accessoire', 
+    label: 'Porte-clés & Divers', 
+    description: 'Porte-clés artisanaux, trousses et accessoires divers'
+  },
+  'porte-cle': { 
+    filter: 'accessoire', 
+    label: 'Porte-clés & Divers', 
+    description: 'Porte-clés artisanaux, trousses et accessoires divers'
+  },
+  'divers': { 
+    filter: 'accessoire', 
+    label: 'Porte-clés & Divers', 
+    description: 'Porte-clés artisanaux, trousses et accessoires divers'
+  },
+  // Papeterie & Déco
+  'papeterie': { 
+    filter: 'papeterie', 
+    label: 'Papeterie & Déco', 
+    description: 'Carnets, marque-pages et objets décoratifs artisanaux indiens'
   },
 };
 
@@ -335,7 +340,15 @@ export function getAllPierresStoneSlugs(): string[] {
 }
 
 export function getAllAccessoiresTypeSlugs(): string[] {
-  return Object.keys(ACCESSOIRES_TYPE_MAP);
+  // Retourne uniquement les slugs canoniques pour generateStaticParams
+  return [
+    'pashminas',
+    'foulards',
+    'sacs',
+    'accessoires-cheveux',
+    'porte-cles',
+    'papeterie',
+  ];
 }
 
 // Helper pour obtenir le(s) filtre(s) d'une pierre

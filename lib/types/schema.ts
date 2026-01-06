@@ -72,6 +72,8 @@ export const productSchema = z.object({
   reviews: z.array(productReviewSchema).optional(),
   material: z.string().optional(),
   stone: z.string().optional(),
+  stones: z.array(z.string()).optional(),
+  type: z.string().optional(),
   style: z.string().optional(),
 });
 

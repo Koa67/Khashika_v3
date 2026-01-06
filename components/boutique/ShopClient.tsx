@@ -36,6 +36,7 @@ const SORT_OPTIONS = [
 ];
 
 export default function ShopClient({ initialProducts, initialFilters, pageTitle, pageSubtitle, searchQuery }: ShopClientProps) {
+  console.log("🔍 CLIENT received:", { initialFilters, productsCount: initialProducts.length });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const productGridRef = useRef<HTMLDivElement>(null);
   
@@ -112,6 +113,18 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
             </select>
           </div>
         </div>
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-sm text-[#2D2926]/60 mb-4">
+          <a href="/fr" className="hover:text-[#EAB615] transition-colors">Accueil</a>
+          <span>/</span>
+          <a href="/fr/shop" className="hover:text-[#EAB615] transition-colors">Boutique</a>
+          {pageTitle && pageTitle !== "Boutique" && (
+            <>
+              <span>/</span>
+              <span className="text-[#2D2926] font-medium">{pageTitle}</span>
+            </>
+          )}
+        </nav>
 
         <div className="flex gap-8">
           {/* Desktop Sidebar */}
@@ -131,31 +144,12 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
             {/* Container unique pour tout le contenu */}
             <div className="max-w-7xl mx-auto px-4 py-8">
               
-
-              {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-sm text-[#2D2926]/60 mb-4">
-                <a href="/fr" className="hover:text-[#EAB615] transition-colors">Accueil</a>
-                <span>/</span>
-                <a href="/fr/shop" className="hover:text-[#EAB615] transition-colors">Boutique</a>
-                {pageTitle && pageTitle !== "Boutique" && (
-                  <>
-                    <span>/</span>
-                    <span className="text-[#2D2926] font-medium">{pageTitle}</span>
-                  </>
-                )}
-              </nav>
               {/* 1. TITRE - En premier */}
               {pageTitle && (
-                <div className="mb-6 text-center">
+                <div className="mb-6 text-left">
                   <h1 className="font-serif text-3xl md:text-4xl text-[#2D2926]">
                     {pageTitle}
                   </h1>
-                  {pageSubtitle && (
-                    <p className="text-[#2D2926]/60 mt-2 max-w-2xl mx-auto">
-                      {pageSubtitle}
-                    </p>
-                  )}
-                  
                   {/* Bouton pour effacer la recherche */}
                   {searchQuery && (
                     <Link 
@@ -178,7 +172,6 @@ export default function ShopClient({ initialProducts, initialFilters, pageTitle,
                     activeCount={activeFilterCount}
                     onToggle={handleToggleFilter}
                     onClearAll={handleClearAll}
-            pageTitle={pageTitle}
                   />
                 </div>
                 

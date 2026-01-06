@@ -17,6 +17,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
   const allProducts = await getAllProducts();
   const params = await searchParams;
   const searchQuery = params.q || '';
+  console.log("🔍 SERVER params:", params);
   
   // Filtrer les produits si une recherche est active
   let filteredProducts = allProducts;
@@ -85,6 +86,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
       if (typeFilter) initialFilters.types = typeFilter.split(',');
       if (stonesFilter) initialFilters.stones = stonesFilter.split(',');
       if (materialsFilter) initialFilters.materials = materialsFilter.split(',');
+  console.log("🔍 initialFilters final:", initialFilters);
       if (accessoriesFilter) initialFilters.accessories = accessoriesFilter.split(',');
     }
   }

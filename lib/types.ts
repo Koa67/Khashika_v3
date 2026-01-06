@@ -84,6 +84,8 @@ export interface Product {
   stone?: string;
   /** Liste des pierres (enrichie par script) */
   stones?: string[];
+  /** Type de produit (pour filtrage - enrichi par script) */
+  type?: string;
   /** Style du produit (pour filtrage) */
   style?: string;
 }

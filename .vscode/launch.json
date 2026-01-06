@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev"
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "NODE_OPTIONS='--inspect' pnpm dev"
+    },
+    {
+      "name": "Next.js: build",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm build"
+    },
+    {
+      "name": "Playwright: run all",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm test:e2e"
+    },
+    {
+      "name": "Playwright: UI mode",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm test:e2e:ui"
+    }
+  ]
+}
