@@ -522,11 +522,11 @@ export default function LoginDrawer({ isOpen, onClose }: LoginDrawerProps) {
                     <div className="px-6 py-4 border-t border-[#EAB615]/20 bg-[#F4EAD8]/30">
                       <p className="text-xs text-[#2D2926]/60 text-center">
                         En continuant, vous acceptez nos{' '}
-                        <Link href="/fr/cgv" className="text-[#2596be] hover:underline">
+                        <Link href="/fr/legal/cgv" className="text-[#2596be] hover:underline">
                           CGV
                         </Link>{' '}
                         et notre{' '}
-                        <Link href="/fr/confidentialite" className="text-[#2596be] hover:underline">
+                        <Link href="/fr/legal/politique-de-confidentialite" className="text-[#2596be] hover:underline">
                           politique de confidentialité
                         </Link>
                       </p>

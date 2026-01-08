@@ -86,8 +86,7 @@ export default async function Home() {
                   loading="lazy"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-colors" />
-                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-serif text-xl text-white font-bold" style={{ textShadow: "0 0 10px black, 0 0 20px black, 0 0 40px black, 0 4px 8px black" }}>
                     {col.name}
                   </span>
@@ -127,8 +126,7 @@ export default async function Home() {
                   loading="lazy"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-colors" />
-                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-serif text-xl text-white font-bold" style={{ textShadow: "0 0 10px black, 0 0 20px black, 0 0 40px black, 0 4px 8px black" }}>
                     {stone.name}
                   </span>
@@ -139,7 +137,7 @@ export default async function Home() {
           <div className="text-center mt-8">
             <Link
               href="/fr/pierres"
-              className="inline-block px-6 py-3 border-2 border-[#2596be] text-[#2596be] font-medium hover:bg-[#2596be] hover:text-white transition-colors"
+              className="inline-block px-6 py-3 bg-[#2596be] text-white font-medium hover:bg-[#1e7a9a] transition-colors"
             >
               Découvrir toutes les pierres →
          </Link>

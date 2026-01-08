@@ -86,12 +86,9 @@ export default function StyleGrid({
               )}
               
               {/* Overlay gradient */}
-              <div 
-                className={`absolute inset-0 transition-opacity duration-300
-                           ${isSelected 
-                             ? 'bg-[#8B4E4E]/40' 
-                             : 'bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70'}`}
-              />
+              {isSelected && (
+                <div className="absolute inset-0 bg-[#8B4E4E]/40 transition-opacity duration-300" />
+              )}
               
               {/* Label */}
               <div className="absolute inset-x-0 bottom-0 p-2.5">

@@ -275,7 +275,7 @@ export default function SitemapPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/fr/legal/livraison" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
+                <Link href="/fr/legal/cgv#livraison" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
                   Livraison
                 </Link>
               </li>
@@ -299,22 +299,22 @@ export default function SitemapPage() {
             </h2>
             <ul className="space-y-2">
               <li>
-                <Link href="/fr/pierres-semi-precieuses" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
+                <Link href="/fr/guide-pierres" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
                   Les pierres semi-précieuses
                 </Link>
               </li>
               <li>
-                <Link href="/fr/entretien-bijoux" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
+                <Link href="/fr/entretien" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
                   Entretien des bijoux
                 </Link>
               </li>
               <li>
-                <Link href="/fr/culture-bijou-indien" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
+                <Link href="/fr/univers" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
                   L'Inde et la culture du bijou
                 </Link>
               </li>
               <li>
-                <Link href="/fr/entretien-pashminas" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
+                <Link href="/fr/entretien" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
                   Entretien des pashminas
                 </Link>
               </li>
@@ -338,7 +338,7 @@ export default function SitemapPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/fr/wishlist" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
+                <Link href="/fr/account?section=wishlist" className="text-[#2596be] hover:text-[#1e7a9a] hover:underline">
                   Liste de souhaits
                 </Link>
               </li>

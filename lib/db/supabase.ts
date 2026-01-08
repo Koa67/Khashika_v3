@@ -169,8 +169,8 @@ export const getCart = async (userId?: string): Promise<Cart> => {
     return {
       items: data as unknown[],
       subtotal,
-      shipping: subtotal > 100 ? 0 : 10,
-      total: subtotal + (subtotal > 100 ? 0 : 10),
+      shipping: subtotal >= 50 ? 0 : 10,
+      total: subtotal + (subtotal >= 50 ? 0 : 10),
     };
   } catch (e) {
     console.error('Cart error:', e);

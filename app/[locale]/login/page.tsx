@@ -235,7 +235,7 @@ export default function LoginPage() {
 
           {activeTab === 'login' && (
             <div className="text-right">
-              <Link href="/forgot-password" className="text-sm text-[#8B4E4E] underline hover:text-[#6B3D3D]">
+              <Link href="/fr/contact" className="text-sm text-[#8B4E4E] underline hover:text-[#6B3D3D]">
                 Mot de passe oublié ?
               </Link>
             </div>

@@ -9,6 +9,7 @@ import ProductCard from '@/components/ProductCard';
 import ProductPageClient from '@/components/product/ProductPageClient';
 import TrackProductView from '@/components/product/TrackProductView';
 import RecentlyViewed from '@/components/boutique/RecentlyViewed';
+import PersonalizedRecommendations from '@/components/product/PersonalizedRecommendations';
 import { getValidImageUrl } from '@/lib/utils/images';
 import ImageMagnifier from '@/components/ImageMagnifier';
 import { inferCategory } from '@/lib/utils/inferCategory';
@@ -403,20 +404,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <RecentlyViewed />
         </div>
 
-        {similarProducts.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-[#EAB615]/20">
-            <h2 className="font-serif text-xl text-[#2D2926] mb-4">Vous aimerez aussi</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {similarProducts.map((similarProduct) => (
-                <ProductCard
-                  key={similarProduct.id}
-                  product={similarProduct}
-                  priority={false}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Recommandations personnalisées */}
+        <PersonalizedRecommendations
+          allProducts={allProducts}
+          currentProductId={product.id}
+          fallbackProducts={similarProducts}
+          title="Sélectionné pour vous"
+          limit={4}
+        />
       </div>
     </div>
   );
